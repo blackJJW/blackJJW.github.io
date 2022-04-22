@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 22 Apr 2022 15:24:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</title>
-      <link>/post/ml/book/self_study_ml/chapter1_3/chapter1_3/</link>
+      <link>/post/ml/book/self_study_ml/chapter1_3/</link>
       <pubDate>Fri, 22 Apr 2022 15:24:45 +0900</pubDate>
       
-      <guid>/post/ml/book/self_study_ml/chapter1_3/chapter1_3/</guid>
+      <guid>/post/ml/book/self_study_ml/chapter1_3/</guid>
       <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &amp;lsquo;도미&amp;rsquo;, &amp;lsquo;곤들메기&amp;rsquo;, &amp;lsquo;농어&amp;rsquo;, &amp;lsquo;강꼬치고기&amp;rsquo;, &amp;lsquo;로치&amp;rsquo;, &amp;lsquo;빙어&amp;rsquo;, &amp;lsquo;송어&amp;rsquo; 생선 길이 30cm 이상 -&amp;gt; &amp;lsquo;도미&amp;rsquo;  if fish_length &amp;gt;= 30: print(&amp;#39;도미&amp;#39;)  30cm 이상이 꼭 &amp;lsquo;도미&amp;rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류</description>
     </item>
     
