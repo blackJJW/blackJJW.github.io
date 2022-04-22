@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류" />
+<meta property="og:description" content="Book : &lsquo;혼자 공부하는 머신러닝 &#43; 딥러닝&rsquo;, 박해선 지음, 한빛미디어 01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &lsquo;도미&rsquo;, &lsquo;곤들메기&rsquo;, &lsquo;농어&rsquo;, &lsquo;강꼬치고기&rsquo;, &lsquo;로치&rsquo;, &lsquo;빙어&rsquo;, &lsquo;송어&rsquo; 생선 길이 30cm 이상 -&gt; &lsquo;도미&rsquo;  if fish_length &gt;= 30: print(&#39;도미&#39;)  30cm 이상이 꼭 &lsquo;도미&rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ml/book/chapter1_3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-22T15:24:45+09:00" />
+<meta property="article:modified_time" content="2022-04-22T15:24:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-22T15:24:45&#43;09:00">April 22, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
+<h1 id="01-3-마켓과-머신러닝">01-3 마켓과 머신러닝</h1>
+<ul>
+<li>간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련</li>
+</ul>
+<h2 id="생선-분류-문제">생선 분류 문제</h2>
+<ul>
+<li>생선 종류 : &lsquo;도미&rsquo;, &lsquo;곤들메기&rsquo;, &lsquo;농어&rsquo;, &lsquo;강꼬치고기&rsquo;, &lsquo;로치&rsquo;, &lsquo;빙어&rsquo;, &lsquo;송어&rsquo;</li>
+<li>생선 길이 30cm 이상 -&gt; &lsquo;도미&rsquo;</li>
+</ul>
+<pre tabindex="0"><code>if fish_length &gt;= 30:
+  print(&#39;도미&#39;)
+</code></pre><ul>
+<li>30cm 이상이 꼭 &lsquo;도미&rsquo;라고 말할 수 없음</li>
+<li>절대 바뀌지 않은 기준 정하기 어려움</li>
+<li>머신러닝은 스스로 기준을 찾아서 일을 함</li>
+</ul>
+<h3 id="도미-데이터-준비">도미 데이터 준비</h3>
+<ul>
+<li>머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음</li>
+<li>간단한 문제부터 해결 필요</li>
+</ul>
+<blockquote>
+<p>이진 분류</p>
+</blockquote>
+<ul>
+<li>머신러닝에서 여러 개의 종류(혹은 클래스(class)) 중 하나를 구별해 내는 문제를 분류(classification)</li>
+<li>2개의 클래스 중 하나를 고르는 문제를 이진 분류(binary classification)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
+</span></span><span style="display:flex;"><span>bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
+</span></span></code></pre></div><ul>
+<li>도미 데이터(35마리)</li>
+<li>도미의 특징을 길이와 무게로 표현 -&gt; 이런 특징 -&gt; 특성(feature)</li>
+<li>특성(feature) : 데이터의 특징</li>
+<li>그래프 이용 시 더 잘 이해 가능</li>
+<li>산점도(catter plot): x, y축으로 이뤄진 좌표계에 두 변수(x, y)의 관계를 표현하는 방법</li>
+<li>Python 과학계산용 그래프 패키지 : matplotlib</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="self_study_ML/chapter1_3/output_7_0.png" alt="png"></p>
+<ul>
+<li>산점도의 그래프가 일직선에 가까운 형태로 나타나는 경우를 선형(linear)적이라고 함</li>
+</ul>
+<h3 id="빙어-데이터-준비">빙어 데이터 준비</h3>
+<ul>
+<li>빙어 데이터(14마리)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
+</span></span><span style="display:flex;"><span>smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="self_study_ML/chapter1_3/output_11_0.png" alt="png"></p>
+<h2 id="첫-번째-머신러닝-프로그램">첫 번째 머신러닝 프로그램</h2>
+<ul>
+<li>가장 간단하고 이해가기 쉬운 k-최근접(k-Nearest Neighbors) 알고리즘을 사용, 도미와 빙어를 구분</li>
+<li>알고리즘 사용 전, 도미와 빙어 데이터를 하나의 데이터로 합침</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
+</span></span><span style="display:flex;"><span>weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
+</span></span></code></pre></div><ul>
+<li>사용하는 패키지 : 사이킷 런(scikit-learn)</li>
+<li>이 패키지를 사용하려면 2차원 리스트 필요</li>
+<li>파이썬의 zip() 함수와 리스트 내포(list comprehension)구문 사용</li>
+<li>zip()함수는 나열된 리스트 각각에서 하나씩 원소를 꺼내 반환</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
+</span></span></code></pre></div><blockquote>
+<p>zip() 함수와 for문</p>
+</blockquote>
+<ul>
+<li>zip() : 나열된 리스트에서 원소를 하나씩 꺼내주는 일을 함</li>
+<li>for : 반복문</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data)
+</span></span></code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0], [29.7, 450.0], [29.7, 500.0], [30.0, 390.0], [30.0, 450.0], [30.7, 500.0], [31.0, 475.0], [31.0, 500.0], [31.5, 500.0], [32.0, 340.0], [32.0, 600.0], [32.0, 600.0], [33.0, 700.0], [33.0, 700.0], [33.5, 610.0], [33.5, 650.0], [34.0, 575.0], [34.0, 685.0], [34.5, 620.0], [35.0, 680.0], [35.0, 700.0], [35.0, 725.0], [35.0, 720.0], [36.0, 714.0], [36.0, 850.0], [37.0, 1000.0], [38.5, 920.0], [38.5, 955.0], [39.5, 925.0], [41.0, 975.0], [41.0, 950.0], [9.8, 6.7], [10.5, 7.5], [10.6, 7.0], [11.0, 9.7], [11.2, 9.8], [11.3, 8.7], [11.8, 10.0], [11.8, 9.9], [12.0, 9.8], [12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
+</code></pre>
+<ul>
+<li>도미 = 1, 빙어 = 0</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
+</span></span><span style="display:flex;"><span>print(fish_target)
+</span></span></code></pre></div><pre><code>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># KNeighborsClassifier 임포트</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+</span></span></code></pre></div><blockquote>
+<p>from ~ import 구문</p>
+</blockquote>
+<ul>
+<li>파이썬에서 패키지나 모듈 전체를 임포트하지 않고 특정 클래스만 임포트하려면 from~import 구문을 사용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 임포트한 KNeighborsClassifier 클래스의 객체 생성</span>
+</span></span><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> KNeighborsClassifier()
+</span></span></code></pre></div><ul>
+<li>fish_data와 fish_target을 전달하여 도미를 찾기 위한 기준을 학습 -&gt; 이런 과정을 머신러닝에서는 훈련(training)</li>
+<li>훈련(training) : 모델에 데이터를 전달하여 규칙을 학습하는 과정</li>
+<li>사이킷 런에는 fit()메서드가 존재 -&gt; 훈련 역할</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+</span></span></code></pre></div><pre><code>KNeighborsClassifier()
+</code></pre>
+<ul>
+<li>fit() 메서드는 주어진 데이터로 알고리즘을 훈련</li>
+<li>훈련 평가 : 사이킷 런에서 score() 메서드 이용 -&gt; 0 ~ 1 값 반환</li>
+</ul>
+<blockquote>
+<p>머신러닝에서의 모델</p>
+</blockquote>
+<ul>
+<li>머신러닝 알고리즘을 구현한 프로그램을 모델(model)이라고 부름</li>
+<li>프로그매이 아니더라도 알고리즘을 (수식 등) 구체화하여 표현한 것을 모델이라고 부름</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(fish_data, fish_target)
+</span></span></code></pre></div><pre><code>1.0
+</code></pre>
+<ul>
+<li>이 값을 정확도(accuracy)라고 부름</li>
+</ul>
+<h3 id="k-최근접-이웃-알고리즘">k-최근접 이웃 알고리즘</h3>
+<ul>
+<li>어떤 데이터에 대한 답을 구할 때 주위의 다른 데이터를 보고 다수를 차지하는 것을 정답으로 사용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">600</span>]])
+</span></span></code></pre></div><pre><code>array([1])
+</code></pre>
+<ul>
+<li>
+<p>predict() : 새로운 데이터의 정답을 예측</p>
+</li>
+<li>
+<p>fit()과 마찬가지로 2중 리스트로 전달</p>
+</li>
+<li>
+<p>새로운 데이터에 대한 예측할 때는 가장 가까운 직선거리에 어떤 데이터가 있는 지를 살피기만 하면 됨</p>
+</li>
+<li>
+<p>단점 : 데이터가 많은 경우에는 사용하기 어려움, 데이터가 크기 때문에 메모리가 많이 필요하고 직선거리를 계산하는 데도 많은 시간이 필요</p>
+</li>
+<li>
+<p>사이킷 런의 KNeighborsClassifier 클래스에는 _fit_X 속성에 우리가 전달한 fish_data를 모두 가지고 있음</p>
+</li>
+<li>
+<p>_y속성에 fish_target을 가지고 있음</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_fit_X)
+</span></span></code></pre></div><pre><code>[[  25.4  242. ]
+ [  26.3  290. ]
+ [  26.5  340. ]
+ [  29.   363. ]
+ [  29.   430. ]
+ [  29.7  450. ]
+ [  29.7  500. ]
+ [  30.   390. ]
+ [  30.   450. ]
+ [  30.7  500. ]
+ [  31.   475. ]
+ [  31.   500. ]
+ [  31.5  500. ]
+ [  32.   340. ]
+ [  32.   600. ]
+ [  32.   600. ]
+ [  33.   700. ]
+ [  33.   700. ]
+ [  33.5  610. ]
+ [  33.5  650. ]
+ [  34.   575. ]
+ [  34.   685. ]
+ [  34.5  620. ]
+ [  35.   680. ]
+ [  35.   700. ]
+ [  35.   725. ]
+ [  35.   720. ]
+ [  36.   714. ]
+ [  36.   850. ]
+ [  37.  1000. ]
+ [  38.5  920. ]
+ [  38.5  955. ]
+ [  39.5  925. ]
+ [  41.   975. ]
+ [  41.   950. ]
+ [   9.8    6.7]
+ [  10.5    7.5]
+ [  10.6    7. ]
+ [  11.     9.7]
+ [  11.2    9.8]
+ [  11.3    8.7]
+ [  11.8   10. ]
+ [  11.8    9.9]
+ [  12.     9.8]
+ [  12.2   12.2]
+ [  12.4   13.4]
+ [  13.    12.2]
+ [  14.3   19.7]
+ [  15.    19.9]]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_y)
+</span></span></code></pre></div><pre><code>[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0]
+</code></pre>
+<ul>
+<li>k-최근접 이웃 알고리즘은 무언가 훈련되는 거싱 없는 셈</li>
+<li>fit() 메서드에 전달한 데이터를 모두 저장하고 있다가 새로운 데이터가 등장하면 가장 가까운 데이터를 참고하여 구분</li>
+<li>몇 개의 데이터를 참고? -&gt; 기본값 = 5 -&gt; 매개변수 변경 가능</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
+</span></span></code></pre></div><ul>
+<li>가장 가까운 데이터 49개를 사용하는 k-최근접 이웃 모델에 fish_data를 적용하면 fish_data에 있는 모든 생선을 사용하여 예측</li>
+<li>49개 중에 도미가 35개로 다수를 차지하므로 어떤 데이터를 넣어도 무조건 도미로 예측</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
+</span></span></code></pre></div><pre><code>0.7142857142857143
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
+</span></span></code></pre></div><pre><code>0.7142857142857143
+</code></pre>
+<h2 id="도미와-빙어-분류">도미와 빙어 분류</h2>
+<h3 id="전체-소스-코드">전체 소스 코드</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;# 마켓과 머신러닝&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;## 생선 분류 문제&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### 도미 데이터 준비하기&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
+</span></span><span style="display:flex;"><span>bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### 빙어 데이터 준비하기&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
+</span></span><span style="display:flex;"><span>smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;## 첫 번째 머신러닝 프로그램&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
+</span></span><span style="display:flex;"><span>weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(fish_data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
+</span></span><span style="display:flex;"><span>print(fish_target)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> KNeighborsClassifier()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(fish_data,fish_target)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### k-최근접 이웃 알고리즘&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;^&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_fit_X)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
+</span></span></code></pre></div><p><img src="self_study_ML/chapter1_3/output_40_0.png" alt="png"></p>
+<p><img src="self_study_ML/chapter1_3/output_40_1.png" alt="png"></p>
+<pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0], [29.7, 450.0], [29.7, 500.0], [30.0, 390.0], [30.0, 450.0], [30.7, 500.0], [31.0, 475.0], [31.0, 500.0], [31.5, 500.0], [32.0, 340.0], [32.0, 600.0], [32.0, 600.0], [33.0, 700.0], [33.0, 700.0], [33.5, 610.0], [33.5, 650.0], [34.0, 575.0], [34.0, 685.0], [34.5, 620.0], [35.0, 680.0], [35.0, 700.0], [35.0, 725.0], [35.0, 720.0], [36.0, 714.0], [36.0, 850.0], [37.0, 1000.0], [38.5, 920.0], [38.5, 955.0], [39.5, 925.0], [41.0, 975.0], [41.0, 950.0], [9.8, 6.7], [10.5, 7.5], [10.6, 7.0], [11.0, 9.7], [11.2, 9.8], [11.3, 8.7], [11.8, 10.0], [11.8, 9.9], [12.0, 9.8], [12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+</code></pre>
+<p><img src="self_study_ML/chapter1_3/output_40_3.png" alt="png"></p>
+<pre><code>[[  25.4  242. ]
+ [  26.3  290. ]
+ [  26.5  340. ]
+ [  29.   363. ]
+ [  29.   430. ]
+ [  29.7  450. ]
+ [  29.7  500. ]
+ [  30.   390. ]
+ [  30.   450. ]
+ [  30.7  500. ]
+ [  31.   475. ]
+ [  31.   500. ]
+ [  31.5  500. ]
+ [  32.   340. ]
+ [  32.   600. ]
+ [  32.   600. ]
+ [  33.   700. ]
+ [  33.   700. ]
+ [  33.5  610. ]
+ [  33.5  650. ]
+ [  34.   575. ]
+ [  34.   685. ]
+ [  34.5  620. ]
+ [  35.   680. ]
+ [  35.   700. ]
+ [  35.   725. ]
+ [  35.   720. ]
+ [  36.   714. ]
+ [  36.   850. ]
+ [  37.  1000. ]
+ [  38.5  920. ]
+ [  38.5  955. ]
+ [  39.5  925. ]
+ [  41.   975. ]
+ [  41.   950. ]
+ [   9.8    6.7]
+ [  10.5    7.5]
+ [  10.6    7. ]
+ [  11.     9.7]
+ [  11.2    9.8]
+ [  11.3    8.7]
+ [  11.8   10. ]
+ [  11.8    9.9]
+ [  12.     9.8]
+ [  12.2   12.2]
+ [  12.4   13.4]
+ [  13.    12.2]
+ [  14.3   19.7]
+ [  15.    19.9]]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0]
+0.7142857142857143
+</code></pre>
+<h2 id="마무리">마무리</h2>
+<h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
+<ul>
+<li>특성은 데이터를 표현하는 하나의 성질</li>
+<li>머신러닝 알고리즘이 데이터에서 규칙을 찾는 과정을 훈련(training) -&gt; 사이킷 런에는 fit()</li>
+<li>k-최근접 이웃 알고리즘은 가장 간단한 머신러닝 알고리즘 중 하나. 어떤 규칙을 찾기보다는 전체 데이터를 메모리에 가지고 있는 것이 전부</li>
+<li>머신러닝 프로그램에서는 알고리즘이 구현된 객체를 모델. 종종 알고리즘 자체를 모델이라 부르기도 함</li>
+<li>정확도는 정확한 답을 몇 개 맞혔는 지를 백분율로 나타낸 값. 사이킷 런에서는 0~1의 값으로 출력</li>
+</ul>
+<blockquote>
+<p>정확도 = (정확히 맞힌 개수) / (전체 데이터 개수)</p>
+</blockquote>
+<h3 id="핵심-패키지와-함수">핵심 패키지와 함수</h3>
+<ol>
+<li>matplotlib</li>
+</ol>
+<blockquote>
+<p>scatter()</p>
+</blockquote>
+<ul>
+<li>산점도를 그리는 함수</li>
+<li>c매개변수로 색상 지정 - &lsquo;b&rsquo;(파랑), &lsquo;g&rsquo;(초록), &lsquo;r&rsquo;(빨강), &lsquo;c&rsquo;(시안), &rsquo;m&rsquo;(마젠타), &lsquo;y&rsquo;(노랑), &lsquo;k&rsquo;(검정), &lsquo;w&rsquo;(흰색) 등</li>
+<li>marker 매개변수로 마커 스타일</li>
+</ul>
+<ol start="2">
+<li>scikit-learn</li>
+</ol>
+<blockquote>
+<ol>
+<li>KNeighborsClassifier()</li>
+</ol>
+</blockquote>
+<ul>
+<li>k-최근접 이웃 분류 모델을 만드는 사이킷 런 클래스</li>
+<li>n_neighbors 매개변수로 이웃의 개수를 지정. 기본값 = 5</li>
+<li>p 매개변수로 거리를 재는 방법을 지정 - 1일 경우 맨해튼 거리를 사용, 2일 경우 유클리디안 거리 사용. 기본값 = 2</li>
+<li>n_jobs 매개변수로 사용할 CPU 코어를 지정. -  -1로 설정시 모든 CPU 코어를 사용. 이웃 간의 거리 계산 속도들 높일 수 있었지만 fit() 메서드에는 영향이 없다. 기본값 = 1</li>
+</ul>
+<blockquote>
+<ol start="2">
+<li>fit()</li>
+</ol>
+</blockquote>
+<ul>
+<li>사이킷 런 모델을 훈련할 때 사용하는 메서드. 처음 두 매개변수로 훈련에 사용할 특성과 정답 데이터를 전달</li>
+</ul>
+<blockquote>
+<ol start="3">
+<li>predict()</li>
+</ol>
+</blockquote>
+<ul>
+<li>사이킷런 모델을 훈련하고 예측할 때 사용하는 메서드. 특성 데이터 하나만 매개변수로 받는다.</li>
+</ul>
+<blockquote>
+<ol start="4">
+<li>score()</li>
+</ol>
+</blockquote>
+<ul>
+<li>훈련된 사이킷런 모델의 성능을 측정. 처음 두 매개변수로 특성과 정답 데이터를 전달. 이 메서드는 먼저 predict() 메서드로 예측을 수행한 다음 분류 모델일 경우 정답과 비교하여 올바르게 예측한 개수의 비율을 반환</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/book/" rel="tag">Book</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-비교연산</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter1_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비교연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비트시프트연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-산술연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/">[CodeUp][Python][기초 100제] 기초-값변환</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
