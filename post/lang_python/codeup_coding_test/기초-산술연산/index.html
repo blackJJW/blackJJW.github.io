@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[CodeUp][Python][기초 100제] 기초-산술연산 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[CodeUp][Python][기초 100제] 기초-산술연산" />
+<meta property="og:description" content="Reference : https://codeup.kr/problemsetsol.php?psid=33 6032 : [기초-산술연산] 정수 1개 입력받아 부호 바꾸기(설명)(py) 문제 설명 입력된 정수의 부호를 바꿔 출력해보자.
+예시 &hellip; print(-n)
+참고 단항(unary) 연산자인 -(negative)를 변수 앞에 붙이면 부호가 반대인 값이 된다.
+입력 정수 1개가 입력
+출력 부호를 바꿔 출력
+a = int(input())  print(-a) 1 -1  6033 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)(py) 문제 설명 문자 1개를 입력받아 그 다음 문자를 출력해보자.
+영문자 &lsquo;A&rsquo;의 다음 문자는 &lsquo;B&rsquo;이고, 숫자 &lsquo;0&rsquo;의 다음 문자는 &lsquo;1&rsquo;이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-21T13:26:45+09:00" />
+<meta property="article:modified_time" content="2022-04-21T13:26:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[CodeUp][Python][기초 100제] 기초-산술연산</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-21T13:26:45&#43;09:00">April 21, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/python/" rel="category">Python</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="reference--httpscodeupkrproblemsetsolphppsid33">Reference : <a href="https://codeup.kr/problemsetsol.php?psid=33">https://codeup.kr/problemsetsol.php?psid=33</a></h1>
+<h1 id="6032--기초-산술연산-정수-1개-입력받아-부호-바꾸기설명py">6032 : [기초-산술연산] 정수 1개 입력받아 부호 바꾸기(설명)(py)</h1>
+<h2 id="문제-설명">문제 설명</h2>
+<p>입력된 정수의 부호를 바꿔 출력해보자.</p>
+<p>예시 <br>
+&hellip; <br>
+print(-n)</p>
+<p>참고  <br>
+단항(unary) 연산자인 -(negative)를 변수 앞에 붙이면 부호가 반대인 값이 된다.</p>
+<h3 id="입력">입력</h3>
+<p>정수 1개가 입력</p>
+<h3 id="출력">출력</h3>
+<p>부호를 바꿔 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> int(input())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#f92672">-</span>a)
+</span></span></code></pre></div><pre><code>1
+-1
+</code></pre>
+<h1 id="6033--기초-산술연산-문자-1개-입력받아-다음-문자-출력하기설명py">6033 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)(py)</h1>
+<h2 id="문제-설명-1">문제 설명</h2>
+<p>문자 1개를 입력받아 그 다음 문자를 출력해보자.<br>
+영문자 &lsquo;A&rsquo;의 다음 문자는 &lsquo;B&rsquo;이고, 숫자 &lsquo;0&rsquo;의 다음 문자는 &lsquo;1&rsquo;이다.</p>
+<p>예시<br>
+&hellip; <br>
+print(chr(n+1))</p>
+<p>참고<br>
+숫자는 수를 표현하는 문자로서 &lsquo;0&rsquo; 은 문자 그 자체를 의미하고, 0은 값을 의미한다.</p>
+<p>힌트<br>
+아스키문자표에서 &lsquo;A&rsquo;는 10진수 65로 저장되고 &lsquo;B&rsquo;는 10진수 66으로 저장된다.<br>
+따라서, 문자도 값으로 덧셈을 할 수 있다. 어떤 문자의 값에 1을 더하면 그 다음 문자의 값이 된다.</p>
+<h3 id="입력-1">입력</h3>
+<p>문자 1개가 입력</p>
+<h3 id="출력-1">출력</h3>
+<p>그 다음 문자를 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(chr(ord(a)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><pre><code>a
+b
+</code></pre>
+<h1 id="6034--기초-산술연산-정수-2개-입력받아-차-계산하기설명py">6034 : [기초-산술연산] 정수 2개 입력받아 차 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-2">문제 설명</h2>
+<p>정수 2개(a, b)를 입력받아 a에서 b를 뺀 차를 출력하는 프로그램을 작성해보자.</p>
+<p>예시<br>
+&hellip;<br>
+c = int(a) - int(b)<br>
+print(c)</p>
+<p>참고<br>
+수 - 수는 차(subtraction)가 계산된다.</p>
+<h3 id="입력-2">입력</h3>
+<p>2개의 정수가 공백으로 구분되어 입력</p>
+<h3 id="출력-2">출력</h3>
+<p>첫 번째 정수에서 두 번째 정수를 뺀 차를 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(int(a) <span style="color:#f92672">-</span> int(b))
+</span></span></code></pre></div><pre><code>123 123
+0
+</code></pre>
+<h1 id="6035--기초-산술연산-실수-2개-입력받아-곱-계산하기설명py">6035 : [기초-산술연산] 실수 2개 입력받아 곱 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-3">문제 설명</h2>
+<p>실수 2개(f1, f2)를 입력받아 곱을 출력하는 프로그램을 작성해보자.</p>
+<p>예시<br>
+&hellip;<br>
+m = float(f1) * float(f2) <br>
+print(m)</p>
+<p>참고<br>
+수 * 수는 곱(multiplication)이 계산된다.</p>
+<h3 id="입력-3">입력</h3>
+<p>2개의 실수가 공백으로 구분되어 입력</p>
+<h3 id="출력-3">출력</h3>
+<p>첫 번째 실수와 두 번째 실수를 곱한 값을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(float, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">*</span>b)
+</span></span></code></pre></div><pre><code>1.2 3.4
+4.08
+</code></pre>
+<h1 id="6036--기초-산술연산-단어-여러-번-출력하기설명py">6036 : [기초-산술연산] 단어 여러 번 출력하기(설명)(py)</h1>
+<h2 id="문제-설명-4">문제 설명</h2>
+<p>단어와 반복 횟수를 입력받아 여러 번 출력해보자.</p>
+<p>예시<br>
+w, n = input().split()<br>
+print(w*int(n))</p>
+<p>참고<br>
+문자열 * 정수 또는 정수 * 문자열은 그 문자열을 여러 번 반복한 문자열을 만들어 준다.</p>
+<h3 id="입력-4">입력</h3>
+<p>단어와 반복 회수가 공백으로 구분되어 입력</p>
+<h3 id="출력-4">출력</h3>
+<p>입력된 단어를 입력된 횟수만큼 반복해 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> input()<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a <span style="color:#f92672">*</span> int(b))
+</span></span></code></pre></div><pre><code>program 3
+programprogramprogram
+</code></pre>
+<h1 id="6037--기초-산술연산-문장-여러-번-출력하기설명py">6037 : [기초-산술연산] 문장 여러 번 출력하기(설명)(py)</h1>
+<h2 id="문제-설명-5">문제 설명</h2>
+<p>반복 횟수와 문장을 입력받아 여러 번 출력해보자.</p>
+<p>예시<br>
+n = input()<br>
+s = input()<br>
+print(int(n)*s)</p>
+<p>참고<br>
+문자열 * 정수 또는 정수 * 문자열은 그 문자열을 여러 번 반복한 문자열을 만들어 준다.</p>
+<h3 id="입력-5">입력</h3>
+<p>반복 횟수와 문장이 줄을 바꿔 입력</p>
+<h3 id="출력-5">출력</h3>
+<p>입력된 횟수만큼 문장을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(str(b)<span style="color:#f92672">*</span>int(a))
+</span></span></code></pre></div><pre><code>3
+I like python
+I like pythonI like pythonI like python
+</code></pre>
+<h1 id="6038--기초-산술연산-정수-2개-입력받아-거듭제곱-계산하기설명py">6038 : [기초-산술연산] 정수 2개 입력받아 거듭제곱 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-6">문제 설명</h2>
+<p>정수 2개(a, b)를 입력받아<br>
+a를 b번 곱한 거듭제곱을 출력하는 프로그램을 작성해보자.</p>
+<p>예시<br>
+&hellip;<br>
+c = int(a)**int(b) <br>
+print(c)</p>
+<p>참고<br>
+python 언어에서는 거듭제곱을 계산하는 연산자(**)를 제공한다.<br>
+일반적으로 수학 식에서 거듭제곱을 표현하는 사용하는 서컴플렉스/케릿 기호(^)는 프로그래밍언어에서 다른 의미로 쓰인다.</p>
+<h3 id="입력-6">입력</h3>
+<p>2개의 정수(a, b)가 공백으로 구분되어 입력</p>
+<h3 id="출력-6">출력</h3>
+<p>a를 b번 거듭제곱한 값을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(int(a)<span style="color:#f92672">**</span>int(b))
+</span></span></code></pre></div><pre><code>2 3
+8
+</code></pre>
+<h1 id="6039--기초-산술연산-실수-2개-입력받아-거듭제곱-계산하기py">6039 : [기초-산술연산] 실수 2개 입력받아 거듭제곱 계산하기(py)</h1>
+<h2 id="문제-설명-7">문제 설명</h2>
+<p>실수 2개(f1, f2)를 입력받아<br>
+f1을 f2번 거듭제곱한 값을 출력하는 프로그램을 작성해보자.</p>
+<p>참고<br>
+python 언어에서는 거듭제곱(exponentiation)을 계산하는 연산자(**)를 제공한다.<br>
+일반적으로 수학 식에서 거듭제곱을 표현하는 사용하는 서컴플렉스/케릿 기호(^)는 프로그래밍언어에서 다른 의미로 쓰인다.</p>
+<h3 id="입력-7">입력</h3>
+<p>2개의 실수(f1, f2)가 공백으로 구분되어 입력</p>
+<h3 id="출력-7">출력</h3>
+<p>f1을 f2번 거듭제곱한 값을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(float, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">**</span>b)
+</span></span></code></pre></div><pre><code>1.2 3.4
+1.858729691979481
+</code></pre>
+<h1 id="6040--기초-산술연산-정수-2개-입력받아-나눈-몫-계산하기설명py">6040 : [기초-산술연산] 정수 2개 입력받아 나눈 몫 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-8">문제 설명</h2>
+<p>정수 2개(a, b) 를 입력받아 a를 b로 나눈 몫을 출력해보자.</p>
+<p>예시<br>
+&hellip;<br>
+print(a//b)</p>
+<p>참고<br>
+python언어에서는 나눈 몫을 계산하는 연산자(//, floor division)를 제공한다.<br>
+a//b 와 같이 작성하면, a를 b로 나눈 몫(quotient)을 계산해준다.<br>
+프로그래밍언어에 따라 이렇게 몫을 계산해주는 연산자가 없는 경우도 있다.</p>
+<p>실수로 나눈 몫이 어떻게 계산될지도 생각해보자.</p>
+<h3 id="입력-8">입력</h3>
+<p>2개의 정수(a, b)가 공백으로 구분되어 입력</p>
+<h3 id="출력-8">출력</h3>
+<p>a를 b로 나눈 몫을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">//</span>b)
+</span></span></code></pre></div><pre><code>10 5
+2
+</code></pre>
+<h1 id="6041--기초-산술연산-정수-2개-입력받아-나눈-나머지-계산하기설명py">6041 : [기초-산술연산] 정수 2개 입력받아 나눈 나머지 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-9">문제 설명</h2>
+<p>정수 2개(a, b) 를 입력받아 a를 b로 나눈 나머지를 출력해보자.</p>
+<p>예시<br>
+&hellip;<br>
+print(a%b)</p>
+<p>참고<br>
+python 언어에서는 나눈 나머지를 계산하는 연산자(%, remainder)를 제공한다.<br>
+a%b 와 같이 작성하면, a를 b로 나눈 나머지(remainder)를 계산해준다. <br>
+나머지 연산(modulus, mod 연산)은 수학자 가우스가 생각해 낸 연산으로,<br>
+어떤 수를 다른 수로 나누고 난 후 남는 나머지를 계산하는 연산이다.</p>
+<p>실수로 나눈 나머지가 어떻게 계산될지도 생각해보자.</p>
+<h3 id="입력-9">입력</h3>
+<p>2개의 정수(a, b)가 공백으로 구분되어 입력</p>
+<h3 id="출력-9">출력</h3>
+<p>a를 b로 나눈 나머지를 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a <span style="color:#f92672">%</span> b)
+</span></span></code></pre></div><pre><code>10 3
+1
+</code></pre>
+<h1 id="6043--기초-산술연산-실수-2개-입력받아-나눈-결과-계산하기py">6043 : [기초-산술연산] 실수 2개 입력받아 나눈 결과 계산하기(py)</h1>
+<h2 id="문제-설명-10">문제 설명</h2>
+<p>실수 2개(f1, f2)를 입력받아<br>
+f1 을 f2 로 나눈 값을 출력해보자. 이 때 소숫점 넷째자리에서 반올림하여 무조건 소숫점 셋째 자리까지 출력한다.</p>
+<p>참고<br>
+python 언어에는 나눗셈(division)을 계산하는 연산자(/)가 있다.</p>
+<p>컴퓨터 프로그래밍에서 실수 변환이나 실수를 사용하는 계산은 <br>
+정확하게 변환되거나 계산되는 것이 아니라, 거의 모두 근사값으로 계산되는 것이라고 할 수 있다.</p>
+<p>실수가 컴퓨터로 저장되기 위해서는 디지털방식으로 2진 정수화되어 저장되어야 하는데, <br>
+그 과정에서 아주 작은 부분이 저장되지 않고 사라지는 잘림(truncation) 오차가 자주 발생하기 때문이다.</p>
+<p>계산 결과값 중에서 믿을 수 있는 숫자의 개수를 의미하는, 유효숫자에 대해 찾아보자.<br>
+과학실험에서 온도나 부피를 측정할 때에도 유효숫자는 중요하다.</p>
+<h3 id="입력-10">입력</h3>
+<p>2개의 실수(f1, f2)가 공백으로 구분되어 입력</p>
+<h3 id="출력-10">출력</h3>
+<p>f1을 f2로 나눈 결과를 소숫점 이하 넷째 자리에서 반올림하여 소숫점 세 번째 자리까지 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> map(float, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> a <span style="color:#f92672">/</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span> c)
+</span></span></code></pre></div><pre><code>4.3 2.1
+2.048
+</code></pre>
+<h1 id="6044--기초-산술연산-정수-2개-입력받아-자동-계산하기py">6044 : [기초-산술연산] 정수 2개 입력받아 자동 계산하기(py)</h1>
+<h2 id="문제-설명-11">문제 설명</h2>
+<p>정수 2개(a, b)를 입력받아 합, 차, 곱, 몫, 나머지, 나눈 값을 자동으로 계산해보자. <br>
+단 0 &lt;= a, b &lt;= 2147483647, b는 0이 아니다.</p>
+<h3 id="입력-11">입력</h3>
+<p>정수 2개가 공백을 두고 입력</p>
+<h3 id="출력-11">출력</h3>
+<p>첫 번째 줄에 합<br>
+두 번째 줄에 차,<br>
+세 번째 줄에 곱,<br>
+네 번째 줄에 몫,<br>
+다섯 번째 줄에 나머지,<br>
+여섯 번째 줄에 나눈 값을 순서대로 출력한다.<br>
+(실수, 소수점 이하 둘째 자리까지의 정확도로 출력)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cal</span>(a, b):
+</span></span><span style="display:flex;"><span>    print(a<span style="color:#f92672">+</span>b)
+</span></span><span style="display:flex;"><span>    print(a<span style="color:#f92672">-</span>b)
+</span></span><span style="display:flex;"><span>    print(a<span style="color:#f92672">*</span>b)
+</span></span><span style="display:flex;"><span>    print(a<span style="color:#f92672">//</span>b)
+</span></span><span style="display:flex;"><span>    print(a<span style="color:#f92672">%</span>b)
+</span></span><span style="display:flex;"><span>    print(round(a<span style="color:#f92672">/</span>b, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x, y <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())    
+</span></span><span style="display:flex;"><span>cal(x, y)
+</span></span></code></pre></div><pre><code>1 2
+3
+-1
+2
+0
+1
+0.5
+</code></pre>
+<h1 id="6045--기초-산술연산-정수-3개-입력받아-합과-평균-출력하기설명py">6045 : [기초-산술연산] 정수 3개 입력받아 합과 평균 출력하기(설명)(py)</h1>
+<h2 id="문제-설명-12">문제 설명</h2>
+<p>정수 3개를 입력받아 합과 평균을 출력해보자.</p>
+<p>참고<br>
+공백으로 구분된 한 줄로 값들을 입력받기 위해서는<br>
+a, b, c = input().split()<br>
+과 같은 방법이 가능하고,</p>
+<p>공백으로 구분해 두 값을 출력하기 위해서는<br>
+print(d, e)<br>
+와 같은 방법이 가능하다.</p>
+<p>잘라낸 값들은 그 값의 특성(정수, 실수, 문자, 문자열 &hellip;)에 따라 명확하게 변환시킨 후 사용하는 것이 좋다.</p>
+<p>python 프로그래밍을 처음 배울 때 좋은 습관(단계)</p>
+<ol>
+<li>입력된 문자열을 정확하게 잘라낸다.(공백, 줄바꿈, 구분문자 등에 따라 정확하게 잘라낸다.)</li>
+<li>잘라낸 데이터들을 데이터형에 맞게 변환해 변수에 저장한다. (정수, 실수, 문자, 문자열 등에 따라 정확하게 변환한다.)</li>
+<li>값을 저장했다가 다시 사용하기 위해, 변수를 이용해 값을 저장하고, 변수를 이용해 계산을 한다.</li>
+<li>원하는 결과 값을 필요한 형태로 만들어 출력한다.(공백, 줄바꿈, 구분자, 등에 따라 원하는 형태로 만들어 출력한다.)</li>
+</ol>
+<h3 id="입력-12">입력</h3>
+<p>정수 3개가 공백을 두고 입력</p>
+<h3 id="출력-12">출력</h3>
+<p>합과 평균을 두고 출력.<br>
+평균은 소숫점 이하 셋째 자리에서 반올림하여 둘째 자리까지 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b, c, <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">+</span>b<span style="color:#f92672">+</span>c, format((a<span style="color:#f92672">+</span>b<span style="color:#f92672">+</span>c)<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;.2f&#39;</span>))
+</span></span></code></pre></div><pre><code>1 2 3
+6 2.00
+</code></pre>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding-test/" rel="tag">Coding Test</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeup/" rel="tag">CodeUp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeuppython/" rel="tag">CodeUp(Python)</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-값변환</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-비트시프트연산</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/self_study_ml/chapter1_3/chapter1_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비교연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비트시프트연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-산술연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/">[CodeUp][Python][기초 100제] 기초-값변환</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

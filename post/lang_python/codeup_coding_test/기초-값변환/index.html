@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[CodeUp][Python][기초 100제] 기초-값변환 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[CodeUp][Python][기초 100제] 기초-값변환" />
+<meta property="og:description" content="Reference : https://codeup.kr/problemsetsol.php?psid=33 6025 : [기초-값변환] 정수 2개 입력받아 합 계산하기(설명)(py) 문제 설명 정수 2개를 입력받아
+합을 출력하는 프로그램을 작성해보자.
+예시
+a, b = input().split()
+c = int(a) &#43; int(b)
+print(c)
+참고 입력되는 값은 기본적으로 문자열로 인식된다.
+문자열 &#43; 문자열은 두 문자열을 합친 문자열을 만든다. 숫자로 구성된 문자열이나 실수를 정수(integer) 값으로 바꾸기 위해서는 int( ) 를 사용할 수 있다. 수 &#43; 수의 결과는 합(addition)이 계산된다.
+입력 2개의 정수가 공백으로 구분되어 입력" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-21T13:24:45+09:00" />
+<meta property="article:modified_time" content="2022-04-21T13:24:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[CodeUp][Python][기초 100제] 기초-값변환</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-21T13:24:45&#43;09:00">April 21, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/python/" rel="category">Python</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="reference--httpscodeupkrproblemsetsolphppsid33">Reference : <a href="https://codeup.kr/problemsetsol.php?psid=33">https://codeup.kr/problemsetsol.php?psid=33</a></h1>
+<h1 id="6025--기초-값변환-정수-2개-입력받아-합-계산하기설명py">6025 : [기초-값변환] 정수 2개 입력받아 합 계산하기(설명)(py)</h1>
+<h2 id="문제-설명">문제 설명</h2>
+<p>정수 2개를 입력받아<br>
+합을 출력하는 프로그램을 작성해보자.</p>
+<p>예시<br>
+a, b = input().split()<br>
+c = int(a) + int(b)<br>
+print(c)</p>
+<p>참고 <br>
+입력되는 값은 기본적으로 문자열로 인식된다.</p>
+<p>문자열 + 문자열은 두 문자열을 합친 문자열을 만든다. <br>
+숫자로 구성된 문자열이나 실수를 정수(integer) 값으로 바꾸기 위해서는 int( ) 를 사용할 수 있다. <br>
+수 + 수의 결과는 합(addition)이 계산된다.</p>
+<h3 id="입력">입력</h3>
+<p>2개의 정수가 공백으로 구분되어 입력</p>
+<h3 id="출력">출력</h3>
+<p>두 정수의 합을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> input()<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(int(a)<span style="color:#f92672">+</span>int(b))
+</span></span></code></pre></div><pre><code>1 2
+3
+</code></pre>
+<h1 id="6026--기초-값변환-실수-2개-입력받아-합-계산하기설명py">6026 : [기초-값변환] 실수 2개 입력받아 합 계산하기(설명)(py)</h1>
+<h2 id="문제-설명-1">문제 설명</h2>
+<p>실수 2개를 입력받아<br>
+합을 출력하는 프로그램을 작성해보자.</p>
+<p>참고 <br>
+입력되는 값은 기본적으로 문자열로 인식된다.</p>
+<p>숫자로 구성된 문자열이나 정수를 실수(real number) 값으로 바꾸기 위해서는 float( ) 를 사용할 수 있다. <br>
+소숫점(.)은 그 위치가 정해져있지 않고 이리저리 둥둥 떠다니므로, floating point라고 부른다.</p>
+<h3 id="입력-1">입력</h3>
+<p>2개의 실수가 줄을 바꿔 입력</p>
+<h3 id="출력-1">출력</h3>
+<p>두 실수의 합을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(float(a)<span style="color:#f92672">+</span>float(b))
+</span></span></code></pre></div><pre><code>1.2
+2.3
+3.5
+</code></pre>
+<h1 id="6029--기초-값변환-16진-정수-입력받아-8진수로-출력하기설명py">6029 : [기초-값변환] 16진 정수 입력받아 8진수로 출력하기(설명)(py)</h1>
+<h2 id="문제-설명-2">문제 설명</h2>
+<p>16진수를 입력받아 8진수(octal)로 출력해보자.</p>
+<p>예시<br>
+a = input()<br>
+n = int(a, 16)      #입력된 a를 16진수로 인식해 변수 n에 저장<br>
+print(&rsquo;%o&rsquo; % n)  #n에 저장되어있는 값을 8진수(octal) 형태 문자열로 출력</p>
+<p>참고 <br>
+8진법은 한 자리에 8개(0 1 2 3 4 5 6 7)의 문자를 사용한다.<br>
+8진수 10은 10진수의 8, 11은 9, 12는 10 &hellip; 와 같다.</p>
+<h3 id="입력-2">입력</h3>
+<p>16진 정수 1개가 입력</p>
+<h3 id="출력-2">출력</h3>
+<p>8진수 형태로 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> int(a, <span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%o</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span> n)
+</span></span></code></pre></div><pre><code>f
+17
+</code></pre>
+<h1 id="6030--기초-값변환-영문자-1개-입력받아-10진수로-변환하기설명py">6030 : [기초-값변환] 영문자 1개 입력받아 10진수로 변환하기(설명)(py)</h1>
+<h2 id="문제-설명-3">문제 설명</h2>
+<p>영문자 1개를 입력받아 10진수 유니코드(Unicode) 값으로 출력해보자.</p>
+<p>예시<br>
+n = ord(input())<br>
+print(n)</p>
+<p>참고<br>
+n = ord(input())  #입력받은 문자를 10진수 유니코드 값으로 변환한 후, n에 저장한다.</p>
+<p>ord( ) 는 어떤 문자의 순서 위치(ordinal position) 값을 의미한다.   <br>
+실제로 각각의 문자들에는 연속된 정수 값이 순서에 따라 부여 되어 있다. A:65, B:66, C:67 &hellip;. <br>
+ord(c) : 문자 c 를 10진수로 변환한 값</p>
+<p>컴퓨터로 저장되고 처리되는 모든 데이터들은 2진수 형태로 정수화 되어야 하는데,<br>
+컴퓨터에 문자를 저장하는 방법으로 아스키코드(ASCII Code)나 유니코드(Unicode)가 자주 사용된다.</p>
+<p>예를 들어, 영문 대문자 &lsquo;A&rsquo;는 10진수 값 65 로 표현하고, <br>
+2진수(binary digit) 값 1000001 로 바꾸어 컴퓨터 내부에 저장한다.</p>
+<p>유니코드(unicode)는 세계 여러 나라의 문자를 공통된 코드 값으로 저장할 때 사용하는 표준 코드이다.</p>
+<h3 id="입력-3">입력</h3>
+<p>유니코드 영문자 1개가 입력</p>
+<h3 id="출력-3">출력</h3>
+<p>유니코드 값을 10진수로 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> input()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> ord(a)
+</span></span><span style="display:flex;"><span>print(b)
+</span></span></code></pre></div><pre><code>a
+97
+</code></pre>
+<h1 id="6031--기초-값변환-정수-입력받아-유니코드-문자로-변환하기설명py">6031 : [기초-값변환] 정수 입력받아 유니코드 문자로 변환하기(설명)(py)</h1>
+<h2 id="문제-설명-4">문제 설명</h2>
+<p>10진 정수 1개를 입력받아<br>
+유니코드 문자로 출력해보자.</p>
+<p>예시<br>
+c = int(input())<br>
+print(chr(c))  #c에 저장되어 있는 정수 값을 유니코드 문자(chracter)로 바꿔 출력한다.</p>
+<p>참고<br>
+입력은 기본적으로 모두 문자열로 입력되는 것이라고 할 수 있다. <br>
+따라서, 입력 값이 문자/문자열/정수/실수인지에 따라서 먼저 정확하게 변환시킨 다음에 사용하거나 계산하는 것이 좋다.</p>
+<p>예를 들어 123 이 입력 되었다고 한다면, 이건 정수일까? 문자열일까?<br>
+조금 생각해보면, 입력된 것만 보고는 그 값이 어떤 데이터인지 알 수 없다는 것을 쉽게 이해할 수 있다.<br>
+따라서, 그 입력 값을 어떻게 해석하고 변환할 지에 대해서 명확하게 작성해 주어야 하는 것이다.</p>
+<p>chr( )는 정수값-&gt;문자, ord( )는 문자-&gt;정수값 형태로 바꿔주는 서로 반대 방향으로 바꾸어 주는 기능을 한다.</p>
+<h3 id="입력-4">입력</h3>
+<p>10진 정수 1개(32 ~ 126 범위) 입력</p>
+<h3 id="출력-4">출력</h3>
+<p>유니코드 문자로 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> int(input())
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> chr(a)
+</span></span><span style="display:flex;"><span>print(b)
+</span></span></code></pre></div><pre><code>5
+
+</code></pre>
+<h1 id="6042--기초-값변환-실수-1개-입력받아-소숫점이하-자리-변환하기설명py">6042 : [기초-값변환] 실수 1개 입력받아 소숫점이하 자리 변환하기(설명)(py)</h1>
+<h2 id="문제-설명-5">문제 설명</h2>
+<p>실수 1개를 입력받아<br>
+소숫점 이하 두 번째 자리까지의 정확도로 반올림한 값을 출력해보자.</p>
+<p>예시</p>
+<p>a=float(input())<br>
+print( format(a, &ldquo;.2f&rdquo;) )</p>
+<p>참고<br>
+format(수, &ldquo;.2f&rdquo;) 를 사용하면 원하는 자리까지의 정확도로 반올림 된 실수 값을 만들어 준다.</p>
+<p>여기서 만들어진 값은 소수점 아래 3번째 자리에서 반올림한 값이다.</p>
+<p>컴퓨터 프로그래밍에서 실수 변환이나 실수를 사용하는 계산은 <br>
+정확하게 변환되거나 계산되는 것이 아니라, 거의 모두 근사값으로 계산되는 것이라고 할 수 있다.</p>
+<p>실수가 컴퓨터로 저장되기 위해서는 디지털방식으로 2진 정수화되어 저장되어야 하는데, <br>
+그 과정에서 아주 작은 부분이 저장되지 않고 사라지는 잘림(truncation) 오차가 자주 발생하기 때문이다.</p>
+<h3 id="입력-5">입력</h3>
+<p>실수 1개가 입력</p>
+<h3 id="출력-5">출력</h3>
+<p>소수점 이하 두 번째 자리까지의 정확도로 반올림한 값을 출력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> float(input())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span> a)
+</span></span></code></pre></div><pre><code>3.141592
+3.14
+</code></pre>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding-test/" rel="tag">Coding Test</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeup/" rel="tag">CodeUp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeuppython/" rel="tag">CodeUp(Python)</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%9E%85%EC%B6%9C%EB%A0%A5/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-입출력</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-산술연산</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/self_study_ml/chapter1_3/chapter1_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비교연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비트시프트연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-산술연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/">[CodeUp][Python][기초 100제] 기초-값변환</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

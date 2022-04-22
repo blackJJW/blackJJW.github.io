@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Mainroad</title>
+    <title>Categories on Black_JJW&#39;s Blog</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Mainroad</description>
+    <description>Recent content in Categories on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 15:24:45 +0900</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Development</title>
-      <link>/categories/development/</link>
-      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      <title>ML</title>
+      <link>/categories/ml/</link>
+      <pubDate>Fri, 22 Apr 2022 15:24:45 +0900</pubDate>
       
-      <guid>/categories/development/</guid>
+      <guid>/categories/ml/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>golang</title>
-      <link>/categories/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Thu, 21 Apr 2022 13:40:45 +0900</pubDate>
       
-      <guid>/categories/golang/</guid>
+      <guid>/categories/python/</guid>
       <description></description>
     </item>
     

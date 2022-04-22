@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[CodeUp][Python][기초 100제] 기초-출력 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[CodeUp][Python][기초 100제] 기초-출력" />
+<meta property="og:description" content="Reference : https://codeup.kr/problemsetsol.php?psid=33 6001 : [기초-출력] 출력하기01(설명)(py) 문제 설명 python 언어에서 가장 기본적인 명령이 출력문이다. print( )를 이용해 다음 단어를 출력하시오.
+Hello
+예시
+print(&ldquo;Hello&rdquo;)
+참고 python IDE 프로그램을 설치한 후, 아래와 같은 소스 코드를 작성하고 실행시키면, 지정한 &ldquo;문장&quot;이 출력(print)된다. print(&ldquo;문장&rdquo;)
+입력 없음
+출력 Hello
+print(&#34;Hello&#34;) Hello 6002 : [기초-출력] 출력하기02(설명)(py) 문제 설명 이번에는 공백( )을 포함한 문장을 출력한다. 다음 문장을 출력해보자.
+Hello World
+(대소문자에 주의한다.)
+참고
+print(&ldquo;문장1 문장2&rdquo;)
+을 실행시키면 &ldquo;문장1”, &ldquo;문장2&quot;가 공백( )을 사이에 두고 출력된다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-21T03:43:43+09:00" />
+<meta property="article:modified_time" content="2022-04-21T03:43:43+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[CodeUp][Python][기초 100제] 기초-출력</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-21T03:43:43&#43;09:00">April 21, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/python/" rel="category">Python</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="reference--httpscodeupkrproblemsetsolphppsid33">Reference : <a href="https://codeup.kr/problemsetsol.php?psid=33">https://codeup.kr/problemsetsol.php?psid=33</a></h1>
+<h1 id="6001--기초-출력-출력하기01설명py">6001 : [기초-출력] 출력하기01(설명)(py)</h1>
+<h2 id="문제-설명">문제 설명</h2>
+<p>python 언어에서 가장 기본적인 명령이 출력문이다.
+print( )를 이용해 다음 단어를 출력하시오.</p>
+<p>Hello</p>
+<p>예시<br>
+print(&ldquo;Hello&rdquo;)</p>
+<p>참고
+python IDE 프로그램을 설치한 후,
+아래와 같은 소스 코드를 작성하고 실행시키면,
+지정한 &ldquo;문장&quot;이 출력(print)된다.
+print(&ldquo;문장&rdquo;)</p>
+<h3 id="입력">입력</h3>
+<p>없음</p>
+<h3 id="출력">출력</h3>
+<p>Hello</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello&#34;</span>)
+</span></span></code></pre></div><pre><code>Hello
+</code></pre>
+<h1 id="6002--기초-출력-출력하기02설명py">6002 : [기초-출력] 출력하기02(설명)(py)</h1>
+<h2 id="문제-설명-1">문제 설명</h2>
+<p>이번에는 공백( )을 포함한 문장을 출력한다.
+다음 문장을 출력해보자.</p>
+<p>Hello World<br>
+(대소문자에 주의한다.)</p>
+<p>참고<br>
+print(&ldquo;문장1 문장2&rdquo;)<br>
+을 실행시키면 &ldquo;문장1”, &ldquo;문장2&quot;가 공백( )을 사이에 두고 출력된다.
+print(&ldquo;문장1&rdquo;, &ldquo;문장2&rdquo;)<br>
+도 &ldquo;문장1&quot;과 &ldquo;문장2&rdquo; 사이에 공백( )을 출력한다.</p>
+<h3 id="입력-1">입력</h3>
+<p>없음</p>
+<h3 id="출력-1">출력</h3>
+<p>Hello World</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello World&#34;</span>)
+</span></span></code></pre></div><pre><code>Hello World
+</code></pre>
+<h1 id="6003--기초-출력-출력하기03설명py">6003 : [기초-출력] 출력하기03(설명)(py)</h1>
+<h2 id="문제-설명-2">문제 설명</h2>
+<p>이번에는 줄을 바꿔 출력하는 출력문을 연습해보자.
+다음과 같이 줄을 바꿔 출력해야 한다.</p>
+<p>Hello<br>
+World<br>
+(두 줄에 걸쳐 줄을 바꿔 출력)</p>
+<p>예시<br>
+print(&ldquo;Hello&rdquo;)<br>
+print(&ldquo;World&rdquo;)</p>
+<p>참고<br>
+python의 기본 print( ) 를 이용해 출력하면 문장을 출력한 후 마지막에 줄을 바꾼다.(new line)
+출력 후 줄을 바꾸는 대신 스페이스( ) 공백을 붙이도록 설정하는 방법도 있다.</p>
+<h3 id="입력-2">입력</h3>
+<p>없음</p>
+<h3 id="출력-2">출력</h3>
+<p>Hello</p>
+<p>World</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;World&#34;</span>)
+</span></span></code></pre></div><pre><code>Hello
+World
+</code></pre>
+<h1 id="6004--기초-출력-출력하기04설명py">6004 : [기초-출력] 출력하기04(설명)(py)</h1>
+<h2 id="문제-설명-3">문제 설명</h2>
+<p>이번에는 작은 따옴표(&rsquo;)(single quotation mark)가 들어있는
+출력문 연습을 해보자.</p>
+<p>다음 문장을 출력하시오.</p>
+<p>&lsquo;Hello&rsquo;</p>
+<p>예시<br>
+print(&rdquo; &rsquo; &ldquo;);</p>
+<h3 id="입력-3">입력</h3>
+<p>없음</p>
+<h3 id="출력-3">출력</h3>
+<p>&lsquo;Hello&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">Hello</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><pre><code>'Hello'
+</code></pre>
+<h1 id="6005--기초-출력-출력하기05설명py">6005 : [기초-출력] 출력하기05(설명)(py)</h1>
+<h2 id="문제-설명-4">문제 설명</h2>
+<p>이번에는 큰따옴표(&rdquo;)(double quotation mark)가 포함된 출력문을 연습해보자.</p>
+<p>다음 문장을 출력하시오.</p>
+<p>&ldquo;Hello World&rdquo;
+(단, 큰따옴표도 함께 출력한다.)</p>
+<p>예시
+print(&rsquo; &quot; &lsquo;);</p>
+<h3 id="입력-4">입력</h3>
+<p>없음</p>
+<h3 id="출력-4">출력</h3>
+<p>&ldquo;Hello World&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Hello World</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><pre><code>&quot;Hello World&quot;
+</code></pre>
+<h1 id="6006--기초-출력-출력하기06py">6006 : [기초-출력] 출력하기06(py)</h1>
+<h2 id="문제-설명-5">문제 설명</h2>
+<p>이번에는 특수문자 출력에 도전하자!!</p>
+<p>다음 문장을 출력하시오.</p>
+<p>&ldquo;!@#$%^&amp;*()&rsquo;
+(단, 큰따옴표와 작은따옴표도 함께 출력한다.)</p>
+<p>출력 형식에 필요한 따옴표와 출력할 문자인 따옴표를 구분하기 위하여</p>
+<p>&quot; 또는 ' 를 이용하여 출력할 수 있다.</p>
+<h3 id="입력-5">입력</h3>
+<p>없음</p>
+<h3 id="출력-5">출력</h3>
+<p>&ldquo;!@#$%^&amp;*()&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">!@#$%^&amp;*()</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><pre><code>&quot;!@#$%^&amp;*()'
+</code></pre>
+<h1 id="6007--기초-출력-출력하기07py">6007 : [기초-출력] 출력하기07(py)</h1>
+<h2 id="문제-설명-6">문제 설명</h2>
+<p>윈도우 운영체제의 파일 경로를 출력하는 연습을 해보자.</p>
+<p>파일 경로에는 특수문자들이 포함된다.</p>
+<p>다음 경로를 출력하시오.</p>
+<p>&ldquo;C:\Download'hello&rsquo;.py&rdquo;
+(단, 따옴표도 함께 출력한다.)</p>
+<p>\도 안전하게 출력하려면 \를 사용하는 것이 좋다.</p>
+<h3 id="입력-6">입력</h3>
+<p>없음</p>
+<h3 id="출력-6">출력</h3>
+<p>&ldquo;C:\Download'hello&rsquo;.py&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">C:\Download</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;hello</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">.py</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><pre><code>&quot;C:\Download\'hello'.py&quot;
+</code></pre>
+<h1 id="6008--기초-출력-출력하기08py">6008 : [기초-출력] 출력하기08(py)</h1>
+<h2 id="문제-설명-7">문제 설명</h2>
+<p>출력문 연습의 마지막 문제이다.
+(생각과 시도를 많이 해야하는 문제들은 한 두 문제씩 넘겼다가 나중에 풀어보면 된다.)</p>
+<p>이번에는 다음과 같은 python프로그램의 소스코드를 출력해보자.</p>
+<p>print(&ldquo;Hello\nWorld&rdquo;)</p>
+<p>위 코드를 정확히 그대로 출력하시오.(공백문자 주의)</p>
+<p>print 명령 안에 서식 문자로 \n을 사용하면 줄 바꿈(new line) 문자로 사용된다.</p>
+<p>그렇다면 \n을 화면에 그대로 출력하려면 어떻게 해야될까?</p>
+<h3 id="입력-7">입력</h3>
+<p>없음</p>
+<h3 id="출력-7">출력</h3>
+<p>print(&ldquo;Hello\nWorld&rdquo;)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;print(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Hello</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">nWorld</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">)&#34;</span>)
+</span></span></code></pre></div><pre><code>print(&quot;Hello\nWorld&quot;)
+</code></pre>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding-test/" rel="tag">Coding Test</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeup/" rel="tag">CodeUp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/codeuppython/" rel="tag">CodeUp(Python)</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5%EB%B3%80%ED%99%98/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[CodeUp][Python][기초 100제] 기초-출력변환</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/self_study_ml/chapter1_3/chapter1_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비교연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-비트시프트연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/">[CodeUp][Python][기초 100제] 기초-산술연산</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/">[CodeUp][Python][기초 100제] 기초-값변환</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
