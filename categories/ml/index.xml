@@ -6,7 +6,20 @@
     <description>Recent content in ML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 15:24:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 16:24:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch2-1 훈련 세트와 테스트 세트</title>
+      <link>/post/ml/book/chapter2_1/</link>
+      <pubDate>Fri, 22 Apr 2022 16:24:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter2_1/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 02-1 훈련 세트와 테스트 세트 지도 학습(supervised learning)과 비지도 학습(unsupervised learning)   지도 학습 알고리즘은 훈련하기 위한 데이터와 정답이 필요
+  지도 학습에서는 데이터와 정답을 입력(input)과 타깃(target), 이 둘을 합쳐 훈련 데이터(training data)
+  입력과 타깃 : 독립변수(입력), 종속변수(타깃)
+  지도 학습 알고리즘은 입력(데이터)과 타깃(정답)으로 이뤄진 훈련 데이터가 필요
+  입력 데이터만 있을 때는 비지도 학습 알고리즘을 사용</description>
+    </item>
+    
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류</title>
       <link>/post/ml/book/chapter1_3/</link>
