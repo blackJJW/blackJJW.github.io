@@ -6,7 +6,16 @@
     <description>Recent content in Book on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 16:30:45 +0900</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 16:31:45 +0900</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-1 결정 트리</title>
+      <link>/post/ml/book/chapter5_1/</link>
+      <pubDate>Fri, 22 Apr 2022 16:31:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter5_1/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 05-1 결정 트리 로지스틱 회귀로 와인 분류 import pandas as pd wine = pd.read_csv(&amp;#39;https://bit.ly/wine_csv_data&amp;#39;) wine.head()     alcohol sugar pH class     0 9.4 1.9 3.51 0.0   1 9.8 2.6 3.20 0.0   2 9.8 2.3 3.26 0.0   3 9.8 1.9 3.16 0.0   4 9.4 1.9 3.51 0.0     class  0 : 레드 와인 1: 화이트 와인(양성 클래스) 전체 문제에서 화이트와인을 골라내는 문제    wine.</description>
+    </item>
+    
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch4-2 확률적 경사 하강법</title>
       <link>/post/ml/book/chapter4_2/</link>
