@@ -6,14 +6,25 @@
     <description>Recent content in ML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 16:29:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 02:30:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch4-2 확률적 경사 하강법</title>
+      <link>/post/ml/book/chapter4_2/</link>
+      <pubDate>Sat, 23 Apr 2022 02:30:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter4_2/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 04-2 확률적 경사 하강법 점진적인 학습 또는 온라인 학습  앞서 훈련한 모델을 버리지 않고 새로운 데이터에 대해서만 조금씩 더 훈련  대표적인 알고리즘 : 확률적 경사 하강법(Stochastic Gradient Descent)    확률적 경사 하강법  훈련 세트에서 랜덤하게 하나의 샘플을 고르는 것 에포크(epoch) : 확률적 경사 하강법에서 훈련세트를 한 번 모두 사용하는 과정 미니배치 경사 하강법(minibatch gradient descent) : 여러 개의 샘플을 사용해 경사 하강법을 수행하는 방식 배치 경사 하강법(batch gradient descent) : 극단적으로 한 번 경사로를 따라 이동하기 위해 전체 샘플을 사용  손실함수  손실함수(loss function) : 어떤 문제에서 머신러닝 알고리즘이 얼마나 엉터리인지 측정하는 기준  값이 작을 수로 좋음 어떤 값이 최솟값인지 알지 못함     손실 함수와 비용 함수</description>
+    </item>
+    
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch4-1 로지스틱 회귀</title>
       <link>/post/ml/book/chapter4_1/</link>
       <pubDate>Fri, 22 Apr 2022 16:29:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter4_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 04-1 로지스틱 회귀 럭키백의 확률  럭키백에 들어갈 수 있는 생선은 7개 럭키백에 들어간 생선의 크기, 무게 등이 주어졌을 때 7개 생선에 대한 확률을 출력 길이, 높이, 두께, 대각성 길이, 무게 사용  데이터 준비 import pandas as pd fish = pd.read_csv(&amp;#39;https://bit.ly/fish_csv_data&amp;#39;) fish.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  &amp;lt;svg xmlns=&amp;ldquo;http://www.</description>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 04-1 로지스틱 회귀 럭키백의 확률  럭키백에 들어갈 수 있는 생선은 7개 럭키백에 들어간 생선의 크기, 무게 등이 주어졌을 때 7개 생선에 대한 확률을 출력 길이, 높이, 두께, 대각성 길이, 무게 사용  데이터 준비 import pandas as pd fish = pd.read_csv(&amp;#39;https://bit.ly/fish_csv_data&amp;#39;) fish.head()  데이터프레임(dataframe)
+   판다스에서 제공하는 2차원 표 형식의 주요 데이터 구조
+  넘파이 배열과 비슷하게 열과 행으로 이루어짐</description>
     </item>
     
     <item>
