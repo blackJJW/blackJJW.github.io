@@ -6,7 +6,35 @@
     <description>Recent content in ML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 16:24:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 16:27:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-1 k-최근접 이웃 회귀</title>
+      <link>/post/ml/book/chapter3_2/</link>
+      <pubDate>Fri, 22 Apr 2022 16:27:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter3_2/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 03-2 선형 회귀 k-최근접 이웃의 한계 import numpy as np  perch_length = np.array(  [8.4, 13.7, 15.0, 16.2, 17.4, 18.0, 18.7, 19.0, 19.6, 20.0,  21.0, 21.0, 21.0, 21.3, 22.0, 22.0, 22.0, 22.0, 22.0, 22.5,  22.5, 22.7, 23.0, 23.5, 24.0, 24.0, 24.6, 25.0, 25.6, 26.5,  27.3, 27.5, 27.5, 27.5, 28.0, 28.7, 30.0, 32.8, 34.5, 35.0,  36.5, 36.</description>
+    </item>
+    
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-1 k-최근접 이웃 회귀</title>
+      <link>/post/ml/book/chapter3_1/</link>
+      <pubDate>Fri, 22 Apr 2022 16:26:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter3_1/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 03-1 k-최근접 이웃 회귀 k-최근접 이웃 회귀  지도 학습 알고리즘 : 분류, 회귀(regression) 분류 : 샘플릉 몇 개의 클래스 중 하나로 분류하는 문제 회귀 : 클래스 중 하나로 분류하는 것이 아니라 임의의 어떤 숫자로 예측하는 문제. 정해진 클래스가 없고 임의의 수치를 출력   k-최근접 이웃 분류 알고리즘
+  예측하려는 샘플에 가장 가까운 샘플 k개를 선택 이 샘플들의 클래스를 확인하여 다수 클래스를 새로운 클래스로 예측   k-최근접 이웃 회귀 알고리즘</description>
+    </item>
+    
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch2-2 데이터 전처리</title>
+      <link>/post/ml/book/chapter2_2/</link>
+      <pubDate>Fri, 22 Apr 2022 16:25:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter2_2/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 02-2 데이터 전처리 넘파이로 데이터 준비 fish_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,  31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,  35.0, 35.0, 35.0, 36.0, 36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0, 9.8,  10.5, 10.6, 11.0, 11.2, 11.3, 11.8, 11.8, 12.0, 12.2, 12.4, 13.0, 14.3, 15.0] fish_weight = [242.</description>
+    </item>
+    
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch2-1 훈련 세트와 테스트 세트</title>
       <link>/post/ml/book/chapter2_1/</link>
