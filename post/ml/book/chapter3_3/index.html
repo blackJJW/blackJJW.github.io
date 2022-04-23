@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-3 특성 공학과 규제 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-3 특성 공학과 규제" />
+<meta property="og:description" content="Book : &lsquo;혼자 공부하는 머신러닝 &#43; 딥러닝&rsquo;, 박해선 지음, 한빛미디어 03-3 특성 공학과 규제 다중 회귀  여러 개의 특성을 사용한 선형 회귀를 다중 회귀(multiple regression) 1개의 특성을 사용할 경우 선형 회귀 모델이 학습하는 것은 직선 2개의 특성을 사용할 경우에는 평면을 학습 3개일 경우 : 3차원 공간 이상을 그리거나 상상불가  특성이 많은 고차원에서는 선형 회귀가 매우 복잡한 모델을 표현   특성 공학(feature engineering) : 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업  데이터 준비  판다스(pandas) : 데이터 분석 라이브러리 데이터프레임(dataframe) : 판다스의 핵심 데이터 구조   read_csv() 함수로 데이터프레임을 생성 to_numpy() 메서드를 사용해 넘파이 배열로 바꿈  import pandas as pd  df = pd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ml/book/chapter3_3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-22T16:28:45+09:00" />
+<meta property="article:modified_time" content="2022-04-22T16:28:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-3 특성 공학과 규제</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-22T16:28:45&#43;09:00">April 22, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
+<h1 id="03-3-특성-공학과-규제">03-3 특성 공학과 규제</h1>
+<h2 id="다중-회귀">다중 회귀</h2>
+<ul>
+<li>여러 개의 특성을 사용한 선형 회귀를 다중 회귀(multiple regression)</li>
+<li>1개의 특성을 사용할 경우 선형 회귀 모델이 학습하는 것은 직선</li>
+<li>2개의 특성을 사용할 경우에는 평면을 학습</li>
+<li>3개일 경우 : 3차원 공간 이상을 그리거나 상상불가
+<ul>
+<li>특성이 많은 고차원에서는 선형 회귀가 매우 복잡한 모델을 표현</li>
+</ul>
+</li>
+<li>특성 공학(feature engineering) : 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업</li>
+</ul>
+<h2 id="데이터-준비">데이터 준비</h2>
+<ul>
+<li>판다스(pandas) : 데이터 분석 라이브러리</li>
+<li>데이터프레임(dataframe) : 판다스의 핵심 데이터 구조</li>
+</ul>
+<ol>
+<li>read_csv() 함수로 데이터프레임을 생성</li>
+<li>to_numpy() 메서드를 사용해 넘파이 배열로 바꿈</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/perch_csv_data&#39;</span>)
+</span></span><span style="display:flex;"><span>perch_full <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>to_numpy()
+</span></span><span style="display:flex;"><span>print(perch_full)
+</span></span></code></pre></div><pre><code>[[ 8.4   2.11  1.41]
+ [13.7   3.53  2.  ]
+ [15.    3.82  2.43]
+ [16.2   4.59  2.63]
+ [17.4   4.59  2.94]
+ [18.    5.22  3.32]
+ [18.7   5.2   3.12]
+ [19.    5.64  3.05]
+ [19.6   5.14  3.04]
+ [20.    5.08  2.77]
+ [21.    5.69  3.56]
+ [21.    5.92  3.31]
+ [21.    5.69  3.67]
+ [21.3   6.38  3.53]
+ [22.    6.11  3.41]
+ [22.    5.64  3.52]
+ [22.    6.11  3.52]
+ [22.    5.88  3.52]
+ [22.    5.52  4.  ]
+ [22.5   5.86  3.62]
+ [22.5   6.79  3.62]
+ [22.7   5.95  3.63]
+ [23.    5.22  3.63]
+ [23.5   6.28  3.72]
+ [24.    7.29  3.72]
+ [24.    6.38  3.82]
+ [24.6   6.73  4.17]
+ [25.    6.44  3.68]
+ [25.6   6.56  4.24]
+ [26.5   7.17  4.14]
+ [27.3   8.32  5.14]
+ [27.5   7.17  4.34]
+ [27.5   7.05  4.34]
+ [27.5   7.28  4.57]
+ [28.    7.82  4.2 ]
+ [28.7   7.59  4.64]
+ [30.    7.62  4.77]
+ [32.8  10.03  6.02]
+ [34.5  10.26  6.39]
+ [35.   11.49  7.8 ]
+ [36.5  10.88  6.86]
+ [36.   10.61  6.74]
+ [37.   10.84  6.26]
+ [37.   10.57  6.37]
+ [39.   11.14  7.49]
+ [39.   11.14  6.  ]
+ [39.   12.43  7.35]
+ [40.   11.93  7.11]
+ [40.   11.73  7.22]
+ [40.   12.38  7.46]
+ [40.   11.14  6.63]
+ [42.   12.8   6.87]
+ [43.   11.93  7.28]
+ [43.   12.51  7.42]
+ [43.5  12.6   8.14]
+ [44.   12.49  7.6 ]]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>perch_weight <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">5.9</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">51.5</span>, <span style="color:#ae81ff">70.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">78.0</span>, <span style="color:#ae81ff">80.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">110.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">115.0</span>, <span style="color:#ae81ff">125.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">135.0</span>, <span style="color:#ae81ff">110.0</span>, <span style="color:#ae81ff">130.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">170.0</span>, <span style="color:#ae81ff">225.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">188.0</span>, <span style="color:#ae81ff">180.0</span>, <span style="color:#ae81ff">197.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">218.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">260.0</span>, <span style="color:#ae81ff">265.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">320.0</span>, <span style="color:#ae81ff">514.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">556.0</span>, <span style="color:#ae81ff">840.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">690.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">820.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">1015.0</span>, <span style="color:#ae81ff">820.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">1000.0</span>])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(perch_full, perch_weight, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><h2 id="사이킷런의-변환기">사이킷런의 변환기</h2>
+<ul>
+<li>사이킷런은 특성을 만들거나 전처리하기 위한 다양한 클래스를 제공</li>
+<li>이런 클래스를 변환기(transformer)</li>
+</ul>
+<blockquote>
+<p>LinearRegression과 같은 모델 클래스는 추정기(estimator)라고 부름</p>
+</blockquote>
+<ul>
+<li>
+<p>모델 클래스 : fit(), score(), predict()</p>
+</li>
+<li>
+<p>변환기 클래스 : fit(), transform()</p>
+</li>
+<li>
+<p>사용할 변환기 : polynomialFeature 클래스</p>
+<ul>
+<li>sklearn.preprocessing 패키지에 포함</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> PolynomialFeatures
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures()
+</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
+</span></span><span style="display:flex;"><span>print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
+</span></span></code></pre></div><pre><code>[[1. 2. 3. 4. 6. 9.]]
+</code></pre>
+<ul>
+<li>
+<p>훈련(fit)을 해야 변환(transform)이 가능</p>
+</li>
+<li>
+<p>사이킷런의 일관된 api 때문에 두 단게로 나뉘어져 있음</p>
+<ul>
+<li>두 메서드를 하나로 붙인 fit_transform 메서드가 있음</li>
+</ul>
+</li>
+<li>
+<p>fit() 메서드는 새롭게 만들 특성 조합을 찾고 transform() 메서드는 실제로 데이터를 변환</p>
+</li>
+<li>
+<p>변환기는 입력 데이터를 변환하는 데 타깃 데이터가 필요하지 않음</p>
+<ul>
+<li>fit() 메서드에 입력 데이터만 전달</li>
+<li>ex) 2개의 특성(원소)을 사진 샘플 [2, 3]이 6개의 특성을 가진 [1. 2. 3. 4. 6. 9.]로 바뀜</li>
+</ul>
+</li>
+<li>
+<p>PolynomialFeatures 클래스는 기본적으로 각 특성을 제곱한 항을 추가하고 특성끼리 서로 곱한 항을 추가</p>
+<ul>
+<li>$무게 = a \times 길이 + b \times 높이 + c \times 두께 + d \times 1$</li>
+<li>선형 방정식의 절편을 항상 값이 1인 특성과 곱해지는 계수</li>
+<li>(길이, 높이, 두께, 1)</li>
+</ul>
+</li>
+<li>
+<p>include_bias = False로 지정하여 다시 특성을 변환</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
+</span></span><span style="display:flex;"><span>print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
+</span></span></code></pre></div><pre><code>[[2. 3. 4. 6. 9.]]
+</code></pre>
+<ul>
+<li>
+<p>include_bias=False로 지정하지 않아도 사이킷런 모델은 자동으로 특성에 추가된 절편 항을 무시</p>
+</li>
+<li>
+<p>train_input에 적용</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit(train_input)
+</span></span><span style="display:flex;"><span>train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
+</span></span><span style="display:flex;"><span>print(train_poly<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(42, 9)
+</code></pre>
+<ul>
+<li>get_feature_names_out() 메서드를 호출하면 9개의 특성이 각각 어떤 입력의 조합으로 만들어졌는지 알려줌</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>get_feature_names_out()
+</span></span></code></pre></div><pre><code>array(['x0', 'x1', 'x2', 'x0^2', 'x0 x1', 'x0 x2', 'x1^2', 'x1 x2',
+       'x2^2'], dtype=object)
+</code></pre>
+<ul>
+<li>&lsquo;x0&rsquo; : 첫 번째 특성</li>
+<li>&lsquo;x0^2 : 첫 번째 특성의 제곱</li>
+<li>&lsquo;x0 x1&rsquo;은 첫 번째 특성과 두 번째 특성의 곱</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input) <span style="color:#75715e"># 테스트 세트 변환</span>
+</span></span></code></pre></div><h2 id="다중-회귀-모델-훈련">다중 회귀 모델 훈련</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
+</span></span><span style="display:flex;"><span>lr <span style="color:#f92672">=</span> LinearRegression()
+</span></span><span style="display:flex;"><span>lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
+</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
+</span></span></code></pre></div><pre><code>0.9903183436982124
+</code></pre>
+<ul>
+<li>특성이 늘어나면 선형 회귀늬 능력은 매우 강함</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
+</span></span></code></pre></div><pre><code>0.9714559911594134
+</code></pre>
+<ul>
+<li>PolynomialFeatures 클래스의 degree 매개변수를 사용하며 필요한 고차항의 최대 차수를 지정할 수 있음.ㅡ</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(degree <span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit(train_input)
+</span></span><span style="display:flex;"><span>train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
+</span></span><span style="display:flex;"><span>test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input)
+</span></span><span style="display:flex;"><span>print(train_poly<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(42, 55)
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
+</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
+</span></span></code></pre></div><pre><code>0.9999999999991097
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
+</span></span></code></pre></div><pre><code>-144.40579242684848
+</code></pre>
+<ul>
+<li>특성의 개수를 크게 늘리면 선형 모델은 아주 강력해짐</li>
+<li>하지만 이런 모델은 훈련 세트에 너무 과대적합되므로 테스트 세트에서는 형편없는 점수를 만듬</li>
+</ul>
+<h2 id="규제">규제</h2>
+<ul>
+<li>
+<p>규제(regularization) : 머신러닝 모델이 훈련 세트를 너무 과도하게 학습하지 못하도록 훼방하는 것</p>
+</li>
+<li>
+<p>모델이 훈련 세트에 과대적합되지 않도록 만드는 것</p>
+</li>
+<li>
+<p>선형 모델의 경우 특성에 곱해지는 계수(기울기)의 크기를 작게 만드는 일</p>
+</li>
+<li>
+<p>규제를 적용하기 전 정규화</p>
+</li>
+<li>
+<p>StandardScaler 클래스 사용 -&gt; 변환기의 일종</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">=</span> StandardScaler()
+</span></span><span style="display:flex;"><span>ss<span style="color:#f92672">.</span>fit(train_poly)
+</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_poly)
+</span></span><span style="display:flex;"><span>test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_poly)
+</span></span></code></pre></div><ul>
+<li>
+<p>훈련 세트에서 학습한 평균과 표준편차는 StandardScaler 클래스 객체의 mean_, scale_ 속성에 저장</p>
+</li>
+<li>
+<p>선형 회귀 모델에 규제를 추가한 모델을 릿지(ridge)와 라쏘(lasso)</p>
+</li>
+<li>
+<p>릿지 : 계수를 제곱한 값을 기준으로 규제를 적용</p>
+</li>
+<li>
+<p>라쏘 : 계수의 절댓값을 기준으로 규제를 적용</p>
+</li>
+</ul>
+<h2 id="릿지-회귀">릿지 회귀</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Ridge
+</span></span><span style="display:flex;"><span>ridge <span style="color:#f92672">=</span> Ridge()
+</span></span><span style="display:flex;"><span>ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span></code></pre></div><pre><code>0.9896101671037343
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.9790693977615397
+</code></pre>
+<ul>
+<li>훈련 테스트에 과대적합이 되지 않아 테스트 세트에서도 좋은 성능을 내고 있음</li>
+<li>릿지와 라쏘 모델을 사용할 때 규제의 양을 임의로 조절 가능
+<ul>
+<li>alpha 매개변수
+<ul>
+<li>값이 크면 규제 강도가 세지므로 계수 값을 줄이고, 조금 더 과소적합되도록 유도</li>
+<li>값아 작으면 계수를 줄이는 역할이 줄어들고 선형 회귀 모델과 유사, 과대적합될 가능성 커짐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>사람이 직접 지정해야 하는 매개변수</p>
+</blockquote>
+<ul>
+<li>
+<p>머신러닝 모델이 학습할 수 없고 사람이 알려줘야 하는 파라미터를 하이퍼파라미터(hyperparameter)</p>
+</li>
+<li>
+<p>사이킷런과 같은 머신러닝 라이브러리에서 하이퍼파라미터는 클래스와 메서드의 매개변수로 표현</p>
+</li>
+<li>
+<p>적절한 alpha 값을 찾는 방법 -&gt; alpha 값에 대한 $R^2$값의 그래프 작성</p>
+<ul>
+<li>훈련 세트와 테스트 세트의 점수가 가장 가까운 지점이 최적의 alpha</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>train_score <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>test_score <span style="color:#f92672">=</span> []
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 릿지 모델 생성</span>
+</span></span><span style="display:flex;"><span>  ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> alpha)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 릿지 모델 훈련</span>
+</span></span><span style="display:flex;"><span>  ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
+</span></span><span style="display:flex;"><span>  train_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>  test_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><ul>
+<li>alpha 값을 0.001부터 10배씩 늘렸기 때문에 이대로 그래프를 그리면 그래프 왼쪽이 너무 촘촘해짐</li>
+<li>로그함수로 바꾸어 지수로 표현
+<ul>
+<li>0.001 -&gt; -3, 0.01 -&gt; 22</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>넘파이 로그 함수</p>
+</blockquote>
+<ul>
+<li>np.log() : 자연상수 e를 밑으로 하는 자연 로그</li>
+<li>np.log10() : 10을 밑으로 하는 상용로그</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter3_3/output_46_0.png" alt="png"></p>
+<ul>
+<li>blue : 훈련 세트 그래프</li>
+<li>orange : 테스트 세트 그래프</li>
+<li>왼쪽 : 훈련 세트에는 잘 맞고 테스트 세트에는 형편없는 과대적합의 전형적 모습</li>
+<li>오른쪽 : 훈련세트와 테스트 세트의 점수가 모두 낮아지는 과소적합</li>
+<li>적절한 alpha 값은 두 그래프가 가장 가깝고 테스트 세트의 점수가 가장 높은 -1, 즉 $10^{-1}=0.1$</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.9903815817570366
+0.9827976465386926
+</code></pre>
+<h2 id="라쏘-회귀">라쏘 회귀</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Lasso
+</span></span><span style="display:flex;"><span>lasso <span style="color:#f92672">=</span> Lasso()
+</span></span><span style="display:flex;"><span>lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span></code></pre></div><pre><code>0.989789897208096
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.9800593698421883
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># alpha 적용</span>
+</span></span><span style="display:flex;"><span>train_score <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>test_score <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 라쏘 모델 생성</span>
+</span></span><span style="display:flex;"><span>  lasso <span style="color:#f92672">=</span> Lasso(alpha <span style="color:#f92672">=</span> alpha, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 라쏘 모델 훈련</span>
+</span></span><span style="display:flex;"><span>  lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
+</span></span><span style="display:flex;"><span>  train_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>  test_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_coordinate_descent.py:648: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations, check the scale of the features or consider increasing regularisation. Duality gap: 1.878e+04, tolerance: 5.183e+02
+  coef_, l1_reg, l2_reg, X, y, max_iter, tol, rng, random, positive
+/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_coordinate_descent.py:648: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations, check the scale of the features or consider increasing regularisation. Duality gap: 1.297e+04, tolerance: 5.183e+02
+  coef_, l1_reg, l2_reg, X, y, max_iter, tol, rng, random, positive
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter3_3/output_53_0.png" alt="png"></p>
+<ul>
+<li>blue : 훈련 세트 그래프</li>
+<li>orange : 테스트 세트 그래프</li>
+<li>왼쪽 : 훈련 세트에는 잘 맞고 테스트 세트에는 형편없는 과대적합의 전형적 모습</li>
+<li>오른쪽 : 훈련세트와 테스트 세트 점수가 좁혀지고 있음</li>
+<li>적절한 alpha 값은 1, 즉 $10^1=10$</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lasso <span style="color:#f92672">=</span> Lasso(alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.9888067471131867
+0.9824470598706695
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 라쏘 모델의 계수가 0일 경우</span>
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>sum(lasso<span style="color:#f92672">.</span>coef_ <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
+</span></span></code></pre></div><pre><code>40
+</code></pre>
+<ul>
+<li>55개의 특성을 주입, 라쏘 모델을 사용한 특성 15개</li>
+<li>이런 특징 때무네 라쏘 모델을 유용한 특성을 골라내는 용도로 사용할 수 있다.</li>
+</ul>
+<h2 id="마무리">마무리</h2>
+<h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
+<ul>
+<li>다중 회귀 : 여러 개의 특성을 사용하는 회귀 모델. 특성이 많으면 선형 모델은 강력한 성능을 발휘</li>
+<li>특성 공학 : 주어진 특성을 조합, 새로운 특성을 만드는 작업 과정</li>
+<li>릿지 : 규제가 있는 선형 회귀 모델 중 하나.
+<ul>
+<li>선형 모델의 계수를 작게 만들어 과대 적합을 완화</li>
+<li>비교적 효과가 좋아 널리 사용</li>
+</ul>
+</li>
+<li>라쏘 : 릿지와 달리 계수 값을 아예 0으로 만들 수 있음</li>
+<li>하이퍼파라미터 : 머신러닝 알고리즘이 학습하지 않는 파라미터
+<ul>
+<li>이런 파라미터는 사람이 사전에 지정</li>
+<li>대표적으로 릿지와 라쏘의 규제 강도 alpha 파라미터</li>
+</ul>
+</li>
+</ul>
+<h3 id="핵심-패키지와-함수">핵심 패키지와 함수</h3>
+<blockquote>
+<p>pandas</p>
+</blockquote>
+<ul>
+<li>read_csv() : csv파일을 읽어 판다스 데이터 프레임으로 변환
+<ul>
+<li>sep : 구분자 지정. 기본값 = 콤마(,)</li>
+<li>header : 데이터프레임의 열 이름으로 사용할 csv파일의 행 번호 지정. 기본적으로 첫 번째 행을 열 이름으로 사용</li>
+<li>skiprows : 파일에서 읽기 전에 건너 뛸 행의 개수를 지정</li>
+<li>nrows : 파일에서 읽을 행의 개수 지정</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>scikit-learn</p>
+</blockquote>
+<ul>
+<li>PolynomialFeatures : 주어진 특성을 조합하여 새로운 특성을 생성
+<ul>
+<li>degree : 최고차수 지정. 기본값 = 2</li>
+<li>interaction_only : True이면 거듭제곱 항은 제외되고 특성 간의 곱셈 항만 추가. 기본값 = False</li>
+<li>include_bias : False이면 절편을 위한 특성을 추가하지 않음. 기본값 = True</li>
+</ul>
+</li>
+<li>Ridge : 규제가 있는 회귀 알고리즘이 릿지 회귀 모델을 훈련
+<ul>
+<li>alpha : 규제 강도 조절. 클수로 강도 세짐. 기본값 = 1</li>
+<li>solver : 최적의 모델을 찾기 위한 방법 지정.
+<ul>
+<li>기본값 = &lsquo;auto&rsquo;. 데이터에 따라 자동으로 선택</li>
+<li>&lsquo;sag&rsquo; : 확률적 평균 경사 하강법 알고리즘, 특성과 샘플 수가 많을 때에 성능이 빠르고 좋음</li>
+<li>&lsquo;saga&rsquo; : &lsquo;sag&rsquo;의 개선 버전</li>
+</ul>
+</li>
+<li>random_state : solver가 &lsquo;sag&rsquo;나 &lsquo;saga&rsquo;일 때 넘파이 나눗 시드값을 지정할 수 있음</li>
+</ul>
+</li>
+<li>Lasso : 최적의 모델을 찾기 위해 좌표축을 따라 최적화를 수행하는 좌표 하강법(coordinate descent)을 사용
+<ul>
+<li>alpha, random_state : Ridge와 동일</li>
+<li>max_iter : 알고리즘의 수행 반복 횟수 지정. 기본값 = 1000</li>
+</ul>
+</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/book/" rel="tag">Book</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/ml/book/chapter3_2/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-2 선형 회귀</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/ml/book/chapter4_1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch4-1 로지스틱 회귀</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter4_1/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch4-1 로지스틱 회귀</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter3_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-3 특성 공학과 규제</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter3_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-2 선형 회귀</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter3_1/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-1 k-최근접 이웃 회귀</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter2_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch2-2 데이터 전처리</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
