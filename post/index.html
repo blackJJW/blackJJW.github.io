@@ -94,6 +94,26 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/ml/book/chapter6_3/" rel="bookmark">
+			[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-3 주성분 분석
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-23T16:40:45&#43;09:00">April 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어 06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
+ ex) 과일 사진의 경우 10,000개의 픽셀이 있기 때문에 10,000개의 특성이 재. 머신러닝에서는 이런 특성을 차원(dimension)    차원을 줄일 수 잇따면 저장 공간을 크게 줄일 수 있음.
+  차원 축소(dimensionality reduction) 알고리즘 : 비지도 학습 작업 중 하나.
+ 데이터를 가장 잘 나타내는 일부 특성을 선택하여 데이터 크기를 줄이고 지도 학습 모델의 성능을 향상시킬 수 있는 방법    줄어든 차원에서 다시 원본 차원으로 손실을 최대한 줄이면서 복원 가능.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/setting/spark_installation_windows_10/" rel="bookmark">
 			[Spark][setting]Spark Installation(Windows 10)
 			</a>
@@ -253,23 +273,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어 03-3 특성 공학과 규제 다중 회귀  여러 개의 특성을 사용한 선형 회귀를 다중 회귀(multiple regression) 1개의 특성을 사용할 경우 선형 회귀 모델이 학습하는 것은 직선 2개의 특성을 사용할 경우에는 평면을 학습 3개일 경우 : 3차원 공간 이상을 그리거나 상상불가  특성이 많은 고차원에서는 선형 회귀가 매우 복잡한 모델을 표현   특성 공학(feature engineering) : 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업  데이터 준비  판다스(pandas) : 데이터 분석 라이브러리 데이터프레임(dataframe) : 판다스의 핵심 데이터 구조   read_csv() 함수로 데이터프레임을 생성 to_numpy() 메서드를 사용해 넘파이 배열로 바꿈  import pandas as pd  df = pd.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/ml/book/chapter3_2/" rel="bookmark">
-			[ML][Book][혼공 머신러닝&#43;딥러닝]ch3-2 선형 회귀
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-22T16:27:45&#43;09:00">April 22, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어 03-2 선형 회귀 k-최근접 이웃의 한계 import numpy as np  perch_length = np.array(  [8.4, 13.7, 15.0, 16.2, 17.4, 18.0, 18.7, 19.0, 19.6, 20.0,  21.0, 21.0, 21.0, 21.3, 22.0, 22.0, 22.0, 22.0, 22.0, 22.5,  22.5, 22.7, 23.0, 23.5, 24.0, 24.0, 24.6, 25.0, 25.6, 26.5,  27.3, 27.5, 27.5, 27.5, 28.0, 28.7, 30.0, 32.8, 34.5, 35.0,  36.5, 36.
-	</div>
 </article>
 </main>
 
@@ -293,11 +296,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-3 주성분 분석</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/setting/spark_installation_windows_10/">[Spark][setting]Spark Installation(Windows 10)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-2 k-평균</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_1/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-1 군집 알고리즘</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter5_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-3 트리의 앙상블</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter5_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-2 교차 검증과 그리드 서치</a></li>
 		</ul>
 	</div>
 </div>

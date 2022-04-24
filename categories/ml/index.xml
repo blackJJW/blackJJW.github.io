@@ -6,7 +6,19 @@
     <description>Recent content in ML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Apr 2022 16:34:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 16:40:45 +0900</lastBuildDate><atom:link href="/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-3 주성분 분석</title>
+      <link>/post/ml/book/chapter6_3/</link>
+      <pubDate>Sat, 23 Apr 2022 16:40:45 +0900</pubDate>
+      
+      <guid>/post/ml/book/chapter6_3/</guid>
+      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
+ ex) 과일 사진의 경우 10,000개의 픽셀이 있기 때문에 10,000개의 특성이 재. 머신러닝에서는 이런 특성을 차원(dimension)    차원을 줄일 수 잇따면 저장 공간을 크게 줄일 수 있음.
+  차원 축소(dimensionality reduction) 알고리즘 : 비지도 학습 작업 중 하나.
+ 데이터를 가장 잘 나타내는 일부 특성을 선택하여 데이터 크기를 줄이고 지도 학습 모델의 성능을 향상시킬 수 있는 방법    줄어든 차원에서 다시 원본 차원으로 손실을 최대한 줄이면서 복원 가능.</description>
+    </item>
+    
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-2 k-평균</title>
       <link>/post/ml/book/chapter6_2/</link>
