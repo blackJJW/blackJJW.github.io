@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련" />
+<meta property="og:description" content="07-3 신경망 모델 훈련 손실 곡선  케라스의 fit() 메서드는 HIstory 클래스를 반환 History 객체에는 훈련 과정에서 계산한 지표, 즉 손실과 정확도 값이 저장되어 있음.  from tensorflow import keras from sklearn.model_selection import train_test_split  (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()  train_scaled = train_input / 255.0 train_scaled, val_scaled, train_target, val_target = train_test_split(  train_scaled, train_target, test_size = 0.2, random_state = 42 ) Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/dl/book/chapter7_3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-23T17:30:45+09:00" />
+<meta property="article:modified_time" content="2022-04-23T17:30:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-23T17:30:45&#43;09:00">April 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/dl/" rel="category">DL</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="07-3-신경망-모델-훈련">07-3 신경망 모델 훈련</h1>
+<h2 id="손실-곡선">손실 곡선</h2>
+<ul>
+<li>케라스의 fit() 메서드는 HIstory 클래스를 반환</li>
+<li>History 객체에는 훈련 과정에서 계산한 지표, 즉 손실과 정확도 값이 저장되어 있음.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+</span></span><span style="display:flex;"><span>train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(
+</span></span><span style="display:flex;"><span>    train_scaled, train_target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">model_fn</span>(a_layer <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>  model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+</span></span><span style="display:flex;"><span>  model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)))
+</span></span><span style="display:flex;"><span>  model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> a_layer:
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>add(a_layer)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> model
+</span></span></code></pre></div><ul>
+<li>if 구문 제외, 이전 절에서 만든 것과 동일한 모델 생성</li>
+<li>if 구문의 역할 : model_fn() 함수에 (a_layer 매개변수로) 케라스 층을 추가하면 은닉층 뒤에 또 하나의 층을 추가하는 것.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
+</span></span></code></pre></div><pre><code>Model: &quot;sequential&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ dense (Dense)               (None, 100)               78500     
+                                                                 
+ dense_1 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>fit() 메서드의 결과를 history 변수에 저장</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><blockquote>
+<p>verbose = 0</p>
+</blockquote>
+<ul>
+<li>verbose : 훈련 과정 출력 조절</li>
+<li>기본값 = 1, 에포크마다 진행 막새돠 함께 손실 등의 지표가 출력.</li>
+<li>2 : 진행 막대를 빼고 출력.</li>
+<li>0 : 훈련 과정 출력 안함.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(history<span style="color:#f92672">.</span>history<span style="color:#f92672">.</span>keys())
+</span></span></code></pre></div><pre><code>dict_keys(['loss', 'accuracy'])
+</code></pre>
+<ul>
+<li>history 딕셔너리에 loss와 accuracy가 저장.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 손실도 그래프</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_12_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 정확도 그래프</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_13_0.png" alt="png"></p>
+<ul>
+<li>에포크마다 손실이 감소하고 정확도가 상승.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_15_0.png" alt="png"></p>
+<h2 id="검증-손실">검증 손실</h2>
+<blockquote>
+<p>손실을 사용하는 것과 정확도를 사용하는 것.</p>
+</blockquote>
+<ul>
+<li>
+<p>인공 신경망 모델이 최적화하는 대사이 정확도가 아니라 손실 함수.</p>
+</li>
+<li>
+<p>모델이 잘 훈련되었는지 판단하려면 정확도보다는 손실 함수의 값을 확인하는 것이 더 좋음.</p>
+</li>
+<li>
+<p>에포크마다 검증 손실을 계산하기 위해 케라스 모델의 fit() 메서드에 검증 데이터를 전달 가능.</p>
+</li>
+<li>
+<p>다음 처럼 validation_data 매개변수에 검즈에 사용할 입력과 타깃값을 튜플로 만들어 전달.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(history<span style="color:#f92672">.</span>history<span style="color:#f92672">.</span>keys())
+</span></span></code></pre></div><pre><code>dict_keys(['loss', 'accuracy', 'val_loss', 'val_accuracy'])
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># val_loss : 검증 세트에 대한 손실</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_21_0.png" alt="png"></p>
+<ul>
+<li>
+<p>훈련 손실은 꾸준히 감소 -&gt; 전형적인 과대적합 모델.</p>
+</li>
+<li>
+<p>검증 손실이 상승하는 시점을 가능한 뒤로 늦추면 검증 세트에 대한 손실이 줄어들고, 정확도도 증가할 것.</p>
+</li>
+<li>
+<p>옵티마이저 하이퍼파라미터를 조정하여 과대적합을 완화시킬 수 있는가?</p>
+</li>
+<li>
+<p>기본 RMSprop 옵티마이저는 많은 문제에서 잘 동작.</p>
+</li>
+<li>
+<p>Adam은 적응적 학습률을 사용하기 때문에 에포크가 진행되면서 학습률의 크기를 조정 가능.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, 
+</span></span><span style="display:flex;"><span>              metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_24_0.png" alt="png"></p>
+<ul>
+<li>과대적합이 줄어들어듬.</li>
+<li>Adam 옵티마이저가 이 데이터 셋에 잘 맞음.</li>
+</ul>
+<h2 id="드롭아웃dropout">드롭아웃(dropout)</h2>
+<ul>
+<li>
+<p>훈련 과정에서 층에 있는 일부 뉴런을 랜덤하게 꺼서(즉 뉴런의 출력을 0으로 만들어) 과대적합을 막음.</p>
+</li>
+<li>
+<p>뉴런은 랜덤하게 드롭아웃되고 얼마나 많은 뉴런을 드롭할지 정하는 하이퍼파라미터.</p>
+</li>
+<li>
+<p>과대적합을 막는 이유</p>
+<ul>
+<li>이전 층의 일부 뉴런이 랜덤하게 꺼지면 특정 뉴런에 과대하게 의존하는 것을 줄일 수 있고, 모든 입력에 대한 주의를 기울여야 함.</li>
+<li>드롭아웃이 적용된 2개의 신경망을 훈련하는 것은 2개의 신경망을 앙상블하는 것과 비슷.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.3</span>)) 
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
+</span></span></code></pre></div><pre><code>Model: &quot;sequential_6&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten_6 (Flatten)         (None, 784)               0         
+                                                                 
+ dense_12 (Dense)            (None, 100)               78500     
+                                                                 
+ dropout_1 (Dropout)         (None, 100)               0         
+                                                                 
+ dense_13 (Dense)            (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>
+<p>드롭아웃 층은 훈련되는 파라미터가 없음.</p>
+</li>
+<li>
+<p>입력과 출력이 같음.</p>
+</li>
+<li>
+<p>일부 뉴런의 출력을 0으로 만들지만 전체 출력 배열의 크기를 바꾸지 않음.</p>
+</li>
+<li>
+<p>훈련이 끝난 뒤, 평가나 예측을 수행할 때는 드롭아웃을 적용하지 말아야 함.</p>
+</li>
+<li>
+<p>훈련된 모든 뉴런을 사용해야 올바른 예측 수행 가능.</p>
+</li>
+<li>
+<p>텐서플로와 케라스는 모델을 평가와 예측에 사용할 때는 자동으로 드롭아웃을 적용하지 않음.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, 
+</span></span><span style="display:flex;"><span>              metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_33_0.png" alt="png"></p>
+<ul>
+<li>과대 적합이 줄어들어듬.</li>
+</ul>
+<h2 id="모델-저장과-복원">모델 저장과 복원</h2>
+<ul>
+<li>에포크 횟수를 10으로 다시 지정하고 모델을 훈련.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.3</span>))
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, 
+</span></span><span style="display:flex;"><span>              metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target))
+</span></span></code></pre></div><ul>
+<li>케라스 모델은 훈련된 모델의 파라미터를 저장하는 save_weights() 메서드 제공.</li>
+<li>이 메서드는 텐서플로의 체크포인트 포맷으로 저장하지만 파일의 확장자가 &lsquo;.h5&rsquo;일 경우 HDF5 포맷으로 저장.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>save_weights(<span style="color:#e6db74">&#39;model-weights.h5&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>모델 구조와 모델 파라미터를 함께 저장하는 save() 메서드</li>
+<li>이 메서드는 텐서플로의 SavedModel 포맷으로 저장하지만 파일의 확장자가 &lsquo;.h5&rsquo;일 경우 HDF5 포맷으로 저장.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;model-whole.h5&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>저장 모델 확인</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>ls <span style="color:#f92672">-</span>al <span style="color:#f92672">*.</span>h5
+</span></span></code></pre></div><pre><code>-rw-r--r-- 1 root root 333448 Apr 24 17:53 model-weights.h5
+-rw-r--r-- 1 root root 982664 Apr 24 17:55 model-whole.h5
+</code></pre>
+<ul>
+<li>첫 번째 실험
+<ul>
+<li>훈련을 하지 않은 새로운 모델 생성, model-weights.h5 파일에서 훈련된 모델 파라미터를 읽어서 사용.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.3</span>))
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>load_weights(<span style="color:#e6db74">&#39;model-weights.h5&#39;</span>)
+</span></span></code></pre></div><blockquote>
+<p>모델 파라미터를 적재하는 조건</p>
+</blockquote>
+<ul>
+<li>
+<p>load_weights() 메서드를 사용하려면 save_weights() 메서드로 저장했던 모델과 정확히 같은 구조를 가져야함.</p>
+</li>
+<li>
+<p>케라스에서 예측을 수행하는 predict() 메서드는 사이킷런과 달리 샘플마다 10개의 클래스에 대한 확률을 반환.</p>
+<ul>
+<li>사용하고 있는 데이터셋이 다중 분류이기 때문.</li>
+<li>이진 분류 문제라면 양성 클래스에 대한 확률 하나만 반환.</li>
+</ul>
+</li>
+<li>
+<p>패션 MNIST 데이터셋에서 덜어낸 검중 세트의 샘플 개수는 12,000개이기 때문에 predict() 메서드는 (12000, 10) 크기의 배열을 반환.</p>
+</li>
+<li>
+<p>10개 확률 중 가장 큰 값의 인덱스를 골라 타깃 레이블과 비교하여 정확도를 계산.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>val_labels <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(model<span style="color:#f92672">.</span>predict(val_scaled), axis <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(val_labels <span style="color:#f92672">==</span> val_target))
+</span></span></code></pre></div><pre><code>0.8801666666666667
+</code></pre>
+<ul>
+<li>
+<p>가장 큰 값을 고르기 위해 argmax()함수 사용.</p>
+<ul>
+<li>배열에서 가장 큰 값의 인덱스를 반환.</li>
+<li>axis=-1 은 배열의 마지막 차원을 따라 최댓값을 고름.</li>
+</ul>
+</li>
+<li>
+<p>두 번째 실험</p>
+<ul>
+<li>모델 전체를 파일에서 읽은 다음 검증 세트의 정확도 출력.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;model-whole.h5&#39;</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</span></span></code></pre></div><pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3321 - accuracy: 0.8802
+
+
+
+
+
+[0.33207204937934875, 0.8801666498184204]
+</code></pre>
+<ul>
+<li>같은 모델을 저장하고 불렀기 때문에 동일한 정확도를 출력.</li>
+</ul>
+<h2 id="콜백callback">콜백(callback)</h2>
+<ul>
+<li>
+<p>훈련 과정 중간에 어떤 작업을 수행할 수 있게 하는 객체.</p>
+</li>
+<li>
+<p>keras.callbacks 패키지 아래에 존재.</p>
+</li>
+<li>
+<p>fit() 메서드의 callbacks 매개변수에 리스트로 전달하여 사용.</p>
+</li>
+<li>
+<p>ModelCheckpoint 콜백은 기본적으로 에포크마다 모델을 저장.</p>
+</li>
+<li>
+<p>save_best_only=True 매개변수를 지정하여 가장 낮은 검증 점수를 저장 가능.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.3</span>))
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, 
+</span></span><span style="display:flex;"><span>              metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-model.h5&#39;</span>, 
+</span></span><span style="display:flex;"><span>                                                save_best_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target),
+</span></span><span style="display:flex;"><span>                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb])
+</span></span></code></pre></div><pre><code>&lt;keras.callbacks.History at 0x7f1e34ebfdd0&gt;
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;best-model.h5&#39;</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</span></span></code></pre></div><pre><code>375/375 [==============================] - 2s 4ms/step - loss: 0.3191 - accuracy: 0.8852
+
+
+
+
+
+[0.3190595805644989, 0.8852499723434448]
+</code></pre>
+<ul>
+<li>
+<p>ModelCheckpoint 콜백이 가장 낮은 검증 점수의 모델을 자동으로 저장.</p>
+<ul>
+<li>하지만 에포크 20번 모두 수행함.</li>
+<li>검증 점수가 상승하기 시작하면 과대적합이 더 커지기 때문에 훈련을 계속할 필요 없음.
+<ul>
+<li>이 때 훈련을 중지하면 자원과 시간을 아낄 수 있음.</li>
+<li>과대적합이 시작되기 전에 훈련을 미리 중지하는 것 -&gt; 조기 종료(early stopping)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>조기 종료는 훈련 에포크 횟수를 제한하는 역할을 하지만 모델이 과대적합되는 것을 막아 주기 때문에 규제 방법 중 하나로 생각할 수 있음.</p>
+</li>
+<li>
+<p>케라스에서는 조기 종료를 위한 EarlyStopping 콜백을 제공.</p>
+<ul>
+<li>patience 매개변수는 검증 점수가 향상되지 않더라도 참을 에포크 횟수로 지정.</li>
+<li>restore_best_weights 매개변수를 True로 지정하면 가장 낮은 검증 손실을 낸 모델 파라미터로 되돌림.</li>
+</ul>
+</li>
+<li>
+<p>EarlyStopping과 ModelCheckpoint를 함께 사용하면 가장 낮은 검증 손실의 모델을 파일에 저장하고 검증 손실이 다시 상승할 때 훈련 중지 가능.</p>
+</li>
+<li>
+<p>또한, 훈련을 중지한 다음 현재 모델의 파라미터를 최상의 파라미터로 되돌림.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> model_fn(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.3</span>))
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, 
+</span></span><span style="display:flex;"><span>              metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-model.h5&#39;</span>, 
+</span></span><span style="display:flex;"><span>                                                save_best_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>early_stopping_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>EarlyStopping(patience<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
+</span></span><span style="display:flex;"><span>                                                  restore_best_weights<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, verbose <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                    validation_data <span style="color:#f92672">=</span> (val_scaled, val_target),
+</span></span><span style="display:flex;"><span>                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb, early_stopping_cb])
+</span></span></code></pre></div><pre><code>&lt;keras.callbacks.History at 0x7f1e34d89c90&gt;
+</code></pre>
+<ul>
+<li>몇 번째 에포크에서 멈췄는 지 확인 : early_stopping_cb 객체의 stopped_epoch 속성에서 확인.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(early_stopping_cb<span style="color:#f92672">.</span>stopped_epoch)
+</span></span></code></pre></div><pre><code>12
+</code></pre>
+<ul>
+<li>patience = 2 로 지정했기 때문에 최상의 모델은 11번 째 에포크.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter7_3/output_67_0.png" alt="png"></p>
+<ul>
+<li>조기 종료로 얻은 모델을 사용해 검증 세트에 대한 성능 확인.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</span></span></code></pre></div><pre><code>375/375 [==============================] - 1s 4ms/step - loss: 0.3212 - accuracy: 0.8839
+
+
+
+
+
+[0.3211706578731537, 0.8839166760444641]
+</code></pre>
+<h2 id="마무리">마무리</h2>
+<h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
+<ul>
+<li>드롭아웃 : 은닉층에 있는 뉴런의 출력을 랜덤하게 꺼서 과대적합을 막는 기법.
+<ul>
+<li>훈련 중에 적용되며 평가나 예측에 사용하지 않음.</li>
+</ul>
+</li>
+<li>콜백 : 케라스 모델을 훈련하는 도중에 어떤 작업을 수행할 수 있도록 도와주는 도구.
+<ul>
+<li>대표적으로 최상의 모델을 자동으로 저장해 주거나 검증 점수가 더 이상 향상되지 않으면 일찍 종료 가능.</li>
+</ul>
+</li>
+<li>조기 종료 : 검증 점수가 더 이상 감소하지 않고 상승하여 과대 적합이 일어나면 훈련을 계속 진행하지 않고 멈추는 기법.
+<ul>
+<li>계산 비용과 시간 절약.</li>
+</ul>
+</li>
+</ul>
+<h3 id="핵심-패키지와-함수">핵심 패키지와 함수</h3>
+<blockquote>
+<p>TensorFlow</p>
+</blockquote>
+<ul>
+<li>DropOut : 드롭아웃 층
+<ul>
+<li>첫 번째 매개변수로 드롭아웃 할 비율(r)을 지정.</li>
+<li>드롭아웃하지 않는 뉴런의 출력은 1/(1 - r) 만큼 증가시켜 출력의 총합이 같도록 만듬.</li>
+</ul>
+</li>
+<li>save_weights() : 모든 층의 가중치와 절편을 파일에 저장.
+<ul>
+<li>첫 번째 매개변수에 저장할 파일을 지정.</li>
+<li>save_format : 저장할 파일 형식 지정.
+<ul>
+<li>기본적으로 텐서플로의 Checkpoint 포멧을 사용.</li>
+<li>&lsquo;h5&rsquo;로 지정하거나 파일의 확장자가 &lsquo;.h5&rsquo;이면 HDF5 포맷으로 저장.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>load_weights() : 모든 줄의 가중치와 절편을 파일에 읽음.
+<ul>
+<li>첫 번째 매개변수에 읽을 파일을 지정.</li>
+</ul>
+</li>
+<li>save() : 모델 구조와 모든 가중치와 절편을 파일에 저장.
+<ul>
+<li>첫 번째 매개변수에 저장할 파일을 지정</li>
+<li>save_format : 저장할 파일 형식 지정.
+<ul>
+<li>기본적으로 텐서플로의 SavedModel 포멧을 사용.</li>
+<li>&lsquo;h5&rsquo;로 지정하거나 파일의 확장자가 &lsquo;.h5&rsquo;이면 HDF5 포맷으로 저장.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>load_model() : model.save()로 저장된 모델을 로드.
+<ul>
+<li>첫 번째 매개변수에 읽을 파일을 지정.</li>
+</ul>
+</li>
+<li>ModelCheckpoint : 케라스 모델과 가중치를 일정 간격으로 저장.
+<ul>
+<li>첫 번째 매개변수에 저장할 파일을 지정</li>
+<li>monitor : 모니터링할 지표를 지정.
+<ul>
+<li>기본값 = &lsquo;val_loss&rsquo; : 검증 손실을 관찰</li>
+<li>save_weights_only : 기본값 = False -&gt; 전체 모델 저장.
+<ul>
+<li>True : 모델의 가중치와 절편만 저장.</li>
+</ul>
+</li>
+<li>save_best_only : True로 지정하면 가장 낮은 점수를 만드는 모델 저장.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EarlyStopping : 관심 지표가 더이상 향상하지 않으면 훈련을 중지.
+<ul>
+<li>monitor : 모니터링할 지표를 지정.
+<ul>
+<li>기본값 = &lsquo;val_loss&rsquo; : 검증 손실을 관찰</li>
+</ul>
+</li>
+<li>patience : 모델이 더 이상 향상되지 않고 지속할 수 있는 최대 에포크 횟수를 지정.</li>
+<li>restore_best_weights : 최상의 모델 가중치를 복원할지 지정.
+<ul>
+<li>기본값 = False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Numpy</p>
+</blockquote>
+<ul>
+<li>argmax : 배열에서 축을 따라 최댓값의 인덱스를 반환.
+<ul>
+<li>axis : 어떤 축을 따라 최댓값을 찾을지 지정.
+<ul>
+<li>기본값 = None : 전체 배열에서 최댓값을 찾음.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/book/" rel="tag">Book</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/dl/book/chapter7_2/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-2 심층 신경망</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_3/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_2/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-2 심층 신경망</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_1/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-1 인공 신경망</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-3 주성분 분석</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/setting/spark_installation_windows_10/">[Spark][setting]Spark Installation(Windows 10)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

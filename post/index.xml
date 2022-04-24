@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Apr 2022 16:51:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 17:30:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련</title>
+      <link>/post/dl/book/chapter7_3/</link>
+      <pubDate>Sat, 23 Apr 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/dl/book/chapter7_3/</guid>
+      <description>07-3 신경망 모델 훈련 손실 곡선  케라스의 fit() 메서드는 HIstory 클래스를 반환 History 객체에는 훈련 과정에서 계산한 지표, 즉 손실과 정확도 값이 저장되어 있음.  from tensorflow import keras from sklearn.model_selection import train_test_split  (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()  train_scaled = train_input / 255.0 train_scaled, val_scaled, train_target, val_target = train_test_split(  train_scaled, train_target, test_size = 0.2, random_state = 42 ) Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.</description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-2 심층 신경망</title>
       <link>/post/dl/book/chapter7_2/</link>
