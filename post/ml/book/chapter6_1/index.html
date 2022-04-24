@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-1 군집 알고리즘 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-1 군집 알고리즘" />
+<meta property="og:description" content="Book : &lsquo;혼자 공부하는 머신러닝 &#43; 딥러닝&rsquo;, 박해선 지음, 한빛미디어 06-1 군집 알고리즘 타깃을 모르는 비지도 학숩  타깃이 없을 때 사용하는 머신러닝 알고리즘 : 비지도 학습(unsupervised learning)  과일 사진 데이터 준비  사과, 바나나, 파인애플 사진 흑백 사진 넘파이 배열의 기본 저장 포맷인 npy 파일로 저장  !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 00:57:45-- https://bit.ly/fruits_300_data Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11 Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected. HTTP request sent, awaiting response." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ml/book/chapter6_1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-23T16:33:45+09:00" />
+<meta property="article:modified_time" content="2022-04-23T16:33:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-1 군집 알고리즘</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-23T16:33:45&#43;09:00">April 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
+<h1 id="06-1-군집-알고리즘">06-1 군집 알고리즘</h1>
+<h2 id="타깃을-모르는-비지도-학숩">타깃을 모르는 비지도 학숩</h2>
+<ul>
+<li>타깃이 없을 때 사용하는 머신러닝 알고리즘 : 비지도 학습(unsupervised learning)</li>
+</ul>
+<h2 id="과일-사진-데이터-준비">과일 사진 데이터 준비</h2>
+<ul>
+<li>사과, 바나나, 파인애플 사진</li>
+<li>흑백 사진</li>
+<li>넘파이 배열의 기본 저장 포맷인 npy 파일로 저장</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>wget https:<span style="color:#f92672">//</span>bit<span style="color:#f92672">.</span>ly<span style="color:#f92672">/</span>fruits_300_data <span style="color:#f92672">-</span>O fruits_300<span style="color:#f92672">.</span>npy
+</span></span></code></pre></div><pre><code>--2022-04-18 00:57:45--  https://bit.ly/fruits_300_data
+Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11
+Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
+--2022-04-18 00:57:45--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
+Resolving github.com (github.com)... 140.82.121.4
+Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
+--2022-04-18 00:57:45--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3000128 (2.9M) [application/octet-stream]
+Saving to: ‘fruits_300.npy’
+
+fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s   
+
+2022-04-18 00:57:46 (92.4 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
+</code></pre>
+<blockquote>
+<p>!</p>
+</blockquote>
+<ul>
+<li>리눅스 셀(shell) 명령으로 이해.</li>
+<li>wget : 원격 주소에서 데이터를 다운로드하여 저장</li>
+<li>-O : 저장할 파일 이름응 지정</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fruits <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;fruits_300.npy&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fruits<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(300, 100, 100)
+</code></pre>
+<ul>
+<li>첫 번째 차원 (300) : 샘플의 개수</li>
+<li>두 번째 차원 (100) : 이미지 높이</li>
+<li>세 번째 차원 (100) : 이미지 너비
+<ul>
+<li>이미지 크기 : 100 X 100</li>
+<li>배열의 크기 : 100 X 100</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fruits[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, :])
+</span></span></code></pre></div><pre><code>[  1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1
+   2   2   2   2   2   2   1   1   1   1   1   1   1   1   2   3   2   1
+   2   1   1   1   1   2   1   3   2   1   3   1   4   1   2   5   5   5
+  19 148 192 117  28   1   1   2   1   4   1   1   3   1   1   1   1   1
+   2   2   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1]
+</code></pre>
+<ul>
+<li>
+<p>첫 번째 행에 잇는 픽셀 100개에 들어 있는 값을 출력</p>
+</li>
+<li>
+<p>이 넘파이 배열은 흑백 사진 : 0 ~ 255까지의 정숫값을 가짐.</p>
+</li>
+<li>
+<p>matplotlib의 imshow() 함수를 사용하면 넘파이 배열로 저장된 이미지를 쉽게 그릴 수 있음.</p>
+</li>
+<li>
+<p>흑백 이미지이므로 cmap 매개변수 값은 &lsquo;gray&rsquo;로 지정</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_15_0.png" alt="png"></p>
+<ul>
+<li>0에 가까울수록 검게 나타나고 높은 값은 밝게 표시됨.</li>
+<li>이 흑백 이미지는 사진으로 찍은 이미지를 넘파이 배열로 변환할 때 반전시킨 것.</li>
+</ul>
+<blockquote>
+<p>컴퓨터는 왜 255에 가까운 바탕에 집중하나?</p>
+</blockquote>
+<ul>
+<li>
+<p>알고리즘이 어떤 출력을 만들기 위해 곱셈, 덧셈을 수행</p>
+</li>
+<li>
+<p>픽셀 값이 0이면 출력도 0이 되어 의미가 없음.</p>
+</li>
+<li>
+<p>픽셀 값이 높으면 출력 값도 커지기 때문에 의미를 부여하기 좋음.</p>
+</li>
+<li>
+<p>종종 흑백 이미지를 반전 시켜 사용.</p>
+</li>
+<li>
+<p>cmap을 &lsquo;gray_r&rsquo;로 지정하여 다시 반전</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_19_0.png" alt="png"></p>
+<ul>
+<li>이 그림에서 밝은 부분이 0에 가까고 짙은 부분이 255에 가까운 값</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">100</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">200</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_21_0.png" alt="png"></p>
+<h2 id="픽셀-값-분석">픽셀 값 분석</h2>
+<ul>
+<li>넘파이 배열을 나눌 때 100 X 100 이미지를 펼쳐서 길이가 10,000인 1차원 배열로 만듦.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 첫 번째 차원을 -1로 지정하면 자동으로 남은 차원을 할당</span>
+</span></span><span style="display:flex;"><span>apple <span style="color:#f92672">=</span> fruits[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">100</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>pineapple <span style="color:#f92672">=</span> fruits[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">200</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>banana <span style="color:#f92672">=</span> fruits[<span style="color:#ae81ff">200</span>:<span style="color:#ae81ff">300</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(apple<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(100, 10000)
+</code></pre>
+<ul>
+<li>샘플의 픽셀 평균값</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(apple<span style="color:#f92672">.</span>mean(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><pre><code>[ 88.3346  97.9249  87.3709  98.3703  92.8705  82.6439  94.4244  95.5999
+  90.681   81.6226  87.0578  95.0745  93.8416  87.017   97.5078  87.2019
+  88.9827 100.9158  92.7823 100.9184 104.9854  88.674   99.5643  97.2495
+  94.1179  92.1935  95.1671  93.3322 102.8967  94.6695  90.5285  89.0744
+  97.7641  97.2938 100.7564  90.5236 100.2542  85.8452  96.4615  97.1492
+  90.711  102.3193  87.1629  89.8751  86.7327  86.3991  95.2865  89.1709
+  96.8163  91.6604  96.1065  99.6829  94.9718  87.4812  89.2596  89.5268
+  93.799   97.3983  87.151   97.825  103.22    94.4239  83.6657  83.5159
+ 102.8453  87.0379  91.2742 100.4848  93.8388  90.8568  97.4616  97.5022
+  82.446   87.1789  96.9206  90.3135  90.565   97.6538  98.0919  93.6252
+  87.3867  84.7073  89.1135  86.7646  88.7301  86.643   96.7323  97.2604
+  81.9424  87.1687  97.2066  83.4712  95.9781  91.8096  98.4086 100.7823
+ 101.556  100.7027  91.6098  88.8976]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(np<span style="color:#f92672">.</span>mean(apple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(np<span style="color:#f92672">.</span>mean(pineapple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(np<span style="color:#f92672">.</span>mean(banana, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;pineappele&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_28_0.png" alt="png"></p>
+<ul>
+<li>전체 샘플에 대해 픽셀의 평균을 계산</li>
+<li>픽셀의 평균을 계산 (axis=0)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>bar(range(<span style="color:#ae81ff">10000</span>), np<span style="color:#f92672">.</span>mean(apple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>bar(range(<span style="color:#ae81ff">10000</span>), np<span style="color:#f92672">.</span>mean(pineapple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>bar(range(<span style="color:#ae81ff">10000</span>), np<span style="color:#f92672">.</span>mean(banana, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_30_0.png" alt="png"></p>
+<ul>
+<li>픽셀 평균값은 100X100 크기로 바꿔서 이미지처럼 출력하여 위 그래프와 비교</li>
+<li>픽셀을 평균 낸 이미지를 모든 사진을 합쳐 놓은 대표 이미지</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>apple_mean <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(apple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>reshape(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>pineapple_mean <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(pineapple, axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>reshape(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>banana_mean <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(banana, axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>reshape(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>imshow(apple_mean, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>imshow(pineapple_mean, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>imshow(banana_mean, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_32_0.png" alt="png"></p>
+<h2 id="평균값과-가까운-사진-고르기">평균값과 가까운 사진 고르기</h2>
+<ul>
+<li>사과 사진의 평균값인 apple_mean과 가장 가짜운 사진을 고름.</li>
+<li>fruits 배열에 있는 모든 샘플에서 apple_mean을 뺀 절댓값의 평균을 계산.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>abs_diff <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>abs(fruits <span style="color:#f92672">-</span> apple_mean)
+</span></span><span style="display:flex;"><span>abs_mean <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(abs_diff, axis<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>print(abs_mean<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(300,)
+</code></pre>
+<ul>
+<li>apple_mean과 오차가 가장 작은 샘플 100개</li>
+<li>np.argsort() -&gt; 작은 것에서 큰 것으로 정렬</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>apple_index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argsort(abs_mean)[:<span style="color:#ae81ff">100</span>]
+</span></span><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(fruits[apple_index[i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> j]], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/chapter6_1/output_37_0.png" alt="png"></p>
+<ul>
+<li>군집(clustering) : 비슷한 샘플까리 그룹으로 모으는 작업</li>
+<li>클러스터(cluster) : 군집 알고리즘에서 만든 그룹</li>
+</ul>
+<h2 id="마무리">마무리</h2>
+<h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
+<ul>
+<li>비지도 학습 : 머신러닝의 한 종류로 훈련 데이터에 타깃이 없음.
+<ul>
+<li>타깃이 없기 때문에 외부의 도움 없이 스스로 유용한 무언가를 학습해야함.</li>
+<li>대표적으로 군집, 차원축소</li>
+</ul>
+</li>
+<li>히스토그램 : 구간별로 갑싱 발생한 빈도를 그래프로 표현.
+<ul>
+<li>보통 x축 값의 구간(계급)이고 y축은 발생 빈도(도수)</li>
+</ul>
+</li>
+<li>군집 : 비슷한 샘플끼리 하나의 그룹으로 모으는 대표적인 비지도 학습 작업.
+<ul>
+<li>군집 알고리즘으로 모은 샘플 그룹을 클러스터</li>
+</ul>
+</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/book/" rel="tag">Book</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/ml/book/chapter5_3/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-3 트리의 앙상블</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/ml/book/chapter6_2/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-2 k-평균</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-2 k-평균</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter6_1/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-1 군집 알고리즘</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter5_3/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-3 트리의 앙상블</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter5_2/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-2 교차 검증과 그리드 서치</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml/book/chapter5_1/">[ML][Book][혼공 머신러닝&#43;딥러닝]ch5-1 결정 트리</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
