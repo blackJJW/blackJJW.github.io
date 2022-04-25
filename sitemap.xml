@@ -2,28 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/post/dl/book/chapter7_3/</loc>
-    <lastmod>2022-04-23T17:30:45+09:00</lastmod>
+    <loc>/post/setting/oracle_database_19c_setting/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/tags/oracle/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/categories/setting/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+  </url><url>
+    <loc>/post/dl/book/chapter7_3/</loc>
     <lastmod>2022-04-23T17:30:45+09:00</lastmod>
   </url><url>
     <loc>/tags/book/</loc>
     <lastmod>2022-04-23T17:30:45+09:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-04-23T17:30:45+09:00</lastmod>
-  </url><url>
     <loc>/categories/dl/</loc>
     <lastmod>2022-04-23T17:30:45+09:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2022-04-23T17:30:45+09:00</lastmod>
-  </url><url>
     <loc>/tags/python/</loc>
-    <lastmod>2022-04-23T17:30:45+09:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2022-04-23T17:30:45+09:00</lastmod>
   </url><url>
     <loc>/post/dl/book/chapter7_2/</loc>
@@ -39,9 +48,6 @@
     <lastmod>2022-04-23T16:40:45+09:00</lastmod>
   </url><url>
     <loc>/post/setting/spark_installation_windows_10/</loc>
-    <lastmod>2022-04-23T16:35:45+09:00</lastmod>
-  </url><url>
-    <loc>/categories/setting/</loc>
     <lastmod>2022-04-23T16:35:45+09:00</lastmod>
   </url><url>
     <loc>/tags/spark/</loc>
