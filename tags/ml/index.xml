@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML on Black_JJW&#39;s Blog</title>
+    <link>/tags/ml/</link>
+    <description>Recent content in ML on Black_JJW&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Apr 2022 18:33:45 +0900</lastBuildDate><atom:link href="/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Kaggle]Ubiquant Market Prediction - 2</title>
+      <link>/post/kaggle/ubiquant/ubiquant-2/</link>
+      <pubDate>Sun, 24 Apr 2022 18:33:45 +0900</pubDate>
+      
+      <guid>/post/kaggle/ubiquant/ubiquant-2/</guid>
+      <description>&amp;lt; Score Improvement History &amp;gt;    # &amp;gt; std * x k-fold score rank     1 &amp;gt; std * 70 3 0.1388 1795/2715   2 &amp;gt; std * 60 3 0.1387    3 &amp;gt; std * 50 3 0.1378    4 &amp;gt; std * 40 3 0.1366    5 &amp;gt; std * 30 3 0.1368    6 &amp;gt; std * 80 3 0.</description>
+    </item>
+    
+    <item>
+      <title>[Kaggle]Ubiquant Market Prediction - 1</title>
+      <link>/post/kaggle/ubiquant/ubiquant-1/</link>
+      <pubDate>Sun, 24 Apr 2022 18:30:45 +0900</pubDate>
+      
+      <guid>/post/kaggle/ubiquant/ubiquant-1/</guid>
+      <description>Step 1. 라이브러리 불러오기  본 프로젝트 수행을 위한 필수 라이브러리를 불러온다.  # 데이터 가공 import pandas as pd import numpy as np  # 메모리 정리 import gc  # for문 진행상황 확인 from tqdm.auto import tqdm  # 데이터 시각화 import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns import scipy.stats as stats Step 2. 데이터 불러오기 및 용량 축소   주어진 데이터의 행은 3141410 개, 열은 304 개로 구성되어 있음.</description>
+    </item>
+    
+  </channel>
+</rss>
