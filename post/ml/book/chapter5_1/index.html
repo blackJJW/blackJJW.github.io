@@ -352,7 +352,7 @@ memory usage: 203.2 KB
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
 </span></span><span style="display:flex;"><span>plot_tree(dt)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter5_1/output_27_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_27_0.png" alt="png"></p>
 <ul>
 <li>맨 위의 노드(node) : 루트 노드(root node)</li>
 <li>맨 아래의 노드 : 리프 노드(leaf node)</li>
@@ -384,7 +384,7 @@ memory usage: 203.2 KB
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
 </span></span><span style="display:flex;"><span>plot_tree(dt, max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter5_1/output_31_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_31_0.png" alt="png"></p>
 <ul>
 <li>
 <p>filled = True 로 지정하면 클래스마다 색을 지정하고, 어떤 클래스의 비율이 높아지면 점점 진한 색으로 표시</p>
@@ -503,7 +503,7 @@ memory usage: 203.2 KB
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
 </span></span><span style="display:flex;"><span>plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter5_1/output_40_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_40_0.png" alt="png"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
 </span></span><span style="display:flex;"><span>dt<span style="color:#f92672">.</span>fit(train_input, train_target)
 </span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(train_input, train_target))
@@ -514,7 +514,7 @@ memory usage: 203.2 KB
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
 </span></span><span style="display:flex;"><span>plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter5_1/output_42_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_42_0.png" alt="png"></p>
 <ul>
 <li>결정 트리는 어떤 특성이 가장 중요한지 나타내는 특성 중요도를 계산
 <ul>

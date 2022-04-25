@@ -187,7 +187,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_15_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_15_0.png" alt="png"></p>
 <ul>
 <li>0에 가까울수록 검게 나타나고 높은 값은 밝게 표시됨.</li>
 <li>이 흑백 이미지는 사진으로 찍은 이미지를 넘파이 배열로 변환할 때 반전시킨 것.</li>
@@ -214,7 +214,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_19_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_19_0.png" alt="png"></p>
 <ul>
 <li>이 그림에서 밝은 부분이 0에 가까고 짙은 부분이 255에 가까운 값</li>
 </ul>
@@ -222,7 +222,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">100</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>imshow(fruits[<span style="color:#ae81ff">200</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_21_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_21_0.png" alt="png"></p>
 <h2 id="픽셀-값-분석">픽셀 값 분석</h2>
 <ul>
 <li>넘파이 배열을 나눌 때 100 X 100 이미지를 펼쳐서 길이가 10,000인 1차원 배열로 만듦.</li>
@@ -257,7 +257,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(np<span style="color:#f92672">.</span>mean(banana, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;pineappele&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_28_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_28_0.png" alt="png"></p>
 <ul>
 <li>전체 샘플에 대해 픽셀의 평균을 계산</li>
 <li>픽셀의 평균을 계산 (axis=0)</li>
@@ -267,7 +267,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>bar(range(<span style="color:#ae81ff">10000</span>), np<span style="color:#f92672">.</span>mean(pineapple, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>bar(range(<span style="color:#ae81ff">10000</span>), np<span style="color:#f92672">.</span>mean(banana, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_30_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_30_0.png" alt="png"></p>
 <ul>
 <li>픽셀 평균값은 100X100 크기로 바꿔서 이미지처럼 출력하여 위 그래프와 비교</li>
 <li>픽셀을 평균 낸 이미지를 모든 사진을 합쳐 놓은 대표 이미지</li>
@@ -280,7 +280,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>imshow(pineapple_mean, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>imshow(banana_mean, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_32_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_32_0.png" alt="png"></p>
 <h2 id="평균값과-가까운-사진-고르기">평균값과 가까운 사진 고르기</h2>
 <ul>
 <li>사과 사진의 평균값인 apple_mean과 가장 가짜운 사진을 고름.</li>
@@ -302,7 +302,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s
 </span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(fruits[apple_index[i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> j]], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
 </span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/chapter6_1/output_37_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_1/output_37_0.png" alt="png"></p>
 <ul>
 <li>군집(clustering) : 비슷한 샘플까리 그룹으로 모으는 작업</li>
 <li>클러스터(cluster) : 군집 알고리즘에서 만든 그룹</li>
