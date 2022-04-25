@@ -22,7 +22,7 @@
       <pubDate>Sat, 23 Apr 2022 16:51:45 +0900</pubDate>
       
       <guid>/post/dl/book/chapter7_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 07-2 심층 신경망 2개의 층 from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step   이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1 사이로 변환하고, 28 X 28 크기의 2차원 배열을 784 크기의 1차원 배열로 펼침.</description>
+      <description>07-2 심층 신경망 2개의 층 from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step   이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1 사이로 변환하고, 28 X 28 크기의 2차원 배열을 784 크기의 1차원 배열로 펼침.</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Sat, 23 Apr 2022 16:50:45 +0900</pubDate>
       
       <guid>/post/dl/book/chapter7_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 07-1 인공 신경망 패션 MNIST from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step  print(train_input.</description>
+      <description>07-1 인공 신경망 패션 MNIST from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step  print(train_input.shape, train_target.shape) (60000, 28, 28) (60000,)  print(test_input.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Sat, 23 Apr 2022 16:40:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter6_3/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
+      <description>06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
  ex) 과일 사진의 경우 10,000개의 픽셀이 있기 때문에 10,000개의 특성이 재. 머신러닝에서는 이런 특성을 차원(dimension)    차원을 줄일 수 잇따면 저장 공간을 크게 줄일 수 있음.
   차원 축소(dimensionality reduction) 알고리즘 : 비지도 학습 작업 중 하나.
  데이터를 가장 잘 나타내는 일부 특성을 선택하여 데이터 크기를 줄이고 지도 학습 모델의 성능을 향상시킬 수 있는 방법    줄어든 차원에서 다시 원본 차원으로 손실을 최대한 줄이면서 복원 가능.</description>
@@ -52,7 +52,7 @@
       <pubDate>Sat, 23 Apr 2022 16:34:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter6_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 06-2 k-평균  k-평균(k-means) 군집 알고리즘이 평균값을 자동으로 찾아줌. 이 평균값이 클러스터의 중심에 위치, 클러스터 중심(cluster center) 또는 센트로이드(centroid)  k-평균 알고리즘 소개  k-평균 알고리즘의 작동 방식  무작위로 k개의 클러스터 중심을 정함. 각 샘플에서 가장 가까운 크러스터 중심을 찾아 해당 클러스터의 샘플로 지정. 클러스터에 속한 샘플의 평균값으로 클러스터 중심을 변경. 클러스터 중심에 변화가 없을 때까지 2번으로 돌아가 반복.    KMeans 클래스 !</description>
+      <description>06-2 k-평균  k-평균(k-means) 군집 알고리즘이 평균값을 자동으로 찾아줌. 이 평균값이 클러스터의 중심에 위치, 클러스터 중심(cluster center) 또는 센트로이드(centroid)  k-평균 알고리즘 소개  k-평균 알고리즘의 작동 방식  무작위로 k개의 클러스터 중심을 정함. 각 샘플에서 가장 가까운 크러스터 중심을 찾아 해당 클러스터의 샘플로 지정. 클러스터에 속한 샘플의 평균값으로 클러스터 중심을 변경. 클러스터 중심에 변화가 없을 때까지 2번으로 돌아가 반복.    KMeans 클래스 !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 03:00:33-- https://bit.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@
       <pubDate>Sat, 23 Apr 2022 16:33:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter6_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 06-1 군집 알고리즘 타깃을 모르는 비지도 학숩  타깃이 없을 때 사용하는 머신러닝 알고리즘 : 비지도 학습(unsupervised learning)  과일 사진 데이터 준비  사과, 바나나, 파인애플 사진 흑백 사진 넘파이 배열의 기본 저장 포맷인 npy 파일로 저장  !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 00:57:45-- https://bit.ly/fruits_300_data Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11 Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected. HTTP request sent, awaiting response.</description>
+      <description>06-1 군집 알고리즘 타깃을 모르는 비지도 학숩  타깃이 없을 때 사용하는 머신러닝 알고리즘 : 비지도 학습(unsupervised learning)  과일 사진 데이터 준비  사과, 바나나, 파인애플 사진 흑백 사진 넘파이 배열의 기본 저장 포맷인 npy 파일로 저장  !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 00:57:45-- https://bit.ly/fruits_300_data Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11 Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected. HTTP request sent, awaiting response... 301 Moved Permanently Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following] --2022-04-18 00:57:45-- https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy Resolving github.</description>
     </item>
     
     <item>
@@ -70,9 +70,10 @@
       <pubDate>Sat, 23 Apr 2022 16:32:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter5_3/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 05-3 트리의 앙상블 정형 데이터와 비정형 데이터  정형 데이터(structured data) : csv와 같이 어떤 구조로 되어있는 데이터  CSV, 데이터베이스, 엑셀에 저장하기 쉬움   비정형 데이터(unstructured data) : 데이터베이스나 엑셀로 표현하기 어려운 데이터  텍스트 에디터, 사진, 음악     텍스트나 사진을 데이터베이스에 저장 가능한가?
+      <description>05-3 트리의 앙상블 정형 데이터와 비정형 데이터  정형 데이터(structured data) : csv와 같이 어떤 구조로 되어있는 데이터  CSV, 데이터베이스, 엑셀에 저장하기 쉬움   비정형 데이터(unstructured data) : 데이터베이스나 엑셀로 표현하기 어려운 데이터  텍스트 에디터, 사진, 음악     텍스트나 사진을 데이터베이스에 저장 가능한가?
    저장 가능.
-  데이터베이스 중에는 구조적이지 않은 데이터를 저장하는 데 편리하도록 발전한 것이 많음.</description>
+  데이터베이스 중에는 구조적이지 않은 데이터를 저장하는 데 편리하도록 발전한 것이 많음.
+  NoSQL : 엑셀이나 CSV에 담기 어려운 텍스트나 JSON 데이터를 저장하는 데 용이.</description>
     </item>
     
     <item>
@@ -81,11 +82,12 @@
       <pubDate>Sat, 23 Apr 2022 16:31:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter5_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 05-2 교차 검증과 그리드 서치 검증 세트   테스트 세트를 사용하지 안흐면 모델이 과대적합인지 과소적합인지 판단하기 어려움.
+      <description>05-2 교차 검증과 그리드 서치 검증 세트   테스트 세트를 사용하지 안흐면 모델이 과대적합인지 과소적합인지 판단하기 어려움.
   테스트 세트를 사용하지 않고 이를 측정하는 간단한 방법 -&amp;gt; 훈련 세트를 또 나누는 것.
   이를 데이터를 검증 세트(validation set)
   훈련 세트에서 모델을 평가하고 검증 세트로 모델을 평가.
-  테스트하고 싶은 매개변수를 바꿔가며 가장 좋은 모델을 선택.</description>
+  테스트하고 싶은 매개변수를 바꿔가며 가장 좋은 모델을 선택.
+  이 매개변수를 사용해 훈련 세트와 검증 세트를 합쳐 전체 훈련 데이터에서 모델을 다시 훈련.</description>
     </item>
     
     <item>
@@ -94,7 +96,7 @@
       <pubDate>Fri, 22 Apr 2022 16:31:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter5_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 05-1 결정 트리 로지스틱 회귀로 와인 분류 import pandas as pd wine = pd.read_csv(&amp;#39;https://bit.ly/wine_csv_data&amp;#39;) wine.head()     alcohol sugar pH class     0 9.4 1.9 3.51 0.0   1 9.8 2.6 3.20 0.0   2 9.8 2.3 3.26 0.0   3 9.8 1.9 3.16 0.0   4 9.4 1.9 3.51 0.0     class  0 : 레드 와인 1: 화이트 와인(양성 클래스) 전체 문제에서 화이트와인을 골라내는 문제    wine.</description>
+      <description>05-1 결정 트리 로지스틱 회귀로 와인 분류 import pandas as pd wine = pd.read_csv(&amp;#39;https://bit.ly/wine_csv_data&amp;#39;) wine.head()     alcohol sugar pH class     0 9.4 1.9 3.51 0.0   1 9.8 2.6 3.20 0.0   2 9.8 2.3 3.26 0.0   3 9.8 1.9 3.16 0.0   4 9.4 1.9 3.51 0.0     class  0 : 레드 와인 1: 화이트 와인(양성 클래스) 전체 문제에서 화이트와인을 골라내는 문제    wine.</description>
     </item>
     
     <item>
@@ -103,7 +105,7 @@
       <pubDate>Fri, 22 Apr 2022 16:30:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter4_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 04-2 확률적 경사 하강법 점진적인 학습 또는 온라인 학습  앞서 훈련한 모델을 버리지 않고 새로운 데이터에 대해서만 조금씩 더 훈련  대표적인 알고리즘 : 확률적 경사 하강법(Stochastic Gradient Descent)    확률적 경사 하강법  훈련 세트에서 랜덤하게 하나의 샘플을 고르는 것 에포크(epoch) : 확률적 경사 하강법에서 훈련세트를 한 번 모두 사용하는 과정 미니배치 경사 하강법(minibatch gradient descent) : 여러 개의 샘플을 사용해 경사 하강법을 수행하는 방식 배치 경사 하강법(batch gradient descent) : 극단적으로 한 번 경사로를 따라 이동하기 위해 전체 샘플을 사용  손실함수  손실함수(loss function) : 어떤 문제에서 머신러닝 알고리즘이 얼마나 엉터리인지 측정하는 기준  값이 작을 수로 좋음 어떤 값이 최솟값인지 알지 못함     손실 함수와 비용 함수</description>
+      <description>04-2 확률적 경사 하강법 점진적인 학습 또는 온라인 학습  앞서 훈련한 모델을 버리지 않고 새로운 데이터에 대해서만 조금씩 더 훈련  대표적인 알고리즘 : 확률적 경사 하강법(Stochastic Gradient Descent)    확률적 경사 하강법  훈련 세트에서 랜덤하게 하나의 샘플을 고르는 것 에포크(epoch) : 확률적 경사 하강법에서 훈련세트를 한 번 모두 사용하는 과정 미니배치 경사 하강법(minibatch gradient descent) : 여러 개의 샘플을 사용해 경사 하강법을 수행하는 방식 배치 경사 하강법(batch gradient descent) : 극단적으로 한 번 경사로를 따라 이동하기 위해 전체 샘플을 사용  손실함수  손실함수(loss function) : 어떤 문제에서 머신러닝 알고리즘이 얼마나 엉터리인지 측정하는 기준  값이 작을 수로 좋음 어떤 값이 최솟값인지 알지 못함     손실 함수와 비용 함수</description>
     </item>
     
     <item>
@@ -112,7 +114,7 @@
       <pubDate>Fri, 22 Apr 2022 16:29:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter4_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 04-1 로지스틱 회귀 럭키백의 확률  럭키백에 들어갈 수 있는 생선은 7개 럭키백에 들어간 생선의 크기, 무게 등이 주어졌을 때 7개 생선에 대한 확률을 출력 길이, 높이, 두께, 대각성 길이, 무게 사용  데이터 준비 import pandas as pd fish = pd.read_csv(&amp;#39;https://bit.ly/fish_csv_data&amp;#39;) fish.head()     Species Weight Length Diagonal Height Width     0 Bream 242.0 25.</description>
+      <description>04-1 로지스틱 회귀 럭키백의 확률  럭키백에 들어갈 수 있는 생선은 7개 럭키백에 들어간 생선의 크기, 무게 등이 주어졌을 때 7개 생선에 대한 확률을 출력 길이, 높이, 두께, 대각성 길이, 무게 사용  데이터 준비 import pandas as pd fish = pd.read_csv(&amp;#39;https://bit.ly/fish_csv_data&amp;#39;) fish.head()     Species Weight Length Diagonal Height Width     0 Bream 242.0 25.4 30.0 11.5200 4.0200   1 Bream 290.0 26.3 31.</description>
     </item>
     
     <item>
@@ -121,7 +123,7 @@
       <pubDate>Fri, 22 Apr 2022 16:28:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter3_3/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 03-3 특성 공학과 규제 다중 회귀  여러 개의 특성을 사용한 선형 회귀를 다중 회귀(multiple regression) 1개의 특성을 사용할 경우 선형 회귀 모델이 학습하는 것은 직선 2개의 특성을 사용할 경우에는 평면을 학습 3개일 경우 : 3차원 공간 이상을 그리거나 상상불가  특성이 많은 고차원에서는 선형 회귀가 매우 복잡한 모델을 표현   특성 공학(feature engineering) : 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업  데이터 준비  판다스(pandas) : 데이터 분석 라이브러리 데이터프레임(dataframe) : 판다스의 핵심 데이터 구조   read_csv() 함수로 데이터프레임을 생성 to_numpy() 메서드를 사용해 넘파이 배열로 바꿈  import pandas as pd  df = pd.</description>
+      <description>03-3 특성 공학과 규제 다중 회귀  여러 개의 특성을 사용한 선형 회귀를 다중 회귀(multiple regression) 1개의 특성을 사용할 경우 선형 회귀 모델이 학습하는 것은 직선 2개의 특성을 사용할 경우에는 평면을 학습 3개일 경우 : 3차원 공간 이상을 그리거나 상상불가  특성이 많은 고차원에서는 선형 회귀가 매우 복잡한 모델을 표현   특성 공학(feature engineering) : 기존의 특성을 사용해 새로운 특성을 뽑아내는 작업  데이터 준비  판다스(pandas) : 데이터 분석 라이브러리 데이터프레임(dataframe) : 판다스의 핵심 데이터 구조   read_csv() 함수로 데이터프레임을 생성 to_numpy() 메서드를 사용해 넘파이 배열로 바꿈  import pandas as pd  df = pd.</description>
     </item>
     
     <item>
@@ -130,7 +132,7 @@
       <pubDate>Fri, 22 Apr 2022 16:27:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter3_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 03-2 선형 회귀 k-최근접 이웃의 한계 import numpy as np  perch_length = np.array(  [8.4, 13.7, 15.0, 16.2, 17.4, 18.0, 18.7, 19.0, 19.6, 20.0,  21.0, 21.0, 21.0, 21.3, 22.0, 22.0, 22.0, 22.0, 22.0, 22.5,  22.5, 22.7, 23.0, 23.5, 24.0, 24.0, 24.6, 25.0, 25.6, 26.5,  27.3, 27.5, 27.5, 27.5, 28.0, 28.7, 30.0, 32.8, 34.5, 35.0,  36.5, 36.</description>
+      <description>03-2 선형 회귀 k-최근접 이웃의 한계 import numpy as np  perch_length = np.array(  [8.4, 13.7, 15.0, 16.2, 17.4, 18.0, 18.7, 19.0, 19.6, 20.0,  21.0, 21.0, 21.0, 21.3, 22.0, 22.0, 22.0, 22.0, 22.0, 22.5,  22.5, 22.7, 23.0, 23.5, 24.0, 24.0, 24.6, 25.0, 25.6, 26.5,  27.3, 27.5, 27.5, 27.5, 28.0, 28.7, 30.0, 32.8, 34.5, 35.0,  36.5, 36.0, 37.0, 37.0, 39.0, 39.0, 39.0, 40.0, 40.0, 40.0,  40.</description>
     </item>
     
     <item>
@@ -139,7 +141,7 @@
       <pubDate>Fri, 22 Apr 2022 16:26:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter3_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 03-1 k-최근접 이웃 회귀 k-최근접 이웃 회귀  지도 학습 알고리즘 : 분류, 회귀(regression) 분류 : 샘플릉 몇 개의 클래스 중 하나로 분류하는 문제 회귀 : 클래스 중 하나로 분류하는 것이 아니라 임의의 어떤 숫자로 예측하는 문제. 정해진 클래스가 없고 임의의 수치를 출력   k-최근접 이웃 분류 알고리즘
+      <description>03-1 k-최근접 이웃 회귀 k-최근접 이웃 회귀  지도 학습 알고리즘 : 분류, 회귀(regression) 분류 : 샘플릉 몇 개의 클래스 중 하나로 분류하는 문제 회귀 : 클래스 중 하나로 분류하는 것이 아니라 임의의 어떤 숫자로 예측하는 문제. 정해진 클래스가 없고 임의의 수치를 출력   k-최근접 이웃 분류 알고리즘
   예측하려는 샘플에 가장 가까운 샘플 k개를 선택 이 샘플들의 클래스를 확인하여 다수 클래스를 새로운 클래스로 예측   k-최근접 이웃 회귀 알고리즘</description>
     </item>
     
@@ -149,7 +151,7 @@
       <pubDate>Fri, 22 Apr 2022 16:25:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter2_2/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 02-2 데이터 전처리 넘파이로 데이터 준비 fish_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,  31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,  35.0, 35.0, 35.0, 36.0, 36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0, 9.8,  10.5, 10.6, 11.0, 11.2, 11.3, 11.8, 11.8, 12.0, 12.2, 12.4, 13.0, 14.3, 15.0] fish_weight = [242.</description>
+      <description>02-2 데이터 전처리 넘파이로 데이터 준비 fish_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,  31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,  35.0, 35.0, 35.0, 36.0, 36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0, 9.8,  10.5, 10.6, 11.0, 11.2, 11.3, 11.8, 11.8, 12.0, 12.2, 12.4, 13.0, 14.3, 15.0] fish_weight = [242.0, 290.0, 340.0, 363.0, 430.0, 450.0, 500.0, 390.0, 450.</description>
     </item>
     
     <item>
@@ -158,11 +160,12 @@
       <pubDate>Fri, 22 Apr 2022 16:24:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter2_1/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 02-1 훈련 세트와 테스트 세트 지도 학습(supervised learning)과 비지도 학습(unsupervised learning)   지도 학습 알고리즘은 훈련하기 위한 데이터와 정답이 필요
+      <description>02-1 훈련 세트와 테스트 세트 지도 학습(supervised learning)과 비지도 학습(unsupervised learning)   지도 학습 알고리즘은 훈련하기 위한 데이터와 정답이 필요
   지도 학습에서는 데이터와 정답을 입력(input)과 타깃(target), 이 둘을 합쳐 훈련 데이터(training data)
   입력과 타깃 : 독립변수(입력), 종속변수(타깃)
   지도 학습 알고리즘은 입력(데이터)과 타깃(정답)으로 이뤄진 훈련 데이터가 필요
-  입력 데이터만 있을 때는 비지도 학습 알고리즘을 사용</description>
+  입력 데이터만 있을 때는 비지도 학습 알고리즘을 사용
+  강화 학습(reinforcement learning) : 타깃이 아니라 알고리즘이 행동한 결과로 얻은 보상을 사용해 학습</description>
     </item>
     
     <item>
@@ -171,7 +174,7 @@
       <pubDate>Fri, 22 Apr 2022 15:24:45 +0900</pubDate>
       
       <guid>/post/ml/book/chapter1_3/</guid>
-      <description>Book : &amp;lsquo;혼자 공부하는 머신러닝 + 딥러닝&amp;rsquo;, 박해선 지음, 한빛미디어 01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &amp;lsquo;도미&amp;rsquo;, &amp;lsquo;곤들메기&amp;rsquo;, &amp;lsquo;농어&amp;rsquo;, &amp;lsquo;강꼬치고기&amp;rsquo;, &amp;lsquo;로치&amp;rsquo;, &amp;lsquo;빙어&amp;rsquo;, &amp;lsquo;송어&amp;rsquo; 생선 길이 30cm 이상 -&amp;gt; &amp;lsquo;도미&amp;rsquo;  if fish_length &amp;gt;= 30: print(&amp;#39;도미&amp;#39;)  30cm 이상이 꼭 &amp;lsquo;도미&amp;rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류</description>
+      <description>01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &amp;lsquo;도미&amp;rsquo;, &amp;lsquo;곤들메기&amp;rsquo;, &amp;lsquo;농어&amp;rsquo;, &amp;lsquo;강꼬치고기&amp;rsquo;, &amp;lsquo;로치&amp;rsquo;, &amp;lsquo;빙어&amp;rsquo;, &amp;lsquo;송어&amp;rsquo; 생선 길이 30cm 이상 -&amp;gt; &amp;lsquo;도미&amp;rsquo;  if fish_length &amp;gt;= 30: print(&amp;#39;도미&amp;#39;)  30cm 이상이 꼭 &amp;lsquo;도미&amp;rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류</description>
     </item>
     
     <item>

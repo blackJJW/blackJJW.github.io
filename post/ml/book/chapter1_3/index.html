@@ -8,7 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[ML][Book][혼공 머신러닝&#43;딥러닝]ch1-3 K-최근접 이웃 분류" />
-<meta property="og:description" content="Book : &lsquo;혼자 공부하는 머신러닝 &#43; 딥러닝&rsquo;, 박해선 지음, 한빛미디어 01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &lsquo;도미&rsquo;, &lsquo;곤들메기&rsquo;, &lsquo;농어&rsquo;, &lsquo;강꼬치고기&rsquo;, &lsquo;로치&rsquo;, &lsquo;빙어&rsquo;, &lsquo;송어&rsquo; 생선 길이 30cm 이상 -&gt; &lsquo;도미&rsquo;  if fish_length &gt;= 30: print(&#39;도미&#39;)  30cm 이상이 꼭 &lsquo;도미&rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류" />
+<meta property="og:description" content="01-3 마켓과 머신러닝  간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련  생선 분류 문제  생선 종류 : &lsquo;도미&rsquo;, &lsquo;곤들메기&rsquo;, &lsquo;농어&rsquo;, &lsquo;강꼬치고기&rsquo;, &lsquo;로치&rsquo;, &lsquo;빙어&rsquo;, &lsquo;송어&rsquo; 생선 길이 30cm 이상 -&gt; &lsquo;도미&rsquo;  if fish_length &gt;= 30: print(&#39;도미&#39;)  30cm 이상이 꼭 &lsquo;도미&rsquo;라고 말할 수 없음 절대 바뀌지 않은 기준 정하기 어려움 머신러닝은 스스로 기준을 찾아서 일을 함  도미 데이터 준비  머신러닝은 여러 개의 도미 생선을 보면 스스로 어떤 생선이 도미인지를 구분할 기준을 찾음 간단한 문제부터 해결 필요   이진 분류" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/ml/book/chapter1_3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-22T15:24:45+09:00" />
@@ -106,8 +106,7 @@
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
-<h1 id="01-3-마켓과-머신러닝">01-3 마켓과 머신러닝</h1>
+			<h1 id="01-3-마켓과-머신러닝">01-3 마켓과 머신러닝</h1>
 <ul>
 <li>간단한 머신러닝 알고리즘 중 하나인 k-최근접 이웃을 사용, 2개의 종류를 분류하는 머신러닝 모델을 훈련</li>
 </ul>
@@ -525,6 +524,7 @@
 <ul>
 <li>훈련된 사이킷런 모델의 성능을 측정. 처음 두 매개변수로 특성과 정답 데이터를 전달. 이 메서드는 먼저 predict() 메서드로 예측을 수행한 다음 분류 모델일 경우 정답과 비교하여 올바르게 예측한 개수의 비율을 반환</li>
 </ul>
+<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
 
 		</div>
 		<footer class="post__footer">
