@@ -95,6 +95,13 @@
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -111,6 +118,31 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/sql/sql_pl-sql/" rel="bookmark">
+			[SQL][PL/SQL]SQL과 PL/SQL
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-25T19:33:45&#43;09:00">April 25, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/sql/" rel="category">SQL</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		SQL, PL/SQL 1. SQL(Structured Query Language)   구조화된 질의 언어
+  DBMS 상에서 데이터를 읽고 쓰고 삭제하는 등, 데이터를 관리하기 위한 프로그램 언어
+  집합적 언어 : 데이터를 특정 집합 단위로 분류해 이 단위별로 한 번에 처리하는 언어
+  절차적 언어
+프로그래밍 순서대로 로직이 처리되는 언어
+ex) C, Java
+    DDL, DML, DCL
+  DDL(Data Definition Language)
+데이터베이스 객체를 생성, 삭제, 변경하는 언어
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -274,23 +306,6 @@
   Next 버튼을 클릭 후 설치 경로 설정에 관하여 나온다.
  초기 설정 : C:\Program Files\Java\jdk1.8.0_301\ 이 경로를 변경 → C:\jdk  경로 이름 중에 공백이 있으면 환경 설치 시 문제 발생 가능성 있음.      다시 Next 버튼을 클릭 후, 자바 런타일 환경의 폴더의 경로도 변경해준다.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/ml/book/chapter6_2/" rel="bookmark">
-			[ML][Book][혼공 머신러닝&#43;딥러닝]ch6-2 k-평균
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-23T16:34:45&#43;09:00">April 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ml/" rel="category">ML</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		06-2 k-평균  k-평균(k-means) 군집 알고리즘이 평균값을 자동으로 찾아줌. 이 평균값이 클러스터의 중심에 위치, 클러스터 중심(cluster center) 또는 센트로이드(centroid)  k-평균 알고리즘 소개  k-평균 알고리즘의 작동 방식  무작위로 k개의 클러스터 중심을 정함. 각 샘플에서 가장 가까운 크러스터 중심을 찾아 해당 클러스터의 샘플로 지정. 클러스터에 속한 샘플의 평균값으로 클러스터 중심을 변경. 클러스터 중심에 변화가 없을 때까지 2번으로 돌아가 반복.    KMeans 클래스 !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 03:00:33-- https://bit.
-	</div>
 </article>
 </main>
 
@@ -313,11 +328,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/sql/sql_pl-sql/">[SQL][PL/SQL]SQL과 PL/SQL</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/statistics/chapter1_1/">[Statistics]ch1 통계학 기본</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-2/">[Kaggle]Ubiquant Market Prediction - 2</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-1/">[Kaggle]Ubiquant Market Prediction - 1</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/setting/oracle_database_19c_setting/">[Oracle][setting]Oracle Database 19c Installation and Setting</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_3/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련</a></li>
 		</ul>
 	</div>
 </div>
@@ -336,6 +351,8 @@
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a></li>
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a></li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/statistics/">Statistics</a></li>
 		</ul>
 	</div>
@@ -349,8 +366,10 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="Oracle">Oracle</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pl/sql/" title="PL/SQL">PL/SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL</a>
 	</div>
 </div>
 </aside>

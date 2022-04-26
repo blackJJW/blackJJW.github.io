@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on Black_JJW&#39;s Blog</title>
+    <link>/tags/sql/</link>
+    <description>Recent content in SQL on Black_JJW&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Apr 2022 19:33:45 +0900</lastBuildDate><atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[SQL][PL/SQL]SQL과 PL/SQL</title>
+      <link>/post/sql/sql_pl-sql/</link>
+      <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
+      
+      <guid>/post/sql/sql_pl-sql/</guid>
+      <description>SQL, PL/SQL 1. SQL(Structured Query Language)   구조화된 질의 언어
+  DBMS 상에서 데이터를 읽고 쓰고 삭제하는 등, 데이터를 관리하기 위한 프로그램 언어
+  집합적 언어 : 데이터를 특정 집합 단위로 분류해 이 단위별로 한 번에 처리하는 언어
+  절차적 언어
+프로그래밍 순서대로 로직이 처리되는 언어
+ex) C, Java
+    DDL, DML, DCL
+  DDL(Data Definition Language)
+데이터베이스 객체를 생성, 삭제, 변경하는 언어</description>
+    </item>
+    
+  </channel>
+</rss>
