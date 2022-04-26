@@ -229,11 +229,11 @@ FF
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/statistics/chapter1_1/">[Statistics]ch1 통계학 기본</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-2/">[Kaggle]Ubiquant Market Prediction - 2</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-1/">[Kaggle]Ubiquant Market Prediction - 1</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/setting/oracle_database_19c_setting/">[Oracle][setting]Oracle Database 19c Installation and Setting</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_3/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-3 신경망 모델 훈련</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dl/book/chapter7_2/">[DL][Book][혼공 머신러닝&#43;딥러닝]ch7-2 심층 신경망</a></li>
 		</ul>
 	</div>
 </div>
@@ -251,6 +251,8 @@ FF
 				<a class="widget__link" href="/categories/python/">Python</a></li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a></li>
 		</ul>
 	</div>
 </div>
@@ -281,6 +283,32 @@ FF
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>
