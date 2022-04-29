@@ -140,9 +140,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		<h4 id="주에프앤이노에듀">(주)에프앤이노에듀</h4>
-<h5 id="현장-전문가-육성을-위한-인공지능ai-창의-융합형-인재-양성과정">현장 전문가 육성을 위한 인공지능(AI) 창의 융합형 인재 양성과정</h5>
-<h6 id="final-프로젝트">final 프로젝트</h6>
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -159,11 +157,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Chapter 1 - 통계학 기본 1.1 통계학   통계학의 목적(1) : 가지고 있는 데이터의 설명
- 가지고 있는 데이터를 정리 요약하기 위해 사용되는 통계학 : 기술통계    통계학의 목적(2) : 모르는 데이터의 예측과 추측
- 가지고 있지 않은 미지의 데이터를 추측할 목적으로 사용되는 통계학 : 추측통계    통계학을 배우는 이유 : 가지고 있는 데이터를 이용하여 모르는 데이터를 추측할 수 있다.
-  표본과 모집단
- 표본 : 현재 가지고 있는 데이터 모집단 : 아직 가지고 있지 않은 모르는 데이터를 포함한 모든 데이터 표본이라는 일부 데이터를 이용, 모집단이라는 전체 데이처를 분석하는 것 -&gt; 추측통계의 목적    1.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -180,7 +174,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		&lt; Score Improvement History &gt;    # &gt; std * x k-fold score rank     1 &gt; std * 70 3 0.1388 1795/2715   2 &gt; std * 60 3 0.1387    3 &gt; std * 50 3 0.1378    4 &gt; std * 40 3 0.1366    5 &gt; std * 30 3 0.1368    6 &gt; std * 80 3 0.
+		<h3 id="prediction-and-score">Prediction and Score</h3>
 	</div>
 </article><article class="list__item post">
 	
@@ -197,7 +191,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Step 1. 라이브러리 불러오기  본 프로젝트 수행을 위한 필수 라이브러리를 불러온다.  # 데이터 가공 import pandas as pd import numpy as np  # 메모리 정리 import gc  # for문 진행상황 확인 from tqdm.auto import tqdm  # 데이터 시각화 import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns import scipy.stats as stats Step 2. 데이터 불러오기 및 용량 축소   주어진 데이터의 행은 3141410 개, 열은 304 개로 구성되어 있음.
+		<h3 id="eda">EDA</h3>
 	</div>
 </article><article class="list__item post">
 	
@@ -214,7 +208,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-3 신경망 모델 훈련 손실 곡선  케라스의 fit() 메서드는 HIstory 클래스를 반환 History 객체에는 훈련 과정에서 계산한 지표, 즉 손실과 정확도 값이 저장되어 있음.  from tensorflow import keras from sklearn.model_selection import train_test_split  (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()  train_scaled = train_input / 255.0 train_scaled, val_scaled, train_target, val_target = train_test_split(  train_scaled, train_target, test_size = 0.2, random_state = 42 ) Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -231,7 +225,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-2 심층 신경망 2개의 층 from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step   이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1 사이로 변환하고, 28 X 28 크기의 2차원 배열을 784 크기의 1차원 배열로 펼침.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -248,7 +242,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-1 인공 신경망 패션 MNIST from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step  print(train_input.shape, train_target.shape) (60000, 28, 28) (60000,)  print(test_input.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -265,10 +259,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
- ex) 과일 사진의 경우 10,000개의 픽셀이 있기 때문에 10,000개의 특성이 재. 머신러닝에서는 이런 특성을 차원(dimension)    차원을 줄일 수 잇따면 저장 공간을 크게 줄일 수 있음.
-  차원 축소(dimensionality reduction) 알고리즘 : 비지도 학습 작업 중 하나.
- 데이터를 가장 잘 나타내는 일부 특성을 선택하여 데이터 크기를 줄이고 지도 학습 모델의 성능을 향상시킬 수 있는 방법    줄어든 차원에서 다시 원본 차원으로 손실을 최대한 줄이면서 복원 가능.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -285,7 +276,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		06-2 k-평균  k-평균(k-means) 군집 알고리즘이 평균값을 자동으로 찾아줌. 이 평균값이 클러스터의 중심에 위치, 클러스터 중심(cluster center) 또는 센트로이드(centroid)  k-평균 알고리즘 소개  k-평균 알고리즘의 작동 방식  무작위로 k개의 클러스터 중심을 정함. 각 샘플에서 가장 가까운 크러스터 중심을 찾아 해당 클러스터의 샘플로 지정. 클러스터에 속한 샘플의 평균값으로 클러스터 중심을 변경. 클러스터 중심에 변화가 없을 때까지 2번으로 돌아가 반복.    KMeans 클래스 !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 03:00:33-- https://bit.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -302,7 +293,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		06-1 군집 알고리즘 타깃을 모르는 비지도 학숩  타깃이 없을 때 사용하는 머신러닝 알고리즘 : 비지도 학습(unsupervised learning)  과일 사진 데이터 준비  사과, 바나나, 파인애플 사진 흑백 사진 넘파이 배열의 기본 저장 포맷인 npy 파일로 저장  !wget https://bit.ly/fruits_300_data -O fruits_300.npy --2022-04-18 00:57:45-- https://bit.ly/fruits_300_data Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11 Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected. HTTP request sent, awaiting response... 301 Moved Permanently Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following] --2022-04-18 00:57:45-- https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy Resolving github.
+		
 	</div>
 </article>
 </main>

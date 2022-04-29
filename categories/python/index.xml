@@ -13,12 +13,7 @@
       <pubDate>Thu, 21 Apr 2022 13:40:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6048 : [기초-비교연산] 정수 2개 입력받아 비교하기1(설명)(py) 문제 설명 두 정수(a, b)를 입력받아
-a가 b보다 작으면 True 를, a가 b보다 크거나 같으면 False 를 출력하는 프로그램을 작성해보자.
-예시 print(123&amp;lt;456) #비교 연산자 &amp;lt; 의 계산 결과인 True(참)가 출력된다. (123, 456 은 숫자로 작성된 단어이기 때문에 10진수로 인식된다.)
-참고 어떤 값을 비교하기 위해 비교/관계(comparison/relational) 연산자(operator)를 사용할 수 있다.
-비교/관계연산자 &amp;lt; (less than sign) 는
-왼쪽의 값이 오른쪽 값 보다 작은 경우 True(참)로 계산하고, 그 외의 경우에는 False(거짓)로 계산한다.</description>
+      <description>&lt;h5 id=&#34;codeup--6048-6049-6050-6051&#34;&gt;CodeUp : 6048, 6049, 6050, 6051&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -27,10 +22,7 @@ a가 b보다 작으면 True 를, a가 b보다 크거나 같으면 False 를 출�
       <pubDate>Thu, 21 Apr 2022 13:30:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6046 : [기초-비트시프트연산] 정수 1개 입력받아 2배 곱해 출력하기(설명)(py) 문제 설명 정수 1개를 입력받아 2배 곱해 출력해보자.
-참고
-*2 를 계산한 값을 출력해도 되지만, 정수를 2배로 곱하거나 나누어 계산해 주는 비트단위시프트연산자 &amp;laquo;, &amp;raquo;를 이용할 수 있다. 컴퓨터 내부에는 2진수 형태로 값들이 저장되기 때문에, 2진수 형태로 저장되어 있는 값들을 왼쪽(&amp;laquo;)이나 오른쪽(&amp;raquo;)으로 지정한 비트 수만큼 밀어주면 2배씩 늘어나거나 1/2로 줄어드는데,
-왼쪽 비트시프트(&amp;laquo;)가 될 때에는 오른쪽에 0이 주어진 개수만큼 추가되고, 오른쪽 비트시프트(&amp;raquo;)가 될 때에는 왼쪽에 0(0 또는 양의 정수인 경우)이나 1(음의 정수인 경우)이 개수만큼 추가되고, 가장 오른쪽에 있는 1비트는 사라진다.</description>
+      <description>&lt;h5 id=&#34;codeup--6046-6047&#34;&gt;CodeUp : 6046, 6047&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -39,13 +31,7 @@ a가 b보다 작으면 True 를, a가 b보다 크거나 같으면 False 를 출�
       <pubDate>Thu, 21 Apr 2022 13:26:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6032 : [기초-산술연산] 정수 1개 입력받아 부호 바꾸기(설명)(py) 문제 설명 입력된 정수의 부호를 바꿔 출력해보자.
-예시 &amp;hellip; print(-n)
-참고 단항(unary) 연산자인 -(negative)를 변수 앞에 붙이면 부호가 반대인 값이 된다.
-입력 정수 1개가 입력
-출력 부호를 바꿔 출력
-a = int(input())  print(-a) 1 -1  6033 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)(py) 문제 설명 문자 1개를 입력받아 그 다음 문자를 출력해보자.
-영문자 &amp;lsquo;A&amp;rsquo;의 다음 문자는 &amp;lsquo;B&amp;rsquo;이고, 숫자 &amp;lsquo;0&amp;rsquo;의 다음 문자는 &amp;lsquo;1&amp;rsquo;이다.</description>
+      <description>&lt;h5 id=&#34;codeup--6032-6033-6034-6035-6036-6037-6038-6039-6040-6041-6043-6044-6045&#34;&gt;CodeUp : 6032, 6033, 6034, 6035, 6036, 6037, 6038, 6039, 6040, 6041, 6043, 6044, 6045&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -54,15 +40,7 @@ a = int(input())  print(-a) 1 -1  6033 : [기초-산술연산] 문자 1개 입�
       <pubDate>Thu, 21 Apr 2022 13:24:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6025 : [기초-값변환] 정수 2개 입력받아 합 계산하기(설명)(py) 문제 설명 정수 2개를 입력받아
-합을 출력하는 프로그램을 작성해보자.
-예시
-a, b = input().split()
-c = int(a) + int(b)
-print(c)
-참고 입력되는 값은 기본적으로 문자열로 인식된다.
-문자열 + 문자열은 두 문자열을 합친 문자열을 만든다. 숫자로 구성된 문자열이나 실수를 정수(integer) 값으로 바꾸기 위해서는 int( ) 를 사용할 수 있다. 수 + 수의 결과는 합(addition)이 계산된다.
-입력 2개의 정수가 공백으로 구분되어 입력</description>
+      <description>&lt;h5 id=&#34;codeup--6025-6026-6029-6030-6031-6042&#34;&gt;CodeUp : 6025, 6026, 6029, 6030, 6031, 6042&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -71,13 +49,7 @@ print(c)
       <pubDate>Thu, 21 Apr 2022 13:24:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%9E%85%EC%B6%9C%EB%A0%A5/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6009 : [기초-입출력] 문자 1개 입력받아 그대로 출력하기(설명)(py) 문제 설명 문자(character)는 0~9, a~z, A~Z, !, @, #, {, [, &amp;lt;, &amp;hellip; 과 같이 길이가 1인 기호라고 할 수 있다.
-변수에 문자 1개를 저장한 후 변수에 저장되어 있는 문자를 그대로 출력해보자.
-예시
-c = input()
-print(c)
-와 같은 형태로 가능하다.
-참고 input() 을 사용하면 키보드로 입력한 값을 가져온다. 변수 = input() 를 실행시키면 키보드로 입력한 값을 왼쪽의 변수에 저장한다.</description>
+      <description>&lt;h5 id=&#34;codeup--6009-6010-6011-6012-6013-6014-6015-6016-6017-6018-6019-6020-6021-6022-6023-6024&#34;&gt;CodeUp : 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -86,16 +58,7 @@ print(c)
       <pubDate>Thu, 21 Apr 2022 13:24:45 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5%EB%B3%80%ED%99%98/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6027 : [기초-출력변환] 10진 정수 입력받아 16진수로 출력하기1(설명)(py) 문제 설명 10진수를 입력받아 16진수(hexadecimal)로 출력해보자.
-예시
-a = input()
-n = int(a) #입력된 a를 10진수 값으로 변환해 변수 n에 저장
-print(&amp;rsquo;%x&amp;rsquo;% n) #n에 저장되어있는 값을 16진수(hexadecimal) 소문자 형태 문자열로 출력
-참고
-10진수 형태로 입력받고
-%x로 출력하면 16진수(hexadecimal) 소문자로 출력된다.
-(%o로 출력하면 8진수(octal) 문자열로 출력된다.)
-10진법은 한 자리에 10개(0 1 2 3 4 5 6 7 8 9)의 문자를 사용하고,</description>
+      <description>&lt;h5 id=&#34;codeup--6027-6028&#34;&gt;CodeUp : 6027, 6028&lt;/h5&gt;</description>
     </item>
     
     <item>
@@ -104,19 +67,7 @@ print(&amp;rsquo;%x&amp;rsquo;% n) #n에 저장되어있는 값을 16진수(hexa
       <pubDate>Thu, 21 Apr 2022 03:43:43 +0900</pubDate>
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5/</guid>
-      <description>Reference : https://codeup.kr/problemsetsol.php?psid=33 6001 : [기초-출력] 출력하기01(설명)(py) 문제 설명 python 언어에서 가장 기본적인 명령이 출력문이다. print( )를 이용해 다음 단어를 출력하시오.
-Hello
-예시
-print(&amp;ldquo;Hello&amp;rdquo;)
-참고 python IDE 프로그램을 설치한 후, 아래와 같은 소스 코드를 작성하고 실행시키면, 지정한 &amp;ldquo;문장&amp;quot;이 출력(print)된다. print(&amp;ldquo;문장&amp;rdquo;)
-입력 없음
-출력 Hello
-print(&amp;#34;Hello&amp;#34;) Hello 6002 : [기초-출력] 출력하기02(설명)(py) 문제 설명 이번에는 공백( )을 포함한 문장을 출력한다. 다음 문장을 출력해보자.
-Hello World
-(대소문자에 주의한다.)
-참고
-print(&amp;ldquo;문장1 문장2&amp;rdquo;)
-을 실행시키면 &amp;ldquo;문장1”, &amp;ldquo;문장2&amp;quot;가 공백( )을 사이에 두고 출력된다.</description>
+      <description>&lt;h5 id=&#34;codeup--6001-6002-6003-6005-6006-6007-6008&#34;&gt;CodeUp : 6001, 6002, 6003, 6005, 6006, 6007, 6008&lt;/h5&gt;</description>
     </item>
     
   </channel>

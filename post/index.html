@@ -140,9 +140,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		<h4 id="주에프앤이노에듀">(주)에프앤이노에듀</h4>
-<h5 id="현장-전문가-육성을-위한-인공지능ai-창의-융합형-인재-양성과정">현장 전문가 육성을 위한 인공지능(AI) 창의 융합형 인재 양성과정</h5>
-<h6 id="final-프로젝트">final 프로젝트</h6>
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -159,15 +157,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		SQL, PL/SQL 1. SQL(Structured Query Language)   구조화된 질의 언어
-  DBMS 상에서 데이터를 읽고 쓰고 삭제하는 등, 데이터를 관리하기 위한 프로그램 언어
-  집합적 언어 : 데이터를 특정 집합 단위로 분류해 이 단위별로 한 번에 처리하는 언어
-  절차적 언어
-프로그래밍 순서대로 로직이 처리되는 언어
-ex) C, Java
-    DDL, DML, DCL
-  DDL(Data Definition Language)
-데이터베이스 객체를 생성, 삭제, 변경하는 언어
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -184,11 +174,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Chapter 1 - 통계학 기본 1.1 통계학   통계학의 목적(1) : 가지고 있는 데이터의 설명
- 가지고 있는 데이터를 정리 요약하기 위해 사용되는 통계학 : 기술통계    통계학의 목적(2) : 모르는 데이터의 예측과 추측
- 가지고 있지 않은 미지의 데이터를 추측할 목적으로 사용되는 통계학 : 추측통계    통계학을 배우는 이유 : 가지고 있는 데이터를 이용하여 모르는 데이터를 추측할 수 있다.
-  표본과 모집단
- 표본 : 현재 가지고 있는 데이터 모집단 : 아직 가지고 있지 않은 모르는 데이터를 포함한 모든 데이터 표본이라는 일부 데이터를 이용, 모집단이라는 전체 데이처를 분석하는 것 -&gt; 추측통계의 목적    1.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -205,7 +191,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		&lt; Score Improvement History &gt;    # &gt; std * x k-fold score rank     1 &gt; std * 70 3 0.1388 1795/2715   2 &gt; std * 60 3 0.1387    3 &gt; std * 50 3 0.1378    4 &gt; std * 40 3 0.1366    5 &gt; std * 30 3 0.1368    6 &gt; std * 80 3 0.
+		<h3 id="prediction-and-score">Prediction and Score</h3>
 	</div>
 </article><article class="list__item post">
 	
@@ -222,7 +208,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Step 1. 라이브러리 불러오기  본 프로젝트 수행을 위한 필수 라이브러리를 불러온다.  # 데이터 가공 import pandas as pd import numpy as np  # 메모리 정리 import gc  # for문 진행상황 확인 from tqdm.auto import tqdm  # 데이터 시각화 import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns import scipy.stats as stats Step 2. 데이터 불러오기 및 용량 축소   주어진 데이터의 행은 3141410 개, 열은 304 개로 구성되어 있음.
+		<h3 id="eda">EDA</h3>
 	</div>
 </article><article class="list__item post">
 	
@@ -239,7 +225,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Oracle Database 19c Installation and Setting 1. Oracle 19c 다운로드  다운로드 링크 : https://www.oracle.com/kr/database/technologies/oracle19c-windows-downloads.html  2. 드라이브에 새 폴더 생성 및 다운로드 파일 옮기기  드라이브 내에 새 폴더 생성(본인은 ‘oracle_db_sql’로 지정했다.) 다운로드된 압축파일을 옮긴 후 압축 해제  3. 압축 해제된 폴더로 이동  setup 실행(관리자 권한)  4. 설치  데이터베이스 설치 옵션  ‘단일 인스턴스 데이터베이스 생성 및 구성 ‘선택     시스템 클래스  ‘데스크톱 클래스’ 선택     Oracle 홈 사용자  ‘가상 계정 사용’ 선택     기본 설치  파일 경로 확인 전역 데이터베이스 이름 : myoracle 비밀번호 입력 ‘컨테이너 데이터베이스로 생성’ 체크 해제     필요 조건 검사, 요약 후 제품 설치 진행  5.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -256,7 +242,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-3 신경망 모델 훈련 손실 곡선  케라스의 fit() 메서드는 HIstory 클래스를 반환 History 객체에는 훈련 과정에서 계산한 지표, 즉 손실과 정확도 값이 저장되어 있음.  from tensorflow import keras from sklearn.model_selection import train_test_split  (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()  train_scaled = train_input / 255.0 train_scaled, val_scaled, train_target, val_target = train_test_split(  train_scaled, train_target, test_size = 0.2, random_state = 42 ) Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -273,7 +259,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-2 심층 신경망 2개의 층 from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step   이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1 사이로 변환하고, 28 X 28 크기의 2차원 배열을 784 크기의 1차원 배열로 펼침.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -290,7 +276,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		07-1 인공 신경망 패션 MNIST from tensorflow import keras (train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data() Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz 32768/29515 [=================================] - 0s 0us/step 40960/29515 [=========================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz 26427392/26421880 [==============================] - 0s 0us/step 26435584/26421880 [==============================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz 16384/5148 [===============================================================================================] - 0s 0us/step Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz 4423680/4422102 [==============================] - 0s 0us/step 4431872/4422102 [==============================] - 0s 0us/step  print(train_input.shape, train_target.shape) (60000, 28, 28) (60000,)  print(test_input.
+		
 	</div>
 </article><article class="list__item post">
 	
@@ -307,10 +293,7 @@ ex) C, Java
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		06-3 주성분 분석 차원과 차원 축소   데이터가 가진 속성을 특성.
- ex) 과일 사진의 경우 10,000개의 픽셀이 있기 때문에 10,000개의 특성이 재. 머신러닝에서는 이런 특성을 차원(dimension)    차원을 줄일 수 잇따면 저장 공간을 크게 줄일 수 있음.
-  차원 축소(dimensionality reduction) 알고리즘 : 비지도 학습 작업 중 하나.
- 데이터를 가장 잘 나타내는 일부 특성을 선택하여 데이터 크기를 줄이고 지도 학습 모델의 성능을 향상시킬 수 있는 방법    줄어든 차원에서 다시 원본 차원으로 손실을 최대한 줄이면서 복원 가능.
+		
 	</div>
 </article>
 </main>
