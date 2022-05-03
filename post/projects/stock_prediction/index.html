@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[Project]감성분석을 통한 주가 예측 - Black_JJW&#39;s Blog</title>
+	<title>[Project]뉴스 감성분석을 통한 주가 예측 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[Project]감성분석을 통한 주가 예측" />
+		<meta property="og:title" content="[Project]뉴스 감성분석을 통한 주가 예측" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/projects/stock_prediction/" /><meta property="article:section" content="post" />
@@ -126,7 +126,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[Project]감성분석을 통한 주가 예측</h1>
+			<h1 class="post__title">[Project]뉴스 감성분석을 통한 주가 예측</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-26T17:38:48&#43;09:00">April 26, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/projects/" rel="category">Projects</a>
@@ -134,203 +134,41 @@
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h1 id="ppt">ppt</h1>
-<script src= '/js/pdf-js/build/pdf.js'></script>
-<style>
-#the-canvas {
-  border: 1px solid black;
-  direction: ltr;
-  width: 100%;
-  height: auto;
-  display: none;
-}
-
-#paginator {
-  display: none;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-#loadingWrapper {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 350px;
-}
-
-#loading {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border: 3px solid #d2d0d0;;
-  border-radius: 50%;
-  border-top-color: #383838;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
-}
-</style>
-
-<div id="paginator">
-    <button id="prev">Previous</button>
-    <button id="next">Next</button>
-    &nbsp; &nbsp;
-    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-</div>
-<div id="embed-pdf-container">
-    <div id="loadingWrapper">
-      <div id="loading"></div>
-    </div>
-    <canvas id="the-canvas"></canvas>
-</div>
-
-<script type="text/javascript">
-window.onload = function() {
-
-
-var url = "\/" + '\/pdf_files\/news_stock_prediction.pdf';
-
-var hidePaginator = "" === "true";
-var hideLoader = "" === "true";
-var selectedPageNum = parseInt("") || 1;
-
-
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = "\/" + '/js/pdf-js/build/pdf.worker.js';
-
-
-var pdfDoc = null,
-    pageNum = selectedPageNum,
-    pageRendering = false,
-    pageNumPending = null,
-    scale = 3,
-    canvas = document.getElementById('the-canvas'),
-    ctx = canvas.getContext('2d'),
-    paginator = document.getElementById("paginator"),
-    loadingWrapper = document.getElementById('loadingWrapper');
-
-
-
-showPaginator();
-showLoader();
-
-
-
-function renderPage(num) {
-  pageRendering = true;
-  
-  pdfDoc.getPage(num).then(function(page) {
-    var viewport = page.getViewport({scale: scale});
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    
-    var renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-    var renderTask = page.render(renderContext);
-
-    
-    renderTask.promise.then(function() {
-      pageRendering = false;
-      showContent();
-      
-      if (pageNumPending !== null) {
-        
-        renderPage(pageNumPending);
-        pageNumPending = null;
-      }
-    });
-  });
-
-  
-  document.getElementById('page_num').textContent = num;
-}
-
-
-
-function showContent() {
-  loadingWrapper.style.display = 'none';
-  canvas.style.display = 'block';
-}
-
-
-
-function showLoader() {
-  if(hideLoader) return
-  loadingWrapper.style.display = 'flex';
-  canvas.style.display = 'none';
-}
-
-
-
-function showPaginator() {
-  if(hidePaginator) return
-  paginator.style.display = 'block';
-}
-
-
-
-function queueRenderPage(num) {
-  if (pageRendering) {
-    pageNumPending = num;
-  } else {
-    renderPage(num);
-  }
-}
-
-
-
-function onPrevPage() {
-  if (pageNum <= 1) {
-    return;
-  }
-  pageNum--;
-  queueRenderPage(pageNum);
-}
-document.getElementById('prev').addEventListener('click', onPrevPage);
-
-
-
-function onNextPage() {
-  if (pageNum >= pdfDoc.numPages) {
-    return;
-  }
-  pageNum++;
-  queueRenderPage(pageNum);
-}
-document.getElementById('next').addEventListener('click', onNextPage);
-
-
-
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-  pdfDoc = pdfDoc_;
-  var numPages = pdfDoc.numPages;
-  document.getElementById('page_count').textContent = numPages;
-  
-  
-  if(pageNum > numPages) {
-    pageNum = numPages
-  }
-
-  
-  renderPage(pageNum);
-});
-}
-
-</script>
-
-<!-- raw HTML omitted -->
+			<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_1.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_2.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_3.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_4.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_5.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_6.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_7.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_8.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_9.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_10.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_11.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_12.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_13.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_14.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_15.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_16.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_17.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_18.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_19.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_20.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_21.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_22.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_23.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_24.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_25.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_26.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_27.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_28.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_29.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_30.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_31.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_32.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_33.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_34.png" alt="png"></p>
+<p><img src="/pdf_files/news_stock_prediction/news_stock_prediction1024_35.png" alt="png"></p>
 		</div>
 		<footer class="post__footer">
 			
@@ -382,7 +220,7 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/projects/stock_prediction/">[Project]감성분석을 통한 주가 예측</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/projects/stock_prediction/">[Project]뉴스 감성분석을 통한 주가 예측</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/sql/sql_pl-sql/">[SQL][PL/SQL]SQL과 PL/SQL</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/statistics/chapter1_1/">[Statistics]ch1 통계학 기본</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-2/">[Kaggle]Ubiquant Market Prediction - 2</a></li>
