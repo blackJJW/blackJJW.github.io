@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Statistics]ch2 통계학 기본 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Statistics]ch2 통계학 기본" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/statistics/chapter1_2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-29T18:33:45+09:00" />
+<meta property="article:modified_time" content="2022-04-29T18:33:45+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Statistics]ch2 통계학 기본</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-29T18:33:45&#43;09:00">April 29, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/statistics/" rel="category">Statistics</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h3 id="15-모집단분포-추정">1.5 모집단분포 추정</h3>
+<ul>
+<li>
+<p>모집단을 알지 못한다는 전제</p>
+</li>
+<li>
+<p>모집단분포를 알고 있다는 것은 있을 수 없음</p>
+</li>
+<li>
+<p>모집단분포를 추정하기 위한 학문 -&gt; <strong>추측통계</strong></p>
+</li>
+<li>
+<p>모집단분포와 모집단의 상대도수분포</p>
+<ul>
+<li>모집단을 얻을 수 있는 방법
+<ul>
+<li><strong>확률질량함수</strong>, __확률밀도함수__가 자주 이용</li>
+<li>효율적 추정을 위한 도구</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="16-확률질량함수와-확률밀도함수">1.6 확률질량함수와 확률밀도함수</h3>
+<ul>
+<li>
+<p><strong>확률질량함수</strong> : 데이터를 인수로 전달받아 확률을 계산 결과로 내놓는 함수</p>
+</li>
+<li>
+<p><strong>확률밀도</strong> : 연속형 변수를 다룰 때는 확률 대신 <strong>확률밀도</strong> 사용</p>
+<ul>
+<li>확률밀도란, 연속형 변수의 값에 대응하는 &lsquo;확률&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>적분과 덧셈의 관계</p>
+<ul>
+<li>개수가 유한하지 않아 일반적인 덧셈으로 계산할 수 없으므로 적분 사용</li>
+<li>ex) 4에서 5 사이를 적분하는 확률밀도함수를 계산하는 것은 4 이상 5 이하의 모든 변수에 대응하는 확률밀도의 총합과 같은 의미</li>
+</ul>
+</li>
+<li>
+<p><strong>확률밀도함수</strong> : 데이터를 인수로 전달받아 확률밀도를 계산하는 함수</p>
+<ul>
+<li>확률질량함수, 확률밀도함수 -&gt; 항상 0 이상, 합계가 1</li>
+</ul>
+</li>
+<li>
+<p><strong>정규분포</strong> : &lsquo;계산이 단순하고, 데이터와 잘 대응&rsquo;하는 확률분포로 정규분포가 자주 사용</p>
+<ul>
+<li>$-\infty \sim \infty$의 실수값을 취한다.</li>
+<li>평균값 부근의 확률밀도가 크다(평균값 주변에 데이터가 많다.)</li>
+<li>평균값에서 멀어질수록 확률밀도가 크다.</li>
+<li>확률밀도의 크기는 평균값을 중심으로 좌우대칭</li>
+</ul>
+</li>
+<li>
+<p><strong>모수</strong>(확률분포의 매개변수) : 확률분포를 특징짓는 값</p>
+<ul>
+<li>통계 관찰의 대상이 되는 집단 전체인 모집단의 특징을 나타내는 수치</li>
+<li>확률분포의 매개변수를 바꾸면 확률분포의 형태가 변함</li>
+<li><strong>정규분포의 모수</strong>
+<ul>
+<li>평균(기대값) $\mu$</li>
+<li>분산 $\sigma^2$</li>
+</ul>
+</li>
+<li>정규분포의 확률밀도함수는 확률변수가 $x$일 때 $N(x)$</li>
+<li>$N(x)$를 계산하면 확률변수를 사용하는 확률밀도함수를 얻을 수 있음</li>
+<li>확률분포의 매개변수는 $N(x|\mu, \sigma^2)$으로 명시</li>
+</ul>
+</li>
+<li>
+<p>모집단분포의 추정</p>
+<ol>
+<li>분포의 형태를 정한다.</li>
+<li>모수(확률분포의 매개변수)를 정한다.</li>
+</ol>
+<ul>
+<li>모집단분포의 추정 = 분포의 결정 + 모수의 추정</li>
+<li>&lsquo;모집단분포&rsquo;를 &lsquo;정규분포&rsquo;라 가정 -&gt; &lsquo;모집단분포 추정&rsquo;을 &lsquo;정규분포를 따르는 모수의 추정&rsquo;이라는 작업으로 바꿀 수 있음.</li>
+</ul>
+</li>
+<li>
+<p>표본의 통계량을 모수의 추정값이라고 생각</p>
+<ul>
+<li><strong>모수를 추정하는 간단한 아이디어는 &lsquo;표본통계를 모집단분포의 모수라고 생각&rsquo;하는 것</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>예시<br>
+10마리 물고기의 길이 {2, 3, 3, 4, 4, 4, 4, 5, 5, 6]<br>
+평균 : 4, 분산 : 1.2 <br>
+표본 통계량을 모집단의 모수라 생각 -&gt; 모집단분포의 평균 4, 분산 1.2<br>
+확률밀도 -&gt; $N(x|4, 1.2)$</p>
+</blockquote>
+<ul>
+<li>추정오차
+<ul>
+<li>표본의 통계량와 모수에는 조금 차이가 있는 것이 보통</li>
+<li>추정된 모수에는 추정오차가 있음을 인정</li>
+<li>모수를 추정할 대는 구간추정 등의 방법 사용</li>
+<li>추정오차와 상관없이 확률적 의미를 부여하고 싶다면 통계적가설검정 사용</li>
+</ul>
+</li>
+</ul>
+<h3 id="17-통계량-계산">1.7 통계량 계산</h3>
+<ul>
+<li>표본</li>
+</ul>
+<blockquote>
+<p>샘플사이즈 N을 취했을 때  표본<br>
+${x_{i}}^{N}<em>{i=1} = {x</em>{1}, x_{2}, \dots, x_{N}}$</p>
+</blockquote>
+<ul>
+<li>평균값</li>
+</ul>
+<blockquote>
+<p>표본의 평균값 $\mu$<br>
+$\mu=\frac{1}{N}\displaystyle\sum_{i=1}^{N} x_{i}$<br>
+<strong>산술평균</strong></p>
+</blockquote>
+<ul>
+<li>기댓값</li>
+</ul>
+<blockquote>
+<p>기댓값 $\mu$는 &lsquo;확률 x 그때의 값&rsquo;의 합계로 계산<br>
+$\mu=\displaystyle\sum_{i=1}^{N} P(x_i)\cdot x_i$</p>
+</blockquote>
+<ul>
+<li>
+<p>모평균과 표본평균</p>
+<ul>
+<li>모평균 : 모집단의 평균값</li>
+<li>표본평균 : 표본의 평균값</li>
+<li>플러스 쪽으로나 마이너스 쪽으로나 표본평균은 모평균에서 크게 떨어지지 않음</li>
+<li>샘플사이즈를 늘리면 표본평균은 조금씩 모평균에 가까워짐</li>
+</ul>
+</li>
+<li>
+<p>분산(표본분산)</p>
+</li>
+</ul>
+<blockquote>
+<p>$\sigma^2=\frac{1}{N}\displaystyle\sum_{i=1}^{N} (x_i - \mu)^2$<br>
+$(x_i - \mu)$ -&gt; 편차<br>
+$\sum (x_i - \mu)^2$ -&gt; 편차제곱합<br>
+확률 $P(x_i)$를 사용 -&gt; $\sigma^2=\displaystyle\sum_{i=1}^{N} P(x_i)(x_i - \mu)^2$</p>
+</blockquote>
+<blockquote>
+<p>기댓값과 데이터가 떨어져 있을 수록 $(x_i - \mu)^2$이 큰 값이 된다.<br>
+$(x_i - \mu)^2$은 기댓값과 데이터 간의 거리 -&gt; 분산은 &lsquo;데이터와 기댓값 간의 거리의 기댓값&rsquo;
+-&gt; <strong>표본분산</strong></p>
+</blockquote>
+<ul>
+<li>분산(불편분산)
+<ul>
+<li>표본분산은 모집단의 분산 -&gt; 모분산에 비해 분산을 과소평과해 버리는 경향 -&gt; 이를 보정하기 위한 것이 <strong>불편분산</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>$\sigma^2=\frac{1}{N-1}\displaystyle\sum_{i=1}^{N} (x_i - \mu)^2$<br>
+분모가 N-1이 되어 조금 작아지기 때문에 표본분산보다 살짝 큼</p>
+</blockquote>
+<ul>
+<li>표준편차
+<ul>
+<li>분산에 제곱근을 씌운 것</li>
+<li>분산은 불편분산을 사용하는 것이 보통, 데이터를 제곱해서 계산</li>
+<li>표준편차는 Standard Deviation(SD)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>$\sigma=\sqrt{\sigma^2}=\sqrt{\frac{1}{N-1}\displaystyle\sum_{i=1}^{N} (x_i - \mu)^2}$</p>
+</blockquote>
+<h3 id="18-확률론-기본">1.8 확률론 기본</h3>
+<ul>
+<li>
+<p>집합 : 객관적으로 범위가 지정된 물거의 모음</p>
+<ul>
+<li>$A = {1, 2, 3, 4, 5}$</li>
+</ul>
+</li>
+<li>
+<p>요소</p>
+<ul>
+<li>집합 A , 어떤 물건 a가 A의 요소일때 $a\in A$라 쓰며, a가 A에 속해 있다.</li>
+<li>속하지 않을 때는 $b\notin A$라 씀</li>
+</ul>
+</li>
+<li>
+<p>집합의 2가지 표기 방법</p>
+<ul>
+<li>조건제시법</li>
+</ul>
+<blockquote>
+<p>0 이상 5이하의 정수 집합<br>
+$A={a;a\in \mathbb{Z},그리고, 0 \leq a\leq5}$<br>
+(;) 또는 (|) 오른쪽이 조건, $\mathbb{Z}$ -&gt; 정수의 집합</p>
+</blockquote>
+</li>
+<li>
+<p>부분집합</p>
+<ul>
+<li>2개의 집합 A, B</li>
+<li>$a\in A$라면 $a\in B$일 때, A를 B의 부분집합</li>
+<li>$A\subset B$</li>
+</ul>
+</li>
+<li>
+<p>벤다이어그램</p>
+<ul>
+<li>집합 간의 비교</li>
+</ul>
+</li>
+<li>
+<p>교집합과 합집합</p>
+<ul>
+<li>교집합
+<ul>
+<li>$A \cap B = {a;a\in A,그리고,a\in B}$</li>
+</ul>
+</li>
+<li>합집합
+<ul>
+<li>$A \cup B = {a;a\in A,또는,a\in B}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>차집합</p>
+<ul>
+<li>$A-B={a;a\in A,그리고,a\notin B}$</li>
+</ul>
+</li>
+<li>
+<p>공집합</p>
+<ul>
+<li>요소를 하나도 갖고 있지 않음 모임.</li>
+<li>$\emptyset$</li>
+</ul>
+</li>
+<li>
+<p>전체집합</p>
+<ul>
+<li>어떤 집합 S가 있고, &lsquo;S의 부분집합만 다룬다&rsquo;고 한정 시, S를 전체집합이라고 한다.</li>
+</ul>
+</li>
+<li>
+<p>여집합</p>
+<ul>
+<li>전체집합 S가 정해져 있을 때, S의 부분집합 A에 대해 아래 관계가 성립하는 $A^{C}$를 $A$의 여집합.</li>
+<li>$A^{C} = S - A$</li>
+</ul>
+</li>
+<li>
+<p>표본점($\omega$) : 일어날 수 있는 가능한 결과, 요소로 간주</p>
+</li>
+<li>
+<p>표본공간($\Omega$) : 표본점 전체의 집합, 전체집합으로 간주</p>
+</li>
+<li>
+<p>표본공간의 부분집합으로서 &lsquo;사상&rsquo;이 정의</p>
+<ul>
+<li>
+<p>집합처럼 &lsquo;합사상&rsquo;이나 &lsquo;결합사상&rsquo;이 정의</p>
+</li>
+<li>
+<p>단 1개의 표본점만 있고, 그 이상 분해가 안 되는 사상을 &lsquo;근원사상&rsquo;</p>
+</li>
+<li>
+<p>복수의 표본점을 가지고, 2개 이상의 근원 사사응로 분해가 가능한 것을 &lsquo;복합사상&rsquo;</p>
+</li>
+<li>
+<p>공집합과 마찬가지안 &lsquo;공사상&rsquo;-&gt; 표본점을 가지고 있지 않음</p>
+</li>
+<li>
+<p>사상이란 <em>&lsquo;일어날 수 있는 일</em> -&gt; &lsquo;표본공간의 부분집합&rsquo;이라 정의</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>주사위(1, 2, 3, 4, 5, 6)<br>
+표본점 : $\omega_1 = 1,, \omega_2 = 2,,\omega_3 = 3,,\omega_4 = 4,,\omega_5 = 5,,\omega_6 = 6$<br>
+표본공간 : $\Omega={1, 2, 3, 4, 5, 6}$<br>
+복합사상 : 짝수가 되는 사상 $A={2, 4, 6}$, 홀수가 되는 사상 $A={1, 3, 5}$ 등<br>
+근원사상 : 1의 눈이 나오는 사상 $C={1}$, 2의 눈이 나오는 사상 $D={2}$</p>
+</blockquote>
+<ul>
+<li>
+<p>배반사상</p>
+<ul>
+<li>$A\cap B = \emptyset$이고 사상 간의 겹침이 없을 때 사상 A와 B는 배반사상</li>
+</ul>
+</li>
+<li>
+<p>확률의 공리주의적 정의<br>
+(a) 모든 사상 A에 대해 $0\leq P(A)\leq 1$
+- 확률이 0 이상 1이하
+(b) $P(\Omega)$=1<br>
+- 표본공간을 대상으로 하는 경우 그것이 일어날 확률은 1
+(c) 배반사상 $A_1, A_2, \dots 에 대해 P(A_1\cup A_2\cup \cdots)= P(A_1)+P(A_2)+\cdots$<br>
+- 겹침이 없는 사상 중 하나가 일어날 확률은 사상이 일어날 확률의 합으로 계산 가능</p>
+</li>
+<li>
+<p>빈도에 의한 확률 해석</p>
+<ul>
+<li>빈도주의의 경우 확률을 상대도수의 극한값이라 간주.</li>
+<li>도수는 사상의 발생 횟수, 상대도수는 &lsquo;사상의 발생 횟수 / 시행 횟수&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>주관확률</p>
+<ul>
+<li>개인이 주관적으로 확률을 할당</li>
+<li>이 경우 베이즈주의(베이지안 확률)</li>
+</ul>
+</li>
+<li>
+<p>확률의 덧셈정리</p>
+<ul>
+<li>서로 배반사상인 A와 B에 대해 아래의 관계가 성립하는 것을 <em>확률의 덧셈정리</em></li>
+<li>$P(A\cup B)=P(A)+P(B)$</li>
+<li>사상 간에 배반이라는 조건을 없앤 경우 확률의 덧셈정리</li>
+<li>$P(A\cup B)=P(A)+P(B)-P(A\cap B)$</li>
+</ul>
+</li>
+<li>
+<p>조건부 확률</p>
+<ul>
+<li>사상 B가 발생한 조건에서 사상 A가 발생할 확률</li>
+<li>$P(A|B)=\frac{P(A\cap B)}{P(B)}$</li>
+</ul>
+</li>
+<li>
+<p>확률의 곱셈정리</p>
+<ul>
+<li>$P(A\cap B)=P(B)\cdot P(A|B)$</li>
+</ul>
+</li>
+<li>
+<p>독립</p>
+<ul>
+<li>$P(A\cap B)=P(A)\cdot P(B)$</li>
+<li>이 조건을 만족하면 A와 B는 독립</li>
+<li>$P(A|B)=P(B)$와 같은 의미</li>
+</ul>
+</li>
+</ul>
+<h3 id="확률변수와-확률분포">확률변수와 확률분포</h3>
+<ul>
+<li>확률변수와 실현값</li>
+</ul>
+<blockquote>
+<p>동전 1개, 표본공간 $\Omega={앞, 뒤}$, 앞 = 1, 뒤 = 0<br>
+$X(앞)=1$<br>
+$X(뒤)=0$<br>
+변수 X를 확률변수, 우측이 실현값<br>
+$P(X=x)$<br>
+어떤 확률변수가 어떤 실현값이 될 확률<br>
+정상적인 동전 $P(X=1)=1/2$</p>
+</blockquote>
+<ul>
+<li>
+<p>이산형 확률분포와 확률질량함수</p>
+<ul>
+<li>이산형 확률변수 $X$ 각각에 대한 확률 $P(X=x_i)$가 함수 $f(x_i)$를 할당. 다음과 같이 표기
+<ul>
+<li>$P(X=x_i)=f(x_i),\qquad i=1, 2, \dots$</li>
+</ul>
+</li>
+<li>$X$는 이산형 확률분포를 취한다고 하고, 이때의 함수 $f(x_i)$를 확률질량함수</li>
+<li>&lsquo;값을 지정하면 그 값에 대한 확률을 즉시 계산할 수 있는 함수&rsquo; -&gt; 확률질량함수</li>
+<li>확률질량함수는 아래 조건을 만족
+<ul>
+<li>$0\leq f(x_i),\qquad i=1, 2,\dots$</li>
+<li>$\displaystyle\sum_{i=1}^{\infty} f(x_i)=1$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>확률밀도</p>
+<ul>
+<li>실숫값을 갖는 변수 X가 $x\leq X\leq x+\Delta x$를 취하는 확률을 생각.</li>
+<li>$\Delta x\rightarrow 0$일 때, $P(x)\cdot\Delta x$로 확률로 계산할 수 있다면 $P(x)$를 $x$의 확률밀도</li>
+</ul>
+</li>
+<li>
+<p>연속형 확률분포와 확률밀도함수</p>
+<ul>
+<li>연속형 확률변수 $X$의 값을 인자로 받는 함수 $f(x)$에 대해
+<ul>
+<li>$P(a\leq X\leq b)=\int_a^b f(x)dx$</li>
+<li>$X$는 연속형 확률분포를 가진다고 하고, 이 때의 함수 f(x)를 확률밀도함수</li>
+<li>연속형 확률변수의 경우 &lsquo;특정 값이 될 확률&rsquo;은 0</li>
+<li>&lsquo;특정 값이 범위에 들어갈 확률&rsquo;은 확률밀도함수를 적분하여 구함</li>
+<li>확률밀도함수 f(x)는 아래를 만족
+<ul>
+<li>$0\leq f(x)$</li>
+<li>$\int_{-\infty}^{\infty} f(x)dx=1$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>확률의 합계, 확률밀도의 적분</p>
+</li>
+</ul>
+<blockquote>
+<p>1마리, 2마리, 3마리 등 물고기를 낚아 올린 수 X를 대상<br>
+낚은 물고기 마릿수 X가 따르는 확률분포의 확률질량함수 $f(x_i)$라 할 때, $1\leq x\leq 3$이 될 확률은 다음과 같음.
+- $x_1=1, x_2=2, x_3=3$
+- $P(1\leq x\leq 3)=\displaystyle\sum_{i=1}^{3} f(x_i)$<br>
+연속형 확률변수인 물고기의 몸길이 Y가 따르는 확률분포의 확률밀도함수 g(y), $1\leq Y\leq 3$이 될 확률은 다음과 같음.
+- $P(1\leq Y\leq 3)=\int_1^3 g(y)dy$</p>
+</blockquote>
+<ul>
+<li>
+<p>적분과 면적의 관계</p>
+<ul>
+<li>
+<p>면적을 구하는 구간 n, 짧은 밑변 $\Delta x$</p>
+</li>
+<li>
+<p>i번째 $x_i$, 확률밀도함수 $f(x_i)$</p>
+</li>
+<li>
+<p>직사각형 면적의 합계 = $\sum_{i=1}^{n}f(x_i)\times \Delta x$</p>
+</li>
+<li>
+<p>$n\rightarrow \infty$라면, 구간을 무한히 잘게 나누었을 때는 위 덧셈을 적분</p>
+</li>
+<li>
+<p>$\lim_{x\to \infty}\left[\displaystyle\sum_{i=1}^{n}f(x_i)\times\Delta x\right]=\int_a^b f(x)dx$</p>
+</li>
+</ul>
+</li>
+<li>
+<p>정규분포의 확률밀도함수</p>
+<ul>
+<li>$N(x|\mu,\sigma^2)=\frac{1}{\sqrt{2 \pi \sigma^2}e^{{\frac{-(x-\mu)^2}{2\sigma^2}}}}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference--파이썬으로-배우는-통계학-교과서-바바-신야-지음--윤웅식-옮김--한빛미디어">Reference : &lsquo;파이썬으로 배우는 통계학 교과서&rsquo; (바바 신야 지음 / 윤웅식 옮김 / 한빛미디어)&rsquo;</h2>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/projects/stock_prediction/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Project][ML/DL]뉴스 감성분석을 통한 주가 예측</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/statistics/chapter1_2/">[Statistics]ch2 통계학 기본</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/projects/stock_prediction/">[Project][ML/DL]뉴스 감성분석을 통한 주가 예측</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/sql/sql_pl-sql/">[SQL][PL/SQL]SQL과 PL/SQL</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/statistics/chapter1_1/">[Statistics]ch1 통계학 기본</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/kaggle/ubiquant/ubiquant-2/">[Kaggle]Ubiquant Market Prediction - 2</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/book/" title="Book">Book</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeup/" title="CodeUp">CodeUp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="Oracle">Oracle</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pl/sql/" title="PL/SQL">PL/SQL</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
