@@ -6,14 +6,23 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch8-2 합성곱 신경망을 사용한 이미지 분류</title>
+      <link>/post/dl/book/chapter8_2/</link>
+      <pubDate>Mon, 02 May 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/dl/book/chapter8_2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch8-1 합성곱 신경망의 구성 요소</title>
       <link>/post/dl/book/chapter8_1/</link>
       <pubDate>Sun, 01 May 2022 17:30:45 +0900</pubDate>
       
       <guid>/post/dl/book/chapter8_1/</guid>
-      <description>&lt;h2 id=&#34;추가-정리-필요&#34;&gt;[추가 정리 필요]&lt;/h2&gt;</description>
+      <description>&lt;h3 id=&#34;추가-정리-필요&#34;&gt;[추가 정리 필요]&lt;/h3&gt;</description>
     </item>
     
     <item>
