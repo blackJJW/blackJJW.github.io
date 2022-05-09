@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch8-3 합성곱 신경망의 시각화</title>
+      <link>/post/dl/book/chapter8_3/</link>
+      <pubDate>Tue, 03 May 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/dl/book/chapter8_3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch8-2 합성곱 신경망을 사용한 이미지 분류</title>
       <link>/post/dl/book/chapter8_2/</link>
