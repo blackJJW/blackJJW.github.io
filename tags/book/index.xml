@@ -6,7 +6,16 @@
     <description>Recent content in Book on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-2 순환 신경망으로 IMDB 리뷰 분류하기</title>
+      <link>/post/dl/book/chapter9_2/</link>
+      <pubDate>Thu, 05 May 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/dl/book/chapter9_2/</guid>
+      <description>&lt;h3 id=&#34;추가-내용-정리-필요&#34;&gt;추가 내용 정리 필요&lt;/h3&gt;</description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-1 순차 데이터와 순환 신경망</title>
       <link>/post/dl/book/chapter9_1/</link>
