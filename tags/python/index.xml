@@ -6,7 +6,16 @@
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-3 LSTM과 GRU 셀</title>
+      <link>/post/dl/book/chapter9_3/</link>
+      <pubDate>Fri, 06 May 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/dl/book/chapter9_3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-2 순환 신경망으로 IMDB 리뷰 분류하기</title>
       <link>/post/dl/book/chapter9_2/</link>
