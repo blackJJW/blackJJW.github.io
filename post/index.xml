@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 May 2022 21:00:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 21:10:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] ==연산자와 !=연산자</title>
+      <link>/post/lang_java_script/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Sat, 07 May 2022 21:10:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 템플릿 문자열</title>
       <link>/post/lang_java_script/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</link>
