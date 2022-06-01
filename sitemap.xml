@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/post/lang_java_script/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</loc>
-    <lastmod>2022-05-07T20:30:45+09:00</lastmod>
+    <loc>/post/lang_java_script/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</loc>
+    <lastmod>2022-05-07T21:00:45+09:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2022-05-07T20:30:45+09:00</lastmod>
+    <lastmod>2022-05-07T21:00:45+09:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-05-07T20:30:45+09:00</lastmod>
+    <lastmod>2022-05-07T21:00:45+09:00</lastmod>
   </url><url>
     <loc>/categories/javascript/</loc>
-    <lastmod>2022-05-07T20:30:45+09:00</lastmod>
+    <lastmod>2022-05-07T21:00:45+09:00</lastmod>
   </url><url>
     <loc>/post/</loc>
+    <lastmod>2022-05-07T21:00:45+09:00</lastmod>
+  </url><url>
+    <loc>/post/lang_java_script/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</loc>
     <lastmod>2022-05-07T20:30:45+09:00</lastmod>
   </url><url>
     <loc>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
