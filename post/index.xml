@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] JavaScript - 기본용어</title>
+      <link>/post/lang_java_script/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</link>
+      <pubDate>Sat, 07 May 2022 17:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-3 LSTM과 GRU 셀</title>
       <link>/post/dl/book/chapter9_3/</link>
