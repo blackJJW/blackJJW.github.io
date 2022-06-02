@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-1 순차 데이터와 순환 신경망 - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript] 문자열 입력 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-1 순차 데이터와 순환 신경망" />
-<meta property="og:description" content="추가 내용 정리 필요" />
+		<meta property="og:title" content="[JavaScript] 문자열 입력" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/dl/book/chapter9_1/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-04T17:30:45+09:00" />
-<meta property="article:modified_time" content="2022-05-04T17:30:45+09:00" />
+<meta property="og:url" content="/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-08T20:00:45+09:00" />
+<meta property="article:modified_time" content="2022-05-08T20:00:45+09:00" />
 
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,101 +133,43 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-1 순차 데이터와 순환 신경망</h1>
+			<h1 class="post__title">[JavaScript] 문자열 입력</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-04T17:30:45&#43;09:00">May 04, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/dl/" rel="category">DL</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-08T20:00:45&#43;09:00">May 08, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h3 id="추가-내용-정리-필요">추가 내용 정리 필요</h3>
-<h1 id="09-1-순차-데이터와-순환-신경망">09-1 순차 데이터와 순환 신경망</h1>
-<h2 id="순차-데이터">순차 데이터</h2>
+			<h1 id="javascript---불-입력">JavaScript - 불 입력</h1>
+<ul>
+<li>문자열 외에 불 자료형도 입력 가능</li>
+<li><strong>confirm() 함수</strong> 사용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">confirm</span>(<span style="color:#a6e22e">메시지</span> <span style="color:#a6e22e">문자열</span>)
+</span></span></code></pre></div><ul>
+<li>confirm() 함수의 사용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">input</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#39;확인 or 취소&#39;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">input</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/JavaScript_%EB%B6%88_%EC%9E%85%EB%A0%A5/Untitled.png" alt="Untitled"></p>
 <ul>
 <li>
-<p>순차 데이터(sequential data)는 시계열 데이터(time series data)와 같이 순서에 의미가 있는 데이터</p>
+<p>[확인] 클릭 시, <strong>true 리턴</strong></p>
+<p><img src="/images/lang_javascript/JavaScript_%EB%B6%88_%EC%9E%85%EB%A0%A5/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
-<p>텍스트 데이터는 단어의 순서가 중요한 순서 데이터</p>
-</li>
-<li>
-<p>순서를 유지하며 신경망에 주입해야 함</p>
-</li>
-<li>
-<p>단어의 순서를 마구 섞어서 주입하면 안됨</p>
-</li>
-<li>
-<p>순차 데이터를 다룰 때는 이전에 입력한 데이터를 기억하는 기능이 필요</p>
-</li>
-<li>
-<p>완전 연결 신경망이나 합성곱 신경망은 이런 기능이 없음</p>
-</li>
-<li>
-<p>하나의 샘플 (또는 하나의 배치)을 사용하여 정방향 계산을 수행하고 나면 그 샘플은 버려지고 다름 샘플은 버려지고 다음 샘플을 처리할 때 재사용하지 않음</p>
-</li>
-<li>
-<p>입력 데이터의 흐름으로만 전달되는 신경망을 <strong>피드포워드 신경망(feedforward neural network, FFNN)</strong></p>
-</li>
-<li>
-<p>완전 연결 신경망과 합성곱 신경망이 모두 피드포워드 신경망</p>
-</li>
-<li>
-<p>다음 샘플을 위해서 이전 데이터가 신경망 층에 순환될 필요가 있는 신경망 : <strong>순환 신경망</strong></p>
+<p>[취소] 클릭 시, <strong>false 리턴</strong></p>
+<p><img src="/images/lang_javascript/JavaScript_%EB%B6%88_%EC%9E%85%EB%A0%A5/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
-<h2 id="순환-신경망">순환 신경망</h2>
+<h2 id="references">References</h2>
 <ul>
-<li>순환 신경망(recurrent neural network, RNN)은 일반적으로 완전 연결 신경망과 비슷</li>
-<li>완전 연결 신경망에 이전 데이터의 처리 흐름을 순환하는 고리 하나만 추가</li>
-<li>뉴런의 출력이 다시 자기 자신으로 전달
-<ul>
-<li>어떤 샘플을 처리할 때 바로 이전에 사용했던 데이터를 재사용</li>
+<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
 </ul>
-</li>
-</ul>
-<h2 id="마무리">마무리</h2>
-<h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
-<blockquote>
-<p>순차 데이터 : 텍스트나 시계열 데이터와 같이 순서에 의미가 있는 데이터</p>
-</blockquote>
-<ul>
-<li>ex) 글, 대화, 일자별 날씨, 일자별 판매 실적 등</li>
-</ul>
-<blockquote>
-<p>순환 신경망 : 순차 데이터에 잘 맞는 인공 신경망의 한 종류</p>
-</blockquote>
-<ul>
-<li>순차 데이터를 처리하기 위해 고안된 순환층을 1개 이상 사용한 신경망</li>
-</ul>
-<blockquote>
-<p>셀 : 순환 신경망에서 종종 순환층을 부르는 말</p>
-</blockquote>
-<ul>
-<li>일반적인 인공 신경망과 마찬가지로 하나의 셀은 여러 개의 뉴런으로 구성</li>
-</ul>
-<blockquote>
-<p>은닉 상태 : 순환 신경망에서는 셀의 출력을 특별히 부르는 말</p>
-</blockquote>
-<ul>
-<li>은닉 상태는 다음 층으로 전달될 뿐만 아니라 셀이 다음 타임스텝의 데이터를 처리할 때 재사용</li>
-</ul>
-<h1 id="book--혼자-공부하는-머신러닝--딥러닝-박해선-지음-한빛미디어">Book : &lsquo;혼자 공부하는 머신러닝 + 딥러닝&rsquo;, 박해선 지음, 한빛미디어</h1>
 		</div>
-		<footer class="post__footer">
-			
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/book/" rel="tag">Book</a>
-		</li>
-	</ul>
-</div>
-		</footer>
 	</article>
 </main>
 
@@ -239,15 +181,9 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/dl/book/chapter8_3/" rel="prev">
+		<a class="pager__link" href="/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[DL][Book][혼공 머신러닝&#43;딥러닝]ch8-3 합성곱 신경망의 시각화</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/dl/book/chapter9_2/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[DL][Book][혼공 머신러닝&#43;딥러닝]ch9-2 순환 신경망으로 IMDB 리뷰 분류하기</p>
+			<p class="pager__title">[JavaScript] 문자열 입력</p>
 		</a>
 	</div>
 </nav>
