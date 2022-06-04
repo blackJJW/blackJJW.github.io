@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>[JavaScript] 문자열 자료형으로 변환</title>
+      <link>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <pubDate>Mon, 09 May 2022 16:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>[JavaScript] 숫자 자료형으로 변환</title>
       <link>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
       <pubDate>Mon, 09 May 2022 16:00:45 +0900</pubDate>
@@ -491,19 +500,6 @@
       
       <guid>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5/</guid>
       <description>&lt;h5 id=&#34;codeup--6001-6002-6003-6005-6006-6007-6008&#34;&gt;CodeUp : 6001, 6002, 6003, 6005, 6006, 6007, 6008&lt;/h5&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
-      <description>JavaScript - 문자열 자료형으로 변환   다른 자료형을 문자열 자료형으로 변환할 때는 String() 함수를 사용
-String()   다른 자료형을 문자열로 변환하면 기본 형태의 문자열로 출력
-  문자열 연산자를 사용해 자료형 변환   String() 함수를 사용하지 않고도 다른 자료형을 문자열 자료형으로 변환 가능
-  문자열 연결 연산자(+) 사용
- 문자열이 아닌 다른 자료에 빈 문자열을 연결하면 문자열 자료형으로 변환    References  혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판  </description>
     </item>
     
   </channel>
