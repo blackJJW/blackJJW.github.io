@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/tags/chatbot/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/tags/flask/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/tags/kakao/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/categories/projects/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+  </url><url>
     <loc>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-05-09T16:00:45+09:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2022-05-09T16:00:45+09:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-05-09T16:00:45+09:00</lastmod>
-  </url><url>
     <loc>/categories/javascript/</loc>
-    <lastmod>2022-05-09T16:00:45+09:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
     <lastmod>2022-05-09T16:00:45+09:00</lastmod>
   </url><url>
     <loc>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</loc>
@@ -68,12 +89,6 @@
     <loc>/categories/dl/</loc>
     <lastmod>2022-05-06T17:30:45+09:00</lastmod>
   </url><url>
-    <loc>/tags/python/</loc>
-    <lastmod>2022-05-06T17:30:45+09:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-05-06T17:30:45+09:00</lastmod>
-  </url><url>
     <loc>/post/dl/book/chapter9_2/</loc>
     <lastmod>2022-05-05T17:30:45+09:00</lastmod>
   </url><url>
@@ -102,9 +117,6 @@
     <lastmod>2022-04-26T17:38:48+09:00</lastmod>
   </url><url>
     <loc>/tags/ml/</loc>
-    <lastmod>2022-04-26T17:38:48+09:00</lastmod>
-  </url><url>
-    <loc>/categories/projects/</loc>
     <lastmod>2022-04-26T17:38:48+09:00</lastmod>
   </url><url>
     <loc>/post/sql/sql_pl-sql/</loc>
@@ -232,6 +244,8 @@
   </url><url>
     <loc>/about/</loc>
     <lastmod>2022-01-25T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
   </url><url>
     <loc>/docs/</loc>
   </url><url>
