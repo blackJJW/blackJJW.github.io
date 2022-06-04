@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 May 2022 15:00:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 May 2022 15:00:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 조건부 연산자</title>
+      <link>/post/lang_java_script/study/condition/javascript_%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Sun, 15 May 2022 15:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/study/condition/javascript_%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] switch 조건문</title>
       <link>/post/lang_java_script/study/condition/javascript_switch_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</link>
