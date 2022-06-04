@@ -6,157 +6,166 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 17:00:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 May 2022 15:00:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] if 조건문</title>
+      <link>/post/lang_java_script/study/condition/javascript_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</link>
+      <pubDate>Tue, 10 May 2022 15:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/study/condition/javascript_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 불 자료형으로 변환</title>
-      <link>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
       <pubDate>Mon, 09 May 2022 17:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 문자열 자료형으로 변환</title>
-      <link>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
       <pubDate>Mon, 09 May 2022 16:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 숫자 자료형으로 변환</title>
-      <link>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
       <pubDate>Mon, 09 May 2022 16:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 불 입력</title>
-      <link>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</link>
       <pubDate>Sun, 08 May 2022 20:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 문자열 입력</title>
-      <link>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</link>
       <pubDate>Sun, 08 May 2022 19:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] undefined 자료형</title>
-      <link>/post/lang_java_script/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
       <pubDate>Sun, 08 May 2022 19:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 변수에 적용할 수 있는 연산자</title>
-      <link>/post/lang_java_script/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
       <pubDate>Sun, 08 May 2022 18:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 변수</title>
-      <link>/post/lang_java_script/javascript_%EB%B3%80%EC%88%98/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%B3%80%EC%88%98/</link>
       <pubDate>Sat, 07 May 2022 21:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%B3%80%EC%88%98/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%B3%80%EC%88%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 상수</title>
-      <link>/post/lang_java_script/javascript_%EC%83%81%EC%88%98/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EC%83%81%EC%88%98/</link>
       <pubDate>Sat, 07 May 2022 21:20:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EC%83%81%EC%88%98/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EC%83%81%EC%88%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] ==연산자와 !=연산자</title>
-      <link>/post/lang_java_script/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
       <pubDate>Sat, 07 May 2022 21:10:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 템플릿 문자열</title>
-      <link>/post/lang_java_script/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</link>
       <pubDate>Sat, 07 May 2022 21:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 자료형 검사</title>
-      <link>/post/lang_java_script/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</link>
       <pubDate>Sat, 07 May 2022 20:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 불 자료형</title>
-      <link>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
       <pubDate>Sat, 07 May 2022 20:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 숫자 자료형</title>
-      <link>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
       <pubDate>Sat, 07 May 2022 19:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 문자열 자료형</title>
-      <link>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
+      <link>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</link>
       <pubDate>Sat, 07 May 2022 18:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
+      <guid>/post/lang_java_script/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 출력</title>
-      <link>/post/lang_java_script/javascript-_%EC%B6%9C%EB%A0%A5/</link>
+      <link>/post/lang_java_script/study/summary_expression/javascript-_%EC%B6%9C%EB%A0%A5/</link>
       <pubDate>Sat, 07 May 2022 18:00:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript-_%EC%B6%9C%EB%A0%A5/</guid>
+      <guid>/post/lang_java_script/study/summary_expression/javascript-_%EC%B6%9C%EB%A0%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[JavaScript] 기본용어</title>
-      <link>/post/lang_java_script/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</link>
+      <link>/post/lang_java_script/study/summary_expression/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</link>
       <pubDate>Sat, 07 May 2022 17:30:45 +0900</pubDate>
       
-      <guid>/post/lang_java_script/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</guid>
+      <guid>/post/lang_java_script/study/summary_expression/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</guid>
       <description></description>
     </item>
     
