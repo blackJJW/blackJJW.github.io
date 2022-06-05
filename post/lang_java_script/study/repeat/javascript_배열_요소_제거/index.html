@@ -4,13 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Documentation - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript] 배열 요소 제거 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Mainroad theme documentation, including getting started, customization guides, and FAQ.">
-		<meta property="og:title" content="Documentation" />
-<meta property="og:description" content="Mainroad theme documentation, including getting started, customization guides, and FAQ." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/docs/" />
+	<meta name="description" content="">
+		<meta property="og:title" content="[JavaScript] 배열 요소 제거" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lang_java_script/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-20T15:00:45+09:00" />
+<meta property="article:modified_time" content="2022-05-20T15:00:45+09:00" />
 
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +22,6 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/docs/index.xml" title="Black_JJW's Blog">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -129,16 +130,95 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Documentation</h1>
-	</header>
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[JavaScript] 배열 요소 제거</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-20T15:00:45&#43;09:00">May 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<ul>
+<li>배열의 요소 제거 방법
+<ul>
+<li><strong>인덱스를 기반</strong>으로 제거하는 경우</li>
+<li><strong>값을 기반</strong>으로 제거하는 경우</li>
+</ul>
+</li>
+</ul>
+<h3 id="인덱스로-요소-제거">인덱스로 요소 제거</h3>
+<ul>
+<li>
+<p>배열의 특정 인덱스에 있는 요소를 제거할 때는 <strong>splice() 메소드</strong>를 사용</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">배열</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">인덱스</span>, <span style="color:#a6e22e">제거할</span> <span style="color:#a6e22e">요소의</span> <span style="color:#a6e22e">개수</span>)
+</span></span></code></pre></div><p><img src="/images/lang_javascript/JavaScript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="값으로-요소-제거">값으로 요소 제거</h3>
+<ul>
+<li>
+<p>값을 기반으로 요소를 제거할 때는 배열 내부에서 특정 값의 위치를 찾는 <strong>indexOf() 메소드</strong>를 사용해 갑의 위치를 추출, <strong>splice() 메소드를 사용해 제거</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">인덱스</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">배열</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">요소</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">배열</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">인덱스</span>, <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div></li>
+<li>
+<p><strong>indexOf() 메소드 :</strong> 배열 내부에 <strong>요소가 있을 경우 인덱스를 리턴</strong></p>
+<ul>
+<li>배열 내부에 <strong>요소가 없을 경우 -1을 리턴</strong></li>
+</ul>
+<p><img src="/images/lang_javascript/JavaScript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/Untitled%201.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>문자열의 indexOf() 메소드</strong></p>
+<ul>
+<li>문자열 내부에서 특정 문자열의 위치를 찾을 수 있음</li>
+</ul>
+<p><img src="/images/lang_javascript/JavaScript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/Untitled%202.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>배열 내부에서 특정 값을 가진 요소 모두 제거</strong></p>
+<ul>
+<li>반복문 사용</li>
+<li><strong>filter() 메소드</strong> 사용</li>
+</ul>
+<p><img src="/images/lang_javascript/JavaScript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/Untitled%203.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
+</ul>
+		</div>
+	</article>
 </main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_java_script/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EB%92%B7%EB%B6%80%EB%B6%84%EC%97%90_%EC%9A%94%EC%86%8C_%EC%B6%94%EA%B0%80/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[JavaScript] 배열 뒷부분에 요소 추가</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Project][Chatbot]공공 주택 정보 알림 챗봇 - 홈마트</p>
+		</a>
+	</div>
+</nav>
 
 
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -216,5 +296,33 @@
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>
