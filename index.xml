@@ -18,6 +18,15 @@
     
     <item>
       <title>[JavaScript] 선언적 함수</title>
+      <link>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</link>
+      <pubDate>Fri, 27 May 2022 16:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[JavaScript] 선언적 함수</title>
       <link>/post/lang_java_script/study/func/javascript_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98/</link>
       <pubDate>Fri, 27 May 2022 16:00:45 +0900</pubDate>
       
@@ -716,17 +725,6 @@
       
       <guid>/about/</guid>
       <description>1. 기본 정보   Name : 정진우 e-mail : jjinwoo92@gmail.com Blog : https://blackjjw.github.io/  2. 학력   2020.02 충남대학교 정보통신공학과 졸업(학사) 2015.03 충남대학교 정보통신공학과 입학(편입) 2015.02 동국대학교 (경주) 정보통신공학과 자퇴 2013.03 동국대학교 (경주) 정보통신공학과 입학  3. 교육사항   과정명 : 현장 전문가 육성을 위한 인공지능(AI) 창의융합형 인재 양성 과정  주관처 : (주)에프앤이노에듀 기간 : 2021. 06 ~ 2021. 11 교육내용  인공지능 기초 및 기술을 활용한 개발 교육을 통해 인공지능 전문가 양성을 목적 Python, Django MySQL Machine Learning, Deep Learning AWS Github      4.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</guid>
-      <description>JavaScript - 매개변수와 리턴값  매개변수 : 함수를 호출할 때 괄호 안에 적는 것 리턴값 : 함수의 최종 결과  사용자 정의 함수의 매개변수와 리턴값 function 함수(매개변수, 매개변수, 매개변수) { 	문장 	문장 	return 리턴값 }   기본 형태의 함수 만들기
-&amp;lt;script&amp;gt; 	function f(x) { 	return x * x 	}  	console.log(f(5)) &amp;lt;/script&amp;gt;   매개변수와 리턴값
- 코드 작성시 보조 기능이 동작하는 것을 확인      References  혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판  </description>
     </item>
     
   </channel>
