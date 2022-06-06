@@ -709,5 +709,16 @@
       <description>&lt;h5 id=&#34;codeup--6001-6002-6003-6005-6006-6007-6008&#34;&gt;CodeUp : 6001, 6002, 6003, 6005, 6006, 6007, 6008&lt;/h5&gt;</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/lang_java_script/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</guid>
+      <description>JavaScript - 매개변수와 리턴값  매개변수 : 함수를 호출할 때 괄호 안에 적는 것 리턴값 : 함수의 최종 결과  사용자 정의 함수의 매개변수와 리턴값 function 함수(매개변수, 매개변수, 매개변수) { 	문장 	문장 	return 리턴값 }   기본 형태의 함수 만들기
+&amp;lt;script&amp;gt; 	function f(x) { 	return x * x 	}  	console.log(f(5)) &amp;lt;/script&amp;gt;   매개변수와 리턴값
+ 코드 작성시 보조 기능이 동작하는 것을 확인      References  혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판  </description>
+    </item>
+    
   </channel>
 </rss>
