@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 May 2022 15:30:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 15:30:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] continue 키워드</title>
+      <link>/post/lang_java_script/study/repeat/javascript_continue_%ED%82%A4%EC%9B%8C%EB%93%9C/</link>
+      <pubDate>Thu, 26 May 2022 15:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_java_script/study/repeat/javascript_continue_%ED%82%A4%EC%9B%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] break 키워드</title>
       <link>/post/lang_java_script/study/repeat/javascript_break_%ED%82%A4%EC%9B%8C%EB%93%9C/</link>
