@@ -44,20 +44,29 @@
     </item>
     
     <item>
-      <title>Book</title>
-      <link>/tags/book/</link>
-      <pubDate>Fri, 06 May 2022 17:30:45 +0900</pubDate>
+      <title>JavaScript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Mon, 30 May 2022 17:30:45 +0900</pubDate>
       
-      <guid>/tags/book/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DL</title>
       <link>/tags/dl/</link>
-      <pubDate>Tue, 26 Apr 2022 17:38:48 +0900</pubDate>
+      <pubDate>Fri, 06 May 2022 17:30:45 +0900</pubDate>
       
       <guid>/tags/dl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>/tags/statistics/</link>
+      <pubDate>Fri, 29 Apr 2022 18:33:45 +0900</pubDate>
+      
+      <guid>/tags/statistics/</guid>
       <description></description>
     </item>
     
@@ -76,6 +85,15 @@
       <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
       
       <guid>/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kaggle</title>
+      <link>/tags/kaggle/</link>
+      <pubDate>Sun, 24 Apr 2022 18:33:45 +0900</pubDate>
+      
+      <guid>/tags/kaggle/</guid>
       <description></description>
     </item>
     
