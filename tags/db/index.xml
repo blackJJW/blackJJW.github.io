@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DB on Black_JJW&#39;s Blog</title>
+    <link>/tags/db/</link>
+    <description>Recent content in DB on Black_JJW&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Apr 2022 18:30:45 +0900</lastBuildDate><atom:link href="/tags/db/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Oracle][setting] Oracle Database 19c Installation and Setting</title>
+      <link>/post/setting/oracle_database_19c_setting/</link>
+      <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
+      
+      <guid>/post/setting/oracle_database_19c_setting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
