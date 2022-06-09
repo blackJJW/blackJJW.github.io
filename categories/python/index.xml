@@ -6,7 +6,16 @@
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Apr 2022 13:40:45 +0900</lastBuildDate><atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 16:00:45 +0900</lastBuildDate><atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Python][Library] Datatable</title>
+      <link>/post/lang_python/library/datatable/</link>
+      <pubDate>Wed, 08 Jun 2022 16:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_python/library/datatable/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[CodeUp][Python][기초 100제] 기초-비교연산</title>
       <link>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/</link>

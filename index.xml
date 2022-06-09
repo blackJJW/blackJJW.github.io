@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jun 2022 09:38:48 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 16:00:45 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Python][Library] Datatable</title>
+      <link>/post/lang_python/library/datatable/</link>
+      <pubDate>Wed, 08 Jun 2022 16:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_python/library/datatable/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Project][Chatbot] 공공 주택 정보 알림 챗봇 - 홈마트</title>
       <link>/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</link>
