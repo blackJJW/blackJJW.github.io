@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[JavaScript] 구 버전 자바스크립트에서 가변 매개변수 함수 구현 - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript] 즉시 호출 함수 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[JavaScript] 구 버전 자바스크립트에서 가변 매개변수 함수 구현" />
+		<meta property="og:title" content="[JavaScript] 즉시 호출 함수" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EA%B0%80%EB%B3%80_%EB%A7%A4%EA%B0%9C/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-30T16:30:45+09:00" />
-<meta property="article:modified_time" content="2022-05-30T16:30:45+09:00" />
+<meta property="og:url" content="/post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-02T16:00:45+09:00" />
+<meta property="article:modified_time" content="2022-06-02T16:00:45+09:00" />
 
 
 
@@ -136,46 +136,82 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[JavaScript] 구 버전 자바스크립트에서 가변 매개변수 함수 구현</h1>
+			<h1 class="post__title">[JavaScript] 즉시 호출 함수</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-30T16:30:45&#43;09:00">May 30, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-02T16:00:45&#43;09:00">June 02, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
 			<ul>
 <li>
-<p>구 버전의 자바스크립트에서 가변 매개변수 함수를 구현할 때는 <strong>배열 내부에서 사용할 수 있는 특수한 변수인 arguments</strong>를 활용</p>
-</li>
+<p>여러 웹사이트에서 다음과 같이 <strong>익명 함수를 생성</strong>하고 곹바로 <strong>즉시 호출</strong>하는 패턴을 사용</p>
+<ul>
 <li>
-<p>arguments는 <strong>매개변수와 관련된 여러 정보를 확인</strong>할 수 있고 <strong>배열과 비슷하게 사용</strong> 가능</p>
-</li>
-<li>
-<p>arguments를 사용한 가변 매개변수 함수</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sample</span>() {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arguments</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">arguments</span>[<span style="color:#a6e22e">i</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EA%B0%80%EB%B3%80_%EB%A7%A4%EA%B0%9C/Untitled.png" alt="Untitled"></p>
-<ul>
-<li>실행 결과
-<ul>
-<li>arguments 내부에 <strong>callee: f</strong>와 <strong>Symbol(Symbol.iterator): f</strong> 존재
-<ul>
-<li>배열과 비슷하지만 <strong>배열은 아님</strong></li>
-<li>일반적인 배열처럼 사용하면 <strong>여러 위험을 내포</strong></li>
-<li>따라서 가변 매개변수 함수를 더 편리하게 만들 수 있는 <strong>나머지 매개변수가 최신 버전의 자바스크립트에 포함</strong>됨</li>
+<p><strong>함수 즉시 호출</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {})()
+</span></span></code></pre></div></li>
 </ul>
 </li>
+<li>
+<p>일반적으로 자바스크립트는HTML 페이지 내부에서 사용할 때 <strong>script 태그</strong>를 <strong>여러 개 사용</strong>하고 코드를 입력한다.</p>
+<ul>
+<li>
+<p>코드가 여러 곳에서 사용되면 <strong>변수 이름이 충돌</strong>할 가능성이 높음</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.141592</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p>식별자가 이미 사용되고 있다는 오류를 발생</p>
+<ul>
+<li>아래의 script부분이 실행되지 않음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>스코프</strong>(<strong>scope</strong>) : 변수가 <strong>존재하는 범위</strong></p>
+<ul>
+<li>
+<p><strong>같은 단계</strong>이 있을 경우 무조건 충돌이 발생</p>
+</li>
+<li>
+<p>이러한 <strong>스코프 단계를 변경</strong>하는 방법</p>
+<ul>
+<li><strong>중괄호를 사용</strong>해서 <strong>블록을 생성</strong>하는 방법</li>
+<li><strong>함수를 생성</strong>해서 <strong>블록을 만드는 방법</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 블록을 사용한 스코프 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1415</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 함수 블록을 사용한 스코프 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sample</span>() {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.121592</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sample</span>()
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>블록 내부에서 같은 이름으로 변수를 선언하면 변수가 외부 변수와 충돌하지 않고 외부 변수를 가림</li>
+<li><strong>섀도잉</strong>(<strong>shadowing</strong>) : 블록이 다른 경우 내부 변수가 외부 변수를 가리는 현상</li>
 </ul>
 </li>
 </ul>
@@ -208,15 +244,15 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%EA%B8%B0%EB%B3%B8_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8_%ED%95%A8%EC%88%98/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[JavaScript] 기본 매개변수</p>
+			<p class="pager__title">[JavaScript] 타이머 함수</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/" rel="next">
+		<a class="pager__link" href="/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[JavaScript] 구 버전 자바스크립트에서 전개 연산자 구현</p>
+			<p class="pager__title">[Project][Chatbot] 공공 주택 정보 알림 챗봇 - 홈마트</p>
 		</a>
 	</div>
 </nav>
