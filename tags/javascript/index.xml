@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 17:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 화살표 함수를 사용한 메소드</title>
+      <link>/post/lang_javascript/study/object/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%9C_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
+      <pubDate>Fri, 03 Jun 2022 17:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/object/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%9C_%EB%A9%94%EC%86%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 메소드 간단 선언 구문</title>
       <link>/post/lang_javascript/study/object/javascript_%EB%A9%94%EC%86%8C%EB%93%9C_%EA%B0%84%EB%8B%A8_%EC%84%A0%EC%96%B8_%EA%B5%AC%EB%AC%B8/</link>
