@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jun 2022 16:00:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 메소드 간단 선언 구문</title>
+      <link>/post/lang_javascript/study/object/javascript_%EB%A9%94%EC%86%8C%EB%93%9C_%EA%B0%84%EB%8B%A8_%EC%84%A0%EC%96%B8_%EA%B5%AC%EB%AC%B8/</link>
+      <pubDate>Fri, 03 Jun 2022 16:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/object/javascript_%EB%A9%94%EC%86%8C%EB%93%9C_%EA%B0%84%EB%8B%A8_%EC%84%A0%EC%96%B8_%EA%B5%AC%EB%AC%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 동적으로 객체 속성 추가/제거</title>
       <link>/post/lang_javascript/study/object/javascript_%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EC%86%8D%EC%84%B1_%EC%B6%94%EA%B0%80_%EC%A0%9C%EA%B1%B0/</link>
