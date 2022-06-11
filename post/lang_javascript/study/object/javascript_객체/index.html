@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[Spark][setting] Spark Installation(Windows 10) - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript] 객체 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[Spark][setting] Spark Installation(Windows 10)" />
+		<meta property="og:title" content="[JavaScript] 객체" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/setting/spark_installation_windows_10/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-04-23T16:35:45+09:00" />
-<meta property="article:modified_time" content="2022-04-23T16:35:45+09:00" />
+<meta property="og:url" content="/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-03T15:00:45+09:00" />
+<meta property="article:modified_time" content="2022-06-03T15:00:45+09:00" />
 
 
 
@@ -136,162 +136,125 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[Spark][setting] Spark Installation(Windows 10)</h1>
+			<h1 class="post__title">[JavaScript] 객체</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-23T16:35:45&#43;09:00">April 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/setting/" rel="category">Setting</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-03T15:00:45&#43;09:00">June 03, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h2 id="자바-설치">자바 설치</h2>
-<ul>
+			<ul>
 <li>
-<p>Oracle 회원가입 (로그인 필요)</p>
+<p>자바스크립트에서 여러 자료를 다룰 때는 <strong>객체</strong>(<strong>object</strong>)를 사용</p>
 </li>
 <li>
-<p>다운로드 파일 : <a href="https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html">https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html</a></p>
+<p><strong>배열</strong>(<strong>array</strong>)도 여러 자료를 다룰 수 있음</p>
+<ul>
+<li>
+<p>배열도 객체이기 때문</p>
+<p><img src="/images/lang_javascript/study/JavaScript_%EA%B0%9D%EC%B2%B4/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
-<p>관리자 권한으로 다운로드 파일 실행.</p>
-</li>
-<li>
-<p>Next 버튼을 클릭 후 설치 경로 설정에 관하여 나온다.</p>
-<ul>
-<li>초기 설정 : C:\Program Files\Java\jdk1.8.0_301\</li>
-<li>이 경로를 변경 → C:\jdk
-<ul>
-<li>경로 이름 중에 공백이 있으면 환경 설치 시 문제 발생 가능성 있음.</li>
-</ul>
+<p>배열은 객체를 기반으로 만들어져 객체와 상당히 비슷</p>
 </li>
 </ul>
 </li>
 <li>
-<p>다시 Next 버튼을 클릭 후, 자바 런타일 환경의 폴더의 경로도 변경해준다.</p>
+<p>배열과 객체의 차이점</p>
 <ul>
-<li>초기 설정 :  C:\Program Files\Java\jre1.8.0_301\</li>
-<li>이 경로를 변경 → 해당 드라이브에 jre폴더 생성 → C:\jre 로 설정</li>
+<li>배열 : 요소에 접근 시 <strong>인덱스</strong> 사용</li>
+<li>객체 : 요소에 접근 시 <strong>키(key)</strong> 사용</li>
 </ul>
-</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled.png" alt="Untitled"></p>
-<p>(본인은 C드라이브 용량의 문제로 D드라이브에 저장을 했다.)</p>
-<h2 id="spark-설치">Spark 설치</h2>
-<h3 id="1-spark-다운로드">(1) Spark 다운로드</h3>
-<ul>
-<li>다운로드 주소 : <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a></li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_1.png" alt="Untitled"></p>
-<p>(Spark 버전을 확인 후 기억해 둔다.)</p>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_2.png" alt="Untitled"></p>
-<p>표시된 곳을 선택하여 다운로드를 실행한다.</p>
-<h3 id="2-winrar-프로그램-다운로드">(2) WinRAR 프로그램 다운로드</h3>
-<ul>
-<li>
-<p>다운로드한 Spark가 .tgz 형식의 압축파일이므로 WinRAR을 설치.</p>
-<ul>
-<li>다운로드 파일 :  <a href="https://www.rarlab.com/download.htm">https://www.rarlab.com/download.htm</a></li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_3.png" alt="Untitled"></p>
-<p>컴퓨터 환경에 맞는 파일을 선택한 후 다운로드를 진행한 후, 설치를 진행한다.</p>
-</li>
-</ul>
-<h3 id="3-spark-폴더-생성-및-파일-이동">(3) spark 폴더 생성 및 파일 이동</h3>
-<ul>
-<li>드라이브 하단에 spark 폴더 생성</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_4.png" alt="Untitled"></p>
-<ul>
-<li>spark-3.3.0-bin-hadoop3.2 폴더 내의 모든 파일을 복사</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_5.png" alt="Untitled"></p>
-<h3 id="4-conf-폴더-내의-있는-log4jpropertieshttplog4jproperties-파일-수정">(4) conf 폴더 내의 있는 <a href="http://log4j.properties">log4j.properties</a> 파일 수정</h3>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_6.png" alt="Untitled"></p>
-<p>해당 파일을 메모장으로 연다.</p>
-<ul>
-<li>INFO 를 ERROR로 수정</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_7.png" alt="Untitled"></p>
-<h3 id="5-winutils-설치">(5) winutils 설치</h3>
-<ul>
-<li>스파크가 윈도우 로컬 컴퓨터가 Hadoop으로 착각하게 만들 프로그램 필요
-<ul>
-<li>다운로드 파일 : <a href="https://github.com/cdarlint/winutils">https://github.com/cdarlint/winutils</a></li>
-<li>spark의 버전에 맞추어 다운로드한다.</li>
-</ul>
-</li>
-<li>설치할 드라이브에 winutils 폴더를 생성 후, 그 폴더 내에 bin 폴더를 생성한다.</li>
-<li>bin 폴더 내에 다운로드한 파일을 저장한다.</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_8.png" alt="Untitled"></p>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_9.png" alt="Untitled"></p>
-<ul>
-<li>
-<p>이 파일이 Spark 실해 시, 오류 없이 실행 될 수 있도록, 사용 권한을 얻도록 한다.</p>
-<ul>
-<li>관리자 권한으로  cmd 실행</li>
-<li>드라이브 하단에 tmp폴더와 그 내부에 hive 폴더를 생성</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_10.png" alt="Untitled"></p>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_11.png" alt="Untitled"></p>
-<p>위 과정을 수행한다.</p>
-</li>
-</ul>
-<h2 id="환경변수-설정">환경변수 설정</h2>
-<ul>
-<li>
-<p>시스템 환경변수 설정</p>
-<ul>
-<li>사용자 변수 - 새로 만들기</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_12.png" alt="Untitled"></p>
 </li>
 <li>
-<p>SPARK_HOME 환경 변수</p>
+<p>객체는 중괄호 […]로 생성, 자료를 쉼표( , )로 연결해서 입력</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">키</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">값</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">제품명</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;건조 망고&#39;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">유형</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;당절임&#39;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">성분</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;망고, 설탕&#39;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">원산지</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;필리핀&#39;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><ul>
+<li>
+<p>위에서 생성한 객체를 표로 표현</p>
+<ul>
+<li>배열과 비슷함을 확인</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">키</th>
+<th style="text-align:center">속성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">제품명</td>
+<td style="text-align:center">건조 망고</td>
+</tr>
+<tr>
+<td style="text-align:center">유형</td>
+<td style="text-align:center">당절임</td>
+</tr>
+<tr>
+<td style="text-align:center">성분</td>
+<td style="text-align:center">망고, 설탕</td>
+</tr>
+<tr>
+<td style="text-align:center">원산지</td>
+<td style="text-align:center">필리핀</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>객체 뒤에 <strong>대괄호 […]를 사용</strong>하고 <strong>키를 입력</strong>하면 객체의 요소에 접근</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">product</span>[<span style="color:#e6db74">&#39;제품명&#39;</span>]   <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;건조 망고&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>[<span style="color:#e6db74">&#39;유형&#39;</span>]     <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;당절임&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>[<span style="color:#e6db74">&#39;성분&#39;</span>]     <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;망고, 설탕&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>[<span style="color:#e6db74">&#39;원산지&#39;</span>]   <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;필리핀&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>대괄호를 사용하는 방법 이외에 **온점(.)**을 사용 가능</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">제품명</span>   <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;건조 망고&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">유형</span>     <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;당절임&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">성분</span>     <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;망고, 설탕&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">원산지</span>   <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#39;필리핀&#39;</span>
+</span></span></code></pre></div><ul>
+<li>
+<p>온점을 사용하면 <strong>보조 기능을 활용</strong>할 수 있음</p>
+<p><img src="/images/lang_javascript/study/JavaScript_%EA%B0%9D%EC%B2%B4/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_13.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>식별자로 사용할 수 없는 단어</strong>를 키로 사용할 경우</p>
 <ul>
-<li>JAVA_HOME 환경 변수</li>
+<li>객체를 생성할 때 키(key)는 식별자와 문자열을 모두 사용 가능</li>
+<li>식별자로 사용할 수 없는 단어를 키로 사용할 때는 <strong>문자열을 사용</strong>해야함</li>
+<li>식별자가 아닌 문자열을 키로 사용했을 때문 <strong>무조건 대괄호[…]를 사용해야 객체의 요소에 접근 가능</strong></li>
 </ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_14.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;with space&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;with ~!@# $%^&amp;*()_+&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">456</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">object</span>[<span style="color:#e6db74">&#34;with space&#34;</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">object</span>[<span style="color:#e6db74">&#34;with ~!@# $%^&amp;*()_+&#34;</span>]
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References</h2>
 <ul>
-<li>HADOOP_HOME 환경 설정</li>
+<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
 </ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_15.png" alt="Untitled"></p>
-<h3 id="path-변수-편집">Path 변수 편집</h3>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_16.png" alt="Untitled"></p>
-<p>아래 코드를 추가</p>
-<ul>
-<li>%SPARK_HOME%\bin</li>
-<li>%JAVA_HOME%\bin</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_17.png" alt="Untitled"></p>
-<h2 id="파이썬-환경설정">파이썬 환경설정</h2>
-<ul>
-<li>Python 환경설정</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_18.png" alt="Untitled"></p>
-<ul>
-<li>또는 파이썬의 경로를 직접 설정해준다.</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_19.png" alt="Untitled"></p>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_20.png" alt="Untitled"></p>
-<h2 id="스파크-테스트">스파크 테스트</h2>
-<ul>
-<li>cmd를 열고 spark 파일로 경로를 설정한다.</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_21.png" alt="Untitled"></p>
-<ul>
-<li>pyspark 를 입력</li>
-</ul>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_22.png" alt="Untitled"></p>
-<ul>
-<li>아래 코드를 입력 후 실행하여 정상적으로 작동하는 지 확인한다.</li>
-</ul>
-<p>rd = sc.textFile(”README.md”)</p>
-<p>rd.count()</p>
-<p><img src="/images/setting_images/spark_installation_windows_10/Untitled_23.png" alt="Untitled"></p>
 		</div>
 		<footer class="post__footer">
 			
@@ -299,7 +262,7 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/spark/" rel="tag">Spark</a>
+			<a class="tags__link btn" href="/tags/javascript/" rel="tag">JavaScript</a>
 		</li>
 	</ul>
 </div>
@@ -315,15 +278,15 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/ml/book/chapter6_2/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98%EC%99%80_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98%EC%9D%98_%EC%B0%A8%EC%9D%B4/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-2 k-평균</p>
+			<p class="pager__title">[JavaScript] 익명 함수와 선언적 함수의 차이</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/ml/book/chapter6_3/" rel="next">
+		<a class="pager__link" href="/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-3 주성분 분석</p>
+			<p class="pager__title">[Project][Chatbot] 공공 주택 정보 알림 챗봇 - 홈마트</p>
 		</a>
 	</div>
 </nav>

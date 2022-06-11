@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jun 2022 18:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 15:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 객체</title>
+      <link>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4/</link>
+      <pubDate>Fri, 03 Jun 2022 15:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 익명 함수와 선언적 함수의 차이</title>
       <link>/post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98%EC%99%80_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98%EC%9D%98_%EC%B0%A8%EC%9D%B4/</link>
