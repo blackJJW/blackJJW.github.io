@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jun 2022 14:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jun 2022 14:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 기본 자료형의 일시적 승급</title>
+      <link>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%98_%EC%9D%BC%EC%8B%9C%EC%A0%81_%EC%8A%B9%EA%B8%89/</link>
+      <pubDate>Mon, 06 Jun 2022 14:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%98_%EC%9D%BC%EC%8B%9C%EC%A0%81_%EC%8A%B9%EA%B8%89/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 기본 자료형을 객체로 선언</title>
       <link>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%84_%EA%B0%9D%EC%B2%B4%EB%A1%9C_%EC%84%A0%EC%96%B8/</link>
