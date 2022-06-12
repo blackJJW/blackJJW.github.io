@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[JavaScript] 출력 - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript][Library] Lodash - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[JavaScript] 출력" />
+		<meta property="og:title" content="[JavaScript][Library] Lodash" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/lang_javascript/study/summary_expression/javascript_%EC%B6%9C%EB%A0%A5/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-07T18:00:45+09:00" />
-<meta property="article:modified_time" content="2022-05-07T18:00:45+09:00" />
+<meta property="og:url" content="/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-07T13:30:45+09:00" />
+<meta property="article:modified_time" content="2022-06-07T13:30:45+09:00" />
 
 
 
@@ -147,134 +147,156 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[JavaScript] 출력</h1>
+			<h1 class="post__title">[JavaScript][Library] Lodash</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-07T18:00:45&#43;09:00">May 07, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-07T13:30:45&#43;09:00">June 07, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h3 id="u간단한-표현식-결과-확인u"><!-- raw HTML omitted -->간단한 표현식 결과 확인<!-- raw HTML omitted --></h3>
+			<ul>
+<li>
+<p>다른 사람이 만든 <strong>외부 자바스크립트 파일을 사용</strong>하는 것이 가능</p>
+</li>
+<li>
+<p><strong>외부 라이브러리</strong> : 다른 사람들이 만든 <strong>다양한 함수와 클래스를 묶어서 제공</strong>해주는 것</p>
+</li>
+<li>
+<p><strong>유틸리티 라이브러리</strong> : 개발할 때 보조적으로 사용하는 함수들을 제공해주는 라이브러리</p>
+<ul>
+<li>underscore, Lodash 등 다양한 라이브러리가 존재</li>
+<li>최근 많이 사용되는 것이 <strong>Lodash 라이브러리</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="lodash-라이브러리">Lodash 라이브러리</h3>
 <ol>
 <li>
-<p>구글 크롬 주소창에 about:blank 입력</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled.png" alt="Untitled"></p>
+<p>lodash 라이브러리 다운로드 페이지 접속</p>
+<p><a href="https://lodash.com/">lodash 라이브러리 다운로드</a></p>
+<p><img src="/images/lang_javascript/study/JavaScript_Lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
-<p>단축키 <strong>[ Ctrl + Shift + i ]</strong> 를 눌러 개발자 환경을 띄움</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled1.png" alt="Untitled"></p>
+<p>다운로드 페이지에서 [<strong>Full Build</strong>]를 <strong>클릭</strong>하면 웹 브라우저에 따라 다음과 같은 2가지 상황이 발생</p>
+<ol>
+<li><strong>곧바로 파일 다운로드가 될 경우</strong> : 다운로드한 파일을 HTML 파일과 같은 위치에 놓고 읽어들인다.</li>
+<li><strong>파일 내용이 출력될 경우</strong> : 마우스 우 클릭을 하고 [다른 이름으로 저장]을 선택한 뒤 HTML 파일과 같은 위치에 놓고 다운로드한다.</li>
+</ol>
 </li>
 <li>
-<p>about:blank 에서 <strong>[Console] 탭</strong>을 클릭하여 <strong>구글 크롬 개발자 도구</strong>에 들어간다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled2.png" alt="Untitled"></p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled3.png" alt="Untitled"></p>
+<p>다른 방법이 존재한다.</p>
+<ul>
+<li>
+<p>다운로드 페이지에서 [<strong>CDN copies</strong>]를 클릭하여 다음 페이지로 이동한다.</p>
+<p><a href="https://www.jsdelivr.com/package/npm/lodash">Lodash CDN 링크 페이지</a></p>
+<p><img src="/images/lang_javascript/study/JavaScript_Lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>
+<p>하이라이트된 부분의 오른쪽에 있는 [Copy to Clipboard] 아이콘을 클릭하여 <strong>URL을 선택</strong>해 <strong>CDN 링크를 복사</strong>한다.</p>
+<p><img src="/images/lang_javascript/study/JavaScript_Lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>
+<p>복사한 링크를 script 태그의 src 속성에 입력하면 라이브러리를 읽어들일 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div></li>
+</ol>
 </li>
 </ol>
 <ul>
 <li>
-<p>이곳에서 어떤 값을 입력하면 바로 그 결과를 출력한다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled4.png" alt="Untitled"></p>
-</li>
-</ul>
-<h3 id="u경고창에-출력u"><!-- raw HTML omitted -->경고창에 출력<!-- raw HTML omitted --></h3>
+<p>더 자세한 정보는 다음 링크를 참조</p>
+<p><a href="https://lodash.com/docs/4.17.15">Lodash 라이브러리 문서</a></p>
+<p><img src="/images/lang_javascript/study/JavaScript_Lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Untitled%203.png" alt="Untitled"></p>
 <ul>
-<li>
-<p><strong>개발 전용 에디터</strong>를 사용할 때의 출력하는 방법</p>
-<ul>
-<li>파일을 생성했을 때 <strong>가장 기본적인 자바스크립트 출력 방법</strong>은 <strong>alert() 함수를 사용</strong>하는 것
-<ul>
-<li>alert() : 웹 브라우저에 경고창을 띄울 수 있음.</li>
+<li>수많은 함수를의 사용방법과 결과를 볼 수 있다.</li>
 </ul>
 </li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div></li>
 <li>
-<p>alert() 함수를 입력하고 HTML 페이지를 저장</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+<p>Lodash 라이브러리 안에 ‘ <strong>_</strong> ’를 포함한 <strong>메소드</strong>를 갖고 있는 것을 알 수 있음</p>
+<ul>
+<li>자바스크립트는 ‘<strong>_</strong>’와 ‘<strong>$</strong>’ 기호를 <strong>식별자로 사용 가능</strong>한데, 이때 ‘_’기호를 사용하여 식별자를 생성한 것이다.</li>
+</ul>
+</li>
+<li>
+<p>_.sortBy() 메소드</p>
+<ul>
+<li>배열을 어떤 것으로 <strong>정렬할지 지정</strong>하면, 지정한 것을 기반으로 <strong>배열을 정렬해서 리턴</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;<span style="color:#a6e22e">Document</span>&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">자바스크립트</span> <span style="color:#a6e22e">코드</span> <span style="color:#f92672">--&gt;</span>
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js&#34;</span>&gt;        
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">자바스크립트</span> <span style="color:#a6e22e">코드</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">people</span> <span style="color:#f92672">=</span> [{
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">31</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Python&#34;</span>
+</span></span><span style="display:flex;"><span>        }, {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Amy&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JAVA&#34;</span>
+</span></span><span style="display:flex;"><span>        }, {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Paul&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">25</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;C++&#34;</span>
+</span></span><span style="display:flex;"><span>        }, {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Jack&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">33</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;C&#34;</span>
+</span></span><span style="display:flex;"><span>        }, {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;James&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">23</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JavaScript&#34;</span>
+</span></span><span style="display:flex;"><span>        }]
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">sortBy</span>(<span style="color:#a6e22e">people</span>, (<span style="color:#a6e22e">person</span>) =&gt; <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">output</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div></li>
+</span></span></code></pre></div><ul>
 <li>
-<p>저장된 HTML 페이지를 실행</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled5.png" alt="Untitled"></p>
-</li>
-<li>
-<p>페이지를 실행하여 경고창이 열린 것을 확인</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled6.png" alt="Untitled"></p>
+<p>나이(age)으로 정렬한 결과를 출력</p>
+<p><img src="/images/lang_javascript/study/JavaScript_Lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Untitled%204.png" alt="Untitled"></p>
 </li>
 </ul>
-<h3 id="u콘솔에-출력u"><!-- raw HTML omitted -->콘솔에 출력<!-- raw HTML omitted --></h3>
-<ul>
-<li>
-<p><strong>console.log()</strong> 메소드를 사용</p>
-<ul>
-<li>console.log() 메소드도 alert() 함수처럼 괄호 내부에 입력한 값을 출력</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div></li>
-<li>
-<p>console.log() 메소드를 입력하고 HTML 페이지를 저장 후 실행</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;<span style="color:#a6e22e">Document</span>&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">자바스크립트</span> <span style="color:#a6e22e">코드</span> <span style="color:#f92672">--&gt;</span>
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">자바스크립트</span> <span style="color:#a6e22e">코드</span> <span style="color:#f92672">--&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div></li>
-<li>
-<p>실행하면 빈 페이지가 나타난다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled7.png" alt="Untitled"></p>
 </li>
 <li>
-<p>단축키 <strong>[ Ctrl + Shift + i ]</strong> 또는 <strong>[ F12 ]키</strong> 를 눌러 개발자 도구를 띄운다.</p>
-</li>
-<li>
-<p>그 다음 <strong>[ Console ]</strong> 탭을 클릭한다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled8.png" alt="Untitled"></p>
-</li>
-<li>
-<p>입력한 결과가 출력된 것을 확인</p>
-<p><img src="/images/lang_javascript/study/JavaScript_output/Untitled9.png" alt="Untitled"></p>
+<p>이외에도 다양한 기능이 있음</p>
 </li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
 <li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
+<li><a href="https://lodash.com/">https://lodash.com/</a></li>
+<li><a href="https://www.jsdelivr.com/package/npm/lodash">https://www.jsdelivr.com/package/npm/lodash</a></li>
+<li><a href="https://lodash.com/docs/4.17.15">https://lodash.com/docs/4.17.15</a></li>
 </ul>
 		</div>
 		<footer class="post__footer">
@@ -284,6 +306,12 @@ if (!doNotTrack) {
 	<ul class="tags__list">
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/javascript/" rel="tag">JavaScript</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/javascript-library/" rel="tag">JavaScript Library</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/html/" rel="tag">HTML</a>
 		</li>
 	</ul>
 </div>
@@ -299,15 +327,15 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/summary_expression/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/etc/javascript_%EC%99%B8%EB%B6%80_script-%ED%8C%8C%EC%9D%BC_%EC%9D%BD%EC%96%B4%EB%93%A4%EC%9D%B4%EA%B8%B0/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[JavaScript] 기본용어</p>
+			<p class="pager__title">[JavaScript] 외부 script 파일 읽어들이기</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/" rel="next">
+		<a class="pager__link" href="/post/lang_python/library/datatable/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[JavaScript] 문자열 자료형</p>
+			<p class="pager__title">[Python][Library] Datatable</p>
 		</a>
 	</div>
 </nav>
