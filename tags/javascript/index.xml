@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 13:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 외부 script 파일 읽어들이기</title>
+      <link>/post/lang_javascript/study/etc/javascript_%EC%99%B8%EB%B6%80_script-%ED%8C%8C%EC%9D%BC_%EC%9D%BD%EC%96%B4%EB%93%A4%EC%9D%B4%EA%B8%B0/</link>
+      <pubDate>Tue, 07 Jun 2022 13:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/etc/javascript_%EC%99%B8%EB%B6%80_script-%ED%8C%8C%EC%9D%BC_%EC%9D%BD%EC%96%B4%EB%93%A4%EC%9D%B4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] Math 객체</title>
       <link>/post/lang_javascript/study/object/javascript_math-%EA%B0%9D%EC%B2%B4/</link>
