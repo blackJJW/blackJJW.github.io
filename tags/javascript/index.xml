@@ -6,13 +6,22 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jun 2022 15:00:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 객체 전개 연산자</title>
+      <link>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Wed, 08 Jun 2022 15:30:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 배열 전개 연산자</title>
-      <link>/post/lang_javascript/study/object/javascript-%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90-4966daaafd0f4242a86b13a941facf07/</link>
+      <link>/post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
       <pubDate>Wed, 08 Jun 2022 15:00:45 +0900</pubDate>
       
-      <guid>/post/lang_javascript/study/object/javascript-%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90-4966daaafd0f4242a86b13a941facf07/</guid>
+      <guid>/post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
       <description></description>
     </item>
     
