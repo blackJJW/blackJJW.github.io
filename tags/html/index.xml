@@ -6,7 +6,16 @@
     <description>Recent content in HTML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 13:00:45 +0900</lastBuildDate><atom:link href="/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] DOMContentLoaded 이벤트</title>
+      <link>/post/lang_javascript/study/doc_object/javascript_domcontentloaded_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</link>
+      <pubDate>Thu, 09 Jun 2022 13:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/doc_object/javascript_domcontentloaded_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library] Lodash</title>
       <link>/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
