@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[JavaScript] for 반복문 - Black_JJW&#39;s Blog</title>
+	<title>[JavaScript] 속성 존재 여부 확인 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[JavaScript] for 반복문" />
+		<meta property="og:title" content="[JavaScript] 속성 존재 여부 확인" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/lang_javascript/study/repeat/javascript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-23T15:30:45+09:00" />
-<meta property="article:modified_time" content="2022-05-23T15:30:45+09:00" />
+<meta property="og:url" content="/post/lang_javascript/study/object/javascript_%EC%86%8D%EC%84%B1_%EC%A1%B4%EC%9E%AC_%EC%97%AC%EB%B6%80_%ED%99%95%EC%9D%B8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-08T13:30:45+09:00" />
+<meta property="article:modified_time" content="2022-06-08T13:30:45+09:00" />
 
 
 
@@ -147,71 +147,106 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[JavaScript] for 반복문</h1>
+			<h1 class="post__title">[JavaScript] 속성 존재 여부 확인</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-23T15:30:45&#43;09:00">May 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-08T13:30:45&#43;09:00">June 08, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
 			<ul>
 <li>
-<p>일반적으로 <strong>특정 횟수만큼 반복하고 싶을때 사용</strong>하는 범용적인 반복문</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">반복</span> <span style="color:#a6e22e">횟수</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">문장</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<p>객체 내부에 어떤 속성이 있는 지 확인해보는 코드</p>
+</li>
 <li>
-<p><strong>for</strong> 코드 블록 사용</p>
+<p>객체에 없는 속성에 접근을 하면 <strong>undefined 자료형이 출력</strong>된다.</p>
 <ul>
-<li>
-<p>코드 작성 시 <strong>for</strong> 입력</p>
-</li>
-<li>
-<p><strong>for 와 관련된 여러 블록</strong>들이 나옴</p>
-<p><img src="/images/lang_javascript/study/JavaScript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled.png" alt="Untitled"></p>
-</li>
-<li>
-<p><strong>for 코드 블록</strong>으로 이동 후 <code>Enter</code> 또는 <code>Tab</code> 키를 누른다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%201.png" alt="Untitled"></p>
-<p><img src="/images/lang_javascript/study/JavaScript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%202.png" alt="Untitled"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">index</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<li><strong>조건문</strong>으로 <strong>undefined인지 아닌지 확인</strong>하면 속성 존재 여부를 확인 가능</li>
 </ul>
 </li>
 <li>
-<p>for 반복문 기본</p>
-<ul>
-<li>배열과 함께 사용시 for문의 반복횟수는 <strong>배열의 length 속성을 사용</strong>한다.</li>
-</ul>
+<p>속성 존재 여부 확인</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체를 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">31</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Python&#34;</span>
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">index</span>];
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`data </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">index</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">element</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체 내부에 속성이 있는 지 확인
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;naem 속성 있음&#39;</span>)
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;name 속성 없음&#39;</span>
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;part 속성 있음&#39;</span>)
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;part 속성 없음&#39;</span>
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%203.png" alt="Untitled"></p>
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%86%8D%EC%84%B1_%EC%A1%B4%EC%9E%AC_%EC%97%AC%EB%B6%80_%ED%99%95%EC%9D%B8/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
-<p>1부터 N까지 더하기</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<p>객체의 특성 속성이 <strong>false로 변환될 수 있는 값(0, false, 빈 문자열 등)이 아닐 때</strong> 사용하는 코드</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// 객체 내부에 속성이 있는지 확인
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;name 속성 있음&#39;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;name 속성 없음&#39;</span>)
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">index</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`1 ~ 100까지의 합 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">output</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%204.png" alt="Untitled"></p>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;part 속성 있음&#39;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;part 속성 없음&#39;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>속성이 <strong>빈 문자열이면 데이터가 없는 것</strong>이나 마찬가지
+<ul>
+<li>따라서 <strong>절대 false로 변환될 수 있는 값이 아닐 것</strong></li>
+<li>이와 같은 <strong>전제가 있어야 안전하게 사용</strong>할 수 있는 코드</li>
+</ul>
 </li>
+</ul>
+</li>
+<li>
+<p>더 짧은 조건문 사용</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// 객체 내부에 속성이 있는 지 확인
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;name 속성 있음&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;part 속성 있음&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>객체의 속성이 있는지 확인하고 있다면 <strong>해당 속성</strong>을, 없다면 <strong>별도의 문자열</strong>을 지정하는 코드</li>
+</ul>
+</li>
+<li>
+<p>기본 속성 지정</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체를 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">31</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;language&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Python&#34;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체의 기본 속성을 지정
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;name 속성 없음&#39;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;part 속성 없음&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체를 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">object</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%86%8D%EC%84%B1_%EC%A1%B4%EC%9E%AC_%EC%97%AC%EB%B6%80_%ED%99%95%EC%9D%B8/Untitled%201.png" alt="Untitled"></p>
+</li>
+<li>
+<p>속성이 <strong>false로 변환될 수 있는 값이 들어오지 않을 것이라는 전제</strong>가 있으면 다음고 같은 짧은 조건문으로도 구현 가능</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// 객체의 기본 속성을 지정
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;name 속성 없음&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">part</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;part 속성 없음&#39;</span>
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
@@ -240,15 +275,15 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/repeat/javascript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[JavaScript] for of 반복문</p>
+			<p class="pager__title">[JavaScript][Library] Lodash</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/repeat/javascript_while_%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="next">
+		<a class="pager__link" href="/post/lang_python/library/datatable/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[JavaScript] while 반복문</p>
+			<p class="pager__title">[Python][Library] Datatable</p>
 		</a>
 	</div>
 </nav>
