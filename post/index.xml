@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jun 2022 13:00:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 13:00:45 +0900</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 문서 객체 가져오기</title>
+      <link>/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/</link>
+      <pubDate>Fri, 10 Jun 2022 13:00:45 +0900</pubDate>
+      
+      <guid>/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] DOMContentLoaded 이벤트</title>
       <link>/post/lang_javascript/study/doc_object/javascript_domcontentloaded_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</link>
