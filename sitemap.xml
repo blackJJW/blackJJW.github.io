@@ -2,465 +2,773 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EC%9D%B4%EB%8F%99/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EC%9D%B4%EB%8F%99/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/</loc>
+    <loc>https://blackjjw.github.io//</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://blackjjw.github.io//categories/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/html/</loc>
+    <loc>https://blackjjw.github.io//tags/html/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/javascript/</loc>
+    <loc>https://blackjjw.github.io//tags/javascript/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/javascript/</loc>
+    <loc>https://blackjjw.github.io//categories/javascript/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/</loc>
+    <loc>https://blackjjw.github.io//post/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://blackjjw.github.io//tags/</loc>
     <lastmod>2022-06-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1/</loc>
     <lastmod>2022-06-10T14:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EC%8A%A4%ED%83%80%EC%9D%BC_%EC%A1%B0%EC%9E%91/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EC%8A%A4%ED%83%80%EC%9D%BC_%EC%A1%B0%EC%9E%91/</loc>
     <lastmod>2022-06-10T14:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/css/</loc>
+    <loc>https://blackjjw.github.io//tags/css/</loc>
     <lastmod>2022-06-10T14:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EC%86%8D%EC%84%B1_%EC%A1%B0%EC%9E%91/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EC%86%8D%EC%84%B1_%EC%A1%B0%EC%9E%91/</loc>
     <lastmod>2022-06-10T14:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EA%B8%80%EC%9E%90_%EC%A1%B0%EC%9E%91/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EA%B8%80%EC%9E%90_%EC%A1%B0%EC%9E%91/</loc>
     <lastmod>2022-06-10T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/</loc>
     <lastmod>2022-06-10T13:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/doc_object/javascript_domcontentloaded_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/doc_object/javascript_domcontentloaded_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</loc>
     <lastmod>2022-06-09T13:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/library/datatable/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/library/datatable/</loc>
     <lastmod>2022-06-08T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/kaggle/</loc>
+    <loc>https://blackjjw.github.io//tags/kaggle/</loc>
     <lastmod>2022-06-08T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/python/</loc>
+    <loc>https://blackjjw.github.io//tags/python/</loc>
     <lastmod>2022-06-08T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/python/</loc>
+    <loc>https://blackjjw.github.io//categories/python/</loc>
     <lastmod>2022-06-08T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/python-library/</loc>
+    <loc>https://blackjjw.github.io//tags/python-library/</loc>
     <lastmod>2022-06-08T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-06-08T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4-%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-06-08T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EA%B8%B0%EB%B0%98%EC%9D%98_%EB%8B%A4%EC%A4%91_%ED%95%A0%EB%8B%B9/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EA%B8%B0%EB%B0%98%EC%9D%98_%EB%8B%A4%EC%A4%91_%ED%95%A0%EB%8B%B9/</loc>
     <lastmod>2022-06-08T14:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4_%EA%B8%B0%EB%B0%98%EC%9D%98_%EB%8B%A4%EC%A4%91_%ED%95%A0%EB%8B%B9/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EB%B0%B0%EC%97%B4_%EA%B8%B0%EB%B0%98%EC%9D%98_%EB%8B%A4%EC%A4%91_%ED%95%A0%EB%8B%B9/</loc>
     <lastmod>2022-06-08T14:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EC%86%8D%EC%84%B1_%EC%A1%B4%EC%9E%AC_%EC%97%AC%EB%B6%80_%ED%99%95%EC%9D%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EC%86%8D%EC%84%B1_%EC%A1%B4%EC%9E%AC_%EC%97%AC%EB%B6%80_%ED%99%95%EC%9D%B8/</loc>
     <lastmod>2022-06-08T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</loc>
     <lastmod>2022-06-07T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/javascript-library/</loc>
+    <loc>https://blackjjw.github.io//tags/javascript-library/</loc>
     <lastmod>2022-06-07T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/etc/javascript_%EC%99%B8%EB%B6%80_script-%ED%8C%8C%EC%9D%BC_%EC%9D%BD%EC%96%B4%EB%93%A4%EC%9D%B4%EA%B8%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/etc/javascript_%EC%99%B8%EB%B6%80_script-%ED%8C%8C%EC%9D%BC_%EC%9D%BD%EC%96%B4%EB%93%A4%EC%9D%B4%EA%B8%B0/</loc>
     <lastmod>2022-06-07T13:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_math-%EA%B0%9D%EC%B2%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_math-%EA%B0%9D%EC%B2%B4/</loc>
     <lastmod>2022-06-06T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_json_%EA%B0%9D%EC%B2%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_json_%EA%B0%9D%EC%B2%B4/</loc>
     <lastmod>2022-06-06T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_string_%EA%B0%9D%EC%B2%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_string_%EA%B0%9D%EC%B2%B4/</loc>
     <lastmod>2022-06-06T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_number-%EA%B0%9D%EC%B2%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_number-%EA%B0%9D%EC%B2%B4/</loc>
     <lastmod>2022-06-06T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C_%EB%A9%94%EC%86%8C%EB%93%9C_%EC%B6%94%EA%B0%80/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C_%EB%A9%94%EC%86%8C%EB%93%9C_%EC%B6%94%EA%B0%80/</loc>
     <lastmod>2022-06-06T14:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%98_%EC%9D%BC%EC%8B%9C%EC%A0%81_%EC%8A%B9%EA%B8%89/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%98_%EC%9D%BC%EC%8B%9C%EC%A0%81_%EC%8A%B9%EA%B8%89/</loc>
     <lastmod>2022-06-06T14:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%84_%EA%B0%9D%EC%B2%B4%EB%A1%9C_%EC%84%A0%EC%96%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%84_%EA%B0%9D%EC%B2%B4%EB%A1%9C_%EC%84%A0%EC%96%B8/</loc>
     <lastmod>2022-06-05T14:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B8%B0%EB%B3%B8_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-06-05T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-06-05T13:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</loc>
+    <loc>https://blackjjw.github.io//post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/chatbot/</loc>
+    <loc>https://blackjjw.github.io//tags/chatbot/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/flask/</loc>
+    <loc>https://blackjjw.github.io//tags/flask/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/kakao/</loc>
+    <loc>https://blackjjw.github.io//tags/kakao/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/projects/</loc>
+    <loc>https://blackjjw.github.io//categories/projects/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%9C_%EB%A9%94%EC%86%8C%EB%93%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%9C_%EB%A9%94%EC%86%8C%EB%93%9C/</loc>
     <lastmod>2022-06-03T17:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EB%A9%94%EC%86%8C%EB%93%9C_%EA%B0%84%EB%8B%A8_%EC%84%A0%EC%96%B8_%EA%B5%AC%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EB%A9%94%EC%86%8C%EB%93%9C_%EA%B0%84%EB%8B%A8_%EC%84%A0%EC%96%B8_%EA%B5%AC%EB%AC%B8/</loc>
     <lastmod>2022-06-03T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EC%86%8D%EC%84%B1_%EC%B6%94%EA%B0%80_%EC%A0%9C%EA%B1%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EC%86%8D%EC%84%B1_%EC%B6%94%EA%B0%80_%EC%A0%9C%EA%B1%B0/</loc>
     <lastmod>2022-06-03T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/</loc>
     <lastmod>2022-06-03T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/object/javascript_%EA%B0%9D%EC%B2%B4/</loc>
     <lastmod>2022-06-03T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98%EC%99%80_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98%EC%9D%98_%EC%B0%A8%EC%9D%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98%EC%99%80_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98%EC%9D%98_%EC%B0%A8%EC%9D%B4/</loc>
     <lastmod>2022-06-02T18:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%97%84%EA%B2%A9_%EB%AA%A8%EB%93%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%97%84%EA%B2%A9_%EB%AA%A8%EB%93%9C/</loc>
     <lastmod>2022-06-02T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98_%EB%AC%B8%EC%A0%9C_%ED%95%B4%EA%B2%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98_%EB%AC%B8%EC%A0%9C_%ED%95%B4%EA%B2%B0/</loc>
     <lastmod>2022-06-02T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-06-02T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-06-01T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%ED%99%94%EC%82%B4%ED%91%9C_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-06-01T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%BD%9C%EB%B0%B1_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%BD%9C%EB%B0%B1_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-06-01T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EA%B8%B0%EB%B3%B8_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EA%B8%B0%EB%B3%B8_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
     <lastmod>2022-05-30T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C_%EC%A0%84%EA%B0%9C_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-05-30T17:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EA%B0%80%EB%B3%80_%EB%A7%A4%EA%B0%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EA%B5%AC_%EB%B2%84%EC%A0%84_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EA%B0%80%EB%B3%80_%EB%A7%A4%EA%B0%9C/</loc>
     <lastmod>2022-05-30T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EA%B8%B0%EB%B3%B8_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EA%B8%B0%EB%B3%B8_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
     <lastmod>2022-05-29T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EB%82%98%EB%A8%B8%EC%A7%80_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EB%82%98%EB%A8%B8%EC%A7%80_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98/</loc>
     <lastmod>2022-05-28T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92/</loc>
     <lastmod>2022-05-27T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%84%A0%EC%96%B8%EC%A0%81_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-05-27T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/func/javascript_%EC%9D%B5%EB%AA%85_%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-05-26T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_continue_%ED%82%A4%EC%9B%8C%EB%93%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_continue_%ED%82%A4%EC%9B%8C%EB%93%9C/</loc>
     <lastmod>2022-05-26T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_break_%ED%82%A4%EC%9B%8C%EB%93%9C/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_break_%ED%82%A4%EC%9B%8C%EB%93%9C/</loc>
     <lastmod>2022-05-25T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_while_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_while_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
     <lastmod>2022-05-24T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
     <lastmod>2022-05-23T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
     <lastmod>2022-05-22T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_for_in_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_for_in_%EB%B0%98%EB%B3%B5%EB%AC%B8/</loc>
     <lastmod>2022-05-22T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/etc/javascript_%EC%9E%90%EB%A3%8C%EC%9D%98_%EB%B9%84%ED%8C%8C%EA%B4%B4%EC%99%80_%ED%8C%8C%EA%B4%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/etc/javascript_%EC%9E%90%EB%A3%8C%EC%9D%98_%EB%B9%84%ED%8C%8C%EA%B4%B4%EC%99%80_%ED%8C%8C%EA%B4%B4/</loc>
     <lastmod>2022-05-21T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EC%A0%9C%EA%B1%B0/</loc>
     <lastmod>2022-05-20T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4%EC%9D%98_%ED%8A%B9%EC%A0%95_%EC%9C%84%EC%B9%98%EC%97%90_%EC%9A%94%EC%86%8C_%EC%B6%94%EA%B0%80/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4%EC%9D%98_%ED%8A%B9%EC%A0%95_%EC%9C%84%EC%B9%98%EC%97%90_%EC%9A%94%EC%86%8C_%EC%B6%94%EA%B0%80/</loc>
     <lastmod>2022-05-19T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EB%92%B7%EB%B6%80%EB%B6%84%EC%97%90_%EC%9A%94%EC%86%8C_%EC%B6%94%EA%B0%80/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EB%92%B7%EB%B6%80%EB%B6%84%EC%97%90_%EC%9A%94%EC%86%8C_%EC%B6%94%EA%B0%80/</loc>
     <lastmod>2022-05-19T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EA%B0%9C%EC%88%98_%ED%99%95%EC%9D%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C_%EA%B0%9C%EC%88%98_%ED%99%95%EC%9D%B8/</loc>
     <lastmod>2022-05-18T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C%EC%97%90_%EC%A0%91%EA%B7%BC/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EC%9A%94%EC%86%8C%EC%97%90_%EC%A0%91%EA%B7%BC/</loc>
     <lastmod>2022-05-17T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/repeat/javascript_%EB%B0%B0%EC%97%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
     <lastmod>2022-05-17T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_%EC%A7%A7%EC%9D%80_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_%EC%A7%A7%EC%9D%80_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-16T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-05-15T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_switch_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_switch_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-14T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_if_else_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_if_else_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-13T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_%EC%A4%91%EC%B2%A9_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_%EC%A4%91%EC%B2%A9_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-12T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_if_else_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_if_else_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-11T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/condition/javascript_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/condition/javascript_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8/</loc>
     <lastmod>2022-05-10T15:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-05-09T17:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-05-09T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EC%88%AB%EC%9E%90-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-05-09T16:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%85%EB%A0%A5/</loc>
     <lastmod>2022-05-08T20:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%85%EB%A0%A5/</loc>
     <lastmod>2022-05-08T19:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-05-08T19:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-05-08T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98/</loc>
     <lastmod>2022-05-07T21:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EC%83%81%EC%88%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EC%83%81%EC%88%98/</loc>
     <lastmod>2022-05-07T21:20:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
     <lastmod>2022-05-07T21:10:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%ED%85%9C%ED%94%8C%EB%A6%BF_%EB%AC%B8%EC%9E%90%EC%97%B4/</loc>
     <lastmod>2022-05-07T21:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EC%9E%90%EB%A3%8C%ED%98%95_%EA%B2%80%EC%82%AC/</loc>
     <lastmod>2022-05-07T20:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%B6%88_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-05-07T20:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EC%88%AB%EC%9E%90_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-05-07T19:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/data_var/javascript_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
     <lastmod>2022-05-07T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/summary_expression/javascript_%EC%B6%9C%EB%A0%A5/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/summary_expression/javascript_%EC%B6%9C%EB%A0%A5/</loc>
     <lastmod>2022-05-07T18:00:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_javascript/study/summary_expression/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</loc>
+    <loc>https://blackjjw.github.io//post/lang_javascript/study/summary_expression/javascript_%EA%B8%B0%EB%B3%B8%EC%9A%A9%EC%96%B4/</loc>
     <lastmod>2022-05-07T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter9_3/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter9_3/</loc>
     <lastmod>2022-05-06T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/dl/</loc>
+    <loc>https://blackjjw.github.io//tags/dl/</loc>
     <lastmod>2022-05-06T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/dl/</loc>
+    <loc>https://blackjjw.github.io//categories/dl/</loc>
     <lastmod>2022-05-06T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter9_2/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter9_2/</loc>
     <lastmod>2022-05-05T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter9_1/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter9_1/</loc>
     <lastmod>2022-05-04T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter8_3/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter8_3/</loc>
     <lastmod>2022-05-03T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter8_2/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter8_2/</loc>
     <lastmod>2022-05-02T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter8_1/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter8_1/</loc>
     <lastmod>2022-05-01T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/statistics/chapter1_2/</loc>
+    <loc>https://blackjjw.github.io//post/statistics/chapter1_2/</loc>
     <lastmod>2022-04-29T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/statistics/</loc>
+    <loc>https://blackjjw.github.io//tags/statistics/</loc>
     <lastmod>2022-04-29T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/statistics/</loc>
+    <loc>https://blackjjw.github.io//categories/statistics/</loc>
     <lastmod>2022-04-29T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/projects/stock_prediction/</loc>
+    <loc>https://blackjjw.github.io//post/projects/stock_prediction/</loc>
     <lastmod>2022-04-26T17:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/ml/</loc>
+    <loc>https://blackjjw.github.io//tags/ml/</loc>
     <lastmod>2022-04-26T17:38:48+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/sql/sql_pl-sql/</loc>
+    <loc>https://blackjjw.github.io//post/sql/sql_pl-sql/</loc>
     <lastmod>2022-04-25T19:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/sql/</loc>
+    <loc>https://blackjjw.github.io//tags/sql/</loc>
     <lastmod>2022-04-25T19:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/sql/</loc>
+    <loc>https://blackjjw.github.io//categories/sql/</loc>
     <lastmod>2022-04-25T19:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/statistics/chapter1_1/</loc>
+    <loc>https://blackjjw.github.io//post/statistics/chapter1_1/</loc>
     <lastmod>2022-04-25T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/kaggle/ubiquant/ubiquant-2/</loc>
+    <loc>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-2/</loc>
     <lastmod>2022-04-24T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/kaggle/</loc>
+    <loc>https://blackjjw.github.io//categories/kaggle/</loc>
     <lastmod>2022-04-24T18:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/kaggle/ubiquant/ubiquant-1/</loc>
+    <loc>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-1/</loc>
     <lastmod>2022-04-24T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/setting/oracle_database_19c_setting/</loc>
+    <loc>https://blackjjw.github.io//post/setting/oracle_database_19c_setting/</loc>
     <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/db/</loc>
+    <loc>https://blackjjw.github.io//tags/db/</loc>
     <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/oracle/</loc>
+    <loc>https://blackjjw.github.io//tags/oracle/</loc>
     <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/setting/</loc>
+    <loc>https://blackjjw.github.io//categories/setting/</loc>
     <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter7_3/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter7_3/</loc>
     <lastmod>2022-04-23T17:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter7_2/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter7_2/</loc>
     <lastmod>2022-04-23T16:51:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/dl/book/chapter7_1/</loc>
+    <loc>https://blackjjw.github.io//post/dl/book/chapter7_1/</loc>
     <lastmod>2022-04-23T16:50:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter6_3/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter6_3/</loc>
     <lastmod>2022-04-23T16:40:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/categories/ml/</loc>
+    <loc>https://blackjjw.github.io//categories/ml/</loc>
     <lastmod>2022-04-23T16:40:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/setting/spark_installation_windows_10/</loc>
+    <loc>https://blackjjw.github.io//post/setting/spark_installation_windows_10/</loc>
     <lastmod>2022-04-23T16:35:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/spark/</loc>
+    <loc>https://blackjjw.github.io//tags/spark/</loc>
     <lastmod>2022-04-23T16:35:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter6_2/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter6_2/</loc>
     <lastmod>2022-04-23T16:34:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter6_1/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter6_1/</loc>
     <lastmod>2022-04-23T16:33:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter5_3/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter5_3/</loc>
     <lastmod>2022-04-23T16:32:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter5_2/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter5_2/</loc>
     <lastmod>2022-04-23T16:31:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter5_1/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter5_1/</loc>
     <lastmod>2022-04-22T16:31:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter4_2/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter4_2/</loc>
     <lastmod>2022-04-22T16:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter4_1/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter4_1/</loc>
     <lastmod>2022-04-22T16:29:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter3_3/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter3_3/</loc>
     <lastmod>2022-04-22T16:28:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter3_2/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter3_2/</loc>
     <lastmod>2022-04-22T16:27:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter3_1/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter3_1/</loc>
     <lastmod>2022-04-22T16:26:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter2_2/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter2_2/</loc>
     <lastmod>2022-04-22T16:25:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter2_1/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter2_1/</loc>
     <lastmod>2022-04-22T16:24:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/ml/book/chapter1_3/</loc>
+    <loc>https://blackjjw.github.io//post/ml/book/chapter1_3/</loc>
     <lastmod>2022-04-22T15:24:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0/</loc>
     <lastmod>2022-04-21T13:40:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/codeuppython/</loc>
+    <loc>https://blackjjw.github.io//tags/codeuppython/</loc>
     <lastmod>2022-04-21T13:40:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/tags/coding-test/</loc>
+    <loc>https://blackjjw.github.io//tags/coding-test/</loc>
     <lastmod>2022-04-21T13:40:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8%EC%97%B0%EC%82%B0/</loc>
     <lastmod>2022-04-21T13:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0/</loc>
     <lastmod>2022-04-21T13:26:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EA%B0%92%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-04-21T13:24:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%9E%85%EC%B6%9C%EB%A0%A5/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%9E%85%EC%B6%9C%EB%A0%A5/</loc>
     <lastmod>2022-04-21T13:24:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5%EB%B3%80%ED%99%98/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-04-21T13:24:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5/</loc>
+    <loc>https://blackjjw.github.io//post/lang_python/codeup_coding_test/%EA%B8%B0%EC%B4%88-%EC%B6%9C%EB%A0%A5/</loc>
     <lastmod>2022-04-21T03:43:43+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://blackjjw.github.io//about/</loc>
     <lastmod>2022-01-25T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>/docs/</loc>
+    <loc>https://blackjjw.github.io//docs/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript Library on Black_JJW&#39;s Blog</title>
-    <link>/tags/javascript-library/</link>
+    <link>https://blackjjw.github.io//tags/javascript-library/</link>
     <description>Recent content in JavaScript Library on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="/tags/javascript-library/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io//tags/javascript-library/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[JavaScript][Library] Lodash</title>
-      <link>/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
+      <link>https://blackjjw.github.io//post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
       <pubDate>Tue, 07 Jun 2022 13:30:45 +0900</pubDate>
       
-      <guid>/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</guid>
+      <guid>https://blackjjw.github.io//post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</guid>
       <description></description>
     </item>
     

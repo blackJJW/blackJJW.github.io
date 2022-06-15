@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spark on Black_JJW&#39;s Blog</title>
-    <link>/tags/spark/</link>
+    <link>https://blackjjw.github.io//tags/spark/</link>
     <description>Recent content in Spark on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Apr 2022 16:35:45 +0900</lastBuildDate><atom:link href="/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 16:35:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io//tags/spark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spark][setting] Spark Installation(Windows 10)</title>
-      <link>/post/setting/spark_installation_windows_10/</link>
+      <link>https://blackjjw.github.io//post/setting/spark_installation_windows_10/</link>
       <pubDate>Sat, 23 Apr 2022 16:35:45 +0900</pubDate>
       
-      <guid>/post/setting/spark_installation_windows_10/</guid>
+      <guid>https://blackjjw.github.io//post/setting/spark_installation_windows_10/</guid>
       <description></description>
     </item>
     
