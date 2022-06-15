@@ -2,161 +2,161 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ML on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io//tags/ml/</link>
+    <link>https://blackjjw.github.io/tags/ml/</link>
     <description>Recent content in ML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Apr 2022 17:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io//tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Apr 2022 17:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Project][ML/DL] 뉴스 감성 분석을 통한 주가 예측</title>
-      <link>https://blackjjw.github.io//post/projects/stock_prediction/</link>
+      <link>https://blackjjw.github.io/post/projects/stock_prediction/</link>
       <pubDate>Tue, 26 Apr 2022 17:38:48 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/projects/stock_prediction/</guid>
+      <guid>https://blackjjw.github.io/post/projects/stock_prediction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Kaggle] Ubiquant Market Prediction - Prediction &amp; Score</title>
-      <link>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-2/</link>
+      <link>https://blackjjw.github.io/post/kaggle/ubiquant/ubiquant-2/</link>
       <pubDate>Sun, 24 Apr 2022 18:33:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-2/</guid>
+      <guid>https://blackjjw.github.io/post/kaggle/ubiquant/ubiquant-2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[Kaggle] Ubiquant Market Prediction - Data &amp; EDA</title>
-      <link>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-1/</link>
+      <link>https://blackjjw.github.io/post/kaggle/ubiquant/ubiquant-1/</link>
       <pubDate>Sun, 24 Apr 2022 18:30:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/kaggle/ubiquant/ubiquant-1/</guid>
+      <guid>https://blackjjw.github.io/post/kaggle/ubiquant/ubiquant-1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-3 주성분 분석</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter6_3/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter6_3/</link>
       <pubDate>Sat, 23 Apr 2022 16:40:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter6_3/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter6_3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-2 k-평균</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter6_2/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter6_2/</link>
       <pubDate>Sat, 23 Apr 2022 16:34:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter6_2/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter6_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-1 군집 알고리즘</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter6_1/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter6_1/</link>
       <pubDate>Sat, 23 Apr 2022 16:33:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter6_1/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter6_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch5-3 트리의 앙상블</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter5_3/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter5_3/</link>
       <pubDate>Sat, 23 Apr 2022 16:32:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter5_3/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter5_3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch5-2 교차 검증과 그리드 서치</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter5_2/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter5_2/</link>
       <pubDate>Sat, 23 Apr 2022 16:31:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter5_2/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter5_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch5-1 결정 트리</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter5_1/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter5_1/</link>
       <pubDate>Fri, 22 Apr 2022 16:31:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter5_1/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter5_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch4-2 확률적 경사 하강법</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter4_2/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter4_2/</link>
       <pubDate>Fri, 22 Apr 2022 16:30:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter4_2/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter4_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch4-1 로지스틱 회귀</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter4_1/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter4_1/</link>
       <pubDate>Fri, 22 Apr 2022 16:29:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter4_1/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter4_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch3-3 특성 공학과 규제</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter3_3/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter3_3/</link>
       <pubDate>Fri, 22 Apr 2022 16:28:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter3_3/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter3_3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch3-2 선형 회귀</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter3_2/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter3_2/</link>
       <pubDate>Fri, 22 Apr 2022 16:27:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter3_2/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter3_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch3-1 k-최근접 이웃 회귀</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter3_1/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter3_1/</link>
       <pubDate>Fri, 22 Apr 2022 16:26:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter3_1/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter3_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch2-2 데이터 전처리</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter2_2/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter2_2/</link>
       <pubDate>Fri, 22 Apr 2022 16:25:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter2_2/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter2_2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch2-1 훈련 세트와 테스트 세트</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter2_1/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter2_1/</link>
       <pubDate>Fri, 22 Apr 2022 16:24:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter2_1/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter2_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch1-3 K-최근접 이웃 분류</title>
-      <link>https://blackjjw.github.io//post/ml/book/chapter1_3/</link>
+      <link>https://blackjjw.github.io/post/ml/book/chapter1_3/</link>
       <pubDate>Fri, 22 Apr 2022 15:24:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io//post/ml/book/chapter1_3/</guid>
+      <guid>https://blackjjw.github.io/post/ml/book/chapter1_3/</guid>
       <description></description>
     </item>
     
