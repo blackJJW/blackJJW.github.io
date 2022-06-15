@@ -2,47 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EB%AA%A8%EB%8D%B8/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/categories/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/html/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/javascript/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/categories/javascript/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-06-11T15:30:45+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EC%84%A4%EC%A0%95/</loc>
     <lastmod>2022-06-11T15:00:45+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/tags/css/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/html/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/javascript/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/categories/javascript/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-06-11T15:00:45+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/</loc>
     <lastmod>2022-06-11T15:00:45+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

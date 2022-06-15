@@ -6,20 +6,11 @@
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jun 2022 15:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CSS</title>
-      <link>https://blackjjw.github.io/tags/css/</link>
-      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/css/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sat, 11 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML</title>
       <link>https://blackjjw.github.io/tags/html/</link>
-      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
+      <pubDate>Sat, 11 Jun 2022 15:30:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/html/</guid>
       <description></description>
@@ -28,9 +19,18 @@
     <item>
       <title>JavaScript</title>
       <link>https://blackjjw.github.io/tags/javascript/</link>
-      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
+      <pubDate>Sat, 11 Jun 2022 15:30:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://blackjjw.github.io/tags/css/</link>
+      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/css/</guid>
       <description></description>
     </item>
     
