@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jun 2022 15:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 15:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 이벤트 설정</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EC%84%A4%EC%A0%95/</link>
+      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EC%84%A4%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 문서 객체 이동</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EB%AC%B8%EC%84%9C_%EA%B0%9D%EC%B2%B4_%EC%9D%B4%EB%8F%99/</link>
