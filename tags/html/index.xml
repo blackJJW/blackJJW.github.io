@@ -6,7 +6,16 @@
     <description>Recent content in HTML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 16:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 드롭다운 목록 활용</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4_%EB%AA%A9%EB%A1%9D_%ED%99%9C%EC%9A%A9/</link>
+      <pubDate>Mon, 13 Jun 2022 16:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4_%EB%AA%A9%EB%A1%9D_%ED%99%9C%EC%9A%A9/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 글자 입력 양식 이벤트</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%EA%B8%80%EC%9E%90_%EC%9E%85%EB%A0%A5_%EC%96%91%EC%8B%9D_%EC%9D%B4%EB%B2%A4%ED%8A%B8/</link>
