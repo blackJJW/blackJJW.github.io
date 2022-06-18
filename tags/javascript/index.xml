@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 14:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 타이머로 구현한 남은 글자 수 세기</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A1%9C_%EA%B5%AC%ED%98%84%ED%95%9C_%EB%82%A8%EC%9D%80_%EA%B8%80%EC%9E%90_%EC%88%98_%EC%84%B8%EA%B8%B0/</link>
+      <pubDate>Thu, 16 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A1%9C_%EA%B5%AC%ED%98%84%ED%95%9C_%EB%82%A8%EC%9D%80_%EA%B8%80%EC%9E%90_%EC%88%98_%EC%84%B8%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 할 일 목록 만들기</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%ED%95%A0_%EC%9D%BC_%EB%AA%A9%EB%A1%9D_%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
