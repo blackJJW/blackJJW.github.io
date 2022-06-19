@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jun 2022 14:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 예외 객체</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/exception/javascript_%EC%98%88%EC%99%B8_%EA%B0%9D%EC%B2%B4/</link>
+      <pubDate>Fri, 17 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/exception/javascript_%EC%98%88%EC%99%B8_%EA%B0%9D%EC%B2%B4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 고급 예외 처리</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/exception/javascript_%EA%B3%A0%EA%B8%89_%EC%98%88%EC%99%B8_%EC%B2%98%EB%A6%AC/</link>
