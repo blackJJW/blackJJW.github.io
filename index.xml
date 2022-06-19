@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jun 2022 17:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jun 2022 18:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript] 객체를 처리하는 함수</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/</link>
+      <pubDate>Fri, 17 Jun 2022 18:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript] 같은 형태의 객체 만들기</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%99%EC%9D%80_%ED%98%95%ED%83%9C%EC%9D%98_%EA%B0%9D%EC%B2%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>

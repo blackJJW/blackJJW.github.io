@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%99%EC%9D%80_%ED%98%95%ED%83%9C%EC%9D%98_%EA%B0%9D%EC%B2%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/</loc>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/javascript/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/javascript/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-06-17T17:30:45+09:00</lastmod>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-06-17T18:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%99%EC%9D%80_%ED%98%95%ED%83%9C%EC%9D%98_%EA%B0%9D%EC%B2%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
     <lastmod>2022-06-17T17:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
