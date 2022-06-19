@@ -178,26 +178,26 @@ if (!doNotTrack) {
 <li>
 <p>예외 강제롤 발생시키고 잡기</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">divide</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;0으로 나눌 수 없다.&#39;</span>
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>
-</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">divide</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;0으로 나눌 수 없다.&#39;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">divide</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>))
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">divide</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">divide</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">divide</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_%EC%98%88%EC%99%B8_%EA%B0%95%EC%A0%9C_%EB%B0%9C%EC%83%9D/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>예외를 강제로 발생시키기</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">object</span>){
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span>)
-</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">object</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">test</span>({})
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">test</span>({})
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_%EC%98%88%EC%99%B8_%EA%B0%95%EC%A0%9C_%EB%B0%9C%EC%83%9D/Untitled%202.png" alt="Untitled"></p>
 <ul>
@@ -225,15 +225,15 @@ if (!doNotTrack) {
 <li>
 <p>예외를 강제로 발생시켜 사용 유도</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">object</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span>)
-</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;a 속성과 b 속성을 지정하지 않았음.&#34;</span>)
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">object</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;a 속성과 b 속성을 지정하지 않았음.&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">test</span>({})
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">test</span>({})
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_%EC%98%88%EC%99%B8_%EA%B0%95%EC%A0%9C_%EB%B0%9C%EC%83%9D/Untitled%203.png" alt="Untitled"></p>
 </li>
@@ -270,6 +270,12 @@ if (!doNotTrack) {
 			<p class="pager__title">[JavaScript] 예외 객체</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/lang_javascript/study/class/javascript_%EC%B6%94%EC%83%81%ED%99%94/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[JavaScript] 추상화</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -287,11 +293,11 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/class/javascript_%EC%B6%94%EC%83%81%ED%99%94/">[JavaScript] 추상화</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/exception/javascript_%EC%98%88%EC%99%B8_%EA%B0%95%EC%A0%9C_%EB%B0%9C%EC%83%9D/">[JavaScript] 예외 강제 발생</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/exception/javascript_%EC%98%88%EC%99%B8_%EA%B0%9D%EC%B2%B4/">[JavaScript] 예외 객체</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/exception/javascript_%EA%B3%A0%EA%B8%89_%EC%98%88%EC%99%B8_%EC%B2%98%EB%A6%AC/">[JavaScript] 고급 예외 처리</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/exception/javascript_%EA%B8%B0%EB%B3%B8_%EC%98%88%EC%99%B8_%EC%B2%98%EB%A6%AC/">[JavaScript] 기본 예외 처리</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/exception/javascript_%EC%98%A4%EB%A5%98%EC%9D%98_%EC%A2%85%EB%A5%98/">[JavaScript] 오류의 종류</a></li>
 		</ul>
 	</div>
 </div>
@@ -305,7 +311,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">97</span>
+				<span class="widget__counter widget__counter--bubble">98</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
@@ -349,7 +355,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (23)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (97)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (98)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
