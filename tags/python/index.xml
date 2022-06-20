@@ -6,7 +6,52 @@
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jun 2022 16:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 행렬의 곱셈</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%ED%96%89%EB%A0%AC%EC%9D%98_%EA%B3%B1%EC%85%88/</link>
+      <pubDate>Sat, 18 Jun 2022 15:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%ED%96%89%EB%A0%AC%EC%9D%98_%EA%B3%B1%EC%85%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 리스트의 정렬 - 교환 정렬</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98_%EC%A0%95%EB%A0%AC_%EA%B5%90%ED%99%98_%EC%A0%95%EB%A0%AC/</link>
+      <pubDate>Sat, 18 Jun 2022 15:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98_%EC%A0%95%EB%A0%AC_%EA%B5%90%ED%99%98_%EC%A0%95%EB%A0%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 리스트(배열) 원소의 합 구하기</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EC%97%B4_%EC%9B%90%EC%86%8C%EC%9D%98_%ED%95%A9_%EA%B5%AC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sat, 18 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%B0%B0%EC%97%B4_%EC%9B%90%EC%86%8C%EC%9D%98_%ED%95%A9_%EA%B5%AC%ED%95%98%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 순차 탐색 문제</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%88%9C%EC%B0%A8_%ED%83%90%EC%83%89_%EB%AC%B8%EC%A0%9C/</link>
+      <pubDate>Sat, 18 Jun 2022 14:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EC%88%9C%EC%B0%A8_%ED%83%90%EC%83%89_%EB%AC%B8%EC%A0%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 알고리즘이란?</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80/</link>
+      <pubDate>Sat, 18 Jun 2022 13:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Python][Library] Datatable</title>
       <link>https://blackjjw.github.io/post/lang_python/library/datatable/</link>
