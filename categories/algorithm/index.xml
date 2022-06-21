@@ -6,7 +6,25 @@
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 피보나치 수열</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98%EC%97%B4/</link>
+      <pubDate>Mon, 20 Jun 2022 16:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98%EC%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 알고리즘의 효율성 - 이분 검색</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98_%ED%9A%A8%EC%9C%A8%EC%84%B1_%EC%9D%B4%EB%B6%84_%EA%B2%80%EC%83%89/</link>
+      <pubDate>Mon, 20 Jun 2022 15:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98_%ED%9A%A8%EC%9C%A8%EC%84%B1_%EC%9D%B4%EB%B6%84_%EA%B2%80%EC%83%89/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Python] 행렬의 곱셈</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%ED%96%89%EB%A0%AC%EC%9D%98_%EA%B3%B1%EC%85%88/</link>
