@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[JavaScript] private 속성과 메소드 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[JavaScript] private 속성과 메소드" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/class/javascript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-20T18:30:45+09:00" />
+<meta property="article:modified_time" content="2022-06-20T18:30:45+09:00" />
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-231675751-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">JAVA</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">ABOUT ME</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[JavaScript] private 속성과 메소드</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-20T18:30:45&#43;09:00">June 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<ul>
+<li>
+<p>사용자가 음수 길이를 입력한 경우</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정사각형 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">constructor</span> (<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getPerimeter</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getArea</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>) <span style="color:#75715e">// 길이에 음수를 넣어서 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>길이는 음수가 나올 수 없는 값</li>
+<li><strong>이러한 일을 막아야 함</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>조건문을 활용</strong>, 0 이하의 경우 예외를 발생시켜 클래스의 <strong>사용자에게 할 수 없다고 인지</strong>시킨다.</p>
+</li>
+<li>
+<p>길이에 음수가 들어가지 않게 수정</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정사각형 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">constructor</span> (<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;길이는 0보다 커야 된다.&#39;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// throw 키워드를 사용하여 강제로 오류를 발생
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getPerimeter</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getArea</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>) <span style="color:#75715e">// 길이에 음수를 넣어서 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>
+<p>하지만 생성자로 객체를 생성한 이후에 사용자가 length 속성을 변경하는 것을 막을 수는 없다.</p>
+<ul>
+<li>사용자의 잘못된 사용 예</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span> <span style="color:#75715e">// 이렇게 음수를 지정하는 것은 막을 수 없다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>클래스 사용자가 클래스 속성(또는 메소드)을 <strong>의도하지 않는 방향으로 사용하는 것을 막아</strong> 클래스의 <strong>안정성을 확보</strong>하기 위해 나온 문법이 <strong>private 속성</strong>과 <strong>메소드</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">클래스_이름</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">속성_이름</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">메소드_이름</span> () {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>속성과 메소드 <strong>이름 앞에 ‘#’을 붙인다</strong>.</li>
+<li>‘#’이 붙어있는 속성과 메소드는 모두 <strong>private 속성과 메소드</strong>가 된다.</li>
+<li><strong>주의할 점</strong>
+<ul>
+<li>private 속성은 <strong>사용하기 전에 미리 외부에 어떤 속성을 private 속성으로 사용하겠다고 선언</strong>해주어야 한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>private 속성 사용 - 1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 사각형 클래스
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#75715e">// 이 위치에 해당 속성을 private 속성으로
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>						<span style="color:#75715e">// 사용하겠다고 미리 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">constructor</span> (<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;길이는 0보다 커야 된다.&#39;</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getPerimeter</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getArea</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%202.png" alt="Untitled"></p>
+<ul>
+<li>private 속성으로 변경하면 <strong>클래스 외부에서는 해당 속성에 접근 불가</strong></li>
+</ul>
+</li>
+<li>
+<p>ex) square 객체의 length 속성 변경 시도</p>
+<ul>
+<li>변경해도 클래스 내부에서 <strong>사용하고 있는 속성은 #length 속성</strong>이지 length 속성이 아니므로 <strong>결과에 영향을 주지 않는다.</strong></li>
+</ul>
+</li>
+<li>
+<p>private 속성 사용 - 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 사각형 클래스
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#75715e">// 이 위치에 해당 속성을 private 속성으로
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>						<span style="color:#75715e">// 사용하겠다고 미리 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">constructor</span> (<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;길이는 0보다 커야 된다.&#39;</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getPerimeter</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getArea</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span> <span style="color:#75715e">// 클래스 내부의 length 속성을 변경 시도
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%203.png" alt="Untitled"></p>
+</li>
+<li>
+<p>#length 속성을 사용하면 오류가 발생</p>
+</li>
+<li>
+<p>private 속성 사용 - 3</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 사각형 클래스
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#75715e">// 이 위치에 해당 속성을 private 속성으로
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>						<span style="color:#75715e">// 사용하겠다고 미리 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">constructor</span> (<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#39;길이는 0보다 커야 된다.&#39;</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getPerimeter</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">getArea</span>(){ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클래스 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Square</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">square</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span> <span style="color:#75715e">// 클래스 내부의 #length 속성을 변경 시도
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 둘레 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getPerimeter</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`정사각형의 넓이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">getArea</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%204.png" alt="Untitled"></p>
+</li>
+<li>
+<p>private 속성은 클래스 외부에서는 접근할 수 없으므로 클래스 사용자가 클래스를 잘못 사용하는 문제를 줄일 수 있다.</p>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/javascript/" rel="tag">JavaScript</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_javascript/study/class/javascript_%EC%83%81%EC%86%8D/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[JavaScript] 상속</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/class/javascript_private_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/">[JavaScript] private 속성과 메소드</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/class/javascript_%EC%83%81%EC%86%8D/">[JavaScript] 상속</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98%EC%97%B4/">[Algorithm][Python] 피보나치 수열</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98_%ED%9A%A8%EC%9C%A8%EC%84%B1_%EC%9D%B4%EB%B6%84_%EA%B2%80%EC%83%89/">[Algorithm][Python] 알고리즘의 효율성 - 이분 검색</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_javascript/study/class/javascript_%EB%A9%94%EC%86%8C%EB%93%9C/">[JavaScript] 메소드</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">7</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">106</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (23)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (106)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="Oracle">Oracle (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (44)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
