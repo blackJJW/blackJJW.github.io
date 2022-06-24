@@ -6,7 +6,16 @@
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jun 2022 17:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 분할 정복과 퀵 정렬</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0_%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%80%B5_%EC%A0%95%EB%A0%AC/</link>
+      <pubDate>Thu, 23 Jun 2022 13:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0_%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%80%B5_%EC%A0%95%EB%A0%AC/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Python] 합병 정렬</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%ED%95%A9%EB%B3%91_%EC%A0%95%EB%A0%AC/</link>
