@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript][Library][React] JSX 기본 문법</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_jsx_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/</link>
+      <pubDate>Fri, 24 Jun 2022 16:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_jsx_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library][React] 루트 컴포넌트 출력</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EB%A3%A8%ED%8A%B8_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%B6%9C%EB%A0%A5/</link>
