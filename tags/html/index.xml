@@ -6,7 +6,16 @@
     <description>Recent content in HTML on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 16:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 17:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript][Library][React] 클래스 컴포넌트</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/</link>
+      <pubDate>Fri, 24 Jun 2022 17:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library][React] JSX 기본 문법</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_jsx_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/</link>
