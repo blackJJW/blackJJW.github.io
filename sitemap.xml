@@ -2,37 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%93%9C/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EB%A6%AC%EC%95%A1%ED%8A%B8_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC_%EC%82%AC%EC%9A%A9_%EC%A4%80%EB%B9%84/</loc>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/html/</loc>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/javascript/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/javascript/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/javascript-library/</loc>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-06-24T13:30:45+09:00</lastmod>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/react/</loc>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-06-24T14:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%93%9C/</loc>
     <lastmod>2022-06-24T13:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -178,11 +198,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/lang_javascript/study/exception/javascript_%EA%B8%B0%EB%B3%B8_%EC%98%88%EC%99%B8_%EC%B2%98%EB%A6%AC/</loc>
-    <lastmod>2022-06-16T17:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/html/</loc>
     <lastmod>2022-06-16T17:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -342,7 +357,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/javascript-library/</loc>
+    <loc>https://blackjjw.github.io/tags/lodash/</loc>
     <lastmod>2022-06-07T13:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

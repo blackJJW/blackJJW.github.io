@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript Library on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript-library/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 14:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript-library/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript][Library][React] 리액트 라이브러리 사용 준비</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EB%A6%AC%EC%95%A1%ED%8A%B8_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC_%EC%82%AC%EC%9A%A9_%EC%A4%80%EB%B9%84/</link>
+      <pubDate>Fri, 24 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EB%A6%AC%EC%95%A1%ED%8A%B8_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC_%EC%82%AC%EC%9A%A9_%EC%A4%80%EB%B9%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library] Lodash</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/etc/javascript_lodash_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
