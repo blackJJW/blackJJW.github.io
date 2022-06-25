@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 17:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jun 2022 12:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JavaScript][Library][React] 컴포넌트의 기본적인 속성과 메소드</title>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98_%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
+      <pubDate>Sat, 25 Jun 2022 12:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98_%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8_%EC%86%8D%EC%84%B1%EA%B3%BC_%EB%A9%94%EC%86%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library][React] 클래스 컴포넌트</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/</link>
