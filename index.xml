@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JAVA의 개요와 특징</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/start/java%EC%9D%98_%EA%B0%9C%EC%9A%94%EC%99%80_%ED%8A%B9%EC%A7%95/</link>
+      <pubDate>Sun, 26 Jun 2022 20:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/start/java%EC%9D%98_%EA%B0%9C%EC%9A%94%EC%99%80_%ED%8A%B9%EC%A7%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library][React] 자식에서 부모의 state 속성 변경</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EC%9E%90%EC%8B%9D%EC%97%90%EC%84%9C_%EB%B6%80%EB%AA%A8%EC%9D%98_state_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD/</link>

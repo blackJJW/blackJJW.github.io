@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAVA on Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/categories/java/</link>
+    <description>Recent content in JAVA on Black_JJW&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jun 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JAVA의 개요와 특징</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/start/java%EC%9D%98_%EA%B0%9C%EC%9A%94%EC%99%80_%ED%8A%B9%EC%A7%95/</link>
+      <pubDate>Sun, 26 Jun 2022 20:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/start/java%EC%9D%98_%EA%B0%9C%EC%9A%94%EC%99%80_%ED%8A%B9%EC%A7%95/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
