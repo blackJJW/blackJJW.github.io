@@ -200,12 +200,12 @@ if (!doNotTrack) {
 <h2 id="쉬트라쎈의-방법">쉬트라쎈의 방법</h2>
 <hr>
 <ul>
-<li>$\begin{bmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{bmatrix} =\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \times \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix} \$
+<li>${\begin{bmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{bmatrix}}{=}{\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}}{\times}{\begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix}}$
 <ul>
 <li><strong>8</strong> multiplications, <strong>4</strong> addictions</li>
 </ul>
 </li>
-<li>$m_{1} = (a_{11}+a_{22})(b_{11}+b_{22}) \ m_{2} = (a_{21}+a_{22})b_{11} \ m_{3} = a_{11}(b_{12}-b_{22}) \ m_{4} = a_{22}(b_{21}-b_{11}) \ m_{5} = (a_{11}+a_{12})b_{22} \ m_{6} = (a_{21}-a_{11})(b_{11}+b_{12}) \ m_{7} = (a_{12}-a_{22})(b_{21}+b_{22}) \$</li>
+<li>${m_{1}}{=}{(a_{11}+a_{22})}{(b_{11}+b_{22})}\{m_{2}}{=}{(a_{21}+a_{22})}{b_{11}}\{m_{3}}{=}{a_{11}}{(b_{12}-b_{22})}\{m_{4}}{=}{a_{22}(b_{21}-b_{11})}\{m_{5}}{=}{(a_{11}+a_{12})}{b_{22}}\{m_{6}}{=}{(a_{21}-a_{11})}{(b_{11}+b_{12})}\{m_{7}}{=}{(a_{12}-a_{22})}{(b_{21}+b_{22})}$</li>
 <li>$C = \begin{bmatrix} m_{1}+m_{4}-m_{5}+m_{7} &amp; m_{3}+m_{5} \\ m_{2}+m_{4} &amp; m_{1}+m_{3}-m_{2}+m_{6} \end{bmatrix}$
 <ul>
 <li><strong>7</strong> multiplications, <strong>18</strong> addictions/subtractions</li>
