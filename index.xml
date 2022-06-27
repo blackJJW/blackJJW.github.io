@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 14:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux] 운영체제의 개요</title>
+      <link>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/</link>
+      <pubDate>Mon, 27 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Python] 쉬트라쎈의 행렬 곱셈</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/</link>

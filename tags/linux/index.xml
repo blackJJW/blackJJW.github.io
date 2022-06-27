@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Black_JJW&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 14:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux] 운영체제의 개요</title>
+      <link>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/</link>
+      <pubDate>Mon, 27 Jun 2022 14:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
