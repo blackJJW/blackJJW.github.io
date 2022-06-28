@@ -6,7 +6,16 @@
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jun 2022 13:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 18:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 큰 정수의 계산법</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/</link>
+      <pubDate>Tue, 28 Jun 2022 18:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Python] 쉬트라쎈의 행렬 곱셈</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/</link>

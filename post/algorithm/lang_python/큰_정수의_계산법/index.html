@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Algorithm][Python] 큰 정수의 계산법 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Algorithm][Python] 큰 정수의 계산법" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-28T18:30:45+09:00" />
+<meta property="article:modified_time" content="2022-06-28T18:30:45+09:00" />
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-231675751-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">Java</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/html/">
+				
+				<span class="menu__text">HTML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/linux/">
+				
+				<span class="menu__text">Linux</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">ABOUT ME</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Algorithm][Python] 큰 정수의 계산법</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-28T18:30:45&#43;09:00">June 28, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/algorithm/" rel="category">Algorithm</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h2 id="큰-정수의-산술-문제">큰 정수의 산술 문제</h2>
+<hr>
+<ul>
+<li>
+<p><strong>문제</strong> : 특정 컴퓨터/언어가 <strong>표현할 수 없는 큰 정수의 산술 연산</strong></p>
+</li>
+<li>
+<p><strong>가정</strong> : 10진수 체계에서의 <strong>덧셈</strong>과 <strong>곱셈</strong></p>
+</li>
+<li>
+<p>10진수를 <strong>소프트웨어적으로 표현</strong>하는 방법</p>
+<ul>
+<li>
+<p><strong>리스트를 이용</strong>하여 <strong>각 자리수</strong>(<strong>digit</strong>)를 하나의 원소로 저장</p>
+</li>
+<li>
+<p>ex) $567,832: S = [2, 3, 8, 7, 6, 5]$</p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-큰-정수의-덧셈">1. 큰 정수의 덧셈</h3>
+<ul>
+<li>
+<p>$n$개의 자릿수(digit) 각각을 더하면서 <strong>올림수</strong>(<strong>carry</strong>)를 고려</p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%201.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Arithmetic for Large Integers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ladd</span> (u, v):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(u) <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&gt;</span> len(v)) <span style="color:#66d9ef">else</span> len(v)
+</span></span><span style="display:flex;"><span>	result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>	carry <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>		i <span style="color:#f92672">=</span> u[k] <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&lt;</span> len(u)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		j <span style="color:#f92672">=</span> v[k] <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&lt;</span> len(v)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		value <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> j <span style="color:#f92672">+</span> carry
+</span></span><span style="display:flex;"><span>		carry <span style="color:#f92672">=</span> value <span style="color:#f92672">//</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>		result<span style="color:#f92672">.</span>append(value <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (carry <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>		result<span style="color:#f92672">.</span>append(carry)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="2-큰-정수의-곱셈">2. 큰 정수의 곱셈</h3>
+<ul>
+<li>
+<p><strong>단순무식한</strong> (<strong>Brute-Force</strong>) 방법</p>
+<ul>
+<li>
+<p><strong>시간 복잡도 : ${\in{\Theta(n^{2})}}$</strong></p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%203.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>분할정복</strong>(<strong>Divide-and-Conquer</strong>)</p>
+<ul>
+<li>
+<p>$n$개의 자릿수(digit)로 된 숫자를 $n/2$개의 자릿수로 분할</p>
+</li>
+<li>
+<p>둘 중 하나의 <strong>자릿수</strong>는 $[n/2$] 이고, 다른 하나는 $[n/2]$가 됨</p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%204.png" alt="Untitled"></p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%205.png" alt="Untitled"></p>
+<ul>
+<li><strong>10의 지수</strong> : $m=[n/2]$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>자릿수가 분할된 두 정수의 곱셈</strong></p>
+<ul>
+<li>
+<p>두 개의 정수 $u, v$를 분할하여 곱셈 연산을 함</p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>ex)  ${567,832\times9,423,723}\={567\times9,423\times{10^{6}}}+{(567\times723+9,423\times832)\times{10^{3}}}+{832\times723}$</li>
+</ul>
+</li>
+<li>
+<p><strong>Arithmetic for Large Integers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prod</span>(u, v):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(u) <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&gt;</span> len(v)) <span style="color:#66d9ef">else</span> len(v)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> len(v) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>		print(u, v, [<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">elif</span> (n <span style="color:#f92672">&lt;=</span> threshold):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> lmult(u, v)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>		m <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		x <span style="color:#f92672">=</span> div(u, m); y <span style="color:#f92672">=</span> rem(u, m)
+</span></span><span style="display:flex;"><span>		w <span style="color:#f92672">=</span> div(v, m); z <span style="color:#f92672">=</span> rem(v, m)
+</span></span><span style="display:flex;"><span>		p1 <span style="color:#f92672">=</span> prod(x, w)
+</span></span><span style="display:flex;"><span>		p2 <span style="color:#f92672">=</span> ladd(prod(x, z), prod(w, y))
+</span></span><span style="display:flex;"><span>		p3 <span style="color:#f92672">=</span> prod(y, z)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> ladd(ladd(exp(p1, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> m), exp(p2, m)), p3)
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-큰-정수의-지수-곱셈과-나눗셈">3. 큰 정수의 지수 곱셈과 나눗셈</h3>
+<ul>
+<li>
+<p>10의 지수 $m$으로 <strong>곱하기</strong></p>
+<ul>
+<li><strong>왼쪽</strong>으로 $m$ 자릿수만큼 <strong>쉬프트</strong></li>
+</ul>
+</li>
+<li>
+<p>10의 지수 $m$으로 나눈 <strong>나머지</strong>와 <strong>몫</strong></p>
+<ul>
+<li>
+<p>1의 자리에서 $m$의 자리까지가 <strong>나머지</strong></p>
+</li>
+<li>
+<p>$m+1$에서 $n$의 자리까지가 <strong>몫</strong></p>
+</li>
+<li>
+<p>ex)</p>
+<p>${567\times{10^{3}}}=567,000$</p>
+<p>${567,832\ }{div\ }{10^{3}}={567}$</p>
+<p>${567,832\ }{rem\ }{10^{3}}={832}$</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Arithmetic for Large Integers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exp</span> (u, m):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (u <span style="color:#f92672">==</span> [<span style="color:#ae81ff">0</span>]):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> ([<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m) <span style="color:#f92672">+</span> u
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">div</span>(u, m):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&lt;</span> m):
+</span></span><span style="display:flex;"><span>		u<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> u[m : len(u)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rem</span> (u, m):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&lt;</span> m):
+</span></span><span style="display:flex;"><span>		u<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> u[<span style="color:#ae81ff">0</span> : m]
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%207.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="4-임계값과-단순-곱셈">4. 임계값과 단순 곱셈</h3>
+<ul>
+<li>
+<p><strong>임계값</strong>(<strong>threshold</strong>) : 특정 자리수까지 ($threshold=1$)</p>
+</li>
+<li>
+<p><strong>단순 곱셈</strong> : 전통적인 방법으로 곱셈</p>
+</li>
+<li>
+<p><strong>Arithmetic for Large Integers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lmult</span>(u, v):
+</span></span><span style="display:flex;"><span>	i <span style="color:#f92672">=</span> u[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span> len(u)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	j <span style="color:#f92672">=</span> v[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;</span> len(v)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	value <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> j
+</span></span><span style="display:flex;"><span>	carry <span style="color:#f92672">=</span> value <span style="color:#f92672">//</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>	result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>	result<span style="color:#f92672">.</span>append(value <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (carry <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>		result<span style="color:#f92672">.</span>append(carry)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%208.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Arithmetic for Large Integers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prod</span>(u, v):
+</span></span><span style="display:flex;"><span>    threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(u) <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&gt;</span> len(v)) <span style="color:#66d9ef">else</span> len(v)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> len(v) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> (n <span style="color:#f92672">&lt;=</span> threshold):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> lmult(u, v)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        m <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> div(u, m); y <span style="color:#f92672">=</span> rem(u, m)
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> div(v, m); z <span style="color:#f92672">=</span> rem(v, m)
+</span></span><span style="display:flex;"><span>        p1 <span style="color:#f92672">=</span> prod(x, w)
+</span></span><span style="display:flex;"><span>        p2 <span style="color:#f92672">=</span> ladd(prod(x, z), prod(w, y))
+</span></span><span style="display:flex;"><span>        p3 <span style="color:#f92672">=</span> prod(y, z)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ladd(ladd(exp(p1, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> m), exp(p2, m)), p3)
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%209.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="큰-정수의-곱셈-알고리즘으로-우리가-한-일은">큰 정수의 곱셈 알고리즘으로 우리가 한 일은?</h2>
+<hr>
+<ul>
+<li><strong>기본 연산</strong> : 한 자릿수에서의 <strong>단위 연산</strong>(<strong>총 m번 실행</strong>)</li>
+<li><strong>입력 크기</strong> : 두 정수의 자릿수(<strong>n개의 자릿수</strong>)</li>
+<li><strong>최선/최악/평균</strong>
+<ul>
+<li>최악의 경우는 두 정수에 모두 0이 하나도 없을 때</li>
+<li>prod() 에서의 <strong>시간 복잡도</strong> 분석
+<ul>
+<li>재귀 호출을 4번 실행</li>
+<li>$W(s)=0$</li>
+<li>$W(n)=4W(n/2)+cn$</li>
+<li>$W(n)\in\Theta(n^{\log_{2}{4}})=\Theta(n^{2})$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="효율성-개선">효율성 개선</h3>
+<ul>
+<li>
+<p><strong>재귀 호출을 4번</strong>이나 시행하여 <strong>효율성이 개선될 수 없다.</strong></p>
+</li>
+<li>
+<p><strong>재귀 호출 횟수를 줄인다.</strong></p>
+<p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%2010.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Large Integer Multiplication 2</strong> (<strong>Enhanced</strong>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prod2</span>(u, v):
+</span></span><span style="display:flex;"><span>    threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(u) <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">&gt;</span> len(v)) <span style="color:#66d9ef">else</span> len(v)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (len(u) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> len(v) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> (n <span style="color:#f92672">&lt;=</span> threshold):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> lmult(u, v)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        m <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> div(u, m); y <span style="color:#f92672">=</span> rem(u, m)
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> div(v, m); z <span style="color:#f92672">=</span> rem(v, m)
+</span></span><span style="display:flex;"><span>				r <span style="color:#f92672">=</span> prod2(ladd(x, y), ladd(w, z))
+</span></span><span style="display:flex;"><span>        p1 <span style="color:#f92672">=</span> prod2(x, w)
+</span></span><span style="display:flex;"><span>				p3 <span style="color:#f92672">=</span> prod2(y, z)
+</span></span><span style="display:flex;"><span>        p2 <span style="color:#f92672">=</span> lsub(r, ladd(p1,p3))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ladd(ladd(exp(p1, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> m), exp(p2, m)), p3)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lsub</span> (u, v):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(u) <span style="color:#66d9ef">if</span> (len(u) len(v)) <span style="color:#66d9ef">else</span> len(v)
+</span></span><span style="display:flex;"><span>	result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>	borrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>		i <span style="color:#f92672">=</span> u[k] <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&lt;</span> len(u)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		j <span style="color:#f92672">=</span> v[k] <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&lt;</span> len(v)) <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		value <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> j <span style="color:#f92672">+</span> borrow
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>			value <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>			borrow <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>			borrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		result<span style="color:#f92672">.</span>append(value <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(borrow <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;음의 정수는 처리 못함&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/Untitled%2011.png" alt="Untitled"></p>
+</li>
+<li>
+<p>prod2()의 <strong>시간 복잡도</strong>는?</p>
+<ul>
+<li>재귀 호출의 횟수를 3회로 줄임</li>
+<li>$W(n)\in\Theta(n^{\log_{2}{3}})\approx\Theta(n^{1.58})$</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li>[inflearn] 파이썬으로 배우는 알고리즘 기초 - 강의자 : 주니온</li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithm/" rel="tag">Algorithm</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_java/study/start/%EC%9E%90%EB%B0%94_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_%EA%B0%9C%EB%B0%9C_%EC%88%9C%EC%84%9C/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Java] 자바 프로그램 개발 순서</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/">[Algorithm][Python] 큰 정수의 계산법</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/start/%EC%9E%90%EB%B0%94_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_%EA%B0%9C%EB%B0%9C_%EC%88%9C%EC%84%9C/">[Java] 자바 프로그램 개발 순서</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/">[Linux] 운영체제의 개요</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/">[Algorithm][Python] 쉬트라쎈의 행렬 곱셈</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/start/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EA%B8%B0%EA%B3%84jvm/">[Java] 자바 가상 기계(JVM)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">13</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">120</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (13)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (34)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (120)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lodash/" title="Lodash">Lodash (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="Oracle">Oracle (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
