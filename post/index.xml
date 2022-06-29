@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 12:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 분할정복과 트로미노 퍼즐</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/</link>
+      <pubDate>Wed, 29 Jun 2022 19:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 주석과 실행문</title>
       <link>https://blackjjw.github.io/post/lang_java/study/start/%EC%A3%BC%EC%84%9D%EA%B3%BC_%EC%8B%A4%ED%96%89%EB%AC%B8/</link>
