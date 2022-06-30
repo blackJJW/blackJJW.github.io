@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Linux] 운영체제의 종류 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Linux] 운영체제의 종류" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EC%A2%85%EB%A5%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-30T12:30:45+09:00" />
+<meta property="article:modified_time" content="2022-06-30T12:30:45+09:00" />
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65FHK1SBF9"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-65FHK1SBF9', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">Java</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/html/">
+				
+				<span class="menu__text">HTML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/linux/">
+				
+				<span class="menu__text">Linux</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">ABOUT ME</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Linux] 운영체제의 종류</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-30T12:30:45&#43;09:00">June 30, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/linux/" rel="category">Linux</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="운영체제의-분류">운영체제의 분류</h1>
+<hr>
+<h2 id="사용-환경에-분류"><strong>사용 환경에 분류</strong></h2>
+<h3 id="1-서버-운영체제">1. <strong>서버 운영체제</strong></h3>
+<ul>
+<li><strong>하나의 서버에 다수가 접속하는 환경</strong> 기반</li>
+<li>웹 서버, 메일 서버, DNS 서버 등에 이용</li>
+</ul>
+<h3 id="2-데스크톱-운영체제">2. <strong>데스크톱 운영체제</strong></h3>
+<ul>
+<li><strong>개인용 컴퓨터</strong>(<strong>Personal Computer</strong>)에 탑재</li>
+<li><strong>한 명의 사용자</strong>에게 <strong>편리</strong>하고, <strong>사용하기 쉽고</strong>, <strong>다양한 응용 프로그램을 제공</strong>하는 것이 특징</li>
+</ul>
+<h3 id="3-모바일-및-임베디드">3. <strong>모바일 및 임베디드</strong></h3>
+<ul>
+<li>휴대폰, PDA,  스마트폰, 태블릿 등과 같은 <strong>정보기기에 탑재</strong></li>
+<li>최근에는 <strong>안드로이드</strong>(<strong>Android</strong>)나 <strong>iOS</strong>와 같은 <strong>모바일 운영체제</strong>가 <strong>스마트 TV</strong>, <strong>가전제품</strong>뿐만 아니라, 자동차에 내장되는 <strong>IVI</strong>(<strong>In-Vehicle Information</strong>)까지 <strong>영역을 확대</strong>
+<ul>
+<li>임베디드 운영체제 영역과의 경계가 모호해짐</li>
+</ul>
+</li>
+</ul>
+<h3 id="4기타-분야">4.기타 분야</h3>
+<ul>
+<li><strong>웹 기반 운영체제</strong>(<strong>Web-based Operation System</strong>, <strong>Web OS</strong>)</li>
+<li><strong>인터넷의 활성화</strong>와 <strong>클라우드 컴퓨팅 서비스의 확대</strong>는 구글 크롬(Chrome) OS와 같은 <strong>웹 운영체제</strong>도 등장</li>
+</ul>
+<h1 id="주요-서버-및-데스크톱-운영체제">주요 서버 및 데스크톱 운영체제</h1>
+<hr>
+<h2 id="1-유닉스unix">1. 유닉스(UNIX)</h2>
+<h3 id="개발과-이름">개발과 이름</h3>
+<ul>
+<li><strong>1969년</strong> 미국의 AT&amp;T사의 벨(Bell) 연구소
+<ul>
+<li><strong>켄 톰슨</strong>(<strong>Ken Tompson</strong>) 및 <strong>데니스 리치</strong>(<strong>Dennis Ritchie</strong>)에 의해 시작</li>
+<li><strong>1970년</strong> <strong>켄 톰슨</strong>이 직접 개발한 <strong>B 언어로 개발</strong></li>
+<li><strong>1971년</strong> <strong>데니스 리치</strong>가 B 언어를 발전시킨 <strong>C 언어를 개발</strong>하면서 <strong>유닉스 운영체제의 대부분이 C 언어로 작성</strong></li>
+</ul>
+</li>
+<li><strong>켄 톰슨</strong>
+<ul>
+<li>DEC 사에서 만든 ‘PDP-7’이라는 중형 컴퓨터에 프로그램을 개발하는 중</li>
+<li><strong>멀틱스(Multics)라는 대형 컴퓨터</strong>에 사용되었던 <strong>시분할 운영체제</strong>를 참고
+<ul>
+<li>‘<strong>유닉스</strong>(<strong>UNIX</strong>)’라는 이름을 붙여줌</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="보급">보급</h3>
+<ul>
+<li>유닉스의 소유권을 가지고 있던 <strong>AT&amp;T</strong>에서 <strong>무료로 여러 연구소 및 대학교 등에 OS를 소스(Source)와 함께 보급</strong>
+<ul>
+<li><strong>여러 가지 버전의 유닉스가 등장</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="계열">계열</h3>
+<ul>
+<li><strong>System V 계열</strong>
+<ul>
+<li>주로 <strong>상업적인 목적을 가진 업체</strong>들
+<ul>
+<li>IBM, HP(Hewlett-Packard), Sun Microsystems, SGI 등</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>BSD 계열</strong>
+<ul>
+<li>NetBSD, FreeBSD, OpenBSD, SunOS, NextStep, Mac OS X, GNU/Linux 등</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>유닉스 계열(UNIX-like) 운영체제의 이름</p>
+<ul>
+<li>유닉스는 리눅스를 비롯하여 현존하는 많은 운영체제의 효시가 되는 운영체제</li>
+<li>유닉스라는 이름은 <strong>상표권이 설정</strong>되어 있어 <strong>해당 이름을 임의로 사용 불가</strong></li>
+<li><strong>각 업체들은 독자적인 이름을 부여</strong>
+<ul>
+<li>IBM의 AIX, HP의 HP-UX, Sun Microsystems(현 Oracle)의 SunOS(현재는 Solaris로 통합), SGI의 IRIX 등</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="특징">특징</h3>
+<ul>
+<li>다중 사용자(Multi-User) 및 다중 작업(Multi-Tasking) 지원</li>
+<li>강력한 네트워크 지원</li>
+<li>뛰어난 이식성 및 확장성</li>
+<li>계층적 파일 구조</li>
+<li>가상 메모리 및 공유 라이브러리 지원</li>
+</ul>
+<h2 id="2-윈도우windows">2. 윈도우(Windows)</h2>
+<h3 id="개발과-역사">개발과 역사</h3>
+<ul>
+<li><strong>1975년</strong>
+<ul>
+<li><strong>빌 게이츠</strong>(<strong>Bill Gates</strong>)와 <strong>폴 엘런</strong>(<strong>Paul Allen</strong>)이 설립한 <strong>마이크로소프트(Microsoft, MS) 사</strong>는 베이직(Basic) 프로그래밍 관련 개발 회사로 시작</li>
+</ul>
+</li>
+<li><strong>1980년</strong>
+<ul>
+<li>IBM의 프로그래밍 언어 관련 제품을 개발하던 중 추가로 운영체제 개발 의뢰를 받아들이면서 운영체제 개발에 착수</li>
+</ul>
+</li>
+<li><strong>1981년</strong>
+<ul>
+<li>시애틀 컴퓨터시스템사로부터 <strong>86-DOS</strong>(<strong>Disk Operating System</strong>)를 사들여서 IBM PC용으로 수정, <strong>PC-DOS</strong>를 출시</li>
+</ul>
+</li>
+<li><strong>1982년</strong>
+<ul>
+<li>‘<strong>MS-DOS</strong>’라는 이름으로 IBM PC 호환기종용으로 출시를 시작</li>
+</ul>
+</li>
+<li><strong>1985년</strong>
+<ul>
+<li><strong>1985년 이전 (윈도우 1.0 공식 출시 이전)</strong>
+<ul>
+<li><strong>DOS</strong>는 <strong>키보드로 문자를 입력</strong>하여 명령하는 방식인 <strong>CLI</strong>(<strong>Command Line Interface</strong>)
+<ul>
+<li>일반인이 접근하기 쉽지 않았음</li>
+</ul>
+</li>
+<li>MS는 키보드 대신에 <strong>마우스로 아이콘(Icon) 및 메뉴 등을 클릭</strong>하여 작업을 수행하고 <strong>멀티태스킹을 지원</strong>하는 <strong>그래픽 사용자 인터페이스</strong>(<strong>GUI; Graphic User Interface</strong>) 기반의 운영체제 개발에 착수
+<ul>
+<li>이 프로젝트의 원래 이름은 ‘<strong>인터페이스 매니저</strong>(<strong>Interface Manager</strong>)’</li>
+<li>추후 실행화면이 창문의 격자를 닮았다고 하여 마케팅 담당자가 이름을 ‘<strong>윈도우</strong>(<strong>Windows</strong>)로 변경</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1985년 윈도우 1.0 공식 출시</strong>
+<ul>
+<li>운영체제라기 보다는 <strong>MS-DOS에 구동되는 하나의 응용프로그램</strong>이었다.</li>
+<li>그림판, 워드 프로세서, 달력, 시계, 메모장, 클립보드 게임 등을 지원</li>
+<li>전체적인 디자인은 MAC OS와 유사
+<ul>
+<li>당시 MS가 초기 매킨토시(Macintosh) 소프트웨어 개발에 깊이 관여</li>
+<li>매킨토시용 소프트웨어를 업그레이드해주는 대신에 MAC OS 디자인 일부를 차용할 수 있는 라이선스 계약을 Apple 사와 맺었기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1987년</strong>
+<ul>
+<li><strong>윈도우 2.0 버전</strong>부터 ‘MS 워드’와 ‘MS 엑셀’ 등 다양한 프로그램이 등장
+<ul>
+<li>시장의 반응은 잠잠했다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1990년</strong>
+<ul>
+<li>‘<strong>윈도우 3.0</strong>’이 출시</li>
+</ul>
+</li>
+<li><strong>1992년</strong>
+<ul>
+<li>‘<strong>윈도우 3.1</strong>’ 출시</li>
+<li>MS는 상업적인 성공을 이룸</li>
+</ul>
+</li>
+<li><strong>1993년</strong>
+<ul>
+<li>MS는 기업을 주요 대상으로 <strong>네트워크 기능, 보안성, 안정성을 강화</strong>한 <strong>32비트 운영체제</strong> ‘<strong>Windows NT 3.1</strong>’을 출시</li>
+<li>그 후  ‘Windows NT 3.5’,  ‘Windows NT 4.0’을 차례로 출시
+<ul>
+<li>기업이나 연구소에서 사용하는 고성능 PC를 위한 운영체제였다.</li>
+<li>PC의 성능이 향상됨에 따라 개인용으로도 사용됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1994년</strong>
+<ul>
+<li><strong>MS-DOS 6.2 버전</strong>까지 출시</li>
+</ul>
+</li>
+<li><strong>1995년 ~</strong>
+<ul>
+<li>본격적인 GUI 기반의 운영체제 시작인 Windows 95에도 7.0 버전으로 내장 (MS-DOS)</li>
+<li>Windows 98을 거쳐 Windows ME에도 8.0 버전으로 내장 (MS-DOS)</li>
+<li>Windows NT 기반으로 만들어진 Windows XP부터 자취를 감춤 (MS-DOS)</li>
+<li>Windows NT는 기업용 버전으로 ‘Windows 2000’, ‘Windows 2003’, ‘Windows 서버2008’을 차례로 출시
+<ul>
+<li><strong>일반 사용자를 위한 데스크톱 운영체제인 ‘Windows XP’의 뼈대가 됨</strong></li>
+</ul>
+</li>
+<li>Windows NT 커널 기반의 ‘Windows XP’ 이후에 ‘Windows Vista’, ‘Windows 7’, ‘Windows 8’이 등장</li>
+</ul>
+</li>
+<li><strong>2020년</strong>
+<ul>
+<li>Windows 10이 사용됨</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-mac-os-x">3. Mac OS X</h2>
+<h3 id="개발과-역사-1">개발과 역사</h3>
+<ul>
+<li><strong>1974년</strong>
+<ul>
+<li>**스티브 잡스(Steve Jobs)와 스티브 워즈니악(Steve Wozniak)**은 직접 컴퓨터를 만들 계획을 세움</li>
+</ul>
+</li>
+<li><strong>1976년</strong>
+<ul>
+<li>‘<strong>애플 I(Apple I)</strong>’ 출시</li>
+</ul>
+</li>
+<li><strong>1977년</strong>
+<ul>
+<li><strong>애플 컴퓨터</strong>라는 정식 법인을 설립</li>
+<li>‘애플 II’를 출시, 상업적으로 대성공을 이룸</li>
+</ul>
+</li>
+<li><strong>1980년</strong>
+<ul>
+<li>‘애플 III’를 출시</li>
+<li>잦은 오류와 비싼 가격으로 대중의 외면을 받음</li>
+</ul>
+</li>
+<li><strong>1981년</strong>
+<ul>
+<li>개인용 컴퓨터(Personal Computer, PC) 시장에 회의적인 반응을 보이던 세계 최대의 컴퓨터 회사 <strong>IBM</strong>은 애플의 성공에 자극을 받아 ‘<strong>IBM PC</strong>’를 출시</li>
+</ul>
+</li>
+<li><strong>1983년</strong>
+<ul>
+<li><strong>1983년 이전</strong>
+<ul>
+<li>스티브 잡스는 제록스(Xeros)사에서 처음 개발한 <strong>마우스를 사용하는 GUI 방식</strong>에 관심을 가짐
+<ul>
+<li>‘<strong>리사(Lisa) 프로젝트</strong>’ 진행</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1983년</strong>
+<ul>
+<li>개인용 컴퓨터 중 <strong>최초로 GUI 방식의 운영체제</strong>가 탑재된 ‘<strong>애플 리사</strong>’가 출시</li>
+<li><strong>애플 리사</strong>
+<ul>
+<li><strong>본체와 모니터의 일체형 디자인, 확장 메모리 슬롯, 외장형 하드 디스크 드라이브</strong> 등 <strong>획기적인 기능</strong>을 갖춤</li>
+<li>GUI를 원활히 구동하기에는 CPU의 속도가 매우 느렸고, 비싼 가격이 문제가 됨
+<ul>
+<li>큰 손실을 입음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>비슷한 시기, 제프 라스킨(Jef Laskin)이 주도하는 또 다른 <strong>GUI 프로젝트</strong> ‘<strong>매킨토시(Macintosh) 프로젝트</strong>’가 진행
+<ul>
+<li>잡스와의 갈등으로 라스킨이 애플을 퇴사</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1984년</strong>
+<ul>
+<li>1월
+<ul>
+<li><strong>매킨토시 출시</strong></li>
+<li>애플의 방향성을 제시하는 계기가 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1985년</strong>
+<ul>
+<li>실적 부진으로 애플에서 물러난 <strong>스티브 잡스는 ‘넥스트(NeXT)’라는 회사를 설립</strong></li>
+<li>독자적인 워크스테이션 컴퓨터 및 운영체제를 개발</li>
+</ul>
+</li>
+<li><strong>1997년</strong>
+<ul>
+<li>계속되는 실적 부진에서 벗어나지 못하는 애플 사는 잡스가 운영하던 <strong>넥스트 사의 ‘넥스트스텝(NeXTSTEP)’ 운영체제</strong>에 주목</li>
+<li>넥스트사 인수를 통해 잡스를 다시 경영에 복귀 시킴</li>
+</ul>
+</li>
+<li><strong>1998년</strong>
+<ul>
+<li>‘아이맥 G3’를 출시</li>
+<li>흑자 전환</li>
+</ul>
+</li>
+<li><strong>2000년</strong>
+<ul>
+<li><strong>새로운 운영체제인 ‘MAC OS X’를 출시</strong></li>
+<li>MAC OS의 10번째 버전이라는 의미</li>
+<li>기존의 MAC OS 9를 업그레이드 한 것이 아니라 <strong>BSD 유닉스 기반으로 만든 ‘넥스트스텝’을 확장하여 만든 것</strong>
+<ul>
+<li><strong>MAC OS X 도 유닉스에 기반을 둠</strong></li>
+</ul>
+</li>
+<li>OS X가 하나의 상품명으로 자리 잡게 됨</li>
+</ul>
+</li>
+</ul>
+<h1 id="모바일-운영체제">모바일 운영체제</h1>
+<hr>
+<h2 id="모바일-운영체제mobile-operating-system">모바일 운영체제(Mobile Operating System)</h2>
+<ul>
+<li><strong>모바일 환경을 고려하여 설계</strong>된 모바일 장치나 정보기기에 탑재된 운영체제</li>
+<li><strong>모바일 장치 및 환경적 특성에 적합하도록 설계</strong></li>
+</ul>
+<h2 id="특징-1">특징</h2>
+<ul>
+<li>배터리(Battery) 사용</li>
+<li>PC(Personal Computer)에 비해 상대적으로 낮은 사양</li>
+<li>무선 기반으로 광대역 및 지역 연결</li>
+<li>다양한 멀티미디어 지원</li>
+</ul>
+<h2 id="현재의-모바일-운영체제">현재의 모바일 운영체제</h2>
+<ul>
+<li>넓은 의미의 운영체제
+<ul>
+<li><strong>커널과 하드웨어 드라이버, 미들웨어, 응용 프로그램 실행 환경, 사용자 인터페이스 프레임워크 제공</strong></li>
+<li>특정 운영체제에서만 제공하는 <strong>검색엔진, 클라우드 서비스 등을 포함</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="리눅스-기반-모바일-운영체제">리눅스 기반 모바일 운영체제</h1>
+<hr>
+<h2 id="1-구글의-안드로이드android">1. 구글의 안드로이드(Android)</h2>
+<ul>
+<li>휴대 전화를 비롯한 <strong>모바일 기기</strong>를 위한 <strong>운영체제, 미들웨어, 사용자 인터페이스, 응용 프로그램을 포함</strong>하고 있는 <strong>소프트웨어 스택</strong>이자 <strong>모바일 운영체제</strong></li>
+</ul>
+<h3 id="특징-2">특징</h3>
+<ul>
+<li><strong>리눅스 커널</strong> 위에서 동작</li>
+<li>다양한 안드로이드 시스템 구성 요소에 사용되는 <strong>C/C++ 라이브러리를 포함</strong></li>
+<li><strong>자바 언어</strong>로 응용 프로그램을 작성 가능</li>
+<li>기존의 JVM과는 다른 가상 머신인 <strong>달빅(Dalvik) 가상 머신</strong>을 통해 자바로 작성된 응용 프로그램을 별도의 프로세스로 실행하는 구조
+<ul>
+<li><strong>달빅(Dalvik</strong>)
+<ul>
+<li><strong>Oracle의 Java 표준 컴파일러</strong>를 사용</li>
+<li>가상 머신이기 때문에 <strong>JIT(Just In Time) 컴파일러</strong>를 사용하여 실시간 컴파일러를 통해 앱이 동작</li>
+<li>호환성이 좋은 장점</li>
+<li><strong>CPU 사용량이 증가, 배터리 사용에 영향을 주는 단점</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>안드로이드 4.4 킷캣(kitkat) 버전</strong>부터는 달빅을 대체할 수 있는 ‘<strong>ART</strong>(<strong>Android RunTime</strong>)’이라는 <strong>새로운 런타임 제공</strong>
+<ul>
+<li><strong>ART</strong>
+<ul>
+<li>컴퓨터가 바로 해독 사능한 기계언어를 포함되어 있어 <strong>AOT</strong>(<strong>Ahead Of Time</strong>) <strong>컴파일러를 사용</strong></li>
+<li>기계 언어가 포함되어 있어 <strong>빠른 앱 실행이 가능</strong>하다는 장점</li>
+<li><strong>앱의 용량이 1.5배에서 2배가량 늘어나고, 설치 속도가 느리다는 단점</strong>이 존재</li>
+<li>킷캣 버전까지의 대부분의 앱이 달빅 기반으로 제작되어 <strong>호환성 문제 발생</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>5.0 롤리팝(Lolipop)부터는 완전히 대체</li>
+<li><strong>안드로이드 7.0 누가(Nougat) 이후에서는 JIT와 AOT를 모두 탑재</strong>
+<ul>
+<li><strong>유연하게 적용</strong>하도록 함</li>
+</ul>
+</li>
+<li>안드로이드는 아이폰의 iOS와 더불어 <strong>높은 편의성, 빠른 반응속도를 제공</strong></li>
+<li><strong>구글 검색 엔진, 구글 맵, G-mail 등 구글의 다양한 서비스를 기본으로 탑재</strong></li>
+<li>빠른 속도로 <strong>주변 기기와의 호환성이 높아지고 있다.</strong></li>
+<li>iOS에 비해 <strong>개발 진입 장벽이 낮아 다양한 애플리케이션이 쉽게 개발됨</strong></li>
+<li>4.1 버전인 젤리 빈(Jelly Bean)부터 스마트폰과 태블릿용 버전을 통합하면서 범용 OS로서의 형태를 갖춤</li>
+<li><strong>단점</strong>
+<ul>
+<li>오픈 소스로 인한 <strong>보안의 취약점</strong>이 가장 큰 약점</li>
+<li>아이폰과는 달리 다수의 하드웨어 제조사에 의해 탑재되어 <strong>통일성이 떨어지고, 그에 따른 개발상의 어려움과 안정성 확보도 단점으로 지적</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-바다bada-os">2. 바다(Bada) OS</h2>
+<h3 id="과정">과정</h3>
+<ul>
+<li><strong>2009년 10월</strong>
+<ul>
+<li>삼성전자는 멘토 그래픽스사의 <strong>Nucleus RTOS를 기반</strong>으로 <strong>바다(Bada) 플랫폼</strong>을 발표</li>
+</ul>
+</li>
+<li>중저가 스마트폰 시장을 주요 타깃</li>
+<li>피쳐폰의 스마트폰화를 주도</li>
+<li><strong>적은 앱이 가장 큰 약점이 됨</strong></li>
+<li><strong>2014년 12월</strong>
+<ul>
+<li>바다 OS는 삼성전자가 미고(MeeGo)와 리모(LiMo)가 통합된 <strong>타이젠(Tizen)을 출시</strong>하면서 <strong>개발 종료</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-마에모maemo">3. 마에모(Maemo)</h2>
+<h3 id="과정-1">과정</h3>
+<ul>
+<li><strong>2005년 11월</strong>
+<ul>
+<li>노키아가 스마트폰 및 인터넷 태블릿용으로 만든 <strong>리눅스 기반 소프트웨어 플랫폼</strong></li>
+</ul>
+</li>
+<li><strong>2010년 2월</strong>
+<ul>
+<li>마에모 프로젝트는 인텔의 모블린과 합병, <strong>‘미고(MeeGo)’ 프로젝트로 변경</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-모블린moblin">4. 모블린(Moblin)</h2>
+<h3 id="과정-2">과정</h3>
+<ul>
+<li><strong>2007년 7월</strong>
+<ul>
+<li><strong>모바일 리눅스(Mobile Linux)의 약어</strong></li>
+<li>MID(Mobile Internet Device), 넷북 등 임베디드 모바일 기기를 위해 인텔과 리눅스 재단이 <strong>리눅스 기반으로 개발한 오픈소스 운영체제</strong></li>
+</ul>
+</li>
+<li><strong>2010년 2월</strong>
+<ul>
+<li>인텔은 모블린 프로젝트를 <strong>노키아의 마에모와 합병</strong></li>
+<li><strong>미고(MeeGo)라는 새로운 프로젝트를 진행</strong>하기로 결정</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-미고meego">5. 미고(MeeGo)</h2>
+<h3 id="과정-3">과정</h3>
+<ul>
+<li>2010년 2월
+<ul>
+<li>인텔의 모블린과 노키아의 마에모가 합병하여 만든 모바일 운영체제 프로젝트</li>
+<li>넷북 및 모바일용 등 2가지 버전이 있으며 리눅스 재단이 주관</li>
+</ul>
+</li>
+<li>2011년
+<ul>
+<li>노키아가 윈도우 폰을 주력하겠다고 선언</li>
+<li>인텔도 삼성과 협력하여 타이젠(Tizen)을 개발하겠다고 선언</li>
+</ul>
+</li>
+<li>주요 기업이 빠졌으나 프로젝트는 계속적으로 운영(Mer 프로젝트)</li>
+<li>넷북, 스마트폰, 태블릿, IVI, 차량용 네비게이션, 스마트 TV 버전도 개발 예정</li>
+</ul>
+<h2 id="6-리모limo">6. 리모(LiMo)</h2>
+<h3 id="과정-4">과정</h3>
+<ul>
+<li><strong>2007년 1월</strong>
+<ul>
+<li>Linux Mobile의 약자</li>
+<li>삼성전자, NEC, 파나소닉, 보다폰 등이 참여하여 시작한 프로젝트</li>
+</ul>
+</li>
+<li><strong>2011년 9월</strong>
+<ul>
+<li>프로젝트를 종료</li>
+<li>MeeGo로 대체</li>
+</ul>
+</li>
+<li><strong>2012년</strong>
+<ul>
+<li>인텔과 삼성전자를 주축으로 리모 재단, MeeGo 개발자 등과 협력하여 HTML 5와 웹 표준에 기반한 Tizen 프로젝트를 시작</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-타이젠tizen">7. 타이젠(Tizen)</h2>
+<h3 id="과정-5">과정</h3>
+<ul>
+<li><strong>인텔과 삼성을 주축</strong>으로 리눅스 재단, MeeGo 개발자 등이 합류하여 만든 <strong>리눅스 기반의 무료 공개형 모바일 운영체제</strong></li>
+<li><strong>2012년 4월</strong>
+<ul>
+<li>‘Lakspur’라는 코드명으로 Version 1.0 발표</li>
+<li>웹 표준과 HTML 5를 지원하며 태블릿, 넷북, 스마트폰, 스마트 TV, IVI 지원이 목표</li>
+</ul>
+</li>
+</ul>
+<h1 id="스마트-tvsmart-tv">스마트 TV(Smart TV)</h1>
+<hr>
+<h2 id="1-스마트-tv의-정의">1. 스마트 TV의 정의</h2>
+<ul>
+<li><strong>OS를 탑재</strong>하고, TV 본연의 기능인 <strong>실시간 방송</strong> 뿐만 아니라 <strong>인터넷 접속 기능을 기반</strong>으로 <strong>웹 검색, VOD, 게임, SNS, 앱스토어 등의 기능이 가능한 TV</strong></li>
+</ul>
+<h3 id="구글의-정의">구글의 정의</h3>
+<ul>
+<li><strong>웹 브라우저</strong>를 통해 TV 프로그램, 사진과 동영상, 음악과 게임, 그리고 다양한 애플리케이션의 검색 및 시청이 가능한 TV</li>
+</ul>
+<h3 id="애플의-정의">애플의 정의</h3>
+<ul>
+<li><strong>저가의 셋톱박스</strong>를 통해 TV와 인터넷을 중계하는 <strong>Plug &amp; Play 방식</strong>으로 TV 프로그램, VOD, 게임, 그리고 다양한 앱 등을 지원 및 시청이 가능한 TV</li>
+</ul>
+<h3 id="공통적으로-강조하는-점">공통적으로 강조하는 점</h3>
+<ul>
+<li>스마트 TV는 TV와 인터넷을 연결하는 일종의 ‘<strong>엔터테인먼트 허브(Entertainment Hub)</strong>’라는 점을 강조</li>
+</ul>
+<h2 id="2-주요-스마트-tv의-운용체제">2. 주요 스마트 TV의 운용체제</h2>
+<ul>
+<li>모바일 기기와 동일한 운영체제를 탑재
+<ul>
+<li>클라우드 서비스나 N-Screen 서비스를 쉽게 제공</li>
+<li>앱도 공유하려는 시도</li>
+</ul>
+</li>
+</ul>
+<h3 id="애플">애플</h3>
+<ul>
+<li><strong>Max OS 기반의 iOS</strong>를 애플 TV에 탑재</li>
+</ul>
+<h3 id="구글">구글</h3>
+<ul>
+<li><strong>리눅스 기반의 안드로이드</strong>를 구글 TV에 탑재</li>
+</ul>
+<h3 id="삼성전자">삼성전자</h3>
+<ul>
+<li>초기에 <strong>리눅스 기반의 바다 OS</strong>를 탑재</li>
+<li>현재는 <strong>타이젠</strong>(<strong>Tizen</strong>)이 내장된 스마트 TV를 판매</li>
+</ul>
+<h3 id="lg-전자">LG 전자</h3>
+<ul>
+<li>초기에는 자체 개발한 <strong>리눅스 기반의 넷캐스트 OS</strong>를 스마트 TV에 탑재</li>
+<li>HP사가 보유하고 있던 <strong>리눅스 기반의 webOS</strong>를 인수, webOS 기반의 스마트 TV를 출시</li>
+</ul>
+<h1 id="iviin-vehicle-infotainment">IVI(In-Vehicle Infotainment)</h1>
+<hr>
+<h2 id="1-ivi의-개요">1. IVI의 개요</h2>
+<ul>
+<li>자동차 내에서 CD 및 DVD 등의 재생을 비롯한 오디오와 비디오 콘텐츠 재생, TV 기능, 서라운드 시스템, 자동차 내비게이션 시스템 등을 제공하는 하드웨어 장치의 모음</li>
+<li>다른 말로든 <strong>ICE</strong>(<strong>In-Car Entertainment</strong>)
+<ul>
+<li>자동차 내에서 다양한 <strong>편의 기능</strong>과 <strong>오락시설</strong>을 <strong>제공</strong>하는 것이 목적</li>
+<li><strong>LCD 모니터 등을 내장</strong>
+<ul>
+<li>비디오 게임 등</li>
+</ul>
+</li>
+<li><strong>USB 연결을 통한 다양한 기기 연결을 제공</strong></li>
+<li><strong>무선망과 연결, 인터넷도 사용 가능</strong></li>
+</ul>
+</li>
+<li>IVI는 IT기술을 자동치에 융합한 대표적인 사례
+<ul>
+<li>다양하고 특색 있는 ‘스마트카’를 만들겠다는 자동차 회사의 의지와 더 많은 것을 원하는 사용자의 요구에 의해 탄생</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-주요-ivi의-종류와-특징">2. 주요 IVI의 종류와 특징</h2>
+<h3 id="1-ms의-windows-embedded-automotive">(1) MS의 Windows Embedded Automotive</h3>
+<ul>
+<li><strong>Windows CE 기반</strong>으로 만든 것으로 자동차에 내장되는 컴퓨터 시스템을 위한 운영체제</li>
+<li>예전에는 Microsoft Auto, Windows CE for Automotive, Windows Automotive, Windows Mobile for Automotive 등으로 출시</li>
+<li>현재는 Windows 7 플랫폼 기반으로 ‘<strong>Windows Embedded Automotive 7</strong>’이라는 이름으로 출시
+<ul>
+<li><strong>주요 기능</strong>
+<ul>
+<li>애니메이션, 벡터 그래픽, 오디오 및 비디오 재생 등을 위한 Silverlight 내장</li>
+<li>MS Tellme Speech Technology 내장</li>
+<li>핸즈프리 폰 연결 기능</li>
+<li>iPod, Zune, MP3 플레이어 등의 모바일 장치 통합 제공</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-qnx">(2) QNX</h3>
+<ul>
+<li>QNX 소프트웨어 시스템에서 개발한 <strong>유닉스 형태의 RTOS</strong>(<strong>Real-Time Operating System</strong>)</li>
+<li><strong>임베디드 시스템에 내장되는 운영체제</strong></li>
+<li>현재는 블랙베리(Blackberry)로 유명한 <strong>리서치 인 모션(Research In Motion)사에 인수</strong>
+<ul>
+<li><strong>QNX CAR application platform</strong>을 가지고 IVI 시장을 공략</li>
+<li>QNX Neutrino RTOS, 멀티미디어 프레임워크, HTML 5 기반의 HMI, 강력한 사운드 솔루션, 수백 개 이상의 다양한 애플리케이션을 제공</li>
+</ul>
+</li>
+<li><strong>QNX CAR 2 Application platform의 주요 특징</strong>
+<ul>
+<li>모바일 및 표준 웹 환경에 적합하기 위해 <strong>HTML 5 기반의 플랫폼</strong></li>
+<li>OEM 환경에 맞게 <strong>드라이버나 개발 환경을 다양하게 제공</strong></li>
+<li><strong>모바일 기기</strong>인 애플, 안드로이드, 블랙베리 장치와 <strong>연동</strong></li>
+<li><strong>자연 언어 제어</strong>를 위해 <strong>ASR/TTS 통합 모듈을 지원</strong></li>
+<li>스마트폰을 비롯, 홈 네트워크와의 연동을 위한 <strong>DLNA(Digitial Living Network Alliance) 지원</strong></li>
+<li>인터넷 라디오와의 <strong>다양한 연결형 미디어를 지원하는 멀티미디어 서비스를 제공</strong></li>
+<li><strong>원격 소프트웨어 업데이트를 지원</strong></li>
+<li>Wi-Fi 등 <strong>다양한 네트워크 환경을 지원</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-genivi">(3) GENIVI</h3>
+<ul>
+<li><strong>GENIVI 연합</strong>(<strong>GENIVI Alliance</strong>)은 공개형 리눅스 운영체제 기반의 표준화된 자동차용 IVI플랫폼을 만들기 위해 설립한 비영리조직</li>
+<li><strong>2009년 2월</strong>
+<ul>
+<li>BMW 그룹, 델파이(Delphi), GM, 인텔, PSA 푸조 시트로엥, 윈드 리버 등이 설립</li>
+<li>현재는 자동차, 반도체, 장치, 서비스 및 소프트웨어 업체 등 160 여개의 회원사들이 참여</li>
+</ul>
+</li>
+<li><strong>GENIVI 플랫폼</strong>의 <strong>80%는 기존의 리눅스 커널을 그대로 사용</strong>
+<ul>
+<li><strong>15%는 기존의 코드를 수정하거나 확장</strong></li>
+<li>나머지 <strong>5% 정도만 자동차에 특화된 코드</strong></li>
+</ul>
+</li>
+<li>2014년부터 GENIVI가 장착된 자동차가 판매</li>
+</ul>
+<h3 id="4-안드로이드android">(4) 안드로이드(Android)</h3>
+<ul>
+<li>안드로이드는 <strong>리눅스 기반의 오픈 소스, 확장성과 유연성, 친근감 있는 UI(User Interface), 막강한 안드로이드 앱 마켓, 에코시스템(Ecosystem) 등의 장점</strong></li>
+<li><strong>안드로이드 기반의 IVI</strong>
+<ul>
+<li>Wind River의 Solution Accelerator for Android</li>
+<li>풍부한 멀티미디어 제공</li>
+<li>네비게이션,</li>
+<li>아이팟/아이폰/아이패드 도킹 시스템,</li>
+<li>사용자가 수정할 수 있는 맞춤형 유저 인터페이스 제공</li>
+<li>음성 및 텍스트 상호 변환 기능</li>
+<li>SD 및 USB 메모리를 비롯한 다양한 외부 저장장치 지원</li>
+<li>블루투스 등 다양한 무선 네트워크 지원</li>
+<li>구글 주도하에 있는 안드로이드를 장착
+<ul>
+<li>막강한 인터넷 인프라를 그대로 사용 가능</li>
+<li>50만 개 이상의 풍부한 앱</li>
+<li>다른 IVI에 비해 에코시스템 기능이 매우 강력</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-meegotizen-ivi">(5) MeeGo/Tizen IVI</h3>
+<ul>
+<li>노키아의 <strong>마에모</strong>와 인텔의 <strong>모블린</strong> 등 2개의 모바일 운영체제 프로젝트가 통합하여 <strong>MeeGo</strong>는 <strong>IVI용도 출시</strong>
+<ul>
+<li>2011년 5월 19일에 배포된 1.2 버전이 가장 최신 버전</li>
+</ul>
+</li>
+<li><strong>Tizen</strong>은 인텔과 삼성을 주축으로 리눅스 재단, MeeGo 개발자들이 합류하여 만든 <strong>모바일 운영체제</strong>
+<ul>
+<li><strong>웹 표준과 HTML 5을 지원</strong></li>
+<li>태블릿, 넷북, 스마트폰, 스마트TV, IVI 등을 <strong>다양한 기기를 지원하는 프로젝트</strong></li>
+</ul>
+</li>
+<li>MeeGo나 Tizen은 IVI를 지원하기는 하나 <strong>참여하는 기업이 적고</strong>, <strong>최적화를 위해서는 자체 기술력이 필요하다는 단점</strong></li>
+</ul>
+<h1 id="웹-운영체제">웹 운영체제</h1>
+<hr>
+<ul>
+<li><strong>2000년대 초반</strong>
+<ul>
+<li><strong>Web OS</strong> : 인터넷 기반의 운영체제로 인터넷 접속이 가능한 곳이라면 언<strong>제 어디서나 자신의 데스크톱을 사용하는 것과 같은 환경을 제공하는 서비스를 의미</strong></li>
+<li><strong>제 1세대형 Web OS</strong>
+<ul>
+<li><strong>특정 서버에 사용자들이 접속할 수 있는 환경을 구축</strong></li>
+<li>관련 서비스를 이용하기 위해서는 <strong>기존의 운영체제인 윈도우, 리눅스 등에서 웹 브라우저를 호출</strong>하여 <strong>인터넷 접속을 통해 개인 데스트톱 환경을 사용</strong>하는 형태</li>
+<li>ex) eyeos, Xindesk, Glide OS 4.0, Goowy, YouOS, G.ho.st, Corneli OS</li>
+<li>웹 페이지에 접속한 뒤에 로그인을 하면, 윈도우 운영체제와 유사한 바탕화면에서 파일을 생성, 이동, 삭제하는 것이 가능
+<ul>
+<li>다양한 응용 프로그램 실행 가능</li>
+<li><strong>생성한 파일이나 애플리케이션은 유저의 하드웨어가 아닌 웹 서버에 저장되는 형태</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>최근</strong>
+<ul>
+<li>
+<p><strong>Web OS</strong> : 웹 브라우저를 기반으로 동작하는 <strong>가상의 운영체제</strong></p>
+</li>
+<li>
+<p><strong>제 2세대형 Web OS</strong></p>
+<ul>
+<li>사용자는 <strong>별도의 OS 설치과정 없이</strong> 경량화된 최소 크기의 <strong>커널 위에서 동작하는 웹 브라우저를 통해</strong> 서비스 제공자 웹 사이트에 접속하여 <strong>다양한 서비스를 이용하는 형태</strong></li>
+<li><strong>기존의 OS가 다양한 하드웨어를 구성</strong></li>
+<li>기기간의 호환성을 위해 부팅(Booting)시 불필요한 프로세스를 처리하는 반면에 <strong>Web OS는 이러한 요소들을 배제, 빠른 부팅 시간을 보장</strong></li>
+<li>특징
+<ul>
+<li>인터넷 상에서 <strong>자신의 데스크톱 컴퓨터를 사용하는 것처럼</strong> 문서작성이나 일정 관리, 주소록, 북마크, 가상 하드 디스크 등을 구동시킬 수 있는 <strong>환경을 제공</strong></li>
+<li><strong>클라우드 컴퓨팅 서비스와 결합</strong>
+<ul>
+<li>데스크톱의 환경, 이동, 보안의 제약을 뛰어넘어 <strong>웹 브라우저 환경에서 모든 환경에서 모든 작업을 가능하게 함</strong></li>
+<li>자신의 데스크톱 지원, 인터넷 상에서 제공되는 각종 서비스와 프로그램, 데이터를 자신의 데이터를 자신의 디렉터리로 구성 가능</li>
+<li>인터넷 자원을 자신의 하드 디스크에 저장하여 사용하는 것처럼 프로그램과 데이터를 관리하고 이용할 수 있도록 하고 있다.</li>
+<li><strong>개인용 웹 기반 데스크톱(Personal Web-Based Desktop)이라는 표현</strong>을 쓰기도 한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>크롬 OS</strong></p>
+<ul>
+<li><strong>웹 브라우저 형태의</strong> <strong>가상 운영체제</strong></li>
+<li>대부분의 PC 이용자들이 웹 브라우저로 인터넷에서 90% 정도의 시간을 보낸는 것에 착안하여 만들어짐</li>
+<li>기존의 운영체제
+<ul>
+<li>복잡한 애플리케이션으로 인해 편의성을 떨어짐</li>
+<li>바이러스로 인한 위험성에 노출</li>
+<li>이러한 문제점을 해결하기 위해 등장한 것이 크롬 OS</li>
+</ul>
+</li>
+<li>오픈 소스 기반의 운영체제로 <strong>빠른 속도</strong>와 단순한 사용자 환경을 제공하면서 동시에 <strong>보안성이 강화</strong>된 웹 애플리케이션 이용 환경응 제공하는 것을 목표</li>
+<li><strong>특징</strong>
+<ul>
+<li><strong>동일한 작업 환경을 어디서나 사용 가능</strong>
+<ul>
+<li>모든 <strong>데이터가 구글의 서버에 저장</strong>되어 어디서든지 같은 환경에서 작업 가능</li>
+</ul>
+</li>
+<li><strong>네트워크가 지원되는 환경이라면 빠르게 언제든지 사용 가능</strong>
+<ul>
+<li>기존의 데스크톱 운영체제와는 다르게 부팅 프로세스의 불필요한 처리를 제거, 빠른 부팅 시간을 제공</li>
+<li>초기화 처리를 간략히 진행
+<ul>
+<li>호환성을 모두 끊어버리고 중복 처리를 제거</li>
+<li>하드웨어 구성을 고정</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>크롬 웹스토어(Chrome Webstore)를 통해 <strong>사용자가 일부 프로그램을 설치하도록 지원</strong></li>
+<li><strong>높은 보안성을 제공</strong>
+<ul>
+<li>실행되는 애플리케이션의 동작은 엄격하게 관리</li>
+<li>로컬의 저장소나 다른 애플리케이션의 접근흔 허락되지 않음</li>
+<li>사용자가 의식하지 않아도 발견된 취약점은 신속히 수정</li>
+<li>PC 관리 지식이 전혀 없어도 누구나 안심하고 사용 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li>CentOS 7으로 리눅스마스터 1급 정복하기 - 정성재 지음, 북스홀릭 출판</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">Linux</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/os/" rel="tag">OS</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Algorithm][Python] 분할정복과 트로미노 퍼즐</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EC%A2%85%EB%A5%98/">[Linux] 운영체제의 종류</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/">[Algorithm][Python] 분할정복과 트로미노 퍼즐</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/start/%EC%A3%BC%EC%84%9D%EA%B3%BC_%EC%8B%A4%ED%96%89%EB%AC%B8/">[Java] 주석과 실행문</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/start/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_%EC%86%8C%EC%8A%A4_%EB%B6%84%EC%84%9D/">[Java] 자바 프로그램 소스 분석</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/algorithm/lang_python/%ED%81%B0_%EC%A0%95%EC%88%98%EC%9D%98_%EA%B3%84%EC%82%B0%EB%B2%95/">[Algorithm][Python] 큰 정수의 계산법</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">5</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">120</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (34)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (120)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lodash/" title="Lodash">Lodash (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="Oracle">Oracle (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (51)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>

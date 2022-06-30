@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 12:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://blackjjw.github.io/categories/linux/</link>
+      <pubDate>Thu, 30 Jun 2022 12:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Algorithm</title>
       <link>https://blackjjw.github.io/categories/algorithm/</link>
@@ -22,15 +31,6 @@
       <pubDate>Wed, 29 Jun 2022 12:00:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://blackjjw.github.io/categories/linux/</link>
-      <pubDate>Mon, 27 Jun 2022 14:30:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
