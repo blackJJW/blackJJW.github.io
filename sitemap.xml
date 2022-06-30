@@ -2,17 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EC%A2%85%EB%A5%98/</loc>
-    <lastmod>2022-06-30T12:30:45+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/algorithm/lang_python/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/algorithm/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/categories/algorithm/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-06-30T12:30:45+09:00</lastmod>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/python/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-06-30T15:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EC%A2%85%EB%A5%98/</loc>
     <lastmod>2022-06-30T12:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -32,32 +62,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-06-30T12:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/</loc>
-    <lastmod>2022-06-30T12:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/</loc>
-    <lastmod>2022-06-29T19:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/algorithm/</loc>
-    <lastmod>2022-06-29T19:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/categories/algorithm/</loc>
-    <lastmod>2022-06-29T19:30:45+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/python/</loc>
     <lastmod>2022-06-29T19:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

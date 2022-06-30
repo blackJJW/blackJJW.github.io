@@ -6,7 +6,16 @@
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Python] 동적 계획법</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95/</link>
+      <pubDate>Thu, 30 Jun 2022 15:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Python] 분할정복과 트로미노 퍼즐</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EA%B3%BC_%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8_%ED%8D%BC%EC%A6%90/</link>
