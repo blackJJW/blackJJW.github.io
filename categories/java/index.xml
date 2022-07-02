@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 12:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jul 2022 12:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 변수</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/varanddatatype/%EB%B3%80%EC%88%98/</link>
+      <pubDate>Sat, 02 Jul 2022 12:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/varanddatatype/%EB%B3%80%EC%88%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 주석과 실행문</title>
       <link>https://blackjjw.github.io/post/lang_java/study/start/%EC%A3%BC%EC%84%9D%EA%B3%BC_%EC%8B%A4%ED%96%89%EB%AC%B8/</link>
