@@ -239,70 +239,70 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td style="text-align:center">산술</td>
-<td style="text-align:center">$+, -, *, /, %$</td>
+<td style="text-align:center">+, -, *, /, %</td>
 <td style="text-align:center">이항</td>
 <td style="text-align:center">숫자</td>
 <td style="text-align:left">사칙연산 및 나머지 계산</td>
 </tr>
 <tr>
 <td style="text-align:center">부호</td>
-<td style="text-align:center">$+, -$</td>
+<td style="text-align:center">+, -</td>
 <td style="text-align:center">단항</td>
 <td style="text-align:center">숫자</td>
 <td style="text-align:left">음수와 양수의 부호</td>
 </tr>
 <tr>
 <td style="text-align:center">문자열</td>
-<td style="text-align:center">$+$</td>
+<td style="text-align:center">+</td>
 <td style="text-align:center">이항</td>
 <td style="text-align:center">문자열</td>
 <td style="text-align:left">두 문자열을 연결</td>
 </tr>
 <tr>
 <td style="text-align:center">대입</td>
-<td style="text-align:center">$=, +=, -=, *=, /=, %=, &amp;=, ^=,</td>
-<td style="text-align:center">=, &laquo;=, &raquo;=, &raquo;&gt;=$</td>
+<td style="text-align:center">=, +=, -=, *=, /=, %=, &amp;=, ^=, l=, &laquo;=, &raquo;=, &raquo;&gt;=</td>
 <td style="text-align:center">이항</td>
-<td style="text-align:left">다양</td>
+<td style="text-align:center">다양</td>
+<td style="text-align:left">우변의 값을 좌변의 변수에 대입</td>
 </tr>
 <tr>
 <td style="text-align:center">증감</td>
-<td style="text-align:center">$++, —$</td>
+<td style="text-align:center">++, &ndash;</td>
 <td style="text-align:center">단항</td>
 <td style="text-align:center">숫자</td>
 <td style="text-align:left">1만큼 증가/감소</td>
 </tr>
 <tr>
 <td style="text-align:center">비교</td>
-<td style="text-align:center">$==, !=, &gt;, &lt;, &gt;=, &lt;=, instanceof$</td>
+<td style="text-align:center">==, !=, &gt;, &lt;, &gt;=, &lt;=, instanceof</td>
 <td style="text-align:center">이항</td>
 <td style="text-align:center">boolean</td>
 <td style="text-align:left">값의 비교</td>
 </tr>
 <tr>
 <td style="text-align:center">논리</td>
-<td style="text-align:center">$!, &amp;,</td>
-<td style="text-align:center">, &amp;&amp;,</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">$</td>
+<td style="text-align:center">!, &amp;, l, &amp;&amp;, ll</td>
+<td style="text-align:center">단항, 이항</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">논리적 NOT, AND, OR 연산</td>
 </tr>
 <tr>
 <td style="text-align:center">조건</td>
-<td style="text-align:center">$(조건식) ? A : B$</td>
+<td style="text-align:center">(조건식) ? A : B</td>
 <td style="text-align:center">삼항</td>
 <td style="text-align:center">다양</td>
 <td style="text-align:left">조건식에 따라 A 또는 B 중 하나를 선택</td>
 </tr>
 <tr>
 <td style="text-align:center">비트</td>
-<td style="text-align:center">$~, &amp;,</td>
-<td style="text-align:center">, ^$</td>
+<td style="text-align:center">~, &amp;, l, ^</td>
 <td style="text-align:center">단항, 이항</td>
-<td style="text-align:left">숫자, boolean</td>
+<td style="text-align:center">숫자, boolean</td>
+<td style="text-align:left">비트 NOT, AND, OR, XOR 연산</td>
 </tr>
 <tr>
 <td style="text-align:center">쉬프트</td>
-<td style="text-align:center">$&raquo;, &laquo;, &raquo;&gt;$</td>
+<td style="text-align:center">&raquo;, &laquo;, &raquo;&gt;</td>
 <td style="text-align:center">이항</td>
 <td style="text-align:center">숫자</td>
 <td style="text-align:left">비트를 좌측/우측으로 밀어서 이동</td>
