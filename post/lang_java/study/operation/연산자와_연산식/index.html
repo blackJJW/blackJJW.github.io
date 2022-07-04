@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[JavaScript] for of 반복문 - Black_JJW&#39;s Blog</title>
+	<title>[Java] 연산자와 연산식 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[JavaScript] for of 반복문" />
+		<meta property="og:title" content="[Java] 연산자와 연산식" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/repeat/javascript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-05-22T15:30:45+09:00" />
-<meta property="article:modified_time" content="2022-05-22T15:30:45+09:00" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/operation/%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80_%EC%97%B0%EC%82%B0%EC%8B%9D/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-04T15:00:45+09:00" />
+<meta property="article:modified_time" content="2022-07-04T15:00:45+09:00" />
 
 
 
@@ -175,62 +175,211 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[JavaScript] for of 반복문</h1>
+			<h1 class="post__title">[Java] 연산자와 연산식</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-22T15:30:45&#43;09:00">May 22, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-07-04T15:00:45&#43;09:00">July 04, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
 			<ul>
-<li>
-<p>요소의 값을 <strong>안정적으로 사용 가능</strong></p>
-</li>
-<li>
-<p><strong>for of 반복문 기본 형태</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">반복</span> <span style="color:#a6e22e">변수</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">배열</span> <span style="color:#a6e22e">또는</span> <span style="color:#a6e22e">객체</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">문장</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
-<li>for in 반복문과는 다르게 <strong>반복 변수에 요소의 값이 들어간다.</strong></li>
-</ul>
-</li>
-<li>
-<p><strong>for of 코드블록</strong> 사용</p>
+<li><strong>연산</strong>(<strong>operation</strong>) : 프로그램에서 <strong>데이터를 처리</strong>하여 <strong>결과를 산출</strong>하는 것</li>
+<li><strong>연산자</strong>(<strong>operator</strong>) : 연산에 사용되는 <strong>표시나 기호</strong></li>
+<li><strong>피연산자</strong>(<strong>operand</strong>) : 연산되는 <strong>데이터</strong></li>
+<li><strong>연산식</strong>(<strong>expressions</strong>) : 연산자와 피연산자를 이용하여 <strong>연산의 과정을 기술</strong>한 것
 <ul>
 <li>
-<p>코드 작성 시 <strong>for</strong> 입력</p>
-</li>
-<li>
-<p><strong>for 와 관련된 여러 블록</strong>들이 나옴</p>
-<p><img src="https://blackjjw.github.io/images/lang_javascript/study/JavaScript_for_in_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%201.png" alt="https://blackjjw.github.io/images/lang_javascript/study/JavaScript_for_in_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%201.png"></p>
-</li>
-<li>
-<p><strong>forof 코드 블록</strong>으로 이동 후 <code>Enter</code> 또는 <code>Tab</code> 키를 누른다.</p>
-<p><img src="/images/lang_javascript/study/JavaScript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled.png" alt="Untitled"></p>
-<p><img src="/images/lang_javascript/study/JavaScript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%201.png" alt="Untitled"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iterator</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">object</span>) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
+<p>ex) 다음 연산식에서</p>
+<ul>
+<li>+, - , *, == : 연산자</li>
+<li>x, y, z : 피연산자</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">+</span> y
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">-</span> y
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">*</span> y <span style="color:#f92672">+</span> z
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">==</span> y
 </span></span></code></pre></div></li>
 </ul>
 </li>
-<li>
-<p>for of 반복문</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">array</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`data : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_for_of_%EB%B0%98%EB%B3%B5%EB%AC%B8/Untitled%202.png" alt="Untitled"></p>
+</ul>
+<h1 id="연산자">연산자</h1>
+<hr>
+<ul>
+<li>자바 언어에서는 <strong>다양한 연산자를 제공</strong></li>
+<li>연산자들은 피연산자를 연산해서 값을 산출하는 데, <strong>산출되는 값의 타입은 연산자별로 다르다.</strong>
+<ul>
+<li>ex)
+<ul>
+<li><strong>산술 연산자</strong>의 경우
+<ul>
+<li><strong>숫자 타입</strong>(<strong>byte, short, int, long, float, double</strong>)으로 결과값 출력</li>
+</ul>
+</li>
+<li><strong>비교 연산자</strong>와 <strong>논리 연산자</strong>의 경우
+<ul>
+<li><strong>논리</strong>(<strong>boolean</strong>) <strong>타입</strong>으로 출력</li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><strong>자바에서 제공하는 연산자</strong>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">연산자의 종류</th>
+<th style="text-align:center">연산자</th>
+<th style="text-align:center">피연산자 수</th>
+<th style="text-align:center">산출값</th>
+<th style="text-align:left">기능 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">산술</td>
+<td style="text-align:center">+, -, *, /, %</td>
+<td style="text-align:center">이항</td>
+<td style="text-align:center">숫자</td>
+<td style="text-align:left">사칙연산 및 나머지 계산</td>
+</tr>
+<tr>
+<td style="text-align:center">부호</td>
+<td style="text-align:center">+, -</td>
+<td style="text-align:center">단항</td>
+<td style="text-align:center">숫자</td>
+<td style="text-align:left">음수와 양수의 부호</td>
+</tr>
+<tr>
+<td style="text-align:center">문자열</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">이항</td>
+<td style="text-align:center">문자열</td>
+<td style="text-align:left">두 문자열을 연결</td>
+</tr>
+<tr>
+<td style="text-align:center">대입</td>
+<td style="text-align:center">=, +=, -=, *=, /=, %=, &amp;=, ^=,</td>
+<td style="text-align:center">=, &laquo;=, &raquo;=, &raquo;&gt;=</td>
+<td style="text-align:center">이항</td>
+<td style="text-align:left">다양</td>
+</tr>
+<tr>
+<td style="text-align:center">증감</td>
+<td style="text-align:center">++, —</td>
+<td style="text-align:center">단항</td>
+<td style="text-align:center">숫자</td>
+<td style="text-align:left">1만큼 증가/감소</td>
+</tr>
+<tr>
+<td style="text-align:center">비교</td>
+<td style="text-align:center">==, ≠, &gt;, &lt;, &gt;=, &lt;=, instanceof</td>
+<td style="text-align:center">이항</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">값의 비교</td>
+</tr>
+<tr>
+<td style="text-align:center">논리</td>
+<td style="text-align:center">!, &amp;,</td>
+<td style="text-align:center">, &amp;&amp;,</td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">조건</td>
+<td style="text-align:center">(조건식) ? A : B</td>
+<td style="text-align:center">삼항</td>
+<td style="text-align:center">다양</td>
+<td style="text-align:left">조건식에 따라 A 또는 B 중 하나를 선택</td>
+</tr>
+<tr>
+<td style="text-align:center">비트</td>
+<td style="text-align:center">~, &amp;,</td>
+<td style="text-align:center">, ^</td>
+<td style="text-align:center">단항, 이항</td>
+<td style="text-align:left">숫자, boolean</td>
+</tr>
+<tr>
+<td style="text-align:center">쉬프트</td>
+<td style="text-align:center">&raquo;, &laquo;, &raquo;&gt;</td>
+<td style="text-align:center">이항</td>
+<td style="text-align:center">숫자</td>
+<td style="text-align:left">비트를 좌측/우측으로 밀어서 이동</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="단항-이항-삼항-연산자">단항, 이항, 삼항 연산자</h2>
+<hr>
+<ul>
+<li>
+<p>연산자는 필요로 하는 <strong>피연산자의 수에 따라 단항, 이항, 삼항 연산자로 구분</strong></p>
+</li>
+<li>
+<p><strong>단항 연산자</strong></p>
+<ul>
+<li>부호 연산자</li>
+<li>증가/감소 연산자</li>
+</ul>
+</li>
+<li>
+<p><strong>삼항 연산자</strong></p>
+<ul>
+<li>조건 연산자</li>
+</ul>
+</li>
+<li>
+<p><strong>이항 연산자</strong></p>
+<ul>
+<li>그 이외의 모든 연산자</li>
+</ul>
+</li>
+<li>
+<p><strong>사용 예</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">++</span>x<span style="color:#f92672">;</span> <span style="color:#75715e">// 단항 연산자
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>x <span style="color:#f92672">+</span> y <span style="color:#75715e">// 이항 연산자
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span>sum <span style="color:#f92672">&gt;</span> 90<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 삼항 연산자
+</span></span></span></code></pre></div></li>
+</ul>
+<h1 id="연산식">연산식</h1>
+<hr>
+<ul>
+<li>
+<p>반드시 하나의 값을 산출</p>
+</li>
+<li>
+<p>연산자 수가 아무리 많아도 <strong>두 개 이상의 값을 산출하는 연산식은 없다.</strong></p>
+</li>
+<li>
+<p><strong>하나의 값이 올 수 있는 곳</strong>이라면 어디든지 <strong>값 대신에 연산식을 사용 가능</strong></p>
+</li>
+<li>
+<p>보통 <strong>연산식의 값은 변수에 저장</strong></p>
+<ul>
+<li>
+<p>ex) x와 y 변수의 합의 결과를 result에 저장</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="피연산자-위치에-오는-경우">피연산자 위치에 오는 경우</h2>
+<hr>
+<ul>
+<li>
+<p>ex) 비교 연산자인 &lt;의 좌측 피연산자로 (x + y)라는 연산식이 사용</p>
+<ul>
+<li>x와 y 변수의 합을 구하고 5보다 작은지 검사한 후 결과값(true or false)을 result 변수에 저장</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> result <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>x <span style="color:#f92672">+</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> 5<span style="color:#f92672">;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="references">References</h2>
 <ul>
-<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
+<li>이것이 자바다 신용권의 Java 프로그래밍 정복 - 신용권 지음, 한빛미디어 출판</li>
 </ul>
 		</div>
 		<footer class="post__footer">
@@ -239,7 +388,7 @@ if (!doNotTrack) {
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/javascript/" rel="tag">JavaScript</a>
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
 		</li>
 	</ul>
 </div>
@@ -255,15 +404,9 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/repeat/javascript_for_in_%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/varanddatatype/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[JavaScript] for in 반복문</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/repeat/javascript_for_%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[JavaScript] for 반복문</p>
+			<p class="pager__title">[Java] 타입 변환</p>
 		</a>
 	</div>
 </nav>
