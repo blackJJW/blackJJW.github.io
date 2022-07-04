@@ -6,9 +6,18 @@
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jun 2022 15:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Algorithm][Python] 동적 계획법</title>
+      <title>[Algorithm][Python] 최단 경로와 플로이드 알고리즘</title>
+      <link>https://blackjjw.github.io/post/algorithm/lang_python/%EC%B5%9C%EB%8B%A8_%EA%B2%BD%EB%A1%9C%EC%99%80_%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+      <pubDate>Mon, 04 Jul 2022 19:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/lang_python/%EC%B5%9C%EB%8B%A8_%EA%B2%BD%EB%A1%9C%EC%99%80_%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Algorithm][Python] 동적 계획법과 이항계수</title>
       <link>https://blackjjw.github.io/post/algorithm/lang_python/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95/</link>
       <pubDate>Thu, 30 Jun 2022 15:30:45 +0900</pubDate>
       
