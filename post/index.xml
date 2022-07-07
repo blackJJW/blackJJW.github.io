@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jul 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jul 2022 23:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 이항 연산자 - 비교 연산자</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/operation/%EB%B9%84%EA%B5%90_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Thu, 07 Jul 2022 23:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/operation/%EB%B9%84%EA%B5%90_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 이항 연산자 - 문자열 연결 연산자</title>
       <link>https://blackjjw.github.io/post/lang_java/study/operation/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%97%B0%EA%B2%B0_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
