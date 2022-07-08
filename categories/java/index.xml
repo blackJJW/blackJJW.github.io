@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Jul 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jul 2022 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 이항 연산자 - 비트 연산자</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/operation/%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Fri, 08 Jul 2022 21:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/operation/%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 이항 연산자 - 논리 연산자</title>
       <link>https://blackjjw.github.io/post/lang_java/study/operation/%EB%85%BC%EB%A6%AC_%EC%97%B0%EC%82%B0%EC%9E%90/</link>
