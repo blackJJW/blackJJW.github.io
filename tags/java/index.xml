@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Jul 2022 15:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 조건문 - if문</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/conditionloop/%EC%A1%B0%EA%B1%B4%EB%AC%B8_if%EB%AC%B8/</link>
+      <pubDate>Sat, 09 Jul 2022 20:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/conditionloop/%EC%A1%B0%EA%B1%B4%EB%AC%B8_if%EB%AC%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 코드 실행 흐름 제어</title>
       <link>https://blackjjw.github.io/post/lang_java/study/conditionloop/%EC%BD%94%EB%93%9C_%EC%8B%A4%ED%96%89_%ED%9D%90%EB%A6%84_%EC%A0%9C%EC%96%B4/</link>
