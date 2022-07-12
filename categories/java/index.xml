@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Jul 2022 11:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jul 2022 12:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] null과 NullPointerException</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/referencetype/null%EA%B3%BC_nullpointerexception/</link>
+      <pubDate>Tue, 12 Jul 2022 12:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/referencetype/null%EA%B3%BC_nullpointerexception/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 참조 변수의 ==, != 연산</title>
       <link>https://blackjjw.github.io/post/lang_java/study/referencetype/%EC%B0%B8%EC%A1%B0_%EB%B3%80%EC%88%98%EC%9D%98___%EC%97%B0%EC%82%B0/</link>
