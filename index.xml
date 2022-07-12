@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jul 2022 18:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jul 2022 11:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 참조 변수의 ==, != 연산</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/referencetype/%EC%B0%B8%EC%A1%B0_%EB%B3%80%EC%88%98%EC%9D%98___%EC%97%B0%EC%82%B0/</link>
+      <pubDate>Tue, 12 Jul 2022 11:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/referencetype/%EC%B0%B8%EC%A1%B0_%EB%B3%80%EC%88%98%EC%9D%98___%EC%97%B0%EC%82%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 메모리 사용 영역</title>
       <link>https://blackjjw.github.io/post/lang_java/study/referencetype/%EB%A9%94%EB%AA%A8%EB%A6%AC_%EC%82%AC%EC%9A%A9_%EC%98%81%EC%97%AD/</link>
