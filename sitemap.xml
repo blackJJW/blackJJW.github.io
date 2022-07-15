@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/referencetype/%EB%8B%A4%EC%B0%A8%EC%9B%90_%EB%B0%B0%EC%97%B4/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/referencetype/%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B0%B8%EC%A1%B0%ED%95%98%EB%8A%94_%EB%B0%B0%EC%97%B4/</loc>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-07-13T16:00:45+09:00</lastmod>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-07-14T16:00:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/referencetype/%EB%8B%A4%EC%B0%A8%EC%9B%90_%EB%B0%B0%EC%97%B4/</loc>
     <lastmod>2022-07-13T16:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
