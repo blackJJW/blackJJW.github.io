@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jul 2022 14:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jul 2022 15:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 정적 멤버와 static</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/</link>
+      <pubDate>Sun, 24 Jul 2022 15:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 인스턴스 멤버와 this</title>
       <link>https://blackjjw.github.io/post/lang_java/study/class/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4_%EB%A9%A4%EB%B2%84%EC%99%80_this/</link>
