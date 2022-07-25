@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jul 2022 17:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jul 2022 17:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 패키지</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/class/%ED%8C%A8%ED%82%A4%EC%A7%80/</link>
+      <pubDate>Mon, 25 Jul 2022 17:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/class/%ED%8C%A8%ED%82%A4%EC%A7%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] final 필드와 상수</title>
       <link>https://blackjjw.github.io/post/lang_java/study/class/final_%ED%95%84%EB%93%9C%EC%99%80_%EC%83%81%EC%88%98/</link>
