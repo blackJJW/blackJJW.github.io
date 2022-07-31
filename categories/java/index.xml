@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Jul 2022 17:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jul 2022 17:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 상속 개념</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%EC%83%81%EC%86%8D_%EA%B0%9C%EB%85%90/</link>
+      <pubDate>Sat, 30 Jul 2022 17:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inheritance/%EC%83%81%EC%86%8D_%EA%B0%9C%EB%85%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 어노테이션</title>
       <link>https://blackjjw.github.io/post/lang_java/study/class/%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98/</link>
