@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Aug 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 타입 변환과 다형성</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/</link>
+      <pubDate>Wed, 03 Aug 2022 20:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] protected 접근 제한자</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inheritance/protected_%EC%A0%91%EA%B7%BC_%EC%A0%9C%ED%95%9C%EC%9E%90/</link>
