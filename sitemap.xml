@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%95%98%EB%82%98%EC%9D%98_%EB%B0%B0%EC%97%B4%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EA%B4%80%EB%A6%AC/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A7%A4%EA%B0%9C_%EB%B3%80%EC%88%98%EC%9D%98_%EB%8B%A4%ED%98%95%EC%84%B1/</loc>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-08-05T20:00:45+09:00</lastmod>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-08-08T20:00:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%95%98%EB%82%98%EC%9D%98_%EB%B0%B0%EC%97%B4%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EA%B4%80%EB%A6%AC/</loc>
     <lastmod>2022-08-05T20:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
