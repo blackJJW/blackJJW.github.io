@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Aug 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Aug 2022 20:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 추상 클래스</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%EC%B6%94%EC%83%81_%ED%81%B4%EB%9E%98%EC%8A%A4/</link>
+      <pubDate>Thu, 11 Aug 2022 20:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inheritance/%EC%B6%94%EC%83%81_%ED%81%B4%EB%9E%98%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 객체 타입 확인(instanceof)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8instanceof/</link>
