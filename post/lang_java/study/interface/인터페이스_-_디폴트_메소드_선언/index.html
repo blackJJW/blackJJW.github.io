@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[JavaScript] 즉시 호출 함수 - Black_JJW&#39;s Blog</title>
+	<title>[Java] 인터페이스 - 디폴트 메소드 선언 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="[JavaScript] 즉시 호출 함수" />
+		<meta property="og:title" content="[Java] 인터페이스 - 디폴트 메소드 선언" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-06-02T16:00:45+09:00" />
-<meta property="article:modified_time" content="2022-06-02T16:00:45+09:00" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C_%EC%84%A0%EC%96%B8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-13T14:30:45+09:00" />
+<meta property="article:modified_time" content="2022-08-13T14:30:45+09:00" />
 
 
 
@@ -175,90 +175,56 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">[JavaScript] 즉시 호출 함수</h1>
+			<h1 class="post__title">[Java] 인터페이스 - 디폴트 메소드 선언</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-02T16:00:45&#43;09:00">June 02, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-13T14:30:45&#43;09:00">August 13, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
 			<ul>
 <li>
-<p>여러 웹사이트에서 다음과 같이 <strong>익명 함수를 생성</strong>하고 곹바로 <strong>즉시 호출</strong>하는 패턴을 사용</p>
-<ul>
+<p>디폴트 메소드는 자바 8에서 추가된 인터페이스의 새로운 멤버</p>
+</li>
 <li>
-<p><strong>함수 즉시 호출</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {})()
+<p>형태는 클래스의 인스턴스와 동일</p>
+<ul>
+<li><code>default</code> 키워드가 리턴 타입 앞에 붙는다.</li>
+</ul>
+</li>
+<li>
+<p>디폴트 메소드는 <code>public</code> 특성을 갖기 때문에 <code>public</code>을 생략하도라도 자동적으로 컴파일 과정에 붙게 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">[</span> <span style="color:#66d9ef">public</span> <span style="color:#f92672">]</span> <span style="color:#66d9ef">default</span> 리턴타입 <span style="color:#a6e22e">메소드명</span><span style="color:#f92672">(</span>매개변수<span style="color:#f92672">,</span> <span style="color:#f92672">...)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>ex) 메소드 선언</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RemoteControl</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 상수
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> MAX_VOLUME <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> MIN_VOLUME <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 추상 메소드           // 메소드 선언부만 작성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setVolume</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> volume<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 디폴트 메소드
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setMute</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> mute<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 실행 내용까지 작성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>mute<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mute ON&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mute OFF&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div></li>
 </ul>
-</li>
-<li>
-<p>일반적으로 자바스크립트는HTML 페이지 내부에서 사용할 때 <strong>script 태그</strong>를 <strong>여러 개 사용</strong>하고 코드를 입력한다.</p>
-<ul>
-<li>
-<p>코드가 여러 곳에서 사용되면 <strong>변수 이름이 충돌</strong>할 가능성이 높음</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.141592</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/Untitled.png" alt="Untitled"></p>
-</li>
-<li>
-<p>식별자가 이미 사용되고 있다는 오류를 발생</p>
-<ul>
-<li>아래의 script부분이 실행되지 않음</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>스코프</strong>(<strong>scope</strong>) : 변수가 <strong>존재하는 범위</strong></p>
-<ul>
-<li>
-<p><strong>같은 단계</strong>이 있을 경우 무조건 충돌이 발생</p>
-</li>
-<li>
-<p>이러한 <strong>스코프 단계를 변경</strong>하는 방법</p>
-<ul>
-<li><strong>중괄호를 사용</strong>해서 <strong>블록을 생성</strong>하는 방법</li>
-<li><strong>함수를 생성</strong>해서 <strong>블록을 만드는 방법</strong></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 블록을 사용한 스코프 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1415</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 함수 블록을 사용한 스코프 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sample</span>() {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.121592</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sample</span>()
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`파이 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pi</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98/Untitled%201.png" alt="Untitled"></p>
-<ul>
-<li>블록 내부에서 같은 이름으로 변수를 선언하면 변수가 외부 변수와 충돌하지 않고 외부 변수를 가림</li>
-<li><strong>섀도잉</strong>(<strong>shadowing</strong>) : 블록이 다른 경우 내부 변수가 외부 변수를 가리는 현상</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<hr>
 <h2 id="references">References</h2>
 <ul>
-<li>혼자 공부하는 자바스크립트 - 윤인성 지음, 한빛미디어 출판</li>
+<li>이것이 자바다 신용권의 Java 프로그래밍 정복 - 신용권 지음, 한빛미디어 출판</li>
 </ul>
 		</div>
 		<footer class="post__footer">
@@ -267,7 +233,7 @@ if (!doNotTrack) {
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/javascript/" rel="tag">JavaScript</a>
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
 		</li>
 	</ul>
 </div>
@@ -283,15 +249,9 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8_%ED%95%A8%EC%88%98/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EC%B6%94%EC%83%81_%EB%A9%94%EC%86%8C%EB%93%9C_%EC%84%A0%EC%96%B8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">[JavaScript] 타이머 함수</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/func/javascript_%EC%A6%89%EC%8B%9C_%ED%98%B8%EC%B6%9C_%ED%95%A8%EC%88%98_%EB%AC%B8%EC%A0%9C_%ED%95%B4%EA%B2%B0/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[JavaScript] 즉시 호출 함수 문제 해결</p>
+			<p class="pager__title">[Java] 인터페이스 - 추상 메소드 선언</p>
 		</a>
 	</div>
 </nav>
