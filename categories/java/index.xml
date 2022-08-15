@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Aug 2022 11:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Aug 2022 12:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 인터페이스 - 객체 타입 확인(instanceof)</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8instanceof/</link>
+      <pubDate>Mon, 15 Aug 2022 12:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8instanceof/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 인터페이스 - 강제 타입 변환(Casting)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%95%EC%A0%9C_%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98casting/</link>
