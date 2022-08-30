@@ -1007,11 +1007,6 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/tags/chatbot/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1027,32 +1022,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/kakao-maps/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/openroute-service/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/oracle/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/categories/projects/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/spring-boot/</loc>
-    <lastmod>2022-06-04T09:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/spring-security/</loc>
     <lastmod>2022-06-04T09:38:48+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1448,6 +1418,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/db/</loc>
+    <lastmod>2022-04-23T18:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/oracle/</loc>
     <lastmod>2022-04-23T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

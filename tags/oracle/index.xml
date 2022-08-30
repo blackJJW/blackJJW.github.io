@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ORACLE on Black_JJW&#39;s Blog</title>
+    <title>Oracle on Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/tags/oracle/</link>
-    <description>Recent content in ORACLE on Black_JJW&#39;s Blog</description>
+    <description>Recent content in Oracle on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jun 2022 09:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Project][Spring Boot] 자전거 경로 안내와 이동 거리 동안의 미세먼지 흡입량 계산 서비스</title>
-      <link>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</link>
-      <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sat, 23 Apr 2022 18:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Oracle][setting] Oracle Database 19c Installation and Setting</title>
       <link>https://blackjjw.github.io/post/setting/oracle_database_19c_setting/</link>
