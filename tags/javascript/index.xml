@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 19:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 20:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Project][Spring Boot] 자전거 경로 안내와 이동 거리 동안의 미세먼지 흡입량 계산 서비스</title>
+      <link>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[JavaScript][Library][React] 자식에서 부모의 state 속성 변경</title>
       <link>https://blackjjw.github.io/post/lang_javascript/study/react/javascript_%EC%9E%90%EC%8B%9D%EC%97%90%EC%84%9C_%EB%B6%80%EB%AA%A8%EC%9D%98_state_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD/</link>

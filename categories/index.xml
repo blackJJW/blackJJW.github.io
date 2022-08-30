@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Aug 2022 20:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 20:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects</title>
+      <link>https://blackjjw.github.io/categories/projects/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/categories/projects/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://blackjjw.github.io/categories/java/</link>
@@ -49,15 +58,6 @@
       <pubDate>Wed, 08 Jun 2022 16:00:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://blackjjw.github.io/categories/projects/</link>
-      <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/categories/projects/</guid>
       <description></description>
     </item>
     

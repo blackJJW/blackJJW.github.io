@@ -6,13 +6,85 @@
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Aug 2022 20:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 20:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS</title>
+      <link>https://blackjjw.github.io/tags/css/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://blackjjw.github.io/tags/html/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://blackjjw.github.io/tags/java/</link>
-      <pubDate>Sat, 20 Aug 2022 20:30:45 +0900</pubDate>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://blackjjw.github.io/tags/javascript/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kakao Maps</title>
+      <link>https://blackjjw.github.io/tags/kakao-maps/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/kakao-maps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openroute service</title>
+      <link>https://blackjjw.github.io/tags/openroute-service/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/openroute-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ORACLE</title>
+      <link>https://blackjjw.github.io/tags/oracle/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/oracle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://blackjjw.github.io/tags/spring-boot/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Security</title>
+      <link>https://blackjjw.github.io/tags/spring-security/</link>
+      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/spring-security/</guid>
       <description></description>
     </item>
     
@@ -53,24 +125,6 @@
     </item>
     
     <item>
-      <title>HTML</title>
-      <link>https://blackjjw.github.io/tags/html/</link>
-      <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://blackjjw.github.io/tags/javascript/</link>
-      <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>JavaScript Library</title>
       <link>https://blackjjw.github.io/tags/javascript-library/</link>
       <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
@@ -85,15 +139,6 @@
       <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSS</title>
-      <link>https://blackjjw.github.io/tags/css/</link>
-      <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/css/</guid>
       <description></description>
     </item>
     
@@ -193,15 +238,6 @@
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/db/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oracle</title>
-      <link>https://blackjjw.github.io/tags/oracle/</link>
-      <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/oracle/</guid>
       <description></description>
     </item>
     
