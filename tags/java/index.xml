@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Sep 2022 21:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Sep 2022 21:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 예외 종류에 따른 처리 코드</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/exception/%EC%98%88%EC%99%B8_%EC%A2%85%EB%A5%98%EC%97%90_%EB%94%B0%EB%A5%B8_%EC%B2%98%EB%A6%AC_%EC%BD%94%EB%93%9C/</link>
+      <pubDate>Thu, 08 Sep 2022 21:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/exception/%EC%98%88%EC%99%B8_%EC%A2%85%EB%A5%98%EC%97%90_%EB%94%B0%EB%A5%B8_%EC%B2%98%EB%A6%AC_%EC%BD%94%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 예외 처리 코드</title>
       <link>https://blackjjw.github.io/post/lang_java/study/exception/%EC%98%88%EC%99%B8_%EC%B2%98%EB%A6%AC_%EC%BD%94%EB%93%9C/</link>
