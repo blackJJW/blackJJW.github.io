@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Sep 2022 00:45:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 01:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Objects 클래스, 객체 문자 정보(toString())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/objects_class/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4tostring/</link>
+      <pubDate>Wed, 21 Sep 2022 01:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/objects_class/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4tostring/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] Objects 클래스, 널 여부 조사(isNull(), nonNull(), requireNonNull())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/objects_class/%EB%84%90_%EC%97%AC%EB%B6%80_%EC%A1%B0%EC%82%AC/</link>
