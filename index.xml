@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>[Java] Objects 클래스, 동등 비교(equals()와 deepEquals())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/objects_class/%EB%8F%99%EB%93%B1_%EB%B9%84%EA%B5%90equals%EC%99%80_deepequals/</link>
+      <pubDate>Tue, 20 Sep 2022 22:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/objects_class/%EB%8F%99%EB%93%B1_%EB%B9%84%EA%B5%90equals%EC%99%80_deepequals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>[Java] Object 클래스, 객체 소멸자(finalize())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EC%86%8C%EB%A9%B8%EC%9E%90finalize/</link>
       <pubDate>Mon, 19 Sep 2022 22:30:45 +0900</pubDate>
