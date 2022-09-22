@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Sep 2022 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] System 클래스, 현재 시각 읽기(currentTimeMillis(), nanoTime())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%98%84%EC%9E%AC_%EC%8B%9C%EA%B0%81_%EC%9D%BD%EA%B8%B0currenttimemillis_nanotime/</link>
+      <pubDate>Thu, 22 Sep 2022 21:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%98%84%EC%9E%AC_%EC%8B%9C%EA%B0%81_%EC%9D%BD%EA%B8%B0currenttimemillis_nanotime/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] System 클래스, 가비지 컬렉터 실행(gc())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%EA%B0%80%EB%B9%84%EC%A7%80_%EC%BB%AC%EB%A0%89%ED%84%B0_%EC%8B%A4%ED%96%89gc/</link>
