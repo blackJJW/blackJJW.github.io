@@ -6,11 +6,20 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2022 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 22:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] System 클래스, 환경 변수 읽기(getenv())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%99%98%EA%B2%BD_%EB%B3%80%EC%88%98_%EC%9D%BD%EA%B8%B0getenv/</link>
+      <pubDate>Thu, 22 Sep 2022 22:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%99%98%EA%B2%BD_%EB%B3%80%EC%88%98_%EC%9D%BD%EA%B8%B0getenv/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] System 클래스, 시스템 프로퍼티 읽기(getProperty())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%EC%8B%9C%EC%8A%A4%ED%85%9C_%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0_%EC%9D%BD%EA%B8%B0getproperty/</link>
-      <pubDate>Thu, 22 Sep 2022 21:00:45 +0900</pubDate>
+      <pubDate>Thu, 22 Sep 2022 21:30:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%EC%8B%9C%EC%8A%A4%ED%85%9C_%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0_%EC%9D%BD%EA%B8%B0getproperty/</guid>
       <description></description>
@@ -22,15 +31,6 @@
       <pubDate>Thu, 22 Sep 2022 21:00:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%98%84%EC%9E%AC_%EC%8B%9C%EA%B0%81_%EC%9D%BD%EA%B8%B0currenttimemillis_nanotime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Java] System 클래스, 환경 변수 읽기(getenv())</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%99%98%EA%B2%BD_%EB%B3%80%EC%88%98_%EC%9D%BD%EA%B8%B0getenv/</link>
-      <pubDate>Thu, 22 Sep 2022 21:00:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/system_class/%ED%99%98%EA%B2%BD_%EB%B3%80%EC%88%98_%EC%9D%BD%EA%B8%B0getenv/</guid>
       <description></description>
     </item>
     
