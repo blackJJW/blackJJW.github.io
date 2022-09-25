@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Sep 2022 20:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] String 클래스, String 메소드, 문자열 찾기(indexOf())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%B0%BE%EA%B8%B0indexof/</link>
+      <pubDate>Sun, 25 Sep 2022 21:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%B0%BE%EA%B8%B0indexof/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] String 클래스, String 메소드, 바이트 배열로 변환(getBytes())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%B0%94%EC%9D%B4%ED%8A%B8_%EB%B0%B0%EC%97%B4%EB%A1%9C_%EB%B3%80%ED%99%98getbytes/</link>
