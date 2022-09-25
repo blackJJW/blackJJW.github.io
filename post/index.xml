@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Sep 2022 21:15:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 21:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] String 클래스, String 메소드, 문자열 대치(replace())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EB%8C%80%EC%B9%98replace/</link>
+      <pubDate>Sun, 25 Sep 2022 21:30:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EB%8C%80%EC%B9%98replace/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] String 클래스, String 메소드, 문자열 길이(length())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EA%B8%B8%EC%9D%B4length/</link>
