@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Sep 2022 22:20:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 23:20:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Pattern 클래스</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/regular_ex__pattern_class/pattern_%ED%81%B4%EB%9E%98%EC%8A%A4/</link>
+      <pubDate>Tue, 27 Sep 2022 23:20:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/regular_ex__pattern_class/pattern_%ED%81%B4%EB%9E%98%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 정규 표현식 작성 방법</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/regular_ex__pattern_class/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D_%EC%9E%91%EC%84%B1_%EB%B0%A9%EB%B2%95/</link>
