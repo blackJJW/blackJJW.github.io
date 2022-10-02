@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Oct 2022 12:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 18:05:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] java.time 패키지, 날짜와 시간을 조작</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/basicapi/java_time_package/%EB%82%A0%EC%A7%9C%EC%99%80_%EC%8B%9C%EA%B0%84%EC%9D%84_%EC%A1%B0%EC%9E%91/</link>
+      <pubDate>Sun, 02 Oct 2022 18:05:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/basicapi/java_time_package/%EB%82%A0%EC%A7%9C%EC%99%80_%EC%8B%9C%EA%B0%84%EC%9D%84_%EC%A1%B0%EC%9E%91/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] java.time 패키지, 날짜와 시간에 대한 정보 얻기</title>
       <link>https://blackjjw.github.io/post/lang_java/study/basicapi/java_time_package/%EB%82%A0%EC%A7%9C%EC%99%80_%EC%8B%9C%EA%B0%84%EC%97%90_%EB%8C%80%ED%95%9C_%EC%A0%95%EB%B3%B4_%EC%96%BB%EA%B8%B0/</link>
