@@ -1962,6 +1962,10 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EA%B3%B5%EC%9C%A0_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%A0_%EB%95%8C%EC%9D%98_%EC%A3%BC%EC%9D%98%ED%95%A0_%EC%A0%90/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://blackjjw.github.io/docs/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

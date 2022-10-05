@@ -3131,5 +3131,14 @@
  주관처 : 휴먼교육센터 기간 : 2022. 03 ~ 2022. 08 교육내용  데이터 분석 결과를 활용하기 위해 빅데이터 분석 요건 정의, 데이터 확보, 데이터 탐색, 분석 모델링, 분석 결과를 적용을 기획 댜양한 형식의 대용량 데이터의 수집, 저장, 처리, 분석, 활용을 위한 인프라, 인터페이스 및 솔루션을 개발하고 적용 R Python, Django MySQL, ORACLE Machine Learning, Deep Learning HTML5, JavaScript, CSS3 JAVA, Spring Framework, Spring Boot Github, Sourcetree, Notion      과정명 : 현장 전문가 육성을 위한 인공지능(AI) 창의융합형 인재 양성 과정</description>
     </item>
     
+    <item>
+      <title>[Java] 공유 객체를 사용할 때의 주의할 점</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EA%B3%B5%EC%9C%A0_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%A0_%EB%95%8C%EC%9D%98_%EC%A3%BC%EC%9D%98%ED%95%A0_%EC%A0%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EA%B3%B5%EC%9C%A0_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%A0_%EB%95%8C%EC%9D%98_%EC%A3%BC%EC%9D%98%ED%95%A0_%EC%A0%90/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
