@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B7%B8%EB%A3%B9_%EC%83%9D%EC%84%B1/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B7%B8%EB%A3%B9%EC%9D%98_%EC%9D%BC%EA%B4%84_interrupt/</loc>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-10-15T20:40:30+09:00</lastmod>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-10-15T21:40:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B7%B8%EB%A3%B9_%EC%83%9D%EC%84%B1/</loc>
     <lastmod>2022-10-15T20:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
