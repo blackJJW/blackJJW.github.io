@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Oct 2022 12:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Oct 2022 13:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 스레드풀, 블로킹 방식의 작업 완료 통보</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EB%B8%94%EB%A1%9C%ED%82%B9_%EB%B0%A9%EC%8B%9D%EC%9D%98_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/</link>
+      <pubDate>Sun, 16 Oct 2022 13:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EB%B8%94%EB%A1%9C%ED%82%B9_%EB%B0%A9%EC%8B%9D%EC%9D%98_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 스레드풀, 작업 생성과 처리 요청</title>
       <link>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EC%9E%91%EC%97%85_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%B2%98%EB%A6%AC_%EC%9A%94%EC%B2%AD/</link>
