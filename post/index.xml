@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Oct 2022 21:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Oct 2022 10:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 스레드풀(ThreadPool)</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80/</link>
+      <pubDate>Sun, 16 Oct 2022 10:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 스레드 그룹의 일괄 interrupt()</title>
       <link>https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B7%B8%EB%A3%B9%EC%9D%98_%EC%9D%BC%EA%B4%84_interrupt/</link>
