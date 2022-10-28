@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Oct 2022 17:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[Java] 제네릭 메소드(&lt;T, R&gt; R method(T t))</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%EB%A9%94%EC%86%8C%EB%93%9C_t_r_r_methodt_t/</link>
+      <pubDate>Fri, 28 Oct 2022 17:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%EB%A9%94%EC%86%8C%EB%93%9C_t_r_r_methodt_t/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>[Java] 제네릭, 멀티 타입 파라미터(class&lt;K, V, …&gt;, interface&lt;K, V, …&gt;)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/generic/%EB%A9%80%ED%8B%B0_%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0/</link>
       <pubDate>Fri, 28 Oct 2022 17:40:30 +0900</pubDate>
