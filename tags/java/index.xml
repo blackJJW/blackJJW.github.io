@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Oct 2022 15:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 16:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 람다식 기본 문법?</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/lambda/%EB%9E%8C%EB%8B%A4%EC%8B%9D_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/</link>
+      <pubDate>Sat, 29 Oct 2022 16:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/lambda/%EB%9E%8C%EB%8B%A4%EC%8B%9D_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 람다식이란?</title>
       <link>https://blackjjw.github.io/post/lang_java/study/lambda/%EB%9E%8C%EB%8B%A4%EC%8B%9D%EC%9D%B4%EB%9E%80/</link>
