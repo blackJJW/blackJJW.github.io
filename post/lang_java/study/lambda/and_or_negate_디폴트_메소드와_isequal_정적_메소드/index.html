@@ -198,13 +198,48 @@ if (!doNotTrack) {
 <li>
 <p><code>negate()</code> 메소드 : 원래 Predicate의 결과가 true이면 false로, false이면 true를 리턴하는 새로운 Predicate를 생성</p>
 <h3 id="predicate-함수적-인터페이스">Predicate 함수적 인터페이스</h3>
-<p>| 함수적 인터페이스 | and() | or()  | negate()  |
-| &mdash; |:&mdash;&ndash;:|:&mdash;&mdash;&mdash;:|: &mdash; :|
-| Predicate<!-- raw HTML omitted --> | ○ |   ○   |     ○     |
-| BiPredicate&lt;T, U&gt; | ○ |   ○   |     ○     |
-| DoublePredicate | ○ |   ○   |     ○     |
-| IntPredicate | ○ |   ○   |     ○     |
-| LongPredicate | ○ |   ○   |     ○     |</p>
+<table>
+<thead>
+<tr>
+<th>함수적 인터페이스</th>
+<th style="text-align:center">and()</th>
+<th style="text-align:center">or()</th>
+<th style="text-align:center">negate()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicate<!-- raw HTML omitted --></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td>BiPredicate&lt;T, U&gt;</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td>DoublePredicate</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td>IntPredicate</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td>LongPredicate</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>ex) Predicate 간의 논리 연산</p>
