@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2022 13:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 14:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 람다식, minBy(), maxBy() 정적 메소드</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/lambda/minby_maxby_%EC%A0%95%EC%A0%81_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
+      <pubDate>Sat, 05 Nov 2022 14:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/lambda/minby_maxby_%EC%A0%95%EC%A0%81_%EB%A9%94%EC%86%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 람다식, and(), or(), negate() 디폴트 메소드와 isEqual() 정적 메소드</title>
       <link>https://blackjjw.github.io/post/lang_java/study/lambda/and_or_negate_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80_isequal_%EC%A0%95%EC%A0%81_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
