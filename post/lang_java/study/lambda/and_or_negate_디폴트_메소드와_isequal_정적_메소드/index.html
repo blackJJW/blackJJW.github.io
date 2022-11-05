@@ -198,48 +198,13 @@ if (!doNotTrack) {
 <li>
 <p><code>negate()</code> 메소드 : 원래 Predicate의 결과가 true이면 false로, false이면 true를 리턴하는 새로운 Predicate를 생성</p>
 <h3 id="predicate-함수적-인터페이스">Predicate 함수적 인터페이스</h3>
-<table>
-<thead>
-<tr>
-<th>함수적 인터페이스</th>
-<th>and()</th>
-<th>or()</th>
-<th>negate()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Predicate<!-- raw HTML omitted --></td>
-<td>○</td>
-<td>○</td>
-<td>○</td>
-</tr>
-<tr>
-<td>BiPredicate&lt;T, U&gt;</td>
-<td>○</td>
-<td>○</td>
-<td>○</td>
-</tr>
-<tr>
-<td>DoublePredicate</td>
-<td>○</td>
-<td>○</td>
-<td>○</td>
-</tr>
-<tr>
-<td>IntPredicate</td>
-<td>○</td>
-<td>○</td>
-<td>○</td>
-</tr>
-<tr>
-<td>LongPredicate</td>
-<td>○</td>
-<td>○</td>
-<td>○</td>
-</tr>
-</tbody>
-</table>
+<p>| 함수적 인터페이스 | and() | or()  | negate()  |
+| &mdash; |:&mdash;&ndash;:|:&mdash;&mdash;&mdash;:|: &mdash; :|
+| Predicate<!-- raw HTML omitted --> | ○ |   ○   |     ○     |
+| BiPredicate&lt;T, U&gt; | ○ |   ○   |     ○     |
+| DoublePredicate | ○ |   ○   |     ○     |
+| IntPredicate | ○ |   ○   |     ○     |
+| LongPredicate | ○ |   ○   |     ○     |</p>
 </li>
 <li>
 <p>ex) Predicate 간의 논리 연산</p>
@@ -298,31 +263,31 @@ if (!doNotTrack) {
 <table>
 <thead>
 <tr>
-<th>sourceObject</th>
-<th>targetObject</th>
-<th>리턴값</th>
+<th style="text-align:center">sourceObject</th>
+<th style="text-align:center">targetObject</th>
+<th style="text-align:center">리턴값</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>null</td>
-<td>null</td>
-<td>true</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">true</td>
 </tr>
 <tr>
-<td>not null</td>
-<td>null</td>
-<td>false</td>
+<td style="text-align:center">not null</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">false</td>
 </tr>
 <tr>
-<td>null</td>
-<td>not null</td>
-<td>false</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">not null</td>
+<td style="text-align:center">false</td>
 </tr>
 <tr>
-<td>not null</td>
-<td>not null</td>
-<td>sourceObject.equals(targetObject)의 리턴값</td>
+<td style="text-align:center">not null</td>
+<td style="text-align:center">not null</td>
+<td style="text-align:center">sourceObject.equals(targetObject)의 리턴값</td>
 </tr>
 </tbody>
 </table>
