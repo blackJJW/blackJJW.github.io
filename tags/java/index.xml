@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Nov 2022 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Nov 2022 12:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java]  Set 컬렉션</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/set_%EC%BB%AC%EB%A0%89%EC%85%98/</link>
+      <pubDate>Sat, 12 Nov 2022 12:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/collectionframework/set_%EC%BB%AC%EB%A0%89%EC%85%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java]  List 컬렉션, LinkedList</title>
       <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/linkedlist/</link>
