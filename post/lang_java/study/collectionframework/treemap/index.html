@@ -207,13 +207,11 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// K : 키 타입
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// V : 값 타입
 </span></span></span></code></pre></div><ul>
-<li>
-<p>키로 String 타입을 사용하고 값으로 Integer 타입을 사용하는 TreeMap은 다음과 같이 생성 가능</p>
+<li>키로 String 타입을 사용하고 값으로 Integer 타입을 사용하는 TreeMap은 다음과 같이 생성 가능</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TreeMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> treeMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;();</span>
-</span></span></code></pre></div></li>
-<li>
-<p>Map 인터페이스 타입 변수에 대입해도 되지만 TreeMap 클래스 타입으로 대입한 이유는 특정 객체를 찾거나 범위 검색과 관련된 메소드를 사용하기 위해서이다.</p>
-</li>
+</span></span></code></pre></div><ul>
+<li>Map 인터페이스 타입 변수에 대입해도 되지만 TreeMap 클래스 타입으로 대입한 이유는 특정 객체를 찾거나 범위 검색과 관련된 메소드를 사용하기 위해서이다.</li>
 </ul>
 <h3 id="treemap이-가지고-있는-검색-관련-메소드">TreeMap이 가지고 있는 검색 관련 메소드</h3>
 <table>
@@ -338,21 +336,18 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <ul>
-<li>
-<p><code>descendingKeySet()</code> 메소드는 내림차순으로 정렬된 키의 NavigableSet 객체를 리턴</p>
-</li>
-<li>
-<p><code>descendingMap()</code> 메소드는 내림차순으로 정렬된 NavigableMap 객체를 리턴</p>
+<li><code>descendingKeySet()</code> 메소드는 내림차순으로 정렬된 키의 NavigableSet 객체를 리턴</li>
+<li><code>descendingMap()</code> 메소드는 내림차순으로 정렬된 NavigableMap 객체를 리턴
 <ul>
 <li><code>firstEntry()</code>, <code>lastEntry()</code>, <code>lowerEntry()</code>, <code>higherEntry()</code>, <code>floorEntry()</code>, <code>ceilingEntry()</code> 메소드를 제공</li>
 <li>오름차순과 내림차순을 번갈아가며 정렬 순서를 바꾸는 <code>descendingMap()</code> 메소드 제공</li>
 <li>오름차순으로 정렬하고 싶을 경우, <code>descendingMap()</code> 메소드를 두 번 호출</li>
 </ul>
+</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>NavigableMap<span style="color:#f92672">&lt;</span>K<span style="color:#f92672">,</span> V<span style="color:#f92672">&gt;</span> descendingMap <span style="color:#f92672">=</span> treeMap<span style="color:#f92672">.</span><span style="color:#a6e22e">descendingMap</span><span style="color:#f92672">();</span>
 </span></span><span style="display:flex;"><span>NavigableMap<span style="color:#f92672">&lt;</span>K<span style="color:#f92672">,</span> V<span style="color:#f92672">&gt;</span> ascendingMap <span style="color:#f92672">=</span> descendingMap<span style="color:#f92672">.</span><span style="color:#a6e22e">descendingMap</span><span style="color:#f92672">();</span>
 </span></span></code></pre></div></li>
-</ul>
-</li>
 <li>
 <p>ex) 객체 정렬</p>
 <ul>
