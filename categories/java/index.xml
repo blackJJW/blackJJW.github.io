@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 01:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 01:30:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 병렬 처리를 위한 컬렉션</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</link>
+      <pubDate>Sun, 20 Nov 2022 01:30:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 동기화된 컬렉션</title>
       <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%8F%99%EA%B8%B0%ED%99%94%EB%90%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</link>

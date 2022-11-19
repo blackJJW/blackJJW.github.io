@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%8F%99%EA%B8%B0%ED%99%94%EB%90%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</loc>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-11-20T01:00:30+09:00</lastmod>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-11-20T01:30:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/collectionframework/%EB%8F%99%EA%B8%B0%ED%99%94%EB%90%9C_%EC%BB%AC%EB%A0%89%EC%85%98/</loc>
     <lastmod>2022-11-20T01:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
