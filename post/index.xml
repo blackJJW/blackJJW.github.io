@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Nov 2022 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Nov 2022 21:30:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] LIFO와 FIFO 컬렉션</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/lifo%EC%99%80_fifo_%EC%BB%AC%EB%A0%89%EC%85%98/</link>
+      <pubDate>Sat, 19 Nov 2022 21:30:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/collectionframework/lifo%EC%99%80_fifo_%EC%BB%AC%EB%A0%89%EC%85%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 검색 기능을 강화시킨 컬렉션, Comparable과 Comparator</title>
       <link>https://blackjjw.github.io/post/lang_java/study/collectionframework/comparable%EA%B3%BC_comparator/</link>
