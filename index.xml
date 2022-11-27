@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Nov 2022 14:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Nov 2022 15:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 스트림, 정렬(sorted())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/stream/%EC%A0%95%EB%A0%ACsorted/</link>
+      <pubDate>Sun, 27 Nov 2022 15:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/stream/%EC%A0%95%EB%A0%ACsorted/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 스트림, 매핑, asDoubleStream(), asLongStream(), boxed() 메소드</title>
       <link>https://blackjjw.github.io/post/lang_java/study/stream/asdoublestream_aslongstream_boxed_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
