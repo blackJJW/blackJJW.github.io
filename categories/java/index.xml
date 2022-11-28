@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Nov 2022 15:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 21:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 스트림, 루핑(peek(), forEach())</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/stream/%EB%A3%A8%ED%95%91peek_foreach/</link>
+      <pubDate>Mon, 28 Nov 2022 21:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/stream/%EB%A3%A8%ED%95%91peek_foreach/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 스트림, 정렬(sorted())</title>
       <link>https://blackjjw.github.io/post/lang_java/study/stream/%EC%A0%95%EB%A0%ACsorted/</link>

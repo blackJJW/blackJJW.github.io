@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/stream/%EC%A0%95%EB%A0%ACsorted/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/stream/%EB%A3%A8%ED%95%91peek_foreach/</loc>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-11-27T15:40:30+09:00</lastmod>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-11-28T21:40:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/stream/%EC%A0%95%EB%A0%ACsorted/</loc>
     <lastmod>2022-11-27T15:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
