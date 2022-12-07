@@ -175,14 +175,15 @@ if (!doNotTrack) {
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h1 id="필터링한-요소-수집">필터링한 요소 수집</h1>
-<ul>
-<li>
-<p>스트림은 요소들을 필터링 또는 매핑한 후 요소들을 수집하는 최종 처리 메소드인 <code>collect()</code>를 제공</p>
+			<ul>
+<li>스트림은 요소들을 필터링 또는 매핑한 후 요소들을 수집하는 최종 처리 메소드인 <code>collect()</code>를 제공
 <ul>
 <li>이 메소드를 이용하며 필요한 요소만 컬렉션으로 담을 수 있고, 요소들을 그룹핑한 후 집계(리덕션)할 수 있다.</li>
 </ul>
 </li>
+</ul>
+<h2 id="필터링한-요소-수집">필터링한 요소 수집</h2>
+<ul>
 <li>
 <p>Stream의 <code>collect(Collector&lt;T, A, R&gt; collector)</code> 메소드는 필터링 또는 매핑된 요소들을 새로운 컬렉션에 수집하고, 이 컬렉션을 리턴</p>
 <table>
