@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 21:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 21:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 스트림, 사용자 정의 컨테이너에 수집</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/</link>
+      <pubDate>Thu, 08 Dec 2022 21:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 스트림, 필터링한 요소 수집</title>
       <link>https://blackjjw.github.io/post/lang_java/study/stream/%ED%95%84%ED%84%B0%EB%A7%81%ED%95%9C_%EC%9A%94%EC%86%8C_%EC%88%98%EC%A7%91/</link>
