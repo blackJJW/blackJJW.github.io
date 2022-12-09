@@ -377,6 +377,20 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>순차 처리를 담당한 스레드 : main</li>
+<li><code>MaleStudent()</code> 생성자가 딱 한 번 호출되었음
+<ul>
+<li>한 개의 MaleStudent 객체가 생성</li>
+</ul>
+</li>
+<li><code>accumulate()</code>가 두 번 호출
+<ul>
+<li>요소들이 2번 수집됨</li>
+<li><code>collect()</code>가 리턴한 최종 MaleStudent에는 남학생 두명이 저장됨</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>ex) 학생 클래스</p>
