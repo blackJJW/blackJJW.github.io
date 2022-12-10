@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/stream/%EA%B7%B8%EB%A3%B9%ED%95%91_%ED%9B%84_%EB%A7%A4%ED%95%91_%EB%B0%8F_%EC%A7%91%EA%B3%84/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/parallel_operation/%EB%8F%99%EC%8B%9C%EC%84%B1concurrency%EA%B3%BC_%EB%B3%91%EB%A0%AC%EC%84%B1parallelism/</loc>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-12-10T13:40:30+09:00</lastmod>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-12-10T14:40:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/stream/%EA%B7%B8%EB%A3%B9%ED%95%91_%ED%9B%84_%EB%A7%A4%ED%95%91_%EB%B0%8F_%EC%A7%91%EA%B3%84/</loc>
     <lastmod>2022-12-10T13:40:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
