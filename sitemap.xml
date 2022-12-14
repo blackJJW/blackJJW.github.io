@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EC%9E%91%EC%84%B1_%EA%B7%9C%EC%B9%99/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EB%A1%9C%EB%94%A9%EA%B3%BC_scene_%EC%83%9D%EC%84%B1/</loc>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/javafx/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-12-14T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-12-14T22:00:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EC%9E%91%EC%84%B1_%EA%B7%9C%EC%B9%99/</loc>
     <lastmod>2022-12-14T21:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
