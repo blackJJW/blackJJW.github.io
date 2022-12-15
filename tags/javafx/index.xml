@@ -6,7 +6,43 @@
     <description>Recent content in JavaFX on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Dec 2022 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Dec 2022 22:40:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX, BorderPane 컨테이너</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
+      <pubDate>Thu, 15 Dec 2022 22:40:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Java] JavaFX, HBox와 VBox 컨테이너</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/hbox%EC%99%80_vbox_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
+      <pubDate>Thu, 15 Dec 2022 22:35:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/hbox%EC%99%80_vbox_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Java] JavaFX, AnchorPane 컨테이너</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/anchorpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
+      <pubDate>Thu, 15 Dec 2022 22:30:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/anchorpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Java] JavaFX, 컨테이너</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
+      <pubDate>Thu, 15 Dec 2022 22:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX, FXML 로딩과 Scene 생성</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EB%A1%9C%EB%94%A9%EA%B3%BC_scene_%EC%83%9D%EC%84%B1/</link>
