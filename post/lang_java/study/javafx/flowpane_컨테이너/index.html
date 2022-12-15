@@ -224,25 +224,25 @@ if (!doNotTrack) {
 <li>버튼 간의 수평 간격과 수직 간경을 주기 위해 hgap과 vgap을 10으로 설정</li>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span>xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.geometry.Insets<span style="color:#f92672">?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.layout.FlowPane<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.FlowPane?&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>FlowPane hgap<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;70.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300.0&#34;</span> vgap<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> xmlns<span style="color:#f92672">:</span>fx<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> xmlns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;</span>children<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button mnemonicParsing<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/</span>children<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;</span>padding<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Insets bottom<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> left<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> right<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> top<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/</span>padding<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span>FlowPane<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;FlowPane</span> <span style="color:#a6e22e">hgap=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;70.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;300.0&#34;</span> <span style="color:#a6e22e">vgap=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;padding&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/padding&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FlowPane&gt;</span>
 </span></span></code></pre></div><p><img src="/images/lang_java/javaFx/FlowPane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/Untitled%201.png" alt="Untitled"></p>
 <ul>
 <li>오른쪽에 배치될 공간이 부족할 경우에는 새로운 행에 컨트롤이 배치된다.</li>
@@ -285,6 +285,12 @@ if (!doNotTrack) {
 			<p class="pager__title">[Java] JavaFX, BorderPane 컨테이너</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/tilepane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[Java] JavaFX, TilePane 컨테이너</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -302,11 +308,11 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/tilepane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, TilePane 컨테이너</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/flowpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, FlowPane 컨테이너</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/borderpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, BorderPane 컨테이너</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/hbox%EC%99%80_vbox_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, HBox와 VBox 컨테이너</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/anchorpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, AnchorPane 컨테이너</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/javafx_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">[Java] JavaFX, 컨테이너</a></li>
 		</ul>
 	</div>
 </div>
@@ -324,7 +330,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">279</span>
+				<span class="widget__counter widget__counter--bubble">280</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
@@ -377,8 +383,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (35)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (280)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (15)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (281)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (16)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
