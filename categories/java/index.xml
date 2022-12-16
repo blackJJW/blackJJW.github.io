@@ -6,7 +6,34 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Dec 2022 23:30:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Dec 2022 21:30:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX, FXML 컨트롤러(Controller)</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%ACcontroller/</link>
+      <pubDate>Fri, 16 Dec 2022 21:30:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%ACcontroller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Java] JavaFX, 이벤트 핸들러(EventHandler)</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%9D%B4%EB%B2%A4%ED%8A%B8_%ED%95%B8%EB%93%A4%EB%9F%ACeventhandler/</link>
+      <pubDate>Fri, 16 Dec 2022 21:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%9D%B4%EB%B2%A4%ED%8A%B8_%ED%95%B8%EB%93%A4%EB%9F%ACeventhandler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Java] JavaFX, StackPane 컨테이너</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/stackpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
+      <pubDate>Fri, 16 Dec 2022 20:30:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/stackpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX, GridPane 컨테이너</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/gridpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/</link>
