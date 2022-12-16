@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2022 21:30:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Dec 2022 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX, 속성 감시</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/</link>
+      <pubDate>Fri, 16 Dec 2022 22:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX, FXML 컨트롤러(Controller)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%ACcontroller/</link>
