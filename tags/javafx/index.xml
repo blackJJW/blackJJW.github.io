@@ -6,7 +6,16 @@
     <description>Recent content in JavaFX on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2022 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Dec 2022 12:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX, 속성 바인딩</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EB%B0%94%EC%9D%B8%EB%94%A9/</link>
+      <pubDate>Sat, 17 Dec 2022 12:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EB%B0%94%EC%9D%B8%EB%94%A9/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX, 속성 감시</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/</link>
