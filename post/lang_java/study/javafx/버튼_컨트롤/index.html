@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Java] JavaFX, 버튼 컨트롤 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Java] JavaFX, 버튼 컨트롤" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-20T20:00:30+09:00" />
+<meta property="article:modified_time" content="2022-12-20T20:00:30+09:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65FHK1SBF9"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-65FHK1SBF9', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">Java</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/html/">
+				
+				<span class="menu__text">HTML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/linux/">
+				
+				<span class="menu__text">Linux</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Java] JavaFX, 버튼 컨트롤</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-12-20T20:00:30&#43;09:00">December 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<ul>
+<li>
+<p>버튼 컨트롤은 마우스로 클릭할 수 있는 컨트롤로 ButtonBase를 상속하는 하위 컨트롤을 의미</p>
+<ul>
+<li>Button, CheckBox, RadioButton, ToggleButton, Hyperlink 등이 있다.</li>
+</ul>
+<p><img src="/images/lang_java/javaFx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p>기본 Button은 단순한 글자로 구성</p>
+</li>
+<li>
+<p>ImageView를 매개값으로 해서 <code>setGraph()</code> 메소드를 호출하면 아이콘을 넣을 수 있다.</p>
+<ul>
+<li>ex) 아이컨 버튼을 FXML로 작성하는 방법</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;아이콘버튼&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/history_view.gif&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>CheckBox, RadioButton, ToggleButton 컨트롤은 선택과 미선택 두 가지 상태를 가질 수 있다.</p>
+<ul>
+<li>selected 속성의 값이 true이면 false이면 미선택</li>
+<li>ex) CheckBox 컨트롤을 FXML로 선언</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>RadioButton, ToggleButton,에는 toggleGroup 속성이 존재</p>
+<ul>
+<li>같은 ToggleGroup을 참조할 경우
+<ul>
+<li>하나의 그룹으로 묶임</li>
+<li>같은 그룹내에서는 하나의 컨트롤만 선택하는 효과가 있음</li>
+</ul>
+</li>
+<li>참조할 ToggleGroup 객체는 <code>&lt;fx:define&gt;</code> 태그를 사용해서 <code>&lt;ToggleGroup fx:id=”groupName” /&gt;</code> 작성</li>
+<li>RadioButton의 toggleGroup 속성에서 <code>$groupName</code>으로 참조</li>
+<li>ex) 2개의 RadioButton을 하나의 그룹으로 묶어서 선언</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;fx:define&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/fx:define&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>CheckBox, RadioButton, ToggleButton 컨트롤은 사용자가 클릭하면 ActionEvent가 발생하기 때문에 EventHandler로 처리가 가능</p>
+<ul>
+<li>onAction 속성을 작성해서 컨트롤러의 이벤트 처리 메소드로 연결할 수도 있다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>RadioButton 또는 ToggleButton 그룹 내에서 선택 변경을 감시하고 싶을 경우</p>
+<ul>
+<li>ToggleGroup의 selectedToggle 속성을 다음과 같이 작성</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>groupName<span style="color:#f92672">.</span><span style="color:#a6e22e">selectedToggleProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                      Toggle oldValue<span style="color:#f92672">,</span> Toggle newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span></code></pre></div><ul>
+<li>t선택이 변경되면 <code>changed()</code> 메소드가 실행되면 세 번째 매개값인 newValue에 마지막으로 선택된 컨트롤이 대입</li>
+</ul>
+</li>
+<li>
+<p>ex) CheckBox와 RadioButton의 이벤트 처리</p>
+<ul>
+<li>
+<p>버튼 컨트롤 배치와 이벤트 처리</p>
+<ul>
+<li>Root.fxml</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.CheckBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.RadioButton?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Separator?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ToggleGroup?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;420.0&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;buttonControl.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;padding&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/padding&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;center&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      		<span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk1&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택1&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk2&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택2&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/VBox&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;checkImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/geek.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Separator</span> <span style="color:#a6e22e">orientation=</span><span style="color:#e6db74">&#34;VERTICAL&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;fx:define&gt;&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;&lt;/fx:define&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad1&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;toggleGroup&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;/toggleGroup&gt;&lt;/RadioButton&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad3&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/VBox&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;radioImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            	<span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/BarChart.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/HBox&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bottom&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnExit&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleBtnExitAction&#34;</span> 
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/exit.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;BorderPane.margin&gt;&lt;Insets</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#f92672">/&gt;&lt;/BorderPane.margin&gt;</span>        
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bottom&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>버튼 컨트롤 이벤트 처리</p>
+<ul>
+<li>RootController.java</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> buttonControl<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Platform<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.CheckBox<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Toggle<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ToggleGroup<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.Image<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk2<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView checkImageView<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ToggleGroup group<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView radioImageView<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnExit<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		group<span style="color:#f92672">.</span><span style="color:#a6e22e">selectedToggleProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>					Toggle oldValue<span style="color:#f92672">,</span> Toggle newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				Image image <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#f92672">+</span> newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserData</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>				radioImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span>image<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// CheckBox 이벤트 처리
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleChkAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk1<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">()</span> <span style="color:#f92672">&amp;&amp;</span> chk2<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/glasses_hair.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk1<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/glasses.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk2<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/hair.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/geek.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Button 이벤트 처리
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnExitAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>AppMain.java</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>images</p>
+<p><img src="/images/lang_java/javaFx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+<p><img src="/images/lang_java/javaFx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li>이것이 자바다 신용권의 Java 프로그래밍 정복 - 신용권 지음, 한빛미디어 출판</li>
+<li><a href="https://docs.oracle.com/javafx">https://docs.oracle.com/javafx</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/javafx/" rel="tag">JavaFX</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/bindings_%ED%81%B4%EB%9E%98%EC%8A%A4/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Java] JavaFX, Bindings 클래스</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/">[Java] JavaFX, 버튼 컨트롤</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/bindings_%ED%81%B4%EB%9E%98%EC%8A%A4/">[Java] JavaFX, Bindings 클래스</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EB%B0%94%EC%9D%B8%EB%94%A9/">[Java] JavaFX, 속성 바인딩</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/">[Java] JavaFX, 속성 감시</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/fxml_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%ACcontroller/">[Java] JavaFX, FXML 컨트롤러(Controller)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">17</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">288</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">120</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (35)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (289)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (24)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lodash/" title="Lodash">Lodash (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (54)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-security/" title="Spring Security">Spring Security (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="view-gitChart">
+	<h4 class="widget__title">GitHub Contributions Graph</h4>
+	<div class="gitChart-content">
+		<img src="https://ghchart.rshah.org/blackJJW" border="1"/>
+	</div>
+	<br>
+</div>
+<div class="view-kaggleBadge">
+	<h4 class="widget__title">Kaggle Tier & Medals</h4>
+	<div class="kaggle-content">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/competition/light">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/dataset/light">
+		<br><br>
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/notebook/light">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/discussion/light">
+	</div>
+	<br>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
