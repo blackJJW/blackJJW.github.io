@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%EC%BB%A8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</loc>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/javafx/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-12-24T21:00:30+09:00</lastmod>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-12-25T18:00:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/</loc>
     <lastmod>2022-12-24T21:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1222,7 +1227,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98override/</loc>
+    <loc>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98@override/</loc>
     <lastmod>2022-08-01T18:00:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
