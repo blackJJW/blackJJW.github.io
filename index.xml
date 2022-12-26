@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Dec 2022 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 12:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX 다이얼로그, Popup</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/popup/</link>
+      <pubDate>Mon, 26 Dec 2022 12:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/popup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX 다이얼로그, FileChooser, DirectoryChooser</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/filechooser_directorychooser/</link>
