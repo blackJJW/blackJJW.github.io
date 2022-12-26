@@ -2,42 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primarystage_%EC%82%AC%EC%9A%A9/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_css_%EC%8A%A4%ED%83%80%EC%9D%BC/</loc>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/css/</loc>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/java/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/java/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/javafx/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
-    <lastmod>2022-12-26T14:00:30+09:00</lastmod>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2022-12-26T15:00:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primarystage_%EC%82%AC%EC%9A%A9/</loc>
     <lastmod>2022-12-26T14:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -1053,11 +1063,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/</loc>
-    <lastmod>2022-08-30T20:38:48+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/css/</loc>
     <lastmod>2022-08-30T20:38:48+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
