@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Java] JavaFX 다이얼로그, 컨트롤러에서 primaryStage 사용 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Java] JavaFX 다이얼로그, 컨트롤러에서 primaryStage 사용" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primarystage_%EC%82%AC%EC%9A%A9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-26T14:00:30+09:00" />
+<meta property="article:modified_time" content="2022-12-26T14:00:30+09:00" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65FHK1SBF9"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-65FHK1SBF9', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">Java</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/html/">
+				
+				<span class="menu__text">HTML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/linux/">
+				
+				<span class="menu__text">Linux</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Java] JavaFX 다이얼로그, 컨트롤러에서 primaryStage 사용</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-12-26T14:00:30&#43;09:00">December 26, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<ul>
+<li>컨트롤러에서 다이얼로그를 실행할 때는 소유자 윈도우가 될 primaryStage가 필요</li>
+<li>컨트롤러에서 primaryStage를 얻는 방법은 두 가지가 있다.</li>
+</ul>
+<h2 id="1-메인-클래스에서-전달하는-방법">1. 메인 클래스에서 전달하는 방법</h2>
+<ul>
+<li>
+<p>primaryStage는 메인 클래스의 <code>start()</code> 매개값으로 전달되기 때문에 <code>start()</code> 메소드에서 컨트롤러로 primaryStage를 전달하면 된다.</p>
+</li>
+<li>
+<p>FXML 루트 태그의 <code>fx:controller</code> 속성에 지정된 컨트롤러 클래스는 FXMLLoader가 FXML을 로딩할 때 객체로 생성</p>
+<ul>
+<li>FXMLLoader는 생성된 컨트롤러를 리턴하는 <code>getController()</code> 메소드를 제공
+<ul>
+<li>그러나 이 메소드는 인스턴스 메소드이기 때문에 FXMLLoader 객체가 필요</li>
+<li>FxMLLoader의 정적 메소드 <code>load()</code> 호출 코드는 인스턴스 메소드 <code>load()</code> 호출 코드로 변경해야 한다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FXMLLoader loader <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">new</span> FXMLLoader<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Parent root <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Controller 객체를 얻어 primaryStage 전달
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>RootController controller <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">getController</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>controller<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrimaryStage</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span></code></pre></div><ul>
+<li>마지막 코드를 보면 컨트롤러의 <code>setPrimaryStage()</code> 메소드를 호출하면서 primaryStage를 매개값으로 전달
+<ul>
+<li>컨트롤러 클래스는 필드와 Setter 메소드를 추가해 두어야 한다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Stage primaryStage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPrimaryStage</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">primaryStage</span> <span style="color:#f92672">=</span> primaryStage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>ex) 수정된 메인 클래스</p>
+<ul>
+<li>AppMain.java</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		FXMLLoader loader <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> FXMLLoader<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>		Parent root <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		RootController controller <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">getController</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		controller<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrimaryStage</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="2-컨테이너-또는-컨트롤로부터-얻는-방법">2. 컨테이너 또는 컨트롤로부터 얻는 방법</h2>
+<ul>
+<li>
+<p>컨테이너나 컨트롤의 <code>getScene()</code> 메소드는 자신이 포함된 Scene 객체를 리턴</p>
+</li>
+<li>
+<p>Scene의 <code>getWindow()</code> 메소드는 자신을 보여주는 Stage 객체를 리턴</p>
+<ul>
+<li>다음과 같은 코드를 이용하면 컨트롤러에서 primaryStage를 얻을 수 있다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stage primaryStage <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Stage<span style="color:#f92672">)</span> <span style="color:#960050;background-color:#1e0010">컨트롤</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getScene</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getWindow</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div><ul>
+<li>주의할 점은 위 코드는 <code>initialize()</code> 메소드 안에서는 사용 불가
+<ul>
+<li>아직 primaryStage가 생성되지 않았기 때문</li>
+<li>메인 클래스의 <code>start()</code> 메소드에서 Scene 객체를 생성하고, primaryStage에 Scene을 설정해야만 위 코드가 정상적으로 동작</li>
+<li>이벤트 처리 메소드 내에서 위 코드를 사용해야만 한다.</li>
+</ul>
+</li>
+<li>ex) Button을 클릭했을 때 실행하는 메소드가 <code>handleButton()</code>이라면 <code>handleButton()</code> 메소드에서 primaryStage를 얻어야 한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button button<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleButton</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Stage primaryStage <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Stage<span style="color:#f92672">)</span> button<span style="color:#f92672">.</span><span style="color:#a6e22e">getScene</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getWindow</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+</li>
+<li>
+<p>ex) 다섯 개의 버튼을 배치하고, 다이얼로그를 실행하도록 함</p>
+<ul>
+<li>다이얼로그
+<ul>
+<li>파일 오픈 다이얼로그</li>
+<li>파일 저장 다이얼로그</li>
+<li>디렉토리 선택 다이얼로그</li>
+<li>팝업</li>
+<li>커스텀 다이얼로그</li>
+</ul>
+</li>
+<li>선언적 레이아웃
+<ul>
+<li>Root.fxml</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;dialog.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleOpenFileChooser&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Open FileChooser&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleSaveFileChooser&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Save FileChooser&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleDirectoryChooser&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;DirectoryChooser&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPopup&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handlePopup&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Popup&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnCustom&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleCustom&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Custom&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;padding&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/padding&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/HBox&gt;</span>
+</span></span></code></pre></div><ul>
+<li>Popup.fxml</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.*?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> 
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;-fx-background-color: black; -fx-background-radius: 20;&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;imgMessage&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;30.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;30.0&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;lblMessage&#34;</span> <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;-fx-text-fill: white;&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      	<span style="color:#f92672">&lt;HBox.margin&gt;</span>
+</span></span><span style="display:flex;"><span>      		<span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;5.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;5.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      	<span style="color:#f92672">&lt;/HBox.margin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/Label&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/HBox&gt;</span>
+</span></span></code></pre></div><ul>
+<li>Custom_dialog.fxml</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;50.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;50.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;15.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/dialog-info.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;btnOk&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;336.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;104.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;확인&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;txtTitle&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;87.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;33.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      		 <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;290.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/AnchorPane&gt;</span>
+</span></span></code></pre></div><ul>
+<li>컨트롤러
+<ul>
+<li>RootController.java</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.File<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.Image<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.layout.AnchorPane<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.layout.HBox<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.DirectoryChooser<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.FileChooser<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.FileChooser.ExtensionFilter<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Modality<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Popup<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.StageStyle<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Stage primaryStage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPrimaryStage</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">primaryStage</span> <span style="color:#f92672">=</span> primaryStage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 파일 열기 다이얼로그 실행
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleOpenFileChooser</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		FileChooser fileChooser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileChooser<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		fileChooser<span style="color:#f92672">.</span><span style="color:#a6e22e">getExtensionFilters</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ExtensionFilter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Text Files&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.txt&#34;</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ExtensionFilter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Image Files&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.png&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.jpg&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.gif&#34;</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ExtensionFilter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Audio Files&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.wav&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.mp3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.acc&#34;</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ExtensionFilter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;All Files&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.*&#34;</span><span style="color:#f92672">)</span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		File selectedFile <span style="color:#f92672">=</span> fileChooser<span style="color:#f92672">.</span><span style="color:#a6e22e">showOpenDialog</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>selectedFile <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>selectedFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getPath</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 파일 저장 다이얼로그 실행
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleSaveFileChooser</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		FileChooser fileChooser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileChooser<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		fileChooser<span style="color:#f92672">.</span><span style="color:#a6e22e">getExtensionFilters</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ExtensionFilter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;All Files&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;*.*&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>		File selectedFile <span style="color:#f92672">=</span> fileChooser<span style="color:#f92672">.</span><span style="color:#a6e22e">showSaveDialog</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>selectedFile <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>selectedFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getPath</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 디렉토리 선택 다이얼로그 실행
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleDirectoryChooser</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		DirectoryChooser directoryChooser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DirectoryChooser<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		File selectedDir <span style="color:#f92672">=</span> directoryChooser<span style="color:#f92672">.</span><span style="color:#a6e22e">showDialog</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>selectedDir <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>selectedDir<span style="color:#f92672">.</span><span style="color:#a6e22e">getPath</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Popup 다이얼로그 실행
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handlePopup</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Popup popup <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Popup<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		HBox hbox <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>HBox<span style="color:#f92672">)</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Popup.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>		ImageView imageView <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ImageView<span style="color:#f92672">)</span> hbox<span style="color:#f92672">.</span><span style="color:#a6e22e">lookup</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#imgMessage&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		imageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/dialog-info.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		imageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnMouseClicked</span><span style="color:#f92672">(</span> event <span style="color:#f92672">-&gt;</span> popup<span style="color:#f92672">.</span><span style="color:#a6e22e">hide</span><span style="color:#f92672">()</span> <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		Label lblMessage <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Label<span style="color:#f92672">)</span> hbox<span style="color:#f92672">.</span><span style="color:#a6e22e">lookup</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#lblMessage&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		lblMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;메세지가 왔습니다.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		popup<span style="color:#f92672">.</span><span style="color:#a6e22e">getContent</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>hbox<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		popup<span style="color:#f92672">.</span><span style="color:#a6e22e">setAutoHide</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		popup<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 커스텀 다이얼로그 실행
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleCustom</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Stage dialog <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stage<span style="color:#f92672">(</span>StageStyle<span style="color:#f92672">.</span><span style="color:#a6e22e">UTILITY</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">initModality</span><span style="color:#f92672">(</span>Modality<span style="color:#f92672">.</span><span style="color:#a6e22e">WINDOW_MODAL</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">initOwner</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;확인&#34;</span><span style="color:#f92672">);</span> <span style="color:#75715e">// 다이얼로그 제목
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>		AnchorPane anchorPane <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">(</span>AnchorPane<span style="color:#f92672">)</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Custom_dialog.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Label txtTitle <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Label<span style="color:#f92672">)</span> anchorPane<span style="color:#f92672">.</span><span style="color:#a6e22e">lookup</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#txtTitle&#34;</span><span style="color:#f92672">);</span> <span style="color:#75715e">// 메시지 설정
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		txtTitle<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;확인하셨습니까?&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 버튼 이벤트 처리
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		Button btnOk <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Button<span style="color:#f92672">)</span> anchorPane<span style="color:#f92672">.</span><span style="color:#a6e22e">lookup</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#btnOk&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		btnOk<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span> event <span style="color:#f92672">-&gt;</span> dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">()</span> <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>anchorPane<span style="color:#f92672">);</span> <span style="color:#75715e">// Scene 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span> <span style="color:#75715e">// 다이얼로그에 Scene 설정
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setResizable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span> <span style="color:#75715e">// 크기를 변경하지 못하도록 설정
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>  <span style="color:#75715e">// 다이얼로그 띄우기
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>메인 클래스
+<ul>
+<li>AppMain.java</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		FXMLLoader loader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FXMLLoader<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>		Parent root <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		RootController controller <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span><span style="color:#a6e22e">getController</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		controller<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrimaryStage</span><span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled.png" alt="Untitled"></p>
+<p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled%201.png" alt="Untitled"></p>
+<p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled%202.png" alt="Untitled"></p>
+<p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled%203.png" alt="Untitled"></p>
+<p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled%204.png" alt="Untitled"></p>
+<p><img src="/images/lang_java/javaFx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primaryStage_%EC%82%AC%EC%9A%A9/Untitled%205.png" alt="Untitled"></p>
+</li>
+</ul>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li>이것이 자바다 신용권의 Java 프로그래밍 정복 - 신용권 지음, 한빛미디어 출판</li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/javafx/" rel="tag">JavaFX</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%EC%BB%A4%EC%8A%A4%ED%85%80_%EB%8B%A4%EC%9D%B4%EC%96%BC%EB%A1%9C%EA%B7%B8/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Java] JavaFX 다이얼로그, 커스텀 다이얼로그</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%97%90%EC%84%9C_primarystage_%EC%82%AC%EC%9A%A9/">[Java] JavaFX 다이얼로그, 컨트롤러에서 primaryStage 사용</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/%EC%BB%A4%EC%8A%A4%ED%85%80_%EB%8B%A4%EC%9D%B4%EC%96%BC%EB%A1%9C%EA%B7%B8/">[Java] JavaFX 다이얼로그, 커스텀 다이얼로그</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/popup/">[Java] JavaFX 다이얼로그, Popup</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/filechooser_directorychooser/">[Java] JavaFX 다이얼로그, FileChooser, DirectoryChooser</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/javafx/javafx_%EB%8B%A4%EC%9D%B4%EC%96%BC%EB%A1%9C%EA%B7%B8/">[Java] JavaFX 다이얼로그</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">17</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">298</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">120</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (35)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (299)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (34)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lodash/" title="Lodash">Lodash (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (54)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-security/" title="Spring Security">Spring Security (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="view-gitChart">
+	<h4 class="widget__title">GitHub Contributions Graph</h4>
+	<div class="gitChart-content">
+		<img src="https://ghchart.rshah.org/blackJJW" border="1"/>
+	</div>
+	<br>
+</div>
+<div class="view-kaggleBadge">
+	<h4 class="widget__title">Kaggle Tier & Medals</h4>
+	<div class="kaggle-content">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/competition/light">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/dataset/light">
+		<br><br>
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/notebook/light">
+		<img src="https://road-to-kaggle-grandmaster.vercel.app/api/badges/blackjjw/discussion/light">
+	</div>
+	<br>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
