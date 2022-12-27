@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Dec 2022 10:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Dec 2022 11:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] JavaFX CSS 스타일, border 속성</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/border_%EC%86%8D%EC%84%B1/</link>
+      <pubDate>Tue, 27 Dec 2022 11:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/border_%EC%86%8D%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] JavaFX CSS 스타일, 외부 CSS 파일</title>
       <link>https://blackjjw.github.io/post/lang_java/study/javafx/%EC%99%B8%EB%B6%80_css_%ED%8C%8C%EC%9D%BC/</link>
