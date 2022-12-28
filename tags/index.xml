@@ -8,15 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Dec 2022 15:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CSS</title>
-      <link>https://blackjjw.github.io/tags/css/</link>
-      <pubDate>Wed, 28 Dec 2022 15:00:30 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>https://blackjjw.github.io/tags/java/</link>
       <pubDate>Wed, 28 Dec 2022 15:00:30 +0900</pubDate>
@@ -31,6 +22,15 @@
       <pubDate>Wed, 28 Dec 2022 15:00:30 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/javafx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://blackjjw.github.io/tags/css/</link>
+      <pubDate>Wed, 28 Dec 2022 14:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/css/</guid>
       <description></description>
     </item>
     
