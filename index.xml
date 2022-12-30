@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2022 15:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Dec 2022 16:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] OutputStream</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/outputstream/</link>
+      <pubDate>Fri, 30 Dec 2022 16:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/outputstream/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] InputStream</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/inputstream/</link>
