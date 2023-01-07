@@ -491,7 +491,30 @@ format(수, &ldquo;.2f&rdquo;) 를 사용하면 원하는 자리까지의 정확
 <div class="view-gitChart">
 	<h4 class="widget__title">GitHub Contributions Graph</h4>
 	<div class="gitChart-content">
-		<img src="https://ghchart.rshah.org/blackJJW" border="1"/>
+		
+		
+		<script
+		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+		></script>
+
+		
+		<link
+		   rel="stylesheet"
+		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+		/>
+
+		
+		<div class="calendar">
+			
+			Loading the data just for you.
+		</div>
+
+		<script>
+			GitHubCalendar(".calendar", "blackJJW");
+			
+			GitHubCalendar(".calendar", "blackJJW", { responsive: true });
+		</script>
+
 	</div>
 	<br>
 </div>
