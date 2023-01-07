@@ -806,8 +806,10 @@ Epoch 10/20
 		</div>
 
 		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false });
-
+			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
+        		
+        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
+    		});
 		</script>
 
 	</div>

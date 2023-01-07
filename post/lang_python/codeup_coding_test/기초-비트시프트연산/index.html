@@ -433,8 +433,10 @@ print(a &laquo; b)  #210 = 1024 가 출력된다.</p>
 		</div>
 
 		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false });
-
+			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
+        		
+        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
+    		});
 		</script>
 
 	</div>

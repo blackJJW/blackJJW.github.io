@@ -715,8 +715,10 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 		</div>
 
 		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false });
-
+			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
+        		
+        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
+    		});
 		</script>
 
 	</div>
