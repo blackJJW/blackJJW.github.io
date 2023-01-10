@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 성능 향상 보조 스트림</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/</link>
+      <pubDate>Tue, 10 Jan 2023 21:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 문자 변환 보조 스트림</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EB%AC%B8%EC%9E%90_%EB%B3%80%ED%99%98_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/</link>
