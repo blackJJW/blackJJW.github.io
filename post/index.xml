@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jan 2023 14:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 15:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] IP 주소와 포트(Port)</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/ip_%EC%A3%BC%EC%86%8C%EC%99%80_%ED%8F%AC%ED%8A%B8port/</link>
+      <pubDate>Sun, 15 Jan 2023 15:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/ip_%EC%A3%BC%EC%86%8C%EC%99%80_%ED%8F%AC%ED%8A%B8port/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] 서버와 클라이언트</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%84%9C%EB%B2%84%EC%99%80_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8/</link>
