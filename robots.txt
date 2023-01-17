@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /page/
 
 Sitemap: https://blackjjw.github.io/sitemap.xml
