@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jan 2023 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jan 2023 23:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] TCP 네트워킹, ServerSocket 생성과 연결 수락</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/serversocket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%88%98%EB%9D%BD/</link>
+      <pubDate>Wed, 18 Jan 2023 23:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/serversocket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%88%98%EB%9D%BD/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] TCP 네트워킹, ServerSocket과 Socket의 용도</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/serversocket%EA%B3%BC_socket%EC%9D%98_%EC%9A%A9%EB%8F%84/</link>
