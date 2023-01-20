@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Java] TCP 네트워킹, Socket 데이터 통신 - Black_JJW&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="[Java] TCP 네트워킹, Socket 데이터 통신" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/socket_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%86%B5%EC%8B%A0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-20T21:00:30+09:00" />
+<meta property="article:modified_time" content="2023-01-20T21:00:30+09:00" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65FHK1SBF9"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-65FHK1SBF9', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Black_JJW&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Black_JJW&#39;s Blog</div>
+					<div class="logo__tagline">Create, Read, Update, Delete</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/python/">
+				
+				<span class="menu__text">Python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/java/">
+				
+				<span class="menu__text">Java</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/html/">
+				
+				<span class="menu__text">HTML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/javascript/">
+				
+				<span class="menu__text">JavaScript</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/algorithm/">
+				
+				<span class="menu__text">Algorithm</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/sql/">
+				
+				<span class="menu__text">sql</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/ml/">
+				
+				<span class="menu__text">ML</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/dl/">
+				
+				<span class="menu__text">DL</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/statistics/">
+				
+				<span class="menu__text">statistics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/setting/">
+				
+				<span class="menu__text">Setting</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/kaggle/">
+				
+				<span class="menu__text">Kaggle</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/linux/">
+				
+				<span class="menu__text">Linux</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[Java] TCP 네트워킹, Socket 데이터 통신</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-01-20T21:00:30&#43;09:00">January 20, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<ul>
+<li>
+<p>클라이언트가 연결 요청(<code>connect()</code>)하고 서버가 연결 수락(<code>accept()</code>)했을 경우</p>
+<ul>
+<li>양쪽의 Socket 객체로부터 각각 입력 스트림(InputStream)과 출력 스트림(OutputStream)을 얻을 수 있다.</li>
+</ul>
+<p><img src="/images/lang_java/inputOutput/Socket_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%86%B5%EC%8B%A0/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p>Socket으로부터 InputStream과 OutputStream을 얻는 코드</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 입력 스트림 얻기
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>InputStream is <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 출력 스트림 얻기
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>OutputStream os <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p>상대방에게 데이터를 보내기 위해서는 보낼 데이터를 <code>byte[]</code> 배열로 생성</p>
+<ul>
+<li>이것을 매개값으로 해서 OutputStream의 <code>write()</code> 메소드를 호출하면 된다.</li>
+</ul>
+</li>
+<li>
+<p>문자열을 UTF-8로 인코딩한 바이트 배열을 얻어내고, <code>write()</code> 메소드로 전송</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;보낼 데이터&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>OutputStream outputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p>상대방이 보낸 데이터를 받기 위해서는 받은 데이터를 저장할 <code>byte[]</code> 배열을 하나 생성</p>
+<ul>
+<li>이것을 매개값으로 해서 InputStream의 <code>read()</code> 메소드를 호출</li>
+<li><code>read()</code> 메소드는 읽은 데이터를 byte[] 배열에 저장하고 읽은 바이트 수를 리턴</li>
+<li>다음은 데이터를 읽고 UTF-8로 디코딩한 문자열을 얻는 코드</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">100</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>InputStream inputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>byteArr<span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
+<li>
+<p>ex) 연결 성공 후</p>
+<ol>
+<li>클라이언트가 먼저 “Hello Server”를 서버로 보낸다.</li>
+<li>서버가 이 데이터를 받는다.</li>
+<li>“Hello Client”를 클라이언트로 보낸다.</li>
+<li>클라이언트가 이 데이터를 받는다.</li>
+</ol>
+<ul>
+<li>ClientEx.java</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.InputStream<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.OutputStream<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.InetSocketAddress<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientEx</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span> <span style="color:#75715e">// Socket 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 연결 요청 ] &#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 연결 요청
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5001</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 연결 성공 ] &#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> bytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>			String message <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 1. -------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			OutputStream os <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Server&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>			bytes <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			os<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>bytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			os<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 데이터 보내기 성공 ] &#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">//-----------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 4. -------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			InputStream is <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			bytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">100</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> is<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>bytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			message <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>bytes<span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 데이터 받기 성공 ] &#34;</span> <span style="color:#f92672">+</span> message<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			os<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			is<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 연결되어 있을 경우
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 연결 끊기
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>IOException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>ServerEx.java</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.InputStream<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.OutputStream<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.InetSocketAddress<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.ServerSocket<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServerEx</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		ServerSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// ServerSocket 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5001</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 기다림 ]&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 클라이언트 연결 수락
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				Socket socket <span style="color:#f92672">=</span> serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				InetSocketAddress isa <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>InetSocketAddress<span style="color:#f92672">)</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getRemoteSocketAddress</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 수락함 ]&#34;</span> <span style="color:#f92672">+</span> isa<span style="color:#f92672">.</span><span style="color:#a6e22e">getHostName</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> bytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>				String message <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 2.-------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				InputStream is <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				bytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">100</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> is<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>bytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>				message <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>bytes<span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [데이터 받기 성공]&#34;</span> <span style="color:#f92672">+</span> message<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">//--------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 3.-----------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				OutputStream os <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Client&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>				bytes <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>				os<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>bytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>				os<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 데이터 보내기 성공 ] &#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				is<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				os<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ServerSocket이 닫혀있지 않을 경우
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// ServerSocket 닫기
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/Socket_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%86%B5%EC%8B%A0/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>ServerEx.java부터 실행하고 ClientEx.java를 실행</li>
+</ul>
+</li>
+<li>
+<p>데이터를 받기 위해 InputStream의 <code>read()</code> 메소드를 호출하면 상대발이 데이터를 보내기 전까지는 블로킹(blocking)된다.</p>
+<ul>
+<li><code>read()</code> 메소드가 블로킹 해제되고 리턴되는 경우는 다음 세 가지</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>블로킹이 해제되는 경우</th>
+<th>리턴값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상대방이 데이터를 보냄</td>
+<td>읽은 바이트 수</td>
+</tr>
+<tr>
+<td>상대방이 정상적으로 Socket의 close()를 호출</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>상대방이 비정상적으로 종료</td>
+<td>IOException 발생</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>상대방이 정상적으로 Socket의 <code>close()</code>를 호출하고 연결을 끊었을 경우와 비정상적으로 종료했을 경우</p>
+<ul>
+<li>모두 예외 처리를 해서 이쪽도 Socket을 닫기 위해 <code>close()</code> 메소드를 호출해야 한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 상대방이 비정상적으로 종료했을 경우 IOException 발생
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 상대방이 정상적으로 Socket의 close()를 호출했을 경우
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>readByteCount <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IOException<span style="color:#f92672">();</span> <span style="color:#75715e">// 강제로 IOException 발생시킴
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e2<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li>이것이 자바다 신용권의 Java 프로그래밍 정복 - 신용권 지음, 한빛미디어 출판</li>
+</ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/java/" rel="tag">Java</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/network/" rel="tag">Network</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About JUNG JIN WOO</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Java] TCP 네트워킹, Socket 생성과 연결 요청</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/inputoutput/socket_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%86%B5%EC%8B%A0/">[Java] TCP 네트워킹, Socket 데이터 통신</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/inputoutput/socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/">[Java] TCP 네트워킹, Socket 생성과 연결 요청</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/inputoutput/serversocket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%88%98%EB%9D%BD/">[Java] TCP 네트워킹, ServerSocket 생성과 연결 수락</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/inputoutput/serversocket%EA%B3%BC_socket%EC%9D%98_%EC%9A%A9%EB%8F%84/">[Java] TCP 네트워킹, ServerSocket과 Socket의 용도</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lang_java/study/inputoutput/tcp_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9/">[Java] TCP 네트워킹</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/algorithm/">Algorithm</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">17</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/dl/">DL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">9</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">341</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">JavaScript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">120</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/kaggle/">Kaggle</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ml/">ML</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">14</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/projects/">Projects</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/sql/">SQL</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/statistics/">Statistics</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="Algorithm">Algorithm (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/chatbot/" title="Chatbot">Chatbot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/codeuppython/" title="CodeUp(Python)">CodeUp(Python) (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding-test/" title="Coding Test">Coding Test (7)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="CSS">CSS (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/db/" title="DB">DB (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dl/" title="DL">DL (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask/" title="Flask">Flask (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="HTML">HTML (35)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java/" title="Java">Java (342)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (48)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kaggle/" title="Kaggle">Kaggle (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lodash/" title="Lodash">Lodash (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ml/" title="ML">ML (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="Network">Network (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (54)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/spring-security/" title="Spring Security">Spring Security (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/statistics/" title="Statistics">Statistics (2)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/blackJJW" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jjinwoo92@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jjinwoo92@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="view-gitChart">
+	<h4 class="widget__title">GitHub Contributions Graph</h4>
+	<div class="gitChart-content">
+		
+		
+		<script
+		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+		></script>
+
+		
+		<link
+		   rel="stylesheet"
+		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+		/>
+
+		
+		<div class="calendar">
+			
+			Loading the data just for you.
+		</div>
+
+		<script>
+			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
+        		
+        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
+    		});
+		</script>
+
+	</div>
+	<br>
+</div>
+
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Black_JJW&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</body>
+</html>
