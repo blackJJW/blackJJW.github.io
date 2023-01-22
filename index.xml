@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Jan 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2023 22:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] TCP 네트워킹, 채팅 클라이언트 구현</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%B1%84%ED%8C%85_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8_%EA%B5%AC%ED%98%84/</link>
+      <pubDate>Sun, 22 Jan 2023 22:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%B1%84%ED%8C%85_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8_%EA%B5%AC%ED%98%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] TCP 네트워킹, 채팅 서버 구현</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%B1%84%ED%8C%85_%EC%84%9C%EB%B2%84_%EA%B5%AC%ED%98%84/</link>
