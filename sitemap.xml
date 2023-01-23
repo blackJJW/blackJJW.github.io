@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blackjjw.github.io/post/lang_java/study/nio/nio_%EC%86%8C%EA%B0%9C/</loc>
+    <lastmod>2023-01-23T12:00:30+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%88%98%EC%8B%A0%EC%9E%90_%EA%B5%AC%ED%98%84/</loc>
     <lastmod>2023-01-23T12:00:30+09:00</lastmod>
     <changefreq>daily</changefreq>
