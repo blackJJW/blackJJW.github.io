@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 17:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Jan 2023 10:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, 버퍼</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/%EB%B2%84%ED%8D%BC/</link>
+      <pubDate>Tue, 24 Jan 2023 10:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%EB%B2%84%ED%8D%BC/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] NIO, 와치 서비스(WatchService)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/nio/%EC%99%80%EC%B9%98_%EC%84%9C%EB%B9%84%EC%8A%A4watchservice/</link>
