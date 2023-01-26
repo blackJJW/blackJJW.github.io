@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Jan 2023 12:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Jan 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, Buffer 메소드</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/buffer_%EB%A9%94%EC%86%8C%EB%93%9C/</link>
+      <pubDate>Thu, 26 Jan 2023 21:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/buffer_%EB%A9%94%EC%86%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] NIO, Buffer의 위치 속성</title>
       <link>https://blackjjw.github.io/post/lang_java/study/nio/buffer%EC%9D%98_%EC%9C%84%EC%B9%98_%EC%86%8D%EC%84%B1/</link>
