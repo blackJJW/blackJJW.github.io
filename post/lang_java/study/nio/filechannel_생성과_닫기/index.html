@@ -188,7 +188,7 @@ if (!doNotTrack) {
 <li>IO의 FileInputStream, FileOutputStream의 <code>getChannel()</code> 메소드를 호출해서 얻을 수도 있다.</li>
 <li><code>open()</code> 메소드로 FileChannel을 얻는 방법</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">FileChannel</span> <span style="color:#a6e22e">fileChannel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FileChannel</span>.<span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">Path</span> <span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">OpenOption</span>... <span style="color:#a6e22e">options</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileChannel fileChannel <span style="color:#f92672">=</span> FileChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span>Path path<span style="color:#f92672">,</span> OpenOption<span style="color:#f92672">...</span> options<span style="color:#f92672">);</span>
 </span></span></code></pre></div><ul>
 <li>첫 번째 path 매개값은 열거나, 생성하고자 하는 파일의 경로를 Path 객체로 생성해서 지정</li>
 <li>두 번째 options 매개값은 열기 옵션 값
@@ -238,23 +238,23 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) “C:\Temp\file.txt” 파일을 생성하고 어떤 내용을 쓰고 싶다면 매개값을 지정</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">FileChannel</span> <span style="color:#a6e22e">fileChannel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FileChannel</span>.<span style="color:#a6e22e">open</span>(
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Paths</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>),
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">StandardOpenOption</span>.<span style="color:#a6e22e">CREATE_NEW</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">StandardOpenOption</span>.<span style="color:#a6e22e">WRITE</span>
-</span></span><span style="display:flex;"><span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileChannel fileChannel <span style="color:#f92672">=</span> FileChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>	Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>	StandardOpenOption<span style="color:#f92672">.</span><span style="color:#a6e22e">CREATE_NEW</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>	StandardOpenOption<span style="color:#f92672">.</span><span style="color:#a6e22e">WRITE</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">);</span>
 </span></span></code></pre></div></li>
 <li>
 <p>ex) “C:\Temp\file.txt” 파일을 읽고, 쓸 수 있도록 FileChannel을 생성</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">FileChannel</span> <span style="color:#a6e22e">fileChannel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FileChannel</span>.<span style="color:#a6e22e">open</span>(
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Paths</span>.<span style="color:#a6e22e">get</span>(<span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">C</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">/Temp/file.txt),</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">StandardOpenOption</span>.<span style="color:#a6e22e">READ</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">StandardOpenOption</span>.<span style="color:#a6e22e">WRITE</span>
-</span></span><span style="display:flex;"><span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileChannel fileChannel <span style="color:#f92672">=</span> FileChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>	Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>	StandardOpenOption<span style="color:#f92672">.</span><span style="color:#a6e22e">READ</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>	StandardOpenOption<span style="color:#f92672">.</span><span style="color:#a6e22e">WRITE</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">);</span>
 </span></span></code></pre></div></li>
 <li>
 <p>FileChannel을 더 이상 이용하지 않을 경우에는 <code>close()</code> 메소드를 호출해서 닫아주어야 한다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">fileChannel</span>.<span style="color:#a6e22e">close</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>fileChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
 </span></span></code></pre></div></li>
 </ul>
 <hr>
