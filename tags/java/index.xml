@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jan 2023 13:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 14:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, AsynchronousFileChannel 생성과 닫기</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/asynchronousfilechannel_%EC%83%9D%EC%84%B1%EA%B3%BC_%EB%8B%AB%EA%B8%B0/</link>
+      <pubDate>Sat, 28 Jan 2023 14:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/asynchronousfilechannel_%EC%83%9D%EC%84%B1%EA%B3%BC_%EB%8B%AB%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] NIO, 파일 비동기 채널</title>
       <link>https://blackjjw.github.io/post/lang_java/study/nio/%ED%8C%8C%EC%9D%BC_%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%B1%84%EB%84%90/</link>
