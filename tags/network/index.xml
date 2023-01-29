@@ -6,7 +6,16 @@
     <description>Recent content in Network on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 12:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 15:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, TCP 블로킹 채널, 서버소켓 채널과 소켓 채널의 용도</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/%EC%84%9C%EB%B2%84%EC%86%8C%EC%BC%93_%EC%B1%84%EB%84%90%EA%B3%BC_%EC%86%8C%EC%BC%93_%EC%B1%84%EB%84%90%EC%9D%98_%EC%9A%A9%EB%8F%84/</link>
+      <pubDate>Sun, 29 Jan 2023 15:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%EC%84%9C%EB%B2%84%EC%86%8C%EC%BC%93_%EC%B1%84%EB%84%90%EA%B3%BC_%EC%86%8C%EC%BC%93_%EC%B1%84%EB%84%90%EC%9D%98_%EC%9A%A9%EB%8F%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] UDP 네트워킹, 수신자 구현</title>
       <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%88%98%EC%8B%A0%EC%9E%90_%EA%B5%AC%ED%98%84/</link>
