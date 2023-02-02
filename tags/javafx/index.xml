@@ -6,7 +6,16 @@
     <description>Recent content in JavaFX on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jan 2023 17:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, TCP 블로킹 채널, 채팅 서버 구현</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/%EC%B1%84%ED%8C%85_%EC%84%9C%EB%B2%84_%EA%B5%AC%ED%98%84/</link>
+      <pubDate>Thu, 02 Feb 2023 21:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%EC%B1%84%ED%8C%85_%EC%84%9C%EB%B2%84_%EA%B5%AC%ED%98%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] NIO, 와치 서비스(WatchService)</title>
       <link>https://blackjjw.github.io/post/lang_java/study/nio/%EC%99%80%EC%B9%98_%EC%84%9C%EB%B9%84%EC%8A%A4watchservice/</link>
