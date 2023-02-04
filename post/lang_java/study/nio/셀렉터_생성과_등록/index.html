@@ -253,7 +253,7 @@ if (!doNotTrack) {
 <p>ServerSocketChannel이 Selector에 자신의 작업 유형을 등록하는 코드</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SelectionKey selectionKey 
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">=</span> serverSocketChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>selector<span style="color:#f92672">,</span> 
-</span></span><span style="display:flex;"><span>														SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_ACCEPT</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                           SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_ACCEPT</span><span style="color:#f92672">);</span>
 </span></span></code></pre></div><ul>
 <li>ServerSocketChannel은 클라이언트 연결 수락 작업을 하므로 작업 유형은 <code>OP_ACCEPT</code>로 지정</li>
 </ul>
@@ -262,13 +262,13 @@ if (!doNotTrack) {
 <p>SocketChannel이 Selector에 자신의 작업 유형을 등록하는 코드</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>SelectionKey selectionKey 
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">=</span> socketChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>selector<span style="color:#f92672">,</span> 
-</span></span><span style="display:flex;"><span>											SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_CONNECT</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                     SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_CONNECT</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>SelectionKey selectionKey 
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">=</span> socketChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>selector<span style="color:#f92672">,</span> 
-</span></span><span style="display:flex;"><span>											SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_READ</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                     SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_READ</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>SelectionKey selectionKey 
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">=</span> socketChannel<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>selector<span style="color:#f92672">,</span> 
-</span></span><span style="display:flex;"><span>											SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_WRITE</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                     SelectionKey<span style="color:#f92672">.</span><span style="color:#a6e22e">OP_WRITE</span><span style="color:#f92672">);</span>
 </span></span></code></pre></div></li>
 <li>
 <p>주의할 점은 동일한 SocketChannel로 두 가지 이상의 작업 유형을 등록할 수 없다.</p>
