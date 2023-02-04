@@ -6,7 +6,16 @@
     <description>Recent content in Java on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Feb 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 13:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] NIO, TCP 블로킹 채널, 블로킹과 인터럽트</title>
+      <link>https://blackjjw.github.io/post/lang_java/study/nio/%EB%B8%94%EB%A1%9C%ED%82%B9%EA%B3%BC_%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8/</link>
+      <pubDate>Sat, 04 Feb 2023 13:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%EB%B8%94%EB%A1%9C%ED%82%B9%EA%B3%BC_%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Java] NIO, TCP 블로킹 채널, 채팅 클라이언트 구현</title>
       <link>https://blackjjw.github.io/post/lang_java/study/nio/%EC%B1%84%ED%8C%85_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8_%EA%B5%AC%ED%98%84/</link>

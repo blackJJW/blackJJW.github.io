@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Feb 2023 21:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 13:00:30 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
       <link>https://blackjjw.github.io/tags/java/</link>
-      <pubDate>Fri, 03 Feb 2023 21:00:30 +0900</pubDate>
+      <pubDate>Sat, 04 Feb 2023 13:00:30 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://blackjjw.github.io/tags/network/</link>
+      <pubDate>Sat, 04 Feb 2023 13:00:30 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/network/</guid>
       <description></description>
     </item>
     
@@ -22,15 +31,6 @@
       <pubDate>Fri, 03 Feb 2023 21:00:30 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/javafx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://blackjjw.github.io/tags/network/</link>
-      <pubDate>Fri, 03 Feb 2023 21:00:30 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/network/</guid>
       <description></description>
     </item>
     
