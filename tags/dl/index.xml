@@ -6,7 +6,16 @@
     <description>Recent content in DL on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 May 2022 17:30:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/dl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Mar 2023 21:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/dl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL] 퍼셉트론 - 퍼셉트론이란?</title>
+      <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/</link>
+      <pubDate>Thu, 23 Mar 2023 21:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL][Book][혼공 머신러닝&#43;딥러닝] ch9-3 LSTM과 GRU 셀</title>
       <link>https://blackjjw.github.io/post/dl/book/chapter9_3/</link>
