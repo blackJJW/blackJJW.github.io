@@ -6,7 +6,16 @@
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Mar 2023 22:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Mar 2023 22:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DL] 퍼셉트론 - 퍼셉트론 구현</title>
+      <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</link>
+      <pubDate>Fri, 24 Mar 2023 22:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL] 퍼셉트론 - 단순한 논리 회로</title>
       <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/</link>
@@ -5018,26 +5027,6 @@
       
       <guid>https://blackjjw.github.io/post/ml/book/chapter1_3/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</guid>
-      <description>&lt;p&gt;description: &amp;quot;&amp;quot;
-date: &amp;ldquo;2023-03-24T22:00:45+09:00&amp;rdquo;
-thumbnail: &amp;quot;&amp;quot;
-categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;DL&amp;rdquo;
-tags:&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;DL&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Python&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;NumPy&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;</description>
     </item>
     
   </channel>
