@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%B1%84%ED%8C%85_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8_%EA%B5%AC%ED%98%84/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-22T22:00:30+09:00" />
 <meta property="article:modified_time" content="2023-01-22T22:00:30+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -174,41 +173,41 @@ if (!doNotTrack) {
 <ul>
 <li>채팅 클라이언트</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// JavaFX 메인 클래스로 만들기 위해 Application을 상속
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientEx</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 클라이언트 통신을 위해 Socket 필드를 선언 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	Socket socket<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// startClient() 메소드는 [start] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 연결 시작 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// stopClient() 메소드는 [stop] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stopClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 연결 끊기 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// receive() 메소드는 서버에서 보낸 데이터를 받는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">receive</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 데이터 받기 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// send() 메소드는 [send] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 서버로 데이터를 보낸다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>String data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 데이터 전송 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/////////////////////////////////
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// UI 생성 코드는 레이아웃을 구성하고 ClientEx를 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// UI 생성 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">// JavaFX 메인 클래스로 만들기 위해 Application을 상속
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientEx</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 클라이언트 통신을 위해 Socket 필드를 선언 
+</span><span style="color:#75715e"></span>	Socket socket<span style="color:#f92672">;</span>
+
+	<span style="color:#75715e">// startClient() 메소드는 [start] 버튼을 클릭하면 호출
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 연결 시작 코드
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// stopClient() 메소드는 [stop] 버튼을 클릭하면 호출
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stopClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 연결 끊기 코드
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// receive() 메소드는 서버에서 보낸 데이터를 받는다.
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">receive</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 데이터 받기 코드
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// send() 메소드는 [send] 버튼을 클릭하면 호출
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 서버로 데이터를 보낸다.
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>String data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 데이터 전송 코드
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">/////////////////////////////////
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// UI 생성 코드는 레이아웃을 구성하고 ClientEx를 실행
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// UI 생성 코드
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
 <li>
 <p>실행 화면에서 [start] 버튼을 클릭하면 <code>startClient()</code> 메소드가 호출</p>
 <ul>
@@ -229,49 +228,49 @@ if (!doNotTrack) {
 <ul>
 <li><code>startClient()</code> 메소드에는 Socket 생성 및 연결 요청 코드가 있다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// startClient() 메소드는 [start] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* 작업 스레드를 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * 작업 스레드가 필요한 이유는 밑에 있는 connect()와 receive()에서
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * 블로킹이 일어나기 때문
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * JavaFX Application Thread는 이 메소드들을 호출하지 않는 것이 좋다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 */</span>
-</span></span><span style="display:flex;"><span>	Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 스레드 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// run() 메소드를 재정의
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// socket 생성 및 연결 요청
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span> <span style="color:#75715e">// 통신용 Socket을 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#75715e">// localhost 5001 포트로 연결 요청
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5001</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 작업 스레드는 UI를 변경하지 못하므로 Platform.runLater()가 사용
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// &#34;[ 연결 완료 ]&#34;를 출력하도록 displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>					displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 완료 : &#34;</span> <span style="color:#f92672">+</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getRemoteSocketAddress</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>								<span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ]&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// [start] 버튼의 [stop]으로 변경
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>					btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>					btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span> <span style="color:#75715e">// send 버튼 활성화
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">/* 예외가 발생하면 &#34;[ 서버 통신 암됨 ]&#34;을 출력하도록
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				 * displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				 */</span>
-</span></span><span style="display:flex;"><span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// Socket이 닫혀있지 않으면 stopClient() 메소드를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> stopClient<span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span><span style="color:#f92672">;</span> <span style="color:#75715e">// return을 실행해서 작업을 종료
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 에외가 발생하지 안흐염 receive() 메소드를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			receive<span style="color:#f92672">();</span> <span style="color:#75715e">// 서버에서 보낸 데이터 받기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">};</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 작업 스레드를 시작
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 스레드 시작
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// startClient() 메소드는 [start] 버튼을 클릭하면 호출
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">/* 작업 스레드를 생성
+</span><span style="color:#75715e">	 * 작업 스레드가 필요한 이유는 밑에 있는 connect()와 receive()에서
+</span><span style="color:#75715e">	 * 블로킹이 일어나기 때문
+</span><span style="color:#75715e">	 * JavaFX Application Thread는 이 메소드들을 호출하지 않는 것이 좋다.
+</span><span style="color:#75715e">	 */</span>
+	Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 스레드 생성
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// run() 메소드를 재정의
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// socket 생성 및 연결 요청
+</span><span style="color:#75715e"></span>				socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span> <span style="color:#75715e">// 통신용 Socket을 생성
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// localhost 5001 포트로 연결 요청
+</span><span style="color:#75715e"></span>				socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001<span style="color:#f92672">));</span>
+				<span style="color:#75715e">// 작업 스레드는 UI를 변경하지 못하므로 Platform.runLater()가 사용
+</span><span style="color:#75715e"></span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+					<span style="color:#75715e">// &#34;[ 연결 완료 ]&#34;를 출력하도록 displayText()를 호출
+</span><span style="color:#75715e"></span>					displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 완료 : &#34;</span> <span style="color:#f92672">+</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getRemoteSocketAddress</span><span style="color:#f92672">()</span>
+								<span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ]&#34;</span><span style="color:#f92672">);</span>
+					<span style="color:#75715e">// [start] 버튼의 [stop]으로 변경
+</span><span style="color:#75715e"></span>					btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">);</span>
+					btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span> <span style="color:#75715e">// send 버튼 활성화
+</span><span style="color:#75715e"></span>				<span style="color:#f92672">});</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">/* 예외가 발생하면 &#34;[ 서버 통신 암됨 ]&#34;을 출력하도록
+</span><span style="color:#75715e">				 * displayText()를 호출
+</span><span style="color:#75715e">				 */</span>
+				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
+
+				<span style="color:#75715e">// Socket이 닫혀있지 않으면 stopClient() 메소드를 호출
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> stopClient<span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
+				<span style="color:#66d9ef">return</span><span style="color:#f92672">;</span> <span style="color:#75715e">// return을 실행해서 작업을 종료
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 에외가 발생하지 안흐염 receive() 메소드를 호출
+</span><span style="color:#75715e"></span>			receive<span style="color:#f92672">();</span> <span style="color:#75715e">// 서버에서 보낸 데이터 받기
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">};</span>
+	<span style="color:#75715e">// 작업 스레드를 시작
+</span><span style="color:#75715e"></span>	thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 스레드 시작
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <h2 id="3-stopclient-메소드">3. <code>stopClient()</code> 메소드</h2>
 <ul>
@@ -280,28 +279,28 @@ if (!doNotTrack) {
 <ul>
 <li><code>stopClient()</code> 메소드에는 Socket을 닫는 <code>close()</code> 메소드 호출 코드가 있다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// stopClient() 메소드는 [stop] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stopClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// UI를 변경하기 위해 Platform.runLater()가 사용
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// &#34;[ 연결 끊음 ]&#34;을 출력하도록 displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 끊음 ]&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// [stop] 버튼의 글자를 [ start ]로 변경
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// [send] 버튼을 비활성화
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 연결 끊기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// socket 필드가 null이 아니고, 현재 닫혀 있지 않을 경우
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>socket <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// Socket을 닫는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// stopClient() 메소드는 [stop] 버튼을 클릭하면 호출
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stopClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// UI를 변경하기 위해 Platform.runLater()가 사용
+</span><span style="color:#75715e"></span>		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// &#34;[ 연결 끊음 ]&#34;을 출력하도록 displayText()를 호출
+</span><span style="color:#75715e"></span>			displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 끊음 ]&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#75715e">// [stop] 버튼의 글자를 [ start ]로 변경
+</span><span style="color:#75715e"></span>			btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#75715e">// [send] 버튼을 비활성화
+</span><span style="color:#75715e"></span>			btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		<span style="color:#75715e">// 연결 끊기
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// socket 필드가 null이 아니고, 현재 닫혀 있지 않을 경우
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>socket <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// Socket을 닫는다.
+</span><span style="color:#75715e"></span>			socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <h2 id="4-receive-메소드">4. <code>receive()</code> 메소드</h2>
 <ul>
@@ -310,53 +309,53 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>이 메소드는 <code>startClient()</code>에서 생성한 작업 스레드상에서 호출</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// receive() 메소드는 서버에서 보낸 데이터를 받는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">receive</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 반복적으로 읽기 위해 무한 루프를 작성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 받은 데이터를 저장한 길이가 100인 바이트 배열 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">100</span><span style="color:#f92672">];</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// Socket으로부터 InputStream을 얻는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			InputStream inputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 서버가 비정상적으로 종료했을 경우 IOException 발생
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#75715e">// 데이터 받기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#75715e">/* InputStream의 read() 메소드를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 서버가 데이터를 보내기 전까지 블로킹되며,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 데이터를 받으면 byteArr엦 저장하고 받은 바이트 개수는 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * readByteCount에 저장
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 */</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">/* 서버가 정상적으로 Socket의 close()를 호출했을 경우
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 위의 read() 메소드는 -1을 리턴
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 이 경우 IOException을 강제로 발생시킨다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 */</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>readByteCount <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IOException<span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 문자열로 변환
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#75715e">/* 정상적으로 데이터를 받았을 경우,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * String(byteArr, 0, readByteCount, &#34;UTF-8&#34;)을 이용해서
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * UTF-8로 디코딩한 문자열을 받는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 */</span>
-</span></span><span style="display:flex;"><span>			String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>byteArr<span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// &#34;[ 받기 완료 ] + 받은 문자열&#34;을 출력하도록 displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 받기 완료 ] &#34;</span> <span style="color:#f92672">+</span> data<span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">/* 서버가 비정상적으로 연결을 끊게 되면 IOException이 발생하고, 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 서버 측 Socket이 close9)를 호출해서 정상적으로 연결을 끊게 되면 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * IOException이 발생
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 * 예외가 발생하면 &#34;[ 서버 통신 안됨 ]&#34;울 출력하도록 displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			 */</span>
-</span></span><span style="display:flex;"><span>			Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>			stopClient<span style="color:#f92672">();</span> <span style="color:#75715e">// stopClient()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#75715e">// break를 실행해서 무한 루프를 빠져나온다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// receive() 메소드는 서버에서 보낸 데이터를 받는다.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">receive</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 반복적으로 읽기 위해 무한 루프를 작성
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 받은 데이터를 저장한 길이가 100인 바이트 배열 생성
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>100<span style="color:#f92672">];</span>
+			<span style="color:#75715e">// Socket으로부터 InputStream을 얻는다.
+</span><span style="color:#75715e"></span>			InputStream inputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>
+
+			<span style="color:#75715e">// 서버가 비정상적으로 종료했을 경우 IOException 발생
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 데이터 받기
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">/* InputStream의 read() 메소드를 호출
+</span><span style="color:#75715e">			 * 서버가 데이터를 보내기 전까지 블로킹되며,
+</span><span style="color:#75715e">			 * 데이터를 받으면 byteArr엦 저장하고 받은 바이트 개수는 
+</span><span style="color:#75715e">			 * readByteCount에 저장
+</span><span style="color:#75715e">			 */</span>
+			<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
+
+			<span style="color:#75715e">/* 서버가 정상적으로 Socket의 close()를 호출했을 경우
+</span><span style="color:#75715e">			 * 위의 read() 메소드는 -1을 리턴
+</span><span style="color:#75715e">			 * 이 경우 IOException을 강제로 발생시킨다.
+</span><span style="color:#75715e">			 */</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>readByteCount <span style="color:#f92672">==</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IOException<span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
+
+			<span style="color:#75715e">// 문자열로 변환
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">/* 정상적으로 데이터를 받았을 경우,
+</span><span style="color:#75715e">			 * String(byteArr, 0, readByteCount, &#34;UTF-8&#34;)을 이용해서
+</span><span style="color:#75715e">			 * UTF-8로 디코딩한 문자열을 받는다.
+</span><span style="color:#75715e">			 */</span>
+			String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>byteArr<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+
+			<span style="color:#75715e">// &#34;[ 받기 완료 ] + 받은 문자열&#34;을 출력하도록 displayText()를 호출
+</span><span style="color:#75715e"></span>			Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 받기 완료 ] &#34;</span> <span style="color:#f92672">+</span> data<span style="color:#f92672">));</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">/* 서버가 비정상적으로 연결을 끊게 되면 IOException이 발생하고, 
+</span><span style="color:#75715e">			 * 서버 측 Socket이 close9)를 호출해서 정상적으로 연결을 끊게 되면 
+</span><span style="color:#75715e">			 * IOException이 발생
+</span><span style="color:#75715e">			 * 예외가 발생하면 &#34;[ 서버 통신 안됨 ]&#34;울 출력하도록 displayText()를 호출
+</span><span style="color:#75715e">			 */</span>
+			Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
+			stopClient<span style="color:#f92672">();</span> <span style="color:#75715e">// stopClient()를 호출
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#75715e">// break를 실행해서 무한 루프를 빠져나온다.
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <h2 id="5-sendstring-data-메소드">5. send(String data) 메소드</h2>
 <ul>
@@ -365,42 +364,42 @@ if (!doNotTrack) {
 <ul>
 <li><code>send()</code> 메소드는 서버로 메시지를 보내는 역할</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// send() 메소드는 [send] 버튼을 클릭하면 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 서버로 데이터를 보낸다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>String data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 데이터를 서버로 보내는 새로운 작업 스레드를 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 스레드 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// run()을 재정의
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 보낼 문자열로부터 UTF-8로 인코딩한 바이트 배열을 얻는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 서버로 데이터 보내기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#75715e">// Socket에서 출력 스트림을 얻는다.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				OutputStream outputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 바이트 배열을 매개값으로 write() 메소드를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 출력 스트림의 내부 버퍼를 완전히 비우도록 flush()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// &#34;[ 보내기 완료 ]&#34;를 출력하도록 displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 보내기 완료 ]&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">/* 예외가 발생하면 &#34;[ 서버 통신 안됨 ]&#34;을 출력하도록
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				 * displayText()를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				 */</span>
-</span></span><span style="display:flex;"><span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// stopClient를 호출
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				stopClient<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">};</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 작업 스레드를 시작
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 스레드 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// send() 메소드는 [send] 버튼을 클릭하면 호출
+</span><span style="color:#75715e">// 서버로 데이터를 보낸다.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>String data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 데이터를 서버로 보내는 새로운 작업 스레드를 생성
+</span><span style="color:#75715e"></span>	Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 스레드 생성
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// run()을 재정의
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 보낼 문자열로부터 UTF-8로 인코딩한 바이트 배열을 얻는다.
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> byteArr <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
+
+				<span style="color:#75715e">// 서버로 데이터 보내기
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// Socket에서 출력 스트림을 얻는다.
+</span><span style="color:#75715e"></span>				OutputStream outputStream <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span>
+				<span style="color:#75715e">// 바이트 배열을 매개값으로 write() 메소드를 호출
+</span><span style="color:#75715e"></span>				outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>byteArr<span style="color:#f92672">);</span>
+				<span style="color:#75715e">// 출력 스트림의 내부 버퍼를 완전히 비우도록 flush()를 호출
+</span><span style="color:#75715e"></span>				outputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+
+				<span style="color:#75715e">// &#34;[ 보내기 완료 ]&#34;를 출력하도록 displayText()를 호출
+</span><span style="color:#75715e"></span>				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 보내기 완료 ]&#34;</span><span style="color:#f92672">));</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">/* 예외가 발생하면 &#34;[ 서버 통신 안됨 ]&#34;을 출력하도록
+</span><span style="color:#75715e">				 * displayText()를 호출
+</span><span style="color:#75715e">				 */</span>
+				Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> displayText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 서버 통신 안됨 ]&#34;</span><span style="color:#f92672">));</span>
+				<span style="color:#75715e">// stopClient를 호출
+</span><span style="color:#75715e"></span>				stopClient<span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">};</span>
+	<span style="color:#75715e">// 작업 스레드를 시작
+</span><span style="color:#75715e"></span>	thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 스레드 생성
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <h2 id="6-ui-생성-코드">6. UI 생성 코드</h2>
 <ul>
@@ -409,69 +408,69 @@ if (!doNotTrack) {
 <ul>
 <li>프로그램적 레이아웃을 이용해서 컨트롤을 배치</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TextArea txtDisplay<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>TextField txtInput<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>Button btnConn<span style="color:#f92672">,</span> btnSend<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	BorderPane root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BorderPane<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span><span style="color:#ae81ff">500</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">300</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	txtDisplay <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextArea<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	txtDisplay<span style="color:#f92672">.</span><span style="color:#a6e22e">setEditable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	BorderPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setMargin</span><span style="color:#f92672">(</span>txtDisplay<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setCenter</span><span style="color:#f92672">(</span>txtDisplay<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	BorderPane bottom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BorderPane<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	txtInput <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextField<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	txtInput<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span><span style="color:#ae81ff">60</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	BorderPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setMargin</span><span style="color:#f92672">(</span>txtInput<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	btnConn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span><span style="color:#ae81ff">60</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// start와 stop 버튼을 클릭했을 때 이벤트 처리 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>e <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			startClient<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			stopClient<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	btnSend <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;send&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span><span style="color:#ae81ff">60</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// send 버튼을 클릭했을 때 이벤트 처리 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>e <span style="color:#f92672">-&gt;</span> send<span style="color:#f92672">(</span>txtInput<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">()));</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setCenter</span><span style="color:#f92672">(</span>txtInput<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setLeft</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setRight</span><span style="color:#f92672">(</span>btnSend<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setBottom</span><span style="color:#f92672">(</span>bottom<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	scene<span style="color:#f92672">.</span><span style="color:#a6e22e">getStylesheets</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;app.css&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Client&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 윈도우 우측 상단 닫기 버튼을 클릭했을 때 이벤트 처리 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnCloseRequest</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> stopClient<span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// TextArea에 문자열을 추가하는 메소드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayText</span><span style="color:#f92672">(</span>String text<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	txtDisplay<span style="color:#f92672">.</span><span style="color:#a6e22e">appendText</span><span style="color:#f92672">(</span>text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">TextArea txtDisplay<span style="color:#f92672">;</span>
+TextField txtInput<span style="color:#f92672">;</span>
+Button btnConn<span style="color:#f92672">,</span> btnSend<span style="color:#f92672">;</span>
+
+<span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+	BorderPane root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BorderPane<span style="color:#f92672">();</span>
+	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span>500<span style="color:#f92672">,</span> 300<span style="color:#f92672">);</span>
+
+	txtDisplay <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextArea<span style="color:#f92672">();</span>
+	txtDisplay<span style="color:#f92672">.</span><span style="color:#a6e22e">setEditable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+	BorderPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setMargin</span><span style="color:#f92672">(</span>txtDisplay<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 0<span style="color:#f92672">));</span>
+	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setCenter</span><span style="color:#f92672">(</span>txtDisplay<span style="color:#f92672">);</span>
+
+	BorderPane bottom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BorderPane<span style="color:#f92672">();</span>
+	txtInput <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextField<span style="color:#f92672">();</span>
+	txtInput<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span>60<span style="color:#f92672">,</span> 30<span style="color:#f92672">);</span>
+	BorderPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setMargin</span><span style="color:#f92672">(</span>txtInput<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> 1<span style="color:#f92672">));</span>
+
+	btnConn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">);</span>
+	btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span>60<span style="color:#f92672">,</span> 30<span style="color:#f92672">);</span>
+
+	<span style="color:#75715e">// start와 stop 버튼을 클릭했을 때 이벤트 처리 코드
+</span><span style="color:#75715e"></span>	btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>e <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+			startClient<span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+			stopClient<span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">});</span>
+
+	btnSend <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;send&#34;</span><span style="color:#f92672">);</span>
+	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefSize</span><span style="color:#f92672">(</span>60<span style="color:#f92672">,</span> 30<span style="color:#f92672">);</span>
+	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+	<span style="color:#75715e">// send 버튼을 클릭했을 때 이벤트 처리 코드
+</span><span style="color:#75715e"></span>	btnSend<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>e <span style="color:#f92672">-&gt;</span> send<span style="color:#f92672">(</span>txtInput<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">()));</span>
+
+	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setCenter</span><span style="color:#f92672">(</span>txtInput<span style="color:#f92672">);</span>
+	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setLeft</span><span style="color:#f92672">(</span>btnConn<span style="color:#f92672">);</span>
+	bottom<span style="color:#f92672">.</span><span style="color:#a6e22e">setRight</span><span style="color:#f92672">(</span>btnSend<span style="color:#f92672">);</span>
+
+	root<span style="color:#f92672">.</span><span style="color:#a6e22e">setBottom</span><span style="color:#f92672">(</span>bottom<span style="color:#f92672">);</span>
+
+	Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
+	scene<span style="color:#f92672">.</span><span style="color:#a6e22e">getStylesheets</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;app.css&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
+	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Client&#34;</span><span style="color:#f92672">);</span>
+
+	<span style="color:#75715e">// 윈도우 우측 상단 닫기 버튼을 클릭했을 때 이벤트 처리 코드
+</span><span style="color:#75715e"></span>	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnCloseRequest</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> stopClient<span style="color:#f92672">());</span>
+	primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// TextArea에 문자열을 추가하는 메소드
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayText</span><span style="color:#f92672">(</span>String text<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	txtDisplay<span style="color:#f92672">.</span><span style="color:#a6e22e">appendText</span><span style="color:#f92672">(</span>text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <h3 id="채팅-서버와-클라이언트를-실행하는-방법">채팅 서버와 클라이언트를 실행하는 방법</h3>
 <ul>
@@ -573,18 +572,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -622,7 +621,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -653,6 +652,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -663,8 +663,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -692,38 +692,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -738,32 +706,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

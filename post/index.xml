@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Mar 2023 22:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 23:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Python] JSON형식으로 변환</title>
+      <link>https://blackjjw.github.io/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL] 퍼셉트론 - 퍼셉트론 구현</title>
       <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</link>
@@ -2925,10 +2934,10 @@
     
     <item>
       <title>[Java] 메소드 재정의(@Override)</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98@override/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98override/</link>
       <pubDate>Mon, 01 Aug 2022 18:00:45 +0900</pubDate>
       
-      <guid>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98@override/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/inheritance/%EB%A9%94%EC%86%8C%EB%93%9C_%EC%9E%AC%EC%A0%95%EC%9D%98override/</guid>
       <description></description>
     </item>
     

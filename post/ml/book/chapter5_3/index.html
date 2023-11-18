@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/ml/book/chapter5_3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-23T16:32:45+09:00" />
 <meta property="article:modified_time" content="2022-04-23T16:32:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -247,14 +246,14 @@ if (!doNotTrack) {
 <p>랜덤 포레스트는 랜덤하게 선택한 샘플과 특성을 사용하기 때문에 훈련 세트에 과대적합되는 것을 막아주고 검증 세트와 테스트 세트에서 안정적인 성능을 얻을 수 있음.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
-</span></span><span style="display:flex;"><span>target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
-</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(data, target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
+data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
+target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
+train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(data, target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><ul>
 <li>cross_validate()를 사용해 교차 검증 수행</li>
 <li>RandomForestClassifier : 기본적으로 100개의 결정 트리를 사용하므로 n_jobs=-1로 지정하여 모든 CPU 코어를 사용하는 것이 좋음.</li>
 <li>return_train_score를 True로 지정하면 검증 점수 뿐만 아니라 훈련 세트에 대한 점수도 같이 반환.
@@ -264,12 +263,12 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
-</span></span><span style="display:flex;"><span>rf <span style="color:#f92672">=</span> RandomForestClassifier(n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(rf, train_input, train_target, return_train_score <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.9973541965122431 0.8905151032797809
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+rf <span style="color:#f92672">=</span> RandomForestClassifier(n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(rf, train_input, train_target, return_train_score <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.9973541965122431 0.8905151032797809
 </code></pre>
 <ul>
 <li>
@@ -285,9 +284,9 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rf<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>print(rf<span style="color:#f92672">.</span>feature_importances_)
-</span></span></code></pre></div><pre><code>[0.23167441 0.50039841 0.26792718]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rf<span style="color:#f92672">.</span>fit(train_input, train_target)
+print(rf<span style="color:#f92672">.</span>feature_importances_)
+</code></pre></div><pre><code>[0.23167441 0.50039841 0.26792718]
 </code></pre>
 <ul>
 <li>
@@ -321,10 +320,10 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rf <span style="color:#f92672">=</span> RandomForestClassifier(oob_score <span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>rf<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>print(rf<span style="color:#f92672">.</span>oob_score_)
-</span></span></code></pre></div><pre><code>0.8934000384837406
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rf <span style="color:#f92672">=</span> RandomForestClassifier(oob_score <span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+rf<span style="color:#f92672">.</span>fit(train_input, train_target)
+print(rf<span style="color:#f92672">.</span>oob_score_)
+</code></pre></div><pre><code>0.8934000384837406
 </code></pre>
 <ul>
 <li>OOB 점수를 사용하면 교차 검증을 대신할 수 있어서 결과적으로 훈련 세트에 더 많은 샘플을 사용 가능.</li>
@@ -351,12 +350,12 @@ if (!doNotTrack) {
 <p>하나이 결정 트리에서 특성을 무작위로 분할한다면 성능이 낮아지겠지만 많은 트리를 앙상블하기 때문에 과대적합을 막고 검증 세트의 점수를 높이는 효과.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> ExtraTreesClassifier
-</span></span><span style="display:flex;"><span>et <span style="color:#f92672">=</span> ExtraTreesClassifier(n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(et, train_input, train_target, 
-</span></span><span style="display:flex;"><span>                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.9974503966084433 0.8887848893166506
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> ExtraTreesClassifier
+et <span style="color:#f92672">=</span> ExtraTreesClassifier(n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(et, train_input, train_target, 
+                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.9974503966084433 0.8887848893166506
 </code></pre>
 <ul>
 <li>보통 엑스트라 트리가 무작위성이 좀 더 크기 때문에 랜점 포레스트보다 더 많은 결정 트리를 훈련해야 함.</li>
@@ -376,9 +375,9 @@ if (!doNotTrack) {
 <p>엑스트라 트리도 랜덤 포레스트와 같이 특성 중요도 제공</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>et<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>print(et<span style="color:#f92672">.</span>feature_importances_)
-</span></span></code></pre></div><pre><code>[0.20183568 0.52242907 0.27573525]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">et<span style="color:#f92672">.</span>fit(train_input, train_target)
+print(et<span style="color:#f92672">.</span>feature_importances_)
+</code></pre></div><pre><code>[0.20183568 0.52242907 0.27573525]
 </code></pre>
 <ul>
 <li>엑스트라 트리의 회귀 버전은 ExtraTreeRegressor 클래스</li>
@@ -414,26 +413,26 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> GradientBoostingClassifier
-</span></span><span style="display:flex;"><span>gb <span style="color:#f92672">=</span> GradientBoostingClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(gb, train_input, train_target, 
-</span></span><span style="display:flex;"><span>                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.8881086892152563 0.8720430147331015
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> GradientBoostingClassifier
+gb <span style="color:#f92672">=</span> GradientBoostingClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(gb, train_input, train_target, 
+                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.8881086892152563 0.8720430147331015
 </code></pre>
 <ul>
 <li>과대적합이 되지 않음.</li>
 <li>그레디언트 부스팅은 결정 트리의 개수를 늘려도 과대적합에 매우 강함.</li>
 <li>학습률을 증가시키고 트리의 개수를 느리면 성능이 조금 더 향상될 수 있음.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gb <span style="color:#f92672">=</span> GradientBoostingClassifier(n_estimators <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>, learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(gb, train_input, train_target, return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.9464595437171814 0.8780082549788999
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gb <span style="color:#f92672">=</span> GradientBoostingClassifier(n_estimators <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>, learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(gb, train_input, train_target, return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.9464595437171814 0.8780082549788999
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gb<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>print(gb<span style="color:#f92672">.</span>feature_importances_)
-</span></span></code></pre></div><pre><code>[0.15872278 0.68010884 0.16116839]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gb<span style="color:#f92672">.</span>fit(train_input, train_target)
+print(gb<span style="color:#f92672">.</span>feature_importances_)
+</code></pre></div><pre><code>[0.15872278 0.68010884 0.16116839]
 </code></pre>
 <ul>
 <li>
@@ -479,13 +478,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.experimental <span style="color:#f92672">import</span> enable_hist_gradient_boosting
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> HistGradientBoostingClassifier
-</span></span><span style="display:flex;"><span>hgb <span style="color:#f92672">=</span> HistGradientBoostingClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(hgb, train_input, train_target,
-</span></span><span style="display:flex;"><span>                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>/usr/local/lib/python3.7/dist-packages/sklearn/experimental/enable_hist_gradient_boosting.py:17: UserWarning: Since version 1.0, it is not needed to import enable_hist_gradient_boosting anymore. HistGradientBoostingClassifier and HistGradientBoostingRegressor are now stable and can be normally imported from sklearn.ensemble.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.experimental <span style="color:#f92672">import</span> enable_hist_gradient_boosting
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> HistGradientBoostingClassifier
+hgb <span style="color:#f92672">=</span> HistGradientBoostingClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(hgb, train_input, train_target,
+                        return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>/usr/local/lib/python3.7/dist-packages/sklearn/experimental/enable_hist_gradient_boosting.py:17: UserWarning: Since version 1.0, it is not needed to import enable_hist_gradient_boosting anymore. HistGradientBoostingClassifier and HistGradientBoostingRegressor are now stable and can be normally imported from sklearn.ensemble.
   &quot;Since version 1.0, &quot;
 
 
@@ -500,13 +499,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.inspection <span style="color:#f92672">import</span> permutation_importance
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>hgb<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> permutation_importance(hgb, train_input, train_target,
-</span></span><span style="display:flex;"><span>                                n_repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>importances_mean)
-</span></span></code></pre></div><pre><code>[0.08876275 0.23438522 0.08027708]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.inspection <span style="color:#f92672">import</span> permutation_importance
+
+hgb<span style="color:#f92672">.</span>fit(train_input, train_target)
+result <span style="color:#f92672">=</span> permutation_importance(hgb, train_input, train_target,
+                                n_repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(result<span style="color:#f92672">.</span>importances_mean)
+</code></pre></div><pre><code>[0.08876275 0.23438522 0.08027708]
 </code></pre>
 <ul>
 <li>permutation_importance()
@@ -515,13 +514,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>result <span style="color:#f92672">=</span> permutation_importance(hgb, test_input, test_target,
-</span></span><span style="display:flex;"><span>                                n_repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>importances_mean)
-</span></span></code></pre></div><pre><code>[0.05969231 0.20238462 0.049     ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> permutation_importance(hgb, test_input, test_target,
+                                n_repeats<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(result<span style="color:#f92672">.</span>importances_mean)
+</code></pre></div><pre><code>[0.05969231 0.20238462 0.049     ]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>hgb<span style="color:#f92672">.</span>score(test_input, test_target)
-</span></span></code></pre></div><pre><code>0.8723076923076923
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hgb<span style="color:#f92672">.</span>score(test_input, test_target)
+</code></pre></div><pre><code>0.8723076923076923
 </code></pre>
 <ul>
 <li>회귀 버전 : HistGradientBoostingRegressor</li>
@@ -531,19 +530,19 @@ if (!doNotTrack) {
 <li>다양한 부스팅 알고리즘 지원</li>
 <li>tree_method = &lsquo;hist&rsquo;로 지정하면 히스토그램 기반 그레이디언트 부스팅 사용가능.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> xgboost <span style="color:#f92672">import</span> XGBClassifier
-</span></span><span style="display:flex;"><span>xgb <span style="color:#f92672">=</span> XGBClassifier(tres_method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hist&#39;</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(xgb, train_input, train_target, return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.8827690284750664 0.8708899089361072
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> xgboost <span style="color:#f92672">import</span> XGBClassifier
+xgb <span style="color:#f92672">=</span> XGBClassifier(tres_method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hist&#39;</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(xgb, train_input, train_target, return_train_score<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.8827690284750664 0.8708899089361072
 </code></pre>
 <h3 id="lightgbm">LightGBM</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> lightgbm <span style="color:#f92672">import</span> LGBMClassifier
-</span></span><span style="display:flex;"><span>lgb <span style="color:#f92672">=</span> LGBMClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(lgb, train_input, train_target, 
-</span></span><span style="display:flex;"><span>                        return_train_score <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.9338079582727165 0.8789710890649293
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> lightgbm <span style="color:#f92672">import</span> LGBMClassifier
+lgb <span style="color:#f92672">=</span> LGBMClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(lgb, train_input, train_target, 
+                        return_train_score <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;train_score&#39;</span>]), np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.9338079582727165 0.8789710890649293
 </code></pre>
 <h2 id="마무리">마무리</h2>
 <h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
@@ -584,7 +583,7 @@ if (!doNotTrack) {
 <li>criterion : 불순도 지정
 <ul>
 <li>기본값 = &lsquo;gini&rsquo; : 지니 불순도</li>
-<li>&rsquo;entropy&rsquo; : 엔트로피 불순도</li>
+<li>&lsquo;entropy&rsquo; : 엔트로피 불순도</li>
 </ul>
 </li>
 <li>max_depth : 트리가 성장할 최대 깊이를 지정
@@ -745,18 +744,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -794,7 +793,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -825,6 +824,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -835,8 +835,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -864,38 +864,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -910,32 +878,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

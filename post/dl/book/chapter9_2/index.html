@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/dl/book/chapter9_2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-05-05T17:30:45+09:00" />
 <meta property="article:modified_time" content="2022-05-05T17:30:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -236,14 +235,14 @@ if (!doNotTrack) {
 <p>가장 자주 등장하는 단어 500개</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow.keras.datasets <span style="color:#f92672">import</span> imdb
-</span></span><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> imdb<span style="color:#f92672">.</span>load_data(num_words<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>)
-</span></span></code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/imdb.npz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow.keras.datasets <span style="color:#f92672">import</span> imdb
+(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> imdb<span style="color:#f92672">.</span>load_data(num_words<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>)
+</code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/imdb.npz
 17465344/17464789 [==============================] - 0s 0us/step
 17473536/17464789 [==============================] - 0s 0us/step
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_input<span style="color:#f92672">.</span>shape, test_input<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(25000,) (25000,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_input<span style="color:#f92672">.</span>shape, test_input<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(25000,) (25000,)
 </code></pre>
 <ul>
 <li>IMDB 리뷰 텍스트는 길이가 제각각</li>
@@ -254,20 +253,20 @@ if (!doNotTrack) {
 <li>이 데이터는 개별 리뷰를 담은 파이썬 리스트 객체로 이루어진 넘파이 배열</li>
 <li>넘파이 배열은 정수나 실수 외에도 파이썬 객체를 담을 수 있음</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(len(train_input[<span style="color:#ae81ff">0</span>]))
-</span></span></code></pre></div><pre><code>218
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(len(train_input[<span style="color:#ae81ff">0</span>]))
+</code></pre></div><pre><code>218
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(len(train_input[<span style="color:#ae81ff">1</span>]))
-</span></span></code></pre></div><pre><code>189
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(len(train_input[<span style="color:#ae81ff">1</span>]))
+</code></pre></div><pre><code>189
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_input[<span style="color:#ae81ff">0</span>])
-</span></span></code></pre></div><pre><code>[1, 14, 22, 16, 43, 2, 2, 2, 2, 65, 458, 2, 66, 2, 4, 173, 36, 256, 5, 25, 100, 43, 2, 112, 50, 2, 2, 9, 35, 480, 284, 5, 150, 4, 172, 112, 167, 2, 336, 385, 39, 4, 172, 2, 2, 17, 2, 38, 13, 447, 4, 192, 50, 16, 6, 147, 2, 19, 14, 22, 4, 2, 2, 469, 4, 22, 71, 87, 12, 16, 43, 2, 38, 76, 15, 13, 2, 4, 22, 17, 2, 17, 12, 16, 2, 18, 2, 5, 62, 386, 12, 8, 316, 8, 106, 5, 4, 2, 2, 16, 480, 66, 2, 33, 4, 130, 12, 16, 38, 2, 5, 25, 124, 51, 36, 135, 48, 25, 2, 33, 6, 22, 12, 215, 28, 77, 52, 5, 14, 407, 16, 82, 2, 8, 4, 107, 117, 2, 15, 256, 4, 2, 7, 2, 5, 2, 36, 71, 43, 2, 476, 26, 400, 317, 46, 7, 4, 2, 2, 13, 104, 88, 4, 381, 15, 297, 98, 32, 2, 56, 26, 141, 6, 194, 2, 18, 4, 226, 22, 21, 134, 476, 26, 480, 5, 144, 30, 2, 18, 51, 36, 28, 224, 92, 25, 104, 4, 226, 65, 16, 38, 2, 88, 12, 16, 283, 5, 16, 2, 113, 103, 32, 15, 16, 2, 19, 178, 32]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_input[<span style="color:#ae81ff">0</span>])
+</code></pre></div><pre><code>[1, 14, 22, 16, 43, 2, 2, 2, 2, 65, 458, 2, 66, 2, 4, 173, 36, 256, 5, 25, 100, 43, 2, 112, 50, 2, 2, 9, 35, 480, 284, 5, 150, 4, 172, 112, 167, 2, 336, 385, 39, 4, 172, 2, 2, 17, 2, 38, 13, 447, 4, 192, 50, 16, 6, 147, 2, 19, 14, 22, 4, 2, 2, 469, 4, 22, 71, 87, 12, 16, 43, 2, 38, 76, 15, 13, 2, 4, 22, 17, 2, 17, 12, 16, 2, 18, 2, 5, 62, 386, 12, 8, 316, 8, 106, 5, 4, 2, 2, 16, 480, 66, 2, 33, 4, 130, 12, 16, 38, 2, 5, 25, 124, 51, 36, 135, 48, 25, 2, 33, 6, 22, 12, 215, 28, 77, 52, 5, 14, 407, 16, 82, 2, 8, 4, 107, 117, 2, 15, 256, 4, 2, 7, 2, 5, 2, 36, 71, 43, 2, 476, 26, 400, 317, 46, 7, 4, 2, 2, 13, 104, 88, 4, 381, 15, 297, 98, 32, 2, 56, 26, 141, 6, 194, 2, 18, 4, 226, 22, 21, 134, 476, 26, 480, 5, 144, 30, 2, 18, 51, 36, 28, 224, 92, 25, 104, 4, 226, 65, 16, 38, 2, 88, 12, 16, 283, 5, 16, 2, 113, 103, 32, 15, 16, 2, 19, 178, 32]
 </code></pre>
 <ul>
 <li>텐서플로에 있는 IMDB 리뷰 데이터는 이미 정수로 변환</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_target[:<span style="color:#ae81ff">20</span>])
-</span></span></code></pre></div><pre><code>[1 0 0 1 0 0 1 0 1 0 1 0 0 0 0 0 1 1 0 1]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_target[:<span style="color:#ae81ff">20</span>])
+</code></pre></div><pre><code>[1 0 0 1 0 0 1 0 1 0 1 0 0 0 0 0 1 1 0 1]
 </code></pre>
 <ul>
 <li>해결할 문제는 리뷰가 긍정인지 부정인지 판단하는 것
@@ -276,26 +275,26 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>train_input, val_input, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_input, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+train_input, val_input, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_input, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><ul>
 <li>각 리뷰의 길이를 계산하여 넘파이 배열에 담음
 <ul>
 <li>평균적인 리뷰의 길이와 가장 짧은 리뷰의 길이 그리고 가장 긴 리뷰의 길이를 확인 하고자 함</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>lengths <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([len(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> train_input])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(lengths), np<span style="color:#f92672">.</span>median(lengths))
-</span></span></code></pre></div><pre><code>239.00925 178.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+lengths <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([len(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> train_input])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>mean(lengths), np<span style="color:#f92672">.</span>median(lengths))
+</code></pre></div><pre><code>239.00925 178.0
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(lengths)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;lengths&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;frequency&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_22_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+plt<span style="color:#f92672">.</span>hist(lengths)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;lengths&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;frequency&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_22_0.png" alt="png"></p>
 <ul>
 <li>
 <p>대부분의 리뷰 길이는 300 미만</p>
@@ -318,27 +317,27 @@ if (!doNotTrack) {
 <p>이 함수를 사용해 train_input의 길이를 100으로 맞춤</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow.keras.preprocessing.sequence <span style="color:#f92672">import</span> pad_sequences
-</span></span><span style="display:flex;"><span>train_seq <span style="color:#f92672">=</span> pad_sequences(train_input, maxlen<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow.keras.preprocessing.sequence <span style="color:#f92672">import</span> pad_sequences
+train_seq <span style="color:#f92672">=</span> pad_sequences(train_input, maxlen<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</code></pre></div><ul>
 <li>maxlen에 원하는 길이를 지정하면 이보다 긴 경우는 잘라내고 짧은 경우는 0으로 패딩</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_seq<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(20000, 100)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_seq<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(20000, 100)
 </code></pre>
 <ul>
 <li>train_input은 파이썬 리스트의 배열이었지만, 길이를 100으로 맞춘 train_seq는 이제 (20000, 100) 크기의 2차원 배열이 되었음</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_seq[<span style="color:#ae81ff">0</span>])
-</span></span></code></pre></div><pre><code>[ 10   4  20   9   2 364 352   5  45   6   2   2  33 269   8   2 142   2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_seq[<span style="color:#ae81ff">0</span>])
+</code></pre></div><pre><code>[ 10   4  20   9   2 364 352   5  45   6   2   2  33 269   8   2 142   2
    5   2  17  73  17 204   5   2  19  55   2   2  92  66 104  14  20  93
   76   2 151  33   4  58  12 188   2 151  12 215  69 224 142  73 237   6
    2   7   2   2 188   2 103  14  31  10  10 451   7   2   5   2  80  91
    2  30   2  34  14  20 151  50  26 131  49   2  84  46  50  37  80  79
    6   2  46   7  14  20  10  10 470 158]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_input[<span style="color:#ae81ff">0</span>][<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:])
-</span></span></code></pre></div><pre><code>[6, 2, 46, 7, 14, 20, 10, 10, 470, 158]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_input[<span style="color:#ae81ff">0</span>][<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:])
+</code></pre></div><pre><code>[6, 2, 46, 7, 14, 20, 10, 10, 470, 158]
 </code></pre>
 <ul>
 <li>
@@ -360,8 +359,8 @@ if (!doNotTrack) {
 <p>시퀀스의 뒷부분을 잘라내고 싶다면 pad_sequences() 함수의 truncating 매개변수의 값을 기본값 &lsquo;pre&rsquo;가 아닌 &lsquo;post&rsquo;로 바꾸면 됨</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_seq[<span style="color:#ae81ff">5</span>])
-</span></span></code></pre></div><pre><code>[  0   0   0   0   1   2 195  19  49   2   2 190   4   2 352   2 183  10
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_seq[<span style="color:#ae81ff">5</span>])
+</code></pre></div><pre><code>[  0   0   0   0   1   2 195  19  49   2   2 190   4   2 352   2 183  10
   10  13  82  79   4   2  36  71 269   8   2  25  19  49   7   4   2   2
    2   2   2  10  10  48  25  40   2  11   2   2  40   2   2   5   4   2
    2  95  14 238  56 129   2  10  10  21   2  94 364 352   2   2  11 190
@@ -385,8 +384,8 @@ if (!doNotTrack) {
 <p>검증 세트의 길이도 100으로 맞춤</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>val_seq <span style="color:#f92672">=</span> pad_sequences(val_input, maxlen<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
-</span></span></code></pre></div><h2 id="순환-신경망-만들기">순환 신경망 만들기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">val_seq <span style="color:#f92672">=</span> pad_sequences(val_input, maxlen<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</code></pre></div><h2 id="순환-신경망-만들기">순환 신경망 만들기</h2>
 <ul>
 <li>
 <p>케라스는 여러 종류의 순환층 클래스를 제공</p>
@@ -408,11 +407,11 @@ if (!doNotTrack) {
 <li>Sequential 클래스는 순환 신경망뿐만 아니라 합성곱 신경망이나 일반적인 인공 신경망 모델을 모두 만들 수 있음</li>
 <li>순차 데이터(Sequential data)와 관련이 없음</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
-</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>SimpleRNN(<span style="color:#ae81ff">8</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">500</span>)))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>))
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>SimpleRNN(<span style="color:#ae81ff">8</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">500</span>)))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>))
+</code></pre></div><ul>
 <li>
 <p>첫 번째 매개변수는 사용할 뉴런의 개수로 input_shape에 입력 차원을 (100, 500)으로 지정</p>
 </li>
@@ -423,7 +422,7 @@ if (!doNotTrack) {
 <p>순환층도 당연히 활성화 함수를 사용해야 함</p>
 </li>
 <li>
-<p>SimpleRNN 클래스의 activation 매개변수의 기본값 &rsquo;tanh&rsquo;로 하이퍼볼릭 탄젠트 함수를 사용</p>
+<p>SimpleRNN 클래스의 activation 매개변수의 기본값 &lsquo;tanh&rsquo;로 하이퍼볼릭 탄젠트 함수를 사용</p>
 <ul>
 <li>여기서는 기본값을 사용</li>
 </ul>
@@ -460,22 +459,22 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>train_oh <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>to_categorical(train_seq)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_oh<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(20000, 100, 500)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_oh <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>to_categorical(train_seq)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_oh<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(20000, 100, 500)
 </code></pre>
 <ul>
 <li>정수 하나마다 모두 500차원의 배열로 변경되었기 때문에 (20000, 100) 크기의 train_seq가 (20000, 100, 500) 크기의 train_oh로 바뀜</li>
 <li>샘플 데이터의 크기가 1차원 정수 배열 (100, )에서 2차원 배열 (100, 500)로 바꿔야 하므로 SimpleRNN 클래스의 input_shape 매개변수의 값을 (100, 500)으로 지정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_oh[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][:<span style="color:#ae81ff">12</span>])
-</span></span></code></pre></div><pre><code>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_oh[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][:<span style="color:#ae81ff">12</span>])
+</code></pre></div><pre><code>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
 </code></pre>
 <ul>
 <li>처음 12개 원소를 출력해 보면 열한 번째 원소가 1인 것을 확인 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>sum(train_oh[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]))
-</span></span></code></pre></div><pre><code>1.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>sum(train_oh[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]))
+</code></pre></div><pre><code>1.0
 </code></pre>
 <ul>
 <li>
@@ -488,12 +487,12 @@ if (!doNotTrack) {
 <p>같은 방식으로 val_seq도 원-핫 인코딩으로 변환</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>val_oh <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>to_categorical(val_seq)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">val_oh <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>to_categorical(val_seq)
+</code></pre></div><ul>
 <li>모델의 구조를 출력</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;sequential&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;sequential&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -534,17 +533,17 @@ _________________________________________________________________
 <li>이 예에서는 기본 RMSprop의 학습률 0.001을 사용하지 않기 위해 별도의 RMSprop 객체를 만들어 학습률을 0.001로 지정</li>
 <li>에포크 횟수를 100으로, 배치 크기를 64개로 설정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-4</span>)
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>rmsprop, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;binary_crossentropy&#39;</span>,
-</span></span><span style="display:flex;"><span>              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
-</span></span><span style="display:flex;"><span>checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-simplernn-model.h5&#39;</span>,
-</span></span><span style="display:flex;"><span>                                                save_best_onlu <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>early_stopping_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>EarlyStopping(patience<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
-</span></span><span style="display:flex;"><span>                                                  restore_best_weights <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_oh, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, 
-</span></span><span style="display:flex;"><span>                    validation_data<span style="color:#f92672">=</span>(val_oh, val_target),
-</span></span><span style="display:flex;"><span>                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb, early_stopping_cb])
-</span></span></code></pre></div><pre><code>Epoch 1/100
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-4</span>)
+model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>rmsprop, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;binary_crossentropy&#39;</span>,
+              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
+checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-simplernn-model.h5&#39;</span>,
+                                                save_best_onlu <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+early_stopping_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>EarlyStopping(patience<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+                                                  restore_best_weights <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_oh, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, 
+                    validation_data<span style="color:#f92672">=</span>(val_oh, val_target),
+                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb, early_stopping_cb])
+</code></pre></div><pre><code>Epoch 1/100
 313/313 [==============================] - 31s 85ms/step - loss: 0.7004 - accuracy: 0.4995 - val_loss: 0.7015 - val_accuracy: 0.4874
 Epoch 2/100
 313/313 [==============================] - 26s 82ms/step - loss: 0.6961 - accuracy: 0.5068 - val_loss: 0.6984 - val_accuracy: 0.4920
@@ -637,19 +636,19 @@ Epoch 45/100
 Epoch 46/100
 313/313 [==============================] - 25s 80ms/step - loss: 0.4028 - accuracy: 0.8252 - val_loss: 0.4623 - val_accuracy: 0.7874
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_64_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_64_0.png" alt="png"></p>
 <ul>
 <li>훈련 손실은 꾸준히 감소하고 있지만 검증 손실은 대략 20번째에서 감소가 둔해짐</li>
 <li>원-핫 인코딩의 단점은 입력 데이터가 엄청나게 커진다는 것</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_seq<span style="color:#f92672">.</span>nbytes, train_oh<span style="color:#f92672">.</span>nbytes)
-</span></span></code></pre></div><pre><code>8000000 4000000000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_seq<span style="color:#f92672">.</span>nbytes, train_oh<span style="color:#f92672">.</span>nbytes)
+</code></pre></div><pre><code>8000000 4000000000
 </code></pre>
 <ul>
 <li>토큰 1개를 500차원으로 늘렸기 때문에 대략 500배가 커짐</li>
@@ -692,11 +691,11 @@ Epoch 46/100
 <p>Embedding 클래스를 SimpleRNN 층 앞에 추가한 두 번째 순환 신경망을 생성</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model2 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-</span></span><span style="display:flex;"><span>model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Embedding(<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">16</span>, input_length<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>))
-</span></span><span style="display:flex;"><span>model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>SimpleRNN(<span style="color:#ae81ff">8</span>))
-</span></span><span style="display:flex;"><span>model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>))
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model2 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Embedding(<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">16</span>, input_length<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>))
+model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>SimpleRNN(<span style="color:#ae81ff">8</span>))
+model2<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>))
+</code></pre></div><ul>
 <li>
 <p>Embedding 클래스의 첫 번째 매개변수 (500)는 어휘 사전의 크기</p>
 <ul>
@@ -720,8 +719,8 @@ Epoch 46/100
 <p>SimpleRNN 층과 Dense 층은 이전과 동일</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model2<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;sequential_2&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model2<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;sequential_2&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -766,17 +765,17 @@ _________________________________________________________________
 <p>훈련 과정은 이전과 동일</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-4</span>)
-</span></span><span style="display:flex;"><span>model2<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>rmsprop, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;binary_crossentropy&#39;</span>,
-</span></span><span style="display:flex;"><span>              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
-</span></span><span style="display:flex;"><span>checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-embedding-model.h5&#39;</span>,
-</span></span><span style="display:flex;"><span>                                                save_best_onlu <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>early_stopping_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>EarlyStopping(patience<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
-</span></span><span style="display:flex;"><span>                                                  restore_best_weights <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>history <span style="color:#f92672">=</span> model2<span style="color:#f92672">.</span>fit(train_seq, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, 
-</span></span><span style="display:flex;"><span>                    validation_data<span style="color:#f92672">=</span>(val_seq, val_target),
-</span></span><span style="display:flex;"><span>                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb, early_stopping_cb])
-</span></span></code></pre></div><pre><code>Epoch 1/100
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-4</span>)
+model2<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>rmsprop, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;binary_crossentropy&#39;</span>,
+              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
+checkpoint_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>ModelCheckpoint(<span style="color:#e6db74">&#39;best-embedding-model.h5&#39;</span>,
+                                                save_best_onlu <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+early_stopping_cb <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>callbacks<span style="color:#f92672">.</span>EarlyStopping(patience<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+                                                  restore_best_weights <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+history <span style="color:#f92672">=</span> model2<span style="color:#f92672">.</span>fit(train_seq, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, 
+                    validation_data<span style="color:#f92672">=</span>(val_seq, val_target),
+                    callbacks<span style="color:#f92672">=</span>[checkpoint_cb, early_stopping_cb])
+</code></pre></div><pre><code>Epoch 1/100
 313/313 [==============================] - 32s 99ms/step - loss: 0.6949 - accuracy: 0.5070 - val_loss: 0.6948 - val_accuracy: 0.5012
 Epoch 2/100
 313/313 [==============================] - 31s 98ms/step - loss: 0.6913 - accuracy: 0.5238 - val_loss: 0.6930 - val_accuracy: 0.5136
@@ -849,13 +848,13 @@ Epoch 35/100
 Epoch 36/100
 313/313 [==============================] - 31s 99ms/step - loss: 0.5525 - accuracy: 0.7298 - val_loss: 0.6553 - val_accuracy: 0.6274
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_84_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;loss&#39;</span>])
+plt<span style="color:#f92672">.</span>plot(history<span style="color:#f92672">.</span>history[<span style="color:#e6db74">&#39;val_loss&#39;</span>])
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;loss&#39;</span>)
+plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;val&#39;</span>])
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter9_2/output_84_0.png" alt="png"></p>
 <ul>
 <li>검증 손실이 더 감소되지 않아 훈련이 적절히 조기 종료</li>
 <li>이에 비해 훈련 손실은 계속 감소</li>
@@ -900,7 +899,7 @@ Epoch 36/100
 <li>&lsquo;post&rsquo; : 시퀀스 뒤에 패딩을 추가</li>
 </ul>
 </li>
-<li>&rsquo;truncating&rsquo; : 긴 시퀀에서 잘라버릴 위치를 지정
+<li>&lsquo;truncating&rsquo; : 긴 시퀀에서 잘라버릴 위치를 지정
 <ul>
 <li>&lsquo;pre&rsquo; : 시퀀스 앞부분을 잘라냄</li>
 <li>&lsquo;post&rsquo; : 시퀀스 뒷부분을 잘라냄</li>
@@ -923,7 +922,7 @@ Epoch 36/100
 <li>첫 번째 매개변수 : 뉴런의 개수를 지정</li>
 <li>activation : 매개변수에서 활성화 함수를 지정
 <ul>
-<li>&rsquo;tanh&rsquo; : 기본값, 하이퍼볼릭 탄젠트</li>
+<li>&lsquo;tanh&rsquo; : 기본값, 하이퍼볼릭 탄젠트</li>
 <li>dropout : 입력에 대한 드롭아웃 비율을 지정</li>
 <li>return_sequences : 모든 타임스텝의 은닉 상태를 출력할지 결정
 <ul>
@@ -994,18 +993,18 @@ Epoch 36/100
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -1043,7 +1042,7 @@ Epoch 36/100
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -1074,6 +1073,7 @@ Epoch 36/100
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -1084,8 +1084,8 @@ Epoch 36/100
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -1113,38 +1113,6 @@ Epoch 36/100
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -1159,32 +1127,6 @@ Epoch 36/100
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

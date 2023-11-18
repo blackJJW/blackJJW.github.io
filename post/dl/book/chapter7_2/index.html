@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/dl/book/chapter7_2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-23T16:51:45+09:00" />
 <meta property="article:modified_time" content="2022-04-23T16:51:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -168,9 +167,9 @@ if (!doNotTrack) {
 		</header>
 		<div class="content post__content clearfix">
 			<h2 id="2개의-층">2개의 층</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
-</span></span><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
-</span></span></code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
+</code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
 32768/29515 [=================================] - 0s 0us/step
 40960/29515 [=========================================] - 0s 0us/step
 Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
@@ -185,12 +184,12 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 <ul>
 <li>이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1 사이로 변환하고, 28 X 28 크기의 2차원 배열을 784 크기의 1차원 배열로 펼침.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
-</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_scaled<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>)
-</span></span><span style="display:flex;"><span>train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+
+train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+train_scaled <span style="color:#f92672">=</span> train_scaled<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>)
+train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><ul>
 <li>은닉층(hidden layer) : 입력층과 출력층 사이에 있는 모든 층</li>
 <li>활성화 함수 : 신경망 층의 선형 방정식의 계산 값에 적용하는 함수.
 <ul>
@@ -205,15 +204,15 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dense1 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, ))
-</span></span><span style="display:flex;"><span>dense2 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>)
-</span></span></code></pre></div><h2 id="심층-신경망-만들기">심층 신경망 만들기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dense1 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, ))
+dense2 <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>)
+</code></pre></div><h2 id="심층-신경망-만들기">심층 신경망 만들기</h2>
 <ul>
 <li>dense1과 dense2 객체를 Sequential 클래스에 추가하여 심층 신경망(deep neural network, DNN) 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential([dense1, dense2])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;sequential&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential([dense1, dense2])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;sequential&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -269,12 +268,12 @@ _________________________________________________________________
 <ul>
 <li>Sequential 클래스의 생성자 안에서 바로 Dense 클래스의 객체를 만드는 경우가 많음.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential([
-</span></span><span style="display:flex;"><span>                          keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>,), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hidden&#39;</span>),
-</span></span><span style="display:flex;"><span>                          keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;output&#39;</span>)
-</span></span><span style="display:flex;"><span>                          ], name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;패션 MNIST 모델&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;패션 MNIST 모델&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential([
+                          keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>,), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hidden&#39;</span>),
+                          keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;output&#39;</span>)
+                          ], name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;패션 MNIST 모델&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;패션 MNIST 모델&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -291,11 +290,11 @@ _________________________________________________________________
 <ul>
 <li>add() 메서드를 이용한 층 추가</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, )))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;sequential_1&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sigmoid&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, )))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;sequential_1&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -309,9 +308,9 @@ Trainable params: 79,510
 Non-trainable params: 0
 _________________________________________________________________
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-</span></span></code></pre></div><pre><code>Epoch 1/5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</code></pre></div><pre><code>Epoch 1/5
 1500/1500 [==============================] - 8s 3ms/step - loss: 0.5638 - accuracy: 0.8071
 Epoch 2/5
 1500/1500 [==============================] - 5s 3ms/step - loss: 0.4084 - accuracy: 0.8539
@@ -353,12 +352,12 @@ Epoch 5/5
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>summary()
-</span></span></code></pre></div><pre><code>Model: &quot;sequential_3&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>summary()
+</code></pre></div><pre><code>Model: &quot;sequential_3&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
@@ -378,12 +377,12 @@ _________________________________________________________________
 <li>첫 번째 등장하는 Flatten 클래스에 포함된 모델 파라미터는 0개.</li>
 <li>케라스의 Flatten 층을 신경망 모델에 추가하면 입력값의 차원을 짐작 가능.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
-</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
-</span></span><span style="display:flex;"><span>train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-</span></span></code></pre></div><pre><code>Epoch 1/5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
+train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</code></pre></div><pre><code>Epoch 1/5
 1500/1500 [==============================] - 5s 3ms/step - loss: 0.5293 - accuracy: 0.8148
 Epoch 2/5
 1500/1500 [==============================] - 5s 3ms/step - loss: 0.3936 - accuracy: 0.8585
@@ -400,8 +399,8 @@ Epoch 5/5
 
 &lt;keras.callbacks.History at 0x7fa78fc0c3d0&gt;
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
-</span></span></code></pre></div><pre><code>375/375 [==============================] - 2s 4ms/step - loss: 0.3602 - accuracy: 0.8755
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</code></pre></div><pre><code>375/375 [==============================] - 2s 4ms/step - loss: 0.3602 - accuracy: 0.8755
 
 
 
@@ -428,16 +427,16 @@ Epoch 5/5
 <p>가장 기본적인 optimizer -&gt; 확률적 경사 하강법(SGD)</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sgd&#39;</span>, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 위 코드와 동일</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>sgd, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sgd&#39;</span>, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 위 코드와 동일</span>
+
+sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD()
+model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span>sgd, loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</code></pre></div><ul>
 <li>만약 SGD 클래스이 학습률 기본값이 0.01일 때 이를 바꾸고 싶다면 learning_rate를 지정.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD(learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+</code></pre></div><ul>
 <li>기본 경사 하강법 옵티마이저</li>
 </ul>
 <p>SGD(learing_rate=0.01) -&gt; 모멘텀(momentum &gt; 0) -&gt; 네스테로프 모멘텀(nesterov = True)</p>
@@ -458,8 +457,8 @@ Epoch 5/5
 </li>
 <li>SGD 클랫의 nesterov 매개변수를 False에서 True로 바꾸면 네스테로프 모멘텀 최적화(nesterov momentum optimizer 또는 네스테로프 가속 경사)를 사용</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD(momentum<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>, nesterov<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sgd <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>SGD(momentum<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>, nesterov<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</code></pre></div><ul>
 <li>
 <p>네스테로프 모멘텀은 모멘텀 최적화를 2번 반복하여 구현.</p>
 </li>
@@ -478,20 +477,20 @@ Epoch 5/5
 <p>대표적인 옵티마이저는 Adagrad, PMSprop</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>adagrad <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>Adagrad()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer <span style="color:#f92672">=</span> adagrad, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer <span style="color:#f92672">=</span> rmsprop, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">adagrad <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>Adagrad()
+model<span style="color:#f92672">.</span>compile(optimizer <span style="color:#f92672">=</span> adagrad, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rmsprop <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>optimizers<span style="color:#f92672">.</span>RMSprop()
+model<span style="color:#f92672">.</span>compile(optimizer <span style="color:#f92672">=</span> rmsprop, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</code></pre></div><ul>
 <li>모멘텀 최적화와 RMSprop의 장점을 접목한 것이 Adam</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-</span></span></code></pre></div><pre><code>Epoch 1/5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">100</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
+model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>, loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</code></pre></div><pre><code>Epoch 1/5
 1500/1500 [==============================] - 5s 3ms/step - loss: 0.5216 - accuracy: 0.8180
 Epoch 2/5
 1500/1500 [==============================] - 4s 3ms/step - loss: 0.3914 - accuracy: 0.8591
@@ -508,8 +507,8 @@ Epoch 5/5
 
 &lt;keras.callbacks.History at 0x7fa78fa64d50&gt;
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
-</span></span></code></pre></div><pre><code>375/375 [==============================] - 2s 4ms/step - loss: 0.3498 - accuracy: 0.8761
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</code></pre></div><pre><code>375/375 [==============================] - 2s 4ms/step - loss: 0.3498 - accuracy: 0.8761
 
 
 
@@ -637,18 +636,18 @@ Epoch 5/5
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -686,7 +685,7 @@ Epoch 5/5
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -717,6 +716,7 @@ Epoch 5/5
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -727,8 +727,8 @@ Epoch 5/5
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -756,38 +756,6 @@ Epoch 5/5
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -802,32 +770,6 @@ Epoch 5/5
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

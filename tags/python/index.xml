@@ -6,7 +6,16 @@
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Mar 2023 22:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 23:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Python] JSON형식으로 변환</title>
+      <link>https://blackjjw.github.io/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>
+      <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[DL] 퍼셉트론 - 퍼셉트론 구현</title>
       <link>https://blackjjw.github.io/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/</link>

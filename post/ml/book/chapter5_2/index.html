@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/ml/book/chapter5_2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-23T16:31:45+09:00" />
 <meta property="article:modified_time" content="2022-04-23T16:31:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -191,25 +190,25 @@ if (!doNotTrack) {
 <p>마지막에 테스트 세트에서 최종 점수를 평가.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span>wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
-</span></span><span style="display:flex;"><span>target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(data, target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sub_input, val_input, sub_target, val_target <span style="color:#f92672">=</span> train_test_split(train_input, train_target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
+target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(data, target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_input, val_input, sub_target, val_target <span style="color:#f92672">=</span> train_test_split(train_input, train_target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><ul>
 <li>train_test_split 함수를 2번 적용하여, 훈련 세트와 검증 세트로 나눠 준 것</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(sub_input<span style="color:#f92672">.</span>shape, val_input<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(4157, 3) (1040, 3)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(sub_input<span style="color:#f92672">.</span>shape, val_input<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(4157, 3) (1040, 3)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
-</span></span><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>dt<span style="color:#f92672">.</span>fit(sub_input, sub_target)
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(sub_input, sub_target))
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(val_input, val_target))
-</span></span></code></pre></div><pre><code>0.9971133028626413
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
+dt <span style="color:#f92672">=</span> DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+dt<span style="color:#f92672">.</span>fit(sub_input, sub_target)
+print(dt<span style="color:#f92672">.</span>score(sub_input, sub_target))
+print(dt<span style="color:#f92672">.</span>score(val_input, val_target))
+</code></pre></div><pre><code>0.9971133028626413
 0.864423076923077
 </code></pre>
 <ul>
@@ -236,10 +235,10 @@ if (!doNotTrack) {
 </li>
 <li>cross_validate() : 교차 검증 함수</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target)
-</span></span><span style="display:flex;"><span>print(scores)
-</span></span></code></pre></div><pre><code>{'fit_time': array([0.01163411, 0.01068687, 0.01692414, 0.01103592, 0.00983691]), 'score_time': array([0.00145602, 0.00140238, 0.00137901, 0.00128579, 0.00525594]), 'test_score': array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
+scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target)
+print(scores)
+</code></pre></div><pre><code>{'fit_time': array([0.01163411, 0.01068687, 0.01692414, 0.01103592, 0.00983691]), 'score_time': array([0.00145602, 0.00140238, 0.00137901, 0.00128579, 0.00525594]), 'test_score': array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])}
 </code></pre>
 <ul>
 <li>fit_time, score_time, test_score 키를 가진 딕셔너리를 반환.</li>
@@ -259,9 +258,9 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.855300214703487
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.855300214703487
 </code></pre>
 <ul>
 <li>
@@ -283,18 +282,18 @@ if (!doNotTrack) {
 <p>cross_validate() 함수는 기본적으로 회귀 모델일 경우 KFold 분할기를 사용, 분류 모델일 경우 타깃 클래스를 골고루 나누기 위해 StratifiedKFold를 사용.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> StratifiedKFold
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target, cv<span style="color:#f92672">=</span>StratifiedKFold())
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.855300214703487
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> StratifiedKFold
+scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target, cv<span style="color:#f92672">=</span>StratifiedKFold())
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.855300214703487
 </code></pre>
 <ul>
 <li>만약, 훈련 세트를 섞은 후 10-폴드 교차 검증을 수행하려면 다음과 같이 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>splitter <span style="color:#f92672">=</span> StratifiedKFold(n_splits<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target, cv<span style="color:#f92672">=</span>splitter)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.8574181117533719
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">splitter <span style="color:#f92672">=</span> StratifiedKFold(n_splits<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+scores <span style="color:#f92672">=</span> cross_validate(dt, train_input, train_target, cv<span style="color:#f92672">=</span>splitter)
+print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</code></pre></div><pre><code>0.8574181117533719
 </code></pre>
 <ul>
 <li>n_splits : 몇(k)폴드 교차 검증을 할 지 지정</li>
@@ -337,13 +336,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> GridSearchCV
-</span></span><span style="display:flex;"><span>params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : [<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.0002</span>, <span style="color:#ae81ff">0.0003</span>, <span style="color:#ae81ff">0.0004</span>, <span style="color:#ae81ff">0.0005</span>]}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> GridSearchCV
+params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : [<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.0002</span>, <span style="color:#ae81ff">0.0003</span>, <span style="color:#ae81ff">0.0004</span>, <span style="color:#ae81ff">0.0005</span>]}
+</code></pre></div><ul>
 <li>GridSearchCV 클래스에 탐색 대상 모델과 params 변수를 전달하여 그리드 서치 객체를 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gs <span style="color:#f92672">=</span> GridSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gs <span style="color:#f92672">=</span> GridSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><ul>
 <li>gs 객체에 fit()을 호출</li>
 <li>cv 매개변수 기본값 = 5 -&gt; min_impurity_decrease 값마다 5-폴드 -&gt; 총 25번 훈련</li>
 <li>n_jobs : 병렬 실행할 CPU 코어 수
@@ -352,8 +351,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gs<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span></code></pre></div><pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gs<span style="color:#f92672">.</span>fit(train_input, train_target)
+</code></pre></div><pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
              param_grid={'min_impurity_decrease': [0.0001, 0.0002, 0.0003,
                                                    0.0004, 0.0005]})
 </code></pre>
@@ -362,30 +361,30 @@ if (!doNotTrack) {
 <li>이 모델은 gs객체의 best_estimator_속성에 저장</li>
 <li>일반 결정 트리에서 똑같이 사용가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> gs<span style="color:#f92672">.</span>best_estimator_
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(train_input, train_target))
-</span></span></code></pre></div><pre><code>0.9615162593804117
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dt <span style="color:#f92672">=</span> gs<span style="color:#f92672">.</span>best_estimator_
+print(dt<span style="color:#f92672">.</span>score(train_input, train_target))
+</code></pre></div><pre><code>0.9615162593804117
 </code></pre>
 <ul>
 <li>그리드 서치로 찾은 최적의 매개변수는 best_params_ 속성에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(gs<span style="color:#f92672">.</span>best_params_)
-</span></span></code></pre></div><pre><code>{'min_impurity_decrease': 0.0001}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(gs<span style="color:#f92672">.</span>best_params_)
+</code></pre></div><pre><code>{'min_impurity_decrease': 0.0001}
 </code></pre>
 <ul>
 <li>각 매개변수에서 수행한 교차 검증의 평균점수는 cv_results_속성의 mean_test_score 키에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>])
-</span></span></code></pre></div><pre><code>[0.86819297 0.86453617 0.86492226 0.86780891 0.86761605]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>])
+</code></pre></div><pre><code>[0.86819297 0.86453617 0.86492226 0.86780891 0.86761605]
 </code></pre>
 <ul>
 <li>넘파이 argmax() 사용하면 가장 큰 값의 인덱스를 추출</li>
 <li>이 인덱스를 통해 params 키에 저장된 매개변수 출력 가능</li>
 <li>이 값이 최상의 검증 점수를 만든 매개변수 조합</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>best_index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>])
-</span></span><span style="display:flex;"><span>print(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;params&#39;</span>][best_index]) 
-</span></span></code></pre></div><pre><code>{'min_impurity_decrease': 0.0001}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">best_index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>])
+print(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;params&#39;</span>][best_index]) 
+</code></pre></div><pre><code>{'min_impurity_decrease': 0.0001}
 </code></pre>
 <ul>
 <li>이 과정을 정리
@@ -396,22 +395,22 @@ if (!doNotTrack) {
 </ol>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.0001</span>), 
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;max_depth&#39;</span> : range(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">1</span>), <span style="color:#75715e"># 정수만 사용 </span>
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;min_samples_split&#39;</span> : range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>)} <span style="color:#75715e"># 정수만 사용</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gs <span style="color:#f92672">=</span> GridSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>gs<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span></code></pre></div><pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.0001</span>), 
+          <span style="color:#e6db74">&#39;max_depth&#39;</span> : range(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">1</span>), <span style="color:#75715e"># 정수만 사용 </span>
+          <span style="color:#e6db74">&#39;min_samples_split&#39;</span> : range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>)} <span style="color:#75715e"># 정수만 사용</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gs <span style="color:#f92672">=</span> GridSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+gs<span style="color:#f92672">.</span>fit(train_input, train_target)
+</code></pre></div><pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
              param_grid={'max_depth': range(5, 20),
                          'min_impurity_decrease': array([0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0006, 0.0007, 0.0008,
        0.0009]),
                          'min_samples_split': range(2, 100, 10)})
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(gs<span style="color:#f92672">.</span>best_params_)
-</span></span></code></pre></div><pre><code>{'max_depth': 14, 'min_impurity_decrease': 0.0004, 'min_samples_split': 12}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(gs<span style="color:#f92672">.</span>best_params_)
+</code></pre></div><pre><code>{'max_depth': 14, 'min_impurity_decrease': 0.0004, 'min_samples_split': 12}
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>max(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.8683865773302731
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>max(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>]))
+</code></pre></div><pre><code>0.8683865773302731
 </code></pre>
 <h3 id="랜덤-서치">랜덤 서치</h3>
 <ul>
@@ -435,8 +434,8 @@ if (!doNotTrack) {
 <li>파이썬의 핵심 과학 라이브러리</li>
 <li>적분, 보간, 선형 대수, 확률 등을 포함한 수치 계산 전용 라이브러리</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> uniform, randint
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> uniform, randint
+</code></pre></div><ul>
 <li>싸이파이의 stats 서비 패키지에 있는 uniform과 randint 클래스는 모두 주어진 범위에서 고르게 값을 뽑음.
 <ul>
 <li>&lsquo;균등 분포에서 샘플링&rsquo;</li>
@@ -445,36 +444,36 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rgen <span style="color:#f92672">=</span> randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
-</span></span><span style="display:flex;"><span>rgen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">10</span>)
-</span></span></code></pre></div><pre><code>array([0, 3, 8, 2, 3, 8, 3, 8, 7, 1])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rgen <span style="color:#f92672">=</span> randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
+rgen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">10</span>)
+</code></pre></div><pre><code>array([0, 3, 8, 2, 3, 8, 3, 8, 7, 1])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>np<span style="color:#f92672">.</span>unique(rgen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">1000</span>), return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span></code></pre></div><pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">np<span style="color:#f92672">.</span>unique(rgen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">1000</span>), return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</code></pre></div><pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
  array([111,  88, 104,  88, 117,  97,  91,  92,  90, 122]))
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ugen <span style="color:#f92672">=</span> uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>ugen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">10</span>)
-</span></span></code></pre></div><pre><code>array([0.03797408, 0.58763462, 0.98272677, 0.17041929, 0.05654931,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ugen <span style="color:#f92672">=</span> uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+ugen<span style="color:#f92672">.</span>rvs(<span style="color:#ae81ff">10</span>)
+</code></pre></div><pre><code>array([0.03797408, 0.58763462, 0.98272677, 0.17041929, 0.05654931,
        0.09258853, 0.87524285, 0.76708824, 0.61140304, 0.36494506])
 </code></pre>
 <ul>
 <li>min_samples_leaf : 리프 노드가 되기 위한 최소 샘플의 개수</li>
 <li>어떤 노드가 분할하여 만들어질 자식 노드의 샘플 수가 이 값보다 작을 경우 분할하지 않음.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : uniform(<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.001</span>), 
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;max_depth&#39;</span> : randint(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">50</span>),  
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;min_samples_split&#39;</span> : randint(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">25</span>),
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;min_samples_leaf&#39;</span> : randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">25</span>)
-</span></span><span style="display:flex;"><span>          } 
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;min_impurity_decrease&#39;</span> : uniform(<span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.001</span>), 
+          <span style="color:#e6db74">&#39;max_depth&#39;</span> : randint(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">50</span>),  
+          <span style="color:#e6db74">&#39;min_samples_split&#39;</span> : randint(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">25</span>),
+          <span style="color:#e6db74">&#39;min_samples_leaf&#39;</span> : randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">25</span>)
+          } 
+</code></pre></div><ul>
 <li>샘플링 횟수는 사이킷런의 랜점 서치 클래스인 RandomizedSearchCV의 n_iter 매개변수에 지정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> RandomizedSearchCV
-</span></span><span style="display:flex;"><span>gs <span style="color:#f92672">=</span> RandomizedSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, 
-</span></span><span style="display:flex;"><span>                        n_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>gs<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span></code></pre></div><pre><code>RandomizedSearchCV(estimator=DecisionTreeClassifier(random_state=42),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> RandomizedSearchCV
+gs <span style="color:#f92672">=</span> RandomizedSearchCV(DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>), params, 
+                        n_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+gs<span style="color:#f92672">.</span>fit(train_input, train_target)
+</code></pre></div><pre><code>RandomizedSearchCV(estimator=DecisionTreeClassifier(random_state=42),
                    n_iter=100, n_jobs=-1,
                    param_distributions={'max_depth': &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7feb8c126650&gt;,
                                         'min_impurity_decrease': &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7feb8bfb5ad0&gt;,
@@ -482,18 +481,18 @@ if (!doNotTrack) {
                                         'min_samples_split': &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7feb8bfb54d0&gt;},
                    random_state=42)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(gs<span style="color:#f92672">.</span>best_params_)
-</span></span></code></pre></div><pre><code>{'max_depth': 39, 'min_impurity_decrease': 0.00034102546602601173, 'min_samples_leaf': 7, 'min_samples_split': 13}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(gs<span style="color:#f92672">.</span>best_params_)
+</code></pre></div><pre><code>{'max_depth': 39, 'min_impurity_decrease': 0.00034102546602601173, 'min_samples_leaf': 7, 'min_samples_split': 13}
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>max(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>]))
-</span></span></code></pre></div><pre><code>0.8695428296438884
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>max(gs<span style="color:#f92672">.</span>cv_results_[<span style="color:#e6db74">&#39;mean_test_score&#39;</span>]))
+</code></pre></div><pre><code>0.8695428296438884
 </code></pre>
 <ul>
 <li>최적의 모델은 이미 전체 훈련 세트(train_input, train_target)로 훈련, best_estimator_ 속성에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> gs<span style="color:#f92672">.</span>best_estimator_
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(test_input, test_target))
-</span></span></code></pre></div><pre><code>0.86
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dt <span style="color:#f92672">=</span> gs<span style="color:#f92672">.</span>best_estimator_
+print(dt<span style="color:#f92672">.</span>score(test_input, test_target))
+</code></pre></div><pre><code>0.86
 </code></pre>
 <h2 id="마무리">마무리</h2>
 <h3 id="키워드로-끝내는-핵심-포인트">키워드로 끝내는 핵심 포인트</h3>
@@ -617,18 +616,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -666,7 +665,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -697,6 +696,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -707,8 +707,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -736,38 +736,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -782,32 +750,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

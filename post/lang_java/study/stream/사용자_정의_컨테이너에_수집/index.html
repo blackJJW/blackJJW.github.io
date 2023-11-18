@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-08T21:40:30+09:00" />
 <meta property="article:modified_time" content="2022-12-08T21:40:30+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -238,39 +237,39 @@ if (!doNotTrack) {
 <li>학생들 중에서 남학생만 수집하는 MaleStudent 컨테이너가 다음과 같이 정의</li>
 <li>MaleStudent.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaleStudent</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">;</span> <span style="color:#75715e">// 요소를 저장할 컬렉션
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MaleStudent</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;();</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] MaleStudent()&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		                        <span style="color:#75715e">// 생성자를 호출하는 스레드 이름
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            <span style="color:#75715e">// 생성자가 몇 번 호출되었는지 확인
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>Student student<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 요소를 수집하는 메소드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>student<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] accumulate()&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>                                <span style="color:#75715e">// accumulate()를 호출하는 스레드 이름
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                <span style="color:#75715e">// accumulate()를 몇 번 호출되었는지 확인
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>MaleStudent other<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">/* 두 MaleStudent를 결합하는 메소드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                                          * (병렬 처리 시에만 호출)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                                          * */</span>
-</span></span><span style="display:flex;"><span>		list<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">getList</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] combine()&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>                               <span style="color:#75715e">// combine()을 호출하는 스레드 이름
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getList</span><span style="color:#f92672">(){</span> <span style="color:#75715e">// 요소가 저장된 컬렉션을 리턴
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> list<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaleStudent</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">;</span> <span style="color:#75715e">// 요소를 저장할 컬렉션
+</span><span style="color:#75715e"></span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MaleStudent</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;();</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] MaleStudent()&#34;</span><span style="color:#f92672">);</span>
+		                        <span style="color:#75715e">// 생성자를 호출하는 스레드 이름
+</span><span style="color:#75715e"></span>                            <span style="color:#75715e">// 생성자가 몇 번 호출되었는지 확인
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>Student student<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 요소를 수집하는 메소드
+</span><span style="color:#75715e"></span>		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>student<span style="color:#f92672">);</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] accumulate()&#34;</span><span style="color:#f92672">);</span>
+                                <span style="color:#75715e">// accumulate()를 호출하는 스레드 이름
+</span><span style="color:#75715e"></span>                                <span style="color:#75715e">// accumulate()를 몇 번 호출되었는지 확인
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>MaleStudent other<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">/* 두 MaleStudent를 결합하는 메소드
+</span><span style="color:#75715e">	                                          * (병렬 처리 시에만 호출)
+</span><span style="color:#75715e">	                                          * */</span>
+		list<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">getList</span><span style="color:#f92672">());</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ] combine()&#34;</span><span style="color:#f92672">);</span>
+                               <span style="color:#75715e">// combine()을 호출하는 스레드 이름
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getList</span><span style="color:#f92672">(){</span> <span style="color:#75715e">// 요소가 저장된 컬렉션을 리턴
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> list<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
 <li>list 필드는 남학생들이 수집될 필드</li>
 <li>순차 처리 스트림에서 <code>MaleStudent()</code> 생성자는 딱 한 번 호출
 <ul>
@@ -291,15 +290,15 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) 스트림에서 읽은 남학생을 MaleStudent에 수집하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> totalStream <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span><span style="color:#f92672">)</span> Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> maleStream <span style="color:#f92672">=</span> totalStream<span style="color:#f92672">.</span><span style="color:#a6e22e">filters</span><span style="color:#f92672">(</span>s<span style="color:#f92672">-&gt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()==</span>Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span><span style="color:#f92672">)</span> Supplier<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">&gt;</span> supplier <span style="color:#f92672">=</span> <span style="color:#f92672">()-&gt;</span><span style="color:#66d9ef">new</span> MaleStudent<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span><span style="color:#f92672">)</span> BiConsumer<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">,</span> Student<span style="color:#f92672">&gt;</span> accumulator <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ms<span style="color:#f92672">,</span> s<span style="color:#f92672">)-&gt;</span>ms<span style="color:#f92672">.</span><span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span><span style="color:#f92672">)</span> BiConsumer<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">,</span> MaleStudent<span style="color:#f92672">&gt;</span> combiner <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ms1<span style="color:#f92672">,</span> ms2<span style="color:#f92672">)-&gt;</span>ms1<span style="color:#f92672">.</span><span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>ms2<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span><span style="color:#f92672">)</span> MaleStudent maleStudent <span style="color:#f92672">=</span> maleStream<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>supplier<span style="color:#f92672">,</span> accumulator<span style="color:#f92672">,</span> combiner<span style="color:#f92672">);</span>
-</span></span></code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">1<span style="color:#f92672">)</span> Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> totalStream <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
+2<span style="color:#f92672">)</span> Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> maleStream <span style="color:#f92672">=</span> totalStream<span style="color:#f92672">.</span><span style="color:#a6e22e">filters</span><span style="color:#f92672">(</span>s<span style="color:#f92672">-&gt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()==</span>Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">);</span>
+
+3<span style="color:#f92672">)</span> Supplier<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">&gt;</span> supplier <span style="color:#f92672">=</span> <span style="color:#f92672">()-&gt;</span><span style="color:#66d9ef">new</span> MaleStudent<span style="color:#f92672">();</span>
+4<span style="color:#f92672">)</span> BiConsumer<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">,</span> Student<span style="color:#f92672">&gt;</span> accumulator <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ms<span style="color:#f92672">,</span> s<span style="color:#f92672">)-&gt;</span>ms<span style="color:#f92672">.</span><span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+5<span style="color:#f92672">)</span> BiConsumer<span style="color:#f92672">&lt;</span>MaleStudent<span style="color:#f92672">,</span> MaleStudent<span style="color:#f92672">&gt;</span> combiner <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ms1<span style="color:#f92672">,</span> ms2<span style="color:#f92672">)-&gt;</span>ms1<span style="color:#f92672">.</span><span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>ms2<span style="color:#f92672">);</span>
+
+6<span style="color:#f92672">)</span> MaleStudent maleStudent <span style="color:#f92672">=</span> maleStream<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>supplier<span style="color:#f92672">,</span> accumulator<span style="color:#f92672">,</span> combiner<span style="color:#f92672">);</span>
+</code></pre></div><ol>
 <li>
 <p>전체 학생 List에서 Stream을 얻는다.</p>
 </li>
@@ -325,20 +324,20 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>상기 코드에서 변수를 생략하면 다음과 같이 작성 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> MaleStudent<span style="color:#f92672">(),</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">(</span>r<span style="color:#f92672">,</span> t<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> r<span style="color:#f92672">.</span><span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>t<span style="color:#f92672">),</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">(</span>r1<span style="color:#f92672">,</span> r2<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> r1<span style="color:#f92672">.</span><span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>r2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+	<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
+	<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">()</span>
+		<span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> MaleStudent<span style="color:#f92672">(),</span>
+		<span style="color:#f92672">(</span>r<span style="color:#f92672">,</span> t<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> r<span style="color:#f92672">.</span><span style="color:#a6e22e">accumulate</span><span style="color:#f92672">(</span>t<span style="color:#f92672">),</span>
+		<span style="color:#f92672">(</span>r1<span style="color:#f92672">,</span> r2<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> r1<span style="color:#f92672">.</span><span style="color:#a6e22e">combine</span><span style="color:#f92672">(</span>r2<span style="color:#f92672">)</span>
+<span style="color:#f92672">);</span>
+</code></pre></div></li>
 <li>
 <p>람다식을 메소드 참조로 변경하면 다음과 같이 더욱 간단하게 작성 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>MaleStudent <span style="color:#f92672">::</span> <span style="color:#66d9ef">new</span><span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> accumulate<span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> combine<span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+	<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
+	<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>MaleStudent <span style="color:#f92672">::</span> <span style="color:#66d9ef">new</span><span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> accumulate<span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> combine<span style="color:#f92672">);</span>
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -347,28 +346,28 @@ if (!doNotTrack) {
 <li>순차 스트림을 이용해서 사용자 정의 컨테이너인 MaleStudent에 남학생만 수집</li>
 <li>MaleStudentEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaleStudentEx</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> totalList <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">),</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">),</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">),</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JKL&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>MaleStudent <span style="color:#f92672">::</span> <span style="color:#66d9ef">new</span><span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> accumulate<span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> combine<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		maleStudent<span style="color:#f92672">.</span><span style="color:#a6e22e">getList</span><span style="color:#f92672">().</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()));</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaleStudentEx</span> <span style="color:#f92672">{</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> totalList <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
+				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 10<span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">),</span>
+				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> 6<span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">),</span>
+				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">,</span> 10<span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">),</span>
+				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JKL&#34;</span><span style="color:#f92672">,</span> 6<span style="color:#f92672">,</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">);</span>
+
+		MaleStudent maleStudent <span style="color:#f92672">=</span> totalList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+				<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Student<span style="color:#f92672">.</span><span style="color:#a6e22e">Sex</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
+				<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>MaleStudent <span style="color:#f92672">::</span> <span style="color:#66d9ef">new</span><span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> accumulate<span style="color:#f92672">,</span> MaleStudent <span style="color:#f92672">::</span> combine<span style="color:#f92672">);</span>
+
+		maleStudent<span style="color:#f92672">.</span><span style="color:#a6e22e">getList</span><span style="color:#f92672">().</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+			<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()));</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><img src="/images/lang_java/stream/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90_%EC%88%98%EC%A7%91/Untitled.png" alt="Untitled"></p>
 <ul>
 <li>순차 처리를 담당한 스레드 : main</li>
 <li><code>MaleStudent()</code> 생성자가 딱 한 번 호출되었음
@@ -389,34 +388,34 @@ if (!doNotTrack) {
 <ul>
 <li>Student.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Sex <span style="color:#f92672">{</span> MALE<span style="color:#f92672">,</span> FEMALE <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> City <span style="color:#f92672">{</span> Seoul<span style="color:#f92672">,</span> Pusan <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Sex sex<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> City city<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">,</span> Sex sex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">,</span> Sex sex<span style="color:#f92672">,</span> City city<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">city</span> <span style="color:#f92672">=</span> city<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> score<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> Sex <span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> sex<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> City <span style="color:#a6e22e">getCity</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> city<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Sex <span style="color:#f92672">{</span> MALE<span style="color:#f92672">,</span> FEMALE <span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> City <span style="color:#f92672">{</span> Seoul<span style="color:#f92672">,</span> Pusan <span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> Sex sex<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> City city<span style="color:#f92672">;</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">,</span> Sex sex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">,</span> Sex sex<span style="color:#f92672">,</span> City city<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">city</span> <span style="color:#f92672">=</span> city<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> score<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> Sex <span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> sex<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> City <span style="color:#a6e22e">getCity</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> city<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -467,18 +466,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -516,7 +515,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -547,6 +546,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -557,8 +557,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -586,38 +586,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -632,32 +600,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/ml/book/chapter1_3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-22T15:24:45+09:00" />
 <meta property="article:modified_time" content="2022-04-22T15:24:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -177,7 +176,7 @@ if (!doNotTrack) {
 <li>생선 길이 30cm 이상 -&gt; &lsquo;도미&rsquo;</li>
 </ul>
 <pre tabindex="0"><code>if fish_length &gt;= 30:
-  print(&#39;도미&#39;)
+  print('도미')
 </code></pre><ul>
 <li>30cm 이상이 꼭 &lsquo;도미&rsquo;라고 말할 수 없음</li>
 <li>절대 바뀌지 않은 기준 정하기 어려움</li>
@@ -195,13 +194,13 @@ if (!doNotTrack) {
 <li>머신러닝에서 여러 개의 종류(혹은 클래스(class)) 중 하나를 구별해 내는 문제를 분류(classification)</li>
 <li>2개의 클래스 중 하나를 고르는 문제를 이진 분류(binary classification)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
-</span></span><span style="display:flex;"><span>bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
+                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
+                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
+bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
+                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
+                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
+</code></pre></div><ul>
 <li>도미 데이터(35마리)</li>
 <li>도미의 특징을 길이와 무게로 표현 -&gt; 이런 특징 -&gt; 특성(feature)</li>
 <li>특성(feature) : 데이터의 특징</li>
@@ -209,13 +208,13 @@ if (!doNotTrack) {
 <li>산점도(catter plot): x, y축으로 이뤄진 좌표계에 두 변수(x, y)의 관계를 표현하는 방법</li>
 <li>Python 과학계산용 그래프 패키지 : matplotlib</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_7_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+
+plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_7_0.png" alt="png"></p>
 <ul>
 <li>산점도의 그래프가 일직선에 가까운 형태로 나타나는 경우를 선형(linear)적이라고 함</li>
 </ul>
@@ -223,62 +222,62 @@ if (!doNotTrack) {
 <ul>
 <li>빙어 데이터(14마리)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
-</span></span><span style="display:flex;"><span>smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_11_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
+smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_11_0.png" alt="png"></p>
 <h2 id="첫-번째-머신러닝-프로그램">첫 번째 머신러닝 프로그램</h2>
 <ul>
 <li>가장 간단하고 이해가기 쉬운 k-최근접(k-Nearest Neighbors) 알고리즘을 사용, 도미와 빙어를 구분</li>
 <li>알고리즘 사용 전, 도미와 빙어 데이터를 하나의 데이터로 합침</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
-</span></span><span style="display:flex;"><span>weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
+weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
+</code></pre></div><ul>
 <li>사용하는 패키지 : 사이킷 런(scikit-learn)</li>
 <li>이 패키지를 사용하려면 2차원 리스트 필요</li>
 <li>파이썬의 zip() 함수와 리스트 내포(list comprehension)구문 사용</li>
 <li>zip()함수는 나열된 리스트 각각에서 하나씩 원소를 꺼내 반환</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
-</span></span></code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
+</code></pre></div><blockquote>
 <p>zip() 함수와 for문</p>
 </blockquote>
 <ul>
 <li>zip() : 나열된 리스트에서 원소를 하나씩 꺼내주는 일을 함</li>
 <li>for : 반복문</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data)
-</span></span></code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0], [29.7, 450.0], [29.7, 500.0], [30.0, 390.0], [30.0, 450.0], [30.7, 500.0], [31.0, 475.0], [31.0, 500.0], [31.5, 500.0], [32.0, 340.0], [32.0, 600.0], [32.0, 600.0], [33.0, 700.0], [33.0, 700.0], [33.5, 610.0], [33.5, 650.0], [34.0, 575.0], [34.0, 685.0], [34.5, 620.0], [35.0, 680.0], [35.0, 700.0], [35.0, 725.0], [35.0, 720.0], [36.0, 714.0], [36.0, 850.0], [37.0, 1000.0], [38.5, 920.0], [38.5, 955.0], [39.5, 925.0], [41.0, 975.0], [41.0, 950.0], [9.8, 6.7], [10.5, 7.5], [10.6, 7.0], [11.0, 9.7], [11.2, 9.8], [11.3, 8.7], [11.8, 10.0], [11.8, 9.9], [12.0, 9.8], [12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(fish_data)
+</code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0], [29.7, 450.0], [29.7, 500.0], [30.0, 390.0], [30.0, 450.0], [30.7, 500.0], [31.0, 475.0], [31.0, 500.0], [31.5, 500.0], [32.0, 340.0], [32.0, 600.0], [32.0, 600.0], [33.0, 700.0], [33.0, 700.0], [33.5, 610.0], [33.5, 650.0], [34.0, 575.0], [34.0, 685.0], [34.5, 620.0], [35.0, 680.0], [35.0, 700.0], [35.0, 725.0], [35.0, 720.0], [36.0, 714.0], [36.0, 850.0], [37.0, 1000.0], [38.5, 920.0], [38.5, 955.0], [39.5, 925.0], [41.0, 975.0], [41.0, 950.0], [9.8, 6.7], [10.5, 7.5], [10.6, 7.0], [11.0, 9.7], [11.2, 9.8], [11.3, 8.7], [11.8, 10.0], [11.8, 9.9], [12.0, 9.8], [12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
 </code></pre>
 <ul>
 <li>도미 = 1, 빙어 = 0</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
-</span></span><span style="display:flex;"><span>print(fish_target)
-</span></span></code></pre></div><pre><code>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
+print(fish_target)
+</code></pre></div><pre><code>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># KNeighborsClassifier 임포트</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
-</span></span></code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># KNeighborsClassifier 임포트</span>
+<span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+</code></pre></div><blockquote>
 <p>from ~ import 구문</p>
 </blockquote>
 <ul>
 <li>파이썬에서 패키지나 모듈 전체를 임포트하지 않고 특정 클래스만 임포트하려면 from~import 구문을 사용</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 임포트한 KNeighborsClassifier 클래스의 객체 생성</span>
-</span></span><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> KNeighborsClassifier()
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 임포트한 KNeighborsClassifier 클래스의 객체 생성</span>
+kn <span style="color:#f92672">=</span> KNeighborsClassifier()
+</code></pre></div><ul>
 <li>fish_data와 fish_target을 전달하여 도미를 찾기 위한 기준을 학습 -&gt; 이런 과정을 머신러닝에서는 훈련(training)</li>
 <li>훈련(training) : 모델에 데이터를 전달하여 규칙을 학습하는 과정</li>
 <li>사이킷 런에는 fit()메서드가 존재 -&gt; 훈련 역할</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
-</span></span></code></pre></div><pre><code>KNeighborsClassifier()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+</code></pre></div><pre><code>KNeighborsClassifier()
 </code></pre>
 <ul>
 <li>fit() 메서드는 주어진 데이터로 알고리즘을 훈련</li>
@@ -291,8 +290,8 @@ if (!doNotTrack) {
 <li>머신러닝 알고리즘을 구현한 프로그램을 모델(model)이라고 부름</li>
 <li>프로그매이 아니더라도 알고리즘을 (수식 등) 구체화하여 표현한 것을 모델이라고 부름</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(fish_data, fish_target)
-</span></span></code></pre></div><pre><code>1.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn<span style="color:#f92672">.</span>score(fish_data, fish_target)
+</code></pre></div><pre><code>1.0
 </code></pre>
 <ul>
 <li>이 값을 정확도(accuracy)라고 부름</li>
@@ -301,8 +300,8 @@ if (!doNotTrack) {
 <ul>
 <li>어떤 데이터에 대한 답을 구할 때 주위의 다른 데이터를 보고 다수를 차지하는 것을 정답으로 사용</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">600</span>]])
-</span></span></code></pre></div><pre><code>array([1])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">600</span>]])
+</code></pre></div><pre><code>array([1])
 </code></pre>
 <ul>
 <li>
@@ -324,8 +323,8 @@ if (!doNotTrack) {
 <p>_y속성에 fish_target을 가지고 있음</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_fit_X)
-</span></span></code></pre></div><pre><code>[[  25.4  242. ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(kn<span style="color:#f92672">.</span>_fit_X)
+</code></pre></div><pre><code>[[  25.4  242. ]
  [  26.3  290. ]
  [  26.5  340. ]
  [  29.   363. ]
@@ -375,8 +374,8 @@ if (!doNotTrack) {
  [  14.3   19.7]
  [  15.    19.9]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_y)
-</span></span></code></pre></div><pre><code>[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(kn<span style="color:#f92672">.</span>_y)
+</code></pre></div><pre><code>[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
  0 0 0 0 0 0 0 0 0 0 0 0]
 </code></pre>
 <ul>
@@ -384,87 +383,87 @@ if (!doNotTrack) {
 <li>fit() 메서드에 전달한 데이터를 모두 저장하고 있다가 새로운 데이터가 등장하면 가장 가까운 데이터를 참고하여 구분</li>
 <li>몇 개의 데이터를 참고? -&gt; 기본값 = 5 -&gt; 매개변수 변경 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
+</code></pre></div><ul>
 <li>가장 가까운 데이터 49개를 사용하는 k-최근접 이웃 모델에 fish_data를 적용하면 fish_data에 있는 모든 생선을 사용하여 예측</li>
 <li>49개 중에 도미가 35개로 다수를 차지하므로 어떤 데이터를 넣어도 무조건 도미로 예측</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
-</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
-</span></span></code></pre></div><pre><code>0.7142857142857143
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
+</code></pre></div><pre><code>0.7142857142857143
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
-</span></span></code></pre></div><pre><code>0.7142857142857143
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
+</code></pre></div><pre><code>0.7142857142857143
 </code></pre>
 <h2 id="도미와-빙어-분류">도미와 빙어 분류</h2>
 <h3 id="전체-소스-코드">전체 소스 코드</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;# 마켓과 머신러닝&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;## 생선 분류 문제&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### 도미 데이터 준비하기&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
-</span></span><span style="display:flex;"><span>bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
-</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### 빙어 데이터 준비하기&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
-</span></span><span style="display:flex;"><span>smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;## 첫 번째 머신러닝 프로그램&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
-</span></span><span style="display:flex;"><span>weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(fish_data)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
-</span></span><span style="display:flex;"><span>print(fish_target)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> KNeighborsClassifier()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(fish_data,fish_target)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;### k-최근접 이웃 알고리즘&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;^&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>]])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_fit_X)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(kn<span style="color:#f92672">.</span>_y)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
-</span></span><span style="display:flex;"><span>kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_40_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;# 마켓과 머신러닝&#34;&#34;&#34;</span>
+<span style="color:#e6db74">&#34;&#34;&#34;## 생선 분류 문제&#34;&#34;&#34;</span>
+<span style="color:#e6db74">&#34;&#34;&#34;### 도미 데이터 준비하기&#34;&#34;&#34;</span>
+
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+
+bream_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
+                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
+                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>]
+bream_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
+                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
+                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>]
+
+plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+
+<span style="color:#e6db74">&#34;&#34;&#34;### 빙어 데이터 준비하기&#34;&#34;&#34;</span>
+smelt_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
+smelt_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6.7</span>, <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
+
+plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+
+<span style="color:#e6db74">&#34;&#34;&#34;## 첫 번째 머신러닝 프로그램&#34;&#34;&#34;</span>
+length <span style="color:#f92672">=</span> bream_length <span style="color:#f92672">+</span> smelt_length
+weight <span style="color:#f92672">=</span> bream_weight <span style="color:#f92672">+</span> smelt_weight
+
+fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(length, weight)]
+
+print(fish_data)
+
+fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
+print(fish_target)
+
+kn <span style="color:#f92672">=</span> KNeighborsClassifier()
+
+kn<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+
+kn<span style="color:#f92672">.</span>score(fish_data,fish_target)
+
+<span style="color:#e6db74">&#34;&#34;&#34;### k-최근접 이웃 알고리즘&#34;&#34;&#34;</span>
+plt<span style="color:#f92672">.</span>scatter(bream_length, bream_weight)
+plt<span style="color:#f92672">.</span>scatter(smelt_length, smelt_weight)
+plt<span style="color:#f92672">.</span>scatter(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;^&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+
+kn<span style="color:#f92672">.</span>predict([[<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">600</span>]])
+
+print(kn<span style="color:#f92672">.</span>_fit_X)
+
+print(kn<span style="color:#f92672">.</span>_y)
+
+kn49 <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">49</span>)
+
+kn49<span style="color:#f92672">.</span>fit(fish_data, fish_target)
+kn49<span style="color:#f92672">.</span>score(fish_data, fish_target)
+
+print(<span style="color:#ae81ff">35</span><span style="color:#f92672">/</span><span style="color:#ae81ff">49</span>)
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter1_3/output_40_0.png" alt="png"></p>
 <p><img src="/images/self_study_ml_dl_images/chapter1_3/output_40_1.png" alt="png"></p>
 <pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0], [29.7, 450.0], [29.7, 500.0], [30.0, 390.0], [30.0, 450.0], [30.7, 500.0], [31.0, 475.0], [31.0, 500.0], [31.5, 500.0], [32.0, 340.0], [32.0, 600.0], [32.0, 600.0], [33.0, 700.0], [33.0, 700.0], [33.5, 610.0], [33.5, 650.0], [34.0, 575.0], [34.0, 685.0], [34.5, 620.0], [35.0, 680.0], [35.0, 700.0], [35.0, 725.0], [35.0, 720.0], [36.0, 714.0], [36.0, 850.0], [37.0, 1000.0], [38.5, 920.0], [38.5, 955.0], [39.5, 925.0], [41.0, 975.0], [41.0, 950.0], [9.8, 6.7], [10.5, 7.5], [10.6, 7.0], [11.0, 9.7], [11.2, 9.8], [11.3, 8.7], [11.8, 10.0], [11.8, 9.9], [12.0, 9.8], [12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -627,18 +626,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -676,7 +675,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -707,6 +706,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -717,8 +717,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -746,38 +746,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -792,32 +760,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

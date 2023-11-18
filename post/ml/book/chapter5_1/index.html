@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/ml/book/chapter5_1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-22T16:31:45+09:00" />
 <meta property="article:modified_time" content="2022-04-22T16:31:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -168,10 +167,10 @@ if (!doNotTrack) {
 		</header>
 		<div class="content post__content clearfix">
 			<h2 id="로지스틱-회귀로-와인-분류">로지스틱 회귀로 와인 분류</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span>wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>wine<span style="color:#f92672">.</span>head()
-</span></span></code></pre></div><table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+wine <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/wine_csv_data&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wine<span style="color:#f92672">.</span>head()
+</code></pre></div><table>
 <thead>
 <tr>
 <th></th>
@@ -228,8 +227,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>wine<span style="color:#f92672">.</span>info()
-</span></span></code></pre></div><pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wine<span style="color:#f92672">.</span>info()
+</code></pre></div><pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 6497 entries, 0 to 6496
 Data columns (total 4 columns):
  #   Column   Non-Null Count  Dtype  
@@ -252,8 +251,8 @@ memory usage: 203.2 KB
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>wine<span style="color:#f92672">.</span>describe()
-</span></span></code></pre></div><table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wine<span style="color:#f92672">.</span>describe()
+</code></pre></div><table>
 <thead>
 <tr>
 <th></th>
@@ -336,40 +335,40 @@ memory usage: 203.2 KB
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
-</span></span><span style="display:flex;"><span>target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(
-</span></span><span style="display:flex;"><span>    data, target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_input<span style="color:#f92672">.</span>shape, test_input<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(5197, 3) (1300, 3)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> wine[[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
+target <span style="color:#f92672">=</span> wine[<span style="color:#e6db74">&#39;class&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(
+    data, target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
+)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_input<span style="color:#f92672">.</span>shape, test_input<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(5197, 3) (1300, 3)
 </code></pre>
 <ul>
 <li>StandardScaler 클래스를 사용해 훈련 세트 전처리</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
-</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">=</span> StandardScaler()
-</span></span><span style="display:flex;"><span>ss<span style="color:#f92672">.</span>fit(train_input)
-</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_input)
-</span></span><span style="display:flex;"><span>test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_input)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+ss <span style="color:#f92672">=</span> StandardScaler()
+ss<span style="color:#f92672">.</span>fit(train_input)
+train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_input)
+test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_input)
+</code></pre></div><ul>
 <li>표준점수로 변환된 train_scaled와 test_scaled를 사용해 로지스틱 회귀 모델 훈련</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LogisticRegression
-</span></span><span style="display:flex;"><span>lr <span style="color:#f92672">=</span> LogisticRegression()
-</span></span><span style="display:flex;"><span>lr<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.7808350971714451
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LogisticRegression
+lr <span style="color:#f92672">=</span> LogisticRegression()
+lr<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(lr<span style="color:#f92672">.</span>score(train_scaled, train_target))
+print(lr<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.7808350971714451
 0.7776923076923077
 </code></pre>
 <h3 id="설명하기-쉬운-모델과-어려운-모델">설명하기 쉬운 모델과 어려운 모델</h3>
 <ul>
 <li>로지스틱 회귀가 학습한 계수와 절편을 출력</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>coef_, lr<span style="color:#f92672">.</span>intercept_)
-</span></span></code></pre></div><pre><code>[[ 0.51270274  1.6733911  -0.68767781]] [1.81777902]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(lr<span style="color:#f92672">.</span>coef_, lr<span style="color:#f92672">.</span>intercept_)
+</code></pre></div><pre><code>[[ 0.51270274  1.6733911  -0.68767781]] [1.81777902]
 </code></pre>
 <ul>
 <li>정확히 이 숫자가 어떤 의미를 가지는 지 설명하기 어려움.</li>
@@ -388,12 +387,12 @@ memory usage: 203.2 KB
 <li>약간의 무작위성이 주입되는 데 실행할 때마다 점수가 조금씩 달라질 수 있기 때문.</li>
 <li>실전에서는 필요하지 않음.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
-</span></span><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>dt<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(train_scaled, train_target)) <span style="color:#75715e"># 훈련 세트</span>
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(test_scaled, test_target)) <span style="color:#75715e"># 테스트 세트</span>
-</span></span></code></pre></div><pre><code>0.996921300750433
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
+dt <span style="color:#f92672">=</span> DecisionTreeClassifier(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+dt<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(dt<span style="color:#f92672">.</span>score(train_scaled, train_target)) <span style="color:#75715e"># 훈련 세트</span>
+print(dt<span style="color:#f92672">.</span>score(test_scaled, test_target)) <span style="color:#75715e"># 테스트 세트</span>
+</code></pre></div><pre><code>0.996921300750433
 0.8592307692307692
 </code></pre>
 <ul>
@@ -407,12 +406,12 @@ memory usage: 203.2 KB
 <p>plot_tree()함수를 사용해 결정 트리를 이해하기 쉬운 그림으로 출력</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> plot_tree
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
-</span></span><span style="display:flex;"><span>plot_tree(dt)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_27_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> plot_tree
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
+plot_tree(dt)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_27_0.png" alt="png"></p>
 <ul>
 <li>맨 위의 노드(node) : 루트 노드(root node)</li>
 <li>맨 아래의 노드 : 리프 노드(leaf node)</li>
@@ -441,10 +440,10 @@ memory usage: 203.2 KB
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
-</span></span><span style="display:flex;"><span>plot_tree(dt, max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_31_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
+plot_tree(dt, max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_31_0.png" alt="png"></p>
 <ul>
 <li>
 <p>filled = True 로 지정하면 클래스마다 색을 지정하고, 어떤 클래스의 비율이 높아지면 점점 진한 색으로 표시</p>
@@ -553,28 +552,28 @@ memory usage: 203.2 KB
 <ul>
 <li>가장 간단한 방법 : 트리의 최대 깊이 지정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>dt<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.8454877814123533
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dt <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+dt<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(dt<span style="color:#f92672">.</span>score(train_scaled, train_target))
+print(dt<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.8454877814123533
 0.8415384615384616
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
-</span></span><span style="display:flex;"><span>plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_40_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dt <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span><span style="display:flex;"><span>dt<span style="color:#f92672">.</span>fit(train_input, train_target)
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(train_input, train_target))
-</span></span><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>score(test_input, test_target))
-</span></span></code></pre></div><pre><code>0.8454877814123533
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
+plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_40_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dt <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+dt<span style="color:#f92672">.</span>fit(train_input, train_target)
+print(dt<span style="color:#f92672">.</span>score(train_input, train_target))
+print(dt<span style="color:#f92672">.</span>score(test_input, test_target))
+</code></pre></div><pre><code>0.8454877814123533
 0.8415384615384616
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
-</span></span><span style="display:flex;"><span>plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_42_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span>))
+plot_tree(dt, filled<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, feature_names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;alcohol&#39;</span>, <span style="color:#e6db74">&#39;sugar&#39;</span>, <span style="color:#e6db74">&#39;pH&#39;</span>])
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter5_1/output_42_0.png" alt="png"></p>
 <ul>
 <li>결정 트리는 어떤 특성이 가장 중요한지 나타내는 특성 중요도를 계산
 <ul>
@@ -582,8 +581,8 @@ memory usage: 203.2 KB
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(dt<span style="color:#f92672">.</span>feature_importances_)
-</span></span></code></pre></div><pre><code>[0.12345626 0.86862934 0.0079144 ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(dt<span style="color:#f92672">.</span>feature_importances_)
+</code></pre></div><pre><code>[0.12345626 0.86862934 0.0079144 ]
 </code></pre>
 <ul>
 <li>두 번째 속성의 중요도가 가장 크다.</li>
@@ -650,7 +649,7 @@ memory usage: 203.2 KB
 <li>criterion : 불순도를 지정
 <ul>
 <li>&lsquo;gini&rsquo; : 지니 불순도</li>
-<li>&rsquo;entropy&rsquo; : 엔트로피 불순도</li>
+<li>&lsquo;entropy&rsquo; : 엔트로피 불순도</li>
 </ul>
 </li>
 <li>splitter : 노드를 분할하는 전략 선택
@@ -723,18 +722,18 @@ memory usage: 203.2 KB
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -772,7 +771,7 @@ memory usage: 203.2 KB
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -803,6 +802,7 @@ memory usage: 203.2 KB
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -813,8 +813,8 @@ memory usage: 203.2 KB
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -842,38 +842,6 @@ memory usage: 203.2 KB
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -888,32 +856,6 @@ memory usage: 203.2 KB
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

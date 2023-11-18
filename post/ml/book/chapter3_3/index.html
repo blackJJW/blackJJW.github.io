@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/ml/book/chapter3_3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-04-22T16:28:45+09:00" />
 <meta property="article:modified_time" content="2022-04-22T16:28:45+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -188,12 +187,12 @@ if (!doNotTrack) {
 <li>read_csv() 함수로 데이터프레임을 생성</li>
 <li>to_numpy() 메서드를 사용해 넘파이 배열로 바꿈</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/perch_csv_data&#39;</span>)
-</span></span><span style="display:flex;"><span>perch_full <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>to_numpy()
-</span></span><span style="display:flex;"><span>print(perch_full)
-</span></span></code></pre></div><pre><code>[[ 8.4   2.11  1.41]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;https://bit.ly/perch_csv_data&#39;</span>)
+perch_full <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>to_numpy()
+print(perch_full)
+</code></pre></div><pre><code>[[ 8.4   2.11  1.41]
  [13.7   3.53  2.  ]
  [15.    3.82  2.43]
  [16.2   4.59  2.63]
@@ -250,19 +249,19 @@ if (!doNotTrack) {
  [43.5  12.6   8.14]
  [44.   12.49  7.6 ]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>perch_weight <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">5.9</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">51.5</span>, <span style="color:#ae81ff">70.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">78.0</span>, <span style="color:#ae81ff">80.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">110.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">115.0</span>, <span style="color:#ae81ff">125.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">135.0</span>, <span style="color:#ae81ff">110.0</span>, <span style="color:#ae81ff">130.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">170.0</span>, <span style="color:#ae81ff">225.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">188.0</span>, <span style="color:#ae81ff">180.0</span>, <span style="color:#ae81ff">197.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">218.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">260.0</span>, <span style="color:#ae81ff">265.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">320.0</span>, <span style="color:#ae81ff">514.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">556.0</span>, <span style="color:#ae81ff">840.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">690.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">820.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">1015.0</span>, <span style="color:#ae81ff">820.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">1000.0</span>])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(perch_full, perch_weight, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</span></span></code></pre></div><h2 id="사이킷런의-변환기">사이킷런의 변환기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+
+perch_weight <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">5.9</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">40.0</span>, <span style="color:#ae81ff">51.5</span>, <span style="color:#ae81ff">70.0</span>, <span style="color:#ae81ff">100.0</span>, <span style="color:#ae81ff">78.0</span>, <span style="color:#ae81ff">80.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">85.0</span>, <span style="color:#ae81ff">110.0</span>,
+       <span style="color:#ae81ff">115.0</span>, <span style="color:#ae81ff">125.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">120.0</span>, <span style="color:#ae81ff">130.0</span>, <span style="color:#ae81ff">135.0</span>, <span style="color:#ae81ff">110.0</span>, <span style="color:#ae81ff">130.0</span>,
+       <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">150.0</span>, <span style="color:#ae81ff">170.0</span>, <span style="color:#ae81ff">225.0</span>, <span style="color:#ae81ff">145.0</span>, <span style="color:#ae81ff">188.0</span>, <span style="color:#ae81ff">180.0</span>, <span style="color:#ae81ff">197.0</span>,
+       <span style="color:#ae81ff">218.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">260.0</span>, <span style="color:#ae81ff">265.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">250.0</span>, <span style="color:#ae81ff">300.0</span>, <span style="color:#ae81ff">320.0</span>, <span style="color:#ae81ff">514.0</span>,
+       <span style="color:#ae81ff">556.0</span>, <span style="color:#ae81ff">840.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">690.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">820.0</span>,
+       <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">900.0</span>, <span style="color:#ae81ff">1015.0</span>, <span style="color:#ae81ff">820.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">1100.0</span>, <span style="color:#ae81ff">1000.0</span>,
+       <span style="color:#ae81ff">1000.0</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+
+train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(perch_full, perch_weight, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</code></pre></div><h2 id="사이킷런의-변환기">사이킷런의 변환기</h2>
 <ul>
 <li>사이킷런은 특성을 만들거나 전처리하기 위한 다양한 클래스를 제공</li>
 <li>이런 클래스를 변환기(transformer)</li>
@@ -284,11 +283,11 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> PolynomialFeatures
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures()
-</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
-</span></span><span style="display:flex;"><span>print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
-</span></span></code></pre></div><pre><code>[[1. 2. 3. 4. 6. 9.]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> PolynomialFeatures
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poly <span style="color:#f92672">=</span> PolynomialFeatures()
+poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
+print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
+</code></pre></div><pre><code>[[1. 2. 3. 4. 6. 9.]]
 </code></pre>
 <ul>
 <li>
@@ -322,10 +321,10 @@ if (!doNotTrack) {
 <p>include_bias = False로 지정하여 다시 특성을 변환</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
-</span></span><span style="display:flex;"><span>print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
-</span></span></code></pre></div><pre><code>[[2. 3. 4. 6. 9.]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+poly<span style="color:#f92672">.</span>fit([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]])
+print(poly<span style="color:#f92672">.</span>transform([[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]]))
+</code></pre></div><pre><code>[[2. 3. 4. 6. 9.]]
 </code></pre>
 <ul>
 <li>
@@ -335,17 +334,17 @@ if (!doNotTrack) {
 <p>train_input에 적용</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit(train_input)
-</span></span><span style="display:flex;"><span>train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
-</span></span><span style="display:flex;"><span>print(train_poly<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(42, 9)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poly <span style="color:#f92672">=</span> PolynomialFeatures(include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+poly<span style="color:#f92672">.</span>fit(train_input)
+train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
+print(train_poly<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(42, 9)
 </code></pre>
 <ul>
 <li>get_feature_names_out() 메서드를 호출하면 9개의 특성이 각각 어떤 입력의 조합으로 만들어졌는지 알려줌</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>get_feature_names_out()
-</span></span></code></pre></div><pre><code>array(['x0', 'x1', 'x2', 'x0^2', 'x0 x1', 'x0 x2', 'x1^2', 'x1 x2',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poly<span style="color:#f92672">.</span>get_feature_names_out()
+</code></pre></div><pre><code>array(['x0', 'x1', 'x2', 'x0^2', 'x0 x1', 'x0 x2', 'x1^2', 'x1 x2',
        'x2^2'], dtype=object)
 </code></pre>
 <ul>
@@ -353,36 +352,36 @@ if (!doNotTrack) {
 <li>&lsquo;x0^2 : 첫 번째 특성의 제곱</li>
 <li>&lsquo;x0 x1&rsquo;은 첫 번째 특성과 두 번째 특성의 곱</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input) <span style="color:#75715e"># 테스트 세트 변환</span>
-</span></span></code></pre></div><h2 id="다중-회귀-모델-훈련">다중 회귀 모델 훈련</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
-</span></span><span style="display:flex;"><span>lr <span style="color:#f92672">=</span> LinearRegression()
-</span></span><span style="display:flex;"><span>lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
-</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
-</span></span></code></pre></div><pre><code>0.9903183436982124
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input) <span style="color:#75715e"># 테스트 세트 변환</span>
+</code></pre></div><h2 id="다중-회귀-모델-훈련">다중 회귀 모델 훈련</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
+lr <span style="color:#f92672">=</span> LinearRegression()
+lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
+print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
+</code></pre></div><pre><code>0.9903183436982124
 </code></pre>
 <ul>
 <li>특성이 늘어나면 선형 회귀늬 능력은 매우 강함</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
-</span></span></code></pre></div><pre><code>0.9714559911594134
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
+</code></pre></div><pre><code>0.9714559911594134
 </code></pre>
 <ul>
 <li>PolynomialFeatures 클래스의 degree 매개변수를 사용하며 필요한 고차항의 최대 차수를 지정할 수 있음.ㅡ</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>poly <span style="color:#f92672">=</span> PolynomialFeatures(degree <span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span><span style="display:flex;"><span>poly<span style="color:#f92672">.</span>fit(train_input)
-</span></span><span style="display:flex;"><span>train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
-</span></span><span style="display:flex;"><span>test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input)
-</span></span><span style="display:flex;"><span>print(train_poly<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><pre><code>(42, 55)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poly <span style="color:#f92672">=</span> PolynomialFeatures(degree <span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, include_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+poly<span style="color:#f92672">.</span>fit(train_input)
+train_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(train_input)
+test_poly <span style="color:#f92672">=</span> poly<span style="color:#f92672">.</span>transform(test_input)
+print(train_poly<span style="color:#f92672">.</span>shape)
+</code></pre></div><pre><code>(42, 55)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
-</span></span><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
-</span></span></code></pre></div><pre><code>0.9999999999991097
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lr<span style="color:#f92672">.</span>fit(train_poly, train_target)
+print(lr<span style="color:#f92672">.</span>score(train_poly, train_target))
+</code></pre></div><pre><code>0.9999999999991097
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
-</span></span></code></pre></div><pre><code>-144.40579242684848
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(lr<span style="color:#f92672">.</span>score(test_poly, test_target))
+</code></pre></div><pre><code>-144.40579242684848
 </code></pre>
 <ul>
 <li>특성의 개수를 크게 늘리면 선형 모델은 아주 강력해짐</li>
@@ -406,13 +405,13 @@ if (!doNotTrack) {
 <p>StandardScaler 클래스 사용 -&gt; 변환기의 일종</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">=</span> StandardScaler()
-</span></span><span style="display:flex;"><span>ss<span style="color:#f92672">.</span>fit(train_poly)
-</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_poly)
-</span></span><span style="display:flex;"><span>test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_poly)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+
+ss <span style="color:#f92672">=</span> StandardScaler()
+ss<span style="color:#f92672">.</span>fit(train_poly)
+train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_poly)
+test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_poly)
+</code></pre></div><ul>
 <li>
 <p>훈련 세트에서 학습한 평균과 표준편차는 StandardScaler 클래스 객체의 mean_, scale_ 속성에 저장</p>
 </li>
@@ -427,14 +426,14 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h2 id="릿지-회귀">릿지 회귀</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Ridge
-</span></span><span style="display:flex;"><span>ridge <span style="color:#f92672">=</span> Ridge()
-</span></span><span style="display:flex;"><span>ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span></code></pre></div><pre><code>0.9896101671037343
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Ridge
+ridge <span style="color:#f92672">=</span> Ridge()
+ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</code></pre></div><pre><code>0.9896101671037343
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.9790693977615397
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.9790693977615397
 </code></pre>
 <ul>
 <li>훈련 테스트에 과대적합이 되지 않아 테스트 세트에서도 좋은 성능을 내고 있음</li>
@@ -466,19 +465,19 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span>train_score <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>test_score <span style="color:#f92672">=</span> []
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 릿지 모델 생성</span>
-</span></span><span style="display:flex;"><span>  ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> alpha)
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 릿지 모델 훈련</span>
-</span></span><span style="display:flex;"><span>  ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
-</span></span><span style="display:flex;"><span>  train_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>  test_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+train_score <span style="color:#f92672">=</span> []
+test_score <span style="color:#f92672">=</span> []
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
+<span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
+  <span style="color:#75715e"># 릿지 모델 생성</span>
+  ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> alpha)
+  <span style="color:#75715e"># 릿지 모델 훈련</span>
+  ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
+  train_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+  test_score<span style="color:#f92672">.</span>append(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><ul>
 <li>alpha 값을 0.001부터 10배씩 늘렸기 때문에 이대로 그래프를 그리면 그래프 왼쪽이 너무 촘촘해짐</li>
 <li>로그함수로 바꾸어 지수로 표현
 <ul>
@@ -493,12 +492,12 @@ if (!doNotTrack) {
 <li>np.log() : 자연상수 e를 밑으로 하는 자연 로그</li>
 <li>np.log10() : 10을 밑으로 하는 상용로그</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter3_3/output_46_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
+plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter3_3/output_46_0.png" alt="png"></p>
 <ul>
 <li>blue : 훈련 세트 그래프</li>
 <li>orange : 테스트 세트 그래프</li>
@@ -506,48 +505,48 @@ if (!doNotTrack) {
 <li>오른쪽 : 훈련세트와 테스트 세트의 점수가 모두 낮아지는 과소적합</li>
 <li>적절한 alpha 값은 두 그래프가 가장 가깝고 테스트 세트의 점수가 가장 높은 -1, 즉 $10^{-1}=0.1$</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>)
-</span></span><span style="display:flex;"><span>ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.9903815817570366
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ridge <span style="color:#f92672">=</span> Ridge(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>)
+ridge<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(ridge<span style="color:#f92672">.</span>score(train_scaled, train_target))
+print(ridge<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.9903815817570366
 0.9827976465386926
 </code></pre>
 <h2 id="라쏘-회귀">라쏘 회귀</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Lasso
-</span></span><span style="display:flex;"><span>lasso <span style="color:#f92672">=</span> Lasso()
-</span></span><span style="display:flex;"><span>lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span></code></pre></div><pre><code>0.989789897208096
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> Lasso
+lasso <span style="color:#f92672">=</span> Lasso()
+lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</code></pre></div><pre><code>0.989789897208096
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.9800593698421883
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.9800593698421883
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># alpha 적용</span>
-</span></span><span style="display:flex;"><span>train_score <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>test_score <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 라쏘 모델 생성</span>
-</span></span><span style="display:flex;"><span>  lasso <span style="color:#f92672">=</span> Lasso(alpha <span style="color:#f92672">=</span> alpha, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 라쏘 모델 훈련</span>
-</span></span><span style="display:flex;"><span>  lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
-</span></span><span style="display:flex;"><span>  train_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>  test_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_coordinate_descent.py:648: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations, check the scale of the features or consider increasing regularisation. Duality gap: 1.878e+04, tolerance: 5.183e+02
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># alpha 적용</span>
+train_score <span style="color:#f92672">=</span> []
+test_score <span style="color:#f92672">=</span> []
+
+
+alpha_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.001</span>, <span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>]
+<span style="color:#66d9ef">for</span> alpha <span style="color:#f92672">in</span> alpha_list:
+  <span style="color:#75715e"># 라쏘 모델 생성</span>
+  lasso <span style="color:#f92672">=</span> Lasso(alpha <span style="color:#f92672">=</span> alpha, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+  <span style="color:#75715e"># 라쏘 모델 훈련</span>
+  lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+  <span style="color:#75715e"># 훈련 점수와 테스트 점수 저장</span>
+  train_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+  test_score<span style="color:#f92672">.</span>append(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_coordinate_descent.py:648: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations, check the scale of the features or consider increasing regularisation. Duality gap: 1.878e+04, tolerance: 5.183e+02
   coef_, l1_reg, l2_reg, X, y, max_iter, tol, rng, random, positive
 /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_coordinate_descent.py:648: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations, check the scale of the features or consider increasing regularisation. Duality gap: 1.297e+04, tolerance: 5.183e+02
   coef_, l1_reg, l2_reg, X, y, max_iter, tol, rng, random, positive
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter3_3/output_53_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), train_score)
+plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>log10(alpha_list), test_score)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;alpha&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;R^2&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter3_3/output_53_0.png" alt="png"></p>
 <ul>
 <li>blue : 훈련 세트 그래프</li>
 <li>orange : 테스트 세트 그래프</li>
@@ -555,16 +554,16 @@ if (!doNotTrack) {
 <li>오른쪽 : 훈련세트와 테스트 세트 점수가 좁혀지고 있음</li>
 <li>적절한 alpha 값은 1, 즉 $10^1=10$</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lasso <span style="color:#f92672">=</span> Lasso(alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
-</span></span><span style="display:flex;"><span>lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
-</span></span><span style="display:flex;"><span>print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</span></span></code></pre></div><pre><code>0.9888067471131867
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lasso <span style="color:#f92672">=</span> Lasso(alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+lasso<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+print(lasso<span style="color:#f92672">.</span>score(train_scaled, train_target))
+print(lasso<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</code></pre></div><pre><code>0.9888067471131867
 0.9824470598706695
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 라쏘 모델의 계수가 0일 경우</span>
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>sum(lasso<span style="color:#f92672">.</span>coef_ <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
-</span></span></code></pre></div><pre><code>40
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 라쏘 모델의 계수가 0일 경우</span>
+print(np<span style="color:#f92672">.</span>sum(lasso<span style="color:#f92672">.</span>coef_ <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
+</code></pre></div><pre><code>40
 </code></pre>
 <ul>
 <li>55개의 특성을 주입, 라쏘 모델을 사용한 특성 15개</li>
@@ -682,18 +681,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -731,7 +730,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -762,6 +761,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -772,8 +772,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -801,38 +801,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -847,32 +815,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

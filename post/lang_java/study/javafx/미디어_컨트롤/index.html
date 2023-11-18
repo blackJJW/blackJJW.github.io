@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-24T21:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-24T21:00:30+09:00" />
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -187,8 +186,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>FXML로 MediaView 컨트롤을 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;300.0&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;300.0&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</code></pre></div><ul>
 <li>fitWidth와 fitHeight는 MediaView의 폭과 높이를 지정</li>
 <li>preserveRatio 속성은 비디오 가로-세로비를 유지할 것인지를 지정
 <ul>
@@ -208,21 +207,21 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>미디어 소스 경로를 Media 객체 형태로 전달해서 다음과 같이 생성</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;미디어 소스 경로&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;미디어 소스 경로&#34;</span><span style="color:#f92672">);</span>
+MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
+</code></pre></div></li>
 <li>
 <p>만약 비디오와 오디오 파일이 클래스 경로에 있다면 Media를 생성할 때 다음과 같이 상대 경로를 사용하는 것이 좋다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/video.mp4&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/video.mp4&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
+</code></pre></div></li>
 <li>
 <p>미디어 소스가 비디오라면 MediaView의 setMediaPlayer() 메소드로 MediaPlayer 객체를 등록할 수 있다.</p>
 <ul>
 <li>오디어 소스로부터 MediaPlayer가 생성되었다면 MediaView는 필요 없다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -282,23 +281,23 @@ if (!doNotTrack) {
 <li>필요하다면 READY 상태에서 PLAYING 상태로 변경하기 위해 재생 버튼을 활성화하는 코드를 작성해야 한다.</li>
 <li>만약 재생 버튼을 사용하지 않고 자동 실행을 하고 싶다면 <code>setAutoPlay(true)</code>를 호출</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">currnetTimeProperty</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Duration<span style="color:#f92672">)()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@override</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Duration<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                          Duration oldValue<span style="color:#f92672">,</span> Duration newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 재생 시간을 표시하는 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 재생 버튼을 활성화 코드 또는 setAutoPlay(true);
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">currnetTimeProperty</span><span style="color:#f92672">()</span>
+                  <span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Duration<span style="color:#f92672">)()</span> <span style="color:#f92672">{</span>
+			<span style="color:#a6e22e">@override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Duration<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+                          Duration oldValue<span style="color:#f92672">,</span> Duration newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 재생 시간을 표시하는 코드
+</span><span style="color:#75715e"></span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">});</span>
+		<span style="color:#75715e">// 재생 버튼을 활성화 코드 또는 setAutoPlay(true);
+</span><span style="color:#75715e"></span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div></li>
 <li>
 <p>ex) 비디오와 오디오를 재생하는 간단한 플레이어</p>
 <ul>
@@ -308,162 +307,162 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.StackPane?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.media.MediaView?&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;220.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;530.0&#34;</span> 
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;mediaView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;StackPane</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;10.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      			 <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;children&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> 
-</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span>
-</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;imageView&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;image&gt;</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@media/audio.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/image&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> 
-</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span>
-</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;mediaView&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/children&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/StackPane&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;15.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;재생&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPlay&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;39.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPause&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;63.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;중지&#34;</span>
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/AnchorPane&gt;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.layout.StackPane?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.media.MediaView?&gt;</span>
+
+<span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;220.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;530.0&#34;</span> 
+			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
+			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;mediaView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;children&gt;</span>
+      <span style="color:#f92672">&lt;StackPane</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;10.0&#34;</span> 
+      			 <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
+         <span style="color:#f92672">&lt;children&gt;</span>
+            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> 
+            		   <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span>
+            		   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;imageView&#34;</span><span style="color:#f92672">&gt;</span>
+               <span style="color:#f92672">&lt;image&gt;</span>
+                  <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@media/audio.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+               <span style="color:#f92672">&lt;/image&gt;</span>
+            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+            <span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> 
+            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span>
+            		   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;mediaView&#34;</span> <span style="color:#f92672">/&gt;</span>
+         <span style="color:#f92672">&lt;/children&gt;</span>
+      <span style="color:#f92672">&lt;/StackPane&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;15.0&#34;</span> 
+      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
+      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;재생&#34;</span> 
+      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPlay&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;39.0&#34;</span> 
+      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
+      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> 
+      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPause&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;63.0&#34;</span> 
+      		  <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
+      		  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;중지&#34;</span>
+      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;/children&gt;</span>
+<span style="color:#f92672">&lt;/AnchorPane&gt;</span>
+</code></pre></div><ul>
 <li>상태 제어
 <ul>
 <li>RootController.java</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.Media<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.MediaPlayer<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.MediaView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> MediaView mediaView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPlay<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPause<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> endOfMedia<span style="color:#f92672">;</span> <span style="color:#75715e">// 재생 완료를 확인하는 플래그 필드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 미디어 객체 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">//Media media = new Media(getClass().getResources(&#34;media/audio.png&#34;).toString());
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/video.mp4&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 미디어 플레이어 생성 및 미디어 뷰에 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Ready 상태가 될 때
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPlaying</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Playing 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPaused</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Paused 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// EndofMedia 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnStopped</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Stopped 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 버튼 ActionEvent 처리
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endOfMedia<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>        <span style="color:#75715e">// EndOfMedia 상태일 경우
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 재생 중지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">seek</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>				                    <span style="color:#75715e">// 재생 시간을 처음으로 돌림
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>			mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">play</span><span style="color:#f92672">();</span>     <span style="color:#75715e">//미디어 재생
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>		btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		                            <span style="color:#75715e">// 미디어 일시 정지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		                            <span style="color:#75715e">// 미디어 중지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.Media<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.MediaPlayer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.MediaView<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> MediaView mediaView<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPlay<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPause<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
+
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> endOfMedia<span style="color:#f92672">;</span> <span style="color:#75715e">// 재생 완료를 확인하는 플래그 필드
+</span><span style="color:#75715e"></span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 미디어 객체 생성
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//Media media = new Media(getClass().getResources(&#34;media/audio.png&#34;).toString());
+</span><span style="color:#75715e"></span>		Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/video.mp4&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+
+		<span style="color:#75715e">// 미디어 플레이어 생성 및 미디어 뷰에 설정
+</span><span style="color:#75715e"></span>		MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
+		mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
+
+		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
+</span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Ready 상태가 될 때
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPlaying</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Playing 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPaused</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Paused 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// EndofMedia 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnStopped</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Stopped 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		<span style="color:#75715e">// 버튼 ActionEvent 처리
+</span><span style="color:#75715e"></span>		btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endOfMedia<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>        <span style="color:#75715e">// EndOfMedia 상태일 경우
+</span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 재생 중지
+</span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">seek</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">());</span>
+				                    <span style="color:#75715e">// 재생 시간을 처음으로 돌림
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">play</span><span style="color:#f92672">();</span>     <span style="color:#75715e">//미디어 재생
+</span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">});</span>
+		btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">());</span>
+		                            <span style="color:#75715e">// 미디어 일시 정지
+</span><span style="color:#75715e"></span>		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">());</span>
+		                            <span style="color:#75715e">// 미디어 중지
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
 <li>AppMain.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%204.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
+		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
+
+		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
+		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
+		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%204.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%205.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%206.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%207.png" alt="Untitled"></p>
@@ -491,9 +490,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) FXML로 Slider 컨트롤을 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;높이&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">showTickLabels=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">showTickMarks=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;높이&#34;</span> 
+        <span style="color:#a6e22e">showTickLabels=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">showTickMarks=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</code></pre></div></li>
 <li>
 <p>ex) MediaPlayer의 볼륨을 조정하기 위해 Slider 컨트롤의 value 속성을 감시하는 ChangeListener를 등록</p>
 <ul>
@@ -503,14 +502,14 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                      Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setVolume</span><span style="color:#f92672">(</span>sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+                      Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setVolume</span><span style="color:#f92672">(</span>sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 100<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div></li>
 </ul>
 <h2 id="progressbar와-progressindicator-컨트롤">ProgressBar와 ProgressIndicator 컨트롤</h2>
 <p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%209.png" alt="Untitled"></p>
@@ -530,9 +529,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) FXML로 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;15&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;ProgressIndicator</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;47.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;31.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;15&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;ProgressIndicator</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;47.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;31.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</code></pre></div></li>
 <li>
 <p>ProgressBar는 ProgressIndicator를 상속한 하위 컨트롤이기 때문에 사용하는 속성들이 모두 동일</p>
 <ul>
@@ -542,27 +541,27 @@ if (!doNotTrack) {
 <li>최소값은 0.0 최대값은 1.0</li>
 <li>진행 정도는 자바 코드로 다음과 같이 변경 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0.0</span><span style="color:#f92672">~</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0.0</span><span style="color:#f92672">~</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">~</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">~</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+</code></pre></div></li>
 <li>
 <p>MediaPlayer의 재생 시간을 나타내기 위해서는 현재 재생 시간을 전체 재생 시간으로 나눈값으로 progress 속성값으로 설정</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> progress <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrnetTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>progressVar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">):</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">double</span> progress <span style="color:#f92672">=</span>
+mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrnetTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">();</span>
+progressVar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
+progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">):</span>
+</code></pre></div><ul>
 <li>주의할 점은 마지막 재생 시간과 전체 재생 시간이 정확히 일치하지 않기 때문에 마지막 값이 1.0이 되지 않을 수 있다.
 <ul>
 <li>MediaPlayer가 EndOfMedia 상태가 되었을 때 progress 속성을 강제로 1.0으로 설정하는 것이 좋다.</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+	progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+	progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">});</span>
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -575,206 +574,206 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ProgressIndicator?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Slider?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.StackPane?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.media.MediaView?&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;220.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;530.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;mediaView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;StackPane</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;children&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;imageView&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;image&gt;</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@media/audio.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/image&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;mediaView&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/children&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/StackPane&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPlay&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;재생&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPause&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;39.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;63.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;중지&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- ProgressBar &amp; ProgressIndicator --&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;387.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;101.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시간&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;121.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      			   <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;98.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      			   <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      			   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ProgressIndicator</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;489.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;112.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      					 <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;47.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;31.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      					 <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      					 <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressIndicator&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;386.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		 <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;142.0&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;18.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		 <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;98.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;0/0 sec&#34;</span> 
-</span></span><span style="display:flex;"><span>      		 <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;labelTime&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- Slider --&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;169.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;소리&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;187.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;14.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">showTickMarks=</span><span style="color:#e6db74">&#34;true&#34;</span> 
-</span></span><span style="display:flex;"><span>      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;sliderVolume&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/AnchorPane&gt;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.control.ProgressIndicator?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.control.Slider?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.layout.StackPane?&gt;</span>
+<span style="color:#75715e">&lt;?import javafx.scene.media.MediaView?&gt;</span>
+
+<span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;220.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;530.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;mediaView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;children&gt;</span>
+      <span style="color:#f92672">&lt;StackPane</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
+         <span style="color:#f92672">&lt;children&gt;</span>
+            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;imageView&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+               <span style="color:#f92672">&lt;image&gt;</span>
+                  <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@media/audio.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+               <span style="color:#f92672">&lt;/image&gt;</span>
+            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+            <span style="color:#f92672">&lt;MediaView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;mediaView&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;360.0&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+         <span style="color:#f92672">&lt;/children&gt;</span>
+      <span style="color:#f92672">&lt;/StackPane&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPlay&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;재생&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnPause&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;39.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;63.0&#34;</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;23.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;중지&#34;</span> <span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#75715e">&lt;!-- ProgressBar &amp; ProgressIndicator --&gt;</span>
+      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;387.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;101.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시간&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;121.0&#34;</span> 
+      			   <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;98.0&#34;</span> 
+      			   <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
+      			   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;ProgressIndicator</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;489.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;112.0&#34;</span> 
+      					 <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;47.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;31.0&#34;</span> 
+      					 <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
+      					 <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressIndicator&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;386.0&#34;</span> 
+      		 <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;142.0&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;18.0&#34;</span> 
+      		 <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;98.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;0/0 sec&#34;</span> 
+      		 <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;labelTime&#34;</span><span style="color:#f92672">/&gt;</span>
+
+      <span style="color:#75715e">&lt;!-- Slider --&gt;</span>
+      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;169.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;소리&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;385.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;187.0&#34;</span> 
+      		  <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;14.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;131.0&#34;</span> 
+      		  <span style="color:#a6e22e">showTickMarks=</span><span style="color:#e6db74">&#34;true&#34;</span> 
+      		  <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;sliderVolume&#34;</span><span style="color:#f92672">/&gt;</span>
+   <span style="color:#f92672">&lt;/children&gt;</span>
+<span style="color:#f92672">&lt;/AnchorPane&gt;</span>
+</code></pre></div><ul>
 <li>상태 제어
 <ul>
 <li>RootController.java</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ProgressBar<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ProgressIndicator<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Slider<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.Media<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.MediaPlayer<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.media.MediaView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.util.Duration<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> MediaView mediaView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPlay<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPause<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Slider &amp; ProgressBar &amp; ProgressIndicator
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label labelTime<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Slider sliderVolume<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressIndicator progressIndicator<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> endOfMedia<span style="color:#f92672">;</span> <span style="color:#75715e">// 재생 완료를 확인하는 플래그 필드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 미디어 객체 생성
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/audio.mp3&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//Media media = new Media(getClass().getResource(&#34;media/video.mp4&#34;).toString());
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 미디어 플레이어 생성 및 미디어 뷰에 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Ready 상태가 될 때
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPlaying</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Playing 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPaused</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Paused 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// EndofMedia 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnStopped</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Stopped 상태가 될 때 실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 버튼 ActionEvent 처리
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endOfMedia<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>        <span style="color:#75715e">// EndOfMedia 상태일 경우
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 재생 중지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">seek</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>				                    <span style="color:#75715e">// 재생 시간을 처음으로 돌림
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>			mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">play</span><span style="color:#f92672">();</span>     <span style="color:#75715e">//미디어 재생
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>		btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		                            <span style="color:#75715e">// 미디어 일시 정지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		                            <span style="color:#75715e">// 미디어 중지
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Duration<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Duration<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>							            Duration oldValue<span style="color:#f92672">,</span> Duration newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">double</span> progress <span style="color:#f92672">=</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrentTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 
-</span></span><span style="display:flex;"><span>								mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>						progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>						progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>						labelTime<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>
-</span></span><span style="display:flex;"><span>								<span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrentTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span>
-</span></span><span style="display:flex;"><span>								<span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sec&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>					<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>				<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 미디어 재생이 완료되었을 때 progress의 속성값을 1.0으로 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 볼륨 설정
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// Slider의 value 속성 감시
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>					Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setVolume</span><span style="color:#f92672">(</span>sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100.0</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
-</span></span><span style="display:flex;"><span>		sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span><span style="color:#ae81ff">50.0</span><span style="color:#f92672">);</span> <span style="color:#75715e">// Slider 초기값
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%2010.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.ProgressBar<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.ProgressIndicator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Slider<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.Media<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.MediaPlayer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.media.MediaView<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.util.Duration<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> MediaView mediaView<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPlay<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnPause<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
+
+	<span style="color:#75715e">// Slider &amp; ProgressBar &amp; ProgressIndicator
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label labelTime<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Slider sliderVolume<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar<span style="color:#f92672">;</span>
+	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressIndicator progressIndicator<span style="color:#f92672">;</span>
+
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> endOfMedia<span style="color:#f92672">;</span> <span style="color:#75715e">// 재생 완료를 확인하는 플래그 필드
+</span><span style="color:#75715e"></span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 미디어 객체 생성
+</span><span style="color:#75715e"></span>		Media media <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Media<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;media/audio.mp3&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+		<span style="color:#75715e">//Media media = new Media(getClass().getResource(&#34;media/video.mp4&#34;).toString());
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">// 미디어 플레이어 생성 및 미디어 뷰에 설정
+</span><span style="color:#75715e"></span>		MediaPlayer mediaPlayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediaPlayer<span style="color:#f92672">(</span>media<span style="color:#f92672">);</span>
+		mediaView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMediaPlayer</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">);</span>
+
+		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
+</span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Ready 상태가 될 때
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPlaying</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Playing 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnPaused</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Paused 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// EndofMedia 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnStopped</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Stopped 상태가 될 때 실행
+</span><span style="color:#75715e"></span>			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		<span style="color:#75715e">// 버튼 ActionEvent 처리
+</span><span style="color:#75715e"></span>		btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endOfMedia<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>        <span style="color:#75715e">// EndOfMedia 상태일 경우
+</span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 재생 중지
+</span><span style="color:#75715e"></span>				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">seek</span><span style="color:#f92672">(</span>mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">());</span>
+				                    <span style="color:#75715e">// 재생 시간을 처음으로 돌림
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">play</span><span style="color:#f92672">();</span>     <span style="color:#75715e">//미디어 재생
+</span><span style="color:#75715e"></span>			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">});</span>
+		btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">());</span>
+		                            <span style="color:#75715e">// 미디어 일시 정지
+</span><span style="color:#75715e"></span>		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">stop</span><span style="color:#f92672">());</span>
+		                            <span style="color:#75715e">// 미디어 중지
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">// 해당 상태가 되면 실행할 Runnable 설정
+</span><span style="color:#75715e"></span>		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnReady</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Duration<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+					<span style="color:#a6e22e">@Override</span>
+					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Duration<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+							            Duration oldValue<span style="color:#f92672">,</span> Duration newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						<span style="color:#66d9ef">double</span> progress <span style="color:#f92672">=</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrentTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 
+								mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">();</span>
+						progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
+						progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>progress<span style="color:#f92672">);</span>
+						labelTime<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>
+								<span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrentTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span>
+								<span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalDuration</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toSeconds</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sec&#34;</span><span style="color:#f92672">);</span>
+					<span style="color:#f92672">}</span>
+				<span style="color:#f92672">});</span>
+
+				btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+				btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+				btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">});</span>
+
+		mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnEndOfMedia</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 미디어 재생이 완료되었을 때 progress의 속성값을 1.0으로 설정
+</span><span style="color:#75715e"></span>			progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+			progressIndicator<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+
+			endOfMedia <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+			btnPlay<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			btnPause<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+			btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setDisable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">});</span>
+
+		<span style="color:#75715e">// 볼륨 설정
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// Slider의 value 속성 감시
+</span><span style="color:#75715e"></span>		sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+					Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				mediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">setVolume</span><span style="color:#f92672">(</span>sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 100<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">});</span>
+		sliderVolume<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>50<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">);</span> <span style="color:#75715e">// Slider 초기값
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><img src="/images/lang_java/javaFx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%2010.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -830,18 +829,18 @@ if (!doNotTrack) {
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/" />
+		<input type="hidden" name="sitesearch" value="https://blackjjw.github.io/">
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/">[Python] JSON형식으로 변환</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_%EA%B5%AC%ED%98%84/">[DL] 퍼셉트론 - 퍼셉트론 구현</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%EB%8B%A8%EC%88%9C%ED%95%9C_%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C/">[DL] 퍼셉트론 - 단순한 논리 회로</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dl/study/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0_-_%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EC%9D%B4%EB%9E%80/">[DL] 퍼셉트론 - 퍼셉트론이란?</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lang_python/library/numpy/numpy_-_%EB%84%98%ED%8C%8C%EC%9D%B4_%EB%B0%B0%EC%97%B4_%EA%B5%AC%EC%A1%B0/">[Python] NumPy - 넘파이 배열 구조</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lang_python/list/">[Python] list</a></li>
 		</ul>
 	</div>
 </div>
@@ -879,7 +878,7 @@ if (!doNotTrack) {
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/python/">Python</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/setting/">Setting</a>&nbsp;
@@ -910,6 +909,7 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/javafx/" title="JavaFX">JavaFX (53)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript (121)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript-library/" title="JavaScript Library">JavaScript Library (12)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/json/" title="JSON">JSON (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao/" title="kakao">kakao (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kakao-maps/" title="kakao Maps">kakao Maps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (2)</a>
@@ -920,8 +920,8 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/openroute-service/" title="openroute service">openroute service (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/oracle/" title="ORACLE">ORACLE (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="OS">OS (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (49)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python (50)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python-library/" title="Python Library">Python Library (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="React">React (11)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spark/" title="Spark">Spark (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/spring-boot/" title="Spring Boot">Spring Boot (1)</a>
@@ -949,38 +949,6 @@ if (!doNotTrack) {
 		
 	</div>
 </div>
-<div class="view-gitChart">
-	<h4 class="widget__title">GitHub Contributions Graph</h4>
-	<div class="gitChart-content">
-		
-		
-		<script
-		  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-		></script>
-
-		
-		<link
-		   rel="stylesheet"
-		   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-		/>
-
-		
-		<div class="calendar">
-			
-			Loading the data just for you.
-		</div>
-
-		<script>
-			GitHubCalendar(".calendar", "blackJJW", { responsive: true, global_stats : false}).then(function() {
-        		
-        		document.getElementsByClassName('calendar')[0].style.minHeight = "100px";
-    		});
-		</script>
-
-	</div>
-	<br>
-</div>
-
 </aside>
 		</div>
 		<footer class="footer">
@@ -995,32 +963,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
