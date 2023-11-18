@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Aug 2023 23:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Nov 2023 16:09:43 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Laws] 드 모르간의 법칙</title>
+      <link>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</link>
+      <pubDate>Sat, 18 Nov 2023 16:09:43 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Python] JSON형식으로 변환</title>
       <link>https://blackjjw.github.io/post/lang_python/library/json%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C_%EB%B3%80%ED%99%98/</link>

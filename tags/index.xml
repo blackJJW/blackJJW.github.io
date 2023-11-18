@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Aug 2023 23:00:45 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Nov 2023 16:09:43 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://blackjjw.github.io/tags/algorithm/</link>
+      <pubDate>Sat, 18 Nov 2023 16:09:43 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laws</title>
+      <link>https://blackjjw.github.io/tags/laws/</link>
+      <pubDate>Sat, 18 Nov 2023 16:09:43 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/laws/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>JSON</title>
       <link>https://blackjjw.github.io/tags/json/</link>
@@ -148,15 +166,6 @@
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/spring-security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://blackjjw.github.io/tags/algorithm/</link>
-      <pubDate>Tue, 05 Jul 2022 19:30:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
     
