@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Nov 2023 17:47:30 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Nov 2023 13:39:24 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://blackjjw.github.io/tags/python/</link>
+      <pubDate>Sun, 19 Nov 2023 13:39:24 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>computer system</title>
       <link>https://blackjjw.github.io/tags/computer-system/</link>
@@ -49,15 +58,6 @@
       <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
       
       <guid>https://blackjjw.github.io/tags/json/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://blackjjw.github.io/tags/python/</link>
-      <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/tags/python/</guid>
       <description></description>
     </item>
     
