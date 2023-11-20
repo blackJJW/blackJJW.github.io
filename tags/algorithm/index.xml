@@ -6,7 +6,16 @@
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Nov 2023 16:09:43 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 13:54:26 +0000</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm][Terms] Scan</title>
+      <link>https://blackjjw.github.io/post/algorithm/terms/scan/</link>
+      <pubDate>Mon, 20 Nov 2023 13:54:26 +0000</pubDate>
+      
+      <guid>https://blackjjw.github.io/post/algorithm/terms/scan/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Algorithm][Laws] 드 모르간의 법칙</title>
       <link>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</link>
