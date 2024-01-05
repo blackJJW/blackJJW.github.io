@@ -6,15 +6,14 @@
     <description>Recent content in Flask on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jun 2022 09:38:48 +0900</lastBuildDate><atom:link href="https://blackjjw.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 09:38:48 +0900</lastBuildDate>
+    <atom:link href="https://blackjjw.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Project][Chatbot] 공공 주택 정보 알림 챗봇 - 홈마트</title>
-      <link>https://blackjjw.github.io/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</link>
+      <link>https://blackjjw.github.io/post/projects/%E1%84%87%E1%85%AE%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%86%AB2%E1%84%90%E1%85%B5%E1%86%B7chatbot/</link>
       <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      
-      <guid>https://blackjjw.github.io/post/projects/%EB%B6%80%EB%8F%99%EC%82%B02%ED%8C%80chatbot/</guid>
+      <guid>https://blackjjw.github.io/post/projects/%E1%84%87%E1%85%AE%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%86%AB2%E1%84%90%E1%85%B5%E1%86%B7chatbot/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

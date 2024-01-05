@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[DL][Book][혼공 머신러닝&#43;딥러닝] ch7-1 인공 신경망 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -183,9 +180,9 @@ if (!doNotTrack) {
 		</header>
 		<div class="content post__content clearfix">
 			<h2 id="패션-mnist">패션 MNIST</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
-(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
-</code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+</span></span><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
+</span></span></code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
 32768/29515 [=================================] - 0s 0us/step
 40960/29515 [=========================================] - 0s 0us/step
 Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
@@ -197,41 +194,41 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 4423680/4422102 [==============================] - 0s 0us/step
 4431872/4422102 [==============================] - 0s 0us/step
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_input<span style="color:#f92672">.</span>shape, train_target<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(60000, 28, 28) (60000,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_input<span style="color:#f92672">.</span>shape, train_target<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(60000, 28, 28) (60000,)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(test_input<span style="color:#f92672">.</span>shape, test_target<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(10000, 28, 28) (10000,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(test_input<span style="color:#f92672">.</span>shape, test_target<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(10000, 28, 28) (10000,)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>))
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
-  axs[i]<span style="color:#f92672">.</span>imshow(train_input[i], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
-  axs[i]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter7_1/output_6_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print([train_target[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)])
-</code></pre></div><pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>  axs[i]<span style="color:#f92672">.</span>imshow(train_input[i], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>  axs[i]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter7_1/output_6_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print([train_target[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)])
+</span></span></code></pre></div><pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-print(np<span style="color:#f92672">.</span>unique(train_target, return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-</code></pre></div><pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>unique(train_target, return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span></code></pre></div><pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
 </code></pre>
 <h2 id="로지스틱-회귀로-패션-아이템-분류">로지스틱 회귀로 패션 아이템 분류</h2>
 <ul>
 <li>SDGClassifier는 2차원 입력을 다루지 못하기 때문에 각 샘플을 1차원 배열로 만들어야 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
-train_scaled <span style="color:#f92672">=</span> train_scaled<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_scaled<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(60000, 784)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_input <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> train_scaled<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_scaled<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(60000, 784)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
-<span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> SGDClassifier
-sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-scores <span style="color:#f92672">=</span> cross_validate(sc, train_scaled, train_target, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
-print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
-</code></pre></div><pre><code>0.8195666666666668
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_validate
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> SGDClassifier
+</span></span><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_validate(sc, train_scaled, train_target, n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db74">&#39;test_score&#39;</span>]))
+</span></span></code></pre></div><pre><code>0.8195666666666668
 </code></pre>
 <h2 id="인공-신경망">인공 신경망</h2>
 <ul>
@@ -256,8 +253,8 @@ print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db
 </li>
 </ul>
 <h3 id="텐서플로와-케라스">텐서플로와 케라스</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
+</span></span></code></pre></div><ul>
 <li>
 <p>딥러닝 라이브러리가 다른 머신러닝 라이브러리와 다른 점 중 하나는 그래픽 처리 장치인 GPU를 사용하여 인공 신경망을 훈련.</p>
 </li>
@@ -275,16 +272,16 @@ print(np<span style="color:#f92672">.</span>mean(scores[<span style="color:#e6db
 <p>텐서플로에서 케라스를 사용하려면 다음과 같이 import</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
-</code></pre></div><h2 id="인공-신경망으로-모델-만들기">인공 신경망으로 모델 만들기</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-
-train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_scaled<span style="color:#f92672">.</span>shape, train_target<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(48000, 784) (48000,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+</span></span></code></pre></div><h2 id="인공-신경망으로-모델-만들기">인공 신경망으로 모델 만들기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=</span> train_test_split(train_scaled, train_target, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_scaled<span style="color:#f92672">.</span>shape, train_target<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(48000, 784) (48000,)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(val_scaled<span style="color:#f92672">.</span>shape, val_target<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(12000, 784) (12000,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(val_scaled<span style="color:#f92672">.</span>shape, val_target<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(12000, 784) (12000,)
 </code></pre>
 <ul>
 <li>
@@ -303,8 +300,8 @@ train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dense <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, ))
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dense <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>, ))
+</span></span></code></pre></div><ul>
 <li>
 <p>10개의 패션 아이템 분류 -&gt; 뉴런 개수 10개</p>
 </li>
@@ -321,10 +318,10 @@ train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=
 <p>Sequential 클래스 사용</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential(dense)
-</code></pre></div><h2 id="인공-신경망으로-패션-아이템-분류">인공 신경망으로 패션 아이템 분류</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential(dense)
+</span></span></code></pre></div><h2 id="인공-신경망으로-패션-아이템-분류">인공 신경망으로 패션 아이템 분류</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>compile(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>, metrics <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span></code></pre></div><ul>
 <li>
 <p>이진 분류 loss = &lsquo;binary_crossentropy&rsquo;</p>
 </li>
@@ -338,8 +335,8 @@ train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=
 <p>따라서 다중 분루에서 크로스 엔트로피 손실 함수를 사용하려면 0, 1, 2와 같이 정수로 된 타깃값을 원-핫 인코딩으로 변환해야 함.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_target[:<span style="color:#ae81ff">10</span>])
-</code></pre></div><pre><code>[7 3 5 8 6 9 3 3 9 9]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_target[:<span style="color:#ae81ff">10</span>])
+</span></span></code></pre></div><pre><code>[7 3 5 8 6 9 3 3 9 9]
 </code></pre>
 <ul>
 <li>
@@ -356,8 +353,8 @@ train_scaled, val_scaled, train_target, val_target <span style="color:#f92672">=
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-</code></pre></div><pre><code>Epoch 1/5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_scaled, train_target, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><pre><code>Epoch 1/5
 1500/1500 [==============================] - 5s 2ms/step - loss: 0.6093 - accuracy: 0.7943
 Epoch 2/5
 1500/1500 [==============================] - 3s 2ms/step - loss: 0.4785 - accuracy: 0.8399
@@ -374,8 +371,8 @@ Epoch 5/5
 
 &lt;keras.callbacks.History at 0x7f2630111f50&gt;
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
-</code></pre></div><pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.4484 - accuracy: 0.8509
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>evaluate(val_scaled, val_target)
+</span></span></code></pre></div><pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.4484 - accuracy: 0.8509
 
 
 
@@ -393,7 +390,7 @@ Epoch 5/5
 <li>텐서플로 : CPU, GPU 이용. 인공 신경망 모델을 효울적으로 하며 모델 구축과 서비스에 필요한 다양한 도구를 제공.</li>
 <li>밀집층 : 가장 간단한 인공 신경망의 층
 <ul>
-<li>양쪽 모두 연결 되어 있으면 ' 완전 연결 층&rsquo;</li>
+<li>양쪽 모두 연결 되어 있으면 &rsquo; 완전 연결 층&rsquo;</li>
 <li>특별히 출력층에 밀집층을 사욯할 째는 분류하려는 클래스와 동일한 개수의 뉴런을 사용.</li>
 </ul>
 </li>
@@ -633,7 +630,7 @@ Epoch 5/5
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -642,31 +639,31 @@ Epoch 5/5
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

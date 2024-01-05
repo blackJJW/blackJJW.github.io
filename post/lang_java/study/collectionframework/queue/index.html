@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] LIFO와 FIFO 컬렉션, Queue - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -220,8 +217,8 @@ if (!doNotTrack) {
 <li>LinkedList는 List 인터페이스를 구현했기 때문에 List 컬렉션이기도 하다.</li>
 <li>LinkedList 객체를 Queue 인터페이스 타입으로 변환하는 코드</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Queue<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Queue<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ex) Message 클래스</p>
 <ul>
@@ -229,52 +226,52 @@ if (!doNotTrack) {
 <li>먼저 넣은 메시지가 반대쪽으로 먼저 나오기 때문에 넣은 순서대로 메시지가 처리</li>
 <li>Message.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> String command<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> String to<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Message</span><span style="color:#f92672">(</span>String command<span style="color:#f92672">,</span> String to<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">command</span> <span style="color:#f92672">=</span> command<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">to</span> <span style="color:#f92672">=</span> to<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String command;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String to;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Message</span>(String command, String to) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">command</span> <span style="color:#f92672">=</span> command;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">to</span> <span style="color:#f92672">=</span> to;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) Queue를 이용한 메시지 큐</p>
 <ul>
 <li>QueueEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.LinkedList<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Queue<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QueueEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Queue<span style="color:#f92672">&lt;</span>Message<span style="color:#f92672">&gt;</span> messageQueue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>Message<span style="color:#f92672">&gt;();</span>
-
-		<span style="color:#75715e">// 메시지 저장
-</span><span style="color:#75715e"></span>		messageQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">offer</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Message<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sendMail&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">));</span>
-		messageQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">offer</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Message<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sendSMS&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">));</span>
-		messageQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">offer</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Message<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sendKakaotalk&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">));</span>
-
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">(!</span>messageQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 메시지 큐가 비어있는지 확인
-</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 메시지 큐에서 한 개의 메시지 꺼냄
-</span><span style="color:#75715e"></span>			Message message <span style="color:#f92672">=</span> messageQueue<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span>
-			<span style="color:#66d9ef">switch</span><span style="color:#f92672">(</span>message<span style="color:#f92672">.</span><span style="color:#a6e22e">command</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendMail&#34;</span><span style="color:#f92672">:</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>message<span style="color:#f92672">.</span><span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 메일을 전송&#34;</span><span style="color:#f92672">);</span>
-				<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendSMS&#34;</span><span style="color:#f92672">:</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>message<span style="color:#f92672">.</span><span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 SMS를 전송&#34;</span><span style="color:#f92672">);</span>
-				<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendKakaotalk&#34;</span><span style="color:#f92672">:</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>message<span style="color:#f92672">.</span><span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 Kakaotalk 전송&#34;</span><span style="color:#f92672">);</span>
-				<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/collectionFramework/LIFO%EC%99%80_FIFO_%EC%BB%AC%EB%A0%89%EC%85%98/Queue/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.LinkedList;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Queue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QueueEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Queue<span style="color:#f92672">&lt;</span>Message<span style="color:#f92672">&gt;</span> messageQueue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>Message<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 메시지 저장</span>
+</span></span><span style="display:flex;"><span>		messageQueue.<span style="color:#a6e22e">offer</span>(<span style="color:#66d9ef">new</span> Message(<span style="color:#e6db74">&#34;sendMail&#34;</span>, <span style="color:#e6db74">&#34;ABC&#34;</span>));
+</span></span><span style="display:flex;"><span>		messageQueue.<span style="color:#a6e22e">offer</span>(<span style="color:#66d9ef">new</span> Message(<span style="color:#e6db74">&#34;sendSMS&#34;</span>, <span style="color:#e6db74">&#34;DEF&#34;</span>));
+</span></span><span style="display:flex;"><span>		messageQueue.<span style="color:#a6e22e">offer</span>(<span style="color:#66d9ef">new</span> Message(<span style="color:#e6db74">&#34;sendKakaotalk&#34;</span>, <span style="color:#e6db74">&#34;GHI&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>messageQueue.<span style="color:#a6e22e">isEmpty</span>()) { <span style="color:#75715e">// 메시지 큐가 비어있는지 확인</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 메시지 큐에서 한 개의 메시지 꺼냄</span>
+</span></span><span style="display:flex;"><span>			Message message <span style="color:#f92672">=</span> messageQueue.<span style="color:#a6e22e">poll</span>();
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">switch</span>(message.<span style="color:#a6e22e">command</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendMail&#34;</span>:
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(message.<span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 메일을 전송&#34;</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendSMS&#34;</span>:
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(message.<span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 SMS를 전송&#34;</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sendKakaotalk&#34;</span>:
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(message.<span style="color:#a6e22e">to</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님에게 Kakaotalk 전송&#34;</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/collectionFramework/LIFO%EC%99%80_FIFO_%EC%BB%AC%EB%A0%89%EC%85%98/Queue/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -311,7 +308,7 @@ if (!doNotTrack) {
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/collectionframework/%EB%8F%99%EA%B8%B0%ED%99%94%EB%90%9C_%EC%BB%AC%EB%A0%89%EC%85%98/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/collectionframework/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA%E1%84%83%E1%85%AC%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A6%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 동기화된 컬렉션</p>
 		</a>
@@ -463,7 +460,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -472,31 +469,31 @@ if (!doNotTrack) {
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

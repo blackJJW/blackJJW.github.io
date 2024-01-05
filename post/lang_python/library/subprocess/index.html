@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Python] subprocess - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -198,15 +195,15 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) 폴더 내 목록 출력</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess
-
-result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;dir&#39;</span>], 
-                        stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE, 
-                        encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cp949&#39;</span>)
-<span style="color:#75715e"># 리눅스의 경우 &#39;ls&#39;, &#39;-l&#39; 로 실행</span>
-
-print(result<span style="color:#f92672">.</span>stdout)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;dir&#39;</span>], 
+</span></span><span style="display:flex;"><span>                        stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE, 
+</span></span><span style="display:flex;"><span>                        encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cp949&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 리눅스의 경우 &#39;ls&#39;, &#39;-l&#39; 로 실행</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>stdout)
+</span></span></code></pre></div><ul>
 <li><code>run()</code> : &lsquo;cmd&rsquo;, &lsquo;/c&rsquo;, &lsquo;dir&rsquo; 명령어를 실행하기 위한 함수</li>
 <li><code>stdout=subprocess.PIPE</code> : 프로세스의 표준 출력을 캡처하도록 subprocess에 지시</li>
 </ul>
@@ -214,20 +211,20 @@ print(result<span style="color:#f92672">.</span>stdout)
 </li>
 <li>
 <p>ex) 실행 결과를 텍스트 파일에 저장</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;output.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
-    subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;dir&#39;</span>], stdout<span style="color:#f92672">=</span>f)
-</code></pre></div><p><img src="/images/lang_python/library/subprocess/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;output.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#39;cmd&#39;</span>, <span style="color:#e6db74">&#39;/c&#39;</span>, <span style="color:#e6db74">&#39;dir&#39;</span>], stdout<span style="color:#f92672">=</span>f)
+</span></span></code></pre></div><p><img src="/images/lang_python/library/subprocess/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) python 파일 실행</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess
-
-process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([<span style="color:#e6db74">&#39;python&#39;</span>, <span style="color:#e6db74">&#39;hello-world.py&#39;</span>], 
-                           stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
-
-<span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> process<span style="color:#f92672">.</span>stdout:
-    print(line<span style="color:#f92672">.</span>decode(), end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([<span style="color:#e6db74">&#39;python&#39;</span>, <span style="color:#e6db74">&#39;hello-world.py&#39;</span>], 
+</span></span><span style="display:flex;"><span>                           stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> process<span style="color:#f92672">.</span>stdout:
+</span></span><span style="display:flex;"><span>    print(line<span style="color:#f92672">.</span>decode(), end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+</span></span></code></pre></div><ul>
 <li><code>Popen()</code> : 파이썬 스크립트를 실행하는 새로운 Python 프로세스를 생성</li>
 </ul>
 <p><img src="/images/lang_python/library/subprocess/Untitled%202.png" alt="Untitled"></p>
@@ -272,7 +269,7 @@ process <span style="color:#f92672">=</span> subprocess<span style="color:#f9267
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/nio/udp_%EC%B1%84%EB%84%90/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/nio/udp_%E1%84%8E%E1%85%A2%E1%84%82%E1%85%A5%E1%86%AF/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] NIO, UDP 채널</p>
 		</a>
@@ -430,7 +427,7 @@ process <span style="color:#f92672">=</span> subprocess<span style="color:#f9267
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -439,31 +436,31 @@ process <span style="color:#f92672">=</span> subprocess<span style="color:#f9267
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

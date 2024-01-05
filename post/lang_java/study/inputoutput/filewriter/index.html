@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 파일 입출력, FileWriter - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -195,13 +192,13 @@ if (!doNotTrack) {
 <li>전체 파일의 경로를 가지고 FileWriter을 생성</li>
 <li>저장할 파일이 File 객체로 이미 생성되어 있다면 두 번째 방법으로 좀 더 쉽게 FileWriter를 생성 가능</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 방법 1
-</span><span style="color:#75715e"></span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">);</span>
-
-<span style="color:#75715e">// 방법 2
-</span><span style="color:#75715e"></span>File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">);</span>
-FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>file<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 방법 1</span>
+</span></span><span style="display:flex;"><span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 방법 2</span>
+</span></span><span style="display:flex;"><span>File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(file);
+</span></span></code></pre></div><ul>
 <li>위와 같이 FileWriter를 생성하면 지정된 파일이 이미 존재할 경우 그 파일을 덮어쓰게 된다.
 <ul>
 <li>기존의 파일 내용은 사라지게 된다.</li>
@@ -209,20 +206,20 @@ FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">n
 </li>
 <li>기존의 파일 내용 끝에 데이터를 추가할 경우에는 FileWriter 생성자에게 두 번째 매개값으로 true를 주면 된다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>file<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(file, <span style="color:#66d9ef">true</span>);
+</span></span></code></pre></div></li>
 <li>
 <p>FileWriter는 Writer의 하위 클래스이기 때문에 사용 방법이 Writer와 동일</p>
 <ul>
 <li>한 문자를 저장하기 위해서 <code>write()</code> 메소드를 사용하고 문자열을 저장하기 위해서 <code>writer(String str)</code> 메소드를 사용</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">);</span>
-String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;저장할 문자열&#34;</span><span style="color:#f92672">;</span>
-fw<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-fw<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;저장할 문자열&#34;</span>;
+</span></span><span style="display:flex;"><span>fw.<span style="color:#a6e22e">write</span>(data);
+</span></span><span style="display:flex;"><span>fw.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>fw.<span style="color:#a6e22e">close</span>();
+</span></span></code></pre></div><ul>
 <li><code>write()</code> 메소드를 호출한 이후
 <ul>
 <li><code>flush()</code> 메소드로 출력 버퍼에 있는 데이터를 파일로 완전히 출력</li>
@@ -236,22 +233,22 @@ fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><s
 <ul>
 <li>FileWriterEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.File<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.FileWriter<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileWriterEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span><span style="color:#f92672">);</span>
-		FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>file<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-		fw<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;FileWriter는 한글로 된&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\r\n&#34;</span><span style="color:#f92672">);</span>
-		fw<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;문자열을 바로 출력할 수 있다.&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\r\n&#34;</span><span style="color:#f92672">);</span>
-		fw<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-		fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;파일에 저장됨.&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/FileWriter/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.File;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileWriter;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileWriterEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;C:/Temp/file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>		FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(file, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		fw.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;FileWriter는 한글로 된&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\r\n&#34;</span>);
+</span></span><span style="display:flex;"><span>		fw.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;문자열을 바로 출력할 수 있다.&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\r\n&#34;</span>);
+</span></span><span style="display:flex;"><span>		fw.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>		fw.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;파일에 저장됨.&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/FileWriter/Untitled.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/inputOutput/FileWriter/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
@@ -289,7 +286,7 @@ fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><s
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inputoutput/%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 보조 스트림</p>
 		</a>
@@ -441,7 +438,7 @@ fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><s
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -450,31 +447,31 @@ fw<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><s
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

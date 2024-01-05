@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java]  Set 컬렉션, HashSet - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -188,13 +185,13 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>HashSet을 생성하기 위해서는 다음과 같이 기본 생성자를 호출하면 된다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Set<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>();
+</span></span></code></pre></div><ul>
 <li>타입 파라미터 E에는 컬렉션에 저장할 객체 타입을 지정하면 된다.</li>
 <li>ex) String 객체를 저장하는 HashSet은 다음과 같이 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>HashSet은 객체들을 순서 없이 저장하고 동일한 객체는 중복 저장하지 않는다.</p>
 <ul>
@@ -227,46 +224,46 @@ if (!doNotTrack) {
 <li>HashSet에  String 객체를 추가, 검색, 제거하는 방법</li>
 <li>HashSetEx1.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.HashSet<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Iterator<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashSetEx1</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;();</span>
-
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Java&#34;</span><span style="color:#f92672">);</span>
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JDBC&#34;</span><span style="color:#f92672">);</span>
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Servlet/JSP&#34;</span><span style="color:#f92672">);</span>
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Java&#34;</span><span style="color:#f92672">);</span> <span style="color:#75715e">// Java는 한 번만 저장됨
-</span><span style="color:#75715e"></span>		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;iBATIS&#34;</span><span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> set<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 저장된 객체 수 증가
-</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> size<span style="color:#f92672">);</span>
-
-		Iterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> iterator <span style="color:#f92672">=</span> set<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 반복자 얻기
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>iterator<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 객체 수만큼 루핑
-</span><span style="color:#75715e"></span>			String element <span style="color:#f92672">=</span> iterator<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 한 개의 객체를 가져온다. 
-</span><span style="color:#75715e"></span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> element<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JDBC&#34;</span><span style="color:#f92672">);</span>   <span style="color:#75715e">// 한 개의 객체 삭제
-</span><span style="color:#75715e"></span>		set<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;iBATIS&#34;</span><span style="color:#f92672">);</span> <span style="color:#75715e">// 한 개의 객체 삭제
-</span><span style="color:#75715e"></span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> set<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span> <span style="color:#75715e">// 저장된 객체 수 얻기
-</span><span style="color:#75715e"></span>
-		iterator <span style="color:#f92672">=</span> set<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 반복자 얻기
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>iterator<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 객체 수만큼 루핑
-</span><span style="color:#75715e"></span>			String element <span style="color:#f92672">=</span> iterator<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> element<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">clear</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 모든 객체를 제거하고 비움
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>set<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;비어 있음&#34;</span><span style="color:#f92672">);</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/collectionFramework/Set_%EC%BB%AC%EB%A0%89%EC%85%98/HashSet/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashSet;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Iterator;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Set;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashSetEx1</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Java&#34;</span>);
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;JDBC&#34;</span>);
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Servlet/JSP&#34;</span>);
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Java&#34;</span>); <span style="color:#75715e">// Java는 한 번만 저장됨</span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;iBATIS&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> set.<span style="color:#a6e22e">size</span>(); <span style="color:#75715e">// 저장된 객체 수 증가</span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> size);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Iterator<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> iterator <span style="color:#f92672">=</span> set.<span style="color:#a6e22e">iterator</span>(); <span style="color:#75715e">// 반복자 얻기</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(iterator.<span style="color:#a6e22e">hasNext</span>()) { <span style="color:#75715e">// 객체 수만큼 루핑</span>
+</span></span><span style="display:flex;"><span>			String element <span style="color:#f92672">=</span> iterator.<span style="color:#a6e22e">next</span>(); <span style="color:#75715e">// 한 개의 객체를 가져온다. </span>
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> element);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;JDBC&#34;</span>);   <span style="color:#75715e">// 한 개의 객체 삭제</span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;iBATIS&#34;</span>); <span style="color:#75715e">// 한 개의 객체 삭제</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> set.<span style="color:#a6e22e">size</span>()); <span style="color:#75715e">// 저장된 객체 수 얻기</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		iterator <span style="color:#f92672">=</span> set.<span style="color:#a6e22e">iterator</span>(); <span style="color:#75715e">// 반복자 얻기</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(iterator.<span style="color:#a6e22e">hasNext</span>()) { <span style="color:#75715e">// 객체 수만큼 루핑</span>
+</span></span><span style="display:flex;"><span>			String element <span style="color:#f92672">=</span> iterator.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> element);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">clear</span>(); <span style="color:#75715e">// 모든 객체를 제거하고 비움</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(set.<span style="color:#a6e22e">isEmpty</span>()) { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;비어 있음&#34;</span>); }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/collectionFramework/Set_%EC%BB%AC%EB%A0%89%EC%85%98/HashSet/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) <code>hashCode()</code>와 <code>equals()</code> 메소드 재정의</p>
@@ -276,57 +273,57 @@ if (!doNotTrack) {
 <li>인스턴스가 달라도 이름과 나이가 동일하다면 동일한 객체로 간주하여 중복 저장되지 않도록 하기 위해서이다.</li>
 <li>Member.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">/* name과 age 값이 같으면 
-</span><span style="color:#75715e">	                                     *  true를 리턴
-</span><span style="color:#75715e">	                                     */</span> 
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>obj <span style="color:#66d9ef">instanceof</span> Member<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			Member member <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Member<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">return</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>member<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">==</span> age<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">/* name과 age 값이 같으면
-</span><span style="color:#75715e">	                         * 동일한 hashCode가 리턴
-</span><span style="color:#75715e">	                         */</span>
-		<span style="color:#66d9ef">return</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> age<span style="color:#f92672">;</span>
-		      <span style="color:#75715e">// String의 hashCode() 이용
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span>(String name, <span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) { <span style="color:#75715e">/* name과 age 값이 같으면 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                                     *  true를 리턴
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                                     */</span> 
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(obj <span style="color:#66d9ef">instanceof</span> Member) {
+</span></span><span style="display:flex;"><span>			Member member <span style="color:#f92672">=</span> (Member) obj;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> member.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">equals</span>(name) <span style="color:#f92672">&amp;&amp;</span> (member.<span style="color:#a6e22e">age</span> <span style="color:#f92672">==</span> age);
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() { <span style="color:#75715e">/* name과 age 값이 같으면
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                         * 동일한 hashCode가 리턴
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	                         */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> name.<span style="color:#a6e22e">hashCode</span>() <span style="color:#f92672">+</span> age;
+</span></span><span style="display:flex;"><span>		      <span style="color:#75715e">// String의 hashCode() 이용</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) Member 객체를 중복없이 저장하는 HashSet</p>
 <ul>
 <li>HashSetEx2.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.HashSet<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashSetEx2</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Set<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;();</span>
-
-		<span style="color:#75715e">// 인스턴스는 다르지만 내부 데이터가 동일하므로 객체 1개만 저장
-</span><span style="color:#75715e"></span>		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 30<span style="color:#f92672">));</span>
-		set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 30<span style="color:#f92672">));</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> set<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span> <span style="color:#75715e">// 저장된 객체 수 얻기
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/collectionFramework/Set_%EC%BB%AC%EB%A0%89%EC%85%98/HashSet/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashSet;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Set;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashSetEx2</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Set<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 인스턴스는 다르지만 내부 데이터가 동일하므로 객체 1개만 저장</span>
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, 30));
+</span></span><span style="display:flex;"><span>		set.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, 30));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;총 객체 수 : &#34;</span> <span style="color:#f92672">+</span> set.<span style="color:#a6e22e">size</span>()); <span style="color:#75715e">// 저장된 객체 수 얻기</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/collectionFramework/Set_%EC%BB%AC%EB%A0%89%EC%85%98/HashSet/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -357,13 +354,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/collectionframework/set_%EC%BB%AC%EB%A0%89%EC%85%98/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/collectionframework/set_%E1%84%8F%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A6%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java]  Set 컬렉션</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/collectionframework/map_%EC%BB%AC%EB%A0%89%EC%85%98/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/collectionframework/map_%E1%84%8F%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A6%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java]  Map 컬렉션</p>
 		</a>
@@ -515,7 +512,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -524,31 +521,31 @@ if (!doNotTrack) {
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

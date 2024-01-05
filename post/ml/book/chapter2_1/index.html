@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch2-1 훈련 세트와 테스트 세트 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -209,54 +206,54 @@ if (!doNotTrack) {
 <li>평가에 사용되는 데이터를 테스트 세트(test set)</li>
 <li>머신러닝의 정확한 평가를 위해서는 데스트 세트와 훈련 세트가 따로 준비되어야 함</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fish_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
-                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
-                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">9.8</span>, 
-                <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
-fish_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
-                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
-                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>, <span style="color:#ae81ff">6.7</span>, 
-                <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(fish_length, fish_weight)]
-fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_length <span style="color:#f92672">=</span> [<span style="color:#ae81ff">25.4</span>, <span style="color:#ae81ff">26.3</span>, <span style="color:#ae81ff">26.5</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.0</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">29.7</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.0</span>, <span style="color:#ae81ff">30.7</span>, <span style="color:#ae81ff">31.0</span>, <span style="color:#ae81ff">31.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">31.5</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">32.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">33.5</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">34.5</span>, <span style="color:#ae81ff">35.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">36.0</span>, <span style="color:#ae81ff">37.0</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">38.5</span>, <span style="color:#ae81ff">39.5</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">41.0</span>, <span style="color:#ae81ff">9.8</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">10.5</span>, <span style="color:#ae81ff">10.6</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">11.2</span>, <span style="color:#ae81ff">11.3</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">11.8</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">12.4</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.3</span>, <span style="color:#ae81ff">15.0</span>]
+</span></span><span style="display:flex;"><span>fish_weight <span style="color:#f92672">=</span> [<span style="color:#ae81ff">242.0</span>, <span style="color:#ae81ff">290.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">363.0</span>, <span style="color:#ae81ff">430.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">390.0</span>, <span style="color:#ae81ff">450.0</span>, <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">475.0</span>, <span style="color:#ae81ff">500.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">500.0</span>, <span style="color:#ae81ff">340.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">600.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">610.0</span>, <span style="color:#ae81ff">650.0</span>, <span style="color:#ae81ff">575.0</span>, <span style="color:#ae81ff">685.0</span>, <span style="color:#ae81ff">620.0</span>, <span style="color:#ae81ff">680.0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">700.0</span>, <span style="color:#ae81ff">725.0</span>, <span style="color:#ae81ff">720.0</span>, <span style="color:#ae81ff">714.0</span>, <span style="color:#ae81ff">850.0</span>, <span style="color:#ae81ff">1000.0</span>, <span style="color:#ae81ff">920.0</span>, <span style="color:#ae81ff">955.0</span>, <span style="color:#ae81ff">925.0</span>, <span style="color:#ae81ff">975.0</span>, <span style="color:#ae81ff">950.0</span>, <span style="color:#ae81ff">6.7</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">7.5</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">9.7</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">8.7</span>, <span style="color:#ae81ff">10.0</span>, <span style="color:#ae81ff">9.9</span>, <span style="color:#ae81ff">9.8</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">13.4</span>, <span style="color:#ae81ff">12.2</span>, <span style="color:#ae81ff">19.7</span>, <span style="color:#ae81ff">19.9</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_data <span style="color:#f92672">=</span> [[l, w] <span style="color:#66d9ef">for</span> l, w <span style="color:#f92672">in</span> zip(fish_length, fish_weight)]
+</span></span><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">35</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>
+</span></span></code></pre></div><ul>
 <li>이 때 하나의 생선 데이터를 샘플(sample)이라고 부름</li>
 <li>훈련 세트 35개, 테스트 세트 14개</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
-kn <span style="color:#f92672">=</span> KNeighborsClassifier()
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
+</span></span><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> KNeighborsClassifier()
+</span></span></code></pre></div><ul>
 <li>일반적으로 리스트처럼 배열의 요소를 선택할 때는 배열의 위치, 즉 인덱스(index)를 지정</li>
 <li>ex) fish_data의 다섯 번째 샘플을 출력하기 위해 다음과 같이 쓸 수 있음</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(fish_data[<span style="color:#ae81ff">4</span>])
-</code></pre></div><pre><code>[29.0, 430.0]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data[<span style="color:#ae81ff">4</span>])
+</span></span></code></pre></div><pre><code>[29.0, 430.0]
 </code></pre>
 <ul>
 <li>파이썬 리스트는 인덱스 외에도 슬라이싱(slicing) 제공</li>
 <li>슬라이싱 연산을 이용하면 인덱스의 범위를 지정하여 원소를 여러 개 선택 가능</li>
 <li>슬라이싱을 사용할 때는 마지막 인덱스의 원소는 포함되지 않는다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(fish_data[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>])
-</code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>])
+</span></span></code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(fish_data[:<span style="color:#ae81ff">5</span>])
-</code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data[:<span style="color:#ae81ff">5</span>])
+</span></span></code></pre></div><pre><code>[[25.4, 242.0], [26.3, 290.0], [26.5, 340.0], [29.0, 363.0], [29.0, 430.0]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(fish_data[<span style="color:#ae81ff">44</span>:])
-</code></pre></div><pre><code>[[12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(fish_data[<span style="color:#ae81ff">44</span>:])
+</span></span></code></pre></div><pre><code>[[12.2, 12.2], [12.4, 13.4], [13.0, 12.2], [14.3, 19.7], [15.0, 19.9]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 훈련 세트로 입력값 중 0부터 34번째 인덱스까지 사용</span>
-train_input <span style="color:#f92672">=</span> fish_data[:<span style="color:#ae81ff">35</span>]
-<span style="color:#75715e"># 훈련 세트로 타깃값 중 0부터 34번째 인덱스까지 사용</span>
-train_target <span style="color:#f92672">=</span> fish_target[:<span style="color:#ae81ff">35</span>]
-<span style="color:#75715e"># 테스트 세트로 입력값 중 35번째부터 마지막 인덱스까지 사용</span>
-test_input <span style="color:#f92672">=</span> fish_data[<span style="color:#ae81ff">35</span>:]
-<span style="color:#75715e"># 테스트 세트로 타깃값 중 35번째부터 마지막 인덱스까지 사용</span>
-test_target <span style="color:#f92672">=</span> fish_target[<span style="color:#ae81ff">35</span>:]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn <span style="color:#f92672">=</span> kn<span style="color:#f92672">.</span>fit(train_input, train_target)
-kn<span style="color:#f92672">.</span>score(test_input, test_target)
-</code></pre></div><pre><code>0.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 훈련 세트로 입력값 중 0부터 34번째 인덱스까지 사용</span>
+</span></span><span style="display:flex;"><span>train_input <span style="color:#f92672">=</span> fish_data[:<span style="color:#ae81ff">35</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 훈련 세트로 타깃값 중 0부터 34번째 인덱스까지 사용</span>
+</span></span><span style="display:flex;"><span>train_target <span style="color:#f92672">=</span> fish_target[:<span style="color:#ae81ff">35</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 테스트 세트로 입력값 중 35번째부터 마지막 인덱스까지 사용</span>
+</span></span><span style="display:flex;"><span>test_input <span style="color:#f92672">=</span> fish_data[<span style="color:#ae81ff">35</span>:]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 테스트 세트로 타깃값 중 35번째부터 마지막 인덱스까지 사용</span>
+</span></span><span style="display:flex;"><span>test_target <span style="color:#f92672">=</span> fish_target[<span style="color:#ae81ff">35</span>:]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> kn<span style="color:#f92672">.</span>fit(train_input, train_target)
+</span></span><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(test_input, test_target)
+</span></span></code></pre></div><pre><code>0.0
 </code></pre>
 <h2 id="샘플링-편향">샘플링 편향</h2>
 <ul>
@@ -275,14 +272,14 @@ kn<span style="color:#f92672">.</span>score(test_input, test_target)
 <li>배열에서 차원은 좌표계의 축과 같음</li>
 <li>1차원 배열은 선, 2차원 배열은 면, 3차원 배열은 공간</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 파이썬 리스를 넘파이 배열로 바꾸기</span>
-<span style="color:#75715e"># 넘파이 array() 함수에 파이썬 리스트를 전달</span>
-
-input_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(fish_data)
-target_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(fish_target)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(input_arr)
-</code></pre></div><pre><code>[[  25.4  242. ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 파이썬 리스를 넘파이 배열로 바꾸기</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 넘파이 array() 함수에 파이썬 리스트를 전달</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>input_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(fish_data)
+</span></span><span style="display:flex;"><span>target_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(fish_target)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(input_arr)
+</span></span></code></pre></div><pre><code>[[  25.4  242. ]
  [  26.3  290. ]
  [  26.5  340. ]
  [  29.   363. ]
@@ -332,8 +329,8 @@ target_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.<
  [  14.3   19.7]
  [  15.    19.9]]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(input_arr<span style="color:#f92672">.</span>shape) <span style="color:#75715e"># (샘플 수, 특성 수)</span>
-</code></pre></div><pre><code>(49, 2)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(input_arr<span style="color:#f92672">.</span>shape) <span style="color:#75715e"># (샘플 수, 특성 수)</span>
+</span></span></code></pre></div><pre><code>(49, 2)
 </code></pre>
 <ul>
 <li>이 배열에서 랜덤하게 샘플을 선택해 훈련 세트와 테스트 세트로 만듬</li>
@@ -343,14 +340,14 @@ target_arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.<
 <li>넘파이 arange() 함수를 사용하면 0에서 48까지 1씩 증가하는 인덱스를 간단히 만들수 있음</li>
 <li>일정한 결과를 얻으려면 초기에 램덤시드(random seed)를 지정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">42</span>)
-index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">49</span>)
-np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>shuffle(index)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">49</span>)
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>shuffle(index)
+</span></span></code></pre></div><ul>
 <li>넘파이 arange() 함수에 정수 N을 전달하면 0에서부터 N-1까지 1씩 증가하는 배열을 만듬</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(index)
-</code></pre></div><pre><code>[13 45 47 44 17 27 26 25 31 19 12  4 34  8  3  6 40 41 46 15  9 16 24 33
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(index)
+</span></span></code></pre></div><pre><code>[13 45 47 44 17 27 26 25 31 19 12  4 34  8  3  6 40 41 46 15  9 16 24 33
  30  0 43 32  5 29 11 36  1 21  2 37 35 23 39 10 22 18 48 20  7 42 14 28
  38]
 </code></pre>
@@ -358,47 +355,47 @@ np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>
 <li>넘파이는 배열 인덱싱(array indexing) 제공</li>
 <li>배열 인덱싱은 1개의 인덱스가 아닌 여러 개의 인덱스로 한 버네 여러 개의 원소를 선택 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(input_arr[[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>]])
-</code></pre></div><pre><code>[[ 26.3 290. ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(input_arr[[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>]])
+</span></span></code></pre></div><pre><code>[[ 26.3 290. ]
  [ 29.  363. ]]
 </code></pre>
 <ul>
 <li>리스트 대신 넘파이 배영을 인덱스로 전달 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_input <span style="color:#f92672">=</span> input_arr[index[:<span style="color:#ae81ff">35</span>]]
-train_target <span style="color:#f92672">=</span> target_arr[index[:<span style="color:#ae81ff">35</span>]]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(input_arr[<span style="color:#ae81ff">13</span>], train_input[<span style="color:#ae81ff">0</span>])
-</code></pre></div><pre><code>[ 32. 340.] [ 32. 340.]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>train_input <span style="color:#f92672">=</span> input_arr[index[:<span style="color:#ae81ff">35</span>]]
+</span></span><span style="display:flex;"><span>train_target <span style="color:#f92672">=</span> target_arr[index[:<span style="color:#ae81ff">35</span>]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(input_arr[<span style="color:#ae81ff">13</span>], train_input[<span style="color:#ae81ff">0</span>])
+</span></span></code></pre></div><pre><code>[ 32. 340.] [ 32. 340.]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_input <span style="color:#f92672">=</span> input_arr[index[<span style="color:#ae81ff">35</span>:]]
-test_target <span style="color:#f92672">=</span> target_arr[index[<span style="color:#ae81ff">35</span>:]]
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test_input <span style="color:#f92672">=</span> input_arr[index[<span style="color:#ae81ff">35</span>:]]
+</span></span><span style="display:flex;"><span>test_target <span style="color:#f92672">=</span> target_arr[index[<span style="color:#ae81ff">35</span>:]]
+</span></span></code></pre></div><ul>
 <li>2차원 배열은 행과 열 인덱스를 콤마(,)로 나누어 지정</li>
 <li>슬라이싱 연산자로 처음부터 마지막 원소까지 모두 선택하는 경우 시작과 종료 인덱스를 모두 생략 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-
-plt<span style="color:#f92672">.</span>scatter(train_input[:,<span style="color:#ae81ff">0</span>], train_input[:,<span style="color:#ae81ff">1</span>])
-plt<span style="color:#f92672">.</span>scatter(test_input[:,<span style="color:#ae81ff">0</span>], test_input[:,<span style="color:#ae81ff">1</span>])
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter2_1/output_35_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(train_input[:,<span style="color:#ae81ff">0</span>], train_input[:,<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(test_input[:,<span style="color:#ae81ff">0</span>], test_input[:,<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;length&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter2_1/output_35_0.png" alt="png"></p>
 <h2 id="두-번째-머신러닝-프로그램">두 번째 머신러닝 프로그램</h2>
 <ul>
 <li>k-최근접 이웃 모델을 훈련</li>
 <li>fit() 메서드를 실행할 때마다 KNeighborsClassifier 클래스의 객체는 이전에 학습한 모든 것을 잃어버림</li>
 <li>새로운 객체 생성 필요</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn <span style="color:#f92672">=</span> kn<span style="color:#f92672">.</span>fit(train_input, train_target)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn<span style="color:#f92672">.</span>score(test_input, test_target)
-</code></pre></div><pre><code>1.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn <span style="color:#f92672">=</span> kn<span style="color:#f92672">.</span>fit(train_input, train_target)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>score(test_input, test_target)
+</span></span></code></pre></div><pre><code>1.0
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kn<span style="color:#f92672">.</span>predict(test_input)
-</code></pre></div><pre><code>array([0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kn<span style="color:#f92672">.</span>predict(test_input)
+</span></span></code></pre></div><pre><code>array([0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_target
-</code></pre></div><pre><code>array([0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test_target
+</span></span></code></pre></div><pre><code>array([0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0])
 </code></pre>
 <ul>
 <li>사이킷런 모델의 입력과 출력은 모두 넘파이 배열</li>
@@ -425,24 +422,24 @@ plt<span style="color:#f92672">.</span>show()
 <li>seed() : 넘파이엥서 난수를 생성하기 위한 정수 초깃값을 지정. 초깃값이 같으면 동일한 난수를 뽑을 수 있다. 따라서 랜덤 함수의 결과를 동일하게 재현하고 싶을 때 사용</li>
 <li>arange() : 일정한 간격의 정수또는 실수 배열을 생성. 기본 간격은 1. 매개변수가 하나면 종료 숫자를 의미. 0에서 종료 숫자까지 배열을 생성. 종료 숫자는 배열에 포함 안됨</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">3</span>))
-</code></pre></div><pre><code>[0 1 2]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">3</span>))
+</span></span></code></pre></div><pre><code>[0 1 2]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>))
-</code></pre></div><pre><code>[1 2]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>))
+</span></span></code></pre></div><pre><code>[1 2]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0.2</span>))
-</code></pre></div><pre><code>[1.  1.2 1.4 1.6 1.8 2.  2.2 2.4 2.6 2.8]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0.2</span>))
+</span></span></code></pre></div><pre><code>[1.  1.2 1.4 1.6 1.8 2.  2.2 2.4 2.6 2.8]
 </code></pre>
 <blockquote>
 <ul>
 <li>shuffle() : 주어진 배열을 랜덤하게 섞음. 다차원 배열일 경우 첫 번째 축(행)에 대해서만 섞음</li>
 </ul>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>], [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]])
-np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>shuffle(arr)
-print(arr)
-</code></pre></div><pre><code>[[5 6]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arr <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>], [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]])
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>shuffle(arr)
+</span></span><span style="display:flex;"><span>print(arr)
+</span></span></code></pre></div><pre><code>[[5 6]
  [1 2]
  [3 4]]
 </code></pre>
@@ -631,7 +628,7 @@ print(arr)
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -640,31 +637,31 @@ print(arr)
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

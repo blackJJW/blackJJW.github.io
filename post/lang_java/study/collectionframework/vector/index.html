@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java]  List 컬렉션, Vector - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -188,8 +185,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>Vector를 생성하기 위해서는 저장할 객체 타입을 타입 파라미터로 표기하고 기본 생성자를 호출하면 된다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Vector<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Vector<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ArrayList와 다른 점은 Vector는 동기화된(synchronized) 메소드로 구성되어 있기 때문에 멀티 스레드가 동시에 이 메소드들을 실행 불가</p>
 <ul>
@@ -208,50 +205,50 @@ if (!doNotTrack) {
 <li>Vector를 이용해서 Board 객체를 추가, 삭제, 검색</li>
 <li>VectorEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Vector<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VectorEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		List<span style="color:#f92672">&lt;</span>Board<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Vector<span style="color:#f92672">&lt;</span>Board<span style="color:#f92672">&gt;();</span>
-
-		<span style="color:#75715e">// Board 객체를 저장
-</span><span style="color:#75715e"></span>		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Board<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;content1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;writer1&#34;</span><span style="color:#f92672">));</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Board<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;content2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;writer2&#34;</span><span style="color:#f92672">));</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Board<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;content3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;writer3&#34;</span><span style="color:#f92672">));</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Board<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title4&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;content4&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;writer4&#34;</span><span style="color:#f92672">));</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Board<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title5&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;content5&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;writer5&#34;</span><span style="color:#f92672">));</span>
-
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span> <span style="color:#75715e">// 2번 인덱스 객체(title3) 삭제(뒤의 인덱스는 1씩 앞으로 당겨짐)
-</span><span style="color:#75715e"></span>		list<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span> <span style="color:#75715e">// 3번 인덱스 객체(title5) 삭제
-</span><span style="color:#75715e"></span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">();</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			Board board <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>board<span style="color:#f92672">.</span><span style="color:#a6e22e">subject</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> board<span style="color:#f92672">.</span><span style="color:#a6e22e">content</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> board<span style="color:#f92672">.</span><span style="color:#a6e22e">writer</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/collectionFramework/List_%EC%BB%AC%EB%A0%89%EC%85%98/Vector/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Vector;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VectorEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Board<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Vector<span style="color:#f92672">&lt;</span>Board<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Board 객체를 저장</span>
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Board(<span style="color:#e6db74">&#34;title1&#34;</span>, <span style="color:#e6db74">&#34;content1&#34;</span>, <span style="color:#e6db74">&#34;writer1&#34;</span>));
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Board(<span style="color:#e6db74">&#34;title2&#34;</span>, <span style="color:#e6db74">&#34;content2&#34;</span>, <span style="color:#e6db74">&#34;writer2&#34;</span>));
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Board(<span style="color:#e6db74">&#34;title3&#34;</span>, <span style="color:#e6db74">&#34;content3&#34;</span>, <span style="color:#e6db74">&#34;writer3&#34;</span>));
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Board(<span style="color:#e6db74">&#34;title4&#34;</span>, <span style="color:#e6db74">&#34;content4&#34;</span>, <span style="color:#e6db74">&#34;writer4&#34;</span>));
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Board(<span style="color:#e6db74">&#34;title5&#34;</span>, <span style="color:#e6db74">&#34;content5&#34;</span>, <span style="color:#e6db74">&#34;writer5&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">remove</span>(2); <span style="color:#75715e">// 2번 인덱스 객체(title3) 삭제(뒤의 인덱스는 1씩 앞으로 당겨짐)</span>
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">remove</span>(3); <span style="color:#75715e">// 3번 인덱스 객체(title5) 삭제</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> list.<span style="color:#a6e22e">size</span>(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			Board board <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">get</span>(i);
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(board.<span style="color:#a6e22e">subject</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> board.<span style="color:#a6e22e">content</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\t&#34;</span> <span style="color:#f92672">+</span> board.<span style="color:#a6e22e">writer</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/collectionFramework/List_%EC%BB%AC%EB%A0%89%EC%85%98/Vector/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 게시물 정보 객체</p>
 <ul>
 <li>Board.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> <span style="color:#f92672">{</span>
-	String subject<span style="color:#f92672">;</span>
-	String content<span style="color:#f92672">;</span>
-	String writer<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Board</span><span style="color:#f92672">(</span>String subject<span style="color:#f92672">,</span> String content<span style="color:#f92672">,</span> String writer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">subject</span> <span style="color:#f92672">=</span> subject<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> content<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">writer</span> <span style="color:#f92672">=</span> writer<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> {
+</span></span><span style="display:flex;"><span>	String subject;
+</span></span><span style="display:flex;"><span>	String content;
+</span></span><span style="display:flex;"><span>	String writer;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Board</span>(String subject, String content, String writer) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">subject</span> <span style="color:#f92672">=</span> subject;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> content;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">writer</span> <span style="color:#f92672">=</span> writer;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -439,7 +436,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -448,31 +445,31 @@ if (!doNotTrack) {
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

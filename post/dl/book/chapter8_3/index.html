@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[DL][Book][혼공 머신러닝&#43;딥러닝] ch8-3 합성곱 신경망의 시각화 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -189,10 +186,10 @@ if (!doNotTrack) {
 <li>일반적으로 절편은 시각적으로 의미가 없음</li>
 <li>가중치는 입력 이미지의 2차원 영역에 적용되어 어떤 특징을 크게 두드러지게 표현하는 역할</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
-model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;best-cnn-model.h5&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>layers
-</code></pre></div><pre><code>[&lt;keras.layers.convolutional.Conv2D at 0x7fc398c6fed0&gt;,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> tensorflow <span style="color:#f92672">import</span> keras
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;best-cnn-model.h5&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>layers
+</span></span></code></pre></div><pre><code>[&lt;keras.layers.convolutional.Conv2D at 0x7fc398c6fed0&gt;,
  &lt;keras.layers.pooling.MaxPooling2D at 0x7fc390653c90&gt;,
  &lt;keras.layers.convolutional.Conv2D at 0x7fc390653490&gt;,
  &lt;keras.layers.pooling.MaxPooling2D at 0x7fc390653850&gt;,
@@ -218,9 +215,9 @@ model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</s
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conv <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
-print(conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape, conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(3, 3, 1, 32) (32,)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conv <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>print(conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape, conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(3, 3, 1, 32) (32,)
 </code></pre>
 <ul>
 <li>
@@ -242,19 +239,19 @@ print(conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff
 <p>여기서는 넘파이 배열로 변환</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conv_weights <span style="color:#f92672">=</span> conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>numpy()
-print(conv_weights<span style="color:#f92672">.</span>mean(), conv_weights<span style="color:#f92672">.</span>std())
-</code></pre></div><pre><code>-0.028283767 0.24100564
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conv_weights <span style="color:#f92672">=</span> conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>numpy()
+</span></span><span style="display:flex;"><span>print(conv_weights<span style="color:#f92672">.</span>mean(), conv_weights<span style="color:#f92672">.</span>std())
+</span></span></code></pre></div><pre><code>-0.028283767 0.24100564
 </code></pre>
 <ul>
 <li>이 가중치의 평균값은 0에 가깝고, 표준편차는 0.24 정도</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-plt<span style="color:#f92672">.</span>hist(conv_weights<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;count&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_12_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(conv_weights<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_12_0.png" alt="png"></p>
 <ul>
 <li>
 <p>맷플롯립의 hist() 함수에 히스토그램을 그리기 위해 1차원 배열로 전달</p>
@@ -266,13 +263,13 @@ plt<span style="color:#f92672">.</span>show()
 <p>이번에는 32개의 커널을 16개씩 두 줄에 출력</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">16</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">2</span>))
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
-  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">16</span>):
-    axs[i, j]<span style="color:#f92672">.</span>imshow(conv_weights[:,:,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> j], vmin<span style="color:#f92672">=-</span><span style="color:#ae81ff">0.5</span>, vmax<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
-    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_15_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">16</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">16</span>):
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(conv_weights[:,:,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> j], vmin<span style="color:#f92672">=-</span><span style="color:#ae81ff">0.5</span>, vmax<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_15_0.png" alt="png"></p>
 <ul>
 <li>
 <p>conv_weights에 32개의 가중치를 저장</p>
@@ -302,35 +299,35 @@ plt<span style="color:#f92672">.</span>show()
 <p>먼저 Sequential 클래스로 모델을 만들고 Conv2D 층을 하나 추가</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">no_training_model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
-no_training_model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Conv2D(<span style="color:#ae81ff">32</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>,
-                                          padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;same&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>)))
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>no_training_model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Sequential()
+</span></span><span style="display:flex;"><span>no_training_model<span style="color:#f92672">.</span>add(keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Conv2D(<span style="color:#ae81ff">32</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>,
+</span></span><span style="display:flex;"><span>                                          padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;same&#39;</span>, input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>)))
+</span></span></code></pre></div><ul>
 <li>이 모델의 첫 번째 층 (Conv2D 층)의 가중치를 no_training_conv 변수에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">no_training_conv <span style="color:#f92672">=</span> no_training_model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
-print(no_training_conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(3, 3, 1, 32)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>no_training_conv <span style="color:#f92672">=</span> no_training_model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>print(no_training_conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(3, 3, 1, 32)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">no_training_weights <span style="color:#f92672">=</span> no_training_conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>numpy()
-print(no_training_weights<span style="color:#f92672">.</span>mean(), no_training_weights<span style="color:#f92672">.</span>std())
-</code></pre></div><pre><code>-0.003443989 0.081783295
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>no_training_weights <span style="color:#f92672">=</span> no_training_conv<span style="color:#f92672">.</span>weights[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>numpy()
+</span></span><span style="display:flex;"><span>print(no_training_weights<span style="color:#f92672">.</span>mean(), no_training_weights<span style="color:#f92672">.</span>std())
+</span></span></code></pre></div><pre><code>-0.003443989 0.081783295
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>hist(no_training_weights<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;count&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_23_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist(no_training_weights<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;weight&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;count&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_23_0.png" alt="png"></p>
 <ul>
 <li>그래프가 이전과 달라진 이유는 텐서플로가 신경망의 가중치를 처음 초기화할 때 균등 분포에서 랜덤하게 값을 선택하기 때문</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">16</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">2</span>))
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
-  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">16</span>):
-    axs[i, j]<span style="color:#f92672">.</span>imshow(no_training_weights[:,:,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> j], vmin<span style="color:#f92672">=-</span><span style="color:#ae81ff">0.5</span>, vmax<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
-    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_25_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">16</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">16</span>):
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(no_training_weights[:,:,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> j], vmin<span style="color:#f92672">=-</span><span style="color:#ae81ff">0.5</span>, vmax<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_25_0.png" alt="png"></p>
 <ul>
 <li>가중치가 밋밋하게 초기화됨</li>
 </ul>
@@ -339,8 +336,8 @@ plt<span style="color:#f92672">.</span>show()
 <li>함수형 API(fucntional API)는 케라스의 Model 클래스를 사용하여 모델을 만듬</li>
 <li>Dense 층 2개로 이루어진 완전 연결 신경망을 함수형 API로 구현</li>
 </ul>
-<pre tabindex="0"><code>dense1 = keras.layers.Dense(100, activation = 'sigmoid')
-dense2 = keras.layers.Dense(10, activation = 'softmax')
+<pre tabindex="0"><code>dense1 = keras.layers.Dense(100, activation = &#39;sigmoid&#39;)
+dense2 = keras.layers.Dense(10, activation = &#39;softmax&#39;)
 </code></pre><ul>
 <li>이 객체를 Sequential 클래스 객체의 add() 메서드에 전달 가능</li>
 <li>하지만 다음과 같이 함수처럼 호출 가능</li>
@@ -393,22 +390,22 @@ model 객체 - InputLayer -&gt; Conv2D -&gt; MaxPooling2D -&gt; Conv2D -&gt; Max
 <p>model 객체의 입력 : model.input</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(model<span style="color:#f92672">.</span>input)
-</code></pre></div><pre><code>KerasTensor(type_spec=TensorSpec(shape=(None, 28, 28, 1), dtype=tf.float32, name='conv2d_input'), name='conv2d_input', description=&quot;created by layer 'conv2d_input'&quot;)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(model<span style="color:#f92672">.</span>input)
+</span></span></code></pre></div><pre><code>KerasTensor(type_spec=TensorSpec(shape=(None, 28, 28, 1), dtype=tf.float32, name='conv2d_input'), name='conv2d_input', description=&quot;created by layer 'conv2d_input'&quot;)
 </code></pre>
 <ul>
 <li>model.input 과 model.layers[0].output 을 연결하는 새로운 conv_acti 모델 생성 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conv_acti <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Model(model<span style="color:#f92672">.</span>input, model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>output)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conv_acti <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Model(model<span style="color:#f92672">.</span>input, model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>output)
+</span></span></code></pre></div><ul>
 <li>model 객체의 predict() 메서드를 호출하면 최종 출력층의 확률을 반환</li>
 <li>conv_acti의 predict() 메서드를 호출하면 첫 번째 Conv2D의 출력을 반환</li>
 </ul>
 <h2 id="특성-맵-시각화">특성 맵 시각화</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
-plt<span style="color:#f92672">.</span>imshow(train_input[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(train_input, train_target), (test_input, test_target) <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>fashion_mnist<span style="color:#f92672">.</span>load_data()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(train_input[<span style="color:#ae81ff">0</span>], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
 32768/29515 [=================================] - 0s 0us/step
 40960/29515 [=========================================] - 0s 0us/step
 Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
@@ -431,23 +428,23 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">inputs <span style="color:#f92672">=</span> train_input[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
-feature_maps <span style="color:#f92672">=</span> conv_acti<span style="color:#f92672">.</span>predict(inputs)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(feature_maps<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(1, 28, 28, 32)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>inputs <span style="color:#f92672">=</span> train_input[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+</span></span><span style="display:flex;"><span>feature_maps <span style="color:#f92672">=</span> conv_acti<span style="color:#f92672">.</span>predict(inputs)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(feature_maps<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(1, 28, 28, 32)
 </code></pre>
 <ul>
 <li>세임 패딩과 32개의 필터를 사용한 합성곱 층의 출력이므로 (28, 28, 32)</li>
 <li>첫 번째 차원은 배치 차원</li>
 <li>샘플을 하나 입력했기 때문에 1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">8</span>))
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
-  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
-    axs[i, j]<span style="color:#f92672">.</span>imshow(feature_maps[<span style="color:#ae81ff">0</span>,:,:,i<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span> <span style="color:#f92672">+</span> j])
-    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_46_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">8</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(feature_maps[<span style="color:#ae81ff">0</span>,:,:,i<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span> <span style="color:#f92672">+</span> j])
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_46_0.png" alt="png"></p>
 <ul>
 <li>
 <p>이 특성 맵은 32개의 필터로 인해 입력 이미지에서 강하게 활성화된 부분을 보여줌</p>
@@ -459,25 +456,25 @@ plt<span style="color:#f92672">.</span>show()
 <p>먼저 model 객체의 입력과 두 번째 합성곱 층인 model.layers[2]의 출력을 연결한 conv2_acti 모델을 생성</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conv2_acti <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Model(model<span style="color:#f92672">.</span>input, model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>output)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conv2_acti <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>Model(model<span style="color:#f92672">.</span>input, model<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>output)
+</span></span></code></pre></div><ul>
 <li>첫 번째 샘플을 conv2_acti 모델의 predict()메서드에 전달</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">inputs <span style="color:#f92672">=</span> train_input[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
-feature_maps <span style="color:#f92672">=</span> conv2_acti<span style="color:#f92672">.</span>predict(inputs)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>inputs <span style="color:#f92672">=</span> train_input[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>
+</span></span><span style="display:flex;"><span>feature_maps <span style="color:#f92672">=</span> conv2_acti<span style="color:#f92672">.</span>predict(inputs)
+</span></span></code></pre></div><ul>
 <li>첫 번째 풀링 층에서 가로세로 크기가 절반으로 줄었고, 두 번째 합성곱 층의 필터 개수는 64개이므로 feature_maps의 크기는 배치 차원을 제외하면 (14, 14, 64)일 것</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(feature_maps<span style="color:#f92672">.</span>shape)
-</code></pre></div><pre><code>(1, 14, 14, 64)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(feature_maps<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><pre><code>(1, 14, 14, 64)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">8</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">12</span>))
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
-  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
-    axs[i, j]<span style="color:#f92672">.</span>imshow(feature_maps[<span style="color:#ae81ff">0</span>,:,:,i<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span> <span style="color:#f92672">+</span> j])
-    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_54_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">8</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">12</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>imshow(feature_maps[<span style="color:#ae81ff">0</span>,:,:,i<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span> <span style="color:#f92672">+</span> j])
+</span></span><span style="display:flex;"><span>    axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter8_3/output_54_0.png" alt="png"></p>
 <ul>
 <li>
 <p>두 번째 합성곱 층의 필터 크기는 (3, 3, 32)</p>
@@ -714,7 +711,7 @@ plt<span style="color:#f92672">.</span>show()
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -723,31 +720,31 @@ plt<span style="color:#f92672">.</span>show()
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

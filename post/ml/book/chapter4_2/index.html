@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch4-2 확률적 경사 하강법 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -216,22 +213,22 @@ if (!doNotTrack) {
 <li>이 둘을 엄격히 구분하지는 않고 섞어 사용</li>
 </ul>
 <h2 id="sgdclassifier">SGDClassifier</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-fish <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;http://bit.ly/fish_csv_data&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fish_input <span style="color:#f92672">=</span> fish[[<span style="color:#e6db74">&#39;Weight&#39;</span>, <span style="color:#e6db74">&#39;Length&#39;</span>, <span style="color:#e6db74">&#39;Diagonal&#39;</span>, <span style="color:#e6db74">&#39;Height&#39;</span>, <span style="color:#e6db74">&#39;Width&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
-fish_target <span style="color:#f92672">=</span> fish[<span style="color:#e6db74">&#39;Species&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(fish_input, fish_target, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>fish <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;http://bit.ly/fish_csv_data&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fish_input <span style="color:#f92672">=</span> fish[[<span style="color:#e6db74">&#39;Weight&#39;</span>, <span style="color:#e6db74">&#39;Length&#39;</span>, <span style="color:#e6db74">&#39;Diagonal&#39;</span>, <span style="color:#e6db74">&#39;Height&#39;</span>, <span style="color:#e6db74">&#39;Width&#39;</span>]]<span style="color:#f92672">.</span>to_numpy()
+</span></span><span style="display:flex;"><span>fish_target <span style="color:#f92672">=</span> fish[<span style="color:#e6db74">&#39;Species&#39;</span>]<span style="color:#f92672">.</span>to_numpy()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>train_input, test_input, train_target, test_target <span style="color:#f92672">=</span> train_test_split(fish_input, fish_target, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><ul>
 <li>훈련 세트와 데스트 세트의 특성을 표준화 전처리</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
-ss <span style="color:#f92672">=</span> StandardScaler()
-ss<span style="color:#f92672">.</span>fit(train_input)
-train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_input)
-test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_input)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> SGDClassifier
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">=</span> StandardScaler()
+</span></span><span style="display:flex;"><span>ss<span style="color:#f92672">.</span>fit(train_input)
+</span></span><span style="display:flex;"><span>train_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(train_input)
+</span></span><span style="display:flex;"><span>test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.</span>transform(test_input)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> SGDClassifier
+</span></span></code></pre></div><ul>
 <li>SGDClassifier의 객체를 만들 때 2개의 매개변수를 지정
 <ul>
 <li>loss : 손실 함수의 종류 지정</li>
@@ -239,11 +236,11 @@ test_scaled <span style="color:#f92672">=</span> ss<span style="color:#f92672">.
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SGDClassifier(loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;log&#39;</span>, max_iter <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
-sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
-print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</code></pre></div><pre><code>0.773109243697479
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SGDClassifier(loss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;log&#39;</span>, max_iter <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.773109243697479
 0.775
 
 
@@ -267,10 +264,10 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 <p>호출할 때마다 1 에포크씩 이어서 훈련 가능</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc<span style="color:#f92672">.</span>partial_fit(train_scaled, train_target)
-print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
-print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</code></pre></div><pre><code>0.7815126050420168
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>partial_fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.7815126050420168
 0.8
 </code></pre>
 <ul>
@@ -290,27 +287,27 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-train_score<span style="color:#f92672">=</span>[]
-test_score<span style="color:#f92672">=</span>[]
-classes <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(train_target)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">300</span>):
-  sc<span style="color:#f92672">.</span>partial_fit(train_scaled, train_target, classes<span style="color:#f92672">=</span>classes)
-  train_score<span style="color:#f92672">.</span>append(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
-  test_score<span style="color:#f92672">.</span>append(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-plt<span style="color:#f92672">.</span>plot(train_score)
-plt<span style="color:#f92672">.</span>plot(test_score)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;accuracy&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter4_2/output_21_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, tol<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
-print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</code></pre></div><pre><code>0.957983193277311
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>train_score<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span>test_score<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span>classes <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(train_target)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">300</span>):
+</span></span><span style="display:flex;"><span>  sc<span style="color:#f92672">.</span>partial_fit(train_scaled, train_target, classes<span style="color:#f92672">=</span>classes)
+</span></span><span style="display:flex;"><span>  train_score<span style="color:#f92672">.</span>append(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>  test_score<span style="color:#f92672">.</span>append(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(train_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(test_score)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;epoch&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;accuracy&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter4_2/output_21_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;log&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, tol<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.957983193277311
 0.925
 </code></pre>
 <ul>
@@ -327,11 +324,11 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hinge&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, tol<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
-print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
-print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
-</code></pre></div><pre><code>0.9495798319327731
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SGDClassifier(loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hinge&#39;</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, tol<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>fit(train_scaled, train_target)
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(train_scaled, train_target))
+</span></span><span style="display:flex;"><span>print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
+</span></span></code></pre></div><pre><code>0.9495798319327731
 0.925
 </code></pre>
 <h2 id="마무리">마무리</h2>
@@ -363,13 +360,13 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 <li>loss : 확률적 경사 하강법으로 최적화할 손실 함수 지정
 <ul>
 <li>기본값 : 서포트 벡터 머신을 위한 &lsquo;hinge&rsquo; 손실 함수</li>
-<li>&lsquo;log&rsquo; : 로지스틱 회귀</li>
+<li>&rsquo;log&rsquo; : 로지스틱 회귀</li>
 </ul>
 </li>
 <li>penalty : 규제의 종류
 <ul>
-<li>기본값 :&lsquo;l2&rsquo;</li>
-<li>L1 : &lsquo;l1&rsquo;</li>
+<li>기본값 :&rsquo;l2&rsquo;</li>
+<li>L1 : &rsquo;l1&rsquo;</li>
 <li>alpha : 규제 강도
 <ul>
 <li>기본값 : 0.0001</li>
@@ -568,7 +565,7 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -577,31 +574,31 @@ print(sc<span style="color:#f92672">.</span>score(test_scaled, test_target))
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[ML][Book][혼공 머신러닝&#43;딥러닝] ch6-2 k-평균 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -198,8 +195,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h2 id="kmeans-클래스">KMeans 클래스</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">!</span>wget https:<span style="color:#f92672">//</span>bit<span style="color:#f92672">.</span>ly<span style="color:#f92672">/</span>fruits_300_data <span style="color:#f92672">-</span>O fruits_300<span style="color:#f92672">.</span>npy
-</code></pre></div><pre><code>--2022-04-18 03:00:33--  https://bit.ly/fruits_300_data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>wget https:<span style="color:#f92672">//</span>bit<span style="color:#f92672">.</span>ly<span style="color:#f92672">/</span>fruits_300_data <span style="color:#f92672">-</span>O fruits_300<span style="color:#f92672">.</span>npy
+</span></span></code></pre></div><pre><code>--2022-04-18 03:00:33--  https://bit.ly/fruits_300_data
 Resolving bit.ly (bit.ly)... 67.199.248.11, 67.199.248.10
 Connecting to bit.ly (bit.ly)|67.199.248.11|:443... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
@@ -223,13 +220,13 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.04s
 <ul>
 <li>k-평균 모델을 훈련하기 위해 (샘플 개수, 너비, 높이) 크기의 3차원 배열을 (샘플 개수, 너비X높이) 크기를 가진 2차원 배열로 변경</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-fruits <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;fruits_300.npy&#39;</span>)
-fruits_2d <span style="color:#f92672">=</span> fruits<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans
-km <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
-km<span style="color:#f92672">.</span>fit(fruits_2d)
-</code></pre></div><pre><code>KMeans(n_clusters=3, random_state=42)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>fruits <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;fruits_300.npy&#39;</span>)
+</span></span><span style="display:flex;"><span>fruits_2d <span style="color:#f92672">=</span> fruits<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans
+</span></span><span style="display:flex;"><span>km <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>km<span style="color:#f92672">.</span>fit(fruits_2d)
+</span></span></code></pre></div><pre><code>KMeans(n_clusters=3, random_state=42)
 </code></pre>
 <ul>
 <li>군집된 결과는 KMeans 클래스 객체의 labels_속성에 저장</li>
@@ -237,8 +234,8 @@ km<span style="color:#f92672">.</span>fit(fruits_2d)
 <li>이 배열은 각 샘플이 어떤 레이블에 해당되는지 나타냄.</li>
 <li>n_clusters=3으로 지정했기 때문에 배열의 값은 0, 1, 2 중 하나.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(km<span style="color:#f92672">.</span>labels_)
-</code></pre></div><pre><code>[2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(km<span style="color:#f92672">.</span>labels_)
+</span></span></code></pre></div><pre><code>[2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
  2 2 2 2 2 0 2 0 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 0 0 2 2 2 2 2 2 2 2 0 2
  2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -248,45 +245,45 @@ km<span style="color:#f92672">.</span>fit(fruits_2d)
  1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  1 1 1 1]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(np<span style="color:#f92672">.</span>unique(km<span style="color:#f92672">.</span>labels_, return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-</code></pre></div><pre><code>(array([0, 1, 2], dtype=int32), array([111,  98,  91]))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>unique(km<span style="color:#f92672">.</span>labels_, return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span></code></pre></div><pre><code>(array([0, 1, 2], dtype=int32), array([111,  98,  91]))
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_fruits</span>(arr, ratio<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-  n <span style="color:#f92672">=</span> len(arr) <span style="color:#75715e"># 샘플의 개수</span>
-  <span style="color:#75715e"># 한 줄에 10개씩 이미지를 그림.</span>
-  <span style="color:#75715e"># 샘플 개수를 10으로 나누어 전체 행 개수를 계산</span>
-  rows <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>ceil(n<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>))
-  <span style="color:#75715e"># 행이 1개이면 열의 개수는 샘플 개수. 그렇지 않으면 10개</span>
-  cols <span style="color:#f92672">=</span> n <span style="color:#66d9ef">if</span> rows <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">10</span>
-  
-  fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(rows, cols,
-                          figsize<span style="color:#f92672">=</span>(cols<span style="color:#f92672">*</span>ratio, rows<span style="color:#f92672">*</span>ratio), squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-  
-  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(rows):
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(cols):
-      <span style="color:#66d9ef">if</span> i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> j <span style="color:#f92672">&lt;</span> n: <span style="color:#75715e"># n 개까지 그림.</span>
-        axs[i, j]<span style="color:#f92672">.</span>imshow(arr[i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>j], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
-      axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
-  plt<span style="color:#f92672">.</span>show()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>])
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_14_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>])
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_15_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>])
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_16_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_fruits</span>(arr, ratio<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>  n <span style="color:#f92672">=</span> len(arr) <span style="color:#75715e"># 샘플의 개수</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 한 줄에 10개씩 이미지를 그림.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 샘플 개수를 10으로 나누어 전체 행 개수를 계산</span>
+</span></span><span style="display:flex;"><span>  rows <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>ceil(n<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 행이 1개이면 열의 개수는 샘플 개수. 그렇지 않으면 10개</span>
+</span></span><span style="display:flex;"><span>  cols <span style="color:#f92672">=</span> n <span style="color:#66d9ef">if</span> rows <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(rows, cols,
+</span></span><span style="display:flex;"><span>                          figsize<span style="color:#f92672">=</span>(cols<span style="color:#f92672">*</span>ratio, rows<span style="color:#f92672">*</span>ratio), squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(rows):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(cols):
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> j <span style="color:#f92672">&lt;</span> n: <span style="color:#75715e"># n 개까지 그림.</span>
+</span></span><span style="display:flex;"><span>        axs[i, j]<span style="color:#f92672">.</span>imshow(arr[i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>j], cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gray_r&#39;</span>)
+</span></span><span style="display:flex;"><span>      axs[i, j]<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>  plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>])
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_14_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_15_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>draw_fruits(fruits[km<span style="color:#f92672">.</span>labels_<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>])
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_16_0.png" alt="png"></p>
 <h2 id="클러스터-중심">클러스터 중심</h2>
 <ul>
 <li>KMeans 클래스가 최종적으로 찾은 클러스터 중심은 cluster_centers_ 속성에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">draw_fruits(km<span style="color:#f92672">.</span>cluster_centers_<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>), ratio<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_19_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>draw_fruits(km<span style="color:#f92672">.</span>cluster_centers_<span style="color:#f92672">.</span>reshape(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>), ratio<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_19_0.png" alt="png"></p>
 <ul>
 <li>transform() : 훈련 데이터 샘플에서 클러스터 중심까지 거리로 변환</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(km<span style="color:#f92672">.</span>transform(fruits_2d[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>]))
-</code></pre></div><pre><code>[[3393.8136117  8837.37750892 5267.70439881]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(km<span style="color:#f92672">.</span>transform(fruits_2d[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>]))
+</span></span></code></pre></div><pre><code>[[3393.8136117  8837.37750892 5267.70439881]]
 </code></pre>
 <ul>
 <li>
@@ -302,17 +299,17 @@ km<span style="color:#f92672">.</span>fit(fruits_2d)
 <p>predict() : 가장 가까운 클러스터 중신을 예측 클래스로 출력</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(km<span style="color:#f92672">.</span>predict(fruits_2d[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>]))
-</code></pre></div><pre><code>[0]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(km<span style="color:#f92672">.</span>predict(fruits_2d[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>]))
+</span></span></code></pre></div><pre><code>[0]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">draw_fruits(fruits[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>])
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_25_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>draw_fruits(fruits[<span style="color:#ae81ff">100</span>:<span style="color:#ae81ff">101</span>])
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_25_0.png" alt="png"></p>
 <ul>
 <li>k-평균 알고리즘은 반복적으로 클로스터 중심을 옮기변서 최적의 클러스터를 찾음.</li>
 <li>n_iter_속성에 반복 횟수 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(km<span style="color:#f92672">.</span>n_iter_)
-</code></pre></div><pre><code>4
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(km<span style="color:#f92672">.</span>n_iter_)
+</span></span></code></pre></div><pre><code>4
 </code></pre>
 <h2 id="최적의-k-찾기">최적의 k 찾기</h2>
 <ul>
@@ -328,16 +325,16 @@ km<span style="color:#f92672">.</span>fit(fruits_2d)
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">inertia <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>):
-  km <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span>k, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-  km<span style="color:#f92672">.</span>fit(fruits_2d)
-  inertia<span style="color:#f92672">.</span>append(km<span style="color:#f92672">.</span>inertia_)
-plt<span style="color:#f92672">.</span>plot(range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>), inertia)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;k&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;inertia&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_30_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>inertia <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>):
+</span></span><span style="display:flex;"><span>  km <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span>k, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>  km<span style="color:#f92672">.</span>fit(fruits_2d)
+</span></span><span style="display:flex;"><span>  inertia<span style="color:#f92672">.</span>append(km<span style="color:#f92672">.</span>inertia_)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>), inertia)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;inertia&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/images/self_study_ml_dl_images/chapter6_2/output_30_0.png" alt="png"></p>
 <ul>
 <li>클러스터 개수를 증가 시키면서 이너셔를 그래프로 그리면서 감소라는 속도가 꺽이는 지점
 <ul>
@@ -569,7 +566,7 @@ plt<span style="color:#f92672">.</span>show()
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -578,31 +575,31 @@ plt<span style="color:#f92672">.</span>show()
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>

@@ -3,9 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 파일 입출력, FileOutputStream - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
@@ -195,13 +192,13 @@ if (!doNotTrack) {
 <li>파일의 경로를 가지고 FileOutputStream을 생성</li>
 <li>저장할 파일이 File 객체로 이미 생성되어 있다면, 좀 더 쉽게 FileOutputStream을 생성할 수 있다.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 방법1
-</span><span style="color:#75715e"></span>FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span><span style="color:#f92672">);</span>
-
-<span style="color:#75715e">// 방법2
-</span><span style="color:#75715e"></span>File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span><span style="color:#f92672">);</span>
-FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>file<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 방법1</span>
+</span></span><span style="display:flex;"><span>FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(<span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 방법2</span>
+</span></span><span style="display:flex;"><span>File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span>);
+</span></span><span style="display:flex;"><span>FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(file);
+</span></span></code></pre></div></li>
 <li>
 <p>주의할 점은 파일이 이미 존재할 경우, 데이터를 출력하면 파일을 덮어쓰게 된다.</p>
 <ul>
@@ -210,10 +207,10 @@ FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66
 </li>
 <li>
 <p>기존의 파일 내용 끝에 데이터를 추가할 경우에는 FileOutputStream 생성자의 두 번째 매개값을 true로 한다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FileOutputStream fos <span style="color:#f92672">=</span> 
-          <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>file<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span> 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileOutputStream fos <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">new</span> FileOutputStream(<span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(file, <span style="color:#66d9ef">true</span>); 
+</span></span></code></pre></div></li>
 <li>
 <p>FileOutputStream은 OutputStream의 하위 클래스이기 때문에 사용 방법이 OutputStream과 동일</p>
 <ul>
@@ -228,12 +225,12 @@ FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FileOutputStrem fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span>
-fos<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-fos<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FileOutputStrem fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(<span style="color:#e6db74">&#34;C:/Temp/image.gif&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> ...;
+</span></span><span style="display:flex;"><span>fos.<span style="color:#a6e22e">write</span>(data);
+</span></span><span style="display:flex;"><span>fos.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>fos.<span style="color:#a6e22e">close</span>();
+</span></span></code></pre></div><ul>
 <li><code>write()</code> 메소드를 호출한 이후에 <code>flush()</code> 메소드로 출력 버퍼에 잔류하는 데이터를 완전히 출력</li>
 <li><code>close()</code> 메소드를 호출해서 파일을 닫아준다.</li>
 </ul>
@@ -248,38 +245,38 @@ fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><
 </li>
 <li>FileOutputStreamEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.FileInputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.FileOutputStream<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileOutputStreamEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		String originalFileName <span style="color:#f92672">=</span> 
-				<span style="color:#e6db74">&#34;D:\\Users\\jjinw\\Desktop\\GitHub\\study\\java_practice\\inputOutput\\src\\fileInputOutput\\p-2.png&#34;</span><span style="color:#f92672">;</span>
-
-		String targetFileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:/Temp/p-2.png&#34;</span><span style="color:#f92672">;</span>
-
-		FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>originalFileName<span style="color:#f92672">);</span>
-		FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>targetFileName<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">int</span> readByteNo<span style="color:#f92672">;</span> <span style="color:#75715e">// 실제로 읽은 바이트 수가 저장될 변수
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 실제로 읽은 바이트가 저장되는 배열
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> readBytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>100<span style="color:#f92672">];</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span> <span style="color:#f92672">(</span>readByteNo <span style="color:#f92672">=</span> fis<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>readBytes<span style="color:#f92672">))</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1 <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			fos<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>readBytes<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> readByteNo<span style="color:#f92672">);</span>
-      <span style="color:#75715e">// 실제로 읽은 바이트 수만큼만 FileOutputStream의 
-</span><span style="color:#75715e"></span>      <span style="color:#75715e">// write(byte[] b, int off, int len) 메소드로 저장
-</span><span style="color:#75715e"></span>      <span style="color:#75715e">// b = readBytes, off = 0, len = readByteNo
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-
-		fos<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-		fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-		fis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;복사 완료&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/FileOutputStream/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileInputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileOutputStream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileOutputStreamEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		String originalFileName <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;D:\\Users\\jjinw\\Desktop\\GitHub\\study\\java_practice\\inputOutput\\src\\fileInputOutput\\p-2.png&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		String targetFileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:/Temp/p-2.png&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(originalFileName);
+</span></span><span style="display:flex;"><span>		FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(targetFileName);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> readByteNo; <span style="color:#75715e">// 실제로 읽은 바이트 수가 저장될 변수</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 실제로 읽은 바이트가 저장되는 배열</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> readBytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>100<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>( (readByteNo <span style="color:#f92672">=</span> fis.<span style="color:#a6e22e">read</span>(readBytes)) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1 ) {
+</span></span><span style="display:flex;"><span>			fos.<span style="color:#a6e22e">write</span>(readBytes, 0, readByteNo);
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 실제로 읽은 바이트 수만큼만 FileOutputStream의 </span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// write(byte[] b, int off, int len) 메소드로 저장</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// b = readBytes, off = 0, len = readByteNo</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		fos.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>		fos.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>		fis.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;복사 완료&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/FileOutputStream/Untitled.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/inputOutput/FileOutputStream/Untitled%201.png" alt="Untitled"></p>
 <ul>
 <li>FileInputStream의 <code>read(byte[] b)</code> 메소드로 한 번에 100바이트씩를 읽어 readBytes에 저장하고 100을 readByteNo에 저장
@@ -489,7 +486,7 @@ fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -498,31 +495,31 @@ fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><
 <script async defer src="/js/menu.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
       
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </body>
 </html>
