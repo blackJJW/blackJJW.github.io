@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] NIO, Buffer 변환 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] NIO, Buffer 변환" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/nio/buffer_%EB%B3%80%ED%99%98/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/nio/buffer_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%AB/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-26T22:00:30+09:00" />
 <meta property="article:modified_time" content="2023-01-26T22:00:30+09:00" />
 
@@ -208,17 +205,17 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>먼저 문자셋을 표현하는 <code>java.nio.charset.Charset</code> 객체가 필요</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 매개값으로 주어진 문자셋
-</span><span style="color:#75715e"></span>Charset charset <span style="color:#f92672">=</span> Charset<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
-
-<span style="color:#75715e">// 운영체제가 사용하는 디폴트 문자셋
-</span><span style="color:#75715e"></span>Charset charset <span style="color:#f92672">=</span> Charset<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultCharset</span><span style="color:#f92672">();</span> 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 매개값으로 주어진 문자셋</span>
+</span></span><span style="display:flex;"><span>Charset charset <span style="color:#f92672">=</span> Charset.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;UTF-8&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 운영체제가 사용하는 디폴트 문자셋</span>
+</span></span><span style="display:flex;"><span>Charset charset <span style="color:#f92672">=</span> Charset.<span style="color:#a6e22e">defaultCharset</span>(); 
+</span></span></code></pre></div></li>
 <li>
 <p>Charset을 이용해서 문자열을 ByteBuffer로 변환하려면 <code>encode()</code> 메소드를 호출</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String data <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span>
-ByteBuffer byteBuffer <span style="color:#f92672">=</span> charset<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String data <span style="color:#f92672">=</span> ...;
+</span></span><span style="display:flex;"><span>ByteBuffer byteBuffer <span style="color:#f92672">=</span> charset.<span style="color:#a6e22e">encode</span>(data);
+</span></span></code></pre></div><ul>
 <li>반대로 파일이나 네트워크로부터 읽은 ByteBuffer가 특정 문자셋(UTF-8, EUC-KR)으로 인코딩되어 있을 경우
 <ul>
 <li>해당 문자셋으로 디코딩해야만 문자열로 복원할 수 있다.</li>
@@ -228,32 +225,32 @@ ByteBuffer byteBuffer <span style="color:#f92672">=</span> charset<span style="c
 </li>
 <li>
 <p>Charset은 ByteBuffer를 디코딩해서 CharBuffer로 변환시키는 <code>decode()</code> 메소드를 제공하고 있기 때문에 문자열로 쉽게 복원할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ByteBuffer byteBuffer <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span>
-String data <span style="color:#f92672">=</span> charset<span style="color:#f92672">.</span><span style="color:#a6e22e">decode</span><span style="color:#f92672">(</span>byteBuffer<span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ByteBuffer byteBuffer <span style="color:#f92672">=</span> ...;
+</span></span><span style="display:flex;"><span>String data <span style="color:#f92672">=</span> charset.<span style="color:#a6e22e">decode</span>(byteBuffer).<span style="color:#a6e22e">toString</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 문자열을 UTF-8로 인코딩해서 얻은 ByteBuffer를 다시 UTF-8로 디코딩해서 문자열로 복원</p>
 <ul>
 <li>ByteBufferToStringEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.nio.ByteBuffer<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.nio.charset.Charset<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ByteBufferToStringEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Charset charset <span style="color:#f92672">=</span> Charset<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 문자열 -&gt; 인코딩 -&gt; ByteBuffer
-</span><span style="color:#75715e"></span>		String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;안녕하세요&#34;</span><span style="color:#f92672">;</span>
-		ByteBuffer byteBuffer <span style="color:#f92672">=</span> charset<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// ByteBuffer -&gt; 디코딩 -&gt; CharBuffer -&gt; 문자열
-</span><span style="color:#75715e"></span>		data <span style="color:#f92672">=</span> charset<span style="color:#f92672">.</span><span style="color:#a6e22e">decode</span><span style="color:#f92672">(</span>byteBuffer<span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;문자열 복원 : &#34;</span> <span style="color:#f92672">+</span> data<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/NIO/Buffer_%EB%B3%80%ED%99%98/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.ByteBuffer;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.charset.Charset;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ByteBufferToStringEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Charset charset <span style="color:#f92672">=</span> Charset.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;UTF-8&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 문자열 -&gt; 인코딩 -&gt; ByteBuffer</span>
+</span></span><span style="display:flex;"><span>		String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;안녕하세요&#34;</span>;
+</span></span><span style="display:flex;"><span>		ByteBuffer byteBuffer <span style="color:#f92672">=</span> charset.<span style="color:#a6e22e">encode</span>(data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ByteBuffer -&gt; 디코딩 -&gt; CharBuffer -&gt; 문자열</span>
+</span></span><span style="display:flex;"><span>		data <span style="color:#f92672">=</span> charset.<span style="color:#a6e22e">decode</span>(byteBuffer).<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;문자열 복원 : &#34;</span> <span style="color:#f92672">+</span> data);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/NIO/Buffer_%EB%B3%80%ED%99%98/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <h2 id="2-bytebuffer--intbuffer">2. ByteBuffer ↔ IntBuffer</h2>
@@ -273,15 +270,15 @@ String data <span style="color:#f92672">=</span> charset<span style="color:#f926
 <li>4배 큰 ByteBuffer를 생성한 후 정수값을 저장</li>
 <li><code>putInt()</code> 메소드는 position을 이동시키기 때문에 모두 저장할 후에는 position을 0으로 되돌려 놓는 <code>flip()</code> 메소드를 호출해야 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> <span style="color:#f92672">{</span> 10<span style="color:#f92672">,</span> 20 <span style="color:#f92672">};</span>
-IntBuffer intBuffer <span style="color:#f92672">=</span> IntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">wrap</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-ByteBuffer byteBuffer 
-			<span style="color:#f92672">=</span> ByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">allocate</span><span style="color:#f92672">(</span>intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">()</span> <span style="color:#f92672">*</span> 4<span style="color:#f92672">);</span>
-<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">();</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-	byteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">putInt</span><span style="color:#f92672">(</span>intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-<span style="color:#f92672">}</span>
-byteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">flip</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> { 10, 20 };
+</span></span><span style="display:flex;"><span>IntBuffer intBuffer <span style="color:#f92672">=</span> IntBuffer.<span style="color:#a6e22e">wrap</span>(data);
+</span></span><span style="display:flex;"><span>ByteBuffer byteBuffer 
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">=</span> ByteBuffer.<span style="color:#a6e22e">allocate</span>(intBuffer.<span style="color:#a6e22e">capacity</span>() <span style="color:#f92672">*</span> 4);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> intBuffer.<span style="color:#a6e22e">capacity</span>(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	byteBuffer.<span style="color:#a6e22e">putInt</span>(intBuffer.<span style="color:#a6e22e">get</span>(i));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>byteBuffer.<span style="color:#a6e22e">flip</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 파일이나 네트워크로부터 입력된 ByteBuffer에 4바이트씩 연속된 Int 데이터가 저장되어 있을 경우</p>
 <ul>
@@ -293,11 +290,11 @@ byteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">flip</
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ByteBuffer byteBuffer <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span>
-IntBuffer intBuffer <span style="color:#f92672">=</span> byteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">asIntBuffer</span><span style="color:#f92672">();</span>
-<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">()];</span>
-intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ByteBuffer byteBuffer <span style="color:#f92672">=</span> ...;
+</span></span><span style="display:flex;"><span>IntBuffer intBuffer <span style="color:#f92672">=</span> byteBuffer.<span style="color:#a6e22e">asIntBuffer</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>intBuffer.<span style="color:#a6e22e">capacity</span>()<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>intBuffer.<span style="color:#a6e22e">get</span>(data);
+</span></span></code></pre></div><ul>
 <li>ByteBuffer에서 <code>asIntBuffer()</code>로 얻은 IntBuffer에서는 <code>array()</code> 메소드를 사용해서 <code>int[]</code> 배열을 얻을 수 없다.
 <ul>
 <li><code>array()</code> 메소드는 래핑한 배열만 리턴</li>
@@ -311,32 +308,32 @@ intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</sp
 <ul>
 <li>ByteBufferToIntBufferEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.nio.ByteBuffer<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.nio.IntBuffer<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ByteBufferToIntBufferEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// int[] -&gt; IntBuffer -&gt; ByteBuffer
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> writeData <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> 10<span style="color:#f92672">,</span> 20 <span style="color:#f92672">};</span>
-		IntBuffer writeIntBuffer <span style="color:#f92672">=</span> IntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">wrap</span><span style="color:#f92672">(</span>writeData<span style="color:#f92672">);</span>
-		ByteBuffer writeByteBuffer 
-			<span style="color:#f92672">=</span> ByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">allocate</span><span style="color:#f92672">(</span>writeIntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">()</span> <span style="color:#f92672">*</span> 4<span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> writeIntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">();</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			writeByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">putInt</span><span style="color:#f92672">(</span>writeIntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-		<span style="color:#f92672">}</span>
-		writeByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">flip</span><span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// ByteBuffer -&gt; IntBuffer -&gt; int[]
-</span><span style="color:#75715e"></span>		ByteBuffer readByteBuffer <span style="color:#f92672">=</span> writeByteBuffer<span style="color:#f92672">;</span>
-		IntBuffer readIntBuffer <span style="color:#f92672">=</span> readByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">asIntBuffer</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> readData <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>readIntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">capacity</span><span style="color:#f92672">()];</span>
-		readIntBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>readData<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;배열 복원 : &#34;</span> <span style="color:#f92672">+</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>readData<span style="color:#f92672">));</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/NIO/Buffer_%EB%B3%80%ED%99%98/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.ByteBuffer;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.IntBuffer;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ByteBufferToIntBufferEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// int[] -&gt; IntBuffer -&gt; ByteBuffer</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> writeData <span style="color:#f92672">=</span> { 10, 20 };
+</span></span><span style="display:flex;"><span>		IntBuffer writeIntBuffer <span style="color:#f92672">=</span> IntBuffer.<span style="color:#a6e22e">wrap</span>(writeData);
+</span></span><span style="display:flex;"><span>		ByteBuffer writeByteBuffer 
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">=</span> ByteBuffer.<span style="color:#a6e22e">allocate</span>(writeIntBuffer.<span style="color:#a6e22e">capacity</span>() <span style="color:#f92672">*</span> 4);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> writeIntBuffer.<span style="color:#a6e22e">capacity</span>(); i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			writeByteBuffer.<span style="color:#a6e22e">putInt</span>(writeIntBuffer.<span style="color:#a6e22e">get</span>(i));
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		writeByteBuffer.<span style="color:#a6e22e">flip</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ByteBuffer -&gt; IntBuffer -&gt; int[]</span>
+</span></span><span style="display:flex;"><span>		ByteBuffer readByteBuffer <span style="color:#f92672">=</span> writeByteBuffer;
+</span></span><span style="display:flex;"><span>		IntBuffer readIntBuffer <span style="color:#f92672">=</span> readByteBuffer.<span style="color:#a6e22e">asIntBuffer</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> readData <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>readIntBuffer.<span style="color:#a6e22e">capacity</span>()<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>		readIntBuffer.<span style="color:#a6e22e">get</span>(readData);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;배열 복원 : &#34;</span> <span style="color:#f92672">+</span> Arrays.<span style="color:#a6e22e">toString</span>(readData));
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/NIO/Buffer_%EB%B3%80%ED%99%98/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ByteBuffer와 IntBuffer 간의 변환을 이해하면 ByteBuffer와 ShortBuffer, LongBuffer, FloatBuffer, DoubleBuffer 간의 변환도 비슷한 방법으로 수행</p>
@@ -407,13 +404,13 @@ intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</sp
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/nio/buffer_%EB%A9%94%EC%86%8C%EB%93%9C/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/nio/buffer_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] NIO, Buffer 메소드</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/nio/filechannel_%EC%83%9D%EC%84%B1%EA%B3%BC_%EB%8B%AB%EA%B8%B0/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/nio/filechannel_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%83%E1%85%A1%E1%86%AE%E1%84%80%E1%85%B5/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] NIO, FileChannel 생성과 닫기</p>
 		</a>
@@ -565,7 +562,7 @@ intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</sp
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -573,32 +570,6 @@ intBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</sp
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 병렬 처리, 동시성(Concurrency)과 병렬성(Parallelism) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 병렬 처리, 동시성(Concurrency)과 병렬성(Parallelism)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/parallel_operation/%EB%8F%99%EC%8B%9C%EC%84%B1concurrency%EA%B3%BC_%EB%B3%91%EB%A0%AC%EC%84%B1parallelism/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/parallel_operation/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%BCconcurrency%E1%84%80%E1%85%AA_%E1%84%87%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BCparallelism/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-10T14:40:30+09:00" />
 <meta property="article:modified_time" content="2022-12-10T14:40:30+09:00" />
 
@@ -251,13 +248,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EA%B7%B8%EB%A3%B9%ED%95%91_%ED%9B%84_%EB%A7%A4%ED%95%91_%EB%B0%8F_%EC%A7%91%EA%B3%84/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%91%E1%85%B5%E1%86%BC_%E1%84%92%E1%85%AE_%E1%84%86%E1%85%A2%E1%84%91%E1%85%B5%E1%86%BC_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%8C%E1%85%B5%E1%86%B8%E1%84%80%E1%85%A8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 스트림, 그룹핑 후 매핑 및 집계</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/parallel_operation/%ED%8F%AC%ED%8A%B8%EC%A1%B0%EC%9D%B8forkjoin_%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/parallel_operation/%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%8C%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%ABforkjoin_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 병렬 처리, 포트조인(ForkJoin) 프레임워크</p>
 		</a>
@@ -409,7 +406,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -417,32 +414,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

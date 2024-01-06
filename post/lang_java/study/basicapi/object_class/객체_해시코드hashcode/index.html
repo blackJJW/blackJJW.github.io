@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] Object 클래스, 객체 해시코드(hashCode()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] Object 클래스, 객체 해시코드(hashCode())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%ED%95%B4%EC%8B%9C%EC%BD%94%EB%93%9Chashcode/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%92%E1%85%A2%E1%84%89%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3hashcode/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-18T15:30:45+09:00" />
 <meta property="article:modified_time" content="2022-09-18T15:30:45+09:00" />
 
@@ -214,26 +211,26 @@ if (!doNotTrack) {
 <li><code>hashCode()</code> 메소드는 재정의하지 않았기 때문에 Object의 <code>hashCode()</code> 메소드가 사용</li>
 <li>key.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Key</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Key</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> number<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> number<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>obj <span style="color:#66d9ef">instanceof</span> Key<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			Key compareKey <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Key<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> compareKey<span style="color:#f92672">.</span><span style="color:#a6e22e">number</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Key</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Key</span>(<span style="color:#66d9ef">int</span> number) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> number;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(obj <span style="color:#66d9ef">instanceof</span> Key) {
+</span></span><span style="display:flex;"><span>			Key compareKey <span style="color:#f92672">=</span> (Key) obj;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> compareKey.<span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>이런 경우 HashMap의 식별키로 Key 객체를 사용하면 저장된 값을 찾아오지 못한다.
 <ul>
 <li>number 필드값이 같더라도 <code>hashCode()</code> 메소드에서 리턴하는 해시코드가 다르기 때문에 다른 식별키로 인식하기 때문</li>
@@ -247,25 +244,25 @@ if (!doNotTrack) {
 <li>“<code>new Key(1)</code>” 객체로 “<code>ABC</code>”를 저장하고, 다시 “<code>new Key(1)</code>”객체로 저장된 “<code>ABC</code>”를 읽을려고 하면 null이 나온다.</li>
 <li>KeyEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// Key 객체를 식별키로 사용해서 String 값을 저장하는 HashMap 객체 생성
-</span><span style="color:#75715e"></span>		HashMap<span style="color:#f92672">&lt;</span>Key<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>Key<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;();</span>
-
-		<span style="color:#75715e">// 식별키 &#34;new Key(1)&#34;로 &#34;ABC&#34;를 저장
-</span><span style="color:#75715e"></span>		hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Key<span style="color:#f92672">(</span>1<span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 식별키 &#34;new Key(1)&#34;로 &#34;ABC&#34;을 읽어옴
-</span><span style="color:#75715e"></span>		String value <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Key<span style="color:#f92672">(</span>1<span style="color:#f92672">));</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%ED%95%B4%EC%8B%9C%EC%BD%94%EB%93%9C(hashCode())/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashMap;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Key 객체를 식별키로 사용해서 String 값을 저장하는 HashMap 객체 생성</span>
+</span></span><span style="display:flex;"><span>		HashMap<span style="color:#f92672">&lt;</span>Key, String<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>Key, String<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 식별키 &#34;new Key(1)&#34;로 &#34;ABC&#34;를 저장</span>
+</span></span><span style="display:flex;"><span>		hashMap.<span style="color:#a6e22e">put</span>(<span style="color:#66d9ef">new</span> Key(1), <span style="color:#e6db74">&#34;ABC&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 식별키 &#34;new Key(1)&#34;로 &#34;ABC&#34;을 읽어옴</span>
+</span></span><span style="display:flex;"><span>		String value <span style="color:#f92672">=</span> hashMap.<span style="color:#a6e22e">get</span>(<span style="color:#66d9ef">new</span> Key(1));
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(value);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%ED%95%B4%EC%8B%9C%EC%BD%94%EB%93%9C(hashCode())/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) <code>hashCode()</code> 메소드 재정의 추가</p>
@@ -274,31 +271,31 @@ if (!doNotTrack) {
 <li><code>hashCode()</code>의 리턴값을 number 필드값으로 했기 때문에 저장할 때의 “<code>new Key(1)</code>”과 읽을 때의 “<code>new Key(1)</code>”은 같은 해시코드가 리턴</li>
 <li>Key.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Key</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Key</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> number<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> number<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>obj <span style="color:#66d9ef">instanceof</span> Key<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			Key compareKey <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Key<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> compareKey<span style="color:#f92672">.</span><span style="color:#a6e22e">number</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> number<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Key</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> number;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Key</span>(<span style="color:#66d9ef">int</span> number) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> number;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(obj <span style="color:#66d9ef">instanceof</span> Key) {
+</span></span><span style="display:flex;"><span>			Key compareKey <span style="color:#f92672">=</span> (Key) obj;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> compareKey.<span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> number;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>저장할 때의 <code>new Key(1)</code>과 읽을 때의 <code>new Key(1)</code>은 사실 서로 다른 객체이지만 HashMap은 <code>hashCode()</code>의 리턴값이 같다
 <ul>
 <li><code>equals()</code> 리턴값이 true가 나오기 때문에 동등 객체로 평가
@@ -318,33 +315,33 @@ if (!doNotTrack) {
 <li>String의 <code>hashCode()</code>는 같은 문자열일 경우 동일한 해시코드를 리턴</li>
 <li>Member.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> String id<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span><span style="color:#f92672">(</span>String id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>Object obj<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>obj <span style="color:#66d9ef">instanceof</span> Member<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 매개값이 Member 타입인지 확인
-</span><span style="color:#75715e"></span>			Member member <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Member<span style="color:#f92672">)</span> obj<span style="color:#f92672">;</span> <span style="color:#75715e">// Member 타입으로 강제 변환
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>id<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>member<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// id 필드 값이 동일한지 검사한 후, 
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>   <span style="color:#75715e">// 동일하다면 true를 리턴
-</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
-
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 매개값이 Member 타입이 아니거나 
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>                 <span style="color:#75715e">// id 필드값이 다른 경우 false를 리턴
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">//---------------------------------------
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// id가 동일한 문자열인 경우 같은 해시 코드를 리턴
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> id<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-  <span style="color:#75715e">//-----------------------------------------
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String id;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span>(String id) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(obj <span style="color:#66d9ef">instanceof</span> Member) { <span style="color:#75715e">// 매개값이 Member 타입인지 확인</span>
+</span></span><span style="display:flex;"><span>			Member member <span style="color:#f92672">=</span> (Member) obj; <span style="color:#75715e">// Member 타입으로 강제 변환</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(id.<span style="color:#a6e22e">equals</span>(member.<span style="color:#a6e22e">id</span>)) { <span style="color:#75715e">// id 필드 값이 동일한지 검사한 후, </span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;   <span style="color:#75715e">// 동일하다면 true를 리턴</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// 매개값이 Member 타입이 아니거나 </span>
+</span></span><span style="display:flex;"><span>	}                 <span style="color:#75715e">// id 필드값이 다른 경우 false를 리턴</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//---------------------------------------</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() { <span style="color:#75715e">// id가 동일한 문자열인 경우 같은 해시 코드를 리턴</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> id.<span style="color:#a6e22e">hashCode</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//-----------------------------------------</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -374,13 +371,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/object_%ED%81%B4%EB%9E%98%EC%8A%A4_equals/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/object_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_equals/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] Object 클래스, equals()</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4tostring/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9tostring/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] Object 클래스, 객체 문자 정보(toString())</p>
 		</a>
@@ -532,7 +529,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -540,32 +537,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

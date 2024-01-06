@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 추상 클래스 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 추상 클래스" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%EC%B6%94%EC%83%81_%ED%81%B4%EB%9E%98%EC%8A%A4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%E1%84%8E%E1%85%AE%E1%84%89%E1%85%A1%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-11T20:00:45+09:00" />
 <meta property="article:modified_time" content="2022-08-11T20:00:45+09:00" />
 
@@ -229,8 +226,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>추상 클래스는 <code>new</code> 연산자를 사용해서 인스턴스를 생성시키지 못한다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Animal animal <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Animal<span style="color:#f92672">();</span> <span style="color:#75715e">// (x)
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Animal animal <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Animal(); <span style="color:#75715e">// (x)</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -238,8 +235,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p><code>extends</code> 뒤에만 올 수 있는 클래스</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Ant</span> <span style="color:#66d9ef">extends</span> Animal <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span> <span style="color:#75715e">// (o)
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Ant</span> <span style="color:#66d9ef">extends</span> Animal { ... } <span style="color:#75715e">// (o)</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -279,12 +276,12 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><code>abstract</code>를 붙이게 되면 new 연산자를 이용해서 객체를 만들지 못하고 상속을 통해 자식 클래스만 생성 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">클래스</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">클래스</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>추상 클래스도 필드, 생성자, 메소드 선언 가능</li>
 <li>new 연산자로 직접 생성자를 호출할 수는 없지만 자식 객체가 생성될 때 <code>super( … )</code>를 호출해서 추상 클래스 객체를 생성
 <ul>
@@ -301,25 +298,25 @@ if (!doNotTrack) {
 <ul>
 <li>추상 클래스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> String owner<span style="color:#f92672">;</span>
-
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Phone</span><span style="color:#f92672">(</span>String owner<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">owner</span> <span style="color:#f92672">=</span> owner<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;폰 전원 ON&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;폰 전원 OFF&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String owner;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Phone</span>(String owner) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">owner</span> <span style="color:#f92672">=</span> owner;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;폰 전원 ON&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;폰 전원 OFF&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>SmartPhone.java</p>
 <ul>
@@ -327,34 +324,34 @@ if (!doNotTrack) {
 <li>Phone 추상 클래스를 상속</li>
 <li>super(owner); 코드로 Phone의 생성자를 호출</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhone</span> <span style="color:#66d9ef">extends</span> Phone<span style="color:#f92672">{</span>
-
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SmartPhone</span><span style="color:#f92672">(</span>String owner<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>owner<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">internetSearch</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;인터넷 검색&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhone</span> <span style="color:#66d9ef">extends</span> Phone{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SmartPhone</span>(String owner) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">super</span>(owner);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">internetSearch</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;인터넷 검색&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>PhoneEx.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhoneEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-
-		SmartPhone smartPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartPhone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;kim&#34;</span><span style="color:#f92672">);</span>
-
-		smartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span> <span style="color:#75715e">// Phone의 메소드
-</span><span style="color:#75715e"></span>		smartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">internetSearch</span><span style="color:#f92672">();</span>
-		smartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">turnOff</span><span style="color:#f92672">();</span> <span style="color:#75715e">// Phone의 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inheritance/%EC%B6%94%EC%83%81_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhoneEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		SmartPhone smartPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartPhone(<span style="color:#e6db74">&#34;kim&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		smartPhone.<span style="color:#a6e22e">turnOn</span>(); <span style="color:#75715e">// Phone의 메소드</span>
+</span></span><span style="display:flex;"><span>		smartPhone.<span style="color:#a6e22e">internetSearch</span>();
+</span></span><span style="display:flex;"><span>		smartPhone.<span style="color:#a6e22e">turnOff</span>(); <span style="color:#75715e">// Phone의 메소드</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inheritance/%EC%B6%94%EC%83%81_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -387,13 +384,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8instanceof/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%ABinstanceof/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 객체 타입 확인(instanceof)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/%EC%B6%94%EC%83%81_%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80_%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/%E1%84%8E%E1%85%AE%E1%84%89%E1%85%A1%E1%86%BC_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3%E1%84%8B%E1%85%AA_%E1%84%8B%E1%85%A9%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B5%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 추상 메소드와 오버라이딩</p>
 		</a>
@@ -545,7 +542,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -553,32 +550,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

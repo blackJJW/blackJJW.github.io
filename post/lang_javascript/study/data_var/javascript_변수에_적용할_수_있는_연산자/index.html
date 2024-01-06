@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[JavaScript] 변수에 적용할 수 있는 연산자 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[JavaScript] 변수에 적용할 수 있는 연산자" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/data_var/javascript_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A6_%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%89%E1%85%AE_%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-05-08T18:30:45+09:00" />
 <meta property="article:modified_time" content="2022-05-08T18:30:45+09:00" />
 
@@ -231,49 +228,49 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>복합 대입 연산자의 활용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#75715e">// 변수를 선언
-</span><span style="color:#75715e"></span>
-        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>  <span style="color:#75715e">// ul 태그는 Unordered List의 약자, HTML 태그
-</span><span style="color:#75715e"></span>                        <span style="color:#75715e">// 순서가 없는 목록을 의미
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; &lt;li&gt;Hello&lt;/li&gt;&#39;</span>   <span style="color:#75715e">// li 태그는 List Item의 약자, HTML 태그
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; &lt;li&gt;JavaScript...!&lt;/li&gt;&#39;</span> <span style="color:#75715e">// ul 태그 내부에서 사용
-</span><span style="color:#75715e"></span>                                            <span style="color:#75715e">// 실질적인 목록 내용
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>
-
-        document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">list</span>) <span style="color:#75715e">// 문서에 출력
-</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#75715e">// 변수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>  <span style="color:#75715e">// ul 태그는 Unordered List의 약자, HTML 태그
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        <span style="color:#75715e">// 순서가 없는 목록을 의미
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; &lt;li&gt;Hello&lt;/li&gt;&#39;</span>   <span style="color:#75715e">// li 태그는 List Item의 약자, HTML 태그
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; &lt;li&gt;JavaScript...!&lt;/li&gt;&#39;</span> <span style="color:#75715e">// ul 태그 내부에서 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                            <span style="color:#75715e">// 실질적인 목록 내용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">list</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">list</span>) <span style="color:#75715e">// 문서에 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>복합 대입 연산자를 사용하지 않은 경우 - 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;li&gt;JavaScript...!&lt;/li&gt;&lt;/ul&gt;&#39;</span>
-    <span style="color:#75715e">// 상수를 선언
-</span><span style="color:#75715e"></span>
-    document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">list</span>)
-    <span style="color:#75715e">// 문서에 출력
-</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;li&gt;JavaScript...!&lt;/li&gt;&lt;/ul&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 상수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">list</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 문서에 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>복합 대입 연산자를 사용하지 않은 경우 - 2</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#75715e">// 상수를 사용하지 않고 문서에 출력
-</span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;ul&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;li&gt;JavaScript...!&lt;/li&gt;&lt;/ul&gt;&#39;</span>)
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 상수를 사용하지 않고 문서에 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;ul&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;li&gt;JavaScript...!&lt;/li&gt;&lt;/ul&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="u증감-연산자u"><!-- raw HTML omitted -->증감 연산자<!-- raw HTML omitted --></h3>
 <ul>
@@ -311,41 +308,41 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>사용 예 - 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">++</span> <span style="color:#75715e">// 증감자 사용
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 출력
-</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span><span style="color:#f92672">++</span> <span style="color:#75715e">// 증감자 사용
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>사용 예 - 2</p>
 <ul>
 <li><strong>후위</strong>(<strong>postfix</strong>) : 해당 문장을 실행 후 값을 연산을 실행</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>) <span style="color:#75715e">// 출력
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>)
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>)
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>) <span style="color:#75715e">// 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%202.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%203.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%204.png" alt="Untitled"></p>
 </li>
 <li>
 <p>사용 예 - 3</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span> 
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">a</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%205.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%206.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%207.png" alt="Untitled"></p>
 </li>
@@ -354,14 +351,14 @@ if (!doNotTrack) {
 <ul>
 <li><strong>전위</strong>(<strong>prefix</strong>) : 해당 문장을 실행하기 전 연산을 먼저 실행</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 출력
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>)
-  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>)
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%208.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 변수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%208.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%209.png" alt="Untitled"></p>
 <p><img src="/images/lang_javascript/study/JavaScript_%EB%B3%80%EC%88%98%EC%97%90_%EC%A0%81%EC%9A%A9%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8A%94_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled%2010.png" alt="Untitled"></p>
 </li>
@@ -393,13 +390,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/data_var/javascript_%EB%B3%80%EC%88%98/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/data_var/javascript_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[JavaScript] 변수</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/data_var/javascript_undefined_%EC%9E%90%EB%A3%8C%ED%98%95/" rel="next">
+		<a class="pager__link" href="/post/lang_javascript/study/data_var/javascript_undefined_%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD%E1%84%92%E1%85%A7%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[JavaScript] undefined 자료형</p>
 		</a>
@@ -551,7 +548,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -559,32 +556,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

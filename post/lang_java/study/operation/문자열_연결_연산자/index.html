@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 이항 연산자 - 문자열 연결 연산자 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 이항 연산자 - 문자열 연결 연산자" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/operation/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%97%B0%EA%B2%B0_%EC%97%B0%EC%82%B0%EC%9E%90/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/operation/%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-07T20:00:45+09:00" />
 <meta property="article:modified_time" content="2022-07-07T20:00:45+09:00" />
 
@@ -188,14 +185,14 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>피연산자 중 한쪽이 문자열이면 <strong>+ 연산자는 문자열 연결 연산자로 사용되어 다른 피연산자를 문자열로 변환하고 서로 결합</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JDK&#34;</span> <span style="color:#f92672">+</span> 6<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">;</span>
-String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 특징&#34;</span><span style="color:#f92672">;</span>
-</code></pre></div><p><img src="/images/lang_java/operation/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%97%B0%EA%B2%B0_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String str1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JDK&#34;</span> <span style="color:#f92672">+</span> 6.<span style="color:#a6e22e">0</span>;
+</span></span><span style="display:flex;"><span>String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 특징&#34;</span>;
+</span></span></code></pre></div><p><img src="/images/lang_java/operation/%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%97%B0%EA%B2%B0_%EC%97%B0%EC%82%B0%EC%9E%90/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>+ 연산자가 <strong>산술 연산자인지 문자열 연결 연산자인지 판단하기 어려운 경우</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JDK&#34;</span> <span style="color:#f92672">+</span> 3 <span style="color:#f92672">+</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String str1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JDK&#34;</span> <span style="color:#f92672">+</span> 3 <span style="color:#f92672">+</span> 3.<span style="color:#a6e22e">0</span>;
+</span></span></code></pre></div><ul>
 <li>
 <p>문자열과 숫자가 혼합된 + 연산식은 <strong>왼쪽에서부터 오른쪽으로 연산이 진행</strong></p>
 <ol>
@@ -206,8 +203,8 @@ String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672
 </li>
 <li>
 <p>숫자 연산이 먼저 나온 경우</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str1 <span style="color:#f92672">=</span> 3 <span style="color:#f92672">+</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;JDK&#34;</span><span style="color:#f92672">;</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String str1 <span style="color:#f92672">=</span> 3 <span style="color:#f92672">+</span> 3.<span style="color:#a6e22e">0</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;JDK&#34;</span>;
+</span></span></code></pre></div><ol>
 <li><code>3 + 3.0</code> 진행 → <code>6.0</code></li>
 <li><code>6.0 + “JDK”</code> 진행 → <code>“6.0JDK”</code></li>
 </ol>
@@ -247,13 +244,13 @@ String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/operation/%EC%9D%B4%ED%95%AD_%EC%97%B0%EC%82%B0%EC%9E%90_%EC%82%B0%EC%88%A0_%EC%97%B0%EC%82%B0%EC%9E%90/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/operation/%E1%84%8B%E1%85%B5%E1%84%92%E1%85%A1%E1%86%BC_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1_%E1%84%89%E1%85%A1%E1%86%AB%E1%84%89%E1%85%AE%E1%86%AF_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 이항 연산자 - 산술 연산자</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/operation/%EB%B9%84%EA%B5%90_%EC%97%B0%EC%82%B0%EC%9E%90/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/operation/%E1%84%87%E1%85%B5%E1%84%80%E1%85%AD_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 이항 연산자 - 비교 연산자</p>
 		</a>
@@ -405,7 +402,7 @@ String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -413,32 +410,6 @@ String str2 <span style="color:#f92672">=</span> str1 <span style="color:#f92672
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

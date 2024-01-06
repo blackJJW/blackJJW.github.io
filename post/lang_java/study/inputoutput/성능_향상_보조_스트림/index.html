@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 성능 향상 보조 스트림 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 성능 향상 보조 스트림" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/%E1%84%89%E1%85%A5%E1%86%BC%E1%84%82%E1%85%B3%E1%86%BC_%E1%84%92%E1%85%A3%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC_%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-10T21:00:30+09:00" />
 <meta property="article:modified_time" content="2023-01-10T21:00:30+09:00" />
 
@@ -234,9 +231,9 @@ if (!doNotTrack) {
 <li>BufferedInputStream은 최대 8192 바이트</li>
 <li>BufferedReader는 최대 8192 문자가 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream<span style="color:#f92672">(</span>바이트입력스트림<span style="color:#f92672">);</span>
-BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span>문자스트림<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream(바이트입력스트림);
+</span></span><span style="display:flex;"><span>BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(문자스트림);
+</span></span></code></pre></div></li>
 <li>
 <p>BufferedInputStream과 BufferedReader로 데이터를 읽어들이는 방법은 InputStream 또는 Reader와 동일</p>
 </li>
@@ -246,35 +243,35 @@ BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9e
 <li>실행 결과를 보면 사용했을 때가 훨씬 성능이 좋아진다.</li>
 <li>BufferedInputStreamEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.BufferedInputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.FileInputStream<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedInputStreamEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-
-		FileInputStream fis1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>
-				<span style="color:#e6db74">&#34;D:{ path }\\p-1.png&#34;</span><span style="color:#f92672">);</span>
-		start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>fis1<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;사용하지 않았을 때 : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span><span style="color:#f92672">);</span>
-		fis1<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-
-		FileInputStream fis2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>
-				<span style="color:#e6db74">&#34;D:{ path }\\p-1.png&#34;</span><span style="color:#f92672">);</span>
-		BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream<span style="color:#f92672">(</span>fis2<span style="color:#f92672">);</span>
-		start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>bis<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;사용했을 때 : &#34;</span> <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span><span style="color:#f92672">);</span>
-		bis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-		fis2<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.BufferedInputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileInputStream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedInputStreamEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		FileInputStream fis1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;D:{ path }\\p-1.png&#34;</span>);
+</span></span><span style="display:flex;"><span>		start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(fis1.<span style="color:#a6e22e">read</span>() <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1) {}
+</span></span><span style="display:flex;"><span>		end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;사용하지 않았을 때 : &#34;</span> <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> start) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
+</span></span><span style="display:flex;"><span>		fis1.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		FileInputStream fis2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;D:{ path }\\p-1.png&#34;</span>);
+</span></span><span style="display:flex;"><span>		BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream(fis2);
+</span></span><span style="display:flex;"><span>		start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(bis.<span style="color:#a6e22e">read</span>() <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1) {}
+</span></span><span style="display:flex;"><span>		end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;사용했을 때 : &#34;</span> <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> start) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span>);
+</span></span><span style="display:flex;"><span>		bis.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>		fis2.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%202.png" alt="Untitled"></p>
 </li>
 <li>
 <p>BufferedReader는 <code>readLine()</code> 메소드를 추가적으로 더 가지고 있다.</p>
@@ -282,34 +279,34 @@ BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9e
 <li>이 메소드를 이용하면 캐리지리턴(<code>\r</code>) 라인피드(<code>\n</code>)로 구분된 행 단위의 문자열을 한꺼번에 읽을 수 있다.</li>
 </ul>
 <p>ex) Enter키를 입력하기 전까지 콘솔에서 입력한 모든 문자열을 한꺼번에 얻는다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
-BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span>reader<span style="color:#f92672">);</span>
-String inputStr <span style="color:#f92672">=</span> br<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader(System.<span style="color:#a6e22e">in</span>);
+</span></span><span style="display:flex;"><span>BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(reader);
+</span></span><span style="display:flex;"><span>String inputStr <span style="color:#f92672">=</span> br.<span style="color:#a6e22e">readLine</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 콘솔로부터 라인 단위로 읽기</p>
 <ul>
 <li>BufferedReaderEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.BufferedReader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.InputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.InputStreamReader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.Reader<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedReaderEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		InputStream is <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">;</span>
-		Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>is<span style="color:#f92672">);</span>
-		BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span>reader<span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;입력 : &#34;</span><span style="color:#f92672">);</span>
-		String lineString <span style="color:#f92672">=</span> br<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;출력 : &#34;</span> <span style="color:#f92672">+</span> lineString<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.BufferedReader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.InputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.InputStreamReader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.Reader;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedReaderEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		InputStream is <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">in</span>;
+</span></span><span style="display:flex;"><span>		Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader(is);
+</span></span><span style="display:flex;"><span>		BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(reader);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;입력 : &#34;</span>);
+</span></span><span style="display:flex;"><span>		String lineString <span style="color:#f92672">=</span> br.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;출력 : &#34;</span> <span style="color:#f92672">+</span> lineString);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <h2 id="2-bufferedoutputstream과-bufferedwriter">2. BufferedOutputStream과 BufferedWriter</h2>
@@ -334,10 +331,10 @@ String inputStr <span style="color:#f92672">=</span> br<span style="color:#f9267
 <li>BufferedOutputStream은 8192 바이트 최대 저장</li>
 <li>BufferedWriter는 8192 문자가 최대 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">BufferedOutputStream bos 
-     <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream<span style="color:#f92672">(</span>바이트출력스트림<span style="color:#f92672">);</span>
-BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter<span style="color:#f92672">(</span>문자출력스트림<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>BufferedOutputStream bos 
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream(바이트출력스트림);
+</span></span><span style="display:flex;"><span>BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter(문자출력스트림);
+</span></span></code></pre></div></li>
 <li>
 <p>BufferedOutputStream과 BufferedWriter로 데이터를 출력하는 방법은 OutputStream 또는 Writer와 동일</p>
 </li>
@@ -357,56 +354,56 @@ BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9e
 </li>
 <li>BufferedOutputStreamEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.BufferedInputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.BufferedOutputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.FileInputStream<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.FileOutputStream<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedOutputStreamEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		BufferedOutputStream bos <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-
-		<span style="color:#66d9ef">int</span> data <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-
-		fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>
-				<span style="color:#e6db74">&#34;D:\\{ path }\\p-1.png&#34;</span>
-				<span style="color:#f92672">);</span>
-		bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream<span style="color:#f92672">(</span>fis<span style="color:#f92672">);</span>
-		fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/p-1.png&#34;</span><span style="color:#f92672">);</span>
-		start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">((</span>data <span style="color:#f92672">=</span> bis<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			fos<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		fos<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-		end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> bis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> fis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;사용하지 않았을 때 : &#34;</span> 
-		                    <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ms&#34;</span><span style="color:#f92672">);</span>
-
-		fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>
-				<span style="color:#e6db74">&#34;D:\\{ path }\\p-1.png&#34;</span>
-				<span style="color:#f92672">);</span>
-		bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream<span style="color:#f92672">(</span>fis<span style="color:#f92672">);</span>
-		fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C:/Temp/p-1.png&#34;</span><span style="color:#f92672">);</span>
-		bos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream<span style="color:#f92672">(</span>fos<span style="color:#f92672">);</span>
-		start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">((</span>data <span style="color:#f92672">=</span> bis<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			bos<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		bos<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
-		end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
-		bos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> fos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> bis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> fis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;사용했을 때 : &#34;</span> 
-		                    <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ms&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.BufferedInputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.BufferedOutputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileInputStream;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.FileOutputStream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedOutputStreamEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		BufferedInputStream bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		BufferedOutputStream bos <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> data <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;D:\\{ path }\\p-1.png&#34;</span>
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>		bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream(fis);
+</span></span><span style="display:flex;"><span>		fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(<span style="color:#e6db74">&#34;C:/Temp/p-1.png&#34;</span>);
+</span></span><span style="display:flex;"><span>		start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>((data <span style="color:#f92672">=</span> bis.<span style="color:#a6e22e">read</span>()) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1) {
+</span></span><span style="display:flex;"><span>			fos.<span style="color:#a6e22e">write</span>(data);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		fos.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>		end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		fos.<span style="color:#a6e22e">close</span>(); bis.<span style="color:#a6e22e">close</span>(); fis.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;사용하지 않았을 때 : &#34;</span> 
+</span></span><span style="display:flex;"><span>		                    <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> start) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ms&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;D:\\{ path }\\p-1.png&#34;</span>
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>		bis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream(fis);
+</span></span><span style="display:flex;"><span>		fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(<span style="color:#e6db74">&#34;C:/Temp/p-1.png&#34;</span>);
+</span></span><span style="display:flex;"><span>		bos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream(fos);
+</span></span><span style="display:flex;"><span>		start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>((data <span style="color:#f92672">=</span> bis.<span style="color:#a6e22e">read</span>()) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1) {
+</span></span><span style="display:flex;"><span>			bos.<span style="color:#a6e22e">write</span>(data);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		bos.<span style="color:#a6e22e">flush</span>();
+</span></span><span style="display:flex;"><span>		end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>		bos.<span style="color:#a6e22e">close</span>(); fos.<span style="color:#a6e22e">close</span>(); bis.<span style="color:#a6e22e">close</span>(); fis.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;사용했을 때 : &#34;</span> 
+</span></span><span style="display:flex;"><span>		                    <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> start) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ms&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/%EC%84%B1%EB%8A%A5_%ED%96%A5%EC%83%81_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/Untitled%205.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -437,13 +434,13 @@ BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9e
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/inputoutput/%EB%AC%B8%EC%9E%90_%EB%B3%80%ED%99%98_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%AB_%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 문자 변환 보조 스트림</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inputoutput/%EA%B8%B0%EB%B3%B8_%ED%83%80%EC%9E%85_%EC%9E%85%EC%B6%9C%EB%A0%A5_%EB%B3%B4%EC%A1%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 기본 타입 입출력 보조 스트림</p>
 		</a>
@@ -595,7 +592,7 @@ BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9e
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -603,32 +600,6 @@ BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9e
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

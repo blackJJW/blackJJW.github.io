@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 스트림의 특징 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 스트림의 특징" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%90%E1%85%B3%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-22T21:30:30+09:00" />
 <meta property="article:modified_time" content="2022-11-22T21:30:30+09:00" />
 
@@ -205,50 +202,50 @@ if (!doNotTrack) {
 <li>컬렉션에 저장된 Student를 하나씩 가져와 학생 이름과 성적을 콘솔에 출력하도록 forEach() 메소드의 매개값으로 람다식을 주었다.</li>
 <li>LambdaExpressionEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.stream.Stream<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LambdaExpressionEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 90<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> 92<span style="color:#f92672">)</span>
-				<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 스트림 얻기
-</span><span style="color:#75715e"></span>		Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// List 컬렉션에서 Student를 가져와 람다식의 매개값으로 제공
-</span><span style="color:#75715e"></span>		stream<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span> s <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-			String name <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
-			<span style="color:#66d9ef">int</span> score <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getScore</span><span style="color:#f92672">();</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">+</span> score<span style="color:#f92672">);</span>
-
-		<span style="color:#f92672">}</span> <span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.stream.Stream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LambdaExpressionEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;ABC&#34;</span>, 90),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;DEF&#34;</span>, 92)
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 스트림 얻기</span>
+</span></span><span style="display:flex;"><span>		Stream<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// List 컬렉션에서 Student를 가져와 람다식의 매개값으로 제공</span>
+</span></span><span style="display:flex;"><span>		stream.<span style="color:#a6e22e">forEach</span>( s <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>			String name <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">getName</span>();
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> score <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">getScore</span>();
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">+</span> score);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		} );
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 학생 클래스</p>
 <ul>
 <li>Student.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> score<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span> (String name, <span style="color:#66d9ef">int</span> score) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span>() { <span style="color:#66d9ef">return</span> score; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="2-내부-반복자를-사용하므로-병렬-처리가-쉬움">2. 내부 반복자를 사용하므로 병렬 처리가 쉬움</h2>
 <ul>
@@ -316,35 +313,35 @@ if (!doNotTrack) {
 <ul>
 <li>ParallelEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.stream.Stream<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParallelEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
-				<span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">,</span> 
-				<span style="color:#e6db74">&#34;JKL&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;MNO&#34;</span>
-				<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 순차 처리
-</span><span style="color:#75715e"></span>		Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
-		stream<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>ParallelEx <span style="color:#f92672">::</span> print<span style="color:#f92672">);</span>
-				    <span style="color:#75715e">// 메소드 참조(s -&gt; ParallelEx.print(s)와 동일)
-</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// 병렬 처리
-</span><span style="color:#75715e"></span>		Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> parallelStream <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">parallelStream</span><span style="color:#f92672">();</span>
-		parallelStream<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>ParallelEx <span style="color:#f92672">::</span> print<span style="color:#f92672">);</span>
-		                    <span style="color:#75715e">// 메소드 참조
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.stream.Stream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParallelEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#e6db74">&#34;DEF&#34;</span>, <span style="color:#e6db74">&#34;GHI&#34;</span>, 
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;JKL&#34;</span>, <span style="color:#e6db74">&#34;MNO&#34;</span>
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 순차 처리</span>
+</span></span><span style="display:flex;"><span>		Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>();
+</span></span><span style="display:flex;"><span>		stream.<span style="color:#a6e22e">forEach</span>(ParallelEx :: print);
+</span></span><span style="display:flex;"><span>				    <span style="color:#75715e">// 메소드 참조(s -&gt; ParallelEx.print(s)와 동일)</span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 병렬 처리</span>
+</span></span><span style="display:flex;"><span>		Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> parallelStream <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">parallelStream</span>();
+</span></span><span style="display:flex;"><span>		parallelStream.<span style="color:#a6e22e">forEach</span>(ParallelEx :: print);
+</span></span><span style="display:flex;"><span>		                    <span style="color:#75715e">// 메소드 참조</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(String str) {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> Thread.<span style="color:#a6e22e">currentThread</span>().<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <h2 id="3-스트림은-중간-처리와-최종-처리를-할-수-있다">3. 스트림은 중간 처리와 최종 처리를 할 수 있다.</h2>
@@ -371,46 +368,46 @@ if (!doNotTrack) {
 <li>List에 저장되어 있는 Student 객체를 중간 처리에서 score 필드값으로 매핑하고, 최종 처리에서 score의 평균값을 산출</li>
 <li>MapAndReduceEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapAndReduceEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> studentList <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 10<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> 20<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">,</span> 30<span style="color:#f92672">)</span>
-				<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">double</span> avg <span style="color:#f92672">=</span> studentList<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-				<span style="color:#75715e">// 중간 처리(학생 객체를 점수로 매핑)
-</span><span style="color:#75715e"></span>				<span style="color:#f92672">.</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>Student <span style="color:#f92672">::</span> getScore<span style="color:#f92672">)</span>
-				<span style="color:#75715e">// 최동 처리(평균 점수)
-</span><span style="color:#75715e"></span>				<span style="color:#f92672">.</span><span style="color:#a6e22e">average</span><span style="color:#f92672">()</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">getAsDouble</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;평군 점수 : &#34;</span> <span style="color:#f92672">+</span> avg<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled%206.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapAndReduceEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;</span> studentList <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;ABC&#34;</span>, 10),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;DEF&#34;</span>, 20),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;GHI&#34;</span>, 30)
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> avg <span style="color:#f92672">=</span> studentList.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 중간 처리(학생 객체를 점수로 매핑)</span>
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">mapToInt</span>(Student :: getScore)
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 최동 처리(평균 점수)</span>
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">average</span>()
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">getAsDouble</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;평군 점수 : &#34;</span> <span style="color:#f92672">+</span> avg);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%ED%8A%B9%EC%A7%95/Untitled%206.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) Student.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> score<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> score<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> score;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span> (String name, <span style="color:#66d9ef">int</span> score) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> score;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getScore</span>() { <span style="color:#66d9ef">return</span> score; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -440,13 +437,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EB%B0%98%EB%B3%B5%EC%9E%90_%EC%8A%A4%ED%8A%B8%EB%A6%BC/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%8C%E1%85%A1_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 반복자 스트림</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%98_%EC%A2%85%EB%A5%98/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%B2/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 스트림의 종류</p>
 		</a>
@@ -598,7 +595,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -606,32 +603,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX, 속성 감시 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX, 속성 감시" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%A1%E1%86%B7%E1%84%89%E1%85%B5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-16T22:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-16T22:00:30+09:00" />
 
@@ -201,24 +198,24 @@ if (!doNotTrack) {
 <li>Getter와 Setter, Property 객체를 리턴하는 메소드</li>
 </ul>
 <p>ex) text 속성은 <code>getText()</code>, <code>setText(String newValue)</code> 그리고 StringProperty를 리턴하는 <code>textProperty()</code>를 가지고 있다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> StringProperty text <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty<span style="color:#f92672">();</span>    <span style="color:#75715e">// 값이 저장될 필드
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>String newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> text<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>newValue<span style="color:#f92672">);</span> <span style="color:#f92672">}</span> <span style="color:#75715e">// Setter
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getText</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> text<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span> <span style="color:#f92672">}</span>               <span style="color:#75715e">// Getter
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> StringProperty <span style="color:#a6e22e">textProperty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> text<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>        <span style="color:#75715e">// Property 메소드
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> StringProperty text <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty();    <span style="color:#75715e">// 값이 저장될 필드</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setText</span>(String newValue) { text.<span style="color:#a6e22e">set</span>(newValue); } <span style="color:#75715e">// Setter</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getText</span>() { <span style="color:#66d9ef">return</span> text.<span style="color:#a6e22e">get</span>(); }               <span style="color:#75715e">// Getter</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> StringProperty <span style="color:#a6e22e">textProperty</span>() { <span style="color:#66d9ef">return</span> text; }        <span style="color:#75715e">// Property 메소드</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>StringProperty()</code>는 <code>get()</code>과 <code>set()</code> 메소드 이외의 리스너를 관리하는 메소드를 가지고 있다.</p>
 <ul>
 <li>text 속성을 감시하는 리스너는 <code>textProperty()</code>가 리턴하는 StringProperty에서 설정</li>
 </ul>
 <p>ex) text 속성값을 감시하는 ChangeListener를 설정하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">textProperty<span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> String<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-													String oldValue<span style="color:#f92672">,</span> String newValue<span style="color:#f92672">){</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>textProperty().<span style="color:#a6e22e">addListener</span>(<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> String<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>													String oldValue, String newValue){
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ul>
 <li>
 <p><code>addListener()</code> 메소드가 ChangeListener를 Property 객체에 설정하면, text 속성이 변경되었을 때 ChangeListener의 <code>changed()</code> 메소드가 자동으로 실행된다.</p>
 </li>
@@ -237,14 +234,14 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>ex) Slider의 value 속성에 리스너를 설정하려는 경우</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Slider slider <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Slider<span style="color:#f92672">();</span>
-slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span> 
-                      Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Slider slider <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Slider();
+</span></span><span style="display:flex;"><span>slider.<span style="color:#a6e22e">valueProperty</span>().<span style="color:#a6e22e">addListener</span>( <span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable, 
+</span></span><span style="display:flex;"><span>                      Number oldValue, Number newValue) {
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ul>
 <li><code>valueProperty()</code>가 리턴하는 DoubleProperty가 <code>Property&lt;Number&gt;</code>를 구현하고 있기 때문에 ChangeListener의 타입 파라미터는 Number가 된다.
 <ul>
 <li>따라서 oldValue와 newValue의 타입도 Number가 된다.</li>
@@ -263,86 +260,86 @@ slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valuePrope
 <ul>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.scene.control.*?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.*?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.text.Font?&gt;</span>
-
-<span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;250.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;350.0&#34;</span> 
-			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
-			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;listener.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;center&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;JavaFX&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-   	  	<span style="color:#f92672">&lt;font&gt;</span>
-   	  		<span style="color:#f92672">&lt;Font</span> <span style="color:#a6e22e">size=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">/&gt;</span> <span style="color:#75715e">&lt;!-- Label의 기본 폰트 크기는 0 --&gt;</span>
-   	  	<span style="color:#f92672">&lt;/font&gt;</span>
-   <span style="color:#f92672">&lt;/center&gt;</span>
-   <span style="color:#f92672">&lt;bottom&gt;</span>
-      <span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;slider&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/bottom&gt;</span>
-<span style="color:#f92672">&lt;/BorderPane&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.*?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.*?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.text.Font?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;250.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;350.0&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;listener.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;center&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;JavaFX&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   	  	<span style="color:#f92672">&lt;font&gt;</span>
+</span></span><span style="display:flex;"><span>   	  		<span style="color:#f92672">&lt;Font</span> <span style="color:#a6e22e">size=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">/&gt;</span> <span style="color:#75715e">&lt;!-- Label의 기본 폰트 크기는 0 --&gt;</span>
+</span></span><span style="display:flex;"><span>   	  	<span style="color:#f92672">&lt;/font&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;bottom&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Slider</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;slider&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/bottom&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>속성 감시 리스너 설정</p>
 <ul>
 <li>RootController.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Slider<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.text.Font<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Slider slider<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label label<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valueProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span> 
-					Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				label<span style="color:#f92672">.</span><span style="color:#a6e22e">setFont</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Font<span style="color:#f92672">(</span>newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">()));</span>
-				<span style="color:#75715e">//Label의 폰트 변경      // Slider의 변경된 Value 값
-</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">});</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ChangeListener;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ObservableValue;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Label;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Slider;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.text.Font;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Slider slider;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label label;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>		slider.<span style="color:#a6e22e">valueProperty</span>().<span style="color:#a6e22e">addListener</span>(<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable, 
+</span></span><span style="display:flex;"><span>					Number oldValue, Number newValue) {
+</span></span><span style="display:flex;"><span>				label.<span style="color:#a6e22e">setFont</span>(<span style="color:#66d9ef">new</span> Font(newValue.<span style="color:#a6e22e">doubleValue</span>()));
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">//Label의 폰트 변경      // Slider의 변경된 Value 값</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		});
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>AppMain.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
-
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span>(Stage primaryStage) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> FXMLLoader.<span style="color:#a6e22e">load</span>(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;Root.fxml&#34;</span>));
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene(parent);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setTitle</span>(<span style="color:#e6db74">&#34;AppMain&#34;</span>);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setScene</span>(scene);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		launch(args);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <p><img src="/images/lang_java/javaFx/%EC%86%8D%EC%84%B1_%EA%B0%90%EC%8B%9C/Untitled.png" alt="Untitled"></p>
 </li>
@@ -378,13 +375,13 @@ slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valuePrope
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/fxml_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%ACcontroller/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/fxml_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5controller/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX, FXML 컨트롤러(Controller)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/%EC%86%8D%EC%84%B1_%EB%B0%94%EC%9D%B8%EB%94%A9/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX, 속성 바인딩</p>
 		</a>
@@ -536,7 +533,7 @@ slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valuePrope
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -544,32 +541,6 @@ slider<span style="color:#f92672">.</span><span style="color:#a6e22e">valuePrope
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

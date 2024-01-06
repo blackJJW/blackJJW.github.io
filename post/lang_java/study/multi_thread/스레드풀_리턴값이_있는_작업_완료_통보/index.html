@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 스레드풀, 리턴값이 있는 작업 완료 통보 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 스레드풀, 리턴값이 있는 작업 완료 통보" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EB%A6%AC%ED%84%B4%EA%B0%92%EC%9D%B4_%EC%9E%88%EB%8A%94_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/multi_thread/%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3%E1%84%91%E1%85%AE%E1%86%AF_%E1%84%85%E1%85%B5%E1%84%90%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A1%E1%86%B9%E1%84%8B%E1%85%B5_%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8_%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD_%E1%84%90%E1%85%A9%E1%86%BC%E1%84%87%E1%85%A9/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-24T22:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-24T22:40:30+09:00" />
 
@@ -191,14 +188,14 @@ if (!doNotTrack) {
 <ul>
 <li>주의할 점은 제네릭 타입 파라미터 <code>T</code>는 <code>call()</code> 메소드가 리턴하는 타입이 되도록 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Callable<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 스레드가 처리할 작업 내용
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> T<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Callable<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 스레드가 처리할 작업 내용</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> T;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></li>
 <li>
 <p>Callable 작어의 처리 요청은 Runnable 작업과 마찬가지로 ExecutorService의 <code>submit()</code> 메소드를 호출</p>
 <ul>
@@ -208,21 +205,21 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Future<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Future<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> executorService.<span style="color:#a6e22e">submit</span>(task);
+</span></span></code></pre></div></li>
 <li>
 <p>스레드풀의 스레드가 Callable 객체의 <code>call()</code> 메소드를 모두 실행하고 T타입의 값을 리턴할 경우</p>
 <ul>
 <li><code>Future&lt;T&gt;</code>의 <code>get()</code> 메소드는 블로킹이 해제되고 T타입의 값을 리턴</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
-	T result <span style="color:#f92672">=</span> future<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">){</span>
-	<span style="color:#75715e">// 작업 처리 도중 스레드가 interrupt 될 경우 실행할 코드
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ExecutionException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 작업 처리 도중 예외가 발생된 경우 실행할 코드
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>	T result <span style="color:#f92672">=</span> future.<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (InterruptedException e){
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 작업 처리 도중 스레드가 interrupt 될 경우 실행할 코드</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (ExecutionException e) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 작업 처리 도중 예외가 발생된 경우 실행할 코드</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 리턴값이 있는 작업 완료 통보</p>
 <ul>
@@ -230,45 +227,45 @@ if (!doNotTrack) {
 <li>스레드풀의 스레드가 처리하도록 요청</li>
 <li>ResultByCallableEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.concurrent.Callable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.ExecutorService<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.Executors<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.Future<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResultByCallableEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		ExecutorService executorService <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>
-				Runtime<span style="color:#f92672">.</span><span style="color:#a6e22e">getRuntime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">availableProcessors</span><span style="color:#f92672">()</span>
-				<span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 작업 처리 요청 ]&#34;</span><span style="color:#f92672">);</span>
-		Callable<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 10<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-					sum <span style="color:#f92672">+=</span> i<span style="color:#f92672">;</span>
-				<span style="color:#f92672">}</span>
-				<span style="color:#66d9ef">return</span> sum<span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-		Future<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> future<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 처리 결과 ] &#34;</span> <span style="color:#f92672">+</span> sum<span style="color:#f92672">);</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 작업 처리 완료 ]&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 실행 예외 발생 ]&#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
-		<span style="color:#f92672">}</span>
-
-		executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80,_%EB%A6%AC%ED%84%B4%EA%B0%92%EC%9D%B4_%EC%9E%88%EB%8A%94_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Callable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutorService;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Executors;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Future;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResultByCallableEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		ExecutorService executorService <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newFixedThreadPool</span>(
+</span></span><span style="display:flex;"><span>				Runtime.<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">availableProcessors</span>()
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 작업 처리 요청 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		Callable<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception{
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 10; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>					sum <span style="color:#f92672">+=</span> i;
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> sum;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>		Future<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> executorService.<span style="color:#a6e22e">submit</span>(task);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> future.<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 처리 결과 ] &#34;</span> <span style="color:#f92672">+</span> sum);
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 작업 처리 완료 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(Exception e) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 실행 예외 발생 ]&#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		executorService.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80,_%EB%A6%AC%ED%84%B4%EA%B0%92%EC%9D%B4_%EC%9E%88%EB%8A%94_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -299,13 +296,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EB%A6%AC%ED%84%B4%EA%B0%92%EC%9D%B4_%EC%97%86%EB%8A%94_%EC%9E%91%EC%97%85_%EC%99%84%EB%A3%8C_%ED%86%B5%EB%B3%B4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/multi_thread/%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3%E1%84%91%E1%85%AE%E1%86%AF_%E1%84%85%E1%85%B5%E1%84%90%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A1%E1%86%B9%E1%84%8B%E1%85%B5_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8_%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD_%E1%84%90%E1%85%A9%E1%86%BC%E1%84%87%E1%85%A9/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 스레드풀, 리턴값이 없는 작업 완료 통보</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%ED%92%80_%EC%9E%91%EC%97%85_%EC%B2%98%EB%A6%AC_%EA%B2%B0%EA%B3%BC%EB%A5%BC_%EC%99%B8%EB%B6%80_%EA%B0%9D%EC%B2%B4%EC%97%90_%EC%A0%80%EC%9E%A5/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/multi_thread/%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3%E1%84%91%E1%85%AE%E1%86%AF_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5_%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%E1%84%85%E1%85%B3%E1%86%AF_%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8B%E1%85%A6_%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 스레드풀, 작업 처리 결과를 외부 객체에 저장</p>
 		</a>
@@ -457,7 +454,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -465,32 +462,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

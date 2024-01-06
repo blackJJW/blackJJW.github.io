@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX, 버튼 컨트롤 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX, 버튼 컨트롤" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-20T20:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-20T20:00:30+09:00" />
 
@@ -198,23 +195,23 @@ if (!doNotTrack) {
 <ul>
 <li>ex) 아이컨 버튼을 FXML로 작성하는 방법</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;아이콘버튼&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;graphic&gt;</span>
-		<span style="color:#f92672">&lt;ImageView&gt;</span>
-			<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/history_view.gif&#34;</span> <span style="color:#f92672">/&gt;</span>
-		<span style="color:#f92672">&lt;/ImageView&gt;</span>
-	<span style="color:#f92672">&lt;/graphic&gt;</span>
-<span style="color:#f92672">&lt;/Button&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;아이콘버튼&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/history_view.gif&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>CheckBox, RadioButton, ToggleButton 컨트롤은 선택과 미선택 두 가지 상태를 가질 수 있다.</p>
 <ul>
 <li>selected 속성의 값이 true이면 false이면 미선택</li>
 <li>ex) CheckBox 컨트롤을 FXML로 선언</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>RadioButton, ToggleButton,에는 toggleGroup 속성이 존재</p>
 <ul>
@@ -228,31 +225,31 @@ if (!doNotTrack) {
 <li>RadioButton의 toggleGroup 속성에서 <code>$groupName</code>으로 참조</li>
 <li>ex) 2개의 RadioButton을 하나의 그룹으로 묶어서 선언</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;fx:define&gt;</span>
-	<span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/fx:define&gt;</span>
-<span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> 
-             <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;fx:define&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/fx:define&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨1&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값1&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;라벨2&#34;</span> <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;값2&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$groupName&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>CheckBox, RadioButton, ToggleButton 컨트롤은 사용자가 클릭하면 ActionEvent가 발생하기 때문에 EventHandler로 처리가 가능</p>
 <ul>
 <li>onAction 속성을 작성해서 컨트롤러의 이벤트 처리 메소드로 연결할 수도 있다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;CheckBox</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>RadioButton 또는 ToggleButton 그룹 내에서 선택 변경을 감시하고 싶을 경우</p>
 <ul>
 <li>ToggleGroup의 selectedToggle 속성을 다음과 같이 작성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">groupName<span style="color:#f92672">.</span><span style="color:#a6e22e">selectedToggleProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-                      Toggle oldValue<span style="color:#f92672">,</span> Toggle newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>groupName.<span style="color:#a6e22e">selectedToggleProperty</span>().<span style="color:#a6e22e">addListener</span>(<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>                      Toggle oldValue, Toggle newValue) { ... }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ul>
 <li>t선택이 변경되면 <code>changed()</code> 메소드가 실행되면 세 번째 매개값인 newValue에 마지막으로 선택된 컨트롤이 대입</li>
 </ul>
 </li>
@@ -264,176 +261,176 @@ if (!doNotTrack) {
 <ul>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.CheckBox?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.RadioButton?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Separator?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ToggleGroup?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-
-<span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;420.0&#34;</span> 
-			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
-			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;buttonControl.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;padding&gt;</span>
-      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/padding&gt;</span>
-
-   <span style="color:#f92672">&lt;center&gt;</span>
-      <span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
-      		<span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">&gt;</span>
-         <span style="color:#f92672">&lt;children&gt;</span>
-            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
-            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
-               <span style="color:#f92672">&lt;children&gt;</span>
-                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk1&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
-                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택1&#34;</span> <span style="color:#f92672">/&gt;</span>
-                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk2&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
-                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택2&#34;</span> <span style="color:#f92672">/&gt;</span>
-               <span style="color:#f92672">&lt;/children&gt;</span>
-            <span style="color:#f92672">&lt;/VBox&gt;</span>
-            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;checkImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
-            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-               <span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/geek.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
-            <span style="color:#f92672">&lt;/ImageView&gt;</span>
-
-            <span style="color:#f92672">&lt;Separator</span> <span style="color:#a6e22e">orientation=</span><span style="color:#e6db74">&#34;VERTICAL&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span><span style="color:#f92672">/&gt;</span>
-
-            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
-            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
-               <span style="color:#f92672">&lt;fx:define&gt;&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;&lt;/fx:define&gt;</span>
-               <span style="color:#f92672">&lt;children&gt;</span>
-                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad1&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span> 
-                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span><span style="color:#f92672">&gt;</span>
-                     <span style="color:#f92672">&lt;toggleGroup&gt;</span>
-                        <span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;</span>
-                     <span style="color:#f92672">&lt;/toggleGroup&gt;&lt;/RadioButton&gt;</span>
-                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> 
-                  			   <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
-                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#f92672">/&gt;</span>
-                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad3&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> 
-                  			   <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
-                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> <span style="color:#f92672">/&gt;</span>
-               <span style="color:#f92672">&lt;/children&gt;</span>
-            <span style="color:#f92672">&lt;/VBox&gt;</span>
-
-            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;radioImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
-            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-            	<span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/BarChart.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
-            <span style="color:#f92672">&lt;/ImageView&gt;</span>
-         <span style="color:#f92672">&lt;/children&gt;</span>
-      <span style="color:#f92672">&lt;/HBox&gt;</span>
-   <span style="color:#f92672">&lt;/center&gt;</span>
-
-	<span style="color:#f92672">&lt;bottom&gt;</span>
-		<span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnExit&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleBtnExitAction&#34;</span> 
-				<span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
-			<span style="color:#f92672">&lt;graphic&gt;</span>
-				<span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/exit.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/ImageView&gt;</span>
-			<span style="color:#f92672">&lt;/graphic&gt;</span>
-			<span style="color:#f92672">&lt;BorderPane.margin&gt;&lt;Insets</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#f92672">/&gt;&lt;/BorderPane.margin&gt;</span>        
-		<span style="color:#f92672">&lt;/Button&gt;</span>
-	<span style="color:#f92672">&lt;/bottom&gt;</span>
-<span style="color:#f92672">&lt;/BorderPane&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.CheckBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.RadioButton?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Separator?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ToggleGroup?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;420.0&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;buttonControl.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;padding&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/padding&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;center&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      		<span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk1&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택1&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;CheckBox</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;chk2&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleChkAction&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			<span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;선택2&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/VBox&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;checkImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/geek.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Separator</span> <span style="color:#a6e22e">orientation=</span><span style="color:#e6db74">&#34;VERTICAL&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;CENTER_LEFT&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            	  <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150.0&#34;</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;fx:define&gt;&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;&lt;/fx:define&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad1&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BubbleChart&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;toggleGroup&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;ToggleGroup</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;group&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;/toggleGroup&gt;&lt;/RadioButton&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad2&#34;</span> <span style="color:#a6e22e">selected=</span><span style="color:#e6db74">&#34;true&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;BarChart&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;RadioButton</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;rad3&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">toggleGroup=</span><span style="color:#e6db74">&#34;$group&#34;</span> 
+</span></span><span style="display:flex;"><span>                  			   <span style="color:#a6e22e">userData=</span><span style="color:#e6db74">&#34;AreaChart&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/VBox&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;radioImageView&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            		   <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            	<span style="color:#f92672">&lt;image&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/BarChart.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/HBox&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bottom&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnExit&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleBtnExitAction&#34;</span> 
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span><span style="color:#f92672">&gt;&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/exit.png&#34;</span> <span style="color:#f92672">/&gt;&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;BorderPane.margin&gt;&lt;Insets</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#f92672">/&gt;&lt;/BorderPane.margin&gt;</span>        
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bottom&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>버튼 컨트롤 이벤트 처리</p>
 <ul>
 <li>RootController.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> buttonControl<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.application.Platform<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.CheckBox<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Toggle<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.ToggleGroup<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.image.Image<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk1<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk2<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView checkImageView<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ToggleGroup group<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView radioImageView<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnExit<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		group<span style="color:#f92672">.</span><span style="color:#a6e22e">selectedToggleProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-					Toggle oldValue<span style="color:#f92672">,</span> Toggle newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				Image image <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#f92672">+</span> newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserData</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-				radioImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span>image<span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">});</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// CheckBox 이벤트 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleChkAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk1<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">()</span> <span style="color:#f92672">&amp;&amp;</span> chk2<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
-					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/glasses_hair.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk1<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
-					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/glasses.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>chk2<span style="color:#f92672">.</span><span style="color:#a6e22e">isSelected</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
-					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/hair.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			checkImageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
-					getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/geek.png&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// Button 이벤트 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnExitAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> buttonControl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Platform;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ChangeListener;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ObservableValue;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.CheckBox;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Toggle;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ToggleGroup;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.Image;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk1;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> CheckBox chk2;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView checkImageView;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ToggleGroup group;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView radioImageView;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnExit;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>		group.<span style="color:#a6e22e">selectedToggleProperty</span>().<span style="color:#a6e22e">addListener</span>(<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Toggle<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Toggle<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>					Toggle oldValue, Toggle newValue) {
+</span></span><span style="display:flex;"><span>				Image image <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Image(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#f92672">+</span> newValue.<span style="color:#a6e22e">getUserData</span>().<span style="color:#a6e22e">toString</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span>).<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>				radioImageView.<span style="color:#a6e22e">setImage</span>(image);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		});
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// CheckBox 이벤트 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleChkAction</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(chk1.<span style="color:#a6e22e">isSelected</span>() <span style="color:#f92672">&amp;&amp;</span> chk2.<span style="color:#a6e22e">isSelected</span>()) {
+</span></span><span style="display:flex;"><span>			checkImageView.<span style="color:#a6e22e">setImage</span>(<span style="color:#66d9ef">new</span> Image(
+</span></span><span style="display:flex;"><span>					getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/glasses_hair.png&#34;</span>).<span style="color:#a6e22e">toString</span>()));
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(chk1.<span style="color:#a6e22e">isSelected</span>()) {
+</span></span><span style="display:flex;"><span>			checkImageView.<span style="color:#a6e22e">setImage</span>(<span style="color:#66d9ef">new</span> Image(
+</span></span><span style="display:flex;"><span>					getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/glasses.png&#34;</span>).<span style="color:#a6e22e">toString</span>()));
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(chk2.<span style="color:#a6e22e">isSelected</span>()) {
+</span></span><span style="display:flex;"><span>			checkImageView.<span style="color:#a6e22e">setImage</span>(<span style="color:#66d9ef">new</span> Image(
+</span></span><span style="display:flex;"><span>					getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/hair.png&#34;</span>).<span style="color:#a6e22e">toString</span>()));
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			checkImageView.<span style="color:#a6e22e">setImage</span>(<span style="color:#66d9ef">new</span> Image(
+</span></span><span style="display:flex;"><span>					getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/geek.png&#34;</span>).<span style="color:#a6e22e">toString</span>()));
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Button 이벤트 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnExitAction</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		Platform.<span style="color:#a6e22e">exit</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>AppMain.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
-
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span>(Stage primaryStage) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> FXMLLoader.<span style="color:#a6e22e">load</span>(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;Root.fxml&#34;</span>));
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene(parent);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setTitle</span>(<span style="color:#e6db74">&#34;AppMain&#34;</span>);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setScene</span>(scene);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		launch(args);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>images</p>
 <p><img src="/images/lang_java/javaFx/%EB%B2%84%ED%8A%BC_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%201.png" alt="Untitled"></p>
@@ -474,13 +471,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/bindings_%ED%81%B4%EB%9E%98%EC%8A%A4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/bindings_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX, Bindings 클래스</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/%EC%9E%85%EB%A0%A5_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX, 입력 컨트롤</p>
 		</a>
@@ -632,7 +629,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -640,32 +637,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

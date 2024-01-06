@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX, 메뉴바와 툴바 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX, 메뉴바와 툴바" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%E1%84%87%E1%85%A1%E1%84%8B%E1%85%AA_%E1%84%90%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-25T19:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-25T19:00:30+09:00" />
 
@@ -210,33 +207,33 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) FXML로 MenuBar 컨트롤을 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;MenuBar&gt;</span>
-	<span style="color:#f92672">&lt;menus&gt;</span>
-		<span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span> ... <span style="color:#f92672">&lt;/Menu&gt;</span>
-		<span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;편집&#34;</span><span style="color:#f92672">&gt;</span> ... <span style="color:#f92672">&lt;/Menu&gt;</span>
-	<span style="color:#f92672">&lt;/menus&gt;</span>
-<span style="color:#f92672">&lt;/MenuBar&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;MenuBar&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;menus&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span> ... <span style="color:#f92672">&lt;/Menu&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;편집&#34;</span><span style="color:#f92672">&gt;</span> ... <span style="color:#f92672">&lt;/Menu&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/menus&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/MenuBar&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>ex) “파일” 메뉴의 메뉴 아이템을 추가하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;items&gt;</span>
-		<span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;새로만들기&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
-			<span style="color:#f92672">&lt;accelerator&gt;</span>
-				<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;N&#34;</span> 
-      <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">shrotcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
-			<span style="color:#f92672">&lt;/accelerator&gt;</span>
-			<span style="color:#f92672">&lt;graphic&gt;</span>
-				<span style="color:#f92672">&lt;ImageView&gt;</span>
-					<span style="color:#f92672">&lt;image&gt;</span>
-						<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-           <span style="color:#f92672">&lt;/image&gt;</span>
-				<span style="color:#f92672">&lt;/ImageView&gt;</span>
-			<span style="color:#f92672">&lt;/graphic&gt;</span>
-		<span style="color:#f92672">&lt;/MenuItem&gt;</span>
-	<span style="color:#f92672">&lt;/items&gt;</span>
-<span style="color:#f92672">&lt;/Menu&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;새로만들기&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;N&#34;</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">shrotcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/MenuItem&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Menu&gt;</span>
+</span></span></code></pre></div><ul>
 <li>MenuItem도 Button과 마찬가지로 클릭하면 onAction 속성에 지정된 컨트롤러의 메소드를 호출해서 ActionEvent를 처리</li>
 <li><code>&lt;accerlerator&gt;</code>는 단축키를 설정
 <ul>
@@ -267,178 +264,178 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) FXML로 Toolbar를 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ToolBar&gt;</span>
-	<span style="color:#f92672">&lt;items&gt;</span>
-		<span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
-			<span style="color:#f92672">&lt;graphic&gt;</span>
-				<span style="color:#f92672">&lt;ImageView&gt;</span>
-					<span style="color:#f92672">&lt;image&gt;</span>
-						<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-					<span style="color:#f92672">&lt;/image&gt;</span>
-				<span style="color:#f92672">&lt;/ImageView&gt;</span>
-			<span style="color:#f92672">&lt;/graphic&gt;</span>
-		<span style="color:#f92672">&lt;/Button&gt;</span>
-	<span style="color:#f92672">&lt;/items&gt;</span>
-<span style="color:#f92672">&lt;/ToolBar&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ToolBar&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ToolBar&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 상단에 MenuBar와 ToolBar를 추가하고 중앙에는 TextArea를 추가해서 간단한 메모장을 구현</p>
 <ul>
 <li>MenuBar의 메뉴 아이템과 ToolBar의 버튼을 클릭하면 TextArea에 선택된 작업 내용이 출력</li>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import java.lang.String?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.collections.FXCollections?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ComboBox?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Menu?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.MenuBar?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.MenuItem?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.SeparatorMenuItem?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.TextArea?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ToolBar?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.input.KeyCodeCombination?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-
-<span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;menuBarToolBar.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;top&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
-         <span style="color:#f92672">&lt;children&gt;</span>
-            <span style="color:#f92672">&lt;MenuBar&gt;</span>
-              <span style="color:#f92672">&lt;menus&gt;</span>
-                  <span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span>
-                    <span style="color:#f92672">&lt;items&gt;</span>
-                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;새로만들기&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;accelerator&gt;</span>
-                           	<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">shortcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
-                           <span style="color:#f92672">&lt;/accelerator&gt;</span>
-                           <span style="color:#f92672">&lt;graphic&gt;</span>
-                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                                 <span style="color:#f92672">&lt;image&gt;</span>
-                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                                 <span style="color:#f92672">&lt;/image&gt;</span>
-                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                           <span style="color:#f92672">&lt;/graphic&gt;</span>
-                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
-                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleOpen&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;열기&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;accelerator&gt;</span>
-                           	<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shortcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
-                           <span style="color:#f92672">&lt;/accelerator&gt;</span>
-                           <span style="color:#f92672">&lt;graphic&gt;</span>
-                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                                 <span style="color:#f92672">&lt;image&gt;</span>
-                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/open.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                                 <span style="color:#f92672">&lt;/image&gt;</span>
-                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                           <span style="color:#f92672">&lt;/graphic&gt;</span>
-                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
-                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleSave&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;저장&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;graphic&gt;</span>
-                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                                 <span style="color:#f92672">&lt;image&gt;</span>
-                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/save.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                                 <span style="color:#f92672">&lt;/image&gt;</span>
-                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                           <span style="color:#f92672">&lt;/graphic&gt;</span>
-                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
-                        <span style="color:#f92672">&lt;SeparatorMenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
-                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleExit&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;끝내기&#34;</span> <span style="color:#f92672">/&gt;</span>
-                    <span style="color:#f92672">&lt;/items&gt;</span>
-                  <span style="color:#f92672">&lt;/Menu&gt;</span>
-              <span style="color:#f92672">&lt;/menus&gt;</span>
-            <span style="color:#f92672">&lt;/MenuBar&gt;</span>
-
-            <span style="color:#f92672">&lt;ToolBar</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;40.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
-              <span style="color:#f92672">&lt;items&gt;</span>
-                <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
-                     <span style="color:#f92672">&lt;graphic&gt;</span>
-                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;image&gt;</span>
-                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                           <span style="color:#f92672">&lt;/image&gt;</span>
-                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                     <span style="color:#f92672">&lt;/graphic&gt;</span>
-                  <span style="color:#f92672">&lt;/Button&gt;</span>
-                  <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleOpen&#34;</span><span style="color:#f92672">&gt;</span>
-                     <span style="color:#f92672">&lt;graphic&gt;</span>
-                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;image&gt;</span>
-                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/open.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                           <span style="color:#f92672">&lt;/image&gt;</span>
-                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                     <span style="color:#f92672">&lt;/graphic&gt;</span>
-                  <span style="color:#f92672">&lt;/Button&gt;</span>
-                  <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleSave&#34;</span><span style="color:#f92672">&gt;</span>
-                     <span style="color:#f92672">&lt;graphic&gt;</span>
-                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-                           <span style="color:#f92672">&lt;image&gt;</span>
-                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/save.png&#34;</span> <span style="color:#f92672">/&gt;</span>
-                           <span style="color:#f92672">&lt;/image&gt;</span>
-                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
-                     <span style="color:#f92672">&lt;/graphic&gt;</span>
-                  <span style="color:#f92672">&lt;/Button&gt;</span>
-                  <span style="color:#f92672">&lt;ComboBox</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">promptText=</span><span style="color:#e6db74">&#34;선택&#34;</span><span style="color:#f92672">&gt;</span>
-                  	<span style="color:#f92672">&lt;items&gt;</span>
-                  		<span style="color:#f92672">&lt;FXCollections</span> <span style="color:#a6e22e">fx:factory=</span><span style="color:#e6db74">&#34;observableArrayList&#34;</span><span style="color:#f92672">&gt;</span>
-                  			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;공개&#34;</span> <span style="color:#f92672">/&gt;</span>
-                  			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;비공개&#34;</span> <span style="color:#f92672">/&gt;</span>
-                  		<span style="color:#f92672">&lt;/FXCollections&gt;</span>
-                  	<span style="color:#f92672">&lt;/items&gt;</span>
-                  <span style="color:#f92672">&lt;/ComboBox&gt;</span>
-              <span style="color:#f92672">&lt;/items&gt;</span>
-            <span style="color:#f92672">&lt;/ToolBar&gt;</span>
-         <span style="color:#f92672">&lt;/children&gt;</span>
-      <span style="color:#f92672">&lt;/VBox&gt;</span>
-   <span style="color:#f92672">&lt;/top&gt;</span>
-   <span style="color:#f92672">&lt;center&gt;</span>
-      <span style="color:#f92672">&lt;TextArea</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;textArea&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/center&gt;</span>
-<span style="color:#f92672">&lt;/BorderPane&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import java.lang.String?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.collections.FXCollections?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ComboBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Menu?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.MenuBar?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.MenuItem?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.SeparatorMenuItem?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.TextArea?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ToolBar?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.Image?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.image.ImageView?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.input.KeyCodeCombination?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;menuBarToolBar.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;top&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;MenuBar&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;menus&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;Menu</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;파일&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;새로만들기&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>                           	<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">shortcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleOpen&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;열기&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>                           	<span style="color:#f92672">&lt;KeyCodeCombination</span> <span style="color:#a6e22e">alt=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">code=</span><span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#a6e22e">control=</span><span style="color:#e6db74">&#34;DOWN&#34;</span> <span style="color:#a6e22e">meta=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shift=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#a6e22e">shortcut=</span><span style="color:#e6db74">&#34;UP&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/accelerator&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/open.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleSave&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;저장&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                                    <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/save.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                                 <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/MenuItem&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;SeparatorMenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;MenuItem</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleExit&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;끝내기&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/Menu&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/menus&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/MenuBar&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;ToolBar</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;40.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleNew&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/new.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleOpen&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/open.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">onAction=</span><span style="color:#e6db74">&#34;#handleSave&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;15.0&#34;</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;20.0&#34;</span> <span style="color:#a6e22e">pickOnBounds=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>                              <span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@icons/save.png&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#f92672">&lt;/graphic&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;ComboBox</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">promptText=</span><span style="color:#e6db74">&#34;선택&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                  	<span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>                  		<span style="color:#f92672">&lt;FXCollections</span> <span style="color:#a6e22e">fx:factory=</span><span style="color:#e6db74">&#34;observableArrayList&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                  			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;공개&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;비공개&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                  		<span style="color:#f92672">&lt;/FXCollections&gt;</span>
+</span></span><span style="display:flex;"><span>                  	<span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">&lt;/ComboBox&gt;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/ToolBar&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/VBox&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/top&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;center&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;TextArea</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;textArea&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span></code></pre></div><ul>
 <li>ActionEvent 처리
 <ul>
 <li>RootController.java</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.application.Platform<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.TextArea<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> TextArea textArea<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleNew</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		textArea<span style="color:#f92672">.</span><span style="color:#a6e22e">appendText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;New\n&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleOpen</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		textArea<span style="color:#f92672">.</span><span style="color:#a6e22e">appendText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Open\n&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleSave</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		textArea<span style="color:#f92672">.</span><span style="color:#a6e22e">appendText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Save\n&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleExit</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/JavaFX_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Platform;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.TextArea;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> TextArea textArea;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleNew</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		textArea.<span style="color:#a6e22e">appendText</span>(<span style="color:#e6db74">&#34;New\n&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleOpen</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		textArea.<span style="color:#a6e22e">appendText</span>(<span style="color:#e6db74">&#34;Open\n&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleSave</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		textArea.<span style="color:#a6e22e">appendText</span>(<span style="color:#e6db74">&#34;Save\n&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleExit</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		Platform.<span style="color:#a6e22e">exit</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/JavaFX_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/Untitled%201.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/JavaFX_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/Untitled%202.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/JavaFX_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/Untitled%203.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/JavaFX_%EB%A9%94%EB%89%B4%EB%B0%94%EC%99%80_%ED%88%B4%EB%B0%94/Untitled%204.png" alt="Untitled"></p>
@@ -476,13 +473,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/%EC%B0%A8%ED%8A%B8_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX, 차트 컨트롤</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/javafx_%EB%8B%A4%EC%9D%B4%EC%96%BC%EB%A1%9C%EA%B7%B8/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/javafx_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX 다이얼로그</p>
 		</a>
@@ -634,7 +631,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -642,32 +639,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

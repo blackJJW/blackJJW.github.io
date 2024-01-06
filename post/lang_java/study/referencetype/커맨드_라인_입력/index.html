@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 커맨드 라인 입력 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 커맨드 라인 입력" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/referencetype/%EC%BB%A4%EB%A7%A8%EB%93%9C_%EB%9D%BC%EC%9D%B8_%EC%9E%85%EB%A0%A5/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/referencetype/%E1%84%8F%E1%85%A5%E1%84%86%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B3_%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-13T15:00:45+09:00" />
 <meta property="article:modified_time" content="2022-07-13T15:00:45+09:00" />
 
@@ -185,8 +182,8 @@ if (!doNotTrack) {
 			<ul>
 <li>
 <p>프로그램 실행을 위해 <code>main()</code> 메소드가 필요</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{...}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {...}
+</span></span></code></pre></div><ul>
 <li>
 <p>이 메소드의 매개값인 <code>String[] args</code> 가 필요한 이유</p>
 <ul>
@@ -196,8 +193,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>“java 클래스” 뒤에 <strong>공백으로 구분된 문자열 목록</strong>을 주고 실행하면, 문자열 목록으로 구성된 String[] 배열이 생성, <code>main()</code> 메소드를 호출할 때 매개값으로 전달</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">java 클래스 문자열0 문자열1 <span style="color:#f92672">...</span> 문자열n<span style="color:#f92672">-</span>1
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%BB%A4%EB%A7%A8%EB%93%9C_%EB%9D%BC%EC%9D%B8_%EC%9E%85%EB%A0%A5/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>java 클래스 문자열0 문자열1 ... 문자열n<span style="color:#f92672">-</span>1
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%BB%A4%EB%A7%A8%EB%93%9C_%EB%9D%BC%EC%9D%B8_%EC%9E%85%EB%A0%A5/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -210,28 +207,28 @@ if (!doNotTrack) {
 <li>프로그램을 실행할 때 2개의 문자열을 주지 않으면 프로그램의 사용법을 출력하고 강제 종료</li>
 <li>2개의 문자열이 정확히 입력되었다면 2개의 문자열을 int 타입 숫자로 변환하고 덧셈 연산을 수행</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainStringArrayArgument</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>args<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 입력된 데이터 개수가 두 개가 아닐 경우
-</span><span style="color:#75715e"></span>      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;프로그램의 사용법&#34;</span><span style="color:#f92672">);</span>
-      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java MainStringArrayArgument num1 num2&#34;</span><span style="color:#f92672">);</span>
-      System<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span> <span style="color:#75715e">// 프로그램 강제 종료
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-
-    String strNum1 <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span> <span style="color:#75715e">// 첫 번째 데이터 얻기
-</span><span style="color:#75715e"></span>    String strNum2 <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span>1<span style="color:#f92672">];</span> <span style="color:#75715e">// 두 번째 데이터 얻기
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">int</span> num1 <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>strNum1<span style="color:#f92672">);</span> <span style="color:#75715e">// 문자열을 정수로 변환
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> num2 <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>strNum2<span style="color:#f92672">);</span> <span style="color:#75715e">// 문자열을 정수로 변환
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> num1 <span style="color:#f92672">+</span> num2<span style="color:#f92672">;</span>
-    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; + &#34;</span> <span style="color:#f92672">+</span> num2 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = &#34;</span> <span style="color:#f92672">+</span> result<span style="color:#f92672">);</span>
-
-  <span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainStringArrayArgument</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(args.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 2) { <span style="color:#75715e">// 입력된 데이터 개수가 두 개가 아닐 경우</span>
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;프로그램의 사용법&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;java MainStringArrayArgument num1 num2&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">exit</span>(0); <span style="color:#75715e">// 프로그램 강제 종료</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String strNum1 <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>; <span style="color:#75715e">// 첫 번째 데이터 얻기</span>
+</span></span><span style="display:flex;"><span>    String strNum2 <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>; <span style="color:#75715e">// 두 번째 데이터 얻기</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> num1 <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">parseInt</span>(strNum1); <span style="color:#75715e">// 문자열을 정수로 변환</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> num2 <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">parseInt</span>(strNum2); <span style="color:#75715e">// 문자열을 정수로 변환</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> num1 <span style="color:#f92672">+</span> num2;
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(num1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; + &#34;</span> <span style="color:#f92672">+</span> num2 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = &#34;</span> <span style="color:#f92672">+</span> result);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>
 <p>위 코드 실행 결과</p>
 <p><img src="/images/lang_java/referenceType/%EC%BB%A4%EB%A7%A8%EB%93%9C_%EB%9D%BC%EC%9D%B8_%EC%9E%85%EB%A0%A5/Untitled%202.png" alt="Untitled"></p>
@@ -304,13 +301,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/referencetype/%EB%B0%B0%EC%97%B4_%EA%B8%B8%EC%9D%B4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/referencetype/%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%B5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 배열 길이</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/referencetype/%EB%8B%A4%EC%B0%A8%EC%9B%90_%EB%B0%B0%EC%97%B4/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/referencetype/%E1%84%83%E1%85%A1%E1%84%8E%E1%85%A1%E1%84%8B%E1%85%AF%E1%86%AB_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 다차원 배열</p>
 		</a>
@@ -462,7 +459,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -470,32 +467,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

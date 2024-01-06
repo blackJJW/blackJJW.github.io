@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 익명 객체 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 익명 객체" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/nestedclassandnestedinterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/nestedclassandnestedinterface/%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%86%E1%85%A7%E1%86%BC_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-20T20:30:45+09:00" />
 <meta property="article:modified_time" content="2022-08-20T20:30:45+09:00" />
 
@@ -199,15 +196,15 @@ if (!doNotTrack) {
 <li><code>new</code> 연산자를 이용해서 자식 객체를 생성</li>
 <li>필드나 로컬 변수에 대입</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Child</span> <span style="color:#66d9ef">extends</span> Parent <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>   <span style="color:#75715e">// 자식 클래스 선언
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	Parent field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child<span style="color:#f92672">();</span>   <span style="color:#75715e">// 필드에 자식 객체를 대입
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		Parent localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child<span style="color:#f92672">();</span>   <span style="color:#75715e">// 로컬 변수에 자식 객체를 대입
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Child</span> <span style="color:#66d9ef">extends</span> Parent { }   <span style="color:#75715e">// 자식 클래스 선언</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	Parent field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child();   <span style="color:#75715e">// 필드에 자식 객체를 대입</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>() {
+</span></span><span style="display:flex;"><span>		Parent localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child();   <span style="color:#75715e">// 로컬 변수에 자식 객체를 대입</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>자식 클래스가 재사용되지 않고, 오로지 해당 필드와 변수의 초기값으로만 사용할 경우</p>
 <ul>
@@ -219,11 +216,11 @@ if (!doNotTrack) {
 <ul>
 <li>주의할 점 : 하나의 실행문이므로 끝에는 세미콜론( ; )을 붙여야 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">부모클래스 <span style="color:#f92672">[</span>필드 <span style="color:#f92672">|</span> 변수<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 부모클래스<span style="color:#f92672">(</span>매개값<span style="color:#f92672">,</span> <span style="color:#f92672">...</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span><span style="color:#f92672">};</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>부모클래스 <span style="color:#f92672">[</span>필드 <span style="color:#f92672">|</span> 변수<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 부모클래스(매개값, ... ) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ul>
 <li><code>부모클래스(매개값, … ) { }</code>은 부모 클래스를 상속해서 중괄호 <code>{ }</code>와 같이 자식 클래스를 선언하라는 뜻</li>
 <li><code>new</code> 연산자는 이렇게 선언된 자식 클래스를 객체로 생성</li>
 <li><code>부모클래스(매개값, …)</code>은 부모 생성자를 호출하는 코드
@@ -238,48 +235,48 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>필드를 선언할 때 초기값으로 익명 자식 객체를 생성해서 대입</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	Parent field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Parent<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>   <span style="color:#75715e">// A클래스의 필드 선언
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> childField<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-		<span style="color:#a6e22e">@Override</span>   <span style="color:#75715e">// Parent의 메소드를 오버라이딩
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	Parent field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Parent() {   <span style="color:#75715e">// A클래스의 필드 선언</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> childField;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span>() { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>   <span style="color:#75715e">// Parent의 메소드를 오버라이딩</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span>() { }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>메소드 내에서 로컬 변수를 선언할 때 초기값으로 익명 자식 객체를 생성해서 대입</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>     <span style="color:#75715e">// 로컬 변수 선언
-</span><span style="color:#75715e"></span>		Parent localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Parent<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">int</span> childField<span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-			<span style="color:#a6e22e">@Override</span>   <span style="color:#75715e">// Parent의 메소드를 오버라이딩
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>() {     <span style="color:#75715e">// 로컬 변수 선언</span>
+</span></span><span style="display:flex;"><span>		Parent localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Parent() {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> childField;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span>() { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>   <span style="color:#75715e">// Parent의 메소드를 오버라이딩</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span>() { }
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>메소드의 매개 변수가 부모 타입일 경우 메소드 호출 코드에서 익명 자식 객체를 생성해서 매개값으로 대입 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">(</span>Parent parent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		method1<span style="color:#f92672">(</span>   <span style="color:#75715e">// method1() 메소드 호출
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">new</span> Parent<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>   <span style="color:#75715e">// method1()의 매개값으로 익명 자식 객체를 대입
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">int</span> childField<span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-				<span style="color:#a6e22e">@Override</span>
-				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>(Parent parent) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>() {
+</span></span><span style="display:flex;"><span>		method1(   <span style="color:#75715e">// method1() 메소드 호출</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Parent() {   <span style="color:#75715e">// method1()의 매개값으로 익명 자식 객체를 대입</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">int</span> childField;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">childMethod</span>() { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">parentMethod</span>() { }
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>익명 자식 객체에 새롭게 정의된 필드와 메소드는 익명 자식 객체 내부에서만 사용</p>
 <ul>
@@ -307,85 +304,85 @@ if (!doNotTrack) {
 <ul>
 <li>부모 클래스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;7시에 일어남&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;7시에 일어남&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Anonymous.java</p>
 <ul>
 <li>익명 자식 객체 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Anonymous</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#75715e">// 필드 초기값으로 대입
-</span><span style="color:#75715e"></span>	Person field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 필드 선언돠 초기값 대입
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;출근&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;6시에 일어남&#34;</span><span style="color:#f92672">);</span>
-			work<span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">};</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 로컬 변수값으로 대입
-</span><span style="color:#75715e"></span>		Person localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 로컬 변수 선언과 초기값 대입
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">walk</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;산책&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;7시에 일어남&#34;</span><span style="color:#f92672">);</span>
-				walk<span style="color:#f92672">();</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-		<span style="color:#75715e">// 로컬 변수 사용
-</span><span style="color:#75715e"></span>		localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">wake</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">(</span>Person person<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		person<span style="color:#f92672">.</span><span style="color:#a6e22e">wake</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Anonymous</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드 초기값으로 대입</span>
+</span></span><span style="display:flex;"><span>	Person field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person() { <span style="color:#75715e">// 필드 선언돠 초기값 대입</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span>() {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;출근&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span>() {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;6시에 일어남&#34;</span>);
+</span></span><span style="display:flex;"><span>			work();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 로컬 변수값으로 대입</span>
+</span></span><span style="display:flex;"><span>		Person localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person() { <span style="color:#75715e">// 로컬 변수 선언과 초기값 대입</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">walk</span>() {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;산책&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span>() {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;7시에 일어남&#34;</span>);
+</span></span><span style="display:flex;"><span>				walk();
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 로컬 변수 사용</span>
+</span></span><span style="display:flex;"><span>		localVar.<span style="color:#a6e22e">wake</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>(Person person) {
+</span></span><span style="display:flex;"><span>		person.<span style="color:#a6e22e">wake</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>AnnoymousEx.java</p>
 <ul>
 <li>익명 자식 객체 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnonymousEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Anonymous anony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Anonymous<span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// 익명 객체 필드 사용
-</span><span style="color:#75715e"></span>		anony<span style="color:#f92672">.</span><span style="color:#a6e22e">field</span><span style="color:#f92672">.</span><span style="color:#a6e22e">wake</span><span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// 익명 객체 로컬 변수 사용
-</span><span style="color:#75715e"></span>		anony<span style="color:#f92672">.</span><span style="color:#a6e22e">method1</span><span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// 익명 객체 매객값 사용
-</span><span style="color:#75715e"></span>		anony<span style="color:#f92672">.</span><span style="color:#a6e22e">method2</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Person<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 매개값
-</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">study</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-						System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;공부&#34;</span><span style="color:#f92672">);</span>
-					<span style="color:#f92672">}</span>
-					<span style="color:#a6e22e">@Override</span>
-					<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-						System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;8시에 일어남&#34;</span><span style="color:#f92672">);</span>
-						study<span style="color:#f92672">();</span>					<span style="color:#f92672">}</span>
-				<span style="color:#f92672">}</span>
-			<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnonymousEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Anonymous anony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Anonymous();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 필드 사용</span>
+</span></span><span style="display:flex;"><span>		anony.<span style="color:#a6e22e">field</span>.<span style="color:#a6e22e">wake</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 로컬 변수 사용</span>
+</span></span><span style="display:flex;"><span>		anony.<span style="color:#a6e22e">method1</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 매객값 사용</span>
+</span></span><span style="display:flex;"><span>		anony.<span style="color:#a6e22e">method2</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Person() { <span style="color:#75715e">// 매개값</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">study</span>() {
+</span></span><span style="display:flex;"><span>						System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;공부&#34;</span>);
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wake</span>() {
+</span></span><span style="display:flex;"><span>						System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;8시에 일어남&#34;</span>);
+</span></span><span style="display:flex;"><span>						study();					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -401,26 +398,26 @@ if (!doNotTrack) {
 <li><code>new</code> 연산자를 이용해서 구현 객체를 생성</li>
 <li>필드나 로컬 변수에 대입하는 것이 기본</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TV</span> <span style="color:#66d9ef">implements</span> RemoteControl <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TV<span style="color:#f92672">();</span>   <span style="color:#75715e">// 필드에 구현 객체를 대입
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TV<span style="color:#f92672">();</span>   <span style="color:#75715e">// 로컬 변수에 구현 객체를 대입
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TV</span> <span style="color:#66d9ef">implements</span> RemoteControl { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TV();   <span style="color:#75715e">// 필드에 구현 객체를 대입</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>() {
+</span></span><span style="display:flex;"><span>		RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TV();   <span style="color:#75715e">// 로컬 변수에 구현 객체를 대입</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>구현 클래스가 재사용되지 않고, 오로지 해당 필드와 변수의 초기값으로만 사용되는 경우</p>
 <ul>
 <li>익명 구현 객체를 초기값으로 대입하는 것이 좋다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">인터페이스 <span style="color:#f92672">[</span>필드 <span style="color:#f92672">|</span> 변수<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 인터페이스<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 인터페이스에 선언된 추상 메소드의 실체 메소드 선언
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span><span style="color:#f92672">};</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>인터페이스 <span style="color:#f92672">[</span>필드 <span style="color:#f92672">|</span> 변수<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 인터페이스() {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 인터페이스에 선언된 추상 메소드의 실체 메소드 선언</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ul>
 <li><code>인터페이스() {}</code>는 인터페이스를 구현해서 중괄호 <code>{}</code>와 같이 클래스를 선언하라는 의미
 <ul>
 <li><code>new</code> 연산자는 이렇게 선언된 클래스를 객체로 생성</li>
@@ -441,120 +438,120 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) 필드를 선언할 때 초기값으로 익명 구현 객체를 생성해서 대입</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 클래스 A의 필드 선언
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>     <span style="color:#75715e">// Remotecontrol 인터페이스의 추상 메소드에 대한 실체 메소드
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">};</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl() { <span style="color:#75715e">// 클래스 A의 필드 선언</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>     <span style="color:#75715e">// Remotecontrol 인터페이스의 추상 메소드에 대한 실체 메소드</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() { }
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 메소드 내에서 로컬 변수를 선언할 때 초기값으로 익명 구현 객체를 생성해서 대입</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">vodi <span style="color:#a6e22e">method</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 로컬 변수 선언
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>    <span style="color:#75715e">// RemoteControl 인터페이스의 추상 메소드에 대한 실체 메소드
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>vodi <span style="color:#a6e22e">method</span>() {
+</span></span><span style="display:flex;"><span>	RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl() { <span style="color:#75715e">// 로컬 변수 선언</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>    <span style="color:#75715e">// RemoteControl 인터페이스의 추상 메소드에 대한 실체 메소드</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() { }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 메소드의 매개 변수가 인터페이스 타입일 경우</p>
 <ul>
 <li>메소드 호출 코드에서 익명 구현 객체를 생성해서 매개값으로 대입 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">(</span>RemoteConstrol rc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		method1<span style="color:#f92672">(</span>    <span style="color:#75715e">// method1() 메소드 호출
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>   <span style="color:#75715e">// method1()의 매개값으로 익명 구현 객체를 대입
-</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">@Override</span>
-				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>(RemoteConstrol rc) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>() {
+</span></span><span style="display:flex;"><span>		method1(    <span style="color:#75715e">// method1() 메소드 호출</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> RemoteControl() {   <span style="color:#75715e">// method1()의 매개값으로 익명 구현 객체를 대입</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() { }
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>
 <p>RemoteControl.java</p>
 <ul>
 <li>인터페이스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RemoteControl</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">RemoteControl</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>();
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Annoymous.java</p>
 <ul>
 <li>익명 구현 클래스와 객체 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Annonymous</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#75715e">// 필드 초기값으로 대입
-</span><span style="color:#75715e"></span>	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 필드 선언과 초기값 대입
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TV On&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TV Off&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">};</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 로컬 변수값으로 대입
-</span><span style="color:#75715e"></span>		RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 로컬 병수 선언과 초기값 대입
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Audio On&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Audio Off&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-		<span style="color:#75715e">// 로컬 변수 사용
-</span><span style="color:#75715e"></span>		localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">(</span>RemoteControl rc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		rc<span style="color:#f92672">.</span><span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Annonymous</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드 초기값으로 대입</span>
+</span></span><span style="display:flex;"><span>	RemoteControl field <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl() { <span style="color:#75715e">// 필드 선언과 초기값 대입</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TV On&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span>() {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TV Off&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 로컬 변수값으로 대입</span>
+</span></span><span style="display:flex;"><span>		RemoteControl localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RemoteControl() { <span style="color:#75715e">// 로컬 병수 선언과 초기값 대입</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Audio On&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span>() {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Audio Off&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 로컬 변수 사용</span>
+</span></span><span style="display:flex;"><span>		localVar.<span style="color:#a6e22e">turnOn</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>(RemoteControl rc) {
+</span></span><span style="display:flex;"><span>		rc.<span style="color:#a6e22e">turnOn</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>AnnonymousEx.java</p>
 <ul>
 <li>익명 구현 클래스와 객체 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnnoymousEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Annonymous annony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Annonymous<span style="color:#f92672">();</span>
-		<span style="color:#75715e">// 익명 객체 필드 사용
-</span><span style="color:#75715e"></span>		annony<span style="color:#f92672">.</span><span style="color:#a6e22e">field</span><span style="color:#f92672">.</span><span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span>
-		<span style="color:#75715e">// 익명 객체 로컬 변수 사용
-</span><span style="color:#75715e"></span>		annony<span style="color:#f92672">.</span><span style="color:#a6e22e">method1</span><span style="color:#f92672">();</span>
-		<span style="color:#75715e">// 익명 객체 매개값 사용
-</span><span style="color:#75715e"></span>		annony<span style="color:#f92672">.</span><span style="color:#a6e22e">method2</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> RemoteControl<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>  <span style="color:#75715e">// 매개값
-</span><span style="color:#75715e"></span>					<span style="color:#a6e22e">@Override</span>
-					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-						System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Smart TV On&#34;</span><span style="color:#f92672">);</span>
-					<span style="color:#f92672">}</span>
-					<span style="color:#a6e22e">@Override</span>
-					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-						System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Smart TV Off&#34;</span><span style="color:#f92672">);</span>
-					<span style="color:#f92672">}</span>
-				<span style="color:#f92672">}</span>
-		<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnnoymousEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Annonymous annony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Annonymous();
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 필드 사용</span>
+</span></span><span style="display:flex;"><span>		annony.<span style="color:#a6e22e">field</span>.<span style="color:#a6e22e">turnOn</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 로컬 변수 사용</span>
+</span></span><span style="display:flex;"><span>		annony.<span style="color:#a6e22e">method1</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 익명 객체 매개값 사용</span>
+</span></span><span style="display:flex;"><span>		annony.<span style="color:#a6e22e">method2</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> RemoteControl() {  <span style="color:#75715e">// 매개값</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOn</span>() {
+</span></span><span style="display:flex;"><span>						System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Smart TV On&#34;</span>);
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">turnOff</span>() {
+</span></span><span style="display:flex;"><span>						System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Smart TV Off&#34;</span>);
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -567,23 +564,23 @@ if (!doNotTrack) {
 <ul>
 <li>UI 클래스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Button</span> <span style="color:#f92672">{</span>
-
-	OnClickListener listener<span style="color:#f92672">;</span>  <span style="color:#75715e">// 인터페이스 타입 필드
-</span><span style="color:#75715e"></span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span>OnClickListener listener<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 매개변수의 다형성
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">listener</span> <span style="color:#f92672">=</span> listener<span style="color:#f92672">;</span>                   
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">touch</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>   <span style="color:#75715e">// 구현 객체의 onClick() 메소드 호출
-</span><span style="color:#75715e"></span>		listener<span style="color:#f92672">.</span><span style="color:#a6e22e">onClick</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">{</span> <span style="color:#75715e">// 중첩 인터페이스
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Button</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	OnClickListener listener;  <span style="color:#75715e">// 인터페이스 타입 필드</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setOnClickListener</span>(OnClickListener listener) { <span style="color:#75715e">// 매개변수의 다형성</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">listener</span> <span style="color:#f92672">=</span> listener;                   
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">touch</span>() {   <span style="color:#75715e">// 구현 객체의 onClick() 메소드 호출</span>
+</span></span><span style="display:flex;"><span>		listener.<span style="color:#a6e22e">onClick</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">OnClickListener</span>{ <span style="color:#75715e">// 중첩 인터페이스</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>중첩 인터페이스(OnClickListener) 타입으로 필드(listener)를 선언</li>
 <li>Setter 메소드(<code>setOnClickListener()</code>)로 외부에서 구현 객체를 필드에 대입</li>
 <li>버튼 이벤트가 발생할 경우(<code>touch()</code> 메소드가 실행될 때)
@@ -601,48 +598,48 @@ if (!doNotTrack) {
 <li>첫 번째 button1의 클릭 이벤트 처리는 필드로 선언한 익명 구현 객체가 담당</li>
 <li>두 번째 button2의 클릭 이벤트 처리는 <code>setOnClickListener()</code>를 호출할 때 매개값으로 준 익명 구현 객체가 담당</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Window</span> <span style="color:#f92672">{</span>
-
-	Button button1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">();</span>
-	Button button2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">();</span>
-
-	<span style="color:#75715e">// 필드 초기값으로 대입
-</span><span style="color:#75715e"></span>	Button<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span> listener <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;전화를 건다.&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">};</span>
-
-	Window<span style="color:#f92672">(){</span>
-		button1<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span>listener<span style="color:#f92672">);</span> <span style="color:#75715e">// 매개값으로 필드 대입
-</span><span style="color:#75715e"></span>		button2<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Button<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			<span style="color:#75715e">// 매개값으로 익명 구현 객체 대입
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;메세지를 보낸다.&#34;</span><span style="color:#f92672">);</span>
-
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">});</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Window</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Button button1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button();
+</span></span><span style="display:flex;"><span>	Button button2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드 초기값으로 대입</span>
+</span></span><span style="display:flex;"><span>	Button.<span style="color:#a6e22e">OnClickListener</span> listener <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button.<span style="color:#a6e22e">OnClickListener</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>() {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;전화를 건다.&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Window(){
+</span></span><span style="display:flex;"><span>		button1.<span style="color:#a6e22e">setOnClickListener</span>(listener); <span style="color:#75715e">// 매개값으로 필드 대입</span>
+</span></span><span style="display:flex;"><span>		button2.<span style="color:#a6e22e">setOnClickListener</span>(<span style="color:#66d9ef">new</span> Button.<span style="color:#a6e22e">OnClickListener</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 매개값으로 익명 구현 객체 대입</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>() {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;메세지를 보낸다.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		});
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Main.java</p>
 <ul>
 <li>실행 클래스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Window w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Window<span style="color:#f92672">();</span>
-		w<span style="color:#f92672">.</span><span style="color:#a6e22e">button1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">touch</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 버튼 클릭
-</span><span style="color:#75715e"></span>		w<span style="color:#f92672">.</span><span style="color:#a6e22e">button2</span><span style="color:#f92672">.</span><span style="color:#a6e22e">touch</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 버튼 클릭
-</span><span style="color:#75715e"></span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Window w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Window();
+</span></span><span style="display:flex;"><span>		w.<span style="color:#a6e22e">button1</span>.<span style="color:#a6e22e">touch</span>(); <span style="color:#75715e">// 버튼 클릭</span>
+</span></span><span style="display:flex;"><span>		w.<span style="color:#a6e22e">button2</span>.<span style="color:#a6e22e">touch</span>(); <span style="color:#75715e">// 버튼 클릭</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -687,57 +684,57 @@ if (!doNotTrack) {
 <ul>
 <li>인터페이스</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Calculatable</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Calculatable</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Anonymous.java</p>
 <ul>
 <li>익명 객체의 로컬 변수 사용</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Anonymous</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> field<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> arg1<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> arg2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> var1 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">int</span> var2 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-
-		field <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
-
-		<span style="color:#75715e">//arg1 = 20; //(x)
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">//arg2 = 20; //(x)
-</span><span style="color:#75715e"></span>
-		<span style="color:#75715e">//var1 = 30; //(x)
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">//var2 = 30; //(x)
-</span><span style="color:#75715e"></span>
-		Calculatable calc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Calculatable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> field <span style="color:#f92672">+</span> arg1 <span style="color:#f92672">+</span> arg2 <span style="color:#f92672">+</span> var1 <span style="color:#f92672">+</span> var2<span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>calc<span style="color:#f92672">.</span><span style="color:#a6e22e">sum</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Anonymous</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> field;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> arg1, <span style="color:#66d9ef">int</span> arg2) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> var1 <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> var2 <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		field <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//arg1 = 20; //(x)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//arg2 = 20; //(x)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//var1 = 30; //(x)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//var2 = 30; //(x)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Calculatable calc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Calculatable() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>() {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> field <span style="color:#f92672">+</span> arg1 <span style="color:#f92672">+</span> arg2 <span style="color:#f92672">+</span> var1 <span style="color:#f92672">+</span> var2;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(calc.<span style="color:#a6e22e">sum</span>());
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%205.png" alt="Untitled"></p>
 </li>
 <li>
 <p>AnonymousEx.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnonymousEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Anonymous anony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Anonymous<span style="color:#f92672">();</span>
-		anony<span style="color:#f92672">.</span><span style="color:#a6e22e">method</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%206.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnonymousEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Anonymous anony <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Anonymous();
+</span></span><span style="display:flex;"><span>		anony.<span style="color:#a6e22e">method</span>(0, 0);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/nestedClassAndNestedInterface/%EC%9D%B5%EB%AA%85_%EA%B0%9D%EC%B2%B4/Untitled%206.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -770,13 +767,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/nestedclassandnestedinterface/%EC%A4%91%EC%B2%A9_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/nestedclassandnestedinterface/%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8E%E1%85%A5%E1%86%B8_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 중첩 인터페이스</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/projects/%EC%9E%90%EC%A0%84%EA%B1%B0_%EA%B2%BD%EB%A1%9C_find_dust/" rel="next">
+		<a class="pager__link" href="/post/projects/%E1%84%8C%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9_find_dust/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Project][Spring Boot] 자전거 경로 안내와 이동 거리 동안의 미세먼지 흡입량 계산 서비스</p>
 		</a>
@@ -928,7 +925,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -936,32 +933,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

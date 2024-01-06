@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 스트림 파이프라인, 중간 처리와 최종 처리 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 스트림 파이프라인, 중간 처리와 최종 처리" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC_%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8_%EC%A4%91%EA%B0%84_%EC%B2%98%EB%A6%AC%EC%99%80_%EC%B5%9C%EC%A2%85_%EC%B2%98%EB%A6%AC/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%80%E1%85%A1%E1%86%AB_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AA_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-26T21:40:30+09:00" />
 <meta property="article:modified_time" content="2022-11-26T21:40:30+09:00" />
 
@@ -222,20 +219,20 @@ if (!doNotTrack) {
 <ul>
 <li>파이프라인을 자바 코드로 표현</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Stream<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> maleFemaleStream <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
-Stream<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> maleStream <span style="color:#f92672">=</span> maleFemaleStream<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>m <span style="color:#f92672">-&gt;</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">);</span>
-IntStream ageStream <span style="color:#f92672">=</span> maleStream<span style="color:#f92672">.</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>Member <span style="color:#f92672">::</span> getAge<span style="color:#f92672">);</span>
-OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream<span style="color:#f92672">.</span><span style="color:#a6e22e">average</span><span style="color:#f92672">();</span>
-<span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> optionalDouble<span style="color:#f92672">.</span><span style="color:#a6e22e">getAsDouble</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> maleFemaleStream <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>();
+</span></span><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> maleStream <span style="color:#f92672">=</span> maleFemaleStream.<span style="color:#a6e22e">filter</span>(m <span style="color:#f92672">-&gt;</span> m.<span style="color:#a6e22e">getSex</span>() <span style="color:#f92672">==</span> Member.<span style="color:#a6e22e">MALE</span>);
+</span></span><span style="display:flex;"><span>IntStream ageStream <span style="color:#f92672">=</span> maleStream.<span style="color:#a6e22e">mapToInt</span>(Member :: getAge);
+</span></span><span style="display:flex;"><span>OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream.<span style="color:#a6e22e">average</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> optionalDouble.<span style="color:#a6e22e">getAsDouble</span>();
+</span></span></code></pre></div><ul>
 <li>로컬 변수를 생략하고 연결하면 다음과 같은 형태의 파이프라인 코드만 남긴다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>     <span style="color:#75715e">// 오리지날 스트림
-</span><span style="color:#75715e"></span>					<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>m <span style="color:#f92672">-&gt;</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">Male</span><span style="color:#f92672">)</span> <span style="color:#75715e">// 중간 처리 스트림
-</span><span style="color:#75715e"></span>					<span style="color:#f92672">.</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>Member <span style="color:#f92672">::</span> getAge<span style="color:#f92672">)</span>
-					<span style="color:#f92672">.</span><span style="color:#a6e22e">average</span><span style="color:#f92672">()</span> <span style="color:#75715e">// 최종 처리
-</span><span style="color:#75715e"></span>					<span style="color:#f92672">.</span><span style="color:#a6e22e">getAsDouble</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()     <span style="color:#75715e">// 오리지날 스트림</span>
+</span></span><span style="display:flex;"><span>					.<span style="color:#a6e22e">filter</span>(m <span style="color:#f92672">-&gt;</span> m.<span style="color:#a6e22e">getSex</span>() <span style="color:#f92672">==</span> Member.<span style="color:#a6e22e">Male</span>) <span style="color:#75715e">// 중간 처리 스트림</span>
+</span></span><span style="display:flex;"><span>					.<span style="color:#a6e22e">mapToInt</span>(Member :: getAge)
+</span></span><span style="display:flex;"><span>					.<span style="color:#a6e22e">average</span>() <span style="color:#75715e">// 최종 처리</span>
+</span></span><span style="display:flex;"><span>					.<span style="color:#a6e22e">getAsDouble</span>();
+</span></span></code></pre></div><ul>
 <li><code>filter(m -&gt; m.getSex() == Member.MALE)</code>는 남자 Member 객체를 요소로 하는 새로운 스트림을 생성</li>
 <li><code>mapToInt(Member :: getAge())</code>는 Member 객체를 age 값으로 매핑해서 age를 새로운 요소로하는 새로운 스트림을 생성</li>
 <li><code>average()</code> 메소드는 age 요소들의 평균을 OptionalDouble에 저장
@@ -250,53 +247,53 @@ OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream<spa
 <ul>
 <li>StreamPipelinesEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StreamPipelinesEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		List<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">,</span> 30<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DEF&#34;</span><span style="color:#f92672">,</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">,</span> 20<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GHI&#34;</span><span style="color:#f92672">,</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">,</span> 45<span style="color:#f92672">),</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;JKL&#34;</span><span style="color:#f92672">,</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">,</span> 27<span style="color:#f92672">)</span>
-				<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>m <span style="color:#f92672">-&gt;</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Member<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>Member <span style="color:#f92672">::</span> getAge<span style="color:#f92672">)</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">average</span><span style="color:#f92672">()</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">getAsDouble</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;남자 평균 나이 : &#34;</span> <span style="color:#f92672">+</span> ageAvg<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC_%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8,_%EC%A4%91%EA%B0%84_%EC%B2%98%EB%A6%AC%EC%99%80_%EC%B5%9C%EC%A2%85_%EC%B2%98%EB%A6%AC/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StreamPipelinesEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, Member.<span style="color:#a6e22e">MALE</span>, 30),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;DEF&#34;</span>, Member.<span style="color:#a6e22e">FEMALE</span>, 20),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;GHI&#34;</span>, Member.<span style="color:#a6e22e">MALE</span>, 45),
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;JKL&#34;</span>, Member.<span style="color:#a6e22e">FEMALE</span>, 27)
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> ageAvg <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">filter</span>(m <span style="color:#f92672">-&gt;</span> m.<span style="color:#a6e22e">getSex</span>() <span style="color:#f92672">==</span> Member.<span style="color:#a6e22e">MALE</span>)
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">mapToInt</span>(Member :: getAge)
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">average</span>()
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">getAsDouble</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;남자 평균 나이 : &#34;</span> <span style="color:#f92672">+</span> ageAvg);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC_%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8,_%EC%A4%91%EA%B0%84_%EC%B2%98%EB%A6%AC%EC%99%80_%EC%B5%9C%EC%A2%85_%EC%B2%98%EB%A6%AC/Untitled%202.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 회원 클래스</p>
 <ul>
 <li>Member.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> MALE <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> FEMALE <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> sex<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> sex<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getSex</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> sex<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> age<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> MALE <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> FEMALE <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> sex;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span>(String name, <span style="color:#66d9ef">int</span> sex, <span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sex</span> <span style="color:#f92672">=</span> sex;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getSex</span>() { <span style="color:#66d9ef">return</span> sex; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span>() { <span style="color:#66d9ef">return</span> age; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -326,13 +323,13 @@ OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream<spa
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C%EB%B6%80%ED%84%B0_%EC%8A%A4%ED%8A%B8%EB%A6%BC_%EC%96%BB%EA%B8%B0/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%85%E1%85%A9%E1%84%87%E1%85%AE%E1%84%90%E1%85%A5_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7_%E1%84%8B%E1%85%A5%E1%86%AE%E1%84%80%E1%85%B5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 디렉토리로부터 스트림 얻기</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EC%A4%91%EA%B0%84_%EC%B2%98%EB%A6%AC_%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80_%EC%B5%9C%EC%A2%85_%EC%B2%98%EB%A6%AC_%EB%A9%94%EC%86%8C%EB%93%9C/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%80%E1%85%A1%E1%86%AB_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3%E1%84%8B%E1%85%AA_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 스트림 파이프라인, 중간 처리 메소드와 최종 처리 메소드</p>
 		</a>
@@ -484,7 +481,7 @@ OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream<spa
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -492,32 +489,6 @@ OptionalDouble optionalDouble <span style="color:#f92672">=</span> ageStream<spa
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

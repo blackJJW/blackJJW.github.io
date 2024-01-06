@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[JavaScript] 객체를 처리하는 함수 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[JavaScript] 객체를 처리하는 함수" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/class/javascript_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%85%E1%85%B3%E1%86%AF_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-17T18:30:45+09:00" />
 <meta property="article:modified_time" content="2022-06-17T18:30:45+09:00" />
 
@@ -185,32 +182,32 @@ if (!doNotTrack) {
 			<ul>
 <li>
 <p>기능을 단순하게 계산하는 것 보다는 <strong>함수로 구현</strong>하는 것이 <strong>확장성을 고려했을 때 좋은 방법</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span>&gt;
-	<span style="color:#75715e">// 객체를 선언
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> []
-  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">85</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">95</span> })
-  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Amy&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">76</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">96</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">91</span> })
-  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Jack&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">98</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">60</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">93</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">77</span> })
-  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ann&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">70</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> })
-  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tom&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">94</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">76</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">82</span> })
-
-	<span style="color:#75715e">// 객체를 처리하는 함수를 선언
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getSumOf</span> (<span style="color:#a6e22e">student</span>) {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">국어</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">영어</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">studnet</span>.<span style="color:#a6e22e">수학</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">과학</span>
-	}
-
-	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAverageOf</span> (<span style="color:#a6e22e">student</span>) {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getSumOf</span>(<span style="color:#a6e22e">student</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>
-	}
-
-	<span style="color:#75715e">// 출력
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;이름\t총점\t평균\n&#39;</span>
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">students</span>) {
-  	<span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">이름</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">t</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">getSumOf</span>(<span style="color:#a6e22e">s</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">점 </span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">t</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">getAverageOf</span>(<span style="color:#a6e22e">s</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">점</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">n`</span>
-  }
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>)
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">85</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">95</span> })
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Amy&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">76</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">96</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">91</span> })
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Jack&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">98</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">60</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">93</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">77</span> })
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ann&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">70</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> })
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">이름</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tom&#39;</span>, <span style="color:#a6e22e">국어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">87</span>, <span style="color:#a6e22e">영어</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">94</span>, <span style="color:#a6e22e">수학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">76</span>, <span style="color:#a6e22e">과학</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">82</span> })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 객체를 처리하는 함수를 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getSumOf</span> (<span style="color:#a6e22e">student</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">국어</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">영어</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">studnet</span>.<span style="color:#a6e22e">수학</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">과학</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAverageOf</span> (<span style="color:#a6e22e">student</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getSumOf</span>(<span style="color:#a6e22e">student</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;이름\t총점\t평균\n&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">students</span>) {
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">output</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">이름</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">t</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">getSumOf</span>(<span style="color:#a6e22e">s</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">점 </span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">t</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">getAverageOf</span>(<span style="color:#a6e22e">s</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">점</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">n`</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>)
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_2/JavaScript_%EA%B0%9D%EC%B2%B4%EB%A5%BC_%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94_%ED%95%A8%EC%88%98/Untitled.png" alt="Untitled"></p>
 <ul>
 <li>전체적인 코드의 길이는 길어졌진만, <strong>객체를 만드는 부분</strong>과 <strong>활용하는 부분</strong>으로 나뉨</li>
 <li>객체에 더 많은 기능을 추가하게 되었을 때 <strong>객체를 쉽게 유지보수가 가능</strong></li>
@@ -245,13 +242,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/class/javascript_%EA%B0%99%EC%9D%80_%ED%98%95%ED%83%9C%EC%9D%98_%EA%B0%9D%EC%B2%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/class/javascript_%E1%84%80%E1%85%A1%E1%87%80%E1%84%8B%E1%85%B3%E1%86%AB_%E1%84%92%E1%85%A7%E1%86%BC%E1%84%90%E1%85%A2%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[JavaScript] 같은 형태의 객체 만들기</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/algorithm/lang_python/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80/" rel="next">
+		<a class="pager__link" href="/post/algorithm/lang_python/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Algorithm][Python] 알고리즘이란?</p>
 		</a>
@@ -403,7 +400,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -411,32 +408,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

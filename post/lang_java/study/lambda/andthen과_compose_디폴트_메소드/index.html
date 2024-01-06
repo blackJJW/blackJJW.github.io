@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 람다식, andThen()과 compose() 디폴트 메소드 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 람다식, andThen()과 compose() 디폴트 메소드" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/lambda/andthen%EA%B3%BC_compose_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/lambda/andthen%E1%84%80%E1%85%AA_compose_%E1%84%83%E1%85%B5%E1%84%91%E1%85%A9%E1%86%AF%E1%84%90%E1%85%B3_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-05T12:40:30+09:00" />
 <meta property="article:modified_time" content="2022-11-05T12:40:30+09:00" />
 
@@ -200,9 +197,9 @@ if (!doNotTrack) {
 <li><code>andThen()</code>과 <code>compose()</code>의 차이점은 어떤 함수적 인터페이스부터 먼저 처리하느냐이다.</li>
 </ul>
 <h3 id="andthen"><code>andThen()</code></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">인터페이스AB <span style="color:#f92672">=</span> 인터페이스A<span style="color:#f92672">.</span><span style="color:#a6e22e">andThen</span><span style="color:#f92672">(</span>인터페이스B<span style="color:#f92672">);</span>
-최종결과 <span style="color:#f92672">=</span> 인터페이스AB<span style="color:#f92672">.</span><span style="color:#a6e22e">method</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>인터페이스AB <span style="color:#f92672">=</span> 인터페이스A.<span style="color:#a6e22e">andThen</span>(인터페이스B);
+</span></span><span style="display:flex;"><span>최종결과 <span style="color:#f92672">=</span> 인터페이스AB.<span style="color:#a6e22e">method</span>();
+</span></span></code></pre></div><ul>
 <li>인터페이스AB의 <code>method()</code>를 호출하면 우선 인터페이스A부터 처리하고 결과를 인터페이스B의 매개값으로 제공</li>
 <li>인터페이스B는 제공받은 매개값을 가지고 처리한 후 최종 결과를 리턴</li>
 </ul>
@@ -212,9 +209,9 @@ if (!doNotTrack) {
 <li>인터페이스AB의 method()를 호출하면 우선 인터페이스B부터 처리하고 결과를 인터페이스A의 매개값으로 제공</li>
 <li>인터페이스A는 제공받은 매개값을 가지고 처리한 후 최종 결과를 리턴</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">인터페이스AB <span style="color:#f92672">=</span> 인터페이스A<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>인터페이스B<span style="color:#f92672">);</span>
-최종결과 <span style="color:#f92672">=</span> 인터페이스AB<span style="color:#f92672">.</span><span style="color:#a6e22e">method</span><span style="color:#f92672">();</span>
-</code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>인터페이스AB <span style="color:#f92672">=</span> 인터페이스A.<span style="color:#a6e22e">compare</span>(인터페이스B);
+</span></span><span style="display:flex;"><span>최종결과 <span style="color:#f92672">=</span> 인터페이스AB.<span style="color:#a6e22e">method</span>();
+</span></span></code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p><code>andThen()</code>과 <code>compose()</code> 디폴트 메소드를 제공하는 <code>java.util.function</code> 패키지의 함수적 인터페이스</p>
@@ -325,68 +322,68 @@ if (!doNotTrack) {
 <li>두 번째 <code>Consumer&lt;Member&gt;</code>는 아이디를 출력</li>
 <li>ConsumerAndThenEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.function.Consumer<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsumerAndThenEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerA <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>m<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;consumerA : &#34;</span> <span style="color:#f92672">+</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-		<span style="color:#f92672">};</span>
-
-		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerB <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>m<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;consumerB : &#34;</span> <span style="color:#f92672">+</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
-		<span style="color:#f92672">};</span>
-
-		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerAB <span style="color:#f92672">=</span> consumerA<span style="color:#f92672">.</span><span style="color:#a6e22e">andThen</span><span style="color:#f92672">(</span>consumerB<span style="color:#f92672">);</span>
-
-		consumerAB<span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">));</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.function.Consumer;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsumerAndThenEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerA <span style="color:#f92672">=</span> (m) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;consumerA : &#34;</span> <span style="color:#f92672">+</span> m.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerB <span style="color:#f92672">=</span> (m) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;consumerB : &#34;</span> <span style="color:#f92672">+</span> m.<span style="color:#a6e22e">getId</span>());
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Consumer<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">&gt;</span> consumerAB <span style="color:#f92672">=</span> consumerA.<span style="color:#a6e22e">andThen</span>(consumerB);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		consumerAB.<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#66d9ef">null</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%202.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 회원 클래스</p>
 <ul>
 <li>Member.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> String id<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> Address address<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> String id<span style="color:#f92672">,</span> Address address<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> id<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> Address <span style="color:#a6e22e">getAddress</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> address<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String id;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Address address;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span>(String name, String id, Address address) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getId</span>() { <span style="color:#66d9ef">return</span> id; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> Address <span style="color:#a6e22e">getAddress</span>() { <span style="color:#66d9ef">return</span> address; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 주소 클래스</p>
 <ul>
 <li>Address.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Address</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String country<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> String city<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Address</span><span style="color:#f92672">(</span>String country<span style="color:#f92672">,</span> String city<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">city</span> <span style="color:#f92672">=</span> city<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getCountry</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> country<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getCity</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> city<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Address</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String country;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String city;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Address</span>(String country, String city) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">country</span> <span style="color:#f92672">=</span> country;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">city</span> <span style="color:#f92672">=</span> city;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getCountry</span>() { <span style="color:#66d9ef">return</span> country; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getCity</span>() { <span style="color:#66d9ef">return</span> city; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="function의-순차적-연결">Function의 순차적 연결</h2>
@@ -420,34 +417,34 @@ if (!doNotTrack) {
 <li>Member 객체의 필드인 Address에서 city 정보를 얻어내기 위해 두 Function 함수적 인터페이스를 <code>andThen()</code>과 <code>compose()</code>를 이용해서 순차적으로 연결</li>
 <li>FunctionAndThenComposeEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.function.Function<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FunctionAndThenComposeEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Function<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">,</span> Address<span style="color:#f92672">&gt;</span> functionA<span style="color:#f92672">;</span>
-		Function<span style="color:#f92672">&lt;</span>Address<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> functionB<span style="color:#f92672">;</span>
-		Function<span style="color:#f92672">&lt;</span>Member<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> functionAB<span style="color:#f92672">;</span>
-		String city<span style="color:#f92672">;</span>
-
-		functionA <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>m<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> m<span style="color:#f92672">.</span><span style="color:#a6e22e">getAddress</span><span style="color:#f92672">();</span>
-		functionB <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> a<span style="color:#f92672">.</span><span style="color:#a6e22e">getCity</span><span style="color:#f92672">();</span>
-
-		functionAB <span style="color:#f92672">=</span> functionA<span style="color:#f92672">.</span><span style="color:#a6e22e">andThen</span><span style="color:#f92672">(</span>functionB<span style="color:#f92672">);</span>
-		city <span style="color:#f92672">=</span> functionAB<span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Address<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Korea&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Seoul&#34;</span><span style="color:#f92672">))</span>
-				<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;city : &#34;</span> <span style="color:#f92672">+</span> city<span style="color:#f92672">);</span>
-
-		functionAB <span style="color:#f92672">=</span> functionB<span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">(</span>functionA<span style="color:#f92672">);</span>
-		city <span style="color:#f92672">=</span> functionAB<span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>
-				<span style="color:#66d9ef">new</span> Member<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Address<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Korea&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Seoul&#34;</span><span style="color:#f92672">))</span>
-				<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;city : &#34;</span> <span style="color:#f92672">+</span> city<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%204.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.function.Function;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FunctionAndThenComposeEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Function<span style="color:#f92672">&lt;</span>Member, Address<span style="color:#f92672">&gt;</span> functionA;
+</span></span><span style="display:flex;"><span>		Function<span style="color:#f92672">&lt;</span>Address, String<span style="color:#f92672">&gt;</span> functionB;
+</span></span><span style="display:flex;"><span>		Function<span style="color:#f92672">&lt;</span>Member, String<span style="color:#f92672">&gt;</span> functionAB;
+</span></span><span style="display:flex;"><span>		String city;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		functionA <span style="color:#f92672">=</span> (m) <span style="color:#f92672">-&gt;</span> m.<span style="color:#a6e22e">getAddress</span>();
+</span></span><span style="display:flex;"><span>		functionB <span style="color:#f92672">=</span> (a) <span style="color:#f92672">-&gt;</span> a.<span style="color:#a6e22e">getCity</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		functionAB <span style="color:#f92672">=</span> functionA.<span style="color:#a6e22e">andThen</span>(functionB);
+</span></span><span style="display:flex;"><span>		city <span style="color:#f92672">=</span> functionAB.<span style="color:#a6e22e">apply</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#66d9ef">new</span> Address(<span style="color:#e6db74">&#34;Korea&#34;</span>, <span style="color:#e6db74">&#34;Seoul&#34;</span>))
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;city : &#34;</span> <span style="color:#f92672">+</span> city);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		functionAB <span style="color:#f92672">=</span> functionB.<span style="color:#a6e22e">compose</span>(functionA);
+</span></span><span style="display:flex;"><span>		city <span style="color:#f92672">=</span> functionAB.<span style="color:#a6e22e">apply</span>(
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Member(<span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#66d9ef">new</span> Address(<span style="color:#e6db74">&#34;Korea&#34;</span>, <span style="color:#e6db74">&#34;Seoul&#34;</span>))
+</span></span><span style="display:flex;"><span>				);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;city : &#34;</span> <span style="color:#f92672">+</span> city);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/lambda/andThen()%EA%B3%BC_compose()_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%204.png" alt="Untitled"></p>
 <ul>
 <li><code>andThen()</code> 메소드를 호출한 함수적 인터페이스는 functionA</li>
 <li><code>compose()</code> 메소드를 호출한 함수적 인터페이스는 functionB</li>
@@ -483,13 +480,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/lambda/predicate_%ED%95%A8%EC%88%98%EC%A0%81_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/lambda/predicate_%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 람다식, Predicate 함수적 인터페이스</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/lambda/and_or_negate_%EB%94%94%ED%8F%B4%ED%8A%B8_%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80_isequal_%EC%A0%95%EC%A0%81_%EB%A9%94%EC%86%8C%EB%93%9C/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/lambda/and_or_negate_%E1%84%83%E1%85%B5%E1%84%91%E1%85%A9%E1%86%AF%E1%84%90%E1%85%B3_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3%E1%84%8B%E1%85%AA_isequal_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 람다식, and(), or(), negate() 디폴트 메소드와 isEqual() 정적 메소드</p>
 		</a>
@@ -641,7 +638,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -649,32 +646,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

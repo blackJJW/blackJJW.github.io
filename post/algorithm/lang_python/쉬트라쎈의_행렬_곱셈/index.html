@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Algorithm][Python] 쉬트라쎈의 행렬 곱셈 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Algorithm][Python] 쉬트라쎈의 행렬 곱셈" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/algorithm/lang_python/%E1%84%89%E1%85%B1%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A6%E1%86%AB%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-27T13:30:45+09:00" />
 <meta property="article:modified_time" content="2022-06-27T13:30:45+09:00" />
 
@@ -230,79 +227,77 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><strong>Strassen’s Matrix Multiplication</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strassen</span>(A, B):
-	n <span style="color:#f92672">=</span> len(A)
-	<span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&lt;=</span> threshold):
-		<span style="color:#66d9ef">return</span> matrixmult(A, B)
-	A11, A12, A21, A22 <span style="color:#f92672">=</span> divide(A)
-	B11, B12, B21, B22 <span style="color:#f92672">=</span> divide(B)
-	M1 <span style="color:#f92672">=</span> strassen(madd(A11, A22), madd(B11, B22))
-	M2 <span style="color:#f92672">=</span> strassen(madd(A21, A22), B11)
-	M3 <span style="color:#f92672">=</span> strassen(A11, msub(B12, B22))
-	M4 <span style="color:#f92672">=</span> strassen(A22, msub(B21, B11))
-	M5 <span style="color:#f92672">=</span> strassen(madd(A11, A12), B22)
-	M6 <span style="color:#f92672">=</span> strassen(msub(A21, A11), madd(B11, B12))
-	M7 <span style="color:#f92672">=</span> strassen(msub(A12, A22), madd(B21, B22))
-	<span style="color:#66d9ef">return</span> conquer(M1, M2, M3, M4, M5, M6, M7)  
-
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">divide</span>(A):
-	n <span style="color:#f92672">=</span> len(A)
-	m <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
-	A11 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
-	A12 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
-	A21 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
-	A22 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
-
-	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m):
-		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(m):
-			A11[i][j] <span style="color:#f92672">=</span> A[i][j]
-			A12[i][j] <span style="color:#f92672">=</span> A[i][j <span style="color:#f92672">+</span> m]
-			A21[i][j] <span style="color:#f92672">=</span> A[i <span style="color:#f92672">+</span> m][j]
-			A22[i][j] <span style="color:#f92672">=</span> A[i <span style="color:#f92672">+</span> m][j <span style="color:#f92672">+</span> m]
-	<span style="color:#66d9ef">return</span> A11, A12, A21, A22
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conquer</span>(M1, M2, M3, M4, M5, M6, M7):
-	C11 <span style="color:#f92672">=</span> madd(msub(madd(M1, M4), M5), M7)
-	C12 <span style="color:#f92672">=</span> madd(M3, M5)
-	C21 <span style="color:#f92672">=</span> madd(M2, M4)
-	C22 <span style="color:#f92672">=</span> madd(msub(madd(M1, M3), M2), M6)
-
-	m <span style="color:#f92672">=</span> len(C11)
-	n <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> m
-	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
-	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m):
-		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(m):
-			C[i][j] <span style="color:#f92672">=</span> C11[i][j]
-			C[i][j <span style="color:#f92672">+</span> m] <span style="color:#f92672">=</span> C12[i][j]
-			C[i <span style="color:#f92672">+</span> m][j] <span style="color:#f92672">=</span> C21[i][j]
-			C[i <span style="color:#f92672">+</span> m][j <span style="color:#f92672">+</span> m] <span style="color:#f92672">=</span> C22[i][j]
-
-	<span style="color:#66d9ef">return</span> C
-
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">madd</span>(A, B):
-	n <span style="color:#f92672">=</span> len(A)
-	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
-	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
-		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
-			C[i][j] <span style="color:#f92672">=</span> A[i][j] <span style="color:#f92672">+</span> B[i][j]
-	<span style="color:#66d9ef">return</span> C
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">msub</span>(A, B):
-	n <span style="color:#f92672">=</span> len(A)
-	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
-	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
-		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
-			C[i][j] <span style="color:#f92672">=</span> A[i][j] <span style="color:#f92672">-</span> B[i][j]
-	<span style="color:#66d9ef">return</span> C
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">matrixmult</span>(A, B):
-	n <span style="color:#f92672">=</span> len(A)
-	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
-	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
-		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
-			<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(n):
-				C[i][j] <span style="color:#f92672">+=</span> A[i][k] <span style="color:#f92672">*</span> B[k][j]
-
-	<span style="color:#66d9ef">return</span> C 
-</code></pre></div><p><img src="/images/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strassen</span>(A, B):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(A)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&lt;=</span> threshold):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> matrixmult(A, B)
+</span></span><span style="display:flex;"><span>	A11, A12, A21, A22 <span style="color:#f92672">=</span> divide(A)
+</span></span><span style="display:flex;"><span>	B11, B12, B21, B22 <span style="color:#f92672">=</span> divide(B)
+</span></span><span style="display:flex;"><span>	M1 <span style="color:#f92672">=</span> strassen(madd(A11, A22), madd(B11, B22))
+</span></span><span style="display:flex;"><span>	M2 <span style="color:#f92672">=</span> strassen(madd(A21, A22), B11)
+</span></span><span style="display:flex;"><span>	M3 <span style="color:#f92672">=</span> strassen(A11, msub(B12, B22))
+</span></span><span style="display:flex;"><span>	M4 <span style="color:#f92672">=</span> strassen(A22, msub(B21, B11))
+</span></span><span style="display:flex;"><span>	M5 <span style="color:#f92672">=</span> strassen(madd(A11, A12), B22)
+</span></span><span style="display:flex;"><span>	M6 <span style="color:#f92672">=</span> strassen(msub(A21, A11), madd(B11, B12))
+</span></span><span style="display:flex;"><span>	M7 <span style="color:#f92672">=</span> strassen(msub(A12, A22), madd(B21, B22))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> conquer(M1, M2, M3, M4, M5, M6, M7)  
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">divide</span>(A):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(A)
+</span></span><span style="display:flex;"><span>	m <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	A11 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
+</span></span><span style="display:flex;"><span>	A12 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
+</span></span><span style="display:flex;"><span>	A21 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
+</span></span><span style="display:flex;"><span>	A22 <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> m <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(m):
+</span></span><span style="display:flex;"><span>			A11[i][j] <span style="color:#f92672">=</span> A[i][j]
+</span></span><span style="display:flex;"><span>			A12[i][j] <span style="color:#f92672">=</span> A[i][j <span style="color:#f92672">+</span> m]
+</span></span><span style="display:flex;"><span>			A21[i][j] <span style="color:#f92672">=</span> A[i <span style="color:#f92672">+</span> m][j]
+</span></span><span style="display:flex;"><span>			A22[i][j] <span style="color:#f92672">=</span> A[i <span style="color:#f92672">+</span> m][j <span style="color:#f92672">+</span> m]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> A11, A12, A21, A22
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conquer</span>(M1, M2, M3, M4, M5, M6, M7):
+</span></span><span style="display:flex;"><span>	C11 <span style="color:#f92672">=</span> madd(msub(madd(M1, M4), M5), M7)
+</span></span><span style="display:flex;"><span>	C12 <span style="color:#f92672">=</span> madd(M3, M5)
+</span></span><span style="display:flex;"><span>	C21 <span style="color:#f92672">=</span> madd(M2, M4)
+</span></span><span style="display:flex;"><span>	C22 <span style="color:#f92672">=</span> madd(msub(madd(M1, M3), M2), M6)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	m <span style="color:#f92672">=</span> len(C11)
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> m
+</span></span><span style="display:flex;"><span>	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(m):
+</span></span><span style="display:flex;"><span>			C[i][j] <span style="color:#f92672">=</span> C11[i][j]
+</span></span><span style="display:flex;"><span>			C[i][j <span style="color:#f92672">+</span> m] <span style="color:#f92672">=</span> C12[i][j]
+</span></span><span style="display:flex;"><span>			C[i <span style="color:#f92672">+</span> m][j] <span style="color:#f92672">=</span> C21[i][j]
+</span></span><span style="display:flex;"><span>			C[i <span style="color:#f92672">+</span> m][j <span style="color:#f92672">+</span> m] <span style="color:#f92672">=</span> C22[i][j]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> C
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">madd</span>(A, B):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(A)
+</span></span><span style="display:flex;"><span>	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>			C[i][j] <span style="color:#f92672">=</span> A[i][j] <span style="color:#f92672">+</span> B[i][j]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> C
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">msub</span>(A, B):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(A)
+</span></span><span style="display:flex;"><span>	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>			C[i][j] <span style="color:#f92672">=</span> A[i][j] <span style="color:#f92672">-</span> B[i][j]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> C
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">matrixmult</span>(A, B):
+</span></span><span style="display:flex;"><span>	n <span style="color:#f92672">=</span> len(A)
+</span></span><span style="display:flex;"><span>	C <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n)]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>				C[i][j] <span style="color:#f92672">+=</span> A[i][k] <span style="color:#f92672">*</span> B[k][j]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> C 
+</span></span></code></pre></div><p><img src="/images/algorithm/lang_python/%EC%89%AC%ED%8A%B8%EB%9D%BC%EC%8E%88%EC%9D%98_%ED%96%89%EB%A0%AC_%EA%B3%B1%EC%85%88/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -336,13 +331,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/start/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EA%B8%B0%EA%B3%84jvm/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/start/%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1_%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC_%E1%84%80%E1%85%B5%E1%84%80%E1%85%A8jvm/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 자바 가상 기계(JVM)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/linux/study/start/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%9D%98_%EA%B0%9C%EC%9A%94/" rel="next">
+		<a class="pager__link" href="/post/linux/study/start/%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Linux] 운영체제의 개요</p>
 		</a>
@@ -494,7 +489,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -502,32 +497,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

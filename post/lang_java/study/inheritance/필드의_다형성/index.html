@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 필드의 다형성 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 필드의 다형성" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%95%84%EB%93%9C%EC%9D%98_%EB%8B%A4%ED%98%95%EC%84%B1/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%83%E1%85%A1%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-04T20:00:45+09:00" />
 <meta property="article:modified_time" content="2022-08-04T20:00:45+09:00" />
 
@@ -206,17 +203,17 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>ex) 필드의 다형성 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	Tire frontLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">();</span>
-	Tire frontRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">();</span>
-	Tire backLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">();</span>
-	Tire backRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">();</span>
-
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	Tire frontLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire();
+</span></span><span style="display:flex;"><span>	Tire frontRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire();
+</span></span><span style="display:flex;"><span>	Tire backLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire();
+</span></span><span style="display:flex;"><span>	Tire backRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() { ... }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>
 <p>Car 클래스는 4개의 Tire 필드를 가지고 있다.</p>
 </li>
@@ -228,11 +225,11 @@ if (!doNotTrack) {
 <ul>
 <li>다음과 같이 코드를 사용하여 코드를 교체 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">();</span>
-myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">frontRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire<span style="color:#f92672">();</span>
-myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">backLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire<span style="color:#f92672">();</span>
-myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">();</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car();
+</span></span><span style="display:flex;"><span>myCar.<span style="color:#a6e22e">frontRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire();
+</span></span><span style="display:flex;"><span>myCar.<span style="color:#a6e22e">backLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire();
+</span></span><span style="display:flex;"><span>myCar.<span style="color:#a6e22e">run</span>();
+</span></span></code></pre></div><ul>
 <li>Tire 클래스 타입인 frontRightTire와 backLeftTire는 원래 Tire 객체가 저장되어야 하지만, Tire 자식 객체가 저장되어도 문제가 없다.
 <ul>
 <li>자식 타입은 부모 타입으로 자동 타입 변환이 되기 때문</li>
@@ -245,13 +242,13 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 </li>
 <li>
 <p>Car 객체에 <code>run()</code> 메소드가 있고, <code>run()</code> 메소드는 각 Tire 객체의 <code>roll()</code> 메소드를 다음과 같이 호출한다고 가정</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	frontLeftTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">();</span>
-	frontRightTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">();</span>
-	backRightTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">();</span>
-	backLeftTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>	frontLeftTire.<span style="color:#a6e22e">roll</span>();
+</span></span><span style="display:flex;"><span>	frontRightTire.<span style="color:#a6e22e">roll</span>();
+</span></span><span style="display:flex;"><span>	backRightTire.<span style="color:#a6e22e">roll</span>();
+</span></span><span style="display:flex;"><span>	backLeftTire.<span style="color:#a6e22e">roll</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>frontRightTire와 backLeftTire를 교체하기 전에는 Tire 객체의 <code>roll()</code> 메소드가 호출
 <ul>
 <li>ATire와 BTire로 교체가 되면 ATire와 BTire가 <code>roll()</code> 메소드를 재정의하고 있으므로 교체 이후에는 ATire와 BTire의 <code>roll()</code> 메소드가 호출</li>
@@ -309,33 +306,33 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tire</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> maxRotation<span style="color:#f92672">;</span>         <span style="color:#75715e">// 최대 회전수(타이어 수명)
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> accumulatedRotation<span style="color:#f92672">;</span> <span style="color:#75715e">// 누적 회전수
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> String location<span style="color:#f92672">;</span>         <span style="color:#75715e">// 타이어의 위치
-</span><span style="color:#75715e"></span>
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Tire</span><span style="color:#f92672">(</span>String location<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> location<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maxRotation</span> <span style="color:#f92672">=</span> maxRotation<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#f92672">++</span>accumulatedRotation<span style="color:#f92672">;</span>	<span style="color:#75715e">// 누적 회전수 1 증가
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Tire 수명 : &#34;</span> 
-		                       <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>maxRotation <span style="color:#f92672">-</span> accumulatedRotation<span style="color:#f92672">)</span> 
-		                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;회&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Tire 펑크 ***&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tire</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> maxRotation;         <span style="color:#75715e">// 최대 회전수(타이어 수명)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> accumulatedRotation; <span style="color:#75715e">// 누적 회전수</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String location;         <span style="color:#75715e">// 타이어의 위치</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Tire</span>(String location, <span style="color:#66d9ef">int</span> maxRotation) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> location;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">maxRotation</span> <span style="color:#f92672">=</span> maxRotation;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">++</span>accumulatedRotation;	<span style="color:#75715e">// 누적 회전수 1 증가</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Tire 수명 : &#34;</span> 
+</span></span><span style="display:flex;"><span>		                       <span style="color:#f92672">+</span> (maxRotation <span style="color:#f92672">-</span> accumulatedRotation) 
+</span></span><span style="display:flex;"><span>		                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;회&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Tire 펑크 ***&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Car.java</p>
 <ul>
@@ -358,30 +355,30 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 </li>
 <li>stop() 메소드는 타이어가 펑크가 날 때 자동차를 멈추는 메소드</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	Tire frontLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 왼쪽&#34;</span><span style="color:#f92672">,</span> 6<span style="color:#f92672">);</span>
-	Tire frontRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 오른쪽&#34;</span><span style="color:#f92672">,</span> 2<span style="color:#f92672">);</span>
-	Tire backLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;뒤 왼쪽&#34;</span><span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
-	Tire backRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 오른쪽&#34;</span><span style="color:#f92672">,</span> 4<span style="color:#f92672">);</span>
-
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;자동차가 달린다.&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>frontLeftTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> stop<span style="color:#f92672">();</span> <span style="color:#66d9ef">return</span> 1<span style="color:#f92672">;}</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>frontRightTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> stop<span style="color:#f92672">();</span> <span style="color:#66d9ef">return</span> 2<span style="color:#f92672">;}</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>backLeftTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> stop<span style="color:#f92672">();</span> <span style="color:#66d9ef">return</span> 3<span style="color:#f92672">;}</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>backRightTire<span style="color:#f92672">.</span><span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> stop<span style="color:#f92672">();</span> <span style="color:#66d9ef">return</span> 4<span style="color:#f92672">;}</span>
-		<span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stop</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;자동차가 멈춥니다.&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	Tire frontLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire(<span style="color:#e6db74">&#34;앞 왼쪽&#34;</span>, 6);
+</span></span><span style="display:flex;"><span>	Tire frontRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire(<span style="color:#e6db74">&#34;앞 오른쪽&#34;</span>, 2);
+</span></span><span style="display:flex;"><span>	Tire backLeftTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire(<span style="color:#e6db74">&#34;뒤 왼쪽&#34;</span>, 3);
+</span></span><span style="display:flex;"><span>	Tire backRightTire <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tire(<span style="color:#e6db74">&#34;앞 오른쪽&#34;</span>, 4);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;자동차가 달린다.&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(frontLeftTire.<span style="color:#a6e22e">roll</span>() <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span>) { stop(); <span style="color:#66d9ef">return</span> 1;}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(frontRightTire.<span style="color:#a6e22e">roll</span>() <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span>) { stop(); <span style="color:#66d9ef">return</span> 2;}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(backLeftTire.<span style="color:#a6e22e">roll</span>() <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span>) { stop(); <span style="color:#66d9ef">return</span> 3;}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(backRightTire.<span style="color:#a6e22e">roll</span>() <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span>) { stop(); <span style="color:#66d9ef">return</span> 4;}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stop</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;자동차가 멈춥니다.&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ATire.java와 BTire.java</p>
 <ul>
@@ -393,86 +390,86 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ATire</span> <span style="color:#66d9ef">extends</span> Tire<span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ATire</span><span style="color:#f92672">(</span>String location<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>location<span style="color:#f92672">,</span> maxRotation<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#f92672">++</span>accumulatedRotation<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ATire 수명 : &#34;</span> 
-		                       <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>maxRotation <span style="color:#f92672">-</span> accumulatedRotation<span style="color:#f92672">)</span> 
-		                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 회&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ATire 펑크 ***&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BTire</span> <span style="color:#66d9ef">extends</span> Tire<span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 필드
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">BTire</span><span style="color:#f92672">(</span>String location<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>location<span style="color:#f92672">,</span> maxRotation<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-
-		<span style="color:#75715e">// 메소드
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-			<span style="color:#f92672">++</span>accumulatedRotation<span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BTire 수명 : &#34;</span> 
-			                       <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>maxRotation <span style="color:#f92672">-</span> accumulatedRotation<span style="color:#f92672">)</span> 
-			                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 회&#34;</span><span style="color:#f92672">);</span>
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; BTire 펑크 ***&#34;</span><span style="color:#f92672">);</span>
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ATire</span> <span style="color:#66d9ef">extends</span> Tire{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ATire</span>(String location, <span style="color:#66d9ef">int</span> maxRotation) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">super</span>(location, maxRotation);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">++</span>accumulatedRotation;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ATire 수명 : &#34;</span> 
+</span></span><span style="display:flex;"><span>		                       <span style="color:#f92672">+</span> (maxRotation <span style="color:#f92672">-</span> accumulatedRotation) 
+</span></span><span style="display:flex;"><span>		                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 회&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; ATire 펑크 ***&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BTire</span> <span style="color:#66d9ef">extends</span> Tire{
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 필드</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">BTire</span>(String location, <span style="color:#66d9ef">int</span> maxRotation) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">super</span>(location, maxRotation);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 메소드</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">roll</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">++</span>accumulatedRotation;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(accumulatedRotation <span style="color:#f92672">&lt;</span> maxRotation) {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BTire 수명 : &#34;</span> 
+</span></span><span style="display:flex;"><span>			                       <span style="color:#f92672">+</span> (maxRotation <span style="color:#f92672">-</span> accumulatedRotation) 
+</span></span><span style="display:flex;"><span>			                       <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 회&#34;</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;*** &#34;</span> <span style="color:#f92672">+</span> location <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; BTire 펑크 ***&#34;</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>CarEx.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CarEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Car car <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">();</span> <span style="color:#75715e">// Car 객체 생성
-</span><span style="color:#75715e"></span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 5<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">int</span> problemLocation <span style="color:#f92672">=</span> car<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">();</span>
-
-			<span style="color:#66d9ef">switch</span><span style="color:#f92672">(</span>problemLocation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">case</span> 1<span style="color:#f92672">:</span>
-					System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 왼쪽 ATire로 교체&#34;</span><span style="color:#f92672">);</span>
-					car<span style="color:#f92672">.</span><span style="color:#a6e22e">frontLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 왼쪽&#34;</span><span style="color:#f92672">,</span> 15<span style="color:#f92672">);</span>
-					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">case</span> 2<span style="color:#f92672">:</span>
-					System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 오른쪽 BTire로 교체&#34;</span><span style="color:#f92672">);</span>
-					car<span style="color:#f92672">.</span><span style="color:#a6e22e">frontRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;앞 오른쪽&#34;</span><span style="color:#f92672">,</span> 13<span style="color:#f92672">);</span>
-					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">case</span> 3<span style="color:#f92672">:</span>
-					System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;뒤 왼쪽 ATire로 교체&#34;</span><span style="color:#f92672">);</span>
-					car<span style="color:#f92672">.</span><span style="color:#a6e22e">backLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;뒤 왼쪽&#34;</span><span style="color:#f92672">,</span> 14<span style="color:#f92672">);</span>
-					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">case</span> 4<span style="color:#f92672">:</span>
-					System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;뒤 오른쪽 BTire로 교체&#34;</span><span style="color:#f92672">);</span>
-					car<span style="color:#f92672">.</span><span style="color:#a6e22e">backRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;뒤 오른쪽&#34;</span><span style="color:#f92672">,</span> 17<span style="color:#f92672">);</span>
-					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;--------------------------------&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inheritance/%ED%95%84%EB%93%9C%EC%9D%98_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CarEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Car car <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(); <span style="color:#75715e">// Car 객체 생성</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 5; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> problemLocation <span style="color:#f92672">=</span> car.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">switch</span>(problemLocation) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> 1:
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;앞 왼쪽 ATire로 교체&#34;</span>);
+</span></span><span style="display:flex;"><span>					car.<span style="color:#a6e22e">frontLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire(<span style="color:#e6db74">&#34;앞 왼쪽&#34;</span>, 15);
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> 2:
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;앞 오른쪽 BTire로 교체&#34;</span>);
+</span></span><span style="display:flex;"><span>					car.<span style="color:#a6e22e">frontRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire(<span style="color:#e6db74">&#34;앞 오른쪽&#34;</span>, 13);
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> 3:
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;뒤 왼쪽 ATire로 교체&#34;</span>);
+</span></span><span style="display:flex;"><span>					car.<span style="color:#a6e22e">backLeftTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire(<span style="color:#e6db74">&#34;뒤 왼쪽&#34;</span>, 14);
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> 4:
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;뒤 오른쪽 BTire로 교체&#34;</span>);
+</span></span><span style="display:flex;"><span>					car.<span style="color:#a6e22e">backRightTire</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire(<span style="color:#e6db74">&#34;뒤 오른쪽&#34;</span>, 17);
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;--------------------------------&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inheritance/%ED%95%84%EB%93%9C%EC%9D%98_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -503,13 +500,13 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%AA_%E1%84%83%E1%85%A1%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 타입 변환과 다형성</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/%ED%95%98%EB%82%98%EC%9D%98_%EB%B0%B0%EC%97%B4%EB%A1%9C_%EA%B0%9D%EC%B2%B4_%EA%B4%80%EB%A6%AC/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/%E1%84%92%E1%85%A1%E1%84%82%E1%85%A1%E1%84%8B%E1%85%B4_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF%E1%84%85%E1%85%A9_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 하나의 배열로 객체 관리</p>
 		</a>
@@ -661,7 +658,7 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -669,32 +666,6 @@ myCar<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

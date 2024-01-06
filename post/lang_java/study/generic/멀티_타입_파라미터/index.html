@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 제네릭, 멀티 타입 파라미터(class&lt;K, V, …&gt;, interface&lt;K, V, …&gt;) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 제네릭, 멀티 타입 파라미터(class&lt;K, V, …&gt;, interface&lt;K, V, …&gt;)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%EB%A9%80%ED%8B%B0_%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%E1%84%86%E1%85%A5%E1%86%AF%E1%84%90%E1%85%B5_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%91%E1%85%A1%E1%84%85%E1%85%A1%E1%84%86%E1%85%B5%E1%84%90%E1%85%A5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-28T17:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-28T17:40:30+09:00" />
 
@@ -200,40 +197,40 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Product</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> T kind<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> M model<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">getKind</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kind</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> M <span style="color:#a6e22e">getModel</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setKind</span><span style="color:#f92672">(</span>T kind<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kind</span> <span style="color:#f92672">=</span> kind<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setModel</span><span style="color:#f92672">(</span>M model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Product</span><span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> T kind;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> M model;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">getKind</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">kind</span>; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> M <span style="color:#a6e22e">getModel</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setKind</span>(T kind) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">kind</span> <span style="color:#f92672">=</span> kind; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setModel</span>(M model) {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>제네릭 객체 생성
 <ul>
 <li>ProductEx.java</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Product<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> product1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;();</span>
-		product1<span style="color:#f92672">.</span><span style="color:#a6e22e">setKind</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Tv<span style="color:#f92672">());</span>
-		product1<span style="color:#f92672">.</span><span style="color:#a6e22e">setModel</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;smart TV&#34;</span><span style="color:#f92672">);</span>
-		Tv tv <span style="color:#f92672">=</span> product1<span style="color:#f92672">.</span><span style="color:#a6e22e">getKind</span><span style="color:#f92672">();</span>
-		String tvModel <span style="color:#f92672">=</span> product1<span style="color:#f92672">.</span><span style="color:#a6e22e">getModel</span><span style="color:#f92672">();</span>
-
-		Product<span style="color:#f92672">&lt;</span>Car<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> product2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Car<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;();</span>
-		product2<span style="color:#f92672">.</span><span style="color:#a6e22e">setKind</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Car<span style="color:#f92672">());</span>
-		product2<span style="color:#f92672">.</span><span style="color:#a6e22e">setModel</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;disel&#34;</span><span style="color:#f92672">);</span>
-		Car car <span style="color:#f92672">=</span> product2<span style="color:#f92672">.</span><span style="color:#a6e22e">getKind</span><span style="color:#f92672">();</span>
-		String carModel <span style="color:#f92672">=</span> product2<span style="color:#f92672">.</span><span style="color:#a6e22e">getModel</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Product<span style="color:#f92672">&lt;</span>Tv, String<span style="color:#f92672">&gt;</span> product1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Tv, String<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>		product1.<span style="color:#a6e22e">setKind</span>(<span style="color:#66d9ef">new</span> Tv());
+</span></span><span style="display:flex;"><span>		product1.<span style="color:#a6e22e">setModel</span>(<span style="color:#e6db74">&#34;smart TV&#34;</span>);
+</span></span><span style="display:flex;"><span>		Tv tv <span style="color:#f92672">=</span> product1.<span style="color:#a6e22e">getKind</span>();
+</span></span><span style="display:flex;"><span>		String tvModel <span style="color:#f92672">=</span> product1.<span style="color:#a6e22e">getModel</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Product<span style="color:#f92672">&lt;</span>Car, String<span style="color:#f92672">&gt;</span> product2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Car, String<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>		product2.<span style="color:#a6e22e">setKind</span>(<span style="color:#66d9ef">new</span> Car());
+</span></span><span style="display:flex;"><span>		product2.<span style="color:#a6e22e">setModel</span>(<span style="color:#e6db74">&#34;disel&#34;</span>);
+</span></span><span style="display:flex;"><span>		Car car <span style="color:#f92672">=</span> product2.<span style="color:#a6e22e">getKind</span>();
+</span></span><span style="display:flex;"><span>		String carModel <span style="color:#f92672">=</span> product2.<span style="color:#a6e22e">getModel</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>제네릭 타입 변수 선언과 객체 생성을 동시에 할 경우</p>
 <ul>
@@ -248,12 +245,12 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>ex) 자바 6 이전 버전에서 사용한 제네릭 타입 변수 선언과 객체 생성 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Product<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> Product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Product<span style="color:#f92672">&lt;</span>Tv, String<span style="color:#f92672">&gt;</span> Product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;</span>Tv, String<span style="color:#f92672">&gt;</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 자바 7 버전부터는 다이아몬드 연산자 <code>&lt;&gt;</code> 사용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Product<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Product<span style="color:#f92672">&lt;</span>Tv, String<span style="color:#f92672">&gt;</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Product<span style="color:#f92672">&lt;&gt;</span>();
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -285,13 +282,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%ED%83%80%EC%9E%85class_t__interface_t/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/generic/%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%85%E1%85%B5%E1%86%A8_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8class_t__interface_t/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 제네릭 타입(class&lt;T&gt;, interface&lt;T&gt;)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%EB%A9%94%EC%86%8C%EB%93%9C_t_r_r_methodt_t/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/generic/%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%85%E1%85%B5%E1%86%A8_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3_t_r_r_methodt_t/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 제네릭 메소드(&lt;T, R&gt; R method(T t))</p>
 		</a>
@@ -443,7 +440,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -451,32 +448,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

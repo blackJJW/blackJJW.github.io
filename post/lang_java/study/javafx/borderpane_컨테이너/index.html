@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX, BorderPane 컨테이너 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX, BorderPane 컨테이너" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-15T22:40:30+09:00" />
 <meta property="article:modified_time" content="2022-12-15T22:40:30+09:00" />
 
@@ -251,38 +248,38 @@ if (!doNotTrack) {
 <li>bottom에는 다시 BorderPane을 배치</li>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.TextArea?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.TextField?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ToolBar?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
-
-<span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">maxHeight=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">maxWidth=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">minHeight=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">minWidth=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;600.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;top&gt;</span>
-      <span style="color:#f92672">&lt;ToolBar</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;items&gt;</span>
-          <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/items&gt;</span>
-      <span style="color:#f92672">&lt;/ToolBar&gt;</span>
-   <span style="color:#f92672">&lt;/top&gt;</span>
-   <span style="color:#f92672">&lt;center&gt;</span> <span style="color:#75715e">&lt;!-- left와 right까지 확장 --&gt;</span>
-      <span style="color:#f92672">&lt;TextArea</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/center&gt;</span>
-   <span style="color:#f92672">&lt;bottom&gt;</span>
-      <span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
-         <span style="color:#f92672">&lt;center&gt;</span> <span style="color:#75715e">&lt;!-- top, bottom, left까지 확장 --&gt;</span>         
-            <span style="color:#f92672">&lt;TextField</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-         <span style="color:#f92672">&lt;/center&gt;</span>
-         <span style="color:#f92672">&lt;right&gt;</span>
-            <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
-         <span style="color:#f92672">&lt;/right&gt;</span>
-      <span style="color:#f92672">&lt;/BorderPane&gt;</span>
-   <span style="color:#f92672">&lt;/bottom&gt;</span>
-<span style="color:#f92672">&lt;/BorderPane&gt;</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/BorderPane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.TextArea?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.TextField?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ToolBar?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.BorderPane?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">maxHeight=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">maxWidth=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">minHeight=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">minWidth=</span><span style="color:#e6db74">&#34;-Infinity&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;400.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;600.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;top&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ToolBar</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ToolBar&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/top&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;center&gt;</span> <span style="color:#75715e">&lt;!-- left와 right까지 확장 --&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;TextArea</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;bottom&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;BorderPane</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;center&gt;</span> <span style="color:#75715e">&lt;!-- top, bottom, left까지 확장 --&gt;</span>         
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;TextField</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/center&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;right&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Button&#34;</span> <span style="color:#a6e22e">BorderPane.alignment=</span><span style="color:#e6db74">&#34;CENTER&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/right&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/bottom&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/BorderPane&gt;</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/BorderPane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -316,13 +313,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/hbox%EC%99%80_vbox_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/hbox%E1%84%8B%E1%85%AA_vbox_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX, HBox와 VBox 컨테이너</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/flowpane_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/flowpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX, FlowPane 컨테이너</p>
 		</a>
@@ -474,7 +471,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -482,32 +479,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

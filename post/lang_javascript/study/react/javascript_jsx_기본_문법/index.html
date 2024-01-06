@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[JavaScript][Library][React] JSX 기본 문법 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[JavaScript][Library][React] JSX 기본 문법" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/react/javascript_jsx_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/react/javascript_jsx_%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-24T16:30:45+09:00" />
 <meta property="article:modified_time" content="2022-06-24T16:30:45+09:00" />
 
@@ -196,28 +193,28 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>표현식 출력</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">태그</span>&gt;{표현식}&lt;/<span style="color:#f92672">태그</span>&gt;
-&lt;<span style="color:#f92672">태그</span> <span style="color:#a6e22e">속성</span><span style="color:#f92672">=</span><span style="color:#e6db74">{표현식}</span> /&gt; // 따옴표 사용하면 안된다. 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">태그</span>&gt;{표현식}&lt;/<span style="color:#f92672">태그</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">태그</span> <span style="color:#a6e22e">속성</span><span style="color:#f92672">=</span><span style="color:#e6db74">{표현식}</span> /&gt; // 따옴표 사용하면 안된다. 
+</span></span></code></pre></div></li>
 <li>
 <p>표현식 출력</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/babel&#34;</span>&gt;
-	<span style="color:#75715e">// 상수 선언
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;John&#39;</span>
-	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://placedog.net/400/200&#39;</span>
-
-	<span style="color:#75715e">// 컴포넌트와 컨테이너 생성
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">component</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">div</span>&gt;
-		&lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">Hello</span><span style="color:#f92672">!!!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-		&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">imgUrl</span>} /&gt;
-	&lt;/<span style="color:#f92672">div</span>&gt;
-	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">container</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
-
-	<span style="color:#75715e">// 출력
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">component</span>, <span style="color:#a6e22e">container</span>)
-
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study_3/JavaScript_JSX_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/babel&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 상수 선언
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;John&#39;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://placedog.net/400/200&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 컴포넌트와 컨테이너 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">component</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">Hello</span><span style="color:#f92672">!!!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">imgUrl</span>} /&gt;
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">container</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">component</span>, <span style="color:#a6e22e">container</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_3/JavaScript_JSX_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -260,13 +257,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/react/javascript_%EB%A3%A8%ED%8A%B8_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%B6%9C%EB%A0%A5/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/react/javascript_%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A7%E1%86%A8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[JavaScript][Library][React] 루트 컴포넌트 출력</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/react/javascript_%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" rel="next">
+		<a class="pager__link" href="/post/lang_javascript/study/react/javascript_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[JavaScript][Library][React] 클래스 컴포넌트</p>
 		</a>
@@ -418,7 +415,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -426,32 +423,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

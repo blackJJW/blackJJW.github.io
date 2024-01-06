@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 타입 변환과 다형성 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 타입 변환과 다형성" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inheritance/%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%AA_%E1%84%83%E1%85%A1%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-03T20:00:45+09:00" />
 <meta property="article:modified_time" content="2022-08-03T20:00:45+09:00" />
 
@@ -200,11 +197,11 @@ if (!doNotTrack) {
 <li>타이어 클래스 타입으로 적용했다면 이 클래스를 상속한 실제 타이어들은 어떤 것이든 상관없이 대입이 가능</li>
 </ul>
 <p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled.png" alt="Untitled"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	Tire t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire<span style="color:#f92672">();</span> 
-	Tire t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire<span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	Tire t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ATire(); 
+</span></span><span style="display:flex;"><span>	Tire t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BTire();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -243,11 +240,11 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>Cat 클래스로부터 Cat 객체를 생성하고 이것을 Animal 변수에 대입하면 자동 타입 변환이 발생</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Cat cat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat<span style="color:#f92672">();</span>
-Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672">;</span>
-<span style="color:#75715e">//-------------------
-</span><span style="color:#75715e"></span>Animal animal <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat<span style="color:#f92672">();</span> <span style="color:#75715e">// 가능
-</span></code></pre></div><p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Cat cat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat();
+</span></span><span style="display:flex;"><span>Animal animal <span style="color:#f92672">=</span> cat;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------</span>
+</span></span><span style="display:flex;"><span>Animal animal <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat(); <span style="color:#75715e">// 가능</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%203.png" alt="Untitled"></p>
 </li>
 <li>
 <p>cat과 animal 변수는 타입만 다를 뿐, 동일한 Cat 객체를 참조</p>
@@ -261,8 +258,8 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 <ul>
 <li>다음과 같이 cat과 animal 변수를 == 연산해보면 true가 출력, 참조 변수의 == 연산은 참조 주소값이 같을 경우 true를 출력하므로 두 변수가 동일한 객체를 참조하고 있다는 의미</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">cat <span style="color:#f92672">==</span> animal <span style="color:#75715e">// true
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>cat <span style="color:#f92672">==</span> animal <span style="color:#75715e">// true</span>
+</span></span></code></pre></div><ul>
 <li>바로 위의 부모가 아니더라도 상속 계층에서 상속 타입이라면 자동 타입 변환이 일어날 수 있다.</li>
 </ul>
 <p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%204.png" alt="Untitled"></p>
@@ -285,33 +282,33 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 <ul>
 <li>자동 타입 변환</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span><span style="color:#f92672">{}</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">{}</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">{}</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">extends</span> B<span style="color:#f92672">{}</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">E</span> <span style="color:#66d9ef">extends</span> C<span style="color:#f92672">{}</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PromotionEx</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		B b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> B<span style="color:#f92672">();</span>
-		C c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> C<span style="color:#f92672">();</span>
-		D d <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> D<span style="color:#f92672">();</span>
-		E e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> E<span style="color:#f92672">();</span>
-
-		A a1 <span style="color:#f92672">=</span> b<span style="color:#f92672">;</span>
-		A a2 <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
-		A a3 <span style="color:#f92672">=</span> d<span style="color:#f92672">;</span>
-		A a4 <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
-
-		B b1 <span style="color:#f92672">=</span> d<span style="color:#f92672">;</span>
-		C c1 <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
-
-		<span style="color:#75715e">//B b3 = e; // 컴파일 에러(상속 관계에 있지 않음)
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">//C c2 = d; // 컴파일 에러(상속 관계에 있지 않음)
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A{}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#66d9ef">extends</span> A{}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">extends</span> B{}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">E</span> <span style="color:#66d9ef">extends</span> C{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PromotionEx</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		B b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> B();
+</span></span><span style="display:flex;"><span>		C c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> C();
+</span></span><span style="display:flex;"><span>		D d <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> D();
+</span></span><span style="display:flex;"><span>		E e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> E();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		A a1 <span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>		A a2 <span style="color:#f92672">=</span> c;
+</span></span><span style="display:flex;"><span>		A a3 <span style="color:#f92672">=</span> d;
+</span></span><span style="display:flex;"><span>		A a4 <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		B b1 <span style="color:#f92672">=</span> d;
+</span></span><span style="display:flex;"><span>		C c1 <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//B b3 = e; // 컴파일 에러(상속 관계에 있지 않음)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//C c2 = d; // 컴파일 에러(상속 관계에 있지 않음)</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%205.png" alt="Untitled"></p>
 </li>
 <li>
 <p>부모 타입으로 자동 타입 변환된 이후에도 부모 클래스에 선언된 필드와 메소드만 접근이 가능</p>
@@ -342,44 +339,44 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 <ul>
 <li>
 <p>Parent.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parent</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Parent-method1()&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Parent-method2()&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parent</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Parent-method1()&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Parent-method2()&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>Child.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Child</span> <span style="color:#66d9ef">extends</span> Parent<span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 재정의
-</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Child-method2()&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method3</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Child-method3&#34;</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Child</span> <span style="color:#66d9ef">extends</span> Parent{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>() { <span style="color:#75715e">// 재정의</span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Child-method2()&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method3</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Child-method3&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ChildEx.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Child child <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child<span style="color:#f92672">();</span>
-
-		Parent parent <span style="color:#f92672">=</span> child<span style="color:#f92672">;</span> <span style="color:#75715e">// 자동타입변화
-</span><span style="color:#75715e"></span>		parent<span style="color:#f92672">.</span><span style="color:#a6e22e">method1</span><span style="color:#f92672">();</span>
-		parent<span style="color:#f92672">.</span><span style="color:#a6e22e">method2</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 재정의된 메소드가 호출됨
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">//parent.method3();
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Child child <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Child();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> child; <span style="color:#75715e">// 자동타입변화</span>
+</span></span><span style="display:flex;"><span>		parent.<span style="color:#a6e22e">method1</span>();
+</span></span><span style="display:flex;"><span>		parent.<span style="color:#a6e22e">method2</span>(); <span style="color:#75715e">// 재정의된 메소드가 호출됨</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//parent.method3();</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <p><img src="/images/lang_java/inheritance/%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98%EA%B3%BC_%EB%8B%A4%ED%98%95%EC%84%B1/Untitled%207.png" alt="Untitled"></p>
 </li>
@@ -412,13 +409,13 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/protected_%EC%A0%91%EA%B7%BC_%EC%A0%9C%ED%95%9C%EC%9E%90/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/protected_%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%80%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A6%E1%84%92%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] protected 접근 제한자</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inheritance/%ED%95%84%EB%93%9C%EC%9D%98_%EB%8B%A4%ED%98%95%EC%84%B1/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inheritance/%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%83%E1%85%A1%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 필드의 다형성</p>
 		</a>
@@ -570,7 +567,7 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -578,32 +575,6 @@ Animal animal <span style="color:#f92672">=</span> cat<span style="color:#f92672
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

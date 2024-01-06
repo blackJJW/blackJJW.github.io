@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 열거 객체의 메소드 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 열거 객체의 메소드" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/referencetype/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/referencetype/%E1%84%8B%E1%85%A7%E1%86%AF%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8B%E1%85%B4_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-16T18:00:45+09:00" />
 <meta property="article:modified_time" content="2022-07-16T18:00:45+09:00" />
 
@@ -209,9 +206,9 @@ if (!doNotTrack) {
 <ul>
 <li><code>name()</code> 메소드는 열거 객체 내부의 문자열인 “SUNDAY”를 리턴하고 name 변수에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Week today <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">SUNDAY</span><span style="color:#f92672">;</span>
-String name <span style="color:#f92672">=</span> today<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">();</span>
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Week today <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">SUNDAY</span>;
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> today.<span style="color:#a6e22e">name</span>();
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 <h1 id="ordinal-메소드">ordinal() 메소드</h1>
@@ -229,9 +226,9 @@ String name <span style="color:#f92672">=</span> today<span style="color:#f92672
 <li>today가 참조하는 열거 객체가 전체 열거 객체에서 몇 번째 순번인지 알아내는 코드</li>
 <li><code>ordinal()</code> 메소드는 6을 리턴해서 ordinal 변수에 저장</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Week today <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">SUNDAY</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> ordinal <span style="color:#f92672">=</span> today<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">();</span>
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Week today <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">SUNDAY</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> ordinal <span style="color:#f92672">=</span> today.<span style="color:#a6e22e">ordinal</span>();
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%203.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%204.png" alt="Untitled"></p>
 </li>
 </ul>
@@ -249,11 +246,11 @@ String name <span style="color:#f92672">=</span> today<span style="color:#f92672
 </li>
 <li>
 <p>ex) day1과 day2의 상대적 위치를 리턴</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Week day1 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">MONDAY</span><span style="color:#f92672">;</span>
-Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">WEDNESDAY</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> result1 <span style="color:#f92672">=</span> day1<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>day2<span style="color:#f92672">);</span>
-<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> day2<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>day1<span style="color:#f92672">);</span>
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Week day1 <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">MONDAY</span>;
+</span></span><span style="display:flex;"><span>Week day2 <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">WEDNESDAY</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result1 <span style="color:#f92672">=</span> day1.<span style="color:#a6e22e">compareTo</span>(day2);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> day2.<span style="color:#a6e22e">compareTo</span>(day1);
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%205.png" alt="Untitled"></p>
 </li>
 </ul>
 <h1 id="valueof-메소드">valueOf() 메소드</h1>
@@ -267,8 +264,8 @@ Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.
 </li>
 <li>
 <p>ex) weekDay 변수는 Week.SATURDAY 열거 객체를 참조</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Week weekDay <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SATURDAY&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%206.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Week weekDay <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">valueOf</span>(<span style="color:#e6db74">&#34;SATURDAY&#34;</span>);
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%206.png" alt="Untitled"></p>
 </li>
 </ul>
 <h1 id="values-메소드">values() 메소드</h1>
@@ -279,11 +276,11 @@ Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.
 </li>
 <li>
 <p>ex) Week 열거 타입의 모든 열거 객체를 배열로 만들어 향상된 for문을 이용해서 반복하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Week<span style="color:#f92672">[]</span> days <span style="color:#f92672">=</span> Week<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">();</span>
-<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>Week day <span style="color:#f92672">:</span> days<span style="color:#f92672">){</span>
-	System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>day<span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%207.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Week<span style="color:#f92672">[]</span> days <span style="color:#f92672">=</span> Week.<span style="color:#a6e22e">values</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(Week day : days){
+</span></span><span style="display:flex;"><span>	System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(day);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/referenceType/%EC%97%B4%EA%B1%B0_%EA%B0%9D%EC%B2%B4%EC%9D%98_%EB%A9%94%EC%86%8C%EB%93%9C/Untitled%207.png" alt="Untitled"></p>
 <ul>
 <li>배열의 인덱스는 열거 객체의 순번과 같고 각 인덱스 값은 해당 순번의 열거 객체 번지</li>
 </ul>
@@ -318,13 +315,13 @@ Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/referencetype/%EC%97%B4%EA%B1%B0_%ED%83%80%EC%9E%85/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/referencetype/%E1%84%8B%E1%85%A7%E1%86%AF%E1%84%80%E1%85%A5_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 열거 타입</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/class/%EA%B0%9D%EC%B2%B4_%EC%A7%80%ED%96%A5_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%84%86%E1%85%B5%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 객체 지향 프로그래밍</p>
 		</a>
@@ -476,7 +473,7 @@ Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -484,32 +481,6 @@ Week day2 <span style="color:#f92672">=</span> Week<span style="color:#f92672">.
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

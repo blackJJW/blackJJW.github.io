@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX 스레드 동시성, Task 클래스 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX 스레드 동시성, Task 클래스" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/task_%ED%81%B4%EB%9E%98%EC%8A%A4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/task_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-28T17:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-28T17:00:30+09:00" />
 
@@ -219,28 +216,28 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>작업 결과가 Integer인 Task를 정의</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#75715e">// 작업 코드...
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 작업 코드...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>만약 리턴값이 없는 작업이라면 타입 파라미터로 Void를 사용할 수 있다.</p>
 <ul>
 <li>이 경우 <code>call()</code> 메소드의 리턴값은 null이다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 작업 코드...
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 작업 코드...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="2-task-실행">2. Task 실행</h2>
 <ul>
@@ -252,19 +249,19 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>작업 스레드에서 Task를 처리하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">};</span>
-Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setDaemon</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() { ... };
+</span></span><span style="display:flex;"><span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>thread.<span style="color:#a6e22e">setDaemon</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>thread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div></li>
 <li>
 <p>Task를 스레드풀의 작업 스레드에서 처리하려면 ExecutorService의 <code>submit()</code> 메소드를 호출할 때 매개값으로 전달하면 된다.</p>
 <ul>
 <li>스레드풀(ExecutorService)에서 Task를 처리하는 코드</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">};</span>
-executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() { ... };
+</span></span><span style="display:flex;"><span>executorService.<span style="color:#a6e22e">submit</span>(task);
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="3-task-취소">3. Task 취소</h2>
 <ul>
@@ -279,37 +276,37 @@ executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">s
 </li>
 <li>
 <p><code>cancel()</code> 메소드가 호출되면 <code>isCancelled()</code>는 true를 리턴</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(...)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-			<span style="color:#75715e">// 작업코드...
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (...) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 작업코드...</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></li>
 <li>
 <p>만약 Task가 <code>Thread.sleep()</code>과 같이 블로킹되어 있을 때</p>
 <ul>
 <li><code>cancel()</code> 메소드가 호출되면 InterruptedException이 발생</li>
 <li>이 경우, 예외 처리에서 <code>isCancelled()</code> 메소드로 <code>cancel()</code> 메소드가 호출된 것인지 확인하고 작업을 종료해야 한다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Taxk<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span> <span style="color:#f92672">...</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-			<span style="color:#75715e">// 작업 코드...
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span> <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException interrupted<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Taxk<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> ( ... ) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 작업 코드...</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> { Thread.<span style="color:#a6e22e">sleep</span>(100); } <span style="color:#66d9ef">catch</span> (InterruptedException interrupted) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span>(isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></li>
 <li>
 <p>Task는 한 번만 사용할 수 있다.</p>
 <ul>
@@ -339,8 +336,8 @@ executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">s
 <ul>
 <li>작업 스레드에서 <code>updateProgress()</code> 메소드를 호출했을 때 JavaFX Application Thread가 ProgressBar의 상태를 변경</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">updateProgress<span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> workDone<span style="color:#f92672">,</span> <span style="color:#66d9ef">double</span> max<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>updateProgress(<span style="color:#66d9ef">double</span> workDone, <span style="color:#66d9ef">double</span> max);
+</span></span></code></pre></div><ul>
 <li>첫 번째 매개값은 현재 진행 정도</li>
 <li>두 번째 매개값은 진행 완료 값</li>
 </ul>
@@ -350,67 +347,67 @@ executorService<span style="color:#f92672">.</span><span style="color:#a6e22e">s
 </li>
 <li>
 <p>Task의 progress 속성과 ProgressBar의 progress 속성을 바인딩해서 <code>updateProgress()</code>가 호출될 때마다 ProgressBar의 progress 속성값을 변경하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-			<span style="color:#75715e">// 작업 코드...
-</span><span style="color:#75715e"></span>
-      <span style="color:#75715e">// Task의 progress 속성 업데이트
-</span><span style="color:#75715e"></span>			updateProgress<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> 100<span style="color:#f92672">);</span> 		
-		<span style="color:#f92672">}</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-
-<span style="color:#75715e">// progress 속성 바인딩
-</span><span style="color:#75715e"></span>ProgressBar progressBar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressBar<span style="color:#f92672">();</span>
-
-<span style="color:#75715e">// 속성 바인딩
-</span><span style="color:#75715e"></span>progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">()</span>
-              <span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">());</span>
-
-<span style="color:#75715e">// 작업 스레드 시작
-</span><span style="color:#75715e"></span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 100; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 작업 코드...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Task의 progress 속성 업데이트</span>
+</span></span><span style="display:flex;"><span>			updateProgress(i, 100); 		
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// progress 속성 바인딩</span>
+</span></span><span style="display:flex;"><span>ProgressBar progressBar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressBar();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 속성 바인딩</span>
+</span></span><span style="display:flex;"><span>progressBar.<span style="color:#a6e22e">progressProperty</span>()
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">progressProperty</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 작업 스레드 시작</span>
+</span></span><span style="display:flex;"><span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>thread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="2-updatemessage-메소드">(2) updateMessage() 메소드</h3>
 <ul>
 <li>
 <p>작업이 진행 중이거나, 작업이 취소되었을 경우, 문자열 메시지를 전달해서 UI를 변경하고 싶다면 <code>updateMessage()</code>를 호출 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">updateMessage<span style="color:#f92672">(</span>String message<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>updateMessage(String message);
+</span></span></code></pre></div><ul>
 <li><code>updateMessage()</code>는 Task의 message 속성을 업데이트</li>
 <li>Task의 message 속성과 UI 컨트롤의 문자열 속성을 바인딩할 수 있다.</li>
 </ul>
 </li>
 <li>
 <p>Task의 message 속성과 Label의 text 속성을 바인딩해서 <code>updateMessage()</code>가 호출될 때마다 Label의 text 속성값을 변경하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-
-			<span style="color:#75715e">// Task의 message 속성 업데이트
-</span><span style="color:#75715e"></span>			updateMessage<span style="color:#f92672">(</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">};</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-
-<span style="color:#75715e">// 문자열 속성 바인딩
-</span><span style="color:#75715e"></span>Label label <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Label<span style="color:#f92672">();</span>
-
-<span style="color:#75715e">// 속성 바인딩
-</span><span style="color:#75715e"></span>label<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">messageProperty</span><span style="color:#f92672">());</span>
-
-<span style="color:#75715e">// 작업 스레드 시작
-</span><span style="color:#75715e"></span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 100; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// Task의 message 속성 업데이트</span>
+</span></span><span style="display:flex;"><span>			updateMessage( String.<span style="color:#a6e22e">valueOf</span>(i) };
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 문자열 속성 바인딩</span>
+</span></span><span style="display:flex;"><span>Label label <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Label();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 속성 바인딩</span>
+</span></span><span style="display:flex;"><span>label.<span style="color:#a6e22e">textProperty</span>().<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">messageProperty</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 작업 스레드 시작</span>
+</span></span><span style="display:flex;"><span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>thread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="3-platformrunlater-메소드">(3) Platform.runLater() 메소드</h3>
 <ul>
@@ -419,21 +416,21 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 <ul>
 <li><code>call()</code> 메소드 내에서 <code>Platform.runLater(new Runnable() { … })</code>을 호출하면 된다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-			Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// UI 변경코드 } );
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">};</span>
-
-<span style="color:#75715e">// 작업 스레드 시작
-</span><span style="color:#75715e"></span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 100; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>			Platform.<span style="color:#a6e22e">runLater</span>( () <span style="color:#f92672">-&gt;</span> { <span style="color:#75715e">// UI 변경코드 } );</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 작업 스레드 시작</span>
+</span></span><span style="display:flex;"><span>Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>thread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -441,121 +438,121 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 <ul>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
-
-<span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;129.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;233.0&#34;</span> 
-            <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-            <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
-            <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;task.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;children&gt;</span>
-      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span> 
-                   <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;17.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
-                   <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
-             <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;진행정도&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblWorkDone&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;77.0&#34;</span> 
-             <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStart&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;66.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
-              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시작&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;130.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span>
-              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/children&gt;</span>
-<span style="color:#f92672">&lt;/AnchorPane&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;129.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;233.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;task.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span> 
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;17.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;진행정도&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblWorkDone&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;77.0&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStart&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;66.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시작&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;130.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/AnchorPane&gt;</span>
+</span></span></code></pre></div><ul>
 <li>RootController.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.concurrent.Task<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.ProgressBar<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblWorkDone<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStart<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">private</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		btnStart<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> handleBtnStart<span style="color:#f92672">(</span>event<span style="color:#f92672">));</span>
-		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> handleBtnStop<span style="color:#f92672">(</span>event<span style="color:#f92672">));</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStart</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-					<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-						updateMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;취소됨&#34;</span><span style="color:#f92672">);</span>
-						<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-					<span style="color:#f92672">}</span>
-					<span style="color:#75715e">// Task의 progress와 message 속성 업데이트
-</span><span style="color:#75715e"></span>					updateProgress<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> 100<span style="color:#f92672">);</span>
-					updateMessage<span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-
-					<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span> <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-						<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-							updateMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;취소됨&#34;</span><span style="color:#f92672">);</span>
-							<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-						<span style="color:#f92672">}</span>
-					<span style="color:#f92672">}</span>
-				<span style="color:#f92672">}</span>
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-
-		<span style="color:#75715e">// 속성 바인딩
-</span><span style="color:#75715e"></span>		progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">());</span>
-		lblWorkDone<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">messageProperty</span><span style="color:#f92672">());</span>
-
-		Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-		thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setDaemon</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-		thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStop</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 작업 취소
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.concurrent.Task;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Label;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ProgressBar;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblWorkDone;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStart;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> task;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>		btnStart.<span style="color:#a6e22e">setOnAction</span>(event <span style="color:#f92672">-&gt;</span> handleBtnStart(event));
+</span></span><span style="display:flex;"><span>		btnStop.<span style="color:#a6e22e">setOnAction</span>(event <span style="color:#f92672">-&gt;</span> handleBtnStop(event));
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStart</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;=</span> 100; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">if</span>(isCancelled()) {
+</span></span><span style="display:flex;"><span>						updateMessage(<span style="color:#e6db74">&#34;취소됨&#34;</span>);
+</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// Task의 progress와 message 속성 업데이트</span>
+</span></span><span style="display:flex;"><span>					updateProgress(i, 100);
+</span></span><span style="display:flex;"><span>					updateMessage(String.<span style="color:#a6e22e">valueOf</span>(i));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">try</span> { Thread.<span style="color:#a6e22e">sleep</span>(100); } <span style="color:#66d9ef">catch</span>(InterruptedException e) {
+</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">if</span>(isCancelled()) {
+</span></span><span style="display:flex;"><span>							updateMessage(<span style="color:#e6db74">&#34;취소됨&#34;</span>);
+</span></span><span style="display:flex;"><span>							<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>						}
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 속성 바인딩</span>
+</span></span><span style="display:flex;"><span>		progressBar.<span style="color:#a6e22e">progressProperty</span>().<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">progressProperty</span>());
+</span></span><span style="display:flex;"><span>		lblWorkDone.<span style="color:#a6e22e">textProperty</span>().<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">messageProperty</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>		thread.<span style="color:#a6e22e">setDaemon</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		thread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStop</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		task.<span style="color:#a6e22e">cancel</span>(); <span style="color:#75715e">// 작업 취소</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>AppMain.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Parent root <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Parent<span style="color:#f92672">)</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
-
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/Task_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span>(Stage primaryStage) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		Parent root <span style="color:#f92672">=</span> (Parent) FXMLLoader.<span style="color:#a6e22e">load</span>(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;Root.fxml&#34;</span>));
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene(root);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setTitle</span>(<span style="color:#e6db74">&#34;AppMain&#34;</span>);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setScene</span>(scene);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		launch(args);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/Task_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%201.png" alt="Untitled"></p>
 <h3 id="4-작업-상태별-콜백">(4) 작업 상태별 콜백</h3>
 <ul>
 <li>
@@ -595,11 +592,11 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
-<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">succeeded</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	V v <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">succeeded</span>() {
+</span></span><span style="display:flex;"><span>	V v <span style="color:#f92672">=</span> task.<span style="color:#a6e22e">getValue</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -608,135 +605,135 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 <li>작업 완료 결과는 <code>succeeded()</code> 메소드에서 얻어 Label 컨트롤에 나타낸다.</li>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
-
-<span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;129.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;233.0&#34;</span> 
-            <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-            <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
-            <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;task_2.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;children&gt;</span>
-      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;17.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
-                   <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
-                   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span><span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;진행정도 :&#34;</span><span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;77.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
-             <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblWorkDone&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;118.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;작업결과 :&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;175.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
-             <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblResult&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;66.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
-              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시작&#34;</span> 
-              <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStart&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;130.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
-              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> 
-              <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/children&gt;</span>
-<span style="color:#f92672">&lt;/AnchorPane&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Button?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.Label?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.control.ProgressBar?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.AnchorPane?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;AnchorPane</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;129.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;233.0&#34;</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fx:controller=</span><span style="color:#e6db74">&#34;task_2.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ProgressBar</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;17.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;23.0&#34;</span> 
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;200.0&#34;</span> <span style="color:#a6e22e">progress=</span><span style="color:#e6db74">&#34;0.0&#34;</span> 
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;progressBar&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;18.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;진행정도 :&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;77.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblWorkDone&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;118.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;작업결과 :&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;175.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;57.0&#34;</span> 
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;lblResult&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;66.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;시작&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStart&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Button</span> <span style="color:#a6e22e">layoutX=</span><span style="color:#e6db74">&#34;130.0&#34;</span> <span style="color:#a6e22e">layoutY=</span><span style="color:#e6db74">&#34;91.0&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">mnemonicParsing=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;멈춤&#34;</span> 
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;btnStop&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/AnchorPane&gt;</span>
+</span></span></code></pre></div><ul>
 <li>RootController.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.concurrent.Task<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.ProgressBar<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblWorkDone<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblResult<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStart<span style="color:#f92672">;</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">private</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		btnStart<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> handleBtnStart<span style="color:#f92672">(</span>event<span style="color:#f92672">));</span>
-		btnStop<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> handleBtnStop<span style="color:#f92672">(</span>event<span style="color:#f92672">));</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStart</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-				<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-				<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-					<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-					result <span style="color:#f92672">+=</span> i<span style="color:#f92672">;</span>
-					updateProgress<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> 100<span style="color:#f92672">);</span>
-					updateMessage<span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-					<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-						<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">())</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">break</span><span style="color:#f92672">;}</span>
-					<span style="color:#f92672">}</span>
-				<span style="color:#f92672">}</span>
-				<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">succeeded</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				lblResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>getValue<span style="color:#f92672">()));</span>
-			<span style="color:#f92672">}</span>
-
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cancelled</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				lblResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;취소됨&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-
-			<span style="color:#a6e22e">@Override</span>
-			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">failed</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-				lblResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;실패&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">};</span>
-
-		progressBar<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">());</span>
-		lblWorkDone<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">messageProperty</span><span style="color:#f92672">());</span>
-		lblResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
-
-		Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
-		thread <span style="color:#f92672">.</span><span style="color:#a6e22e">setDaemon</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-		thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStop</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.concurrent.Task;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Button;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.Label;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ProgressBar;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ProgressBar progressBar;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblWorkDone;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Label lblResult;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStart;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> Button btnStop;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>		btnStart.<span style="color:#a6e22e">setOnAction</span>(event <span style="color:#f92672">-&gt;</span> handleBtnStart(event));
+</span></span><span style="display:flex;"><span>		btnStop.<span style="color:#a6e22e">setOnAction</span>(event <span style="color:#f92672">-&gt;</span> handleBtnStop(event));
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStart</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">protected</span> Integer <span style="color:#a6e22e">call</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;=</span> 100; i<span style="color:#f92672">++</span> ) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">if</span>(isCancelled()) { <span style="color:#66d9ef">break</span>; }
+</span></span><span style="display:flex;"><span>					result <span style="color:#f92672">+=</span> i;
+</span></span><span style="display:flex;"><span>					updateProgress(i, 100);
+</span></span><span style="display:flex;"><span>					updateMessage(String.<span style="color:#a6e22e">valueOf</span>(i));
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">try</span> {Thread.<span style="color:#a6e22e">sleep</span>(100);} <span style="color:#66d9ef">catch</span>(InterruptedException e) {
+</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">if</span>(isCancelled()) {<span style="color:#66d9ef">break</span>;}
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">succeeded</span>() {
+</span></span><span style="display:flex;"><span>				lblResult.<span style="color:#a6e22e">setText</span>(String.<span style="color:#a6e22e">valueOf</span>(getValue()));
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cancelled</span>() {
+</span></span><span style="display:flex;"><span>				lblResult.<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;취소됨&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">failed</span>() {
+</span></span><span style="display:flex;"><span>				lblResult.<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;실패&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		progressBar.<span style="color:#a6e22e">progressProperty</span>().<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">progressProperty</span>());
+</span></span><span style="display:flex;"><span>		lblWorkDone.<span style="color:#a6e22e">textProperty</span>().<span style="color:#a6e22e">bind</span>(task.<span style="color:#a6e22e">messageProperty</span>());
+</span></span><span style="display:flex;"><span>		lblResult.<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(task);
+</span></span><span style="display:flex;"><span>		thread .<span style="color:#a6e22e">setDaemon</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		thread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnStop</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		task.<span style="color:#a6e22e">cancel</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>AppMain.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Parent root <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Parent<span style="color:#f92672">)</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
-
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/Task_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span>(Stage primaryStage) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		Parent root <span style="color:#f92672">=</span> (Parent) FXMLLoader.<span style="color:#a6e22e">load</span>(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;Root.fxml&#34;</span>));
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene(root);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setTitle</span>(<span style="color:#e6db74">&#34;AppMain&#34;</span>);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setScene</span>(scene);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		launch(args);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/Task_%ED%81%B4%EB%9E%98%EC%8A%A4/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -770,13 +767,13 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/platform_runlater_%EB%A9%94%EC%86%8C%EB%93%9C/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/platform_runlater_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX 스레드 동시성, Platform.runLater() 메소드</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/service_%ED%81%B4%EB%9E%98%EC%8A%A4/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/service_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX 스레드 동시성, Service 클래스</p>
 		</a>
@@ -928,7 +925,7 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -936,32 +933,6 @@ thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</spa
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

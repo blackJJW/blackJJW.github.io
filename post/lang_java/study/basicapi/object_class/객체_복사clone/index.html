@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] Object 클래스, 객체 복사(clone()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] Object 클래스, 객체 복사(clone())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%ACclone/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1clone/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-19T21:30:45+09:00" />
 <meta property="article:modified_time" content="2022-09-19T21:30:45+09:00" />
 
@@ -236,45 +233,45 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><code>clone()</code>은 <code>CloneNotSupportedException</code> 예외 처리가 필요한 메소드이기 때문에 <code>try</code>-<code>catch</code> 구문이 필요</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-	Object obj <span style="color:#f92672">=</span> clone<span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>CloneNotSupportedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>	Object obj <span style="color:#f92672">=</span> clone();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span>(CloneNotSupportedException e) {}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 복제할 수 있는 클래스 선언</p>
 <ul>
 <li>Member 클래스가 Cloneable 인터페이스를 구현했기 때문에 <code>getMember()</code> 메소드에서 <code>clone()</code> 메소드로 자신을 복제한 후, 복제한 객체를 외부로 리턴 가능</li>
 <li>Member1.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member1</span> <span style="color:#66d9ef">implements</span> Cloneable<span style="color:#f92672">{</span> 
-                             <span style="color:#75715e">// 복제 가능 표시
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> String id<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> String password<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> adult<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member1</span><span style="color:#f92672">(</span>String id<span style="color:#f92672">,</span> String name<span style="color:#f92672">,</span> String password<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> adult<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">adult</span> <span style="color:#f92672">=</span> adult<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> Member1 <span style="color:#a6e22e">getMember1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		Member1 cloned <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			cloned <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Member1<span style="color:#f92672">)</span> clone<span style="color:#f92672">();</span> <span style="color:#75715e">// clone() 메소드릐 리턴 타입은 
-</span><span style="color:#75715e"></span>			                            <span style="color:#75715e">// Object이므로 Member1 타입으로 캐스팅
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>CloneNotSupportedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-
-		<span style="color:#66d9ef">return</span> cloned<span style="color:#f92672">;</span>
-
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member1</span> <span style="color:#66d9ef">implements</span> Cloneable{ 
+</span></span><span style="display:flex;"><span>                             <span style="color:#75715e">// 복제 가능 표시</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String id;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String password;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> adult;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member1</span>(String id, String name, String password, <span style="color:#66d9ef">int</span> age, <span style="color:#66d9ef">boolean</span> adult) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">adult</span> <span style="color:#f92672">=</span> adult;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> Member1 <span style="color:#a6e22e">getMember1</span>() {
+</span></span><span style="display:flex;"><span>		Member1 cloned <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			cloned <span style="color:#f92672">=</span> (Member1) clone(); <span style="color:#75715e">// clone() 메소드릐 리턴 타입은 </span>
+</span></span><span style="display:flex;"><span>			                            <span style="color:#75715e">// Object이므로 Member1 타입으로 캐스팅</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span> (CloneNotSupportedException e) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> cloned;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>Member1Ex.java
 <ul>
 <li>원본 Member1를 복제한 후, 복제 Member1의 password 필드값을 변경하더라도 Member1의 password 필드값은 변경되지 않음을 보여준다.</li>
@@ -282,36 +279,36 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member1Ex</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 원본 객체 생성
-</span><span style="color:#75715e"></span>		Member1 original <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Member1<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;blue&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;12345&#34;</span><span style="color:#f92672">,</span> 25<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 복제 객체를 얻은 후에 패스워드 변경
-</span><span style="color:#75715e"></span>		Member1 cloned <span style="color:#f92672">=</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">getMember1</span><span style="color:#f92672">();</span>
-		cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;67890&#34;</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 복제 객체에서 password 변경
-</span><span style="color:#75715e"></span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 복제 객체의 필드값 ]&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;adult : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">adult</span><span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 원본 객체의 필드값 ]&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;adult : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">adult</span><span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%AC(clone())/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member1Ex</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 원본 객체 생성</span>
+</span></span><span style="display:flex;"><span>		Member1 original <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Member1(<span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;ABC&#34;</span>, <span style="color:#e6db74">&#34;12345&#34;</span>, 25, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 복제 객체를 얻은 후에 패스워드 변경</span>
+</span></span><span style="display:flex;"><span>		Member1 cloned <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">getMember1</span>();
+</span></span><span style="display:flex;"><span>		cloned.<span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;67890&#34;</span>; <span style="color:#75715e">// 복제 객체에서 password 변경</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 복제 객체의 필드값 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;id : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;password : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">password</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">age</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;adult : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">adult</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 원본 객체의 필드값 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;id : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;password : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">password</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">age</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;adult : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">adult</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%AC(clone())/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -348,62 +345,62 @@ if (!doNotTrack) {
 <li>Member2 클래스는 Object의 <code>clone()</code> 메소드를 재정의해서 <code>int[]</code> 배열과 Car 객체를 복제</li>
 <li>Member2.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member2</span> <span style="color:#66d9ef">implements</span> Cloneable<span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> scores<span style="color:#f92672">;</span> <span style="color:#75715e">// 참조 타입 필드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> Car car<span style="color:#f92672">;</span>      <span style="color:#75715e">// (깊은 복제 대상)
-</span><span style="color:#75715e"></span>
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member2</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> scores<span style="color:#f92672">,</span> Car car<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> scores<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">car</span> <span style="color:#f92672">=</span> car<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// clone() 메소드 재정의
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">protected</span> Object <span style="color:#a6e22e">clone</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> CloneNotSupportedException <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 먼저 얕은 복사를 해서 name, age를 복제
-</span><span style="color:#75715e"></span>		Member2 cloned <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Member2<span style="color:#f92672">)</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">clone</span><span style="color:#f92672">();</span> <span style="color:#75715e">// Object의 clone() 호출
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// scores를 깊은 복제한다.
-</span><span style="color:#75715e"></span>		cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOf</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">);</span>
-		<span style="color:#75715e">// car를 깊은 복제한다.
-</span><span style="color:#75715e"></span>		cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">car</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">car</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span><span style="color:#f92672">);</span>
-		<span style="color:#75715e">// 깊은 복제된 Member 객체를 리턴
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> cloned<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> Member2 <span style="color:#a6e22e">getMember2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		Member2 cloned <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			<span style="color:#75715e">// 재정의된 clone() 메소드 호출
-</span><span style="color:#75715e"></span>			cloned <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Member2<span style="color:#f92672">)</span> clone<span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>CloneNotSupportedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> cloned<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member2</span> <span style="color:#66d9ef">implements</span> Cloneable{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> scores; <span style="color:#75715e">// 참조 타입 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> Car car;      <span style="color:#75715e">// (깊은 복제 대상)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member2</span>(String name, <span style="color:#66d9ef">int</span> age, <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> scores, Car car) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> scores;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">car</span> <span style="color:#f92672">=</span> car;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// clone() 메소드 재정의</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">protected</span> Object <span style="color:#a6e22e">clone</span>() <span style="color:#66d9ef">throws</span> CloneNotSupportedException {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 먼저 얕은 복사를 해서 name, age를 복제</span>
+</span></span><span style="display:flex;"><span>		Member2 cloned <span style="color:#f92672">=</span> (Member2) <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">clone</span>(); <span style="color:#75715e">// Object의 clone() 호출</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// scores를 깊은 복제한다.</span>
+</span></span><span style="display:flex;"><span>		cloned.<span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">copyOf</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">scores</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// car를 깊은 복제한다.</span>
+</span></span><span style="display:flex;"><span>		cloned.<span style="color:#a6e22e">car</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">car</span>.<span style="color:#a6e22e">model</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 깊은 복제된 Member 객체를 리턴</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> cloned;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> Member2 <span style="color:#a6e22e">getMember2</span>() {
+</span></span><span style="display:flex;"><span>		Member2 cloned <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 재정의된 clone() 메소드 호출</span>
+</span></span><span style="display:flex;"><span>			cloned <span style="color:#f92672">=</span> (Member2) clone();
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(CloneNotSupportedException e) {
+</span></span><span style="display:flex;"><span>			e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> cloned;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>Car.java
 <ul>
 <li>Car 클래스</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> String model<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Car</span><span style="color:#f92672">(</span>String model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String model;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Car</span>(String model) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 깊은 복제 후 복제본 변경은 원본에 영향을 미치지 않는다.</p>
 <ul>
@@ -415,46 +412,46 @@ if (!doNotTrack) {
 </li>
 <li>Member2Ex.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member2Ex</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 원본 객체 생성
-</span><span style="color:#75715e"></span>		Member2 original <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Member2<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">,</span> 23<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> <span style="color:#f92672">{</span>90<span style="color:#f92672">,</span> 90<span style="color:#f92672">},</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;그랜져&#34;</span><span style="color:#f92672">));</span>
-
-		<span style="color:#75715e">// 깊은 복제 후 참조 객체의 데이터를 변경
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 복제 객체를 얻은 후에 참조 객체의 데이터를 변경
-</span><span style="color:#75715e"></span>		Member2 cloned <span style="color:#f92672">=</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">getMember2</span><span style="color:#f92672">();</span>
-		cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 100<span style="color:#f92672">;</span>
-		cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">car</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;소나타&#34;</span><span style="color:#f92672">;</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 복제 객체의 필드값 ]&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;scores : {&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">((</span>i <span style="color:#f92672">==</span> <span style="color:#f92672">(</span>cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">))</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;car : &#34;</span> <span style="color:#f92672">+</span> cloned<span style="color:#f92672">.</span><span style="color:#a6e22e">car</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span><span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 원본 객체의 필드값 ]&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;scores : {&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>original<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">((</span>i<span style="color:#f92672">==(</span>original<span style="color:#f92672">.</span><span style="color:#a6e22e">scores</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">))</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;car : &#34;</span> <span style="color:#f92672">+</span> original<span style="color:#f92672">.</span><span style="color:#a6e22e">car</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span><span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%AC(clone())/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Member2Ex</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 원본 객체 생성</span>
+</span></span><span style="display:flex;"><span>		Member2 original <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Member2(<span style="color:#e6db74">&#34;ABC&#34;</span>, 23, <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> {90, 90}, <span style="color:#66d9ef">new</span> Car(<span style="color:#e6db74">&#34;그랜져&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 깊은 복제 후 참조 객체의 데이터를 변경</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 복제 객체를 얻은 후에 참조 객체의 데이터를 변경</span>
+</span></span><span style="display:flex;"><span>		Member2 cloned <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">getMember2</span>();
+</span></span><span style="display:flex;"><span>		cloned.<span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 100;
+</span></span><span style="display:flex;"><span>		cloned.<span style="color:#a6e22e">car</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;소나타&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 복제 객체의 필드값 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">age</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;scores : {&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> cloned.<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(cloned.<span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>((i <span style="color:#f92672">==</span> (cloned.<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> : <span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;}&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;car : &#34;</span> <span style="color:#f92672">+</span> cloned.<span style="color:#a6e22e">car</span>.<span style="color:#a6e22e">model</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 원본 객체의 필드값 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;age : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">age</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;scores : {&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> original.<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(original.<span style="color:#a6e22e">scores</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>((i<span style="color:#f92672">==</span>(original.<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> : <span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;}&#34;</span>);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;car : &#34;</span> <span style="color:#f92672">+</span> original.<span style="color:#a6e22e">car</span>.<span style="color:#a6e22e">model</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%AC(clone())/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -485,13 +482,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4tostring/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9tostring/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] Object 클래스, 객체 문자 정보(toString())</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EC%86%8C%EB%A9%B8%EC%9E%90finalize/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%A9%E1%84%86%E1%85%A7%E1%86%AF%E1%84%8C%E1%85%A1finalize/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] Object 클래스, 객체 소멸자(finalize())</p>
 		</a>
@@ -643,7 +640,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -651,32 +648,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

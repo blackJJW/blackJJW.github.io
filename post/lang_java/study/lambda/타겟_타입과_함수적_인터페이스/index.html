@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 타겟 타입과 함수적 인터페이스 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 타겟 타입과 함수적 인터페이스" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/lambda/%ED%83%80%EA%B2%9F_%ED%83%80%EC%9E%85%EA%B3%BC_%ED%95%A8%EC%88%98%EC%A0%81_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/lambda/%E1%84%90%E1%85%A1%E1%84%80%E1%85%A6%E1%86%BA_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%80%E1%85%AA_%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-29T17:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-29T17:40:30+09:00" />
 
@@ -188,8 +185,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>자바는 메소드를 단독으로 선언할 수 없고 항상 클래스의 구성 멤버로 선언하기 때문에 람다식은 단순히 메소드를 선언하는 것이 아니라 이 메소드를 가지고 있는 객체를 생성</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">인터페이스 변수 <span style="color:#f92672">=</span> 람다식<span style="color:#f92672">;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>인터페이스 변수 <span style="color:#f92672">=</span> 람다식;
+</span></span></code></pre></div><ul>
 <li>람다식은 인터페이스 변수에 대입
 <ul>
 <li>람다식은 인터페이스의 익명 구현 객체를 생성한다는 의미</li>
@@ -226,12 +223,12 @@ if (!doNotTrack) {
 <li>인터페이스 선언 시 <code>@FunctionalInterface</code> 어노테이션을 붙이면 된다.</li>
 <li>이 어노테이션은 두 개 이상의 추상 메소드가 선언되면 컴파일 오류를 발생시킨다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@FunctionalInterface</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">MyFunctionalInterface</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">();</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">otherMethod</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 컴파일 오류
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@FunctionalInterface</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">MyFunctionalInterface</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method</span>();
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">otherMethod</span>(); <span style="color:#75715e">// 컴파일 오류</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p><code>@FunctionalInterface</code> 어노테이션은 선택사항</p>
 <ul>
@@ -268,13 +265,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/lambda/%EB%9E%8C%EB%8B%A4%EC%8B%9D_%EA%B8%B0%EB%B3%B8_%EB%AC%B8%EB%B2%95/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/lambda/%E1%84%85%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%E1%86%A8_%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 람다식 기본 문법</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/lambda/%EB%A7%A4%EA%B0%9C_%EB%B3%80%EC%88%98%EC%99%80_%EB%A6%AC%ED%84%B4%EA%B0%92%EC%9D%B4_%EC%97%86%EB%8A%94_%EB%9E%8C%EB%8B%A4%EC%8B%9D/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/lambda/%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE%E1%84%8B%E1%85%AA_%E1%84%85%E1%85%B5%E1%84%90%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A1%E1%86%B9%E1%84%8B%E1%85%B5_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%85%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%E1%86%A8/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 타겟 타입과 함수적 인터페이스 - 매개 변수와 리턴값이 없는 람다식</p>
 		</a>
@@ -426,7 +423,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -434,32 +431,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

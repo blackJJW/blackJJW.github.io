@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[JavaScript] 타이머로 구현한 남은 글자 수 세기 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[JavaScript] 타이머로 구현한 남은 글자 수 세기" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A1%9C_%EA%B5%AC%ED%98%84%ED%95%9C_%EB%82%A8%EC%9D%80_%EA%B8%80%EC%9E%90_%EC%88%98_%EC%84%B8%EA%B8%B0/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A5%E1%84%85%E1%85%A9_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB_%E1%84%82%E1%85%A1%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB_%E1%84%80%E1%85%B3%E1%86%AF%E1%84%8C%E1%85%A1_%E1%84%89%E1%85%AE_%E1%84%89%E1%85%A6%E1%84%80%E1%85%B5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-16T14:30:45+09:00" />
 <meta property="article:modified_time" content="2022-06-16T14:30:45+09:00" />
 
@@ -193,37 +190,37 @@ if (!doNotTrack) {
 <li>입력 양식에 초점을 맞춘 경우(<strong>활성화 상태</strong>)와 초점을 해제한 경우(<strong>비활성화 상태</strong>)에 발생하는 이벤트</li>
 <li>입력 양식에 글자를 <strong>입력하려고 선택한 순간부터</strong> <strong>타이머를 돌리고</strong>, 다른 일을 하기 위해서 입력 양식에서 <strong>초점을 해제</strong>하면 <strong>타이머를 정지</strong>하게 만든다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-        document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, () =&gt; {
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>);
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">h1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
-            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timerId</span>
-
-            <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;focus&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; { <span style="color:#75715e">// 입력 양식 활성화
-</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(() =&gt; {
-                    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span>;
-                    <span style="color:#a6e22e">h1</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`글자 수 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-                }, <span style="color:#ae81ff">50</span>);
-            });
-            <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;blur&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; { <span style="color:#75715e">// 입력 양식 비활성화
-</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">clearInterval</span>(<span style="color:#a6e22e">timerId</span>);
-            });
-        });
-    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">h1</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;<span style="color:#f92672">textarea</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p><img src="/images/lang_javascript/study_1/JavaScript_%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A1%9C_%EA%B5%AC%ED%98%84%ED%95%9C_%EB%82%A8%EC%9D%80_%EA%B8%80%EC%9E%90_%EC%88%98_%EC%84%B8%EA%B8%B0/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">textarea</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;textarea&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">h1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timerId</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;focus&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; { <span style="color:#75715e">// 입력 양식 활성화
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">h1</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`글자 수 : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>                }, <span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">textarea</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;blur&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; { <span style="color:#75715e">// 입력 양식 비활성화
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">clearInterval</span>(<span style="color:#a6e22e">timerId</span>);
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">textarea</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img src="/images/lang_javascript/study_1/JavaScript_%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A1%9C_%EA%B5%AC%ED%98%84%ED%95%9C_%EB%82%A8%EC%9D%80_%EA%B8%80%EC%9E%90_%EC%88%98_%EC%84%B8%EA%B8%B0/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <h2 id="references">References</h2>
@@ -256,13 +253,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_javascript/study/doc_object/javascript_%ED%95%A0_%EC%9D%BC_%EB%AA%A9%EB%A1%9D_%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="prev">
+		<a class="pager__link" href="/post/lang_javascript/study/doc_object/javascript_%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%86%E1%85%A9%E1%86%A8%E1%84%85%E1%85%A9%E1%86%A8_%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[JavaScript] 할 일 목록 만들기</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_javascript/study/doc_object/javascript_localstorage_%EA%B0%9D%EC%B2%B4/" rel="next">
+		<a class="pager__link" href="/post/lang_javascript/study/doc_object/javascript_localstorage_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[JavaScript] localStorage 객체</p>
 		</a>
@@ -414,7 +411,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -422,32 +419,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

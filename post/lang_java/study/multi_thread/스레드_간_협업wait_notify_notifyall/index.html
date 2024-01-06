@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 스레드 상태 제어, 스레드 간 협업(wait(), notify(), notifyAll()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 스레드 상태 제어, 스레드 간 협업(wait(), notify(), notifyAll())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B0%84_%ED%98%91%EC%97%85wait_notify_notifyall/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/multi_thread/%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_%E1%84%80%E1%85%A1%E1%86%AB_%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%A5%E1%86%B8wait_notify_notifyall/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-09T23:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-09T23:40:30+09:00" />
 
@@ -220,92 +217,92 @@ if (!doNotTrack) {
 <li>두 스레드의 작업을 WorkObject의 <code>methodA()</code>와 <code>methodB()</code>에 정의해 두고, 두 스레드 ThreadA와 ThreadB가 교대로 <code>methodA()</code>와 <code>methodB()</code>를 호출</li>
 <li>WorkObject.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WorkObject</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methodA</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ThreadA의 methodA() 작업 실행&#34;</span><span style="color:#f92672">);</span>
-		notify<span style="color:#f92672">();</span> <span style="color:#75715e">// 일시 정지 상태에 있는 ThreadB를 실행 대기 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			wait<span style="color:#f92672">();</span> <span style="color:#75715e">// ThreadA를 일시 정지 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methodB</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ThreadB의 methodB() 작업 실행&#34;</span><span style="color:#f92672">);</span>
-		notify<span style="color:#f92672">();</span> <span style="color:#75715e">// 일시 정지 상태에 있는 ThreadA를 실행 대기 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			wait<span style="color:#f92672">();</span> <span style="color:#75715e">// ThreadB를 일시 정지 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WorkObject</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methodA</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;ThreadA의 methodA() 작업 실행&#34;</span>);
+</span></span><span style="display:flex;"><span>		notify(); <span style="color:#75715e">// 일시 정지 상태에 있는 ThreadB를 실행 대기 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			wait(); <span style="color:#75715e">// ThreadA를 일시 정지 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(InterruptedException e) {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methodB</span>() {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;ThreadB의 methodB() 작업 실행&#34;</span>);
+</span></span><span style="display:flex;"><span>		notify(); <span style="color:#75715e">// 일시 정지 상태에 있는 ThreadA를 실행 대기 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			wait(); <span style="color:#75715e">// ThreadB를 일시 정지 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(InterruptedException e) {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) WorkObject의 methodA, methodB를 실행하는 메소드</p>
 <ul>
 <li>ThreadA.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadA</span> <span style="color:#66d9ef">extends</span> Thread<span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> WorkObject workObject<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadA</span><span style="color:#f92672">(</span>WorkObject workObject<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체를 매개값으로 받아 필드에 저장
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">workObject</span> <span style="color:#f92672">=</span> workObject<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체의 methodA를 10번 반복 호출
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 10<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			workObject<span style="color:#f92672">.</span><span style="color:#a6e22e">methodA</span><span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadA</span> <span style="color:#66d9ef">extends</span> Thread{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> WorkObject workObject;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadA</span>(WorkObject workObject) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체를 매개값으로 받아 필드에 저장</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">workObject</span> <span style="color:#f92672">=</span> workObject;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체의 methodA를 10번 반복 호출</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 10; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			workObject.<span style="color:#a6e22e">methodA</span>();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>ThreadB.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadB</span> <span style="color:#66d9ef">extends</span> Thread<span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> WorkObject workObject<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadB</span><span style="color:#f92672">(</span>WorkObject workObject<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체를 매개값으로 받아 필드에 저장
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">workObject</span> <span style="color:#f92672">=</span> workObject<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체의 methodB를 10번 반복 호출
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 10<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			workObject<span style="color:#f92672">.</span><span style="color:#a6e22e">methodB</span><span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadB</span> <span style="color:#66d9ef">extends</span> Thread{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> WorkObject workObject;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadB</span>(WorkObject workObject) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체를 매개값으로 받아 필드에 저장</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">workObject</span> <span style="color:#f92672">=</span> workObject;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체의 methodB를 10번 반복 호출</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 10; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			workObject.<span style="color:#a6e22e">methodB</span>();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 두 스레드를 생성하고 실행하는 메인 스레드</p>
 <ul>
 <li>WaitNotifyEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WaitNotifyEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체 생성
-</span><span style="color:#75715e"></span>		WorkObject sharedObject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkObject<span style="color:#f92672">();</span>
-
-		<span style="color:#75715e">// ThreadA와 ThreadB 생성
-</span><span style="color:#75715e"></span>		ThreadA threadA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadA<span style="color:#f92672">(</span>sharedObject<span style="color:#f92672">);</span>
-		ThreadB threadB <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadB<span style="color:#f92672">(</span>sharedObject<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// ThreadA와 ThreadB 실행
-</span><span style="color:#75715e"></span>		threadA<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-		threadB<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B0%84_%ED%98%91%EC%97%85(wait(),_notify(),_notifyAll())/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WaitNotifyEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체 생성</span>
+</span></span><span style="display:flex;"><span>		WorkObject sharedObject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkObject();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ThreadA와 ThreadB 생성</span>
+</span></span><span style="display:flex;"><span>		ThreadA threadA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadA(sharedObject);
+</span></span><span style="display:flex;"><span>		ThreadB threadB <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadB(sharedObject);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ThreadA와 ThreadB 실행</span>
+</span></span><span style="display:flex;"><span>		threadA.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>		threadB.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B0%84_%ED%98%91%EC%97%85(wait(),_notify(),_notifyAll())/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 두 스레드의 작업 내용을 동기화 메소드로 작성한 공유 객체</p>
@@ -329,109 +326,109 @@ if (!doNotTrack) {
 </li>
 <li>DataBox.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataBox</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String data<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> String <span style="color:#a6e22e">getData</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// data 필드가 null이면 소비자 스레드를 일시 정지 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-				wait<span style="color:#f92672">();</span>
-			<span style="color:#f92672">}</span><span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		<span style="color:#f92672">}</span>
-		String returnValue <span style="color:#f92672">=</span> data<span style="color:#f92672">;</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ConsumerThread가 읽은 데이터 : &#34;</span> <span style="color:#f92672">+</span> returnValue<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// data 필드를 null로 만들고 생산자 스레드를 실행 대기 상태로 만듦
-</span><span style="color:#75715e"></span>		data <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		notify<span style="color:#f92672">();</span>
-
-		<span style="color:#66d9ef">return</span> returnValue<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setData</span><span style="color:#f92672">(</span>String data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// data 필드가 null이면 소비자 스레드를 일시 정지 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-				wait<span style="color:#f92672">();</span>
-			<span style="color:#f92672">}</span><span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		<span style="color:#f92672">}</span>
-
-		<span style="color:#75715e">// data 필드에 값을 저장하고 소비자 스레드를 실행 대기 상태로 만듦
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> data<span style="color:#f92672">;</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ProducerThread가 생성한 데이터 : &#34;</span> <span style="color:#f92672">+</span> data<span style="color:#f92672">);</span>
-		notify<span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataBox</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String data;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> String <span style="color:#a6e22e">getData</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// data 필드가 null이면 소비자 스레드를 일시 정지 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>				wait();
+</span></span><span style="display:flex;"><span>			}<span style="color:#66d9ef">catch</span>(InterruptedException e) {}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		String returnValue <span style="color:#f92672">=</span> data;
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;ConsumerThread가 읽은 데이터 : &#34;</span> <span style="color:#f92672">+</span> returnValue);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// data 필드를 null로 만들고 생산자 스레드를 실행 대기 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		data <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		notify();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> returnValue;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setData</span>(String data) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// data 필드가 null이면 소비자 스레드를 일시 정지 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>				wait();
+</span></span><span style="display:flex;"><span>			}<span style="color:#66d9ef">catch</span>(InterruptedException e) {}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// data 필드에 값을 저장하고 소비자 스레드를 실행 대기 상태로 만듦</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> data;
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;ProducerThread가 생성한 데이터 : &#34;</span> <span style="color:#f92672">+</span> data);
+</span></span><span style="display:flex;"><span>		notify();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 데이터를 생산(저장)하는 스레드</p>
 <ul>
 <li>ProducerThread.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProducerThread</span> <span style="color:#66d9ef">extends</span> Thread<span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> DataBox dataBox<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProducerThread</span><span style="color:#f92672">(</span>DataBox dataBox<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공육 객체를 필드에 저장
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">dataBox</span> <span style="color:#f92672">=</span> dataBox<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 3<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Data-&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">;</span>
-			<span style="color:#75715e">// 새로운 데이터를 저장
-</span><span style="color:#75715e"></span>			dataBox<span style="color:#f92672">.</span><span style="color:#a6e22e">setData</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProducerThread</span> <span style="color:#66d9ef">extends</span> Thread{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> DataBox dataBox;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProducerThread</span>(DataBox dataBox) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공육 객체를 필드에 저장</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dataBox</span> <span style="color:#f92672">=</span> dataBox;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;=</span> 3; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Data-&#34;</span> <span style="color:#f92672">+</span> i;
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 새로운 데이터를 저장</span>
+</span></span><span style="display:flex;"><span>			dataBox.<span style="color:#a6e22e">setData</span>(data);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 데이터를 소비하는(읽는) 스레드</p>
 <ul>
 <li>ConsumerThread.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsumerThread</span> <span style="color:#66d9ef">extends</span> Thread<span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> DataBox dataBox<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ConsumerThread</span><span style="color:#f92672">(</span>DataBox dataBox<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 공유 객체를 필드에 저장
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">dataBox</span> <span style="color:#f92672">=</span> dataBox<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 3<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			<span style="color:#75715e">// 새로운 데이터를 읽음
-</span><span style="color:#75715e"></span>			String data <span style="color:#f92672">=</span> dataBox<span style="color:#f92672">.</span><span style="color:#a6e22e">getData</span><span style="color:#f92672">();</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsumerThread</span> <span style="color:#66d9ef">extends</span> Thread{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> DataBox dataBox;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ConsumerThread</span>(DataBox dataBox) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 공유 객체를 필드에 저장</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dataBox</span> <span style="color:#f92672">=</span> dataBox;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 3; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 새로운 데이터를 읽음</span>
+</span></span><span style="display:flex;"><span>			String data <span style="color:#f92672">=</span> dataBox.<span style="color:#a6e22e">getData</span>();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 두 스레드를 생성하고 실행하는 메인 스레드</p>
 <ul>
 <li>WaitNotifyEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WaitNotifyExample</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		DataBox dataBox <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DataBox<span style="color:#f92672">();</span>
-
-		ProducerThread producerThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProducerThread<span style="color:#f92672">(</span>dataBox<span style="color:#f92672">);</span>
-		ConsumerThread consumerThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsumerThread<span style="color:#f92672">(</span>dataBox<span style="color:#f92672">);</span>
-
-		producerThread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-		consumerThread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B0%84_%ED%98%91%EC%97%85(wait(),_notify(),_notifyAll())/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WaitNotifyExample</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		DataBox dataBox <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DataBox();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		ProducerThread producerThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProducerThread(dataBox);
+</span></span><span style="display:flex;"><span>		ConsumerThread consumerThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsumerThread(dataBox);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		producerThread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>		consumerThread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C_%EA%B0%84_%ED%98%91%EC%97%85(wait(),_notify(),_notifyAll())/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -462,13 +459,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/multi_thread/%EB%8B%A4%EB%A5%B8_%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98_%EC%A2%85%EB%A3%8C%EB%A5%BC_%EA%B8%B0%EB%8B%A4%EB%A6%BCjoin/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/multi_thread/%E1%84%83%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%AD%E1%84%85%E1%85%B3%E1%86%AF_%E1%84%80%E1%85%B5%E1%84%83%E1%85%A1%E1%84%85%E1%85%B5%E1%86%B7join/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 스레드 상태 제어, 다른 스레드의 종료를 기다림(join())</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/multi_thread/%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98_%EC%95%88%EC%A0%84%ED%95%9C_%EC%A2%85%EB%A3%8Cstop_%ED%94%8C%EB%9E%98%EA%B7%B8_interrupt/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/multi_thread/%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB_%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%ADstop_%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3_interrupt/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 스레드 상태 제어, 스레드의 안전한 종료(stop 플래그, interrupt())</p>
 		</a>
@@ -620,7 +617,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -628,32 +625,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

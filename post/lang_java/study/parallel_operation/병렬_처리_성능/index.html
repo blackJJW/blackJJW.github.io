@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 병렬 처리, 병렬 처리 성능 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 병렬 처리, 병렬 처리 성능" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC_%EC%84%B1%EB%8A%A5/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/parallel_operation/%E1%84%87%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5_%E1%84%89%E1%85%A5%E1%86%BC%E1%84%82%E1%85%B3%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-11T16:40:30+09:00" />
 <meta property="article:modified_time" content="2022-12-11T16:40:30+09:00" />
 
@@ -215,51 +212,51 @@ if (!doNotTrack) {
 <li><code>work()</code> 메소드의 실행 시간(요소당 처리 시간)을 조정함으로써 순차 처리와 병렬 처리 중 어떤 것이 전체 요소를 빨리 처리하는지 테스트</li>
 <li>SequencialVsParallelEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SequencialVsParallelEx</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 요소 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span> 100 <span style="color:#f92672">);</span> <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 순차 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testSequencial</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">((</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> work<span style="color:#f92672">(</span>a<span style="color:#f92672">));</span>
-		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">return</span> runTime<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 병렬 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testParallel</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">parallel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">((</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> work<span style="color:#f92672">(</span>a<span style="color:#f92672">));</span>
-		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">return</span> runTime<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 소스 컬렉션
-</span><span style="color:#75715e"></span>		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 3<span style="color:#f92672">,</span> 4<span style="color:#f92672">,</span> 5<span style="color:#f92672">,</span> 6<span style="color:#f92672">,</span> 7<span style="color:#f92672">,</span> 8<span style="color:#f92672">,</span> 9<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 순차 스트림 처리 시간 구하기
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">long</span> timeSequencial <span style="color:#f92672">=</span> testSequencial<span style="color:#f92672">(</span>list<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 병렬 스트림 처리 시간 구하기
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">long</span> timeParallel <span style="color:#f92672">=</span> testParallel<span style="color:#f92672">(</span>list<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>timeSequencial <span style="color:#f92672">&lt;</span> timeParallel<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;성능 테스트 결과 : 순차 처리가 더 빠름&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;성능 테이스 결과 : 병렬 처리가 더 빠름&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC_%EC%84%B1%EB%8A%A5/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SequencialVsParallelEx</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 요소 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span>(<span style="color:#66d9ef">int</span> value) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> { Thread.<span style="color:#a6e22e">sleep</span>( 100 ); } <span style="color:#66d9ef">catch</span> (InterruptedException e) {}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 순차 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testSequencial</span>(List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">forEach</span>((a) <span style="color:#f92672">-&gt;</span> work(a));
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> runTime;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 병렬 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testParallel</span>(List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">parallel</span>().<span style="color:#a6e22e">forEach</span>((a) <span style="color:#f92672">-&gt;</span> work(a));
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> runTime;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 소스 컬렉션</span>
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 순차 스트림 처리 시간 구하기</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> timeSequencial <span style="color:#f92672">=</span> testSequencial(list);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 병렬 스트림 처리 시간 구하기</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> timeParallel <span style="color:#f92672">=</span> testParallel(list);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(timeSequencial <span style="color:#f92672">&lt;</span> timeParallel) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;성능 테스트 결과 : 순차 처리가 더 빠름&#34;</span>);
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;성능 테이스 결과 : 병렬 처리가 더 빠름&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC_%EC%84%B1%EB%8A%A5/Untitled.png" alt="Untitled"></p>
 <ul>
 <li>실행 결과는 <code>work()</code>의 요소 처리 시간에 따라 달라진다.</li>
 </ul>
@@ -271,50 +268,50 @@ if (!doNotTrack) {
 <li>백만 개의 Integer 객체를 각각 ArrayList와 LinkedList에 저장하고 테스트</li>
 <li>ArrayListVsLinkedListEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.LinkedList<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ArrayListVsLinkedListEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#75715e">// 요소 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 병렬 처리
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testParallel</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">parallel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">((</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> work<span style="color:#f92672">(</span>a<span style="color:#f92672">));</span>
-		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">return</span> runTime<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// 소스 컬렉션
-</span><span style="color:#75715e"></span>		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> arrayList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
-		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> linkedList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 1000000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			arrayList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
-			linkedList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-
-		<span style="color:#75715e">// 워밍업
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">long</span> arrayListListParallel <span style="color:#f92672">=</span> testParallel<span style="color:#f92672">(</span>arrayList<span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">long</span> linkedListParallel <span style="color:#f92672">=</span> testParallel<span style="color:#f92672">(</span>linkedList<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// 병렬 스트림 처리 시간 구하기
-</span><span style="color:#75715e"></span>		arrayListListParallel <span style="color:#f92672">=</span> testParallel<span style="color:#f92672">(</span>arrayList<span style="color:#f92672">);</span>
-		linkedListParallel <span style="color:#f92672">=</span> testParallel<span style="color:#f92672">(</span>linkedList<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>arrayListListParallel <span style="color:#f92672">&lt;</span> linkedListParallel<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;성능 테스트 결과 : ArrayList 처리가 더 빠름&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;성는 테스트 결과 : LinkedList 처리가 더 빠름&#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC_%EC%84%B1%EB%8A%A5/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ArrayList;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.LinkedList;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ArrayListVsLinkedListEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 요소 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span>(<span style="color:#66d9ef">int</span> value) {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 병렬 처리</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">testParallel</span>(List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		list.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">parallel</span>().<span style="color:#a6e22e">forEach</span>((a) <span style="color:#f92672">-&gt;</span> work(a));
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">nanoTime</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> runTime <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> runTime;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 소스 컬렉션</span>
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> arrayList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> linkedList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			arrayList.<span style="color:#a6e22e">add</span>(i);
+</span></span><span style="display:flex;"><span>			linkedList.<span style="color:#a6e22e">add</span>(i);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 워밍업</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> arrayListListParallel <span style="color:#f92672">=</span> testParallel(arrayList);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">long</span> linkedListParallel <span style="color:#f92672">=</span> testParallel(linkedList);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 병렬 스트림 처리 시간 구하기</span>
+</span></span><span style="display:flex;"><span>		arrayListListParallel <span style="color:#f92672">=</span> testParallel(arrayList);
+</span></span><span style="display:flex;"><span>		linkedListParallel <span style="color:#f92672">=</span> testParallel(linkedList);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(arrayListListParallel <span style="color:#f92672">&lt;</span> linkedListParallel) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;성능 테스트 결과 : ArrayList 처리가 더 빠름&#34;</span>);
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;성는 테스트 결과 : LinkedList 처리가 더 빠름&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%B2%98%EB%A6%AC_%EC%84%B1%EB%8A%A5/Untitled%201.png" alt="Untitled"></p>
 <ul>
 <li>실행 결과는 ArrayList가 빠른 실행 성능을 보였다.</li>
 <li>요소의 개수가 적을 경우에는 LinkedList가 더 빠른 성능을 보였다.</li>
@@ -349,13 +346,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/parallel_operation/%EB%B3%91%EB%A0%AC_%EC%8A%A4%ED%8A%B8%EB%A6%BC_%EC%83%9D%EC%84%B1/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/parallel_operation/%E1%84%87%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 병렬 처리, 병렬 스트림 생성</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/javafx_%EA%B0%9C%EC%9A%94/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/javafx_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX 개요</p>
 		</a>
@@ -507,7 +504,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -515,32 +512,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 제네릭 타입의 상속과 구현 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 제네릭 타입의 상속과 구현" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%ED%83%80%EC%9E%85%EC%9D%98_%EC%83%81%EC%86%8D%EA%B3%BC_%EA%B5%AC%ED%98%84/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%85%E1%85%B5%E1%86%A8_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8B%E1%85%B4_%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-29T14:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-29T14:40:30+09:00" />
 
@@ -188,44 +185,44 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>다음은 <code>Product&lt;T, M&gt;</code> 제네릭 타입을 상속해서 <code>ChildProduct&lt;T, M&gt;</code> 타입을 정의</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> { ... }
+</span></span></code></pre></div></li>
 <li>
 <p>자식 제네릭 타입은 추가적으로 타입 파라미터를 가질 수 있다.</p>
 <ul>
 <li>다음은 세 가지 타입 파라미터를 가진 자식 제네릭 타입을 선언</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">,</span> C<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T, M, C<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> { ... }
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 부모 제네릭 클래스</p>
 <ul>
 <li>Product.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Product</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> T kind<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> M model<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">getKind</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kind</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> M <span style="color:#a6e22e">getModel</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setKind</span><span style="color:#f92672">(</span>T kind<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kind</span> <span style="color:#f92672">=</span> kind<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setModel</span><span style="color:#f92672">(</span>M model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tv</span><span style="color:#f92672">{}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Product</span><span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> T kind;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> M model;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">getKind</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">kind</span>; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> M <span style="color:#a6e22e">getModel</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setKind</span>(T kind) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">kind</span> <span style="color:#f92672">=</span> kind; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setModel</span>(M model) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tv</span>{}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 자식 제네릭 클래스</p>
 <ul>
 <li>ChildProduct.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">,</span> C<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">,</span> M<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> C company<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">public</span> C <span style="color:#a6e22e">getCompany</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">company</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCompany</span><span style="color:#f92672">(</span>C company<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">company</span> <span style="color:#f92672">=</span> company<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProduct</span><span style="color:#f92672">&lt;</span>T, M, C<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Product<span style="color:#f92672">&lt;</span>T, M<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> C company;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> C <span style="color:#a6e22e">getCompany</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">company</span>; }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCompany</span>(C company) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">company</span> <span style="color:#f92672">=</span> company; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>제네릭 인터페이스를 구현한 클래스도 제네릭 타입이 된다.</p>
 <ul>
@@ -236,11 +233,11 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Storage</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>T item<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">);</span>
-	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> index<span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Storage</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(T item, <span style="color:#66d9ef">int</span> index);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span>(<span style="color:#66d9ef">int</span> index);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>제네릭 인터페이스인 <code>Storage&lt;T&gt;</code> 타입을 구현한 StorageImpl 클래스도 제네릭 타입이어야 한다.</p>
 <ul>
@@ -250,50 +247,50 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StorageImpl</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> Storage<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> T<span style="color:#f92672">[]</span> array<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StorageImpl</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> capacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>T<span style="color:#f92672">[])</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[</span>capacity<span style="color:#f92672">]);</span>
-		            <span style="color:#75715e">/* 타입 파라미터로 배열을 생성하려면
-</span><span style="color:#75715e">		             * new T[n] 형태로 생성할 수 없고
-</span><span style="color:#75715e">		             * (T[])(new Object[n])으로 생성
-</span><span style="color:#75715e">		             * 해야 한다.
-</span><span style="color:#75715e">		             * */</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>T item<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		array<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> item<span style="color:#f92672">;</span>
-
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> index<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> array<span style="color:#f92672">[</span>index<span style="color:#f92672">];</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StorageImpl</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> Storage<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> T<span style="color:#f92672">[]</span> array;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StorageImpl</span>(<span style="color:#66d9ef">int</span> capacity) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> (T<span style="color:#f92672">[]</span>) (<span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[</span>capacity<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>		            <span style="color:#75715e">/* 타입 파라미터로 배열을 생성하려면
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		             * new T[n] 형태로 생성할 수 없고
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		             * (T[])(new Object[n])으로 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		             * 해야 한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		             * */</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(T item, <span style="color:#66d9ef">int</span> index) {
+</span></span><span style="display:flex;"><span>		array<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> item;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span>(<span style="color:#66d9ef">int</span> index) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> array<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 제네릭 타입 사용 클래스</p>
 <ul>
 <li>ChildProductAndStorageEx은 <code>ChildProduct&lt;T, M, C&gt;</code>와 <code>StorageImpl&lt;T&gt;</code> 클래스의 사용방법을 보여줌</li>
 <li>ChildProductAndStorageEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProductAndStorageEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		ChildProduct<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">,</span> String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChildProduct<span style="color:#f92672">&lt;&gt;();</span>
-		product<span style="color:#f92672">.</span><span style="color:#a6e22e">setKind</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Tv<span style="color:#f92672">());</span>
-		product<span style="color:#f92672">.</span><span style="color:#a6e22e">setModel</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SmartTV&#34;</span><span style="color:#f92672">);</span>
-		product<span style="color:#f92672">.</span><span style="color:#a6e22e">setCompany</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">);</span>
-
-		Storage<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">&gt;</span> storage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StorageImpl<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">&gt;(</span>100<span style="color:#f92672">);</span>
-		storage<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Tv<span style="color:#f92672">(),</span> 0<span style="color:#f92672">);</span>
-		Tv tv <span style="color:#f92672">=</span> storage<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildProductAndStorageEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		ChildProduct<span style="color:#f92672">&lt;</span>Tv, String, String<span style="color:#f92672">&gt;</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChildProduct<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>		product.<span style="color:#a6e22e">setKind</span>(<span style="color:#66d9ef">new</span> Tv());
+</span></span><span style="display:flex;"><span>		product.<span style="color:#a6e22e">setModel</span>(<span style="color:#e6db74">&#34;SmartTV&#34;</span>);
+</span></span><span style="display:flex;"><span>		product.<span style="color:#a6e22e">setCompany</span>(<span style="color:#e6db74">&#34;ABC&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Storage<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">&gt;</span> storage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StorageImpl<span style="color:#f92672">&lt;</span>Tv<span style="color:#f92672">&gt;</span>(100);
+</span></span><span style="display:flex;"><span>		storage.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Tv(), 0);
+</span></span><span style="display:flex;"><span>		Tv tv <span style="color:#f92672">=</span> storage.<span style="color:#a6e22e">get</span>(0);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -323,13 +320,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/generic/%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C_%ED%83%80%EC%9E%85/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/generic/%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B3_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 제네릭, 와일드카드 타입(&lt;?&gt;, &lt;? extends …&gt;, &lt;? super …&gt;)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/lambda/%EB%9E%8C%EB%8B%A4%EC%8B%9D%EC%9D%B4%EB%9E%80/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/lambda/%E1%84%85%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 람다식이란?</p>
 		</a>
@@ -481,7 +478,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -489,32 +486,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 제네릭, 제한된 타입 파라미터(&lt;T extends 최상위타입&gt;) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 제네릭, 제한된 타입 파라미터(&lt;T extends 최상위타입&gt;)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%EC%A0%9C%ED%95%9C%EB%90%9C_%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0_t_extends_%EC%B5%9C%EC%83%81%EC%9C%84%ED%83%80%EC%9E%85_/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/generic/%E1%84%8C%E1%85%A6%E1%84%92%E1%85%A1%E1%86%AB%E1%84%83%E1%85%AC%E1%86%AB_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%91%E1%85%A1%E1%84%85%E1%85%A1%E1%84%86%E1%85%B5%E1%84%90%E1%85%A5_t_extends_%E1%84%8E%E1%85%AC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B1%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-10-29T12:40:30+09:00" />
 <meta property="article:modified_time" content="2022-10-29T12:40:30+09:00" />
 
@@ -196,8 +193,8 @@ if (!doNotTrack) {
 <li>상위 타입은 클래스뿐만 아니라 인터페이스도 가능</li>
 <li>인터페이스라고 해서 <code>implements</code>를 사용하지 않는다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> 상위타입<span style="color:#f92672">&gt;</span> 리턴타입 <span style="color:#a6e22e">메소드</span><span style="color:#f92672">(</span>매개변수<span style="color:#f92672">,</span> <span style="color:#f92672">...)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> 상위타입<span style="color:#f92672">&gt;</span> 리턴타입 <span style="color:#a6e22e">메소드</span>(매개변수, ...) { ... }
+</span></span></code></pre></div><ul>
 <li>타입 파라미터에 지정되는 구체적인 타입은 상위 타입이거나 상위 타입의 하위 또는 구현 클래스만 가능</li>
 </ul>
 <h3 id="주의할-점">주의할 점</h3>
@@ -208,12 +205,12 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>숫자 타입만 구체적인 타입으로 갖는 제네릭 메소드 <code>compare()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>T t1<span style="color:#f92672">,</span> T t2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">double</span> v1 <span style="color:#f92672">=</span> t1<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">();</span>  <span style="color:#75715e">// Number의 doubleValue() 메소드 사용
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">double</span> v2 <span style="color:#f92672">=</span> t2<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">();</span>  <span style="color:#75715e">// Number의 doubleValeu() 메소드 사용
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> Double<span style="color:#f92672">.</span><span style="color:#a6e22e">comapre</span><span style="color:#f92672">(</span>v1<span style="color:#f92672">,</span> v2<span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(T t1, T t2) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> v1 <span style="color:#f92672">=</span> t1.<span style="color:#a6e22e">doubleValue</span>();  <span style="color:#75715e">// Number의 doubleValue() 메소드 사용</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> v2 <span style="color:#f92672">=</span> t2.<span style="color:#a6e22e">doubleValue</span>();  <span style="color:#75715e">// Number의 doubleValeu() 메소드 사용</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> Double.<span style="color:#a6e22e">comapre</span>(v1, v2);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li><code>doubleValue()</code> 메소드는 Number 클래스에 정의되어 있는 메소드로 숫자를 double 타입으로 변환</li>
 <li><code>Double.compare()</code> 메소드는 첫 번째 매개값이 작으면 -1을, 같으면 0을, 크면 1을 리턴</li>
 </ul>
@@ -223,37 +220,37 @@ if (!doNotTrack) {
 <ul>
 <li>Util.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Util</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>T t1<span style="color:#f92672">,</span> T t2<span style="color:#f92672">){</span>
-		<span style="color:#66d9ef">double</span> v1 <span style="color:#f92672">=</span> t1<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">double</span> v2 <span style="color:#f92672">=</span> t2<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">return</span> Double<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>v1<span style="color:#f92672">,</span> v2<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Util</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(T t1, T t2){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> v1 <span style="color:#f92672">=</span> t1.<span style="color:#a6e22e">doubleValue</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> v2 <span style="color:#f92672">=</span> t2.<span style="color:#a6e22e">doubleValue</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> Double.<span style="color:#a6e22e">compare</span>(v1, v2);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 제네릭 메소드 호출</p>
 <ul>
 <li>BoundTypeParameterEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoundTypeParameterEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// String str = Util.compare(&#34;a&#34;, &#34;b&#34;); (x)
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">//                  String은 Number 타입이 아님
-</span><span style="color:#75715e"></span>
-		<span style="color:#66d9ef">int</span> result1 <span style="color:#f92672">=</span> Util<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 20<span style="color:#f92672">);</span>
-		                 <span style="color:#75715e">// 20 : int -&gt; Integer (자동 Boxing)
-</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result1<span style="color:#f92672">);</span>
-
-		<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Util<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>4<span style="color:#f92672">.</span><span style="color:#a6e22e">5</span><span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
-		                 <span style="color:#75715e">// 4.5 : double -&gt; Double (자동 Boxing)
-</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result2<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/generic/%EC%A0%9C%ED%95%9C%EB%90%9C_%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0(_T_extends_%EC%B5%9C%EC%83%81%EC%9C%84%ED%83%80%EC%9E%85_)/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoundTypeParameterEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// String str = Util.compare(&#34;a&#34;, &#34;b&#34;); (x)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//                  String은 Number 타입이 아님</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result1 <span style="color:#f92672">=</span> Util.<span style="color:#a6e22e">compare</span>(10, 20);
+</span></span><span style="display:flex;"><span>		                 <span style="color:#75715e">// 20 : int -&gt; Integer (자동 Boxing)</span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(result1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Util.<span style="color:#a6e22e">compare</span>(4.<span style="color:#a6e22e">5</span>, 3);
+</span></span><span style="display:flex;"><span>		                 <span style="color:#75715e">// 4.5 : double -&gt; Double (자동 Boxing)</span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(result2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/generic/%EC%A0%9C%ED%95%9C%EB%90%9C_%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0(_T_extends_%EC%B5%9C%EC%83%81%EC%9C%84%ED%83%80%EC%9E%85_)/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -284,13 +281,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/generic/%EC%A0%9C%EB%84%A4%EB%A6%AD_%EB%A9%94%EC%86%8C%EB%93%9C_t_r_r_methodt_t/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/generic/%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%85%E1%85%B5%E1%86%A8_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3_t_r_r_methodt_t/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 제네릭 메소드(&lt;T, R&gt; R method(T t))</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/generic/%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C_%ED%83%80%EC%9E%85/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/generic/%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B3_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 제네릭, 와일드카드 타입(&lt;?&gt;, &lt;? extends …&gt;, &lt;? super …&gt;)</p>
 		</a>
@@ -442,7 +439,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -450,32 +447,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

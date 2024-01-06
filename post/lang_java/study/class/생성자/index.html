@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 생성자 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 생성자" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/class/%EC%83%9D%EC%84%B1%EC%9E%90/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/class/%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-22T11:00:45+09:00" />
 <meta property="article:modified_time" content="2022-07-22T11:00:45+09:00" />
 
@@ -215,8 +212,8 @@ if (!doNotTrack) {
 <ul>
 <li>컴파일러는 중괄호 <code>{}</code> 블록 내용이 비여있는 <strong>기본 생성자</strong>(<strong>Default Constructor</strong>)를 <strong>바이트 코드에 자동 추가</strong>시킨다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">[</span><span style="color:#66d9ef">public</span><span style="color:#f92672">]</span> <span style="color:#a6e22e">클래스</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#66d9ef">public</span><span style="color:#f92672">]</span> <span style="color:#a6e22e">클래스</span>() { }
+</span></span></code></pre></div></li>
 <li>
 <p>클래스가 <code>public class</code>로 선언되는 경우</p>
 <ul>
@@ -235,9 +232,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>클래스에 생성자를 선언하지 않아도 new 연산자 뒤에 기본 생성자를 호출해서 객체를 생성시킬 수 있다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">();</span>
-              <span style="color:#75715e">//기본 생성자
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car();
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">//기본 생성자</span>
+</span></span></code></pre></div></li>
 <li>
 <p>클래스에 명시적으로 선언한 생성자가 한 개라도 있을 경우</p>
 <ul>
@@ -273,18 +270,18 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>ex) Car 생성자를 호출할 때 세 개의 값을 제공</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;A-model&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;검정&#34;</span><span style="color:#f92672">,</span> 300<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(<span style="color:#e6db74">&#34;A-model&#34;</span>, <span style="color:#e6db74">&#34;검정&#34;</span>, 300);
+</span></span></code></pre></div><ul>
 <li>
 <p>두 개의 매개값은 String 타입이고 마지막 매개값은 int 타입</p>
 </li>
 <li>
 <p>세 매개값을 생성자가 받기 위해서는 생성자의 선언이 필요</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	Car<span style="color:#f92672">(</span>String model<span style="color:#f92672">,</span> String color<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxSpeed<span style="color:#f92672">)</span> <span style="color:#f92672">{...}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	Car(String model, String color, <span style="color:#66d9ef">int</span> maxSpeed) {...}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -302,24 +299,24 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>생성자 선언</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car1</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 생성자
-</span><span style="color:#75715e"></span>	Car1<span style="color:#f92672">(</span>String color<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cc<span style="color:#f92672">){</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car1</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 생성자</span>
+</span></span><span style="display:flex;"><span>	Car1(String color, <span style="color:#66d9ef">int</span> cc){
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>생성자를 호출해서 객체 생성</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car1Ex</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Car1 myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car1<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;검정&#34;</span><span style="color:#f92672">,</span> 3000<span style="color:#f92672">);</span>
-		<span style="color:#75715e">// Car1 myCar = new Car(); -&gt; (x) 기본 생성자를 호출할 수 없다.
-</span><span style="color:#75715e"></span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car1Ex</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Car1 myCar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car1(<span style="color:#e6db74">&#34;검정&#34;</span>, 3000);
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Car1 myCar = new Car(); -&gt; (x) 기본 생성자를 호출할 수 없다.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -351,13 +348,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/class/%ED%95%84%EB%93%9C/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/class/%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 필드</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/class/%ED%95%84%EB%93%9C_%EC%B4%88%EA%B8%B0%ED%99%94/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/class/%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3_%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%E1%84%92%E1%85%AA/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 필드 초기화</p>
 		</a>
@@ -509,7 +506,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -517,32 +514,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

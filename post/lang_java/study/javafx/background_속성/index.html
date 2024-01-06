@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX CSS 스타일, background 속성 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX CSS 스타일, background 속성" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/background_%EC%86%8D%EC%84%B1/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-27T12:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-27T12:00:30+09:00" />
 
@@ -220,18 +217,18 @@ if (!doNotTrack) {
 <ul>
 <li>단일 색상을 지정하는 방법</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">;</span>      <span style="color:#f92672">//</span><span style="color:#f92672">색</span> <span style="color:#f92672">이름</span>
-<span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">#</span>#ff0000<span style="color:#f92672">;</span> <span style="color:#f92672">//</span> #색상번호
-<span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">255</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">);</span> 
-                    <span style="color:#f92672">//</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">red값</span><span style="color:#f92672">,</span> <span style="color:#f92672">green값</span><span style="color:#f92672">,</span> <span style="color:#f92672">blue값</span><span style="color:#f92672">,</span> <span style="color:#f92672">투명도</span><span style="color:#f92672">)</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">red</span><span style="color:#f92672">;</span>      <span style="color:#f92672">//</span><span style="color:#f92672">색</span> <span style="color:#f92672">이름</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">#</span>#ff0000<span style="color:#f92672">;</span> <span style="color:#f92672">//</span> #색상번호
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">255</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span><span style="color:#f92672">);</span> 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">//</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">red값</span><span style="color:#f92672">,</span> <span style="color:#f92672">green값</span><span style="color:#f92672">,</span> <span style="color:#f92672">blue값</span><span style="color:#f92672">,</span> <span style="color:#f92672">투명도</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>선형 그라디언트 설정</p>
 <ul>
 <li>선형 그라디언트는 시작 색에서부터 끝 색까지 진행 방향으로 서서히 색상 변화를 준다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">to</span> <span style="color:#f92672">진행방향</span><span style="color:#f92672">,</span> <span style="color:#f92672">시작색</span> <span style="color:#f92672">S</span><span style="color:#f92672">%,</span> <span style="color:#f92672">중간색</span> <span style="color:#f92672">M</span><span style="color:#f92672">%,</span> <span style="color:#f92672">...,</span> <span style="color:#f92672">끝색</span><span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">to</span> <span style="color:#f92672">진행방향</span><span style="color:#f92672">,</span> <span style="color:#f92672">시작색</span> <span style="color:#f92672">S</span><span style="color:#f92672">%,</span> <span style="color:#f92672">중간색</span> <span style="color:#f92672">M</span><span style="color:#f92672">%,</span> <span style="color:#f92672">...,</span> <span style="color:#f92672">끝색</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><ul>
 <li>진행 방향은 <code>to bottom</code>, <code>to right</code>, <code>to bottom right</code> 등과 같이 밑으로, 오른쪽으로, 대각선으로 지정 가능</li>
 <li>각각의 색은 몇 % 정도가 나올지 S, M 값으로 지정 가능
 <ul>
@@ -241,16 +238,16 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>ex) 선형 그라디언트 적용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">to</span> <span style="color:#f92672">right</span><span style="color:#f92672">,</span> <span style="color:#f92672">black</span><span style="color:#f92672">,</span> <span style="color:#f92672">white</span><span style="color:#f92672">);</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">linear-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">to</span> <span style="color:#f92672">right</span><span style="color:#f92672">,</span> <span style="color:#f92672">black</span><span style="color:#f92672">,</span> <span style="color:#f92672">white</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>원형 그라디언트 설정</p>
 <ul>
 <li>시작 색에서부터 끝 색까지 원형으로 서서히 색상 변화를 준다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">radial-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">center</span> <span style="color:#f92672">X</span><span style="color:#f92672">%</span> <span style="color:#f92672">Y</span><span style="color:#f92672">%,</span> <span style="color:#f92672">radius</span> <span style="color:#f92672">R</span><span style="color:#f92672">%,</span> <span style="color:#f92672">시작색</span> <span style="color:#f92672">S</span><span style="color:#f92672">%,</span> <span style="color:#f92672">중간색</span> <span style="color:#f92672">M</span><span style="color:#f92672">%,</span> <span style="color:#f92672">끝색</span><span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">radial-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">center</span> <span style="color:#f92672">X</span><span style="color:#f92672">%</span> <span style="color:#f92672">Y</span><span style="color:#f92672">%,</span> <span style="color:#f92672">radius</span> <span style="color:#f92672">R</span><span style="color:#f92672">%,</span> <span style="color:#f92672">시작색</span> <span style="color:#f92672">S</span><span style="color:#f92672">%,</span> <span style="color:#f92672">중간색</span> <span style="color:#f92672">M</span><span style="color:#f92672">%,</span> <span style="color:#f92672">끝색</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>X%와 Y%는 컨테이너 및 컨트롤의 좌상단을 0%, 0%로 보고, 원의 중심점이 위치하는 곳을 지정</p>
 <p>ex) center 50% 50%는 원의 정중앙을 중심점으로 설정</p>
@@ -268,8 +265,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>ex) 원형 그라디언트 적용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">radial-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">center</span> <span style="color:#f92672">50</span><span style="color:#f92672">%</span> <span style="color:#f92672">50</span><span style="color:#f92672">%,</span> <span style="color:#f92672">radius</span> <span style="color:#f92672">50</span><span style="color:#f92672">%,</span> #ffffff <span style="color:#f92672">10</span><span style="color:#f92672">%,</span> #000000<span style="color:#f92672">);</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">-fx-background-color</span><span style="color:#f92672">:</span> <span style="color:#f92672">radial-gradient</span><span style="color:#f92672">(</span><span style="color:#f92672">center</span> <span style="color:#f92672">50</span><span style="color:#f92672">%</span> <span style="color:#f92672">50</span><span style="color:#f92672">%,</span> <span style="color:#f92672">radius</span> <span style="color:#f92672">50</span><span style="color:#f92672">%,</span> #ffffff <span style="color:#f92672">10</span><span style="color:#f92672">%,</span> #000000<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -286,10 +283,10 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>이미지의 위치는 -fx-background-position으로 설정</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">-fx-background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;이미지 경로&#34;</span><span style="color:#f92672">);</span> <span style="color:#f92672">//</span> <span style="color:#f92672">이미지</span> <span style="color:#f92672">파일</span> <span style="color:#f92672">경로</span>
-<span style="color:#f92672">-fx-background-repeat</span><span style="color:#f92672">:</span> <span style="color:#f92672">no-repeat</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">한</span> <span style="color:#f92672">번만</span> <span style="color:#f92672">드로잉</span>
-<span style="color:#f92672">-fx-background-position</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">정중앙에</span> <span style="color:#f92672">위치</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%204.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">-fx-background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;이미지 경로&#34;</span><span style="color:#f92672">);</span> <span style="color:#f92672">//</span> <span style="color:#f92672">이미지</span> <span style="color:#f92672">파일</span> <span style="color:#f92672">경로</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-fx-background-repeat</span><span style="color:#f92672">:</span> <span style="color:#f92672">no-repeat</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">한</span> <span style="color:#f92672">번만</span> <span style="color:#f92672">드로잉</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-fx-background-position</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">정중앙에</span> <span style="color:#f92672">위치</span>
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%204.png" alt="Untitled"></p>
 </li>
 </ul>
 </li>
@@ -298,58 +295,58 @@ if (!doNotTrack) {
 <ul>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
-<span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
-<span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-
-<span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;padding&gt;</span>
-      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/padding&gt;</span>
-   <span style="color:#f92672">&lt;children&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox1&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox2&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox3&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox4&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox5&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox6&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/children&gt;</span>
-<span style="color:#f92672">&lt;/HBox&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.geometry.Insets?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.HBox?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;HBox</span> <span style="color:#a6e22e">spacing=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span> <span style="color:#a6e22e">xmlns:fx=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;padding&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Insets</span> <span style="color:#a6e22e">bottom=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">left=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">right=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#a6e22e">top=</span><span style="color:#e6db74">&#34;10.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/padding&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;children&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox1&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox2&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox3&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox4&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox5&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;VBox</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;vBox6&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/children&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/HBox&gt;</span>
+</span></span></code></pre></div><ul>
 <li>app.css</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#vBox1 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
-}
-
-#vBox2 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">right</span>, <span style="color:#ae81ff">#000000</span>, <span style="color:#ae81ff">#ffffff</span>);
-}
-
-#vBox3 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: radial-gradient(<span style="color:#66d9ef">center</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>, radius <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#ffffff</span>, <span style="color:#ae81ff">#000000</span>);
-}
-
-#vBox4 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
-}
-
-#vBox5 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-repeat: <span style="color:#66d9ef">no-repeat</span>;
-}
-
-#vBox6 {
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-repeat: <span style="color:#66d9ef">no-repeat</span>;
-	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-position: <span style="color:#66d9ef">center</span>;
-}
-</code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%205.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>#vBox1 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#vBox2 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">right</span>, <span style="color:#ae81ff">#000000</span>, <span style="color:#ae81ff">#ffffff</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#vBox3 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-color: radial-gradient(<span style="color:#66d9ef">center</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>, radius <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#ffffff</span>, <span style="color:#ae81ff">#000000</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#vBox4 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#vBox5 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-repeat: <span style="color:#66d9ef">no-repeat</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#vBox6 {
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-border-color: <span style="color:#66d9ef">skyblue</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-image: url(<span style="color:#e6db74">&#34;images/user.png&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-repeat: <span style="color:#66d9ef">no-repeat</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">-</span>fx-background-position: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/background_%EC%86%8D%EC%84%B1/Untitled%205.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -386,13 +383,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/border_%EC%86%8D%EC%84%B1/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX CSS 스타일, border 속성</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/font_%EC%86%8D%EC%84%B1/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX CSS 스타일, font 속성</p>
 		</a>
@@ -544,7 +541,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -552,32 +549,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

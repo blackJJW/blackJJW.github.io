@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] JavaFX, 뷰 컨트롤 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] JavaFX, 뷰 컨트롤" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%B2_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-22T21:00:30+09:00" />
 <meta property="article:modified_time" content="2022-12-22T21:00:30+09:00" />
 
@@ -200,8 +197,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>FXML로 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;높이&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;높이&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div><ul>
 <li>fitWidth와 fitHeight는 ImageView의 폭과 높이를 지정</li>
 <li>preserveRatio 속성은 이미지의 종횡비를 유지할 것인지를 지정
 <ul>
@@ -216,21 +213,21 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>ImageView의 생성자 매개값으로 Image 객체를 설정하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/flower.png&#34;</span><span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/ImageView&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/flower.png&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>ImageView의 <code>setImage()</code> 메소드로 설정</p>
 <ul>
 <li>매개값은 Image 객체</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;image&gt;</span>
-		<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/flower.png&#34;</span><span style="color:#f92672">/&gt;</span>
-	<span style="color:#f92672">&lt;/image&gt;</span>
-<span style="color:#f92672">&lt;/ImageView&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ImageView</span> <span style="color:#a6e22e">fitWidth=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">fitHeight=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">preserveRatio=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;image&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;Image</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;@images/flower.png&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/image&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ImageView&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>Image는 url 속성(생성자 매개 변수)을 가지고 있음</p>
 <ul>
@@ -247,15 +244,15 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>FXML로 선언하는 방법</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ListView</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;높이&#34;</span><span style="color:#f92672">/&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ListView</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;폭&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;높이&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>ListView에 항목을 추가하려면 <code>setItems(ObservableList&lt;T&gt; value)</code> 메소드를 사용</p>
 <ul>
 <li>ObservableList 구현 객체는 <code>FXCollections.observableArrayList(E… items)</code> 정적 메소드로 생성</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">listView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItems</span><span style="color:#f92672">(</span>FXCollections<span style="color:#f92672">.</span><span style="color:#a6e22e">observableArrayList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Swing&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;JavaFX&#34;</span><span style="color:#f92672">));</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>listView.<span style="color:#a6e22e">setItems</span>(FXCollections.<span style="color:#a6e22e">observableArrayList</span>(<span style="color:#e6db74">&#34;Swing&#34;</span>, <span style="color:#e6db74">&#34;JavaFX&#34;</span>));
+</span></span></code></pre></div><ul>
 <li>외부 데이터로 항목을 추가하는 경우가 많음
 <ul>
 <li>컨트롤러에서 자바 코드로 추가하는 것이 일반적</li>
@@ -263,15 +260,15 @@ if (!doNotTrack) {
 </li>
 <li>고정 항목일 경우 FXML 파일에서 직접 선언해도 좋다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ListView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;listView&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;items&gt;</span>
-		<span style="color:#f92672">&lt;FXCollections</span> <span style="color:#a6e22e">fx:factory=</span><span style="color:#e6db74">&#34;observableArrayList&#34;</span><span style="color:#f92672">&gt;</span>
-			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;Swing&#34;</span><span style="color:#f92672">/&gt;</span>
-			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;JavaFX&#34;</span><span style="color:#f92672">/&gt;</span>
-		<span style="color:#f92672">&lt;/FXCollections&gt;</span>
-	<span style="color:#f92672">&lt;/items&gt;</span>
-<span style="color:#f92672">&lt;/ListView&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ListView</span> <span style="color:#a6e22e">fx:id=</span><span style="color:#e6db74">&#34;listView&#34;</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;100&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;items&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;FXCollections</span> <span style="color:#a6e22e">fx:factory=</span><span style="color:#e6db74">&#34;observableArrayList&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;Swing&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;String</span> <span style="color:#a6e22e">fx:value=</span><span style="color:#e6db74">&#34;JavaFX&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/FXCollections&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/items&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ListView&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>ListView에서 선택된 인덱스와 항목을 얻으려면 속성 감시를 이용 가능</p>
 <ul>
@@ -280,14 +277,14 @@ if (!doNotTrack) {
 <li><code>selectedItemProperty</code>는 선택된 항목</li>
 <li><code>selectedItemProperty</code>에 리스너를 설정하는 코드</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">listView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">selectedItemProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span>
-	<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> String<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-                        String oldValue<span style="color:#f92672">,</span> String newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>listView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">selectedItemProperty</span>().<span style="color:#a6e22e">addListener</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> String<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>                        String oldValue, String newValue) { ... }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="tableview-컨트롤">TableView 컨트롤</h2>
 <ul>
@@ -296,13 +293,13 @@ if (!doNotTrack) {
 <ul>
 <li><code>&lt;columns&gt;</code> 태그 안에 만들고자 하는 만큼 <code>&lt;TableColumn&gt;</code> 태그를 선언</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;TableView</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;300&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;columns&gt;</span>
-		<span style="color:#f92672">&lt;TableColumn</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;스마트폰&#34;</span><span style="color:#f92672">/&gt;</span>
-		<span style="color:#f92672">&lt;TableColumn</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;이미지&#34;</span><span style="color:#f92672">/&gt;</span>
-	<span style="color:#f92672">&lt;/columns&gt;</span>
-<span style="color:#f92672">&lt;/TableView&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;TableView</span> <span style="color:#a6e22e">prefHeight=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;300&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;columns&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;TableColumn</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;스마트폰&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;TableColumn</span> <span style="color:#a6e22e">prefWidth=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;이미지&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/columns&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/TableView&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>TableView에 행(row)을 추가하려면 행의 데이터를 가지고 있는 모델(model) 객체가 필요</p>
 </li>
@@ -317,34 +314,34 @@ if (!doNotTrack) {
 <li>Phone 모델 클래스를 생성</li>
 <li>Phone.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.beans.property.SimpleStringProperty<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> SimpleStringProperty smartPhone<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> SimpleStringProperty image<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Phone</span><span style="color:#f92672">(</span>String smartPhone<span style="color:#f92672">,</span> String image<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">smartPhone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty<span style="color:#f92672">(</span>smartPhone<span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">image</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty<span style="color:#f92672">(</span>image<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getSmartPhone</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> smartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSmartPhone</span><span style="color:#f92672">(</span>String smartPhone<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">smartPhone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>smartPhone<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getImage</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> image<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span>String image<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">image</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>image<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.property.SimpleStringProperty;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> SimpleStringProperty smartPhone;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> SimpleStringProperty image;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Phone</span>(String smartPhone, String image) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">smartPhone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty(smartPhone);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">image</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleStringProperty(image);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getSmartPhone</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> smartPhone.<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSmartPhone</span>(String smartPhone) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">smartPhone</span>.<span style="color:#a6e22e">set</span>(smartPhone);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getImage</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> image.<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setImage</span>(String image) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">image</span>.<span style="color:#a6e22e">set</span>(image);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>모델의 속성 타입은 컬럼 값의 데이터 타입에 따라서 <code>javafx.beans.property</code> 패키지의 <code>SimpleXXXProperty</code>를 사용</p>
 </li>
@@ -359,25 +356,25 @@ if (!doNotTrack) {
 <li>TableColumn의 <code>setCellValueFactory()</code> 메소드는 매개값으로 제공되는 <code>PropertyValueFactory(”모델속성명”)</code>을 이용해서 모델 속성값을 TableColumn 값으로 세팅</li>
 </ul>
 <p>ex) 첫 번째 TableColumn을 모델 클래스의 smartPhone 속성과 연결시키는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">TableColumn tcSmartPhone <span style="color:#f92672">=</span> tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumns</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-tcSmartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;smartPhone&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TableColumn tcSmartPhone <span style="color:#f92672">=</span> tableView.<span style="color:#a6e22e">getColumns</span>().<span style="color:#a6e22e">get</span>(0);
+</span></span><span style="display:flex;"><span>tcSmartPhone.<span style="color:#a6e22e">setCellValueFactory</span>( <span style="color:#66d9ef">new</span> PropertyValueFactory(<span style="color:#e6db74">&#34;smartPhone&#34;</span>) );
+</span></span></code></pre></div></li>
 <li>
 <p>셀(cell) 내에서 정렬이 필요한 경우네는 TableColumn의 <code>setStyle()</code> 메소드로 CSS를 적용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tcSmartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">setStyle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>tcSmartPhone.<span style="color:#a6e22e">setStyle</span>(<span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span>);
+</span></span></code></pre></div></li>
 <li>
 <p>행의 데이터를 주기 위해 ObservableList에 모델 객체들을 다음과 같이 저장</p>
 <ul>
 <li>ObservableList를 매개값으로 해서 TableView의 <code>setItems()</code> 메소드를 호출하여 행들을 추가</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ObservableList phoneList <span style="color:#f92672">=</span> FXCollections<span style="color:#f92672">.</span><span style="color:#a6e22e">observableArrayList</span><span style="color:#f92672">(</span>
-	<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone01.png&#34;</span><span style="color:#f92672">),</span>
-	<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone02.png&#34;</span><span style="color:#f92672">),</span>
-	<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone03.png&#34;</span><span style="color:#f92672">),</span>
-<span style="color:#f92672">);</span>
-tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItems</span><span style="color:#f92672">(</span>phoneList<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ObservableList phoneList <span style="color:#f92672">=</span> FXCollections.<span style="color:#a6e22e">observableArrayList</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S1&#34;</span>, <span style="color:#e6db74">&#34;phone01.png&#34;</span>),
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S2&#34;</span>, <span style="color:#e6db74">&#34;phone02.png&#34;</span>),
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S3&#34;</span>, <span style="color:#e6db74">&#34;phone03.png&#34;</span>),
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>tableView.<span style="color:#a6e22e">setItems</span>(phoneList);
+</span></span></code></pre></div></li>
 <li>
 <p>TableView에서 선택된 행의 인덱스와 모델 객체를 얻으려면 속성 감시를 이용할 수 있다.</p>
 <ul>
@@ -385,14 +382,14 @@ tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItem
 <li>selectedIndexProperty는 선택된 행의 모델 객체</li>
 </ul>
 <p>ex) selectedIndexProperty에 리스너를 설정하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">selectedItemProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span>
-	<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-		<span style="color:#a6e22e">@Override</span>
-		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Phone<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-                        Phone oldValue<span style="color:#f92672">,</span> Phone newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>tableView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">selectedItemProperty</span>().<span style="color:#a6e22e">addListener</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Phone<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>                        Phone oldValue, Phone newValue) { ... }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div></li>
 <li>
 <p>ex) 뷰 컨트롤 배치</p>
 <ul>
@@ -401,170 +398,170 @@ tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItem
 <li>하단의 [확인] 버튼을 클릭하면 ListView와 TableView에 선택된 정보를 콘솔에 출력</li>
 <li>Root.fxml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;?</span>xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">?&gt;</span>
-
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.ListView<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.TableColumn<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.TableView<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.layout.AnchorPane<span style="color:#f92672">?&gt;</span>
-
-<span style="color:#f92672">&lt;</span>AnchorPane prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500.0&#34;</span> 
-			xmlns<span style="color:#f92672">:</span>fx<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
-			xmlns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
-			fx<span style="color:#f92672">:</span>controller<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tableView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;</span>children<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;11.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListView&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>ListView layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
-      			prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span>
-      			fx<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;listView&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;125.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TableView&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>TableView layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;120.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
-      			 prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;290.0&#34;</span>
-      			 fx<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tableView&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span>columns<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>TableColumn prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;스마트폰&#34;</span> <span style="color:#f92672">/&gt;</span>
-          <span style="color:#f92672">&lt;</span>TableColumn prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;이미지&#34;</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/</span>columns<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;/</span>TableView<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;425.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ImageView&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>ImageView fitHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> fitWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;60.0&#34;</span> 
-      			 layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;430.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
-      			 pickOnBounds<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> preserveRatio<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> 
-      			 fx<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;imageView&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>Button layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;190.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;145.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;확인&#34;</span> 
-              onAction<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#handleBtnOkAction&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span>Button layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;260.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;145.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;취소&#34;</span> 
-              onAction<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#handleBtnCancelAction&#34;</span> <span style="color:#f92672">/&gt;</span>
-   <span style="color:#f92672">&lt;/</span>children<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>AnchorPane<span style="color:#f92672">&gt;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span>xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.ListView<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.TableColumn<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.control.TableView<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#f92672">import</span> javafx.scene.layout.AnchorPane<span style="color:#f92672">?&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>AnchorPane prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;180.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500.0&#34;</span> 
+</span></span><span style="display:flex;"><span>			xmlns:fx<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/fxml/1&#34;</span> 
+</span></span><span style="display:flex;"><span>			xmlns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://javafx.com/javafx/19&#34;</span>
+</span></span><span style="display:flex;"><span>			fx:controller<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tableView.RootController&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;</span>children<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;11.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ListView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>ListView layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span>
+</span></span><span style="display:flex;"><span>      			fx:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;listView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;125.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TableView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>TableView layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;120.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 prefHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;290.0&#34;</span>
+</span></span><span style="display:flex;"><span>      			 fx:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tableView&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>columns<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span>TableColumn prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;스마트폰&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span>TableColumn prefWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;이미지&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/</span>columns<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/</span>TableView<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Label layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;425.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ImageView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>ImageView fitHeight<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100.0&#34;</span> fitWidth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;60.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;430.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30.0&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 pickOnBounds<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> preserveRatio<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> 
+</span></span><span style="display:flex;"><span>      			 fx:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;imageView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;190.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;145.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;확인&#34;</span> 
+</span></span><span style="display:flex;"><span>              onAction<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#handleBtnOkAction&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>Button layoutX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;260.0&#34;</span> layoutY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;145.0&#34;</span> text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;취소&#34;</span> 
+</span></span><span style="display:flex;"><span>              onAction<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#handleBtnCancelAction&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/</span>children<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span>AnchorPane<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><ul>
 <li>RootController.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ResourceBundle<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javafx.application.Platform<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.beans.value.ChangeListener<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.beans.value.ObservableValue<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.collections.FXCollections<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.collections.ObservableList<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXML<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.Initializable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.ListView<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.TableColumn<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.TableView<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.control.cell.PropertyValueFactory<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.image.Image<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.image.ImageView<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ListView<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> listView<span style="color:#f92672">;</span>  <span style="color:#75715e">// ListView&lt;아이템타입&gt;
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> TableView<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;</span> tableView<span style="color:#f92672">;</span> <span style="color:#75715e">// TableView&lt;모델클래스&gt;
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView<span style="color:#f92672">;</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>URL location<span style="color:#f92672">,</span> ResourceBundle resources<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		listView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItems</span><span style="color:#f92672">(</span>FXCollections<span style="color:#f92672">.</span><span style="color:#a6e22e">observableArrayList</span><span style="color:#f92672">(</span>
-			<span style="color:#e6db74">&#34;G-S1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S4&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S5&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S6&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;G-S7&#34;</span>
-		<span style="color:#f92672">));</span>
-
-		<span style="color:#75715e">// selectedIndex 속성 감시
-</span><span style="color:#75715e"></span>		listView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">selectedIndexProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span>
-			<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-				<span style="color:#a6e22e">@Override</span>
-				<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-					Number oldValue<span style="color:#f92672">,</span> Number newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-					tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">select</span><span style="color:#f92672">(</span>newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span>
-					                            <span style="color:#75715e">// 변경된 인덱스의 행 선택
-</span><span style="color:#75715e"></span>					tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">scrollTo</span><span style="color:#f92672">(</span>newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span>
-					<span style="color:#75715e">// 변경괸 인덱스 위치로 스크롤 시킴
-</span><span style="color:#75715e"></span>				<span style="color:#f92672">}</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">);</span>
-
-		ObservableList phoneList <span style="color:#f92672">=</span> FXCollections<span style="color:#f92672">.</span><span style="color:#a6e22e">observableArrayList</span><span style="color:#f92672">(</span>
-			<span style="color:#75715e">// 총 7개의 행 데이터
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone01.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone02.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone03.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S4&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone04.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S5&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone05.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S6&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone06.png&#34;</span><span style="color:#f92672">),</span>
-			<span style="color:#66d9ef">new</span> Phone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;G-S7&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;phone07.png&#34;</span><span style="color:#f92672">)</span>
-		<span style="color:#f92672">);</span>
-
-		TableColumn tcSmartPhone <span style="color:#f92672">=</span> tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumns</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-		tcSmartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;smartPhone&#34;</span><span style="color:#f92672">));</span>
-		tcSmartPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">setStyle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span><span style="color:#f92672">);</span>
-
-		TableColumn tcImage <span style="color:#f92672">=</span> tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumns</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-		tcImage<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;image&#34;</span><span style="color:#f92672">));</span>
-		tcImage<span style="color:#f92672">.</span><span style="color:#a6e22e">setStyle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span><span style="color:#f92672">);</span>
-
-		tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItems</span><span style="color:#f92672">(</span>phoneList<span style="color:#f92672">);</span>
-
-		<span style="color:#75715e">// selectedItem 속성 감시
-</span><span style="color:#75715e"></span>		tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">selectedItemProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span>
-			<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-				<span style="color:#a6e22e">@Override</span>
-				<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Phone<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
-					Phone oldValue<span style="color:#f92672">,</span> Phone newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-					<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>newValue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-						imageView<span style="color:#f92672">.</span><span style="color:#a6e22e">setImage</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Image<span style="color:#f92672">(</span>
-							getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#f92672">+</span> newValue<span style="color:#f92672">.</span><span style="color:#a6e22e">getImage</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">())</span>
-            <span style="color:#f92672">);</span>
-					<span style="color:#f92672">}</span>
-				<span style="color:#f92672">}</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnOkAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		String item <span style="color:#f92672">=</span> listView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getSelectedItem</span><span style="color:#f92672">();</span>
-		                                       <span style="color:#75715e">// 선택된 항목(행)의 데이터 얻기
-</span><span style="color:#75715e"></span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ListView 스마트폰 :&#34;</span> <span style="color:#f92672">+</span> item<span style="color:#f92672">);</span>
-
-		Phone phone <span style="color:#f92672">=</span> tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getSelectedItem</span><span style="color:#f92672">();</span>
-		                                       <span style="color:#75715e">// 선택된 항목(행)의 데이터 얻기
-</span><span style="color:#75715e"></span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TableView 스마트폰 : &#34;</span> <span style="color:#f92672">+</span> phone<span style="color:#f92672">.</span><span style="color:#a6e22e">getSmartPhone</span><span style="color:#f92672">());</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TableView 이미지 : &#34;</span> <span style="color:#f92672">+</span> phone<span style="color:#f92672">.</span><span style="color:#a6e22e">getImage</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnCancelAction</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.URL;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ResourceBundle;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Platform;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ChangeListener;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.beans.value.ObservableValue;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.collections.FXCollections;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.collections.ObservableList;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.event.ActionEvent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXML;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.Initializable;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.ListView;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.TableColumn;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.TableView;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.control.cell.PropertyValueFactory;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.Image;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.image.ImageView;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RootController</span> <span style="color:#66d9ef">implements</span> Initializable {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ListView<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> listView;  <span style="color:#75715e">// ListView&lt;아이템타입&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> TableView<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;</span> tableView; <span style="color:#75715e">// TableView&lt;모델클래스&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@FXML</span> <span style="color:#66d9ef">private</span> ImageView imageView;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span>(URL location, ResourceBundle resources) {
+</span></span><span style="display:flex;"><span>		listView.<span style="color:#a6e22e">setItems</span>(FXCollections.<span style="color:#a6e22e">observableArrayList</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#e6db74">&#34;G-S1&#34;</span>, <span style="color:#e6db74">&#34;G-S2&#34;</span>, <span style="color:#e6db74">&#34;G-S3&#34;</span>, <span style="color:#e6db74">&#34;G-S4&#34;</span>, <span style="color:#e6db74">&#34;G-S5&#34;</span>, <span style="color:#e6db74">&#34;G-S6&#34;</span>, <span style="color:#e6db74">&#34;G-S7&#34;</span>
+</span></span><span style="display:flex;"><span>		));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// selectedIndex 속성 감시</span>
+</span></span><span style="display:flex;"><span>		listView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">selectedIndexProperty</span>().<span style="color:#a6e22e">addListener</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>					Number oldValue, Number newValue) {
+</span></span><span style="display:flex;"><span>					tableView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">select</span>(newValue.<span style="color:#a6e22e">intValue</span>());
+</span></span><span style="display:flex;"><span>					                            <span style="color:#75715e">// 변경된 인덱스의 행 선택</span>
+</span></span><span style="display:flex;"><span>					tableView.<span style="color:#a6e22e">scrollTo</span>(newValue.<span style="color:#a6e22e">intValue</span>());
+</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// 변경괸 인덱스 위치로 스크롤 시킴</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		ObservableList phoneList <span style="color:#f92672">=</span> FXCollections.<span style="color:#a6e22e">observableArrayList</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 총 7개의 행 데이터</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S1&#34;</span>, <span style="color:#e6db74">&#34;phone01.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S2&#34;</span>, <span style="color:#e6db74">&#34;phone02.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S3&#34;</span>, <span style="color:#e6db74">&#34;phone03.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S4&#34;</span>, <span style="color:#e6db74">&#34;phone04.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S5&#34;</span>, <span style="color:#e6db74">&#34;phone05.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S6&#34;</span>, <span style="color:#e6db74">&#34;phone06.png&#34;</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> Phone(<span style="color:#e6db74">&#34;G-S7&#34;</span>, <span style="color:#e6db74">&#34;phone07.png&#34;</span>)
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		TableColumn tcSmartPhone <span style="color:#f92672">=</span> tableView.<span style="color:#a6e22e">getColumns</span>().<span style="color:#a6e22e">get</span>(0);
+</span></span><span style="display:flex;"><span>		tcSmartPhone.<span style="color:#a6e22e">setCellValueFactory</span>(<span style="color:#66d9ef">new</span> PropertyValueFactory(<span style="color:#e6db74">&#34;smartPhone&#34;</span>));
+</span></span><span style="display:flex;"><span>		tcSmartPhone.<span style="color:#a6e22e">setStyle</span>(<span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		TableColumn tcImage <span style="color:#f92672">=</span> tableView.<span style="color:#a6e22e">getColumns</span>().<span style="color:#a6e22e">get</span>(1);
+</span></span><span style="display:flex;"><span>		tcImage.<span style="color:#a6e22e">setCellValueFactory</span>(<span style="color:#66d9ef">new</span> PropertyValueFactory(<span style="color:#e6db74">&#34;image&#34;</span>));
+</span></span><span style="display:flex;"><span>		tcImage.<span style="color:#a6e22e">setStyle</span>(<span style="color:#e6db74">&#34;-fx-alignment: CENTER;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		tableView.<span style="color:#a6e22e">setItems</span>(phoneList);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// selectedItem 속성 감시</span>
+</span></span><span style="display:flex;"><span>		tableView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">selectedItemProperty</span>().<span style="color:#a6e22e">addListener</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> ChangeListener<span style="color:#f92672">&lt;</span>Phone<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span>(ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Phone<span style="color:#f92672">&gt;</span> observable,
+</span></span><span style="display:flex;"><span>					Phone oldValue, Phone newValue) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">if</span>(newValue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>						imageView.<span style="color:#a6e22e">setImage</span>(<span style="color:#66d9ef">new</span> Image(
+</span></span><span style="display:flex;"><span>							getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#f92672">+</span> newValue.<span style="color:#a6e22e">getImage</span>()).<span style="color:#a6e22e">toString</span>())
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnOkAction</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		String item <span style="color:#f92672">=</span> listView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">getSelectedItem</span>();
+</span></span><span style="display:flex;"><span>		                                       <span style="color:#75715e">// 선택된 항목(행)의 데이터 얻기</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;ListView 스마트폰 :&#34;</span> <span style="color:#f92672">+</span> item);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Phone phone <span style="color:#f92672">=</span> tableView.<span style="color:#a6e22e">getSelectionModel</span>().<span style="color:#a6e22e">getSelectedItem</span>();
+</span></span><span style="display:flex;"><span>		                                       <span style="color:#75715e">// 선택된 항목(행)의 데이터 얻기</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TableView 스마트폰 : &#34;</span> <span style="color:#f92672">+</span> phone.<span style="color:#a6e22e">getSmartPhone</span>());
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TableView 이미지 : &#34;</span> <span style="color:#f92672">+</span> phone.<span style="color:#a6e22e">getImage</span>());
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBtnCancelAction</span>(ActionEvent e) {
+</span></span><span style="display:flex;"><span>		Platform.<span style="color:#a6e22e">exit</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>AppMain.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.fxml.FXMLLoader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Parent<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Parent parent <span style="color:#f92672">=</span> FXMLLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>getClass<span style="color:#f92672">().</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Root.fxml&#34;</span><span style="color:#f92672">));</span>
-		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>parent<span style="color:#f92672">);</span>
-
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AppMain&#34;</span><span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">);</span>
-		primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>	
-		launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/javaFx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.application.Application;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.fxml.FXMLLoader;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Parent;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.scene.Scene;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javafx.stage.Stage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppMain</span> <span style="color:#66d9ef">extends</span> Application {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span>(Stage primaryStage) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>		Parent parent <span style="color:#f92672">=</span> FXMLLoader.<span style="color:#a6e22e">load</span>(getClass().<span style="color:#a6e22e">getResource</span>(<span style="color:#e6db74">&#34;Root.fxml&#34;</span>));
+</span></span><span style="display:flex;"><span>		Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene(parent);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setTitle</span>(<span style="color:#e6db74">&#34;AppMain&#34;</span>);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">setScene</span>(scene);
+</span></span><span style="display:flex;"><span>		primaryStage.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {	
+</span></span><span style="display:flex;"><span>		launch(args);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/javaFx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%201.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%202.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%203.png" alt="Untitled"></p>
 <p><img src="/images/lang_java/javaFx/%EB%B7%B0_%EC%BB%A8%ED%8A%B8%EB%A1%A4/Untitled%204.png" alt="Untitled"></p>
@@ -601,13 +598,13 @@ tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItem
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/javafx/%EC%9E%85%EB%A0%A5_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] JavaFX, 입력 컨트롤</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/javafx/%EB%AF%B8%EB%94%94%EC%96%B4_%EC%BB%A8%ED%8A%B8%EB%A1%A4/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/javafx/%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] JavaFX, 미디어 컨트롤</p>
 		</a>
@@ -759,7 +756,7 @@ tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItem
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -767,32 +764,6 @@ tableView<span style="color:#f92672">.</span><span style="color:#a6e22e">setItem
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

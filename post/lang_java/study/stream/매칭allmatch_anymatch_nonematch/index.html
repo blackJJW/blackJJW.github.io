@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 스트림, 매칭(allMatch(), anyMatch(), noneMatch()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 스트림, 매칭(allMatch(), anyMatch(), noneMatch())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%EB%A7%A4%EC%B9%ADallmatch_anymatch_nonematch/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/stream/%E1%84%86%E1%85%A2%E1%84%8E%E1%85%B5%E1%86%BCallmatch_anymatch_nonematch/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-28T22:40:30+09:00" />
 <meta property="article:modified_time" content="2022-11-28T22:40:30+09:00" />
 
@@ -249,27 +246,27 @@ if (!doNotTrack) {
 <li>모든 요소가 2의 배수인지, 하나라도 3의 배수가 존재하는지, 모든 요소가 3의 배수가 아닌지 조사</li>
 <li>MatchEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MatchEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> intArr <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> 2<span style="color:#f92672">,</span> 4<span style="color:#f92672">,</span> 6 <span style="color:#f92672">};</span>
-
-		<span style="color:#66d9ef">boolean</span> result <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">(</span>intArr<span style="color:#f92672">)</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">allMatch</span><span style="color:#f92672">(</span>a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;모두 2의 배수인가? : &#34;</span> <span style="color:#f92672">+</span> result<span style="color:#f92672">);</span>
-
-		result <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">(</span>intArr<span style="color:#f92672">)</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">anyMatch</span><span style="color:#f92672">(</span>a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 0<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;하나라도 3의 배수가 있는가? : &#34;</span> <span style="color:#f92672">+</span> result<span style="color:#f92672">);</span>
-
-		result <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">(</span>intArr<span style="color:#f92672">)</span>
-				<span style="color:#f92672">.</span><span style="color:#a6e22e">noneMatch</span><span style="color:#f92672">(</span>a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 0<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;3의 배수가 없는가? : &#34;</span> <span style="color:#f92672">+</span> result<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/stream/%EB%A7%A4%EC%B9%AD(allMatch(),_anyMatch(),_noneMatch())/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MatchEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> intArr <span style="color:#f92672">=</span> { 2, 4, 6 };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">boolean</span> result <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(intArr)
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">allMatch</span>(a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;모두 2의 배수인가? : &#34;</span> <span style="color:#f92672">+</span> result);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		result <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(intArr)
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">anyMatch</span>(a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 0);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;하나라도 3의 배수가 있는가? : &#34;</span> <span style="color:#f92672">+</span> result);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		result <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(intArr)
+</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">noneMatch</span>(a <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 0);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;3의 배수가 없는가? : &#34;</span> <span style="color:#f92672">+</span> result);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/stream/%EB%A7%A4%EC%B9%AD(allMatch(),_anyMatch(),_noneMatch())/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -300,13 +297,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EB%A3%A8%ED%95%91peek_foreach/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%85%E1%85%AE%E1%84%91%E1%85%B5%E1%86%BCpeek_foreach/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 스트림, 루핑(peek(), forEach())</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/stream/%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%B4_%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94_%EA%B8%B0%EB%B3%B8_%EC%A7%91%EA%B3%84/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/stream/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B5_%E1%84%8C%E1%85%A6%E1%84%80%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%8C%E1%85%B5%E1%86%B8%E1%84%80%E1%85%A8/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 스트림이 제공하는 기본 집계</p>
 		</a>
@@ -458,7 +455,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -466,32 +463,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

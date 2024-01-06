@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 인터페이스 - 객체 타입 확인(instanceof) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 인터페이스 - 객체 타입 확인(instanceof)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8instanceof/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/interface/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3_-_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%ABinstanceof/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-15T12:00:45+09:00" />
 <meta property="article:modified_time" content="2022-08-15T12:00:45+09:00" />
 
@@ -194,9 +191,9 @@ if (!doNotTrack) {
 <ul>
 <li>Bus 타입으로 강제 타입 변환하면 구현 클래스 타입이 다르므로 ClassCastException이 발생</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Vehicle vehicle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Taxi<span style="color:#f92672">();</span>
-Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Bus<span style="color:#f92672">)</span> vehicle<span style="color:#f92672">;</span>
-</code></pre></div><p><img src="/images/lang_java/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8(instanceof)/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Vehicle vehicle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Taxi();
+</span></span><span style="display:flex;"><span>Bus bus <span style="color:#f92672">=</span> (Bus) vehicle;
+</span></span></code></pre></div><p><img src="/images/lang_java/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%9D%EC%B2%B4_%ED%83%80%EC%9E%85_%ED%99%95%EC%9D%B8(instanceof)/Untitled.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -206,12 +203,12 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 <ul>
 <li>어떤 구현 객체가 지정될지 모르는 상황에서 매개값을 Bus로 강제 타입 변환하면 ClassCastException이 발생 가능</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drive</span><span style="color:#f92672">(</span>Vehicle vehicle<span style="color:#f92672">){</span>
-	Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Bus<span style="color:#f92672">)</span> vehicle<span style="color:#f92672">;</span>
-	bus<span style="color:#f92672">.</span><span style="color:#a6e22e">checkFare</span><span style="color:#f92672">();</span>
-	vehicle<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drive</span>(Vehicle vehicle){
+</span></span><span style="display:flex;"><span>	Bus bus <span style="color:#f92672">=</span> (Bus) vehicle;
+</span></span><span style="display:flex;"><span>	bus.<span style="color:#a6e22e">checkFare</span>();
+</span></span><span style="display:flex;"><span>	vehicle.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h3 id="어떤-구현-객체가-인터페이스-타입으로-변환되었는지-확인하는-방법">어떤 구현 객체가 인터페이스 타입으로 변환되었는지 확인하는 방법</h3>
@@ -224,10 +221,10 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 <ul>
 <li>
 <p>ex) Vehicle 인터페이스 타입으로 변환된 객체가 Bus인지 확인</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>vehicle <span style="color:#66d9ef">instanceof</span> Bus <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-	Bus<span style="color:#f92672">.</span><span style="color:#a6e22e">bus</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Bus<span style="color:#f92672">)</span> vehicel<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (vehicle <span style="color:#66d9ef">instanceof</span> Bus ) {
+</span></span><span style="display:flex;"><span>	Bus.<span style="color:#a6e22e">bus</span> <span style="color:#f92672">=</span> (Bus) vehicel;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -253,18 +250,18 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 <ul>
 <li>객체 타입 확인</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Driver</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">driver</span><span style="color:#f92672">(</span>Vehicle vehicle<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>vehicle <span style="color:#66d9ef">instanceof</span> Bus<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// vehicle 매개 변수가
-</span><span style="color:#75715e"></span>			                         <span style="color:#75715e">// 참조하는 객체가 Bus인지 조사
-</span><span style="color:#75715e"></span>			Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Bus<span style="color:#f92672">)</span> vehicle<span style="color:#f92672">;</span> <span style="color:#75715e">// Bus 객체일 경우 안전하게 강제 타입 변환
-</span><span style="color:#75715e"></span>			bus<span style="color:#f92672">.</span><span style="color:#a6e22e">checkFare</span><span style="color:#f92672">();</span> <span style="color:#75715e">// Bus 타입으로 강제 타입 변환을 하는 이유
-</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
-		vehicle<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">();</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Driver</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">driver</span>(Vehicle vehicle) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(vehicle <span style="color:#66d9ef">instanceof</span> Bus) { <span style="color:#75715e">// vehicle 매개 변수가</span>
+</span></span><span style="display:flex;"><span>			                         <span style="color:#75715e">// 참조하는 객체가 Bus인지 조사</span>
+</span></span><span style="display:flex;"><span>			Bus bus <span style="color:#f92672">=</span> (Bus) vehicle; <span style="color:#75715e">// Bus 객체일 경우 안전하게 강제 타입 변환</span>
+</span></span><span style="display:flex;"><span>			bus.<span style="color:#a6e22e">checkFare</span>(); <span style="color:#75715e">// Bus 타입으로 강제 타입 변환을 하는 이유</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		vehicle.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -296,13 +293,13 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_-_%EA%B0%95%EC%A0%9C_%ED%83%80%EC%9E%85_%EB%B3%80%ED%99%98casting/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/interface/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3_-_%E1%84%80%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A6_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%ABcasting/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 인터페이스 - 강제 타입 변환(Casting)</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/interface/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_%EC%83%81%EC%86%8D/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/interface/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3_%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%E1%86%A8/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 인터페이스 상속</p>
 		</a>
@@ -454,7 +451,7 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -462,32 +459,6 @@ Bus bus <span style="color:#f92672">=</span> <span style="color:#f92672">(</span
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

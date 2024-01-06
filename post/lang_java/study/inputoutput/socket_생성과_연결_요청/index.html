@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] TCP 네트워킹, Socket 생성과 연결 요청 - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] TCP 네트워킹, Socket 생성과 연결 요청" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/inputoutput/socket_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%AD%E1%84%8E%E1%85%A5%E1%86%BC/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-19T21:00:30+09:00" />
 <meta property="article:modified_time" content="2023-01-19T21:00:30+09:00" />
 
@@ -191,16 +188,16 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>로컬 PC의 5001 포트에 연결 요청하는 코드</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-   Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001<span style="color:#f92672">);</span> <span style="color:#75715e">// 방법 1
-</span><span style="color:#75715e"></span>   Socket socket 
-         <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">(</span> <span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001 <span style="color:#f92672">);</span> <span style="color:#75715e">// 방법 2
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>UnknownHostException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-   <span style="color:#75715e">// IP 표기 방법이 잘못되었을 경우
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-   <span style="color:#75715e">// 해당 포트의 서버에 연결할 수 없는 경우
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>   Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket(<span style="color:#e6db74">&#34;localhost&#34;</span>, 5001); <span style="color:#75715e">// 방법 1</span>
+</span></span><span style="display:flex;"><span>   Socket socket 
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket( <span style="color:#66d9ef">new</span> InetSocketAddress(<span style="color:#e6db74">&#34;localhost&#34;</span>, 5001 ); <span style="color:#75715e">// 방법 2</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (UnknownHostException e) {
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// IP 표기 방법이 잘못되었을 경우</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// 해당 포트의 서버에 연결할 수 없는 경우</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>외부 서버에 접속하려면 localhost 대신 정확한 IP를 입력</li>
 <li>IP 대신 도메인 이름만 알고 있을 경우
 <ul>
@@ -215,9 +212,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>Socket 생성과 동시에 연결 요청을 하지 않고, 기본 생성자로 Socket을 생성한 후,  <code>connect()</code> 메소드로 연결 요청</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span>
-socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001 <span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket();
+</span></span><span style="display:flex;"><span>socket.<span style="color:#a6e22e">connect</span>( <span style="color:#66d9ef">new</span> InetSocketAddress(<span style="color:#e6db74">&#34;localhost&#34;</span>, 5001 );
+</span></span></code></pre></div></li>
 <li>
 <p>연결 요청을 할 때는 두 가지 예외가 발생할 수 있다.</p>
 <ol>
@@ -242,82 +239,82 @@ socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</s
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-   socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span> IOException e <span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">}</span> 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>   socket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> ( IOException e ) { } 
+</span></span></code></pre></div></li>
 <li>
 <p>ex) localhost 5001 포트로 연결을 요청하는 코드</p>
 <ul>
 <li><code>connect()</code> 메소드가 정상적으로 리턴하면 연결이 성공한 것</li>
 <li>ClientEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.InetSocketAddress<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">();</span> <span style="color:#75715e">// Socket 생성
-</span><span style="color:#75715e"></span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 연결 요청 ] &#34;</span><span style="color:#f92672">);</span>
-
-			<span style="color:#75715e">// 연결 요청
-</span><span style="color:#75715e"></span>			socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001<span style="color:#f92672">));</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; [ 연결 성공 ] &#34;</span><span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 연결되어 있을 경우
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-				socket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 연결 끊기
-</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>IOException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/inputOutput/Socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.IOException;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.InetSocketAddress;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket(); <span style="color:#75715e">// Socket 생성</span>
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34; [ 연결 요청 ] &#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 연결 요청</span>
+</span></span><span style="display:flex;"><span>			socket.<span style="color:#a6e22e">connect</span>(<span style="color:#66d9ef">new</span> InetSocketAddress(<span style="color:#e6db74">&#34;localhost&#34;</span>, 5001));
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34; [ 연결 성공 ] &#34;</span>);
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(Exception e) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>socket.<span style="color:#a6e22e">isClosed</span>()) { <span style="color:#75715e">// 연결되어 있을 경우</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>				socket.<span style="color:#a6e22e">close</span>(); <span style="color:#75715e">// 연결 끊기</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">catch</span>(IOException e1) {}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/inputOutput/Socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>ex) 연결을 수락하는 코드</p>
 <ul>
 <li>ServerEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.InetSocketAddress<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.ServerSocket<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.Socket<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServerEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		ServerSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-			<span style="color:#75715e">// ServerSocket 생성
-</span><span style="color:#75715e"></span>			serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket<span style="color:#f92672">();</span>
-			serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InetSocketAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> 5001<span style="color:#f92672">));</span>
-
-			<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 기다림 ]&#34;</span><span style="color:#f92672">);</span>
-
-				<span style="color:#75715e">// 클라이언트 연결 수락
-</span><span style="color:#75715e"></span>				Socket socket <span style="color:#f92672">=</span> serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">();</span>
-
-				InetSocketAddress isa <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>InetSocketAddress<span style="color:#f92672">)</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getRemoteSocketAddress</span><span style="color:#f92672">();</span>
-				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[ 연결 수락함 ]&#34;</span> <span style="color:#f92672">+</span> isa<span style="color:#f92672">.</span><span style="color:#a6e22e">getHostName</span><span style="color:#f92672">());</span>
-			<span style="color:#f92672">}</span>
-		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-
-		<span style="color:#75715e">// ServerSocket이 닫혀있지 않을 경우
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-				<span style="color:#75715e">// ServerSocket 닫기
-</span><span style="color:#75715e"></span>				serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.IOException;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.InetSocketAddress;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.ServerSocket;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServerEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		ServerSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// ServerSocket 생성</span>
+</span></span><span style="display:flex;"><span>			serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket();
+</span></span><span style="display:flex;"><span>			serverSocket.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">new</span> InetSocketAddress(<span style="color:#e6db74">&#34;localhost&#34;</span>, 5001));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">while</span>(<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 연결 기다림 ]&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 클라이언트 연결 수락</span>
+</span></span><span style="display:flex;"><span>				Socket socket <span style="color:#f92672">=</span> serverSocket.<span style="color:#a6e22e">accept</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				InetSocketAddress isa <span style="color:#f92672">=</span> (InetSocketAddress) socket.<span style="color:#a6e22e">getRemoteSocketAddress</span>();
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;[ 연결 수락함 ]&#34;</span> <span style="color:#f92672">+</span> isa.<span style="color:#a6e22e">getHostName</span>());
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">catch</span>(Exception e) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// ServerSocket이 닫혀있지 않을 경우</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>serverSocket.<span style="color:#a6e22e">isClosed</span>()) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// ServerSocket 닫기</span>
+</span></span><span style="display:flex;"><span>				serverSocket.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">catch</span> (IOException e1) {}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>먼저 이 코드를 실행하고 위 ClientEx.java를 실행한다.</li>
 </ul>
 <p><img src="/images/lang_java/inputOutput/Socket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%B2%AD/Untitled%201.png" alt="Untitled"></p>
@@ -354,13 +351,13 @@ socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</s
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/inputoutput/serversocket_%EC%83%9D%EC%84%B1%EA%B3%BC_%EC%97%B0%EA%B2%B0_%EC%88%98%EB%9D%BD/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/serversocket_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%AF_%E1%84%89%E1%85%AE%E1%84%85%E1%85%A1%E1%86%A8/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] TCP 네트워킹, ServerSocket 생성과 연결 수락</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/inputoutput/socket_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%86%B5%EC%8B%A0/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/inputoutput/socket_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5_%E1%84%90%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AB/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] TCP 네트워킹, Socket 데이터 통신</p>
 		</a>
@@ -512,7 +509,7 @@ socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</s
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -520,32 +517,6 @@ socket<span style="color:#f92672">.</span><span style="color:#a6e22e">connect</s
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

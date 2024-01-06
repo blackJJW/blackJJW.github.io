@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] 정적 멤버와 static - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] 정적 멤버와 static" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/class/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%86%E1%85%A6%E1%86%B7%E1%84%87%E1%85%A5%E1%84%8B%E1%85%AA_static/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-07-24T15:00:45+09:00" />
 <meta property="article:modified_time" content="2022-07-24T15:00:45+09:00" />
 
@@ -198,14 +195,14 @@ if (!doNotTrack) {
 <ul>
 <li>필드와 메소드 선언 시 static 키워드를 추가적으로 붙이면 된다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">클래스</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 정적 필드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> 타입 필드 <span style="color:#f92672">[=</span> 초기값<span style="color:#f92672">];</span>
-
-	<span style="color:#75715e">// 정적 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> 리턴 타입 <span style="color:#a6e22e">메소드</span><span style="color:#f92672">(</span> 매개변수선언<span style="color:#f92672">,</span> <span style="color:#f92672">...</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">클래스</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정적 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> 타입 필드 <span style="color:#f92672">[=</span> 초기값<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정적 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> 리턴 타입 <span style="color:#a6e22e">메소드</span>( 매개변수선언, ... ) { ... }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>정적 필드와 정적 메소드는 클래스에 고정된 맴버</p>
 <ul>
@@ -237,11 +234,11 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calulator</span> <span style="color:#f92672">{</span>
-	String color<span style="color:#f92672">;</span> <span style="color:#75715e">// 계산기 별로 색상이 다를 수 있다.
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">14159</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 계산기에서 사용하는 파이 값은 동일
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calulator</span> {
+</span></span><span style="display:flex;"><span>	String color; <span style="color:#75715e">// 계산기 별로 색상이 다를 수 있다.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3.<span style="color:#a6e22e">14159</span>; <span style="color:#75715e">// 계산기에서 사용하는 파이 값은 동일</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="인스턴스-메소드-vs-정적-메소드-선언-시-판단-기준">인스턴스 메소드 vs 정적 메소드 선언 시 판단 기준</h3>
 <ul>
@@ -265,13 +262,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator</span> <span style="color:#f92672">{</span>
-	Stirng color<span style="color:#f92672">;</span> <span style="color:#75715e">// 인스턴스 필드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setColor</span><span style="color:#f92672">(</span>String color<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color<span style="color:#f92672">;}</span> <span style="color:#75715e">// 인스턴스 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">;}</span> <span style="color:#75715e">// 정적 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y<span style="color:#f92672">;}</span> <span style="color:#75715e">// 정적 메소드
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator</span> {
+</span></span><span style="display:flex;"><span>	Stirng color; <span style="color:#75715e">// 인스턴스 필드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setColor</span>(String color) {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;} <span style="color:#75715e">// 인스턴스 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y;} <span style="color:#75715e">// 정적 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {<span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y;} <span style="color:#75715e">// 정적 메소드</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <h1 id="정적-멤버-사용">정적 멤버 사용</h1>
 <hr>
@@ -281,30 +278,30 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>클래스 이름과 함께 도트( . ) 연산자로 접근</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">클래스<span style="color:#f92672">.</span><span style="color:#a6e22e">필드</span><span style="color:#f92672">;</span>
-클래스<span style="color:#f92672">.</span><span style="color:#a6e22e">메소드</span><span style="color:#f92672">(</span> 매개값<span style="color:#f92672">,</span> <span style="color:#f92672">...</span> <span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>클래스.<span style="color:#a6e22e">필드</span>;
+</span></span><span style="display:flex;"><span>클래스.<span style="color:#a6e22e">메소드</span>( 매개값, ... );
+</span></span></code></pre></div></li>
 <li>
 <p>ex) Calculator 클래스</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">14159</span><span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3.<span style="color:#a6e22e">14159</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) { ... }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) { ... }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>
 <p>정적 필드 pi와 적 메소드 <code>plus()</code>, <code>minus()</code>는 다음과 같이 사용 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> Calculator<span style="color:#f92672">.</span><span style="color:#a6e22e">pi</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Calculator<span style="color:#f92672">.</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-<span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> Calculator<span style="color:#f92672">.</span><span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> Calculator.<span style="color:#a6e22e">pi</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Calculator.<span style="color:#a6e22e">plus</span>(10, 5);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> Calculator.<span style="color:#a6e22e">minus</span>(10, 5);
+</span></span></code></pre></div></li>
 <li>
 <p>정적 필드와 정적 메소드는 원칙적으로 클래스 이름으로 접근해야 하지만 객체 참조 변수로도 접근이 가능</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Calculator myCalc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Calculator<span style="color:#f92672">();</span>
-<span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> myCalc<span style="color:#f92672">.</span><span style="color:#a6e22e">pi</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> myCalc<span style="color:#f92672">.</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-<span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> myCalc<span style="color:#f92672">.</span><span style="color:#a6e22e">munus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Calculator myCalc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Calculator();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> myCalc.<span style="color:#a6e22e">pi</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> myCalc.<span style="color:#a6e22e">plus</span>(10, 5);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> myCalc.<span style="color:#a6e22e">munus</span>(10, 5);
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -316,32 +313,32 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ex) 정적 멤버 사용</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator4</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">14159</span><span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator4Ex</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> Calculator4<span style="color:#f92672">.</span><span style="color:#a6e22e">pi</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Calculator4<span style="color:#f92672">.</span><span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> Calculator4<span style="color:#f92672">.</span><span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 5<span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;result1 : &#34;</span> <span style="color:#f92672">+</span> result1<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;result2 : &#34;</span> <span style="color:#f92672">+</span> result2<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;result3 : &#34;</span> <span style="color:#f92672">+</span> result3<span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator4</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3.<span style="color:#a6e22e">14159</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">plus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minus</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator4Ex</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> result1 <span style="color:#f92672">=</span> 10 <span style="color:#f92672">*</span> 10 <span style="color:#f92672">*</span> Calculator4.<span style="color:#a6e22e">pi</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result2 <span style="color:#f92672">=</span> Calculator4.<span style="color:#a6e22e">plus</span>(10, 5);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result3 <span style="color:#f92672">=</span> Calculator4.<span style="color:#a6e22e">minus</span>(10, 5);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;result1 : &#34;</span> <span style="color:#f92672">+</span> result1);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;result2 : &#34;</span> <span style="color:#f92672">+</span> result2);
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;result3 : &#34;</span> <span style="color:#f92672">+</span> result3);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/Untitled%202.png" alt="Untitled"></p>
 </li>
 </ul>
 <h1 id="정적-초기화-블록">정적 초기화 블록</h1>
@@ -349,8 +346,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>정적 필드는 필드 선언돠 동시에 초기값을 주는 것이 보통</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">14159</span><span style="color:#f92672">;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> pi <span style="color:#f92672">=</span> 3.<span style="color:#a6e22e">14159</span>;
+</span></span></code></pre></div></li>
 <li>
 <p>계산이 필요한 초기화 작업이 필요한 경우가 있을 수 있음.</p>
 </li>
@@ -362,10 +359,10 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>자바는 정적 필드의 복잡한 초기화 작업을 위해 정적 블록(static block)을 제공</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">static</span> <span style="color:#f92672">{</span>
-	<span style="color:#f92672">...</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> {
+</span></span><span style="display:flex;"><span>	...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>정적 블록은 클래스가 메모리로 로딩될 때 자동적으로 실행</li>
 <li>정적 블록은 클래스 내부에 여러 개가 선언되어도 상관없다.
 <ul>
@@ -382,24 +379,24 @@ if (!doNotTrack) {
 <li>info는 초기값을 설정하지 않음</li>
 <li>info 필드는 정적 블록에서 company와 model 필드값을 서로 연결해서 초기값으로 설정</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Television</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">static</span> String company <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AAA&#34;</span><span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> String model <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LCD&#34;</span><span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> String info<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">static</span> <span style="color:#f92672">{</span>
-		info <span style="color:#f92672">=</span> company <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> model<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TelevisionEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Television<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">);</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/Untitled%203.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Television</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> String company <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AAA&#34;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> String model <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LCD&#34;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> String info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> {
+</span></span><span style="display:flex;"><span>		info <span style="color:#f92672">=</span> company <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> model;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TelevisionEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Television.<span style="color:#a6e22e">info</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/class/%EC%A0%95%EC%A0%81_%EB%A9%A4%EB%B2%84%EC%99%80_static/Untitled%203.png" alt="Untitled"></p>
 </li>
 </ul>
 <h1 id="정적-메소드와-블록-선언-시-주의할-점">정적 메소드와 블록 선언 시 주의할 점</h1>
@@ -413,56 +410,56 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>다음 코드는 컴파일 오류가 발생</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassName</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// 인스턴스 필드와 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> field<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 정적 필드와 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> field2<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 정적 블록
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#f92672">{</span>
-		field1 <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span> <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>		method1<span style="color:#f92672">();</span>   <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>		field2 <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span> <span style="color:#75715e">// (o)
-</span><span style="color:#75715e"></span>		method2<span style="color:#f92672">();</span>   <span style="color:#75715e">// (o)
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-
-	<span style="color:#75715e">// 정적 메소드
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Method3 <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">field1</span> <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span> <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">method1</span><span style="color:#f92672">();</span>   <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>    field2 <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>      <span style="color:#75715e">// (o)
-</span><span style="color:#75715e"></span>		method2<span style="color:#f92672">();</span>        <span style="color:#75715e">// (o)
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassName</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 인스턴스 필드와 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> field;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method1</span>() { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정적 필드와 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> field2;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">method2</span>() { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정적 블록</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> {
+</span></span><span style="display:flex;"><span>		field1 <span style="color:#f92672">=</span> 10; <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>		method1();   <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>		field2 <span style="color:#f92672">=</span> 10; <span style="color:#75715e">// (o)</span>
+</span></span><span style="display:flex;"><span>		method2();   <span style="color:#75715e">// (o)</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 정적 메소드</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Method3 {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">field1</span> <span style="color:#f92672">=</span> 10; <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">method1</span>();   <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>    field2 <span style="color:#f92672">=</span> 10;      <span style="color:#75715e">// (o)</span>
+</span></span><span style="display:flex;"><span>		method2();        <span style="color:#75715e">// (o)</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>정적 메소드와 정적 블록에서 인스턴스 멤버를 사용하고 싶은 경우</p>
 <ul>
 <li>객체를 먼저 생성하고 참조 변수로 접근</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Method3</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	ClassName obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassName<span style="color:#f92672">();</span>
-	obj<span style="color:#f92672">.</span><span style="color:#a6e22e">field1</span> <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
-	obj<span style="color:#f92672">.</span><span style="color:#a6e22e">method1</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Method3</span>() {
+</span></span><span style="display:flex;"><span>	ClassName obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassName();
+</span></span><span style="display:flex;"><span>	obj.<span style="color:#a6e22e">field1</span> <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>	obj.<span style="color:#a6e22e">method1</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p><code>main()</code> 메소드도 정적(static) 메소드이므로 객체 생성 없이 인스턴스 필드와 인스턴스 메소드를 <code>main()</code> 메소드에서 바로 사용 불가</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">int</span> speed<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		speed <span style="color:#f92672">=</span> 60<span style="color:#f92672">;</span> <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>		run<span style="color:#f92672">();</span> <span style="color:#75715e">// (x) 컴파일 에러
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> speed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		speed <span style="color:#f92672">=</span> 60; <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>		run(); <span style="color:#75715e">// (x) 컴파일 에러</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
@@ -492,13 +489,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/class/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4_%EB%A9%A4%EB%B2%84%EC%99%80_this/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/class/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3_%E1%84%86%E1%85%A6%E1%86%B7%E1%84%87%E1%85%A5%E1%84%8B%E1%85%AA_this/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] 인스턴스 멤버와 this</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/class/%EC%8B%B1%EA%B8%80%ED%86%A4singleton/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/class/%E1%84%89%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B3%E1%86%AF%E1%84%90%E1%85%A9%E1%86%ABsingleton/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] 싱글톤(Singleton)</p>
 		</a>
@@ -650,7 +647,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -658,32 +655,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

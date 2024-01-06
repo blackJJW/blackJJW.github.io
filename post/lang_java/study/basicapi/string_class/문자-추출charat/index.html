@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] String 클래스, String 메소드, 문자 추출(charAt()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] String 클래스, String 메소드, 문자 추출(charAt())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90-%EC%B6%94%EC%B6%9Ccharat/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/string_class/%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1-%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%AE%E1%86%AFcharat/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-24T20:00:45+09:00" />
 <meta property="article:modified_time" content="2022-09-24T20:00:45+09:00" />
 
@@ -185,9 +182,9 @@ if (!doNotTrack) {
 			<ul>
 <li>
 <p><code>charAt()</code> 메소드는 매개값으로 주어진 인덱스의 문자를 리턴</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String subject <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;자바 프로그래밍&#34;</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">char</span> charValue <span style="color:#f92672">=</span> subject<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String subject <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;자바 프로그래밍&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> charValue <span style="color:#f92672">=</span> subject.<span style="color:#a6e22e">charAt</span>(3);
+</span></span></code></pre></div><ul>
 <li>인덱스란 0에서부터 “문자열길이-1”까지의 번호를 말한다.</li>
 </ul>
 <p><img src="/images/lang_java/basicAPI/%EB%AC%B8%EC%9E%90_%EC%B6%94%EC%B6%9C(charAt())/Untitled.png" alt="Untitled"></p>
@@ -201,24 +198,24 @@ if (!doNotTrack) {
 <li>주민등록번호에서 인덱스 7번 문자를 읽어 남자와 여자를 구분</li>
 <li>StringCharAtEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringCharAtEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		String ssn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;920123-1234567&#34;</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">char</span> sex <span style="color:#f92672">=</span> ssn<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>7<span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">switch</span><span style="color:#f92672">(</span>sex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">:</span>
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">:</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;male&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">:</span>
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;4&#39;</span><span style="color:#f92672">:</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;female&#34;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EB%AC%B8%EC%9E%90_%EC%B6%94%EC%B6%9C(charAt())/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringCharAtEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		String ssn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;920123-1234567&#34;</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">char</span> sex <span style="color:#f92672">=</span> ssn.<span style="color:#a6e22e">charAt</span>(7);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">switch</span>(sex) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;1&#39;</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;3&#39;</span>:
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;male&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;2&#39;</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;4&#39;</span>:
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;female&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EB%AC%B8%EC%9E%90_%EC%B6%94%EC%B6%9C(charAt())/Untitled%201.png" alt="Untitled"></p>
 </li>
 </ul>
 <hr>
@@ -249,13 +246,13 @@ if (!doNotTrack) {
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/string_class/string_%EB%A9%94%EC%86%8C%EB%93%9C/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/string_class/string_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] String 클래스, String 메소드</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/string_class/%EB%AC%B8%EC%9E%90%EC%97%B4_%EB%B9%84%EA%B5%90equals/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/string_class/%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%87%E1%85%B5%E1%84%80%E1%85%ADequals/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] String 클래스, String 메소드, 문자열 비교(equals())</p>
 		</a>
@@ -407,7 +404,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -415,32 +412,6 @@ if (!doNotTrack) {
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>

@@ -3,16 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
-     crossorigin="anonymous"></script>
 	<title>[Java] Object 클래스, 객체 문자 정보(toString()) - Black_JJW&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="[Java] Object 클래스, 객체 문자 정보(toString())" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4tostring/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blackjjw.github.io/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9tostring/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-18T22:30:45+09:00" />
 <meta property="article:modified_time" content="2022-09-18T22:30:45+09:00" />
 
@@ -189,9 +186,9 @@ if (!doNotTrack) {
 <li>객체의 문자 정보 : 객체를 문자열로 표현한 값</li>
 <li>기본적으로 “<code>클래스명@16진수해시코드</code>”로 구성된 문자 정보를 리턴</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Object obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">();</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span> obj<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">);</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object();
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>( obj.<span style="color:#a6e22e">toString</span>() );
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled.png" alt="Untitled"></p>
 </li>
 <li>
 <p>Object의 <code>toString()</code> 메소드의 리턴값은 자바 애플리케이션에서는 별 값어치가 없는 정보</p>
@@ -210,57 +207,57 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <li>Object 클래스와 Date 클래스의 <code>toString()</code> 메소드의 리턴값을 출력</li>
 <li>ToStringEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Date<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToStringEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		Object obj1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">();</span>
-		Date obj2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date<span style="color:#f92672">();</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>obj1<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>obj2<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled%201.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Date;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToStringEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		Object obj1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object();
+</span></span><span style="display:flex;"><span>		Date obj2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(obj1.<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(obj2.<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled%201.png" alt="Untitled"></p>
 <ul>
 <li>toString() 메소드를 재정의하여 좀 더 유용한 정보를 리턴할 수 있도록 할 수 있다.</li>
 <li>SmartPhone.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhone</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">private</span> String company<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">private</span> String os<span style="color:#f92672">;</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SmartPhone</span><span style="color:#f92672">(</span>String company<span style="color:#f92672">,</span> String os<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">company</span> <span style="color:#f92672">=</span> company<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">os</span> <span style="color:#f92672">=</span> os<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-
-	<span style="color:#a6e22e">@Override</span>
-	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// toString 재정의
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> company <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhone</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String company;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String os;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SmartPhone</span>(String company, String os) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">company</span> <span style="color:#f92672">=</span> company;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">os</span> <span style="color:#f92672">=</span> os;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() { <span style="color:#75715e">// toString 재정의</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> company <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> os;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>SmartPhoneEx.java</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhoneEx</span> <span style="color:#f92672">{</span>
-
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		SmartPhone myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartPhone<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Google&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Android&#34;</span><span style="color:#f92672">);</span>
-
-		String strObj <span style="color:#f92672">=</span> myPhone<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>strObj<span style="color:#f92672">);</span>
-
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>myPhone<span style="color:#f92672">);</span>
-		<span style="color:#75715e">// myPhone.toString()을 자동 호출해서 리턴값을 얻은 후 호출
-</span><span style="color:#75715e"></span>
-	<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled%202.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SmartPhoneEx</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		SmartPhone myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SmartPhone(<span style="color:#e6db74">&#34;Google&#34;</span>, <span style="color:#e6db74">&#34;Android&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		String strObj <span style="color:#f92672">=</span> myPhone.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(strObj);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myPhone);
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// myPhone.toString()을 자동 호출해서 리턴값을 얻은 후 호출</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/lang_java/basicAPI/%EA%B0%9D%EC%B2%B4_%EB%AC%B8%EC%9E%90_%EC%A0%95%EB%B3%B4(toString())/Untitled%202.png" alt="Untitled"></p>
 </li>
 <li>
 <p>콘솔에 출력하기 위해 <code>System.out.println()</code> 메소드를 사용</p>
@@ -299,13 +296,13 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%ED%95%B4%EC%8B%9C%EC%BD%94%EB%93%9Chashcode/" rel="prev">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%92%E1%85%A2%E1%84%89%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3hashcode/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">[Java] Object 클래스, 객체 해시코드(hashCode())</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%EA%B0%9D%EC%B2%B4_%EB%B3%B5%EC%82%ACclone/" rel="next">
+		<a class="pager__link" href="/post/lang_java/study/basicapi/object_class/%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6_%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1clone/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">[Java] Object 클래스, 객체 복사(clone())</p>
 		</a>
@@ -457,7 +454,7 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2023 Black_JJW&#39;s Blog.
+			&copy; 2024 Black_JJW&#39;s Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
@@ -465,32 +462,6 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 	</div>
 <script async defer src="/js/menu.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          TeX: { equationNumbers: { autoNumber: "AMS" },
-               extensions: ["AMSmath.js", "AMSsymbols.js"] }
-        }
-        });
-        MathJax.Hub.Queue(function() {
-          
-          
-          
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i = 0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-        });
-      
-        MathJax.Hub.Config({
-        
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
