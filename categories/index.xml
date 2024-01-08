@@ -37,41 +37,6 @@
       <description></description>
     </item>
     <item>
-      <title>DL</title>
-      <link>https://blackjjw.github.io/categories/dl/</link>
-      <pubDate>Fri, 24 Mar 2023 22:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/dl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>https://blackjjw.github.io/categories/java/</link>
-      <pubDate>Sun, 05 Feb 2023 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Projects</title>
-      <link>https://blackjjw.github.io/categories/projects/</link>
-      <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/projects/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://blackjjw.github.io/categories/linux/</link>
-      <pubDate>Thu, 30 Jun 2022 12:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Statistics</title>
-      <link>https://blackjjw.github.io/categories/statistics/</link>
-      <pubDate>Fri, 29 Apr 2022 18:33:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>SQL</title>
       <link>https://blackjjw.github.io/categories/sql/</link>
       <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
@@ -83,13 +48,6 @@
       <link>https://blackjjw.github.io/categories/setting/</link>
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
       <guid>https://blackjjw.github.io/categories/setting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ML</title>
-      <link>https://blackjjw.github.io/categories/ml/</link>
-      <pubDate>Sat, 23 Apr 2022 16:40:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/ml/</guid>
       <description></description>
     </item>
   </channel>
