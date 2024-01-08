@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/blog/tags/css/</link>
+    <link>https://blackjjw.github.io/tags/css/</link>
     <description>Recent content in CSS on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Dec 2022 14:00:30 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/blog/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] JavaFX CSS 스타일, 화면 스킨 입히기</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</link>
       <pubDate>Wed, 28 Dec 2022 14:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, shadow 효과</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</link>
       <pubDate>Wed, 28 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, font 속성</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, background 속성</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 12:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, border 속성</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 11:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, 외부 CSS 파일</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Tue, 27 Dec 2022 10:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, 인라인(inline) 스타일</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Mon, 26 Dec 2022 16:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일</title>
-      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Mon, 26 Dec 2022 15:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Project][Spring Boot] 자전거 경로 안내와 이동 거리 동안의 미세먼지 흡입량 계산 서비스</title>
-      <link>https://blackjjw.github.io/blog/post/projects/%E1%84%8C%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9_find_dust/</link>
+      <link>https://blackjjw.github.io/post/projects/%E1%84%8C%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9_find_dust/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/projects/%E1%84%8C%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9_find_dust/</guid>
+      <guid>https://blackjjw.github.io/post/projects/%E1%84%8C%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%A5_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9_find_dust/</guid>
       <description></description>
     </item>
     <item>
       <title>[JavaScript] 이벤트 설정</title>
-      <link>https://blackjjw.github.io/blog/post/lang_javascript/study/doc_object/javascript_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC/</link>
       <pubDate>Sat, 11 Jun 2022 15:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_javascript/study/doc_object/javascript_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[JavaScript] 스타일 조작</title>
-      <link>https://blackjjw.github.io/blog/post/lang_javascript/study/doc_object/javascript_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%8C%E1%85%A9%E1%84%8C%E1%85%A1%E1%86%A8/</link>
+      <link>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%8C%E1%85%A9%E1%84%8C%E1%85%A1%E1%86%A8/</link>
       <pubDate>Fri, 10 Jun 2022 14:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/blog/post/lang_javascript/study/doc_object/javascript_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%8C%E1%85%A9%E1%84%8C%E1%85%A1%E1%86%A8/</guid>
+      <guid>https://blackjjw.github.io/post/lang_javascript/study/doc_object/javascript_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%8C%E1%85%A9%E1%84%8C%E1%85%A1%E1%86%A8/</guid>
       <description></description>
     </item>
   </channel>
