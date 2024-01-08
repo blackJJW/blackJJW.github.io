@@ -2,143 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/algorithm/</link>
+    <link>https://blackjjw.github.io/blog/tags/algorithm/</link>
     <description>Recent content in Algorithm on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Nov 2023 13:54:26 +0000</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/blog/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Algorithm][Terms] scan</title>
-      <link>https://blackjjw.github.io/post/algorithm/terms/scan/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/terms/scan/</link>
       <pubDate>Mon, 20 Nov 2023 13:54:26 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/terms/scan/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/terms/scan/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Laws] 드 모르간의 법칙</title>
-      <link>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/laws/de_morgan_law/</link>
       <pubDate>Sat, 18 Nov 2023 16:09:43 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/laws/de_morgan_law/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 연쇄 행렬 곱셈</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AB_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AB_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
       <pubDate>Tue, 05 Jul 2022 19:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AB_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AB_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 최단 경로와 플로이드 알고리즘</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8E%E1%85%AC%E1%84%83%E1%85%A1%E1%86%AB_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AA_%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8E%E1%85%AC%E1%84%83%E1%85%A1%E1%86%AB_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AA_%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7/</link>
       <pubDate>Mon, 04 Jul 2022 19:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8E%E1%85%AC%E1%84%83%E1%85%A1%E1%86%AB_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AA_%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8E%E1%85%AC%E1%84%83%E1%85%A1%E1%86%AB_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AA_%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 동적 계획법과 이항계수</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8/</link>
       <pubDate>Thu, 30 Jun 2022 15:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 분할정복과 트로미노 퍼즐</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%86%E1%85%B5%E1%84%82%E1%85%A9_%E1%84%91%E1%85%A5%E1%84%8C%E1%85%B3%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%86%E1%85%B5%E1%84%82%E1%85%A9_%E1%84%91%E1%85%A5%E1%84%8C%E1%85%B3%E1%86%AF/</link>
       <pubDate>Wed, 29 Jun 2022 19:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%86%E1%85%B5%E1%84%82%E1%85%A9_%E1%84%91%E1%85%A5%E1%84%8C%E1%85%B3%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%86%E1%85%B5%E1%84%82%E1%85%A9_%E1%84%91%E1%85%A5%E1%84%8C%E1%85%B3%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 큰 정수의 계산법</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8F%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8F%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/</link>
       <pubDate>Tue, 28 Jun 2022 18:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8F%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8F%E1%85%B3%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 쉬트라쎈의 행렬 곱셈</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%89%E1%85%B1%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A6%E1%86%AB%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%89%E1%85%B1%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A6%E1%86%AB%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
       <pubDate>Mon, 27 Jun 2022 13:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%89%E1%85%B1%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A6%E1%86%AB%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%89%E1%85%B1%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A6%E1%86%AB%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 분할 정복과 퀵 정렬</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%8F%E1%85%B1%E1%86%A8_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%8F%E1%85%B1%E1%86%A8_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
       <pubDate>Thu, 23 Jun 2022 13:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%8F%E1%85%B1%E1%86%A8_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AF_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AA_%E1%84%8F%E1%85%B1%E1%86%A8_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 합병 정렬</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%92%E1%85%A1%E1%86%B8%E1%84%87%E1%85%A7%E1%86%BC_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%92%E1%85%A1%E1%86%B8%E1%84%87%E1%85%A7%E1%86%BC_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
       <pubDate>Wed, 22 Jun 2022 17:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%92%E1%85%A1%E1%86%B8%E1%84%87%E1%85%A7%E1%86%BC_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%92%E1%85%A1%E1%86%B8%E1%84%87%E1%85%A7%E1%86%BC_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 이분 검색</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</link>
       <pubDate>Wed, 22 Jun 2022 16:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 알고리즘 분석</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7_%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7_%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8/</link>
       <pubDate>Tue, 21 Jun 2022 16:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7_%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7_%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 피보나치 수열</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%91%E1%85%B5%E1%84%87%E1%85%A9%E1%84%82%E1%85%A1%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%91%E1%85%B5%E1%84%87%E1%85%A9%E1%84%82%E1%85%A1%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF/</link>
       <pubDate>Mon, 20 Jun 2022 16:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%91%E1%85%B5%E1%84%87%E1%85%A9%E1%84%82%E1%85%A1%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%91%E1%85%B5%E1%84%87%E1%85%A9%E1%84%82%E1%85%A1%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 알고리즘의 효율성 - 이분 검색</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</link>
       <pubDate>Mon, 20 Jun 2022 15:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%86%AB_%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 행렬의 곱셈</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</link>
       <pubDate>Sat, 18 Jun 2022 15:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%92%E1%85%A2%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B4_%E1%84%80%E1%85%A9%E1%86%B8%E1%84%89%E1%85%A6%E1%86%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 리스트의 정렬 - 교환 정렬</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AD%E1%84%92%E1%85%AA%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AD%E1%84%92%E1%85%AA%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</link>
       <pubDate>Sat, 18 Jun 2022 15:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AD%E1%84%92%E1%85%AA%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AD%E1%84%92%E1%85%AA%E1%86%AB_%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 리스트(배열) 원소의 합 구하기</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%A9%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A1%E1%86%B8_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%A9%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A1%E1%86%B8_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</link>
       <pubDate>Sat, 18 Jun 2022 14:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%A9%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A1%E1%86%B8_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%A9%E1%84%8B%E1%85%B4_%E1%84%92%E1%85%A1%E1%86%B8_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 순차 탐색 문제</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1_%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1_%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/</link>
       <pubDate>Sat, 18 Jun 2022 14:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1_%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1_%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Python] 알고리즘이란?</title>
-      <link>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/</link>
       <pubDate>Sat, 18 Jun 2022 13:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/algorithm/langpython/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB/</guid>
       <description></description>
     </item>
   </channel>

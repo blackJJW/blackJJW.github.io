@@ -2,381 +2,381 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaFX on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/javafx/</link>
+    <link>https://blackjjw.github.io/blog/tags/javafx/</link>
     <description>Recent content in JavaFX on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Feb 2023 21:00:30 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/blog/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] NIO, TCP 블로킹 채널, 채팅 클라이언트 구현</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
       <pubDate>Fri, 03 Feb 2023 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] NIO, TCP 블로킹 채널, 채팅 서버 구현</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
       <pubDate>Thu, 02 Feb 2023 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] NIO, 와치 서비스(WatchService)</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8B%E1%85%AA%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3watchservice/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8B%E1%85%AA%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3watchservice/</link>
       <pubDate>Mon, 23 Jan 2023 17:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/nio/%E1%84%8B%E1%85%AA%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3watchservice/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/nio/%E1%84%8B%E1%85%AA%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3watchservice/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] TCP 네트워킹, 채팅 클라이언트 구현</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
       <pubDate>Sun, 22 Jan 2023 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] TCP 네트워킹, 채팅 서버 구현</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
       <pubDate>Sun, 22 Jan 2023 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/inputoutput/%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC_%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 애니메이션</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%A2%E1%84%82%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%A2%E1%84%82%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB/</link>
       <pubDate>Thu, 29 Dec 2022 14:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%A2%E1%84%82%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%A2%E1%84%82%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 화면 이동</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC/</link>
       <pubDate>Thu, 29 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 스레드 동시성, Service 클래스</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/service_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/service_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
       <pubDate>Thu, 29 Dec 2022 12:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/service_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/service_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 스레드 동시성, Task 클래스</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/task_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/task_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
       <pubDate>Wed, 28 Dec 2022 17:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/task_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/task_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 스레드 동시성, Platform.runLater() 메소드</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/platform_runlater_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/platform_runlater_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/</link>
       <pubDate>Wed, 28 Dec 2022 16:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/platform_runlater_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/platform_runlater_%E1%84%86%E1%85%A6%E1%84%89%E1%85%A9%E1%84%83%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 스레드 동시성</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Wed, 28 Dec 2022 15:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%89%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, 화면 스킨 입히기</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</link>
       <pubDate>Wed, 28 Dec 2022 14:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%B5%E1%84%80%E1%85%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, shadow 효과</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</link>
       <pubDate>Wed, 28 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/shadow_%E1%84%92%E1%85%AD%E1%84%80%E1%85%AA/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, font 속성</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/font_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, background 속성</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 12:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/background_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, border 속성</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Tue, 27 Dec 2022 11:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/border_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, 외부 CSS 파일</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Tue, 27 Dec 2022 10:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE_css_%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일, 인라인(inline) 스타일</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Mon, 26 Dec 2022 16:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%ABinline_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX CSS 스타일</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</link>
       <pubDate>Mon, 26 Dec 2022 15:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_css_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 다이얼로그, 컨트롤러에서 primaryStage 사용</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5_primarystage_%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5_primarystage_%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</link>
       <pubDate>Mon, 26 Dec 2022 14:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5_primarystage_%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5_primarystage_%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 다이얼로그, 커스텀 다이얼로그</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%B7_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%B7_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</link>
       <pubDate>Mon, 26 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%B7_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8F%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%B7_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 다이얼로그, Popup</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/popup/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/popup/</link>
       <pubDate>Mon, 26 Dec 2022 12:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/popup/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/popup/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 다이얼로그, FileChooser, DirectoryChooser</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/filechooser_directorychooser/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/filechooser_directorychooser/</link>
       <pubDate>Sun, 25 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/filechooser_directorychooser/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/filechooser_directorychooser/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 다이얼로그</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</link>
       <pubDate>Sun, 25 Dec 2022 20:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 메뉴바와 툴바</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%E1%84%87%E1%85%A1%E1%84%8B%E1%85%AA_%E1%84%90%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%E1%84%87%E1%85%A1%E1%84%8B%E1%85%AA_%E1%84%90%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1/</link>
       <pubDate>Sun, 25 Dec 2022 19:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%E1%84%87%E1%85%A1%E1%84%8B%E1%85%AA_%E1%84%90%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%E1%84%87%E1%85%A1%E1%84%8B%E1%85%AA_%E1%84%90%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 차트 컨트롤</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
       <pubDate>Sun, 25 Dec 2022 18:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8E%E1%85%A1%E1%84%90%E1%85%B3_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 미디어 컨트롤</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
       <pubDate>Sat, 24 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 뷰 컨트롤</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%B2_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%87%E1%85%B2_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
       <pubDate>Thu, 22 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%B2_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%87%E1%85%B2_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 입력 컨트롤</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
       <pubDate>Tue, 20 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 버튼 컨트롤</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</link>
       <pubDate>Tue, 20 Dec 2022 20:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, Bindings 클래스</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/bindings_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/bindings_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
       <pubDate>Sat, 17 Dec 2022 13:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/bindings_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/bindings_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 속성 바인딩</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC/</link>
       <pubDate>Sat, 17 Dec 2022 12:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 속성 감시</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%A1%E1%86%B7%E1%84%89%E1%85%B5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%A1%E1%86%B7%E1%84%89%E1%85%B5/</link>
       <pubDate>Fri, 16 Dec 2022 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%A1%E1%86%B7%E1%84%89%E1%85%B5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%A1%E1%86%B7%E1%84%89%E1%85%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, FXML 컨트롤러(Controller)</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5controller/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5controller/</link>
       <pubDate>Fri, 16 Dec 2022 21:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5controller/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A5controller/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 이벤트 핸들러(EventHandler)</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%92%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5eventhandler/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%92%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5eventhandler/</link>
       <pubDate>Fri, 16 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%92%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5eventhandler/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3_%E1%84%92%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5eventhandler/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, StackPane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/stackpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/stackpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Fri, 16 Dec 2022 20:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/stackpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/stackpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, GridPane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/gridpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/gridpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 23:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/gridpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/gridpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, TilePane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/tilepane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/tilepane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 23:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/tilepane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/tilepane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, FlowPane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/flowpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/flowpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 22:50:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/flowpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/flowpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, BorderPane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/borderpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 22:40:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/borderpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/borderpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, HBox와 VBox 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/hbox%E1%84%8B%E1%85%AA_vbox_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/hbox%E1%84%8B%E1%85%AA_vbox_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 22:35:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/hbox%E1%84%8B%E1%85%AA_vbox_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/hbox%E1%84%8B%E1%85%AA_vbox_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, AnchorPane 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/anchorpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/anchorpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 22:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/anchorpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/anchorpane_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 컨테이너</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</link>
       <pubDate>Thu, 15 Dec 2022 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, FXML 로딩과 Scene 생성</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_scene_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_scene_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/</link>
       <pubDate>Wed, 14 Dec 2022 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_scene_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_scene_%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, FXML 작성 규칙</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%B2%E1%84%8E%E1%85%B5%E1%86%A8/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%B2%E1%84%8E%E1%85%B5%E1%86%A8/</link>
       <pubDate>Wed, 14 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%B2%E1%84%8E%E1%85%B5%E1%86%A8/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%80%E1%85%B2%E1%84%8E%E1%85%B5%E1%86%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 레이아웃 여백 : 패딩과 마진</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA_%E1%84%8B%E1%85%A7%E1%84%87%E1%85%A2%E1%86%A8_%E1%84%91%E1%85%A2%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%86%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA_%E1%84%8B%E1%85%A7%E1%84%87%E1%85%A2%E1%86%A8_%E1%84%91%E1%85%A2%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%86%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB/</link>
       <pubDate>Tue, 13 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA_%E1%84%8B%E1%85%A7%E1%84%87%E1%85%A2%E1%86%A8_%E1%84%91%E1%85%A2%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%86%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA_%E1%84%8B%E1%85%A7%E1%84%87%E1%85%A2%E1%86%A8_%E1%84%91%E1%85%A2%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%AA_%E1%84%86%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, FXML 레이아웃</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</link>
       <pubDate>Tue, 13 Dec 2022 20:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/fxml_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 프로그램적 레이아웃</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</link>
       <pubDate>Tue, 13 Dec 2022 02:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8_%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BA/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 무대(Stage)와 장면(Scene)</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%AE%E1%84%83%E1%85%A2stage%E1%84%8B%E1%85%AA_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%86%E1%85%A7%E1%86%ABscene/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%AE%E1%84%83%E1%85%A2stage%E1%84%8B%E1%85%AA_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%86%E1%85%A7%E1%86%ABscene/</link>
       <pubDate>Tue, 13 Dec 2022 01:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%AE%E1%84%83%E1%85%A2stage%E1%84%8B%E1%85%AA_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%86%E1%85%A7%E1%86%ABscene/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%AE%E1%84%83%E1%85%A2stage%E1%84%8B%E1%85%AA_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%86%E1%85%A7%E1%86%ABscene/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 메인 클래스 실행 매개값 얻기</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC_%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%80%E1%85%A1%E1%86%B9_%E1%84%8B%E1%85%A5%E1%86%AE%E1%84%80%E1%85%B5/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC_%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%80%E1%85%A1%E1%86%B9_%E1%84%8B%E1%85%A5%E1%86%AE%E1%84%80%E1%85%B5/</link>
       <pubDate>Mon, 12 Dec 2022 23:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC_%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%80%E1%85%A1%E1%86%B9_%E1%84%8B%E1%85%A5%E1%86%AE%E1%84%80%E1%85%B5/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC_%E1%84%86%E1%85%A2%E1%84%80%E1%85%A2%E1%84%80%E1%85%A1%E1%86%B9_%E1%84%8B%E1%85%A5%E1%86%AE%E1%84%80%E1%85%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 라이프사이클</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF/</link>
       <pubDate>Mon, 12 Dec 2022 22:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX, 메인 클래스</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</link>
       <pubDate>Mon, 12 Dec 2022 21:30:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%84%89%E1%85%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>[Java] JavaFX 개요</title>
-      <link>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/</link>
       <pubDate>Mon, 12 Dec 2022 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_java/study/javafx/javafx_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_java/study/javafx/javafx_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/</guid>
       <description></description>
     </item>
   </channel>

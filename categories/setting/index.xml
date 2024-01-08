@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Setting on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/categories/setting/</link>
+    <link>https://blackjjw.github.io/blog/categories/setting/</link>
     <description>Recent content in Setting on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Apr 2022 18:30:45 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/categories/setting/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/blog/categories/setting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Oracle][setting] Oracle Database 19c Installation and Setting</title>
-      <link>https://blackjjw.github.io/post/setting/oracle_database_19c_setting/</link>
+      <link>https://blackjjw.github.io/blog/post/setting/oracle_database_19c_setting/</link>
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/setting/oracle_database_19c_setting/</guid>
+      <guid>https://blackjjw.github.io/blog/post/setting/oracle_database_19c_setting/</guid>
       <description></description>
     </item>
     <item>
       <title>[Spark][setting] Spark Installation(Windows 10)</title>
-      <link>https://blackjjw.github.io/post/setting/spark_installation_windows_10/</link>
+      <link>https://blackjjw.github.io/blog/post/setting/spark_installation_windows_10/</link>
       <pubDate>Sat, 23 Apr 2022 16:35:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/setting/spark_installation_windows_10/</guid>
+      <guid>https://blackjjw.github.io/blog/post/setting/spark_installation_windows_10/</guid>
       <description></description>
     </item>
   </channel>

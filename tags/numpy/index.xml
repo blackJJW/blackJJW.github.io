@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NumPy on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/numpy/</link>
+    <link>https://blackjjw.github.io/blog/tags/numpy/</link>
     <description>Recent content in NumPy on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Mar 2023 22:00:45 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/tags/numpy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/blog/tags/numpy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[DL] 퍼셉트론 - 퍼셉트론 구현</title>
-      <link>https://blackjjw.github.io/post/dl/study/%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_-_%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
+      <link>https://blackjjw.github.io/blog/post/dl/study/%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_-_%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</link>
       <pubDate>Fri, 24 Mar 2023 22:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/dl/study/%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_-_%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
+      <guid>https://blackjjw.github.io/blog/post/dl/study/%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_-_%E1%84%91%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B8%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB_%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] NumPy - 넘파이 배열 구조</title>
-      <link>https://blackjjw.github.io/post/lang_python/library/numpy/numpy_-_%E1%84%82%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9/</link>
+      <link>https://blackjjw.github.io/blog/post/lang_python/library/numpy/numpy_-_%E1%84%82%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9/</link>
       <pubDate>Sun, 19 Feb 2023 17:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/library/numpy/numpy_-_%E1%84%82%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9/</guid>
+      <guid>https://blackjjw.github.io/blog/post/lang_python/library/numpy/numpy_-_%E1%84%82%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9/</guid>
       <description></description>
     </item>
   </channel>

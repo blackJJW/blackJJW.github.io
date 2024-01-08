@@ -2,241 +2,241 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/</link>
+    <link>https://blackjjw.github.io/blog/tags/</link>
     <description>Recent content in Tags on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Dec 2023 15:29:59 +0000</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
-      <link>https://blackjjw.github.io/tags/python/</link>
+      <link>https://blackjjw.github.io/blog/tags/python/</link>
       <pubDate>Tue, 05 Dec 2023 15:29:59 +0000</pubDate>
-      <guid>https://blackjjw.github.io/tags/python/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>bash</title>
-      <link>https://blackjjw.github.io/tags/bash/</link>
+      <link>https://blackjjw.github.io/blog/tags/bash/</link>
       <pubDate>Mon, 20 Nov 2023 15:13:36 +0000</pubDate>
-      <guid>https://blackjjw.github.io/tags/bash/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>bash command</title>
-      <link>https://blackjjw.github.io/tags/bash-command/</link>
+      <link>https://blackjjw.github.io/blog/tags/bash-command/</link>
       <pubDate>Mon, 20 Nov 2023 14:53:51 +0000</pubDate>
-      <guid>https://blackjjw.github.io/tags/bash-command/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/bash-command/</guid>
       <description></description>
     </item>
     <item>
       <title>Algorithm</title>
-      <link>https://blackjjw.github.io/tags/algorithm/</link>
+      <link>https://blackjjw.github.io/blog/tags/algorithm/</link>
       <pubDate>Mon, 20 Nov 2023 13:54:26 +0000</pubDate>
-      <guid>https://blackjjw.github.io/tags/algorithm/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>computer system</title>
-      <link>https://blackjjw.github.io/tags/computer-system/</link>
+      <link>https://blackjjw.github.io/blog/tags/computer-system/</link>
       <pubDate>Sat, 18 Nov 2023 17:47:30 +0000</pubDate>
-      <guid>https://blackjjw.github.io/tags/computer-system/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/computer-system/</guid>
       <description></description>
     </item>
     <item>
       <title>JSON</title>
-      <link>https://blackjjw.github.io/tags/json/</link>
+      <link>https://blackjjw.github.io/blog/tags/json/</link>
       <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/json/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/json/</guid>
       <description></description>
     </item>
     <item>
       <title>Python Library</title>
-      <link>https://blackjjw.github.io/tags/python-library/</link>
+      <link>https://blackjjw.github.io/blog/tags/python-library/</link>
       <pubDate>Tue, 22 Aug 2023 23:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/python-library/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/python-library/</guid>
       <description></description>
     </item>
     <item>
       <title>DL</title>
-      <link>https://blackjjw.github.io/tags/dl/</link>
+      <link>https://blackjjw.github.io/blog/tags/dl/</link>
       <pubDate>Fri, 24 Mar 2023 22:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/dl/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/dl/</guid>
       <description></description>
     </item>
     <item>
       <title>NumPy</title>
-      <link>https://blackjjw.github.io/tags/numpy/</link>
+      <link>https://blackjjw.github.io/blog/tags/numpy/</link>
       <pubDate>Fri, 24 Mar 2023 22:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/numpy/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/numpy/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>https://blackjjw.github.io/tags/java/</link>
+      <link>https://blackjjw.github.io/blog/tags/java/</link>
       <pubDate>Sun, 05 Feb 2023 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/java/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>https://blackjjw.github.io/tags/network/</link>
+      <link>https://blackjjw.github.io/blog/tags/network/</link>
       <pubDate>Sun, 05 Feb 2023 22:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/network/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaFX</title>
-      <link>https://blackjjw.github.io/tags/javafx/</link>
+      <link>https://blackjjw.github.io/blog/tags/javafx/</link>
       <pubDate>Fri, 03 Feb 2023 21:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/javafx/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/javafx/</guid>
       <description></description>
     </item>
     <item>
       <title>CSS</title>
-      <link>https://blackjjw.github.io/tags/css/</link>
+      <link>https://blackjjw.github.io/blog/tags/css/</link>
       <pubDate>Wed, 28 Dec 2022 14:00:30 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/css/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>HTML</title>
-      <link>https://blackjjw.github.io/tags/html/</link>
+      <link>https://blackjjw.github.io/blog/tags/html/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/html/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>https://blackjjw.github.io/tags/javascript/</link>
+      <link>https://blackjjw.github.io/blog/tags/javascript/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/javascript/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>kakao Maps</title>
-      <link>https://blackjjw.github.io/tags/kakao-maps/</link>
+      <link>https://blackjjw.github.io/blog/tags/kakao-maps/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/kakao-maps/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/kakao-maps/</guid>
       <description></description>
     </item>
     <item>
       <title>openroute service</title>
-      <link>https://blackjjw.github.io/tags/openroute-service/</link>
+      <link>https://blackjjw.github.io/blog/tags/openroute-service/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/openroute-service/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/openroute-service/</guid>
       <description></description>
     </item>
     <item>
       <title>ORACLE</title>
-      <link>https://blackjjw.github.io/tags/oracle/</link>
+      <link>https://blackjjw.github.io/blog/tags/oracle/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/oracle/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/oracle/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring Boot</title>
-      <link>https://blackjjw.github.io/tags/spring-boot/</link>
+      <link>https://blackjjw.github.io/blog/tags/spring-boot/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/spring-boot/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/spring-boot/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring Security</title>
-      <link>https://blackjjw.github.io/tags/spring-security/</link>
+      <link>https://blackjjw.github.io/blog/tags/spring-security/</link>
       <pubDate>Tue, 30 Aug 2022 20:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/spring-security/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/spring-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://blackjjw.github.io/tags/linux/</link>
+      <link>https://blackjjw.github.io/blog/tags/linux/</link>
       <pubDate>Thu, 30 Jun 2022 12:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/linux/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>OS</title>
-      <link>https://blackjjw.github.io/tags/os/</link>
+      <link>https://blackjjw.github.io/blog/tags/os/</link>
       <pubDate>Thu, 30 Jun 2022 12:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/os/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/os/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript Library</title>
-      <link>https://blackjjw.github.io/tags/javascript-library/</link>
+      <link>https://blackjjw.github.io/blog/tags/javascript-library/</link>
       <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/javascript-library/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/javascript-library/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>https://blackjjw.github.io/tags/react/</link>
+      <link>https://blackjjw.github.io/blog/tags/react/</link>
       <pubDate>Sun, 26 Jun 2022 19:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/react/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Lodash</title>
-      <link>https://blackjjw.github.io/tags/lodash/</link>
+      <link>https://blackjjw.github.io/blog/tags/lodash/</link>
       <pubDate>Tue, 07 Jun 2022 13:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/lodash/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/lodash/</guid>
       <description></description>
     </item>
     <item>
       <title>Chatbot</title>
-      <link>https://blackjjw.github.io/tags/chatbot/</link>
+      <link>https://blackjjw.github.io/blog/tags/chatbot/</link>
       <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/chatbot/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/chatbot/</guid>
       <description></description>
     </item>
     <item>
       <title>Flask</title>
-      <link>https://blackjjw.github.io/tags/flask/</link>
+      <link>https://blackjjw.github.io/blog/tags/flask/</link>
       <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/flask/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/flask/</guid>
       <description></description>
     </item>
     <item>
       <title>kakao</title>
-      <link>https://blackjjw.github.io/tags/kakao/</link>
+      <link>https://blackjjw.github.io/blog/tags/kakao/</link>
       <pubDate>Sat, 04 Jun 2022 09:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/kakao/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/kakao/</guid>
       <description></description>
     </item>
     <item>
       <title>Statistics</title>
-      <link>https://blackjjw.github.io/tags/statistics/</link>
+      <link>https://blackjjw.github.io/blog/tags/statistics/</link>
       <pubDate>Fri, 29 Apr 2022 18:33:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/statistics/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>ML</title>
-      <link>https://blackjjw.github.io/tags/ml/</link>
+      <link>https://blackjjw.github.io/blog/tags/ml/</link>
       <pubDate>Tue, 26 Apr 2022 17:38:48 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/ml/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/ml/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>https://blackjjw.github.io/tags/sql/</link>
+      <link>https://blackjjw.github.io/blog/tags/sql/</link>
       <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/sql/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>DB</title>
-      <link>https://blackjjw.github.io/tags/db/</link>
+      <link>https://blackjjw.github.io/blog/tags/db/</link>
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/db/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/db/</guid>
       <description></description>
     </item>
     <item>
       <title>Spark</title>
-      <link>https://blackjjw.github.io/tags/spark/</link>
+      <link>https://blackjjw.github.io/blog/tags/spark/</link>
       <pubDate>Sat, 23 Apr 2022 16:35:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/tags/spark/</guid>
+      <guid>https://blackjjw.github.io/blog/tags/spark/</guid>
       <description></description>
     </item>
   </channel>
