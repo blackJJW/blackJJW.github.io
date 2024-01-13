@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Black_JJW&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2023 15:29:59 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 00:20:07 +0900</lastBuildDate>
     <atom:link href="https://blackjjw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian 리포지터리 분류</title>
+      <link>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</link>
+      <pubDate>Sun, 14 Jan 2024 00:20:07 +0900</pubDate>
+      <guid>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</guid>
+      <description></description>
+    </item>
     <item>
       <title>[Python] iterable 객체</title>
       <link>https://blackjjw.github.io/post/lang_python/basic/iterable/</link>

@@ -2,22 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/lang_python/basic/iterable/</loc>
-    <lastmod>2023-12-05T15:29:59+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/</loc>
-    <lastmod>2023-12-05T15:29:59+00:00</lastmod>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/</loc>
-    <lastmod>2023-12-05T15:29:59+00:00</lastmod>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</loc>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/linux/</loc>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/categories/linux/</loc>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/post/</loc>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/tags/</loc>
+    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/lang_python/basic/iterable/</loc>
     <lastmod>2023-12-05T15:29:59+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -28,11 +48,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://blackjjw.github.io/categories/python/</loc>
-    <lastmod>2023-12-05T15:29:59+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://blackjjw.github.io/tags/</loc>
     <lastmod>2023-12-05T15:29:59+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
