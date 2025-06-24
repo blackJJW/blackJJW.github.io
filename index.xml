@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Black_JJW&#39;s Blog</title>
+    <title>Home :: Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/index.html</link>
-    <description>This is your new home page.</description>
+    <description>Welcome to My Technical Blog Engineering Logs Projects</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>https://blackjjw.github.io/projects/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/projects/index.html</guid>
-      <description></description>
+      <description>Project List Multi Crypto Trading Tool</description>
     </item>
   </channel>
 </rss>
