@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Black_JJW&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Jan 2024 00:20:07 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Linux] Debian 리포지터리 분류</title>
-      <link>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</link>
+      <link>http://localhost:1313/post/linux/basic/debian_repository_class/</link>
       <pubDate>Sun, 14 Jan 2024 00:20:07 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</guid>
+      <guid>http://localhost:1313/post/linux/basic/debian_repository_class/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] iterable 객체</title>
-      <link>https://blackjjw.github.io/post/lang_python/basic/iterable/</link>
+      <link>http://localhost:1313/post/lang_python/basic/iterable/</link>
       <pubDate>Tue, 05 Dec 2023 15:29:59 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/basic/iterable/</guid>
+      <guid>http://localhost:1313/post/lang_python/basic/iterable/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash] prompt</title>
-      <link>https://blackjjw.github.io/post/bash/basic/prompt/</link>
+      <link>http://localhost:1313/post/bash/basic/prompt/</link>
       <pubDate>Mon, 20 Nov 2023 15:13:36 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/basic/prompt/</guid>
+      <guid>http://localhost:1313/post/bash/basic/prompt/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash][Command] type</title>
-      <link>https://blackjjw.github.io/post/bash/commands/type/</link>
+      <link>http://localhost:1313/post/bash/commands/type/</link>
       <pubDate>Mon, 20 Nov 2023 14:53:51 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/commands/type/</guid>
+      <guid>http://localhost:1313/post/bash/commands/type/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash] script 파일</title>
-      <link>https://blackjjw.github.io/post/bash/basic/script/</link>
+      <link>http://localhost:1313/post/bash/basic/script/</link>
       <pubDate>Mon, 20 Nov 2023 14:22:09 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/basic/script/</guid>
+      <guid>http://localhost:1313/post/bash/basic/script/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash] 키워드</title>
-      <link>https://blackjjw.github.io/post/bash/basic/keyword/</link>
+      <link>http://localhost:1313/post/bash/basic/keyword/</link>
       <pubDate>Mon, 20 Nov 2023 14:11:13 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/basic/keyword/</guid>
+      <guid>http://localhost:1313/post/bash/basic/keyword/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash] built-in 명령어</title>
-      <link>https://blackjjw.github.io/post/bash/basic/built-in/</link>
+      <link>http://localhost:1313/post/bash/basic/built-in/</link>
       <pubDate>Mon, 20 Nov 2023 14:04:31 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/basic/built-in/</guid>
+      <guid>http://localhost:1313/post/bash/basic/built-in/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Terms] scan</title>
-      <link>https://blackjjw.github.io/post/algorithm/terms/scan/</link>
+      <link>http://localhost:1313/post/algorithm/terms/scan/</link>
       <pubDate>Mon, 20 Nov 2023 13:54:26 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/terms/scan/</guid>
+      <guid>http://localhost:1313/post/algorithm/terms/scan/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] 파이썬의 변수</title>
-      <link>https://blackjjw.github.io/post/lang_python/basic/python_var/</link>
+      <link>http://localhost:1313/post/lang_python/basic/python_var/</link>
       <pubDate>Sun, 19 Nov 2023 13:39:24 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/basic/python_var/</guid>
+      <guid>http://localhost:1313/post/lang_python/basic/python_var/</guid>
       <description></description>
     </item>
     <item>
       <title>[Computer System] 기본 컴퓨터 시스템</title>
-      <link>https://blackjjw.github.io/post/computer_sys/basic/basic_computer_system/</link>
+      <link>http://localhost:1313/post/computer_sys/basic/basic_computer_system/</link>
       <pubDate>Sat, 18 Nov 2023 17:47:30 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/computer_sys/basic/basic_computer_system/</guid>
+      <guid>http://localhost:1313/post/computer_sys/basic/basic_computer_system/</guid>
       <description></description>
     </item>
     <item>
       <title>[Bash] 실행 파일</title>
-      <link>https://blackjjw.github.io/post/bash/basic/executable/</link>
+      <link>http://localhost:1313/post/bash/basic/executable/</link>
       <pubDate>Sat, 18 Nov 2023 17:08:13 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/bash/basic/executable/</guid>
+      <guid>http://localhost:1313/post/bash/basic/executable/</guid>
       <description></description>
     </item>
     <item>
       <title>[Algorithm][Laws] 드 모르간의 법칙</title>
-      <link>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</link>
+      <link>http://localhost:1313/post/algorithm/laws/de_morgan_law/</link>
       <pubDate>Sat, 18 Nov 2023 16:09:43 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/algorithm/laws/de_morgan_law/</guid>
+      <guid>http://localhost:1313/post/algorithm/laws/de_morgan_law/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] list</title>
-      <link>https://blackjjw.github.io/post/lang_python/list/</link>
+      <link>http://localhost:1313/post/lang_python/list/</link>
       <pubDate>Sat, 18 Feb 2023 17:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/list/</guid>
+      <guid>http://localhost:1313/post/lang_python/list/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] subprocess</title>
-      <link>https://blackjjw.github.io/post/lang_python/library/subprocess/</link>
+      <link>http://localhost:1313/post/lang_python/library/subprocess/</link>
       <pubDate>Sat, 18 Feb 2023 16:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/library/subprocess/</guid>
+      <guid>http://localhost:1313/post/lang_python/library/subprocess/</guid>
       <description></description>
     </item>
     <item>
       <title>[SQL] SQL과 PL/SQL</title>
-      <link>https://blackjjw.github.io/post/sql/sql_pl-sql/</link>
+      <link>http://localhost:1313/post/sql/sql_pl-sql/</link>
       <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/sql/sql_pl-sql/</guid>
+      <guid>http://localhost:1313/post/sql/sql_pl-sql/</guid>
       <description></description>
     </item>
     <item>
       <title>[Oracle][setting] Oracle Database 19c Installation and Setting</title>
-      <link>https://blackjjw.github.io/post/setting/oracle_database_19c_setting/</link>
+      <link>http://localhost:1313/post/setting/oracle_database_19c_setting/</link>
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/setting/oracle_database_19c_setting/</guid>
+      <guid>http://localhost:1313/post/setting/oracle_database_19c_setting/</guid>
       <description></description>
     </item>
     <item>
       <title>[Spark][setting] Spark Installation(Windows 10)</title>
-      <link>https://blackjjw.github.io/post/setting/spark_installation_windows_10/</link>
+      <link>http://localhost:1313/post/setting/spark_installation_windows_10/</link>
       <pubDate>Sat, 23 Apr 2022 16:35:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/setting/spark_installation_windows_10/</guid>
+      <guid>http://localhost:1313/post/setting/spark_installation_windows_10/</guid>
       <description></description>
     </item>
   </channel>

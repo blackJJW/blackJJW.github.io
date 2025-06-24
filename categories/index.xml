@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Black_JJW&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Jan 2024 00:20:07 +0900</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>https://blackjjw.github.io/categories/linux/</link>
+      <link>http://localhost:1313/categories/linux/</link>
       <pubDate>Sun, 14 Jan 2024 00:20:07 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/linux/</guid>
+      <guid>http://localhost:1313/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://blackjjw.github.io/categories/python/</link>
+      <link>http://localhost:1313/categories/python/</link>
       <pubDate>Tue, 05 Dec 2023 15:29:59 +0000</pubDate>
-      <guid>https://blackjjw.github.io/categories/python/</guid>
+      <guid>http://localhost:1313/categories/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://blackjjw.github.io/categories/bash/</link>
+      <link>http://localhost:1313/categories/bash/</link>
       <pubDate>Mon, 20 Nov 2023 15:13:36 +0000</pubDate>
-      <guid>https://blackjjw.github.io/categories/bash/</guid>
+      <guid>http://localhost:1313/categories/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Algorithm</title>
-      <link>https://blackjjw.github.io/categories/algorithm/</link>
+      <link>http://localhost:1313/categories/algorithm/</link>
       <pubDate>Mon, 20 Nov 2023 13:54:26 +0000</pubDate>
-      <guid>https://blackjjw.github.io/categories/algorithm/</guid>
+      <guid>http://localhost:1313/categories/algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Computer System</title>
-      <link>https://blackjjw.github.io/categories/computer-system/</link>
+      <link>http://localhost:1313/categories/computer-system/</link>
       <pubDate>Sat, 18 Nov 2023 17:47:30 +0000</pubDate>
-      <guid>https://blackjjw.github.io/categories/computer-system/</guid>
+      <guid>http://localhost:1313/categories/computer-system/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>https://blackjjw.github.io/categories/sql/</link>
+      <link>http://localhost:1313/categories/sql/</link>
       <pubDate>Mon, 25 Apr 2022 19:33:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/sql/</guid>
+      <guid>http://localhost:1313/categories/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Setting</title>
-      <link>https://blackjjw.github.io/categories/setting/</link>
+      <link>http://localhost:1313/categories/setting/</link>
       <pubDate>Sat, 23 Apr 2022 18:30:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/categories/setting/</guid>
+      <guid>http://localhost:1313/categories/setting/</guid>
       <description></description>
     </item>
   </channel>

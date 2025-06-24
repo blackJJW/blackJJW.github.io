@@ -2,12 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</loc>
-    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
+    <loc>https://blackjjw.github.io/</loc>
+    <lastmod>2026-06-24T18:30:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/</loc>
+    <loc>https://blackjjw.github.io/post/</loc>
+    <lastmod>2026-06-24T18:30:45+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blackjjw.github.io/post/linux/basic/debian_repository_class/</loc>
     <lastmod>2024-01-14T00:20:07+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -17,17 +22,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/linux/</loc>
-    <lastmod>2024-01-14T00:20:07+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://blackjjw.github.io/categories/linux/</loc>
     <lastmod>2024-01-14T00:20:07+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/post/</loc>
+    <loc>https://blackjjw.github.io/tags/linux/</loc>
     <lastmod>2024-01-14T00:20:07+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -42,12 +42,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/python/</loc>
+    <loc>https://blackjjw.github.io/categories/python/</loc>
     <lastmod>2023-12-05T15:29:59+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/categories/python/</loc>
+    <loc>https://blackjjw.github.io/tags/python/</loc>
     <lastmod>2023-12-05T15:29:59+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -57,12 +57,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/bash/</loc>
+    <loc>https://blackjjw.github.io/categories/bash/</loc>
     <lastmod>2023-11-20T15:13:36+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/categories/bash/</loc>
+    <loc>https://blackjjw.github.io/tags/bash/</loc>
     <lastmod>2023-11-20T15:13:36+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -97,12 +97,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/algorithm/</loc>
+    <loc>https://blackjjw.github.io/categories/algorithm/</loc>
     <lastmod>2023-11-20T13:54:26+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/categories/algorithm/</loc>
+    <loc>https://blackjjw.github.io/tags/algorithm/</loc>
     <lastmod>2023-11-20T13:54:26+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -117,12 +117,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/computer-system/</loc>
+    <loc>https://blackjjw.github.io/categories/computer-system/</loc>
     <lastmod>2023-11-18T17:47:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/categories/computer-system/</loc>
+    <loc>https://blackjjw.github.io/tags/computer-system/</loc>
     <lastmod>2023-11-18T17:47:30+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -157,12 +157,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/tags/sql/</loc>
+    <loc>https://blackjjw.github.io/categories/sql/</loc>
     <lastmod>2022-04-25T19:33:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://blackjjw.github.io/categories/sql/</loc>
+    <loc>https://blackjjw.github.io/tags/sql/</loc>
     <lastmod>2022-04-25T19:33:45+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

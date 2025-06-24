@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/categories/python/</link>
+    <link>http://localhost:1313/categories/python/</link>
     <description>Recent content in Python on Black_JJW&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Dec 2023 15:29:59 +0000</lastBuildDate>
-    <atom:link href="https://blackjjw.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Python] iterable 객체</title>
-      <link>https://blackjjw.github.io/post/lang_python/basic/iterable/</link>
+      <link>http://localhost:1313/post/lang_python/basic/iterable/</link>
       <pubDate>Tue, 05 Dec 2023 15:29:59 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/basic/iterable/</guid>
+      <guid>http://localhost:1313/post/lang_python/basic/iterable/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] 파이썬의 변수</title>
-      <link>https://blackjjw.github.io/post/lang_python/basic/python_var/</link>
+      <link>http://localhost:1313/post/lang_python/basic/python_var/</link>
       <pubDate>Sun, 19 Nov 2023 13:39:24 +0000</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/basic/python_var/</guid>
+      <guid>http://localhost:1313/post/lang_python/basic/python_var/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] list</title>
-      <link>https://blackjjw.github.io/post/lang_python/list/</link>
+      <link>http://localhost:1313/post/lang_python/list/</link>
       <pubDate>Sat, 18 Feb 2023 17:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/list/</guid>
+      <guid>http://localhost:1313/post/lang_python/list/</guid>
       <description></description>
     </item>
     <item>
       <title>[Python] subprocess</title>
-      <link>https://blackjjw.github.io/post/lang_python/library/subprocess/</link>
+      <link>http://localhost:1313/post/lang_python/library/subprocess/</link>
       <pubDate>Sat, 18 Feb 2023 16:00:45 +0900</pubDate>
-      <guid>https://blackjjw.github.io/post/lang_python/library/subprocess/</guid>
+      <guid>http://localhost:1313/post/lang_python/library/subprocess/</guid>
       <description></description>
     </item>
   </channel>
