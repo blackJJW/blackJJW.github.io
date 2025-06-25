@@ -7,5 +7,12 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/projects/multi-crypto-trading-tool/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Setting Up the Backend</title>
+      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/backend/startbackend/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/backend/startbackend/index.html</guid>
+      <description>1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv: uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager. from fastapi import FastAPI from contextlib import asynccontextmanager @asynccontextmanager async def lifespan(app: FastAPI): # startup print(&#34;Starting up&#34;) yield # shutdown print(&#34;Shutting down&#34;) app = FastAPI(lifespan=lifespan) This function is called once during the application’s lifecycle: Before the first request is processed (startup) After the server shuts down (cleanup) Using lifespan() is useful for: Performance optimization Test stability (isolated setup/teardown) Clean resource management (DB, queues, sockets) @asynccontextmanager: This decorator from the contextlib module allows defining an asynchronous context manager using async def. It enables setup and cleanup logic around the yield statement, and is used here to control the FastAPI application’s lifespan events (startup and shutdown).</description>
+    </item>
   </channel>
 </rss>

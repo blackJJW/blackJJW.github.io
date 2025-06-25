@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv: uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager. from fastapi import FastAPI from contextlib import asynccontextmanager @asynccontextmanager async def lifespan(app: FastAPI): # startup print(&#34;Starting up&#34;) yield # shutdown print(&#34;Shutting down&#34;) app = FastAPI(lifespan=lifespan) This function is called once during the application’s lifecycle: Before the first request is processed (startup) After the server shuts down (cleanup) Using lifespan() is useful for: Performance optimization Test stability (isolated setup/teardown) Clean resource management (DB, queues, sockets) @asynccontextmanager: This decorator from the contextlib module allows defining an asynchronous context manager using async def. It enables setup and cleanup logic around the yield statement, and is used here to control the FastAPI application’s lifespan events (startup and shutdown).">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv: uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager. from fastapi import FastAPI from contextlib import asynccontextmanager @asynccontextmanager async def lifespan(app: FastAPI): # startup print(&#34;Starting up&#34;) yield # shutdown print(&#34;Shutting down&#34;) app = FastAPI(lifespan=lifespan) This function is called once during the application’s lifecycle: Before the first request is processed (startup) After the server shuts down (cleanup) Using lifespan() is useful for: Performance optimization Test stability (isolated setup/teardown) Clean resource management (DB, queues, sockets) @asynccontextmanager: This decorator from the contextlib module allows defining an asynchronous context manager using async def. It enables setup and cleanup logic around the yield statement, and is used here to control the FastAPI application’s lifespan events (startup and shutdown).">
+    <meta property="og:url" content="https://blackjjw.github.io/projects/multi-crypto-trading-tool/backend/startbackend/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv: uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager. from fastapi import FastAPI from contextlib import asynccontextmanager @asynccontextmanager async def lifespan(app: FastAPI): # startup print(&#34;Starting up&#34;) yield # shutdown print(&#34;Shutting down&#34;) app = FastAPI(lifespan=lifespan) This function is called once during the application’s lifecycle: Before the first request is processed (startup) After the server shuts down (cleanup) Using lifespan() is useful for: Performance optimization Test stability (isolated setup/teardown) Clean resource management (DB, queues, sockets) @asynccontextmanager: This decorator from the contextlib module allows defining an asynchronous context manager using async def. It enables setup and cleanup logic around the yield statement, and is used here to control the FastAPI application’s lifespan events (startup and shutdown).">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Projects">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Uv">
+    <meta property="article:tag" content="FastAPI">
+    <meta itemprop="name" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv: uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager. from fastapi import FastAPI from contextlib import asynccontextmanager @asynccontextmanager async def lifespan(app: FastAPI): # startup print(&#34;Starting up&#34;) yield # shutdown print(&#34;Shutting down&#34;) app = FastAPI(lifespan=lifespan) This function is called once during the application’s lifecycle: Before the first request is processed (startup) After the server shuts down (cleanup) Using lifespan() is useful for: Performance optimization Test stability (isolated setup/teardown) Clean resource management (DB, queues, sockets) @asynccontextmanager: This decorator from the contextlib module allows defining an asynchronous context manager using async def. It enables setup and cleanup logic around the yield statement, and is used here to control the FastAPI application’s lifespan events (startup and shutdown).">
+    <meta itemprop="wordCount" content="196">
+    <meta itemprop="keywords" content="Python,Uv,FastAPI">
+    <title>2. Setting Up the Backend :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750861072" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750861072" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750861072" rel="stylesheet">
+    <link href="/css/theme.min.css?1750861072" rel="stylesheet">
+    <link href="/css/format-html.min.css?1750861072" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/projects\/multi-crypto-trading-tool\/backend\/startbackend\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/projects/multi-crypto-trading-tool/backend/startbackend/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-installing-fastapi">1. Installing FastAPI</a></li>
+    <li><a href="#2-setting-the-lifespan-in-fastapi">2. Setting the Lifespan in FastAPI</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/index.html"><span itemprop="name">Projects</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/multi-crypto-trading-tool/backend/index.html"><span itemprop="name">Backend Part</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2. Setting Up the Backend</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/backend/index.html" title="Backend Part (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable Projects" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
+    <li><a class="term-link" href="/tags/uv/index.html">Uv</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="2-setting-up-the-backend">2. Setting Up the Backend</h1>
+
+<h2 id="1-installing-fastapi">1. Installing FastAPI</h2>
+<ul>
+<li>We will use <em><strong>FastAPI</strong></em> as the backend server framework due to its performance and asynchronous capabilities - it&rsquo;s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server <em><strong>uvicorn</strong></em> using <code>uv</code>:
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv pip install <span style="color:#e6db74">&#34;fastapi[all]&#34;</span> uvicorn</span></span></code></pre></div>
+<ul>
+<li><code>fastapi[all]</code> : Installs optional dependencies such as:
+<ul>
+<li><code>pydantic</code>, <code>httpx</code>, <code>python-multipart</code>, <code>jinja2</code>, <code>email-validator</code></li>
+</ul>
+</li>
+<li><code>uvicorn</code> : Lightweight ASGI server used to run FastAPI applications</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-setting-the-lifespan-in-fastapi">2. Setting the Lifespan in FastAPI</h2>
+<ul>
+<li>To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a <em><strong>lifespan</strong></em> context manager.
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> FastAPI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> contextlib <span style="color:#f92672">import</span> asynccontextmanager
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@asynccontextmanager</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lifespan</span>(app: FastAPI):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># startup</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Starting up&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># shutdown</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Shutting down&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> FastAPI(lifespan<span style="color:#f92672">=</span>lifespan)</span></span></code></pre></div>
+<ul>
+<li>This function is called once during the application&rsquo;s lifecycle:
+<ul>
+<li>Before the first request is processed (startup)</li>
+<li>After the server shuts down (cleanup)</li>
+</ul>
+</li>
+<li>Using <em><strong>lifespan()</strong></em> is useful for:
+<ul>
+<li>Performance optimization</li>
+<li>Test stability (isolated setup/teardown)</li>
+<li>Clean resource management (DB, queues, sockets)</li>
+</ul>
+</li>
+<li><code>@asynccontextmanager</code>: This decorator from the <code>contextlib</code> module allows defining an asynchronous context manager using <code>async def</code>. It enables setup and cleanup logic around the <code>yield</code> statement, and is used here to control the FastAPI application&rsquo;s lifespan events (startup and shutdown).</li>
+</ul>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/projects/index.html"><input type="checkbox" id="R-section-70e1733efe56e20a6edcb96632119b4b" aria-controls="R-subsections-70e1733efe56e20a6edcb96632119b4b" checked><label for="R-section-70e1733efe56e20a6edcb96632119b4b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Projects</span></label><a class="padding" href="/projects/index.html">Projects</a><ul id="R-subsections-70e1733efe56e20a6edcb96632119b4b" class="collapsible-menu">
+            <li class="parent " data-nav-id="/projects/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-ed2a0212cf192028b0fa34cb2b6a2e52" aria-controls="R-subsections-ed2a0212cf192028b0fa34cb2b6a2e52" checked><label for="R-section-ed2a0212cf192028b0fa34cb2b6a2e52"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/projects/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-ed2a0212cf192028b0fa34cb2b6a2e52" class="collapsible-menu">
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/initializeproject/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="parent " data-nav-id="/projects/multi-crypto-trading-tool/backend/index.html"><input type="checkbox" id="R-section-d2cf84469a7f9528de4a3872b3951efa" aria-controls="R-subsections-d2cf84469a7f9528de4a3872b3951efa" checked><label for="R-section-d2cf84469a7f9528de4a3872b3951efa"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Backend Part</span></label><a class="padding" href="/projects/multi-crypto-trading-tool/backend/index.html">Backend Part</a><ul id="R-subsections-d2cf84469a7f9528de4a3872b3951efa" class="collapsible-menu">
+            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/backend/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/backend/startbackend/index.html">2. Setting Up the Backend</a></li></ul></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1750861072" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750861072" defer></script>
+    <script src="/js/theme.min.js?1750861072" defer></script>
+  </body>
+</html>
