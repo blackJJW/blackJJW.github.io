@@ -10,6 +10,12 @@
     <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/basesettings/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/bash/index.html</loc>
   </url>
   <url>
@@ -20,6 +26,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/docker-compose/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/dotenv/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/fastapi/index.html</loc>
@@ -44,6 +53,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/projects/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/pydantic_settings/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/python/index.html</loc>

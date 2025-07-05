@@ -5,30 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:
-uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.">
+    <meta name="description" content="I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.
+Here’s an sample .env file used to configure the PostgreSQL database connection:
+POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.
+It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
-    <meta name="twitter:description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:
-uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.">
-    <meta property="og:url" content="https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html">
+    <meta name="twitter:title" content="4. Set Configurations :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.
+Here’s an sample .env file used to configure the PostgreSQL database connection:
+POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.
+It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.">
+    <meta property="og:url" content="https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html">
     <meta property="og:site_name" content="Black_JJW&#39;s Blog">
-    <meta property="og:title" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
-    <meta property="og:description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:
-uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.">
+    <meta property="og:title" content="4. Set Configurations :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.
+Here’s an sample .env file used to configure the PostgreSQL database connection:
+POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.
+It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Projects">
     <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Uv">
-    <meta property="article:tag" content="FastAPI">
-    <meta itemprop="name" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
-    <meta itemprop="description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:
-uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.">
-    <meta itemprop="wordCount" content="220">
-    <meta itemprop="keywords" content="Python,Uv,FastAPI">
-    <title>2. Setting Up the Backend :: Black_JJW&#39;s Blog</title>
+    <meta property="article:tag" content="BaseSettings">
+    <meta property="article:tag" content="Dotenv">
+    <meta property="article:tag" content="Pydantic_settings">
+    <meta property="article:tag" content="PostgreSQL">
+    <meta itemprop="name" content="4. Set Configurations :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.
+Here’s an sample .env file used to configure the PostgreSQL database connection:
+POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.
+It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.">
+    <meta itemprop="wordCount" content="178">
+    <meta itemprop="keywords" content="Python,BaseSettings,Dotenv,Pydantic_settings,PostgreSQL">
+    <title>4. Set Configurations :: Black_JJW&#39;s Blog</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751697402" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751697402" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751697402" rel="stylesheet">
     <link href="/css/theme.min.css?1751697402" rel="stylesheet">
@@ -37,7 +47,7 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = `.min`;
-      window.relearn.path='\/projects\/multi-crypto-trading-tool\/startbackend\/index.html';
+      window.relearn.path='\/projects\/multi-crypto-trading-tool\/setconfig\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
@@ -90,7 +100,7 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
      crossorigin="anonymous"></script>
   </head>
-  <body class="mobile-support html" data-url="/projects/multi-crypto-trading-tool/startbackend/index.html">
+  <body class="mobile-support html" data-url="/projects/multi-crypto-trading-tool/setconfig/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -104,12 +114,7 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#1-installing-fastapi">1. Installing FastAPI</a></li>
-    <li><a href="#2-setting-the-lifespan-in-fastapi">2. Setting the Lifespan in FastAPI</a>
-      <ul>
-        <li><a href="#21-execution-output">2.1 Execution Output</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-settings">1. Settings</a></li>
   </ul>
 </nav>
                 </div>
@@ -120,12 +125,12 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/index.html"><span itemprop="name">Projects</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2. Setting Up the Backend</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">4. Set Configurations</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/initializeproject/index.html" title="1. Project Initialization (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html" title="3. Logger Configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html" title="3. Logger Configuration (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -145,66 +150,75 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
-    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/basesettings/index.html">BaseSettings</a></li>
+    <li><a class="term-link" href="/tags/dotenv/index.html">Dotenv</a></li>
+    <li><a class="term-link" href="/tags/postgresql/index.html">PostgreSQL</a></li>
+    <li><a class="term-link" href="/tags/pydantic_settings/index.html">Pydantic_settings</a></li>
     <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
-    <li><a class="term-link" href="/tags/uv/index.html">Uv</a></li>
   </ul>
 </div>
   </header>
 
-<h1 id="2-setting-up-the-backend">2. Setting Up the Backend</h1>
+<h1 id="4-set-configurations">4. Set Configurations</h1>
 
-<h2 id="1-installing-fastapi">1. Installing FastAPI</h2>
+<p>I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.</p>
 <ul>
 <li>
-<p>We will use <em><strong>FastAPI</strong></em> as the backend server framework due to its performance and asynchronous capabilities - it&rsquo;s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server <em><strong>uvicorn</strong></em> using <code>uv</code>:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv pip install <span style="color:#e6db74">&#34;fastapi[all]&#34;</span> uvicorn</span></span></code></pre></div>
-<ul>
-<li><code>fastapi[all]</code> : Installs optional dependencies such as:</li>
-<li><code>pydantic</code>, <code>httpx</code>, <code>python-multipart</code>, <code>jinja2</code>, <code>email-validator</code></li>
-<li><code>uvicorn</code> : Lightweight ASGI server used to run FastAPI applications</li>
-</ul>
+<p>Here&rsquo;s an sample <code>.env</code> file used to configure the <code>PostgreSQL</code> database connection:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>POSTGRES_HOST<span style="color:#f92672">=</span>localhost
+</span></span><span style="display:flex;"><span>POSTGRES_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>POSTGRES_USER<span style="color:#f92672">=</span>myuser
+</span></span><span style="display:flex;"><span>POSTGRES_PASSWORD<span style="color:#f92672">=</span>secret
+</span></span><span style="display:flex;"><span>POSTGRES_DB<span style="color:#f92672">=</span>cryptobot</span></span></code></pre></div>
 </li>
 </ul>
-<h2 id="2-setting-the-lifespan-in-fastapi">2. Setting the Lifespan in FastAPI</h2>
+<h2 id="1-settings">1. Settings</h2>
 <ul>
 <li>
-<p>To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a <em><strong>lifespan</strong></em> context manager.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> FastAPI
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> contextlib <span style="color:#f92672">import</span> asynccontextmanager
+<p><code>pydantic_settings.BaseSettings</code> is an extended version of <code>Pydantic</code>&rsquo;s model designed for managing environment variables.</p>
+</li>
+<li>
+<p>It&rsquo;s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.</p>
+</li>
+<li>
+<p>First, I created a <code>Settings</code> class to handle <code>PostgreSQL</code> connection configuration:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic_settings <span style="color:#f92672">import</span> BaseSettings
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@asynccontextmanager</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lifespan</span>(app: FastAPI):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># startup</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Starting up&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    POSTGRES_HOST: str
+</span></span><span style="display:flex;"><span>    POSTGRES_PORT: int
+</span></span><span style="display:flex;"><span>    POSTGRES_USER: str
+</span></span><span style="display:flex;"><span>    POSTGRES_PASSWORD: str
+</span></span><span style="display:flex;"><span>    POSTGRES_DB: str
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span></span></span></code></pre></div>
+</li>
+<li>
+<p>Next, I added a property method to easily build the <code>PostgreSQL</code> connection URL:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># shutdown</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Shutting down&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> FastAPI(lifespan<span style="color:#f92672">=</span>lifespan)</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">db_url</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;postgresql://</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>POSTGRES_USER<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>POSTGRES_PASSWORD<span style="color:#e6db74">}</span><span style="color:#e6db74">@</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>POSTGRES_HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>POSTGRES_PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>POSTGRES_DB<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
 <ul>
-<li>This function is called once during the application&rsquo;s lifecycle:
-<ul>
-<li>Before the first request is processed (startup)</li>
-<li>After the server shuts down (cleanup)</li>
+<li>With this method, I can easily access the full PostgreSQL URL wherever it&rsquo;s needed in this application.</li>
 </ul>
 </li>
-<li>Using <em><strong>lifespan()</strong></em> is useful for:
-<ul>
-<li>Performance optimization</li>
-<li>Test stability (isolated setup/teardown)</li>
-<li>Clean resource management (DB, queues, sockets)</li>
-</ul>
+<li>
+<p>To create an instance of the <code>Settings</code> class, I added the following code below the class definition:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>settings <span style="color:#f92672">=</span> Settings()</span></span></code></pre></div>
 </li>
-<li><code>@asynccontextmanager</code>: This decorator from the <code>contextlib</code> module allows defining an asynchronous context manager using <code>async def</code>. It enables setup and cleanup logic around the <code>yield</code> statement, and is used here to control the FastAPI application&rsquo;s lifespan events (startup and shutdown).</li>
-</ul>
+<li>
+<p>Once initialized, the configuration values can be accessed anywhere in the application like this:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> app.core.config <span style="color:#f92672">import</span> settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>settings<span style="color:#f92672">.</span>db_url</span></span></code></pre></div>
 </li>
 </ul>
-<h3 id="21-execution-output">2.1 Execution Output</h3>
-<p>When running the application with <code>uv run main.py</code>, you can see the startup and shutdown messages handled by the <code>lifespan()</code> function:</p>
-<p><a href="#R-image-e008073de6b1ee5e18d948e6c5227c7b" class="lightbox-link"><img alt="FastAPI Lifespan Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e008073de6b1ee5e18d948e6c5227c7b"><img alt="FastAPI Lifespan Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -246,9 +260,9 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
             <li class="parent " data-nav-id="/projects/index.html"><input type="checkbox" id="R-section-70e1733efe56e20a6edcb96632119b4b" aria-controls="R-subsections-70e1733efe56e20a6edcb96632119b4b" checked><label for="R-section-70e1733efe56e20a6edcb96632119b4b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Projects</span></label><a class="padding" href="/projects/index.html">Projects</a><ul id="R-subsections-70e1733efe56e20a6edcb96632119b4b" class="collapsible-menu">
             <li class="parent " data-nav-id="/projects/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-ed2a0212cf192028b0fa34cb2b6a2e52" aria-controls="R-subsections-ed2a0212cf192028b0fa34cb2b6a2e52" checked><label for="R-section-ed2a0212cf192028b0fa34cb2b6a2e52"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/projects/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-ed2a0212cf192028b0fa34cb2b6a2e52" class="collapsible-menu">
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/initializeproject/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/initializeproject/index.html">1. Project Initialization</a></li>
-            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/startbackend/index.html">2. Setting Up the Backend</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/loggerconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html">3. Logger Configuration</a></li>
-            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/setconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/setconfig/index.html">4. Set Configurations</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/setconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/setconfig/index.html">4. Set Configurations</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">

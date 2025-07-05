@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PostgreSQL :: Tag :: Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/postgresql/index.html</link>
+    <title>Dotenv :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/dotenv/index.html</link>
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://blackjjw.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blackjjw.github.io/tags/dotenv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Project Initialization</title>
       <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/initializeproject/index.html</link>
