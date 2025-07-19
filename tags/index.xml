@@ -8,6 +8,41 @@
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Tag :: Architecture</title>
+      <link>https://blackjjw.github.io/tags/architecture/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/architecture/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Asyncio</title>
+      <link>https://blackjjw.github.io/tags/asyncio/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/asyncio/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Authentication</title>
+      <link>https://blackjjw.github.io/tags/authentication/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/authentication/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Axios</title>
+      <link>https://blackjjw.github.io/tags/axios/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/axios/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Backend</title>
+      <link>https://blackjjw.github.io/tags/backend/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/backend/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: BaseSettings</title>
       <link>https://blackjjw.github.io/tags/basesettings/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -19,6 +54,27 @@
       <link>https://blackjjw.github.io/tags/bash/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/bash/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Config</title>
+      <link>https://blackjjw.github.io/tags/config/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/config/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Configuration</title>
+      <link>https://blackjjw.github.io/tags/configuration/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/configuration/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Database</title>
+      <link>https://blackjjw.github.io/tags/database/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/database/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -43,10 +99,24 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Dockerfile</title>
+      <link>https://blackjjw.github.io/tags/dockerfile/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/dockerfile/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Dotenv</title>
       <link>https://blackjjw.github.io/tags/dotenv/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/dotenv/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Env</title>
+      <link>https://blackjjw.github.io/tags/env/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/env/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -64,10 +134,52 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Frontend</title>
+      <link>https://blackjjw.github.io/tags/frontend/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/frontend/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Fullstack</title>
+      <link>https://blackjjw.github.io/tags/fullstack/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/fullstack/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Jwt</title>
+      <link>https://blackjjw.github.io/tags/jwt/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/jwt/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Lifespan</title>
+      <link>https://blackjjw.github.io/tags/lifespan/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/lifespan/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Log-Rotation</title>
+      <link>https://blackjjw.github.io/tags/log-rotation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/log-rotation/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Logger</title>
       <link>https://blackjjw.github.io/tags/logger/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/logger/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Logging</title>
+      <link>https://blackjjw.github.io/tags/logging/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/logging/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -85,6 +197,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Monorepo</title>
+      <link>https://blackjjw.github.io/tags/monorepo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/monorepo/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Node</title>
       <link>https://blackjjw.github.io/tags/node/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -92,10 +211,31 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Orm</title>
+      <link>https://blackjjw.github.io/tags/orm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/orm/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: PostgreSQL</title>
       <link>https://blackjjw.github.io/tags/postgresql/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/postgresql/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Project-Setup</title>
+      <link>https://blackjjw.github.io/tags/project-setup/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/project-setup/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Pydantic</title>
+      <link>https://blackjjw.github.io/tags/pydantic/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/pydantic/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -120,6 +260,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: React-Router</title>
+      <link>https://blackjjw.github.io/tags/react-router/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/react-router/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Redis</title>
       <link>https://blackjjw.github.io/tags/redis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -127,10 +274,59 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: RQ</title>
+      <link>https://blackjjw.github.io/tags/rq/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/rq/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Security</title>
+      <link>https://blackjjw.github.io/tags/security/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/security/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Session</title>
+      <link>https://blackjjw.github.io/tags/session/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/session/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Settings</title>
+      <link>https://blackjjw.github.io/tags/settings/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/settings/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Shutdown</title>
+      <link>https://blackjjw.github.io/tags/shutdown/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/shutdown/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Singleton</title>
+      <link>https://blackjjw.github.io/tags/singleton/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/singleton/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: SQLAlchemy</title>
       <link>https://blackjjw.github.io/tags/sqlalchemy/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/sqlalchemy/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Startup</title>
+      <link>https://blackjjw.github.io/tags/startup/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/startup/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -145,6 +341,13 @@
       <link>https://blackjjw.github.io/tags/uv/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/uv/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Uvicorn</title>
+      <link>https://blackjjw.github.io/tags/uvicorn/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/uvicorn/index.html</guid>
       <description></description>
     </item>
     <item>

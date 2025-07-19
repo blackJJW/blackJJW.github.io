@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Settings :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/settings/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/settings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4. Set Configurations</title>
+      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</guid>
+      <description>I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.&#xA;Here’s an sample .env file used to configure the PostgreSQL database connection:&#xA;POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.&#xA;It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.</description>
+    </item>
+  </channel>
+</rss>

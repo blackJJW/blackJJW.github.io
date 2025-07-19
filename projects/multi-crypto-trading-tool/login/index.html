@@ -21,21 +21,21 @@
     <meta property="og:type" content="article">
     <meta property="article:section" content="Projects">
     <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="Pydantic">
     <meta property="article:tag" content="React">
     <meta property="article:tag" content="Typescript">
-    <meta property="article:tag" content="Erd">
-    <meta property="article:tag" content="Diagram">
-    <meta property="article:tag" content="Login">
+    <meta property="article:tag" content="React-Router">
     <meta itemprop="name" content="6. Login :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
 1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
     <meta itemprop="wordCount" content="1473">
-    <meta itemprop="keywords" content="Python,React,Typescript,Erd,Diagram,Login">
+    <meta itemprop="keywords" content="Python,FastAPI,Pydantic,React,Typescript,React-Router,Axios,Jwt,Authentication,Security,Erd,Diagram,Login,Frontend">
     <title>6. Login :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752942709" rel="stylesheet">
-    <link href="/css/theme.min.css?1752942709" rel="stylesheet">
-    <link href="/css/format-html.min.css?1752942709" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752943058" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752943058" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752943058" rel="stylesheet">
+    <link href="/css/theme.min.css?1752943058" rel="stylesheet">
+    <link href="/css/format-html.min.css?1752943058" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -175,11 +175,19 @@
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
+    <li><a class="term-link" href="/tags/authentication/index.html">Authentication</a></li>
+    <li><a class="term-link" href="/tags/axios/index.html">Axios</a></li>
     <li><a class="term-link" href="/tags/diagram/index.html">Diagram</a></li>
     <li><a class="term-link" href="/tags/erd/index.html">Erd</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/frontend/index.html">Frontend</a></li>
+    <li><a class="term-link" href="/tags/jwt/index.html">Jwt</a></li>
     <li><a class="term-link" href="/tags/login/index.html">Login</a></li>
+    <li><a class="term-link" href="/tags/pydantic/index.html">Pydantic</a></li>
     <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
     <li><a class="term-link" href="/tags/react/index.html">React</a></li>
+    <li><a class="term-link" href="/tags/react-router/index.html">React-Router</a></li>
+    <li><a class="term-link" href="/tags/security/index.html">Security</a></li>
     <li><a class="term-link" href="/tags/typescript/index.html">Typescript</a></li>
   </ul>
 </div>
@@ -194,16 +202,16 @@
 <ul>
 <li>
 <p>This shows the communication between the frontend, backend, and DB.</p>
-<p><a href="#R-image-a239fe296493c6f10afaafd1fb5c237c" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a239fe296493c6f10afaafd1fb5c237c"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
+<p><a href="#R-image-6066b4a8e4497301ac4c33b06cd8e4fa" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6066b4a8e4497301ac4c33b06cd8e4fa"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p><code>TB_USER</code> contains no., id, password, email, created date, and updated date.</p>
-<p><a href="#R-image-6990f0ad4c83fa5d13ec210e5454bc37" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6990f0ad4c83fa5d13ec210e5454bc37"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
+<p><a href="#R-image-08f744153f5aefa596ecc7f594add7e2" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-08f744153f5aefa596ecc7f594add7e2"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
 <ul>
 <li>user_no: Unique numeric identifier for the user</li>
 <li>user_id: The login ID (username)</li>
@@ -482,8 +490,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Dashboard</span>;</span></span></code></pre></div>
-<p><a href="#R-image-6d08468e086e4c6b394d666ddc27081b" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6d08468e086e4c6b394d666ddc27081b"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
+<p><a href="#R-image-7c85ac866d06436ad9bdb1e0e73426c6" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c85ac866d06436ad9bdb1e0e73426c6"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
 </li>
 </ul>
 <h3 id="34-axiosts">3.4 axios.ts</h3>
@@ -600,8 +608,8 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Login</span>;</span></span></code></pre></div>
-<p><a href="#R-image-9d8a3d0d0c880e931d7d45eb57ed842e" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9d8a3d0d0c880e931d7d45eb57ed842e"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
+<p><a href="#R-image-3bd7f6c36fc2c5bc7fd391e9e1c88f07" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3bd7f6c36fc2c5bc7fd391e9e1c88f07"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
 </li>
 </ul>
 <h3 id="36-roottsx">3.6 Root.tsx</h3>
@@ -636,8 +644,8 @@
 </ul>
 <h2 id="4-result">4. Result</h2>
 <hr>
-<p><a href="#R-image-1ae38457fdb5fbb1a0602cf54cbc2b7a" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1ae38457fdb5fbb1a0602cf54cbc2b7a"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
+<p><a href="#R-image-a6cb78f50f8aaab4f65ac871bfd07f5c" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a6cb78f50f8aaab4f65ac871bfd07f5c"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
 <h2 id="5-future-improvements">5. Future Improvements</h2>
 <hr>
 <p>Although the current login system works as intented for a single-admin use case, there are several improvements I plan to implement in the future.</p>
@@ -725,8 +733,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1752942709" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752942709" defer></script>
-    <script src="/js/theme.min.js?1752942709" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1752943058" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752943058" defer></script>
+    <script src="/js/theme.min.js?1752943058" defer></script>
   </body>
 </html>
