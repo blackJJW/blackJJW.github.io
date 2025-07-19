@@ -32,10 +32,10 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
     <meta itemprop="wordCount" content="279">
     <meta itemprop="keywords" content="Python,SQLAlchemy">
     <title>5. Database Connection Management :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752504640" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752504640" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752504640" rel="stylesheet">
-    <link href="/css/theme.min.css?1752504640" rel="stylesheet">
-    <link href="/css/format-html.min.css?1752504640" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752942709" rel="stylesheet">
+    <link href="/css/theme.min.css?1752942709" rel="stylesheet">
+    <link href="/css/format-html.min.css?1752942709" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -129,7 +129,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/setconfig/index.html" title="4. Set Configurations (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/login/index.html" title="6. Login (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -159,6 +159,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 
 <p>In this section, I&rsquo;ll explain how I configured <code>SQLAlchemy</code> for managing database connections and sessions in a reusable and scalable way.</p>
 <h2 id="1-purposes-of-this-management">1. Purposes of this Management</h2>
+<hr>
 <ul>
 <li>Use <code>SQLAlchemy</code> for ORM-based database interaction</li>
 <li>Create a reusable engine and session maker</li>
@@ -173,6 +174,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 </ul>
 <p>This flexibility makes it ideal for a project like this where maintainability and scalability are important.</p>
 <h2 id="2-class-database">2. Class: Database</h2>
+<hr>
 <ul>
 <li>
 <p>The <code>Database</code> class is responsible for initializing the SQLAlchemy engine, createing a session factory, and exposing a centralized declarative base for defining ORM models.</p>
@@ -210,6 +212,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 </li>
 </ul>
 <h2 id="3-usage-example">3. Usage Example</h2>
+<hr>
 <ul>
 <li>
 <p>To create a new session inside a service or route handler, simply do:</p>
@@ -267,7 +270,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/startbackend/index.html">2. Setting Up the Backend</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/loggerconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html">3. Logger Configuration</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/setconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/setconfig/index.html">4. Set Configurations</a></li>
-            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/databaseconnmng/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html">5. Database Connection Management</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/databaseconnmng/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/login/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/login/index.html">6. Login</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -288,8 +292,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1752504640" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752504640" defer></script>
-    <script src="/js/theme.min.js?1752504640" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1752942709" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752942709" defer></script>
+    <script src="/js/theme.min.js?1752942709" defer></script>
   </body>
 </html>

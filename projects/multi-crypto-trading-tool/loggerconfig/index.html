@@ -38,10 +38,10 @@ Save logs using filenames that include the current date. Retain logs for 7 days 
     <meta itemprop="wordCount" content="382">
     <meta itemprop="keywords" content="Python,Uv,Loguru,Logger">
     <title>3. Logger Configuration :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752504640" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752504640" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752504640" rel="stylesheet">
-    <link href="/css/theme.min.css?1752504640" rel="stylesheet">
-    <link href="/css/format-html.min.css?1752504640" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752942709" rel="stylesheet">
+    <link href="/css/theme.min.css?1752942709" rel="stylesheet">
+    <link href="/css/format-html.min.css?1752942709" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -191,6 +191,7 @@ Example:</p>
 </li>
 </ol>
 <h2 id="1-pseudocode-summary">1. Pseudocode Summary</h2>
+<hr>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>IF LogConfigurator not configured:
 </span></span><span style="display:flex;"><span>    - Create log directory
 </span></span><span style="display:flex;"><span>    - Remove default handlers
@@ -199,6 +200,7 @@ Example:</p>
 </span></span><span style="display:flex;"><span>    - Setup InterceptHandler for uvicorn/starlette/fastapi loggers
 </span></span><span style="display:flex;"><span>    - Mark as configured</span></span></code></pre></div>
 <h2 id="2-how-i-configured-the-logger">2. How I Configured the Logger</h2>
+<hr>
 <ul>
 <li>To satisfy the logging requirements mentioned above, I built a singleton <code>LogConfigurator</code> using <code>Loguru</code>, which includes:</li>
 </ul>
@@ -282,10 +284,10 @@ Example:</p>
 </li>
 </ul>
 <h3 id="26-execution-outputs">2.6 Execution Outputs</h3>
-<p><a href="#R-image-dbf428d4fa44b6c345f954423db13827" class="lightbox-link"><img alt="log file Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/3-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dbf428d4fa44b6c345f954423db13827"><img alt="log file Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/3-1.png"></a>
-<a href="#R-image-b62104fe7428acca84359da128fcd07f" class="lightbox-link"><img alt="log file content Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/3-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b62104fe7428acca84359da128fcd07f"><img alt="log file content Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/3-2.png"></a></p>
+<p><a href="#R-image-0ac7f1a205c1fb308ee3a93745168f74" class="lightbox-link"><img alt="log file Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/3-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ac7f1a205c1fb308ee3a93745168f74"><img alt="log file Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/3-1.png"></a>
+<a href="#R-image-5c01a7a002727b61b9a239f0de72efbb" class="lightbox-link"><img alt="log file content Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/3-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c01a7a002727b61b9a239f0de72efbb"><img alt="log file content Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/3-2.png"></a></p>
 <hr>
 <p>This setup ensures that all logs—whether they come from my own modules or external frameworks—are managed consistently, well-formatted, and stored efficiently.</p>
 
@@ -332,7 +334,8 @@ Example:</p>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/startbackend/index.html">2. Setting Up the Backend</a></li>
             <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/loggerconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html">3. Logger Configuration</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/setconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/setconfig/index.html">4. Set Configurations</a></li>
-            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/databaseconnmng/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html">5. Database Connection Management</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/databaseconnmng/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/login/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/login/index.html">6. Login</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -353,8 +356,8 @@ Example:</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1752504640" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752504640" defer></script>
-    <script src="/js/theme.min.js?1752504640" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1752942709" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752942709" defer></script>
+    <script src="/js/theme.min.js?1752942709" defer></script>
   </body>
 </html>

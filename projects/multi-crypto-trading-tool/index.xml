@@ -42,5 +42,12 @@
       <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/databaseconnmng/index.html</guid>
       <description>In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.&#xA;1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:&#xA;Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.</description>
     </item>
+    <item>
+      <title>6. Login</title>
+      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</guid>
+      <description>In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.&#xA;1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.</description>
+    </item>
   </channel>
 </rss>

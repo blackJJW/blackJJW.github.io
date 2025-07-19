@@ -16,6 +16,9 @@
     <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/databaseconnmng/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/basesettings/index.html</loc>
   </url>
   <url>
@@ -23,6 +26,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/diagram/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/docker/index.html</loc>
@@ -34,6 +40,9 @@
     <loc>https://blackjjw.github.io/tags/dotenv/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/erd/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/fastapi/index.html</loc>
   </url>
   <url>
@@ -41,6 +50,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/logger/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/login/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/loguru/index.html</loc>
@@ -74,6 +86,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/typescript/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/uv/index.html</loc>

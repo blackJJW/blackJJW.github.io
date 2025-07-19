@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Hugo 0.148.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="">
+    <meta name="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
+1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="4. Login :: Black_JJW&#39;s Blog">
-    <meta property="og:url" content="http://localhost:1313/projects/multi-crypto-trading-tool/login/index.html">
+    <meta name="twitter:title" content="6. Login :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
+1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
+    <meta property="og:url" content="https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html">
     <meta property="og:site_name" content="Black_JJW&#39;s Blog">
-    <meta property="og:title" content="4. Login :: Black_JJW&#39;s Blog">
+    <meta property="og:title" content="6. Login :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
+1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Projects">
     <meta property="article:tag" content="Python">
     <meta property="article:tag" content="React">
     <meta property="article:tag" content="Typescript">
-    <meta itemprop="name" content="4. Login :: Black_JJW&#39;s Blog">
-    <meta itemprop="keywords" content="Python,React,Typescript">
-    <title>4. Login :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751211501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751211501" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751211501" rel="stylesheet">
-    <link href="/css/theme.css?1751211501" rel="stylesheet">
-    <link href="/css/format-html.css?1751211501" rel="stylesheet" id="R-format-style">
+    <meta property="article:tag" content="Erd">
+    <meta property="article:tag" content="Diagram">
+    <meta property="article:tag" content="Login">
+    <meta itemprop="name" content="6. Login :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
+1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
+    <meta itemprop="wordCount" content="1473">
+    <meta itemprop="keywords" content="Python,React,Typescript,Erd,Diagram,Login">
+    <title>6. Login :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752942709" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752942709" rel="stylesheet">
+    <link href="/css/theme.min.css?1752942709" rel="stylesheet">
+    <link href="/css/format-html.min.css?1752942709" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
-      window.relearn.min = ``;
+      window.relearn.min = `.min`;
       window.relearn.path='\/projects\/multi-crypto-trading-tool\/login\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
       window.relearn.contentLangs=['en'];
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -93,7 +104,44 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-the-design-of-the-login-function">1. The design of the login function</a>
+      <ul>
+        <li><a href="#11-diagram">1.1 Diagram</a></li>
+        <li><a href="#12-erd">1.2 ERD</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-backend">2. Backend</a>
+      <ul>
+        <li><a href="#21-db-model">2.1 DB Model</a></li>
+        <li><a href="#22-password-encryption--verification">2.2 Password Encryption &amp; Verification</a></li>
+        <li><a href="#23-initialize-user-table">2.3 Initialize User Table</a></li>
+        <li><a href="#24-user-service">2.4 User Service</a></li>
+        <li><a href="#25-jwt-token-creation--verification">2.5 JWT Token Creation &amp; Verification</a></li>
+        <li><a href="#26-login-dto">2.6 Login DTO</a></li>
+        <li><a href="#27-login-api">2.7 Login API</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-frontend">3. Frontend</a>
+      <ul>
+        <li><a href="#31-maintsx">3.1 main.tsx</a></li>
+        <li><a href="#32-apptsx">3.2 App.tsx</a></li>
+        <li><a href="#33-dashboardtsx">3.3 Dashboard.tsx</a></li>
+        <li><a href="#34-axiosts">3.4 axios.ts</a></li>
+        <li><a href="#35-logintsx">3.5 Login.tsx</a></li>
+        <li><a href="#36-roottsx">3.6 Root.tsx</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-result">4. Result</a></li>
+    <li><a href="#5-future-improvements">5. Future Improvements</a>
+      <ul>
+        <li><a href="#51-security-enhancements">5.1 Security Enhancements</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -102,10 +150,10 @@
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/index.html"><span itemprop="name">Projects</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/projects/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">4. Login</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">6. Login</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html" title="3. Logger Configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html" title="5. Database Connection Management (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
@@ -127,6 +175,9 @@
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
+    <li><a class="term-link" href="/tags/diagram/index.html">Diagram</a></li>
+    <li><a class="term-link" href="/tags/erd/index.html">Erd</a></li>
+    <li><a class="term-link" href="/tags/login/index.html">Login</a></li>
     <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
     <li><a class="term-link" href="/tags/react/index.html">React</a></li>
     <li><a class="term-link" href="/tags/typescript/index.html">Typescript</a></li>
@@ -134,8 +185,480 @@
 </div>
   </header>
 
-<h1 id="4-login">4. Login</h1>
+<h1 id="6-login">6. Login</h1>
 
+<p>In this section, I&rsquo;ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: &ldquo;admin&rdquo;.</p>
+<h2 id="1-the-design-of-the-login-function">1. The design of the login function</h2>
+<hr>
+<h3 id="11-diagram">1.1 Diagram</h3>
+<ul>
+<li>
+<p>This shows the communication between the frontend, backend, and DB.</p>
+<p><a href="#R-image-a239fe296493c6f10afaafd1fb5c237c" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a239fe296493c6f10afaafd1fb5c237c"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
+</li>
+</ul>
+<h3 id="12-erd">1.2 ERD</h3>
+<ul>
+<li>
+<p><code>TB_USER</code> contains no., id, password, email, created date, and updated date.</p>
+<p><a href="#R-image-6990f0ad4c83fa5d13ec210e5454bc37" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6990f0ad4c83fa5d13ec210e5454bc37"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
+<ul>
+<li>user_no: Unique numeric identifier for the user</li>
+<li>user_id: The login ID (username)</li>
+<li>user_pw: Encrypted password</li>
+<li>user_email: Registered email address</li>
+<li>create_date: Timestamp when the account was created</li>
+<li>update_date: Timestamp when the account was last updated</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-backend">2. Backend</h2>
+<hr>
+<h3 id="21-db-model">2.1 DB Model</h3>
+<ul>
+<li>
+<p>To create the user table in the database, I needed to define a user model.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, Text, DateTime, func
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.schema <span style="color:#f92672">import</span> Sequence
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user_no_seq <span style="color:#f92672">=</span> Sequence(<span style="color:#e6db74">&#39;user_no_seq&#39;</span>, start<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>) <span style="color:#75715e"># Start user_no from 10001</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(Database<span style="color:#f92672">.</span>get_base()):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;User model for the application.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tb_user&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user_no <span style="color:#f92672">=</span> Column(Integer, user_no_seq, primary_key<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, server_default<span style="color:#f92672">=</span>user_no_seq<span style="color:#f92672">.</span>next_value())
+</span></span><span style="display:flex;"><span>    user_id <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">50</span>), unique<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    user_pw <span style="color:#f92672">=</span> Column(Text, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    user_email <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">50</span>), unique<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    create_date <span style="color:#f92672">=</span> Column(DateTime(timezone<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>), server_default<span style="color:#f92672">=</span>func<span style="color:#f92672">.</span>now(), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    update_date <span style="color:#f92672">=</span> Column(DateTime(timezone<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>), onupdate<span style="color:#f92672">=</span>func<span style="color:#f92672">.</span>now())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__repr__</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&lt;User(id=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">, email=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>user_email<span style="color:#e6db74">}</span><span style="color:#e6db74">)&gt;&#34;</span></span></span></code></pre></div>
+<ul>
+<li>To set 10001 as starting number of the user no., I used the <code>Sequence</code> class from SQLAlchemy.</li>
+</ul>
+</li>
+</ul>
+<h3 id="22-password-encryption--verification">2.2 Password Encryption &amp; Verification</h3>
+<ul>
+<li>
+<p>I used <code>bcrypt</code> for secure password hashing.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> passlib.context <span style="color:#f92672">import</span> CryptContext
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Password hashing context using bcrypt</span>
+</span></span><span style="display:flex;"><span>pwd_context <span style="color:#f92672">=</span> CryptContext(schemes<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;bcrypt&#34;</span>], deprecated<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auto&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Password Hashing ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hash_password</span>(password: str) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Hash a password using bcrypt.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pwd_context<span style="color:#f92672">.</span>hash(password)</span></span></code></pre></div>
+</li>
+<li>
+<p>For verification of the hashed password, I wrote the following code.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verify_password</span>(plain_password: str, hashed_password: str) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Verify a plain password against the hashed password.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pwd_context<span style="color:#f92672">.</span>verify(plain_password, hashed_password)</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="23-initialize-user-table">2.3 Initialize User Table</h3>
+<ul>
+<li>
+<p>To initialize the user table, I created a function that checks for the existence of the admin user and inserts it if not found. The function also ensures that the user sequence is properly synced.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize_database</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        existing_user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>filter_by(user_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;admin&#39;</span>)<span style="color:#f92672">.</span>first()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> existing_user:
+</span></span><span style="display:flex;"><span>            admin <span style="color:#f92672">=</span> User(
+</span></span><span style="display:flex;"><span>                user_no<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>,
+</span></span><span style="display:flex;"><span>                user_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span>,
+</span></span><span style="display:flex;"><span>                user_email <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{ADMIN_EMAIL}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>                user_pw <span style="color:#f92672">=</span> hash_password(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{ADMIN_PASSWORD}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>add(admin)
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>execute(text(<span style="color:#e6db74">&#34;SELECT setval(&#39;user_no_seq&#39;, 10001, true)&#34;</span>))
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Admin user created successfully.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Admin user already exists.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> IntegrityError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        session<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IntegrityError during admin user initialization: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        session<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error during database initialization: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>        session<span style="color:#f92672">.</span>close()</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="24-user-service">2.4 User Service</h3>
+<ul>
+<li>
+<p>To authenticate a user, I implemented an authentication method in the UserService class.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate_user</span>(self, user_id: str, user_pw: str) <span style="color:#f92672">-&gt;</span> User <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Authenticate a user by ID and password.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        user <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_user_by_id(user_id)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> user <span style="color:#f92672">and</span> verify_password(user_pw, user<span style="color:#f92672">.</span>user_pw):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> user
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span></span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="25-jwt-token-creation--verification">2.5 JWT Token Creation &amp; Verification</h3>
+<ul>
+<li>
+<p>Note: The current JWT implementation lacks features such as token revocation, refresh tokens, and IP/device-based validation. These will be addressed in future updates to enhance overall security.</p>
+</li>
+<li>
+<p>First, this is the creation code of the JWT token.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> jose <span style="color:#f92672">import</span> jwt, JWTError, ExpiredSignatureError
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta, timezone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- JWT Token Generation ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_jwt_token</span>(data: dict, expires_delta: Optional[timedelta] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Create a JWT token with an expiration time.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    to_encode <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now(timezone<span style="color:#f92672">.</span>utc)
+</span></span><span style="display:flex;"><span>    expire <span style="color:#f92672">=</span> now <span style="color:#f92672">+</span> (expires_delta <span style="color:#f92672">or</span> timedelta(<span style="color:#f92672">...</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    to_encode<span style="color:#f92672">.</span>update({
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sub&#34;</span>: data[<span style="color:#e6db74">&#34;user_id&#34;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;iat&#34;</span>: now,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;exp&#34;</span>: expire
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    encoded_jwt <span style="color:#f92672">=</span> jwt<span style="color:#f92672">.</span>encode(to_encode, settings<span style="color:#f92672">.</span>SECRET_KEY, algorithm<span style="color:#f92672">=</span>settings<span style="color:#f92672">.</span>JWT_ALGORITHM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> encoded_jwt</span></span></code></pre></div>
+</li>
+<li>
+<p>Lastly, this is the verification code of the JWT token.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verify_jwt_token</span>(token: str) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Verify a JWT token and return the payload.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        payload <span style="color:#f92672">=</span> jwt<span style="color:#f92672">.</span>decode(
+</span></span><span style="display:flex;"><span>            token,
+</span></span><span style="display:flex;"><span>            settings<span style="color:#f92672">.</span>SECRET_KEY,
+</span></span><span style="display:flex;"><span>            algorithms<span style="color:#f92672">=</span>[settings<span style="color:#f92672">.</span>JWT_ALGORITHM],
+</span></span><span style="display:flex;"><span>            options<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;verify_aud&#34;</span>: <span style="color:#66d9ef">False</span>}, 
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> payload
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ExpiredSignatureError:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Token has expired&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> JWTError:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Invalid token&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Token verification failed: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="26-login-dto">2.6 Login DTO</h3>
+<ul>
+<li>
+<p>For stability, I&rsquo;m using DTO for data transfer.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Request DTOs  </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginRequest</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    user_id: str
+</span></span><span style="display:flex;"><span>    user_pw: str   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Response DTOs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginResponse</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    access_token: str
+</span></span><span style="display:flex;"><span>    token_type: str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bearer&#34;</span></span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="27-login-api">2.7 Login API</h3>
+<ul>
+<li>
+<p>This API receives a login form from the frontend. This proceeds the authentication if a user tries to log in.</p>
+</li>
+<li>
+<p>If the login is successful, the API returns a JWT token to the frontend; otherwise, it raises an appropriate exception.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@user_router.post</span>(<span style="color:#e6db74">&#34;/login&#34;</span>, response_model<span style="color:#f92672">=</span>LoginResponse)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(request: LoginRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        user_service <span style="color:#f92672">=</span> UserService(db)
+</span></span><span style="display:flex;"><span>        user <span style="color:#f92672">=</span> user_service<span style="color:#f92672">.</span>authenticate_user(request<span style="color:#f92672">.</span>user_id, request<span style="color:#f92672">.</span>user_pw)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> user:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Login failed: invalid credentials for user_id &#39;</span><span style="color:#e6db74">{</span>request<span style="color:#f92672">.</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>                status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_401_UNAUTHORIZED,
+</span></span><span style="display:flex;"><span>                detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Invalid credentials&#34;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> create_jwt_token({<span style="color:#e6db74">&#34;user_id&#34;</span>: user<span style="color:#f92672">.</span>user_id})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Token issued for user_id: </span><span style="color:#e6db74">{</span>user<span style="color:#f92672">.</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> LoginResponse(access_token<span style="color:#f92672">=</span>token)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ValidationError <span style="color:#66d9ef">as</span> ve:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Validation error: </span><span style="color:#e6db74">{</span>ve<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_422_UNPROCESSABLE_ENTITY,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Invalid request format&#34;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> HTTPException <span style="color:#66d9ef">as</span> he:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;HTTPException raised: </span><span style="color:#e6db74">{</span>he<span style="color:#f92672">.</span>detail<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> he
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>exception(<span style="color:#e6db74">&#34;Unexpected error during login&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Internal server error&#34;</span>)</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="3-frontend">3. Frontend</h2>
+<hr>
+<h3 id="31-maintsx">3.1 main.tsx</h3>
+<ul>
+<li>
+<p>I needed to change the initial react codes.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">createRoot</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)<span style="color:#f92672">!</span>).<span style="color:#a6e22e">render</span>(
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">StrictMode</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">BrowserRouter</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">App</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">BrowserRouter</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">StrictMode</span>&gt;,
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="32-apptsx">3.2 App.tsx</h3>
+<ul>
+<li>
+<p>Also, I had to modify the initial React setup.</p>
+</li>
+<li>
+<p>And, I set the routes for the &lsquo;dashboard&rsquo; and &rsquo;login&rsquo; pages.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Routes</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">element</span><span style="color:#f92672">=</span>{&lt;<span style="color:#f92672">Root</span> /&gt;} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dashboard&#34;</span> <span style="color:#a6e22e">element</span><span style="color:#f92672">=</span>{&lt;<span style="color:#f92672">Dashboard</span> /&gt;} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/login&#34;</span> <span style="color:#a6e22e">element</span><span style="color:#f92672">=</span>{&lt;<span style="color:#f92672">Login</span> /&gt;} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">Routes</span>&gt;
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span></span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="33-dashboardtsx">3.3 Dashboard.tsx</h3>
+<ul>
+<li>
+<p>I created this page for the dashboard, but in this time I simply added text to represent the ‘dashboard’ page.</p>
+</li>
+<li>
+<p>I made this file in the &lsquo;/src/pages&rsquo; directory.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Dashboard</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Dashboard component mounted&#34;</span>);
+</span></span><span style="display:flex;"><span>    }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Dashboard</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">dashboard</span><span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Dashboard</span>;</span></span></code></pre></div>
+<p><a href="#R-image-6d08468e086e4c6b394d666ddc27081b" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6d08468e086e4c6b394d666ddc27081b"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
+</li>
+</ul>
+<h3 id="34-axiosts">3.4 axios.ts</h3>
+<ul>
+<li>
+<p>I created this code for convenient using for API communications.</p>
+</li>
+<li>
+<p>I made this file in the &lsquo;/src/services&rsquo; directory.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">create</span>({
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/api&#39;</span>, <span style="color:#75715e">// Adjust this if your API base URL is different
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">api</span>;</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="35-logintsx">3.5 Login.tsx</h3>
+<ul>
+<li>
+<p>This is the Login page.</p>
+</li>
+<li>
+<p>When a user tries to log in, this frontend sends the login form to the backend using RESTful.</p>
+</li>
+<li>
+<p>If the user logs in successfuly, this page receives an access token in the response from the backend, and then saves the token in localStorage.</p>
+</li>
+<li>
+<p>I made this file in the &lsquo;/src/pages&rsquo; directory.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useNavigate</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-router&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Form</span>, <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Card</span>, <span style="color:#a6e22e">Alert</span>, <span style="color:#a6e22e">Container</span>,<span style="color:#a6e22e">Col</span>, <span style="color:#a6e22e">Row</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-bootstrap&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">api</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@/services/axios&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Login</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">navigate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useNavigate</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// input states
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">setId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">password</span>, <span style="color:#a6e22e">setPassword</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// error state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">setError</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// mount log for debugging
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Login component mounted&#34;</span>);
+</span></span><span style="display:flex;"><span>    }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">React.FormEvent</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// Reset error state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Make a POST request to the login endpoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/users/login&#34;</span>, 
+</span></span><span style="display:flex;"><span>                { 
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">user_id</span>: <span style="color:#66d9ef">id</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">user_pw</span>: <span style="color:#66d9ef">password</span> 
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If login is successful, store the token and redirect
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;access_token&#34;</span>, <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">access_token</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/dashboard&#34;</span>);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Handle errors (e.g., invalid credentials)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Login error:&#34;</span>, <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Set error message based on the error response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;Login failed. Please check your credentials.&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">Container</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-flex justify-content-center align-items-center&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">minHeight</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;100vh&#34;</span> }}&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">Card</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;100%&#34;</span>, <span style="color:#a6e22e">maxWidth</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;500px&#34;</span> }} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p-4 shadow&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-4 text-center&#34;</span>&gt;<span style="color:#a6e22e">Login</span>&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Form</span> <span style="color:#a6e22e">onSubmit</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleSubmit</span>}&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Form.Group</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Row</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-3&#34;</span> <span style="color:#a6e22e">controlId</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;formId&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Form.Label</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">sm</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-end&#34;</span>&gt;<span style="color:#a6e22e">ID</span>&lt;/<span style="color:#f92672">Form.Label</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Col</span> <span style="color:#a6e22e">sm</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">Form.Control</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">id</span>}
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">e</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">setId</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>)}
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your ID&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">required</span>
+</span></span><span style="display:flex;"><span>                    /&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Col</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Form.Group</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Form.Group</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Row</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-3&#34;</span> <span style="color:#a6e22e">controlId</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;formPassword&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Form.Label</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">sm</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-end&#34;</span>&gt;<span style="color:#a6e22e">Password</span>&lt;/<span style="color:#f92672">Form.Label</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Col</span> <span style="color:#a6e22e">sm</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">Form.Control</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">password</span>}
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">e</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">setPassword</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>)}
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your password&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">required</span>
+</span></span><span style="display:flex;"><span>                    /&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Col</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Form.Group</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                {<span style="color:#a6e22e">error</span> <span style="color:#f92672">&amp;&amp;</span> &lt;<span style="color:#f92672">Alert</span> <span style="color:#a6e22e">variant</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;danger&#34;</span>&gt;{<span style="color:#a6e22e">error</span>}&lt;/<span style="color:#f92672">Alert</span>&gt;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">variant</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">Login</span>
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Button</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">Form</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">Card</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">Container</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Login</span>;</span></span></code></pre></div>
+<p><a href="#R-image-9d8a3d0d0c880e931d7d45eb57ed842e" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9d8a3d0d0c880e931d7d45eb57ed842e"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
+</li>
+</ul>
+<h3 id="36-roottsx">3.6 Root.tsx</h3>
+<ul>
+<li>
+<p>I didn’t need to assign the root page to any specific functionality. So I set redirection to the dashboard and the login pages. If the token is not set, the page will be redirected to the login page.</p>
+</li>
+<li>
+<p>I made this file in the &lsquo;/src/pages&rsquo; directory.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useNavigate</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-router&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Root</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">navigate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useNavigate</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;access_token&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">token</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If no token is found, redirect to the login page
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/login&#34;</span>);
+</span></span><span style="display:flex;"><span>        }  <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If a token is found, redirect to the dashboard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/dashboard&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }, [<span style="color:#a6e22e">navigate</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// This component does not render anything itself
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Root</span>;</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="4-result">4. Result</h2>
+<hr>
+<p><a href="#R-image-1ae38457fdb5fbb1a0602cf54cbc2b7a" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1ae38457fdb5fbb1a0602cf54cbc2b7a"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
+<h2 id="5-future-improvements">5. Future Improvements</h2>
+<hr>
+<p>Although the current login system works as intented for a single-admin use case, there are several improvements I plan to implement in the future.</p>
+<h3 id="51-security-enhancements">5.1 Security Enhancements</h3>
+<ul>
+<li>Adjust Token Lifespan
+<ul>
+<li>I need to determine the appropriate lifespan for the access token. Further research and testing are required to balance usability and security.</li>
+</ul>
+</li>
+<li>Limit Login Attemps
+<ul>
+<li>Prevent brute-force attacks by limiting the number of failed login attempts per IP or user, and by applying a temporary lockout or cool-down period after repeated failures.</li>
+</ul>
+</li>
+<li>Add CSRF/XSS Protections
+<ul>
+<li>Improve frontend security by enforcing CSRF token checks (especially if cookie-based auth is introduced) and sanitizing user input to prevent cross-site scripting (XSS) attacks.</li>
+</ul>
+</li>
+</ul>
 
   <footer class="footline">
   </footer>
@@ -179,7 +702,9 @@
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/initializeproject/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/initializeproject/index.html">1. Project Initialization</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/startbackend/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/startbackend/index.html">2. Setting Up the Backend</a></li>
             <li class="" data-nav-id="/projects/multi-crypto-trading-tool/loggerconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/loggerconfig/index.html">3. Logger Configuration</a></li>
-            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/login/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/login/index.html">4. Login</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/setconfig/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/projects/multi-crypto-trading-tool/databaseconnmng/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="active " data-nav-id="/projects/multi-crypto-trading-tool/login/index.html"><a class="padding" href="/projects/multi-crypto-trading-tool/login/index.html">6. Login</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -200,8 +725,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751211501" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751211501" defer></script>
-    <script src="/js/theme.js?1751211501" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1752942709" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752942709" defer></script>
+    <script src="/js/theme.min.js?1752942709" defer></script>
   </body>
 </html>
