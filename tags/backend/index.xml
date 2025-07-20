@@ -9,23 +9,23 @@
     <atom:link href="https://blackjjw.github.io/tags/backend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2. Setting Up the Backend</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/startbackend/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/startbackend/index.html</guid>
       <description>1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:&#xA;uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.</description>
     </item>
     <item>
       <title>3. Logger Configuration</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</guid>
       <description>For operating this project reliably, I need a robust logging system. So I decided the Loguru library for its simplicity and powerful features. The configuration was customized to meet the following requirements:&#xA;Custom Log Formatting Example:&#xA;2025-06-26 23:09:24 | INFO | main :lifespan :16 - Starting up the application... Persistent Log Files&#xA;Save logs using filenames that include the current date. Retain logs for 7 days only. Integration with FastAPI and Uvicorn Logs</description>
     </item>
     <item>
       <title>4. Set Configurations</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/setconfig/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/setconfig/index.html</guid>
       <description>I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.&#xA;Here’s an sample .env file used to configure the PostgreSQL database connection:&#xA;POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.&#xA;It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.</description>
     </item>
   </channel>

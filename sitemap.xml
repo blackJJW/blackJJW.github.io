@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/initializeproject/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/startbackend/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/setconfig/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/databaseconnmng/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/setconfig/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/login/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/access_control/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/architecture/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/asyncio/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/auth/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/authentication/index.html</loc>
@@ -41,6 +53,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/component/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/config/index.html</loc>
@@ -88,6 +103,9 @@
     <loc>https://blackjjw.github.io/tags/jwt/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/layout/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/lifespan/index.html</loc>
   </url>
   <url>
@@ -109,7 +127,10 @@
     <loc>https://blackjjw.github.io/tags/monorepo/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/multi-crypto-trading-tool/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/navigation/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/node/index.html</loc>
@@ -124,9 +145,6 @@
     <loc>https://blackjjw.github.io/tags/project-setup/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/projects/index.html</loc>
-  </url>
-  <url>
     <loc>https://blackjjw.github.io/tags/pydantic/index.html</loc>
   </url>
   <url>
@@ -137,6 +155,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/react/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/react-bootstrap/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/react-router/index.html</loc>
@@ -172,7 +193,13 @@
     <loc>https://blackjjw.github.io/tags/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/tsx/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/typescript/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/ui/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/uv/index.html</loc>

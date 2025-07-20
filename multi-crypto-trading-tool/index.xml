@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi Crypto Trading Tool :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/multi-crypto-trading-tool/index.html</link>
+    <description>Project Overview This project is designed to aggregate real-time data from multiple cryptocurrency exchanges and execute automated trades using a variety of strategies. Performance and scalability are key priorities in its development.&#xA;📁 Dev Logs 1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/multi-crypto-trading-tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dev Logs</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</guid>
+      <description>This section contains various development logs:</description>
+    </item>
+  </channel>
+</rss>

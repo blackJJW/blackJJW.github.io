@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Access_control :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/access_control/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/access_control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7. Topbar Menu</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html</guid>
+      <description>In this section, I’ll explain how I implemented the topbar menu. I implemented this menu to test and operate various functions between backend and the worker services.&#xA;1. The design of the Topbar Menu To keep things simple, I used react-bootstrap for the UI components, as I’m not currently focused on visual design. I’ll improve the visual styling in a future version after completing version 1 of this project. The topbar includes a set of menu items and a logout button. 1.1 Topbar Menu Structure To visualize the layout, I created a simple diagram of the topbar menu.</description>
+    </item>
+  </channel>
+</rss>

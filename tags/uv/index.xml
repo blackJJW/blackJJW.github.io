@@ -9,23 +9,23 @@
     <atom:link href="https://blackjjw.github.io/tags/uv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Project Initialization</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/initializeproject/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/initializeproject/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</guid>
       <description>In fact, I had been working on a similar project for some time. Although I tried to complete it, I eventually gave up because it was too complex and inefficient to move forward with. So I decided to restart the project from scratch.&#xA;1. Project Tech Stack Area Tech Backend Python(FastAPI), Redis, Redis Queue(RQ), PostgreSQL Frontend React + Vite Infra Docker, Docker Compose, .env, .yml 2. Backend Settings 2.1 backend.DockerFile This DockerFile installs backend system dependencies and Python packaging tool(uv) for the Python 3.12.11 environment.</description>
     </item>
     <item>
       <title>2. Setting Up the Backend</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/startbackend/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/startbackend/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/startbackend/index.html</guid>
       <description>1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:&#xA;uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.</description>
     </item>
     <item>
       <title>3. Logger Configuration</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/loggerconfig/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</guid>
       <description>For operating this project reliably, I need a robust logging system. So I decided the Loguru library for its simplicity and powerful features. The configuration was customized to meet the following requirements:&#xA;Custom Log Formatting Example:&#xA;2025-06-26 23:09:24 | INFO | main :lifespan :16 - Starting up the application... Persistent Log Files&#xA;Save logs using filenames that include the current date. Retain logs for 7 days only. Integration with FastAPI and Uvicorn Logs</description>
     </item>
   </channel>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
+1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
+Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="5. Database Connection Management :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
+1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
+Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.">
+    <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="5. Database Connection Management :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
+1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
+Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="SQLAlchemy">
+    <meta property="article:tag" content="Orm">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Session">
+    <meta property="article:tag" content="Architecture">
+    <meta itemprop="name" content="5. Database Connection Management :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
+1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
+Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.">
+    <meta itemprop="wordCount" content="279">
+    <meta itemprop="keywords" content="Python,SQLAlchemy,Orm,Database,Session,Architecture,Config">
+    <title>5. Database Connection Management :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753012511" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753012511" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753012511" rel="stylesheet">
+    <link href="/css/theme.min.css?1753012511" rel="stylesheet">
+    <link href="/css/format-html.min.css?1753012511" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/databaseconnmng\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-purposes-of-this-management">1. Purposes of this Management</a>
+      <ul>
+        <li><a href="#why-sqlalchemy">Why SQLAlchemy?</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-class-database">2. Class: Database</a></li>
+    <li><a href="#3-usage-example">3. Usage Example</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">5. Database Connection Management</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html" title="4. Set Configurations (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/login/index.html" title="6. Login (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/architecture/index.html">Architecture</a></li>
+    <li><a class="term-link" href="/tags/config/index.html">Config</a></li>
+    <li><a class="term-link" href="/tags/database/index.html">Database</a></li>
+    <li><a class="term-link" href="/tags/orm/index.html">Orm</a></li>
+    <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
+    <li><a class="term-link" href="/tags/session/index.html">Session</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">SQLAlchemy</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="5-database-connection-management">5. Database Connection Management</h1>
+
+<p>In this section, I&rsquo;ll explain how I configured <code>SQLAlchemy</code> for managing database connections and sessions in a reusable and scalable way.</p>
+<h2 id="1-purposes-of-this-management">1. Purposes of this Management</h2>
+<hr>
+<ul>
+<li>Use <code>SQLAlchemy</code> for ORM-based database interaction</li>
+<li>Create a reusable engine and session maker</li>
+</ul>
+<h3 id="why-sqlalchemy">Why SQLAlchemy?</h3>
+<p>I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:</p>
+<ul>
+<li>Interact with the database using Python classes instead of raw SQL</li>
+<li>Write reusable, composable queries using the SQL Expression Language</li>
+<li>Manage sessions, transactions, and connection pooling efficiently</li>
+<li>Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL)</li>
+</ul>
+<p>This flexibility makes it ideal for a project like this where maintainability and scalability are important.</p>
+<h2 id="2-class-database">2. Class: Database</h2>
+<hr>
+<ul>
+<li>
+<p>The <code>Database</code> class is responsible for initializing the SQLAlchemy engine, createing a session factory, and exposing a centralized declarative base for defining ORM models.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.declarative <span style="color:#f92672">import</span> declarative_base
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> sessionmaker
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .config <span style="color:#f92672">import</span> settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Database</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Database connection and session management.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Base <span style="color:#f92672">=</span> declarative_base()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_engine <span style="color:#f92672">=</span> create_engine(settings<span style="color:#f92672">.</span>db_url, pool_pre_ping<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_SessionLocal <span style="color:#f92672">=</span> sessionmaker(autocommit<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, autoflush<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, bind<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>_engine)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_engine</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Returns the SQLAlchemy engine.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_engine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_session</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Returns a new session.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_SessionLocal()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_base</span>(cls):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Returns the declarative base class.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cls<span style="color:#f92672">.</span>Base</span></span></code></pre></div>
+<ul>
+<li><code>create_engine()</code> : Initializes the DB engine the URL from <code>BaseSettings</code>(settings.db_url)</li>
+<li><code>sessionmaker()</code> : Builds a session factory with common options</li>
+<li><code>pool_pre_ping=True</code> : Ensures connections are alive before use (avoids DB timeout errors)</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-usage-example">3. Usage Example</h2>
+<hr>
+<ul>
+<li>
+<p>To create a new session inside a service or route handler, simply do:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>db <span style="color:#f92672">=</span> Database()
+</span></span><span style="display:flex;"><span>session <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>get_session()</span></span></code></pre></div>
+</li>
+<li>
+<p>The <code>Base</code> attribute is exposed via <code>get_base()</code> so that model classes can inherit from a centralized declarative base:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Base <span style="color:#f92672">=</span> Database<span style="color:#f92672">.</span>get_base()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(Base):</span></span></code></pre></div>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1753012511" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753012511" defer></script>
+    <script src="/js/theme.min.js?1753012511" defer></script>
+  </body>
+</html>

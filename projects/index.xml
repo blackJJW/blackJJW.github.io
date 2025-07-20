@@ -2,17 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects :: Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/projects/index.html</link>
-    <description>Project List Multi Crypto Trading Tool</description>
+    <link>http://localhost:1313/projects/index.html</link>
+    <description>Project List</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://blackjjw.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multi Crypto Trading Tool</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/index.html</guid>
-      <description>Project Overview This project is designed to aggregate real-time data from multiple cryptocurrency exchanges and execute automated trades using a variety of strategies. Performance and scalability are key priorities in its development.</description>
-    </item>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

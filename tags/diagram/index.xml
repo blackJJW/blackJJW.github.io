@@ -9,9 +9,9 @@
     <atom:link href="https://blackjjw.github.io/tags/diagram/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>6. Login</title>
-      <link>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</link>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/login/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/projects/multi-crypto-trading-tool/login/index.html</guid>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/login/index.html</guid>
       <description>In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.&#xA;1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.</description>
     </item>
   </channel>
