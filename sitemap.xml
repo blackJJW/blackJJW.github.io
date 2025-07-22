@@ -97,9 +97,6 @@
     <loc>https://blackjjw.github.io/tags/fullstack/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/index.html</loc>
-  </url>
-  <url>
     <loc>https://blackjjw.github.io/tags/jwt/index.html</loc>
   </url>
   <url>
@@ -209,5 +206,8 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/vite/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/index.html</loc>
   </url>
 </urlset>

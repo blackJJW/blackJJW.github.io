@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home :: Black_JJW&#39;s Blog</title>
+    <title>Welcome to My Technical Blog :: Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/index.html</link>
-    <description>Welcome to My Technical Blog Projects Multi Crypto Trading Tool</description>
+    <description>Hi, I’m Jung Jin Woo, an AI-focused Full Stack &amp; MLOps Engineer based in South Korea.&#xA;On this blog, I share my projects, development logs, technical experiments, and personal study notes, focusing on:&#xA;Real-time AI video processing systems MLOps workflows and system optimization Backend architecture and distributed systems 🚀 Featured Projects 🔧 Multi Crypto Trading Tool:&#xA;A REST-based multi-exchange crypto trading platform – currently in development (WIP) 📬 Contact 📧 Email: jjinwoo92@gmail.com 🐙 GitHub: blackJJW</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/index.xml" rel="self" type="application/rss+xml" />
