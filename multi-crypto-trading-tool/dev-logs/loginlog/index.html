@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
+1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="8. Login Log :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
+1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
+    <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loginlog/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="8. Login Log :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
+1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="SQLAlchemy">
+    <meta property="article:tag" content="Login Log">
+    <meta property="article:tag" content="User Authentication">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Backend">
+    <meta itemprop="name" content="8. Login Log :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
+1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
+    <meta itemprop="wordCount" content="988">
+    <meta itemprop="keywords" content="FastAPI,SQLAlchemy,Login Log,User Authentication,Security,Backend,Python,Database Logging,PostgreSQL,Enum,System Design">
+    <title>8. Login Log :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753552782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753552782" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753552782" rel="stylesheet">
+    <link href="/css/theme.min.css?1753552782" rel="stylesheet">
+    <link href="/css/format-html.min.css?1753552782" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/loginlog\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-the-design-of-the-login-log-function">1. The design of the login log function</a>
+      <ul>
+        <li><a href="#11-diagram">1.1 Diagram</a></li>
+        <li><a href="#12-erd">1.2 ERD</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-backend">2. Backend</a>
+      <ul>
+        <li><a href="#21-db-model">2.1 DB Model</a></li>
+        <li><a href="#22-enums">2.2 Enums</a></li>
+        <li><a href="#23-userloginlogservice">2.3 UserLoginLogService</a></li>
+        <li><a href="#3-userservice">3. UserService</a></li>
+        <li><a href="#4-result">4. Result</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">8. Login Log</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html" title="7. Topbar Menu (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/backend/index.html">Backend</a></li>
+    <li><a class="term-link" href="/tags/database-logging/index.html">Database Logging</a></li>
+    <li><a class="term-link" href="/tags/enum/index.html">Enum</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/login-log/index.html">Login Log</a></li>
+    <li><a class="term-link" href="/tags/postgresql/index.html">PostgreSQL</a></li>
+    <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
+    <li><a class="term-link" href="/tags/security/index.html">Security</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">SQLAlchemy</a></li>
+    <li><a class="term-link" href="/tags/system-design/index.html">System Design</a></li>
+    <li><a class="term-link" href="/tags/user-authentication/index.html">User Authentication</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="8-login-log">8. Login Log</h1>
+
+<p>In this section, I&rsquo;ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login  might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.</p>
+<h2 id="1-the-design-of-the-login-log-function">1. The design of the login log function</h2>
+<hr>
+<h3 id="11-diagram">1.1 Diagram</h3>
+<ul>
+<li>
+<p>The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</p>
+<p><a href="#R-image-dfd932dd0e0098be5595ed1857a9a5ed" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dfd932dd0e0098be5595ed1857a9a5ed"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
+</li>
+</ul>
+<h3 id="12-erd">1.2 ERD</h3>
+<ul>
+<li>
+<p>The following ERD shows the relationship between the <code>TB_USER</code> and <code>TB_USER_LOGIN_LOG</code> tables.</p>
+<p><a href="#R-image-25de7f237fd4ee97c53c287c4cc1fdbf" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-25de7f237fd4ee97c53c287c4cc1fdbf"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
+</li>
+<li>
+<p>The <code>TB_USER_LOGIN_LOG</code> table records metadata for every login attempt.</p>
+<ul>
+<li><code>user_no</code>: Foreign key referencing the user</li>
+<li><code>user_agent</code>, <code>device_type</code>, <code>os</code>: Extracted from the request headers</li>
+<li><code>ip</code>: IP address of the client</li>
+<li><code>login_success</code>: Whether the login attempt was successful</li>
+<li><code>fail_reason</code>, <code>error_code</code>: Used for debugging or anomaly detection</li>
+<li><code>reg_date</code>: Timestamp of the login attempt</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-backend">2. Backend</h2>
+<hr>
+<h3 id="21-db-model">2.1 DB Model</h3>
+<ul>
+<li>
+<p>To persist the user login logs in the database, I defined the following SQLAlchemy model:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, Boolean, DateTime, ForeignKey
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.sql <span style="color:#f92672">import</span> func
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> relationship
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLog</span>(Database<span style="color:#f92672">.</span>get_base()):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;User login log model for the application.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tb_user_login_log&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#f92672">=</span> Column(Integer, primary_key<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, autoincrement<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    user_no <span style="color:#f92672">=</span> Column(Integer, ForeignKey(<span style="color:#e6db74">&#39;tb_users.user_no&#39;</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user_agent <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">255</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    device_type <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">50</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    os <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">10</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    login_success <span style="color:#f92672">=</span> Column(Boolean, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    fail_reason <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">255</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    error_code <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">10</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ip<span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">50</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    reg_date <span style="color:#f92672">=</span> Column(DateTime(timezone<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>), server_default<span style="color:#f92672">=</span>func<span style="color:#f92672">.</span>now(), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> relationship(<span style="color:#e6db74">&#34;User&#34;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;login_logs&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__repr__</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&lt;UserLoginLog(user_no=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">, &#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;success=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>login_success<span style="color:#e6db74">}</span><span style="color:#e6db74">, ip=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74">, &#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;reg_date=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>reg_date<span style="color:#e6db74">}</span><span style="color:#e6db74">)&gt;&#34;</span>)</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="22-enums">2.2 Enums</h3>
+<ul>
+<li>
+<p>To maintain consistency in log data, I defined several enums Python&rsquo;s enum module:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> enum <span style="color:#f92672">import</span> Enum</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="221-device-type">2.2.1 Device Type</h4>
+<ul>
+<li>
+<p>Device type extracted from the User-Agent</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeviceType</span>(str, Enum):
+</span></span><span style="display:flex;"><span>    PC <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PC&#34;</span>
+</span></span><span style="display:flex;"><span>    MOBILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MOBILE&#34;</span>
+</span></span><span style="display:flex;"><span>    TABLET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TABLET&#34;</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="222-os">2.2.2 OS</h4>
+<ul>
+<li>
+<p>Operating system classification</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OS</span>(str, Enum):
+</span></span><span style="display:flex;"><span>    WINDOWS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Windows&#34;</span>
+</span></span><span style="display:flex;"><span>    MACOS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;macOS&#34;</span>
+</span></span><span style="display:flex;"><span>    LINUX <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>    ANDROID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Android&#34;</span>
+</span></span><span style="display:flex;"><span>    IOS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iOS&#34;</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="223-login-fail-reason">2.2.3 Login Fail Reason</h4>
+<ul>
+<li>
+<p>Reasons for login failure, used for auditing or user feedback</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginFailReason</span>(str, Enum):
+</span></span><span style="display:flex;"><span>    INVALID_CREDENTIALS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Invalid credentials&#34;</span>
+</span></span><span style="display:flex;"><span>    ACCOUNT_LOCKED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Account locked&#34;</span>
+</span></span><span style="display:flex;"><span>    ACCOUNT_DISABLED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Account disabled&#34;</span>
+</span></span><span style="display:flex;"><span>    PASSWORD_EXPIRED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password expired&#34;</span>
+</span></span><span style="display:flex;"><span>    MFA_REQUIRED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Multi-factor authentication required&#34;</span>
+</span></span><span style="display:flex;"><span>    MFA_FAILED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Multi-factor authentication failed&#34;</span>
+</span></span><span style="display:flex;"><span>    UNKNOWN_ERROR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Unknown error&#34;</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="224-error-code">2.2.4 Error Code</h4>
+<ul>
+<li>
+<p>Standardized error codes mapped to HTTP-like semantics</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ErrorCode</span>(str, Enum):
+</span></span><span style="display:flex;"><span>    INVALID_REQUEST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E400&#34;</span>
+</span></span><span style="display:flex;"><span>    UNAUTHORIZED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E401&#34;</span>
+</span></span><span style="display:flex;"><span>    FORBIDDEN <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E403&#34;</span>
+</span></span><span style="display:flex;"><span>    NOT_FOUND <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E404&#34;</span>
+</span></span><span style="display:flex;"><span>    INTERNAL_SERVER_ERROR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E500&#34;</span>
+</span></span><span style="display:flex;"><span>    SERVICE_UNAVAILABLE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E503&#34;</span></span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="23-userloginlogservice">2.3 UserLoginLogService</h3>
+<ul>
+<li>
+<p>This service class is responsible for managing user login logs.</p>
+</li>
+<li>
+<p>It is initialized with a SQLAlchemy database session(<code>Session</code>).</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, db: Session):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db <span style="color:#f92672">=</span> db</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="231-_extract_log_data-method">2.3.1 <code>_extract_log_data</code> method</h4>
+<ul>
+<li>
+<p>A private method that extracts user login metadata from the request, including device type, OS, IP address, and login result.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> user_agents <span style="color:#f92672">import</span> parse <span style="color:#66d9ef">as</span> parse_user_agent
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> Request
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> DeviceType, OS, LoginFailReason, ErrorCode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_extract_log_data</span>(
+</span></span><span style="display:flex;"><span>        self, 
+</span></span><span style="display:flex;"><span>        request: Request,
+</span></span><span style="display:flex;"><span>        user_no: int, 
+</span></span><span style="display:flex;"><span>        login_success: bool,
+</span></span><span style="display:flex;"><span>        fail_reason: str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>        error_code: str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Extract log data from the request and parameters.&#34;&#34;&#34;</span> 
+</span></span><span style="display:flex;"><span>        user_agent_str <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;User-Agent&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>        ua <span style="color:#f92672">=</span> parse_user_agent(user_agent_str)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Determine the device type from the parsed User-Agent</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ua<span style="color:#f92672">.</span>is_mobile:
+</span></span><span style="display:flex;"><span>            device_type <span style="color:#f92672">=</span> DeviceType<span style="color:#f92672">.</span>MOBILE
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> ua<span style="color:#f92672">.</span>is_tablet:
+</span></span><span style="display:flex;"><span>            device_type <span style="color:#f92672">=</span> DeviceType<span style="color:#f92672">.</span>TABLET
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> ua<span style="color:#f92672">.</span>is_pc:
+</span></span><span style="display:flex;"><span>            device_type <span style="color:#f92672">=</span> DeviceType<span style="color:#f92672">.</span>PC
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            device_type <span style="color:#f92672">=</span> DeviceType<span style="color:#f92672">.</span>PC
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Extract OS family from User-Agent</span>
+</span></span><span style="display:flex;"><span>        os_family <span style="color:#f92672">=</span> ua<span style="color:#f92672">.</span>os<span style="color:#f92672">.</span>family<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;windows&#34;</span> <span style="color:#f92672">in</span> os_family:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>WINDOWS
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;mac&#34;</span> <span style="color:#f92672">in</span> os_family:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>MACOS
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">in</span> os_family:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>LINUX
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;android&#34;</span> <span style="color:#f92672">in</span> os_family:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>ANDROID
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;ios&#34;</span> <span style="color:#f92672">in</span> os_family:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>IOS
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            os_name <span style="color:#f92672">=</span> OS<span style="color:#f92672">.</span>LINUX
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Get client IP address from FastAPI request</span>
+</span></span><span style="display:flex;"><span>        ip_address <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>host <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>client <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;user_no&#34;</span>: user_no,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;user_agent&#34;</span>: user_agent_str[:<span style="color:#ae81ff">255</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;device_type&#34;</span>: device_type,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;os&#34;</span>: os_name,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;login_success&#34;</span>: login_success,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;fail_reason&#34;</span>: fail_reason,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;error_code&#34;</span>: error_code,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;ip&#34;</span>: ip_address[:<span style="color:#ae81ff">50</span>]
+</span></span><span style="display:flex;"><span>        }</span></span></code></pre></div>
+</li>
+<li>
+<p>This is an example of the return from this method:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Returns:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;user_no&#34;: 10001,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;user_agent&#34;: &#34;Mozilla/5.0 ...&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;device_type&#34;: &#34;PC&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;os&#34;: &#34;macOS&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;login_success&#34;: True,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;fail_reason&#34;: None,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;error_code&#34;: None,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;ip&#34;: &#34;172.19.0.8&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># }</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="232-create_log-method">2.3.2 <code>create_log</code> method</h4>
+<ul>
+<li>
+<p>This method is responsible for creating and storing a new login log entry in the database.</p>
+</li>
+<li>
+<p>It uses <code>_extract_log_data()</code> to parse metadata from the request and wraps the DB transaction with proper error handling.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> UserLoginLog
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Safely create and persist a new login log entry</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_log</span>(
+</span></span><span style="display:flex;"><span>        self, 
+</span></span><span style="display:flex;"><span>        request: Request,
+</span></span><span style="display:flex;"><span>        user_no: int, 
+</span></span><span style="display:flex;"><span>        login_success: bool,
+</span></span><span style="display:flex;"><span>        fail_reason: LoginFailReason <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>        error_code: ErrorCode <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> UserLoginLog:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Create a new user login log entry.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            log_data <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_extract_log_data(
+</span></span><span style="display:flex;"><span>                request<span style="color:#f92672">=</span>request,
+</span></span><span style="display:flex;"><span>                user_no<span style="color:#f92672">=</span>user_no,
+</span></span><span style="display:flex;"><span>                login_success<span style="color:#f92672">=</span>login_success,
+</span></span><span style="display:flex;"><span>                fail_reason<span style="color:#f92672">=</span>fail_reason,
+</span></span><span style="display:flex;"><span>                error_code<span style="color:#f92672">=</span>error_code
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            log_entry <span style="color:#f92672">=</span> UserLoginLog(<span style="color:#f92672">**</span>log_data)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>add(log_entry)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>refresh(log_entry)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> log_entry
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to create login log: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="24-log_login_attempt-method">2.4 <code>log_login_attempt</code> method</h4>
+<ul>
+<li>
+<p>This is a wrapper method that receives login attempt information and delegates the actual creation to <code>create_log()</code>.</p>
+</li>
+<li>
+<p>It ensures that a valid <code>user_no</code> is present before logging to avoid null foreign key issues.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log_login_attempt</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        request: Request,
+</span></span><span style="display:flex;"><span>        user_no: int,
+</span></span><span style="display:flex;"><span>        login_success: bool,
+</span></span><span style="display:flex;"><span>        fail_reason: LoginFailReason <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>        error_code: ErrorCode <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Skip logging if user_no is not provided (e.g., failed lookup)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> user_no <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#34;Skipping login log creation due to missing user_no.&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>create_log(
+</span></span><span style="display:flex;"><span>            request<span style="color:#f92672">=</span>request,
+</span></span><span style="display:flex;"><span>            user_no<span style="color:#f92672">=</span>user_no,
+</span></span><span style="display:flex;"><span>            login_success<span style="color:#f92672">=</span>login_success,
+</span></span><span style="display:flex;"><span>            fail_reason<span style="color:#f92672">=</span>fail_reason,
+</span></span><span style="display:flex;"><span>            error_code<span style="color:#f92672">=</span>error_code
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="3-userservice">3. UserService</h3>
+<ul>
+<li>
+<p>This section shows how <code>UserLoginLogService</code> is integrated into the <code>UserService</code>.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate_user</span>(self, user_id: str, user_pw: str) <span style="color:#f92672">-&gt;</span> User:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> user <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> verify_password(user_pw, user<span style="color:#f92672">.</span>user_pw):
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Authentication failed for user_id=&#39;</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>            user_no <span style="color:#f92672">=</span> user<span style="color:#f92672">.</span>user_no <span style="color:#66d9ef">if</span> user <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># User Login Log Service</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>login_log_service<span style="color:#f92672">.</span>log_login_attempt(
+</span></span><span style="display:flex;"><span>                request<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>request,
+</span></span><span style="display:flex;"><span>                user_no<span style="color:#f92672">=</span>user_no,
+</span></span><span style="display:flex;"><span>                login_success<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>                fail_reason<span style="color:#f92672">=</span>LoginFailReason<span style="color:#f92672">.</span>INVALID_CREDENTIALS,
+</span></span><span style="display:flex;"><span>                error_code<span style="color:#f92672">=</span>ErrorCode<span style="color:#f92672">.</span>UNAUTHORIZED
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> InvalidCredentialsException()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># User Login Log Service</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>login_log_service<span style="color:#f92672">.</span>log_login_attempt(
+</span></span><span style="display:flex;"><span>            request<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>request,
+</span></span><span style="display:flex;"><span>            user_no<span style="color:#f92672">=</span>user<span style="color:#f92672">.</span>user_no,
+</span></span><span style="display:flex;"><span>            login_success<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Authentication successful for user_id=&#39;</span><span style="color:#e6db74">{</span>user<span style="color:#f92672">.</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="4-result">4. Result</h3>
+<ul>
+<li>
+<p>The following is a snapshot of login log records stored in the <code>tb_user_login_log</code> table.</p>
+</li>
+<li>
+<p>It demonstrates how metadata is captured for each login attempt, including success/failure, user agent, OS, and IP address.</p>
+<p><a href="#R-image-8d385c01f5d0615cc1eaef20e9e26ed3" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d385c01f5d0615cc1eaef20e9e26ed3"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
+</li>
+<li>
+<p>This log format helps monitor both successful and failed login attempts, enabling anamoly detection and auditing.</p>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1753552782" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753552782" defer></script>
+    <script src="/js/theme.min.js?1753552782" defer></script>
+  </body>
+</html>
