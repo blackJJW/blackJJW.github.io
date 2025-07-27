@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/login/index.html</guid>
       <description>In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.&#xA;1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.</description>
     </item>
+    <item>
+      <title>9. Refactoring 1: Separate AuthService and Move Login API</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</guid>
+      <description>This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.&#xA;Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.&#xA;Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.&#xA;1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.</description>
+    </item>
   </channel>
 </rss>

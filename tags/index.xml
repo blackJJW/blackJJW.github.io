@@ -15,6 +15,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Api-Design</title>
+      <link>https://blackjjw.github.io/tags/api-design/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/api-design/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Architecture</title>
       <link>https://blackjjw.github.io/tags/architecture/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -33,6 +40,13 @@
       <link>https://blackjjw.github.io/tags/auth/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/auth/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Auth-Service</title>
+      <link>https://blackjjw.github.io/tags/auth-service/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/auth-service/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -68,6 +82,13 @@
       <link>https://blackjjw.github.io/tags/bash/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/bash/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Clean-Architecture</title>
+      <link>https://blackjjw.github.io/tags/clean-architecture/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/clean-architecture/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -337,6 +358,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Refactoring</title>
+      <link>https://blackjjw.github.io/tags/refactoring/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/refactoring/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: RQ</title>
       <link>https://blackjjw.github.io/tags/rq/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -400,6 +428,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Token-Authentication</title>
+      <link>https://blackjjw.github.io/tags/token-authentication/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/token-authentication/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Tsx</title>
       <link>https://blackjjw.github.io/tags/tsx/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -425,6 +460,20 @@
       <link>https://blackjjw.github.io/tags/user-authentication/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/user-authentication/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: User-Management</title>
+      <link>https://blackjjw.github.io/tags/user-management/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/user-management/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: User-Service</title>
+      <link>https://blackjjw.github.io/tags/user-service/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/user-service/index.html</guid>
       <description></description>
     </item>
     <item>

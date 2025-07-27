@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="988">
     <meta itemprop="keywords" content="FastAPI,SQLAlchemy,Login Log,User Authentication,Security,Backend,Python,Database Logging,PostgreSQL,Enum,System Design">
     <title>8. Login Log :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753552782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753552782" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753552782" rel="stylesheet">
-    <link href="/css/theme.min.css?1753552782" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753552782" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753596482" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753596482" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753596482" rel="stylesheet">
+    <link href="/css/theme.min.css?1753596482" rel="stylesheet">
+    <link href="/css/format-html.min.css?1753596482" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -137,7 +137,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html" title="7. Topbar Menu (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html" title="9. Refactoring 1: Separate AuthService and Move Login API (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -181,16 +181,16 @@
 <ul>
 <li>
 <p>The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</p>
-<p><a href="#R-image-dfd932dd0e0098be5595ed1857a9a5ed" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dfd932dd0e0098be5595ed1857a9a5ed"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
+<p><a href="#R-image-14c859c1b45a72e476791fa59949a594" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-14c859c1b45a72e476791fa59949a594"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p>The following ERD shows the relationship between the <code>TB_USER</code> and <code>TB_USER_LOGIN_LOG</code> tables.</p>
-<p><a href="#R-image-25de7f237fd4ee97c53c287c4cc1fdbf" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-25de7f237fd4ee97c53c287c4cc1fdbf"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
+<p><a href="#R-image-b663f364cafa8e7677f91412bea92edc" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b663f364cafa8e7677f91412bea92edc"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
 </li>
 <li>
 <p>The <code>TB_USER_LOGIN_LOG</code> table records metadata for every login attempt.</p>
@@ -510,8 +510,8 @@
 </li>
 <li>
 <p>It demonstrates how metadata is captured for each login attempt, including success/failure, user agent, OS, and IP address.</p>
-<p><a href="#R-image-8d385c01f5d0615cc1eaef20e9e26ed3" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d385c01f5d0615cc1eaef20e9e26ed3"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
+<p><a href="#R-image-2cbbf16089855a30cfb3f26372648472" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cbbf16089855a30cfb3f26372648472"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
 </li>
 <li>
 <p>This log format helps monitor both successful and failed login attempts, enabling anamoly detection and auditing.</p>
@@ -565,7 +565,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
-            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -586,8 +587,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753552782" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753552782" defer></script>
-    <script src="/js/theme.min.js?1753552782" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1753596482" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753596482" defer></script>
+    <script src="/js/theme.min.js?1753596482" defer></script>
   </body>
 </html>

@@ -28,7 +28,13 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loginlog/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/access_control/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/api-design/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/architecture/index.html</loc>
@@ -38,6 +44,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/auth/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/auth-service/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/authentication/index.html</loc>
@@ -56,6 +65,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/clean-architecture/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/component/index.html</loc>
@@ -175,6 +187,9 @@
     <loc>https://blackjjw.github.io/tags/redis/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/refactoring/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/rq/index.html</loc>
   </url>
   <url>
@@ -205,6 +220,9 @@
     <loc>https://blackjjw.github.io/tags/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/token-authentication/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/tsx/index.html</loc>
   </url>
   <url>
@@ -215,6 +233,12 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/user-authentication/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/user-management/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/user-service/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/uv/index.html</loc>
