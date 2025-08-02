@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</loc>
-  </url>
-  <url>
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</loc>
   </url>
   <url>
@@ -31,13 +28,25 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/access_control/index.html</loc>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/access-control/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/aes-gcm/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/api-design/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/architecture/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/api-key-management/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/asgi/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/asyncio/index.html</loc>
@@ -58,7 +67,7 @@
     <loc>https://blackjjw.github.io/tags/backend/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/basesettings/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/backend-utils/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/bash/index.html</loc>
@@ -73,7 +82,7 @@
     <loc>https://blackjjw.github.io/tags/component/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/config/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/conditional-rendering/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/configuration/index.html</loc>
@@ -83,6 +92,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/database-logging/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/db-config/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/diagram/index.html</loc>
@@ -100,13 +112,16 @@
     <loc>https://blackjjw.github.io/tags/dotenv/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/encryption/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/enum/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/env/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/erd/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/erd/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/exception-handling/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/fastapi/index.html</loc>
@@ -116,6 +131,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/fullstack/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/intercept-logger/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/jwt/index.html</loc>
@@ -130,13 +148,13 @@
     <loc>https://blackjjw.github.io/tags/log-rotation/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/logger/index.html</loc>
-  </url>
-  <url>
     <loc>https://blackjjw.github.io/tags/logging/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/login/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/logging-configuration/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/login-flow/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/login-log/index.html</loc>
@@ -163,16 +181,16 @@
     <loc>https://blackjjw.github.io/tags/postgresql/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/project-setup/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/project-initialization/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/pydantic/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/pydantic_settings/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/python/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/python/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/python-backend/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/react/index.html</loc>
@@ -193,6 +211,9 @@
     <loc>https://blackjjw.github.io/tags/rq/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/secure-storage/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/security/index.html</loc>
   </url>
   <url>
@@ -202,16 +223,13 @@
     <loc>https://blackjjw.github.io/tags/settings/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/shutdown/index.html</loc>
-  </url>
-  <url>
-    <loc>https://blackjjw.github.io/tags/singleton/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/singleton-pattern/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/sqlalchemy/index.html</loc>
   </url>
   <url>
-    <loc>https://blackjjw.github.io/tags/startup/index.html</loc>
+    <loc>https://blackjjw.github.io/tags/startup-shutdown/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/system-design/index.html</loc>
@@ -233,9 +251,6 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/user-authentication/index.html</loc>
-  </url>
-  <url>
-    <loc>https://blackjjw.github.io/tags/user-management/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/user-service/index.html</loc>

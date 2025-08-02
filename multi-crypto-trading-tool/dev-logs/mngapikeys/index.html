@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
+1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXHANGE_API_KEYS.
+TB_EXCHANGES stores registered exchanges.
+exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="10. Managing API Keys :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
+1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXHANGE_API_KEYS.
+TB_EXCHANGES stores registered exchanges.
+exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.">
+    <meta property="og:url" content="http://localhost:1313/multi-crypto-trading-tool/dev-logs/mngapikeys/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="10. Managing API Keys :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
+1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXHANGE_API_KEYS.
+TB_EXCHANGES stores registered exchanges.
+exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta itemprop="name" content="10. Managing API Keys :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
+1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXHANGE_API_KEYS.
+TB_EXCHANGES stores registered exchanges.
+exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.">
+    <meta itemprop="wordCount" content="1382">
+    <title>10. Managing API Keys :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754149061" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754149061" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754149061" rel="stylesheet">
+    <link href="/css/theme.css?1754149061" rel="stylesheet">
+    <link href="/css/format-html.css?1754149061" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/mngapikeys\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/mngapikeys/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-the-design-of-the-api-key--management-system">1. The Design of the API Key  Management System</a>
+      <ul>
+        <li><a href="#11-erd">1.1 ERD</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-backend">2. Backend</a>
+      <ul>
+        <li><a href="#21-db-models">2.1 DB Models</a></li>
+        <li><a href="#22-exchange-table-initialization">2.2 Exchange Table Initialization</a></li>
+        <li><a href="#23-exchangesservice">2.3 ExchangesService</a></li>
+        <li><a href="#24-exchangeapikeyservice">2.4 ExchangeAPIKeyService</a></li>
+        <li><a href="#25-dtos">2.5 DTOs</a></li>
+        <li><a href="#26-settings-router">2.6 Settings Router</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">10. Managing API Keys</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html" title="9. Refactoring 1: Separate AuthService and Move Login API (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="10-managing-api-keys">10. Managing API Keys</h1>
+
+<p>Managing API Keys from multiple exchanges requires both <strong>exchange metadata management</strong> and <strong>secure key storage</strong>. In this post, I describe the database schema and service logic used to support this.</p>
+<h2 id="1-the-design-of-the-api-key--management-system">1. The Design of the API Key  Management System</h2>
+<hr>
+<h3 id="11-erd">1.1 ERD</h3>
+<ul>
+<li>
+<p>The functionality is based on three relational tables: <code>TB_USER</code>, <code>TB_EXCHANGES</code>, and <code>TB_EXHANGE_API_KEYS</code>.</p>
+<p><a href="#R-image-52f403f5d5adc77c42f282109276f5f1" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-52f403f5d5adc77c42f282109276f5f1"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
+</li>
+<li>
+<p><code>TB_EXCHANGES</code> stores registered exchanges.</p>
+<ul>
+<li><code>exchange_id</code>: Unique exchange identifier</li>
+<li><code>exchange_name</code>: Name of the exchange</li>
+</ul>
+</li>
+<li>
+<p><code>TB_EXCHANGE_API_KEYS</code> manages the API keys linked to exchanges per user.</p>
+<ul>
+<li><code>key_no</code>: Primary key for this table</li>
+<li><code>user_no</code>: Foreign Key referencing <code>TB_USER</code></li>
+<li><code>exchange_id</code>: Foreign key referencing <code>TB_EXCHANGES</code></li>
+<li><code>public_key</code>: Public-facing key (e.g., Access Key)</li>
+<li><code>private_key</code>: Private key (e.g., Secret Key)</li>
+<li><code>is_active</code>: Whether this API key is active</li>
+<li><code>create_date</code>: Timestamp when the key was created</li>
+<li><code>update_date</code>: Timestamp of the last update</li>
+</ul>
+</li>
+<li>
+<p>Relationships</p>
+<ul>
+<li>A user can register multiple API keys for different exchanges.</li>
+<li>Each key must reference a valid exchange and user.</li>
+<li>This structure supports a multi-exchange trading system.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-backend">2. Backend</h2>
+<hr>
+<h3 id="21-db-models">2.1 DB Models</h3>
+<h4 id="211-exchanges-model">2.1.1 Exchanges Model</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.schema <span style="color:#f92672">import</span> Sequence
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exchange_no_seq <span style="color:#f92672">=</span> Sequence(<span style="color:#e6db74">&#39;exchange_no_seq&#39;</span>, start<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exchanges</span>(Database<span style="color:#f92672">.</span>get_base()):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Exchange model for the application&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tb_exchanges&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    exchange_id <span style="color:#f92672">=</span> Column(Integer, exchange_no_seq, primary_key<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, server_default<span style="color:#f92672">=</span>exchange_no_seq<span style="color:#f92672">.</span>next_value())
+</span></span><span style="display:flex;"><span>    exchange_name <span style="color:#f92672">=</span> Column(String(<span style="color:#ae81ff">20</span>), unique<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__repr__</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&lt;Exchange(no=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">, name=</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">)&gt;&#34;</span></span></span></code></pre></div>
+<ul>
+<li><strong>exchange_no_seq</strong> ensures a custom sequence starting from 101 for exchange_id.</li>
+</ul>
+<h4 id="212-exchangeapikeys">2.1.2 ExchangeAPIKeys</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, Boolean, ForeignKey, UniqueConstraint, DateTime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.dialects.postgresql <span style="color:#f92672">import</span> JSONB
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.sql <span style="color:#f92672">import</span> func
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeys</span>(Database<span style="color:#f92672">.</span>get_base()):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Exchange API Keys model for the application&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tb_exchange_api_keys&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    key_no <span style="color:#f92672">=</span> Column(Integer, primary_key<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, autoincrement<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    user_no <span style="color:#f92672">=</span> Column(Integer, ForeignKey(<span style="color:#e6db74">&#34;tb_users.user_no&#34;</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    exchange_id <span style="color:#f92672">=</span> Column(Integer, ForeignKey(<span style="color:#e6db74">&#34;tb_exchanges.exchange_id&#34;</span>), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    public_key <span style="color:#f92672">=</span> Column(JSONB, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    private_key <span style="color:#f92672">=</span> Column(JSONB, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    is_active <span style="color:#f92672">=</span> Column(Boolean, nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, default<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    create_date <span style="color:#f92672">=</span> Column(DateTime(timezone<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>), server_default<span style="color:#f92672">=</span>func<span style="color:#f92672">.</span>now(), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    update_date <span style="color:#f92672">=</span> Column(DateTime(timezone<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>), onupdate<span style="color:#f92672">=</span>func<span style="color:#f92672">.</span>now(), nullable<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    __table_args__ <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>        UniqueConstraint(<span style="color:#e6db74">&#34;user_no&#34;</span>, <span style="color:#e6db74">&#34;exchange_id&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uq_user_exchange&#34;</span>),
+</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div>
+<ul>
+<li>A composite unique constraint ensures that each user can register only one API key per exchange.</li>
+</ul>
+<h3 id="22-exchange-table-initialization">2.2 Exchange Table Initialization</h3>
+<ul>
+<li>
+<p>The following function inserts the default exchange (Coinone) into the database if it doesn&rsquo;t exist:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize_default_exchange</span>(session):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        existing_exchange <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Exchanges)<span style="color:#f92672">.</span>filter_by(exchange_id<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span>)<span style="color:#f92672">.</span>first()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> existing_exchange:
+</span></span><span style="display:flex;"><span>            default_exchange <span style="color:#f92672">=</span> Exchanges(
+</span></span><span style="display:flex;"><span>                exchange_id<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span>,
+</span></span><span style="display:flex;"><span>                exchange_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Coinone&#34;</span>    
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>add(default_exchange)
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>execute(text(<span style="color:#e6db74">&#34;SELECT setval(&#39;exchange_no_seq&#39;, 101, true)&#34;</span>))
+</span></span><span style="display:flex;"><span>            session<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Default exchange &#39;Coinone&#39; created successfully.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Default exchange &#39;Coinone&#39; already exists.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> IntegrityError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        session<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IntegrityError during exchange initialization: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        session<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error during exchange initialization: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="23-exchangesservice">2.3 ExchangesService</h3>
+<ul>
+<li>This service layer encapsulates all logic related to exchange management.</li>
+</ul>
+<h4 id="231-initializatioon">2.3.1 Initializatioon</h4>
+<ul>
+<li>
+<p>The <code>__init__</code> method initializes the DB session for service use.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Service class for exchanges-related operations.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, db: Session):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db <span style="color:#f92672">=</span> db</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="232-create_exchange">2.3.2 create_exchange()</h4>
+<ul>
+<li>
+<p>Creates a new exchange entry in the database.</p>
+</li>
+<li>
+<p>Handles duplicate insert attempts via IntegrityError</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.exc <span style="color:#f92672">import</span> IntegrityError
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> Exchanges
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_exchange</span>(self, exchange_name: str) <span style="color:#f92672">-&gt;</span> Exchanges:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Create a new exchange.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Accepting to create exchange: </span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            new_exchange <span style="color:#f92672">=</span> Exchanges(exchange_name<span style="color:#f92672">=</span>exchange_name)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>add(new_exchange)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>refresh(new_exchange)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Exchange created successfully: exchange_id=</span><span style="color:#e6db74">{</span>new_exchange<span style="color:#f92672">.</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">, name=</span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> new_exchange
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> IntegrityError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;UNIQUE constraint&#39;</span> <span style="color:#f92672">in</span> str(e<span style="color:#f92672">.</span>orig):
+</span></span><span style="display:flex;"><span>                logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Duplicate exchange creation attempted: exchange_name=</span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Exchange with name &#39;</span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; already exists.&#34;</span>) <span style="color:#f92672">from</span> e
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IntegrityError during exchange creation: </span><span style="color:#e6db74">{</span>str(e<span style="color:#f92672">.</span>orig)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to create exchange due to database integrity error.&#34;</span>) <span style="color:#f92672">from</span> e</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="233-get_all_exchanges">2.3.3 get_all_exchanges()</h4>
+<ul>
+<li>
+<p>Fetches all registered exchanges from the table, orderd by exchange_id.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> Exchanges
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all_exchanges</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Retrieve all registered exchanges&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Retrieving all exchanges.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            exchanges <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>query(Exchanges)
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span>order_by(Exchanges<span style="color:#f92672">.</span>exchange_id<span style="color:#f92672">.</span>asc())
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Retrieved </span><span style="color:#e6db74">{</span>len(exchanges)<span style="color:#e6db74">}</span><span style="color:#e6db74"> exchanges.&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> exchanges
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to retrieve exchanges: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Failed to retrieve exchanges from the database.&#34;</span>) <span style="color:#f92672">from</span> e</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="24-exchangeapikeyservice">2.4 ExchangeAPIKeyService</h3>
+<ul>
+<li>This service layer encapsulates all logic related to <strong>secure management of user exchange API keys</strong>, including encryption, duplication checks, and masked key exposure.</li>
+</ul>
+<h4 id="241-initialization">2.4.1 Initialization</h4>
+<ul>
+<li>
+<p>The constructor initializes both the DB session and a symmetric encryption key.</p>
+</li>
+<li>
+<p>The encrytion key is loaded from an <code>.env</code> variable and decoded using <code>base64</code>.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, db: Session):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db <span style="color:#f92672">=</span> db
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>secret_key <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span>symmetric_key_bytes</span></span></code></pre></div>
+</li>
+<li>
+<p>Example <code>.env</code> configuration:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>SYMMETRIC_KEY<span style="color:#f92672">={</span>your_base64_encoded_key<span style="color:#f92672">}</span></span></span></code></pre></div>
+</li>
+<li>
+<p><code>Settings</code> accessor for decoded byte key:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    SYMMETRIC_KEY: str
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">symmetric_key_bytes</span>(self) <span style="color:#f92672">-&gt;</span> bytes:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> base64<span style="color:#f92672">.</span>b64decode(self<span style="color:#f92672">.</span>SYMMETRIC_KEY)</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="242-aes-gcm-encryptiondecryption">2.4.2 AES-GCM Encryption/Decryption</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> AES
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_data</span>(plain_text: str, key: bytes) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Encrypt data using AES-GCM.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    cipher <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>new(key, AES<span style="color:#f92672">.</span>MODE_GCM)
+</span></span><span style="display:flex;"><span>    ciphertext, tag <span style="color:#f92672">=</span> cipher<span style="color:#f92672">.</span>encrypt_and_digest(plain_text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;enc&#34;</span>: base64<span style="color:#f92672">.</span>b64encode(ciphertext)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;nonce&#34;</span>: base64<span style="color:#f92672">.</span>b64encode(cipher<span style="color:#f92672">.</span>nonce)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;tag&#34;</span>: base64<span style="color:#f92672">.</span>b64encode(tag)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;alg&#34;</span>: <span style="color:#e6db74">&#34;AES-GCM&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decrypt_data</span>(enc_data: dict, key: bytes) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Decrypt data using AES-GCM.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    ciphertext <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(enc_data[<span style="color:#e6db74">&#34;enc&#34;</span>])
+</span></span><span style="display:flex;"><span>    nonce <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(enc_data[<span style="color:#e6db74">&#34;nonce&#34;</span>])
+</span></span><span style="display:flex;"><span>    tag <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(enc_data[<span style="color:#e6db74">&#34;tag&#34;</span>])
+</span></span><span style="display:flex;"><span>    cipher <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>new(key, AES<span style="color:#f92672">.</span>MODE_GCM, nonce<span style="color:#f92672">=</span>nonce)
+</span></span><span style="display:flex;"><span>    plain_text <span style="color:#f92672">=</span> cipher<span style="color:#f92672">.</span>decrypt_and_verify(ciphertext, tag)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> plain_text<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)</span></span></code></pre></div>
+<h4 id="243-create_api_key">2.4.3 create_api_key()</h4>
+<ul>
+<li>
+<p>Validates inputs, checks for duplicates, encrypts the keys, and stores them securely.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> ExchangeAPIKeys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> encrypt_data, decrypt_data, settings
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dto <span style="color:#f92672">import</span> ExchangeAPIKeyRequest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_api_key</span>(self, body: ExchangeAPIKeyRequest) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        user_no <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>user_no
+</span></span><span style="display:flex;"><span>        exchange_id <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>exchange_id
+</span></span><span style="display:flex;"><span>        public_key <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>public_key
+</span></span><span style="display:flex;"><span>        private_key <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>private_key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Storing API key for user_no=</span><span style="color:#e6db74">{</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">, exchange_id=</span><span style="color:#e6db74">{</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        existing <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>query(ExchangeAPIKeys)<span style="color:#f92672">.</span>filter_by(user_no<span style="color:#f92672">=</span>user_no, exchange_id<span style="color:#f92672">=</span>exchange_id)<span style="color:#f92672">.</span>first()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> existing:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;API key already exists for user_no=</span><span style="color:#e6db74">{</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">, exchange_id=</span><span style="color:#e6db74">{</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(public_key, str) <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> isinstance(private_key, str):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#34;Keys must be JSON-formatted strings&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public_key_enc <span style="color:#f92672">=</span> encrypt_data(public_key, self<span style="color:#f92672">.</span>secret_key)
+</span></span><span style="display:flex;"><span>        private_key_enc <span style="color:#f92672">=</span> encrypt_data(private_key, self<span style="color:#f92672">.</span>secret_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        record <span style="color:#f92672">=</span> ExchangeAPIKeys(
+</span></span><span style="display:flex;"><span>            user_no<span style="color:#f92672">=</span>user_no,
+</span></span><span style="display:flex;"><span>            exchange_id<span style="color:#f92672">=</span>exchange_id,
+</span></span><span style="display:flex;"><span>            public_key<span style="color:#f92672">=</span>public_key_enc,
+</span></span><span style="display:flex;"><span>            private_key<span style="color:#f92672">=</span>private_key_enc
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>add(record)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>refresh(record)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>rollback()
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to store API key: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span></span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="244-get_all_masked_api_keys">2.4.4 get_all_masked_api_keys()</h4>
+<ul>
+<li>
+<p>Returns decrypted and masked API keys for frontend display (e.g., abcd****efgh).</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> ExchangeAPIKeys, Exchanges
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> encrypt_data, decrypt_data, settings
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dto <span style="color:#f92672">import</span> ExchangeAPIKeyRequest, ExchangeAPIKeyMaskedResponse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyService</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all_masked_api_keys</span>(self, user_no: int) <span style="color:#f92672">-&gt;</span> List[ExchangeAPIKeyMaskedResponse]:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Retrieving all API keys for user_no=</span><span style="color:#e6db74">{</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        records <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>query(ExchangeAPIKeys)
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span>filter_by(user_no<span style="color:#f92672">=</span>user_no)
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        masked_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> records:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                public_key <span style="color:#f92672">=</span> decrypt_data(record<span style="color:#f92672">.</span>public_key, self<span style="color:#f92672">.</span>secret_key)
+</span></span><span style="display:flex;"><span>                private_key <span style="color:#f92672">=</span> decrypt_data(record<span style="color:#f92672">.</span>private_key, self<span style="color:#f92672">.</span>secret_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                exchange <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>query(Exchanges)<span style="color:#f92672">.</span>filter_by(exchange_id<span style="color:#f92672">=</span>record<span style="color:#f92672">.</span>exchange_id)<span style="color:#f92672">.</span>first()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> exchange:
+</span></span><span style="display:flex;"><span>                    logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Exchange not found: id=</span><span style="color:#e6db74">{</span>record<span style="color:#f92672">.</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                masked <span style="color:#f92672">=</span> ExchangeAPIKeyMaskedResponse(
+</span></span><span style="display:flex;"><span>                    exchange_id<span style="color:#f92672">=</span>record<span style="color:#f92672">.</span>exchange_id,
+</span></span><span style="display:flex;"><span>                    exchange_name<span style="color:#f92672">=</span>exchange<span style="color:#f92672">.</span>exchange_name,
+</span></span><span style="display:flex;"><span>                    public_key_masked<span style="color:#f92672">=</span>public_key[:<span style="color:#ae81ff">4</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;****&#34;</span> <span style="color:#f92672">+</span> public_key[<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>:],
+</span></span><span style="display:flex;"><span>                    private_key_masked<span style="color:#f92672">=</span>private_key[:<span style="color:#ae81ff">4</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;****&#34;</span> <span style="color:#f92672">+</span> private_key[<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>:],
+</span></span><span style="display:flex;"><span>                    update_date<span style="color:#f92672">=</span>record<span style="color:#f92672">.</span>update_date,
+</span></span><span style="display:flex;"><span>                    is_active<span style="color:#f92672">=</span>record<span style="color:#f92672">.</span>is_active,
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>                masked_list<span style="color:#f92672">.</span>append(masked)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>                logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to process API key for record id=</span><span style="color:#e6db74">{</span>record<span style="color:#f92672">.</span>key_no<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> masked_list</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="25-dtos">2.5 DTOs</h3>
+<h4 id="251-exchanges-dto">2.5.1 Exchanges DTO</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesRequest</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    exchange_name: str
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesResponse</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    exchange_id: int
+</span></span><span style="display:flex;"><span>    exchange_name: str
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    model_config <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;from_attributes&#34;</span>: <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+<h4 id="252-exchange-api-key-dto">2.5.2 Exchange API Key DTO</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyRequest</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    user_no: int
+</span></span><span style="display:flex;"><span>    exchange_id: int
+</span></span><span style="display:flex;"><span>    public_key: str
+</span></span><span style="display:flex;"><span>    private_key: str
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DTO for masked API key response</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyMaskedResponse</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    exchange_name: str
+</span></span><span style="display:flex;"><span>    public_key_masked: str
+</span></span><span style="display:flex;"><span>    private_key_masked: str
+</span></span><span style="display:flex;"><span>    is_active: bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    model_config <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;from_attributes&#34;</span>: <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+<h3 id="26-settings-router">2.6 Settings Router</h3>
+<ul>
+<li>
+<p>This router is for the Settings menu of the frontend. For this, I set this router&rsquo;s prefix like this.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> APIRouter, Depends, HTTPException, status
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> service <span style="color:#f92672">import</span> ExchangesService, ExchangeAPIKeyService, get_db
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dto <span style="color:#f92672">import</span> ExchangesResponse, ExchangesRequest, ExchangeAPIKeyRequest, ExchangeAPIKeyMaskedResponse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>settings_router <span style="color:#f92672">=</span> APIRouter(prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/api/settings&#34;</span>, tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;settings&#34;</span>])</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="261-fetch_all_exchanges">2.6.1 fetch_all_exchanges()</h4>
+<ul>
+<li>
+<p>This endpoint sends response with an exchange list.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>settings_router <span style="color:#f92672">=</span> APIRouter(prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/api/settings&#34;</span>, tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;settings&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.get</span>(<span style="color:#e6db74">&#34;/exchanges&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangesResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;All Registered Exchanges&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_all_exchanges</span>(db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Fetching all registered exchanges&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        exchange_service <span style="color:#f92672">=</span> ExchangesService(db)
+</span></span><span style="display:flex;"><span>        exchanges <span style="color:#f92672">=</span> exchange_service<span style="color:#f92672">.</span>get_all_exchanges()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> exchanges
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>exception(<span style="color:#e6db74">&#34;Failed to fetch registerd exchanges&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_500_INTERNAL_SERVER_ERROR,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unable to fetch registerd exchanges&#34;</span>
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="262-create_exchange">2.6.2 create_exchange()</h4>
+<ul>
+<li>
+<p>This endpoint is for registering a new exchange.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchanges&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangesResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register New Exchange&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_exchange</span>(body: ExchangesRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    exchange_name <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>exchange_name
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Creating new exchange: </span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        exchange_service <span style="color:#f92672">=</span> ExchangesService(db)
+</span></span><span style="display:flex;"><span>        exchange_service<span style="color:#f92672">.</span>create_exchange(exchange_name)
+</span></span><span style="display:flex;"><span>        exchanges <span style="color:#f92672">=</span> exchange_service<span style="color:#f92672">.</span>get_all_exchanges()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> exchanges
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> ve:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Validation failed: </span><span style="color:#e6db74">{</span>ve<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_400_BAD_REQUEST,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span>str(ve)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>exception(<span style="color:#e6db74">&#34;Failed to create new exchange&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_500_INTERNAL_SERVER_ERROR,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unable to create new exchanges&#34;</span>
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="263-register_exchange_api_key">2.6.3 register_exchange_api_key()</h4>
+<ul>
+<li>
+<p>This endpoint is for registering a exchange API key.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register Exchange API Key&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">register_exchange_api_key</span>(body: ExchangeAPIKeyRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Registering exchange API key for user_no=</span><span style="color:#e6db74">{</span>body<span style="color:#f92672">.</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">, exchange_id=</span><span style="color:#e6db74">{</span>body<span style="color:#f92672">.</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        service <span style="color:#f92672">=</span> ExchangeAPIKeyService(db)
+</span></span><span style="display:flex;"><span>        service<span style="color:#f92672">.</span>create_api_key(body)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;API key registered successfully.&#34;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> ve:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Validation failed: </span><span style="color:#e6db74">{</span>ve<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_400_BAD_REQUEST,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span>str(ve)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>exception(<span style="color:#e6db74">&#34;Failed to register API key&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_500_INTERNAL_SERVER_ERROR,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unable to register API key&#34;</span>
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></div>
+</li>
+</ul>
+<h4 id="264-get_masked_api_keys">2.6.4 get_masked_api_keys()</h4>
+<ul>
+<li>
+<p>This endpoint returns masked api key list.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.get</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangeAPIKeyMaskedResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Get Masked API Key List&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_masked_api_keys</span>(user_no: int, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Retrieving masked API keys for user_no=</span><span style="color:#e6db74">{</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        service <span style="color:#f92672">=</span> ExchangeAPIKeyService(db)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> service<span style="color:#f92672">.</span>get_all_masked_api_keys(user_no)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>exception(<span style="color:#e6db74">&#34;Failed to retrieve masked API key list&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(
+</span></span><span style="display:flex;"><span>            status_code<span style="color:#f92672">=</span>status<span style="color:#f92672">.</span>HTTP_500_INTERNAL_SERVER_ERROR,
+</span></span><span style="display:flex;"><span>            detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unable to fetch masked API keys&#34;</span>
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></div>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys/index.html">10. Managing API Keys</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1754149061" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754149061" defer></script>
+    <script src="/js/theme.js?1754149061" defer></script>
+  </body>
+</html>

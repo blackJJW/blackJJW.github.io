@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logging-Configuration :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/logging-configuration/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/logging-configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3. Logger Configuration</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</guid>
+      <description>For operating this project reliably, I need a robust logging system. So I decided the Loguru library for its simplicity and powerful features. The configuration was customized to meet the following requirements:&#xA;Custom Log Formatting Example:&#xA;2025-06-26 23:09:24 | INFO | main :lifespan :16 - Starting up the application... Persistent Log Files&#xA;Save logs using filenames that include the current date. Retain logs for 7 days only. Integration with FastAPI and Uvicorn Logs</description>
+    </item>
+  </channel>
+</rss>

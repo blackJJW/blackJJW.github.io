@@ -70,5 +70,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</guid>
       <description>This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.&#xA;Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.&#xA;Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.&#xA;1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.</description>
     </item>
+    <item>
+      <title>10. Managing API Keys - Backend Implementation</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html</guid>
+      <description>Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.&#xA;1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXCHANGE_API_KEYS.&#xA;TB_EXCHANGES stores registered exchanges.&#xA;exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.</description>
+    </item>
   </channel>
 </rss>

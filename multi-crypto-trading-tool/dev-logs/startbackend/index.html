@@ -20,22 +20,22 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Multi Crypto Trading Tool">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Uv">
-    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="Project-Initialization">
+    <meta property="article:tag" content="Fastapi">
     <meta property="article:tag" content="Uvicorn">
     <meta property="article:tag" content="Lifespan">
-    <meta property="article:tag" content="Asyncio">
+    <meta property="article:tag" content="Asgi">
+    <meta property="article:tag" content="Startup-Shutdown">
     <meta itemprop="name" content="2. Setting Up the Backend :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="1. Installing FastAPI We will use FastAPI as the backend server framework due to its performance and asynchronous capabilities - it’s a better fit than the Flask for real-time and modular systems. Install it along with the ASGI server uvicorn using uv:
 uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional dependencies such as: pydantic, httpx, python-multipart, jinja2, email-validator uvicorn : Lightweight ASGI server used to run FastAPI applications 2. Setting the Lifespan in FastAPI To manage startup and shutdown tasks (e.g., initializing connections, cleaning resources), FastAPI provides a lifespan context manager.">
     <meta itemprop="wordCount" content="220">
-    <meta itemprop="keywords" content="Python,Uv,FastAPI,Uvicorn,Lifespan,Asyncio,Startup,Shutdown,Backend">
+    <meta itemprop="keywords" content="Project-Initialization,Fastapi,Uvicorn,Lifespan,Asgi,Startup-Shutdown,Python-Backend,Asyncio,Pydantic">
     <title>2. Setting Up the Backend :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753597623" rel="stylesheet">
-    <link href="/css/theme.min.css?1753597623" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753597623" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151487" rel="stylesheet">
+    <link href="/css/theme.min.css?1754151487" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754151487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -148,14 +148,14 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
+    <li><a class="term-link" href="/tags/asgi/index.html">Asgi</a></li>
     <li><a class="term-link" href="/tags/asyncio/index.html">Asyncio</a></li>
-    <li><a class="term-link" href="/tags/backend/index.html">Backend</a></li>
-    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
     <li><a class="term-link" href="/tags/lifespan/index.html">Lifespan</a></li>
-    <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
-    <li><a class="term-link" href="/tags/shutdown/index.html">Shutdown</a></li>
-    <li><a class="term-link" href="/tags/startup/index.html">Startup</a></li>
-    <li><a class="term-link" href="/tags/uv/index.html">Uv</a></li>
+    <li><a class="term-link" href="/tags/project-initialization/index.html">Project-Initialization</a></li>
+    <li><a class="term-link" href="/tags/pydantic/index.html">Pydantic</a></li>
+    <li><a class="term-link" href="/tags/python-backend/index.html">Python-Backend</a></li>
+    <li><a class="term-link" href="/tags/startup-shutdown/index.html">Startup-Shutdown</a></li>
     <li><a class="term-link" href="/tags/uvicorn/index.html">Uvicorn</a></li>
   </ul>
 </div>
@@ -214,8 +214,8 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
 </ul>
 <h3 id="21-execution-output">2.1 Execution Output</h3>
 <p>When running the application with <code>uv run main.py</code>, you can see the startup and shutdown messages handled by the <code>lifespan()</code> function:</p>
-<p><a href="#R-image-7dae8af8160ba06ba773100fca3e45f9" class="lightbox-link"><img alt="FastAPI Lifespan Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7dae8af8160ba06ba773100fca3e45f9"><img alt="FastAPI Lifespan Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png"></a></p>
+<p><a href="#R-image-10c47f1911cbd8befa9ac6298d357e05" class="lightbox-link"><img alt="FastAPI Lifespan Output" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10c47f1911cbd8befa9ac6298d357e05"><img alt="FastAPI Lifespan Output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/fastapi_lifespan_output.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -265,7 +265,8 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -286,8 +287,8 @@ uv pip install &#34;fastapi[all]&#34; uvicorn fastapi[all] : Installs optional d
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753597623" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753597623" defer></script>
-    <script src="/js/theme.min.js?1753597623" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754151487" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151487" defer></script>
+    <script src="/js/theme.min.js?1754151487" defer></script>
   </body>
 </html>

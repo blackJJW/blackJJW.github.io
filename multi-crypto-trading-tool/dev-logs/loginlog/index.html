@@ -20,22 +20,22 @@
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Multi Crypto Trading Tool">
-    <meta property="article:tag" content="FastAPI">
-    <meta property="article:tag" content="SQLAlchemy">
-    <meta property="article:tag" content="Login Log">
-    <meta property="article:tag" content="User Authentication">
-    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Fastapi">
+    <meta property="article:tag" content="Sqlalchemy">
     <meta property="article:tag" content="Backend">
+    <meta property="article:tag" content="User-Authentication">
+    <meta property="article:tag" content="Login-Log">
+    <meta property="article:tag" content="Security">
     <meta itemprop="name" content="8. Login Log :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
 1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
     <meta itemprop="wordCount" content="988">
-    <meta itemprop="keywords" content="FastAPI,SQLAlchemy,Login Log,User Authentication,Security,Backend,Python,Database Logging,PostgreSQL,Enum,System Design">
+    <meta itemprop="keywords" content="Fastapi,Sqlalchemy,Backend,User-Authentication,Login-Log,Security,Postgresql,Enum,Erd,Database-Logging,System-Design,Python">
     <title>8. Login Log :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753597623" rel="stylesheet">
-    <link href="/css/theme.min.css?1753597623" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753597623" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151487" rel="stylesheet">
+    <link href="/css/theme.min.css?1754151487" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754151487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -158,16 +158,17 @@
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
     <li><a class="term-link" href="/tags/backend/index.html">Backend</a></li>
-    <li><a class="term-link" href="/tags/database-logging/index.html">Database Logging</a></li>
+    <li><a class="term-link" href="/tags/database-logging/index.html">Database-Logging</a></li>
     <li><a class="term-link" href="/tags/enum/index.html">Enum</a></li>
-    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
-    <li><a class="term-link" href="/tags/login-log/index.html">Login Log</a></li>
-    <li><a class="term-link" href="/tags/postgresql/index.html">PostgreSQL</a></li>
+    <li><a class="term-link" href="/tags/erd/index.html">Erd</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
+    <li><a class="term-link" href="/tags/login-log/index.html">Login-Log</a></li>
+    <li><a class="term-link" href="/tags/postgresql/index.html">Postgresql</a></li>
     <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
     <li><a class="term-link" href="/tags/security/index.html">Security</a></li>
-    <li><a class="term-link" href="/tags/sqlalchemy/index.html">SQLAlchemy</a></li>
-    <li><a class="term-link" href="/tags/system-design/index.html">System Design</a></li>
-    <li><a class="term-link" href="/tags/user-authentication/index.html">User Authentication</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">Sqlalchemy</a></li>
+    <li><a class="term-link" href="/tags/system-design/index.html">System-Design</a></li>
+    <li><a class="term-link" href="/tags/user-authentication/index.html">User-Authentication</a></li>
   </ul>
 </div>
   </header>
@@ -181,16 +182,16 @@
 <ul>
 <li>
 <p>The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</p>
-<p><a href="#R-image-015455dc575bbe1dbae6ab9b99b51fdd" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-015455dc575bbe1dbae6ab9b99b51fdd"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
+<p><a href="#R-image-00c5354820a217fac308a78c714cc24c" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-00c5354820a217fac308a78c714cc24c"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p>The following ERD shows the relationship between the <code>TB_USER</code> and <code>TB_USER_LOGIN_LOG</code> tables.</p>
-<p><a href="#R-image-7d20d9c4d36f12aca213750e4616cc6d" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7d20d9c4d36f12aca213750e4616cc6d"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
+<p><a href="#R-image-f2492b46581b98503a26013b1e53ed34" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2492b46581b98503a26013b1e53ed34"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
 </li>
 <li>
 <p>The <code>TB_USER_LOGIN_LOG</code> table records metadata for every login attempt.</p>
@@ -510,8 +511,8 @@
 </li>
 <li>
 <p>It demonstrates how metadata is captured for each login attempt, including success/failure, user agent, OS, and IP address.</p>
-<p><a href="#R-image-9f2cdf8a34150b644b2320fff660d6dd" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9f2cdf8a34150b644b2320fff660d6dd"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
+<p><a href="#R-image-6fa77ca4820526d78a05be77b376eb03" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6fa77ca4820526d78a05be77b376eb03"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
 </li>
 <li>
 <p>This log format helps monitor both successful and failed login attempts, enabling anamoly detection and auditing.</p>
@@ -566,7 +567,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -587,8 +589,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753597623" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753597623" defer></script>
-    <script src="/js/theme.min.js?1753597623" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754151487" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151487" defer></script>
+    <script src="/js/theme.min.js?1754151487" defer></script>
   </body>
 </html>

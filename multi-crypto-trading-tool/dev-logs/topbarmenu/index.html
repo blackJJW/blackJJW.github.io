@@ -23,19 +23,19 @@
     <meta property="article:tag" content="React">
     <meta property="article:tag" content="React-Bootstrap">
     <meta property="article:tag" content="Tsx">
-    <meta property="article:tag" content="Frontend">
-    <meta property="article:tag" content="Ui">
+    <meta property="article:tag" content="Component">
     <meta property="article:tag" content="Navigation">
+    <meta property="article:tag" content="Layout">
     <meta itemprop="name" content="7. Topbar Menu :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="In this section, I’ll explain how I implemented the topbar menu. I implemented this menu to test and operate various functions between backend and the worker services.
 1. The design of the Topbar Menu To keep things simple, I used react-bootstrap for the UI components, as I’m not currently focused on visual design. I’ll improve the visual styling in a future version after completing version 1 of this project. The topbar includes a set of menu items and a logout button. 1.1 Topbar Menu Structure To visualize the layout, I created a simple diagram of the topbar menu.">
     <meta itemprop="wordCount" content="570">
-    <meta itemprop="keywords" content="React,React-Bootstrap,Tsx,Frontend,Ui,Navigation,Layout,Auth,Component,Access_control">
+    <meta itemprop="keywords" content="React,React-Bootstrap,Tsx,Component,Navigation,Layout,Access-Control,Auth,Conditional-Rendering,Frontend,Ui">
     <title>7. Topbar Menu :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753597623" rel="stylesheet">
-    <link href="/css/theme.min.css?1753597623" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753597623" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151487" rel="stylesheet">
+    <link href="/css/theme.min.css?1754151487" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754151487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -155,9 +155,10 @@
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
-    <li><a class="term-link" href="/tags/access_control/index.html">Access_control</a></li>
+    <li><a class="term-link" href="/tags/access-control/index.html">Access-Control</a></li>
     <li><a class="term-link" href="/tags/auth/index.html">Auth</a></li>
     <li><a class="term-link" href="/tags/component/index.html">Component</a></li>
+    <li><a class="term-link" href="/tags/conditional-rendering/index.html">Conditional-Rendering</a></li>
     <li><a class="term-link" href="/tags/frontend/index.html">Frontend</a></li>
     <li><a class="term-link" href="/tags/layout/index.html">Layout</a></li>
     <li><a class="term-link" href="/tags/navigation/index.html">Navigation</a></li>
@@ -182,8 +183,8 @@
 <ul>
 <li>
 <p>To visualize the layout, I created a simple diagram of the topbar menu.</p>
-<p><a href="#R-image-ca97e213ba5972085500858cfd79b923" class="lightbox-link"><img alt="topbar menu" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ca97e213ba5972085500858cfd79b923"><img alt="topbar menu" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-1.png"></a></p>
+<p><a href="#R-image-d00e42746536e41321818f9710f63a68" class="lightbox-link"><img alt="topbar menu" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d00e42746536e41321818f9710f63a68"><img alt="topbar menu" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-1.png"></a></p>
 </li>
 </ul>
 <p>As shown above, the topbar menu consists of three sections:</p>
@@ -321,8 +322,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 </ul>
 <h2 id="3-result">3. Result</h2>
 <hr>
-<p><a href="#R-image-aba95d33c9004d190fe8de8d9807cc18" class="lightbox-link"><img alt="topbar demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-2.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-aba95d33c9004d190fe8de8d9807cc18"><img alt="topbar demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-2.gif"></a></p>
+<p><a href="#R-image-1d119e05bc7fda1829a56ea1630d409f" class="lightbox-link"><img alt="topbar demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-2.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1d119e05bc7fda1829a56ea1630d409f"><img alt="topbar demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-2.gif"></a></p>
 
   <footer class="footline">
   </footer>
@@ -372,7 +373,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -393,8 +395,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753597623" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753597623" defer></script>
-    <script src="/js/theme.min.js?1753597623" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754151487" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151487" defer></script>
+    <script src="/js/theme.min.js?1754151487" defer></script>
   </body>
 </html>

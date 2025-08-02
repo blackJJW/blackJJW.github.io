@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Architecture :: Tag :: Black_JJW&#39;s Blog</title>
-    <link>https://blackjjw.github.io/tags/architecture/index.html</link>
+    <link>http://localhost:1313/tags/architecture/index.html</link>
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://blackjjw.github.io/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5. Database Connection Management</title>
-      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html</link>
+      <link>http://localhost:1313/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html</guid>
+      <guid>http://localhost:1313/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html</guid>
       <description>In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.&#xA;1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:&#xA;Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.</description>
     </item>
   </channel>

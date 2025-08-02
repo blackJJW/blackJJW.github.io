@@ -23,23 +23,23 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Multi Crypto Trading Tool">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="SQLAlchemy">
-    <meta property="article:tag" content="Orm">
+    <meta property="article:tag" content="Fastapi">
+    <meta property="article:tag" content="Sqlalchemy">
     <meta property="article:tag" content="Database">
     <meta property="article:tag" content="Session">
-    <meta property="article:tag" content="Architecture">
+    <meta property="article:tag" content="Orm">
+    <meta property="article:tag" content="Configuration">
     <meta itemprop="name" content="5. Database Connection Management :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
 1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
 Interact with the database using Python classes instead of raw SQL Write reusable, composable queries using the SQL Expression Language Manage sessions, transactions, and connection pooling efficiently Support multiple database backends (e.g., PostgreSQL, SQLite, MySQL) This flexibility makes it ideal for a project like this where maintainability and scalability are important.">
     <meta itemprop="wordCount" content="279">
-    <meta itemprop="keywords" content="Python,SQLAlchemy,Orm,Database,Session,Architecture,Config">
+    <meta itemprop="keywords" content="Fastapi,Sqlalchemy,Database,Session,Orm,Configuration,System-Design">
     <title>5. Database Connection Management :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753597623" rel="stylesheet">
-    <link href="/css/theme.min.css?1753597623" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753597623" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151487" rel="stylesheet">
+    <link href="/css/theme.min.css?1754151487" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754151487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -153,13 +153,13 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
   <header class="headline">
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
-    <li><a class="term-link" href="/tags/architecture/index.html">Architecture</a></li>
-    <li><a class="term-link" href="/tags/config/index.html">Config</a></li>
+    <li><a class="term-link" href="/tags/configuration/index.html">Configuration</a></li>
     <li><a class="term-link" href="/tags/database/index.html">Database</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
     <li><a class="term-link" href="/tags/orm/index.html">Orm</a></li>
-    <li><a class="term-link" href="/tags/python/index.html">Python</a></li>
     <li><a class="term-link" href="/tags/session/index.html">Session</a></li>
-    <li><a class="term-link" href="/tags/sqlalchemy/index.html">SQLAlchemy</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">Sqlalchemy</a></li>
+    <li><a class="term-link" href="/tags/system-design/index.html">System-Design</a></li>
   </ul>
 </div>
   </header>
@@ -284,7 +284,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -305,8 +306,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753597623" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753597623" defer></script>
-    <script src="/js/theme.min.js?1753597623" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754151487" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151487" defer></script>
+    <script src="/js/theme.min.js?1754151487" defer></script>
   </body>
 </html>

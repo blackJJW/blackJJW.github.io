@@ -27,23 +27,23 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
     <meta property="og:type" content="article">
     <meta property="article:section" content="Multi Crypto Trading Tool">
     <meta property="article:tag" content="Refactoring">
-    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="Fastapi">
+    <meta property="article:tag" content="Sqlalchemy">
     <meta property="article:tag" content="Auth-Service">
     <meta property="article:tag" content="User-Service">
     <meta property="article:tag" content="Jwt">
-    <meta property="article:tag" content="User-Management">
     <meta itemprop="name" content="9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.
 Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.
 Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.
 1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.">
     <meta itemprop="wordCount" content="458">
-    <meta itemprop="keywords" content="Refactoring,FastAPI,Auth-Service,User-Service,Jwt,User-Management,Token-Authentication,Api-Design,Clean-Architecture">
+    <meta itemprop="keywords" content="Refactoring,Fastapi,Sqlalchemy,Auth-Service,User-Service,Jwt,Token-Authentication,User-Authentication,Clean-Architecture,Api-Design,Exception-Handling,Backend">
     <title>9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1753597623" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1753597623" rel="stylesheet">
-    <link href="/css/theme.min.css?1753597623" rel="stylesheet">
-    <link href="/css/format-html.min.css?1753597623" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151487" rel="stylesheet">
+    <link href="/css/theme.min.css?1754151487" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754151487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -137,7 +137,7 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html" title="8. Login Log (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html" title="10. Managing API Keys - Backend Implementation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -159,12 +159,15 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
   <ul>
     <li><a class="term-link" href="/tags/api-design/index.html">Api-Design</a></li>
     <li><a class="term-link" href="/tags/auth-service/index.html">Auth-Service</a></li>
+    <li><a class="term-link" href="/tags/backend/index.html">Backend</a></li>
     <li><a class="term-link" href="/tags/clean-architecture/index.html">Clean-Architecture</a></li>
-    <li><a class="term-link" href="/tags/fastapi/index.html">FastAPI</a></li>
+    <li><a class="term-link" href="/tags/exception-handling/index.html">Exception-Handling</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
     <li><a class="term-link" href="/tags/jwt/index.html">Jwt</a></li>
     <li><a class="term-link" href="/tags/refactoring/index.html">Refactoring</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">Sqlalchemy</a></li>
     <li><a class="term-link" href="/tags/token-authentication/index.html">Token-Authentication</a></li>
-    <li><a class="term-link" href="/tags/user-management/index.html">User-Management</a></li>
+    <li><a class="term-link" href="/tags/user-authentication/index.html">User-Authentication</a></li>
     <li><a class="term-link" href="/tags/user-service/index.html">User-Service</a></li>
   </ul>
 </div>
@@ -355,7 +358,8 @@ Now, that logic has been moved into a dedicated <code>AuthService</code>, and th
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -376,8 +380,8 @@ Now, that logic has been moved into a dedicated <code>AuthService</code>, and th
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1753597623" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1753597623" defer></script>
-    <script src="/js/theme.min.js?1753597623" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754151487" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151487" defer></script>
+    <script src="/js/theme.min.js?1754151487" defer></script>
   </body>
 </html>
