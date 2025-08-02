@@ -3,7 +3,7 @@
   <channel>
     <title>Multi Crypto Trading Tool :: Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/multi-crypto-trading-tool/index.html</link>
-    <description>Project Overview This project is designed to aggregate real-time data from multiple cryptocurrency exchanges and execute automated trades using a variety of strategies. Performance and scalability are key priorities in its development.&#xA;📊 System Architecture To better illustrate the architecture of this project, the diagram below shows how different components interact within a Docker Compose environment:&#xA;All services communicate over a shared Docker network. The Core Layer includes the frontend, backend, and worker services. The Infra Layer consists of Redis (for both queuing and caching). The Monitoring Layer captures metrics using Prometheus and displays dashboards via Grafana. 📁 Dev Logs 1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Separate AuthService and Move Login API</description>
+    <description>Project Overview This project is designed to aggregate real-time data from multiple cryptocurrency exchanges and execute automated trades using a variety of strategies. Performance and scalability are key priorities in its development.&#xA;📊 System Architecture To better illustrate the architecture of this project, the diagram below shows how different components interact within a Docker Compose environment:&#xA;All services communicate over a shared Docker network. The Core Layer includes the frontend, backend, and worker services. The Infra Layer consists of Redis (for both queuing and caching). The Monitoring Layer captures metrics using Prometheus and displays dashboards via Grafana. 📁 Dev Logs 1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Separate AuthService and Move Login API 10. Managing API Keys - Backend Implementation</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/multi-crypto-trading-tool/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</guid>
-      <description>This section contains various development logs:&#xA;1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Separate AuthService and Move Login API</description>
+      <description>This section contains various development logs:&#xA;1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Separate AuthService and Move Login API 10. Managing API Keys - Backend Implementation</description>
     </item>
   </channel>
 </rss>
