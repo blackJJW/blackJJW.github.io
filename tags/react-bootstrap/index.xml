@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html</guid>
       <description>In this section, I’ll explain how I implemented the topbar menu. I implemented this menu to test and operate various functions between backend and the worker services.&#xA;1. The design of the Topbar Menu To keep things simple, I used react-bootstrap for the UI components, as I’m not currently focused on visual design. I’ll improve the visual styling in a future version after completing version 1 of this project. The topbar includes a set of menu items and a logout button. 1.1 Topbar Menu Structure To visualize the layout, I created a simple diagram of the topbar menu.</description>
     </item>
+    <item>
+      <title>11. Managing API Keys - Frontend Implementation</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html</guid>
+      <description>This post outlines the frontend design and implementation for API key management.&#xA;1. The design of the API Key Management 1.1 API Key Management Structure To visualize the layout, I sketched a simple diagram of the API Key management page.&#xA;Left-side Menu Items: Under Settings, several submenus are available.&#xA;Exchanges: Area for managing exchanges.&#xA;API Keys: Area for managing API keys.</description>
+    </item>
   </channel>
 </rss>

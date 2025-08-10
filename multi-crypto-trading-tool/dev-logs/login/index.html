@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Hugo 0.148.2">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
 1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="1473">
     <meta itemprop="keywords" content="Fastapi,Jwt,Authentication,Security,Pydantic,Sqlalchemy,React,Typescript,React-Router,Axios,Frontend,Erd,Diagram,System-Design,Login-Flow">
     <title>6. Login :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151663" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151663" rel="stylesheet">
-    <link href="/css/theme.min.css?1754151663" rel="stylesheet">
-    <link href="/css/format-html.min.css?1754151663" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754823844" rel="stylesheet">
+    <link href="/css/theme.min.css?1754823844" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754823844" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -203,16 +203,16 @@
 <ul>
 <li>
 <p>This shows the communication between the frontend, backend, and DB.</p>
-<p><a href="#R-image-9fa506acfe233b51638dce4a6ec44f28" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9fa506acfe233b51638dce4a6ec44f28"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
+<p><a href="#R-image-dd38b69dc9e1dd619d2894006265f77f" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd38b69dc9e1dd619d2894006265f77f"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p><code>TB_USER</code> contains no., id, password, email, created date, and updated date.</p>
-<p><a href="#R-image-aab31b10775025348981b0a49140680f" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-aab31b10775025348981b0a49140680f"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
+<p><a href="#R-image-981dd5b4c790afe8603850289c8fbe53" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-981dd5b4c790afe8603850289c8fbe53"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
 <ul>
 <li>user_no: Unique numeric identifier for the user</li>
 <li>user_id: The login ID (username)</li>
@@ -491,8 +491,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Dashboard</span>;</span></span></code></pre></div>
-<p><a href="#R-image-79d3322339ca5d881beb172f1e2ecd0c" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-79d3322339ca5d881beb172f1e2ecd0c"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
+<p><a href="#R-image-bb1675d4b69b84139fe935552daa147e" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bb1675d4b69b84139fe935552daa147e"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
 </li>
 </ul>
 <h3 id="34-axiosts">3.4 axios.ts</h3>
@@ -609,8 +609,8 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Login</span>;</span></span></code></pre></div>
-<p><a href="#R-image-05bb337c61db5438ad8361660eee4300" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-05bb337c61db5438ad8361660eee4300"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
+<p><a href="#R-image-017d542d7d3552f3ea4dc5e28e3bae21" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-017d542d7d3552f3ea4dc5e28e3bae21"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
 </li>
 </ul>
 <h3 id="36-roottsx">3.6 Root.tsx</h3>
@@ -645,8 +645,8 @@
 </ul>
 <h2 id="4-result">4. Result</h2>
 <hr>
-<p><a href="#R-image-a92f7a370be922f76770d47438778461" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a92f7a370be922f76770d47438778461"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
+<p><a href="#R-image-a571e650d0c71e8813c3efceccae6659" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a571e650d0c71e8813c3efceccae6659"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
 <h2 id="5-future-improvements">5. Future Improvements</h2>
 <hr>
 <p>Although the current login system works as intented for a single-admin use case, there are several improvements I plan to implement in the future.</p>
@@ -718,7 +718,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -739,8 +740,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1754151663" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151663" defer></script>
-    <script src="/js/theme.min.js?1754151663" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754823844" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754823844" defer></script>
+    <script src="/js/theme.min.js?1754823844" defer></script>
   </body>
 </html>

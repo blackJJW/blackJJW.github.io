@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Hugo 0.148.2">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
 1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXCHANGE_API_KEYS.
@@ -40,10 +40,10 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
     <meta itemprop="wordCount" content="1421">
     <meta itemprop="keywords" content="Backend,Fastapi,Sqlalchemy,Postgresql,Api-Key-Management,Secure-Storage,Encryption,Aes-Gcm,Pydantic,System-Design,Erd">
     <title>10. Managing API Keys - Backend Implementation :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754151663" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754151663" rel="stylesheet">
-    <link href="/css/theme.min.css?1754151663" rel="stylesheet">
-    <link href="/css/format-html.min.css?1754151663" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754823844" rel="stylesheet">
+    <link href="/css/theme.min.css?1754823844" rel="stylesheet">
+    <link href="/css/format-html.min.css?1754823844" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -146,7 +146,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html" title="9. Refactoring 1: Separate AuthService and Move Login API (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html" title="11. Managing API Keys - Frontend Implementation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -190,8 +190,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>The functionality is based on three relational tables: <code>TB_USER</code>, <code>TB_EXCHANGES</code>, and <code>TB_EXCHANGE_API_KEYS</code>.</p>
-<p><a href="#R-image-162ecaf9b21aaa86bf74f44795d54128" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-162ecaf9b21aaa86bf74f44795d54128"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
+<p><a href="#R-image-5372b484bfb6b3dba5488814398f2be1" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5372b484bfb6b3dba5488814398f2be1"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
 </li>
 <li>
 <p><code>TB_EXCHANGES</code> stores registered exchanges.</p>
@@ -744,7 +744,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
-            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -765,8 +766,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1754151663" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754151663" defer></script>
-    <script src="/js/theme.min.js?1754151663" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1754823844" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754823844" defer></script>
+    <script src="/js/theme.min.js?1754823844" defer></script>
   </body>
 </html>
