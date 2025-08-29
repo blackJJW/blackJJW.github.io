@@ -57,7 +57,7 @@
       <description>In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.&#xA;1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</description>
     </item>
     <item>
-      <title>9. Refactoring 1: Separate AuthService and Move Login API</title>
+      <title>9. Refactoring 1: Backend - Separate AuthService and Move Login API</title>
       <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</guid>
@@ -69,6 +69,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html</guid>
       <description>Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.&#xA;1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXCHANGE_API_KEYS.&#xA;TB_EXCHANGES stores registered exchanges.&#xA;exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_EXCHANGE_API_KEYS manages the API keys linked to exchanges per user.</description>
+    </item>
+    <item>
+      <title>12. Refactoring 2: Backend - Applying Async Database Management</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor2/index.html</guid>
+      <description>This refactoring adopts asynchronous database management to avoid blocking caused by synchronous I/O.&#xA;Previously, database access was implemented synchronously across services and endpoints, which could block under concurrent workloads. Because this program needs to perform multiple tasks simultaneously, I decided to switch to an async-first approach for database operations.&#xA;1. Config To enable asynchronous PostgreSQL support, install asyncpg:&#xA;uv pip install asyncpg In config.py, I added the following property to build the async SQLAlchemy URL for PostgreSQL:</description>
     </item>
   </channel>
 </rss>

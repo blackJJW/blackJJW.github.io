@@ -34,6 +34,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor2/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</loc>
   </url>
   <url>
@@ -56,6 +59,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/asyncio/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/asyncpg/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/auth/index.html</loc>
@@ -94,6 +100,9 @@
     <loc>https://blackjjw.github.io/tags/configuration/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/connection-pooling/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/database/index.html</loc>
   </url>
   <url>
@@ -101,6 +110,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/db-config/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/dependency-injection/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/diagram/index.html</loc>

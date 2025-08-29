@@ -57,6 +57,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Asyncpg</title>
+      <link>https://blackjjw.github.io/tags/asyncpg/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/asyncpg/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Auth</title>
       <link>https://blackjjw.github.io/tags/auth/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -134,6 +141,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Connection-Pooling</title>
+      <link>https://blackjjw.github.io/tags/connection-pooling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/connection-pooling/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Database</title>
       <link>https://blackjjw.github.io/tags/database/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -152,6 +166,13 @@
       <link>https://blackjjw.github.io/tags/db-config/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/db-config/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Dependency-Injection</title>
+      <link>https://blackjjw.github.io/tags/dependency-injection/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/dependency-injection/index.html</guid>
       <description></description>
     </item>
     <item>

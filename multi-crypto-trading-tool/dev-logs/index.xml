@@ -64,7 +64,7 @@
       <description>In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.&#xA;1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</description>
     </item>
     <item>
-      <title>9. Refactoring 1: Separate AuthService and Move Login API</title>
+      <title>9. Refactoring 1: Backend - Separate AuthService and Move Login API</title>
       <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html</guid>
@@ -83,6 +83,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html</guid>
       <description>This post outlines the frontend design and implementation for API key management.&#xA;1. The design of the API Key Management 1.1 API Key Management Structure To visualize the layout, I sketched a simple diagram of the API Key management page.&#xA;Left-side Menu Items: Under Settings, several submenus are available.&#xA;Exchanges: Area for managing exchanges.&#xA;API Keys: Area for managing API keys.</description>
+    </item>
+    <item>
+      <title>12. Refactoring 2: Backend - Applying Async Database Management</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor2/index.html</guid>
+      <description>This refactoring adopts asynchronous database management to avoid blocking caused by synchronous I/O.&#xA;Previously, database access was implemented synchronously across services and endpoints, which could block under concurrent workloads. Because this program needs to perform multiple tasks simultaneously, I decided to switch to an async-first approach for database operations.&#xA;1. Config To enable asynchronous PostgreSQL support, install asyncpg:&#xA;uv pip install asyncpg In config.py, I added the following property to build the async SQLAlchemy URL for PostgreSQL:</description>
     </item>
   </channel>
 </rss>

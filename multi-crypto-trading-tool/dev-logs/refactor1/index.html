@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.149.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.
 Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.
@@ -11,14 +11,14 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
 1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
+    <meta name="twitter:title" content="9. Refactoring 1: Backend - Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
     <meta name="twitter:description" content="This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.
 Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.
 Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.
 1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.">
     <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/refactor1/index.html">
     <meta property="og:site_name" content="Black_JJW&#39;s Blog">
-    <meta property="og:title" content="9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
+    <meta property="og:title" content="9. Refactoring 1: Backend - Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
     <meta property="og:description" content="This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.
 Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.
 Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.
@@ -32,18 +32,18 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
     <meta property="article:tag" content="Auth-Service">
     <meta property="article:tag" content="User-Service">
     <meta property="article:tag" content="Jwt">
-    <meta itemprop="name" content="9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
+    <meta itemprop="name" content="9. Refactoring 1: Backend - Separate AuthService and Move Login API :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="This refactoring was performed to improve separation of concerns and make authentication logic more modular and testable.
 Previously, authentication logic (authenticate_user) was part of the UserService, tightly coupling user management and auth logic.
 Now, that logic has been moved into a dedicated AuthService, and the login route has been migrated from user_router to a new auth_router.
 1. AuthService I extracted a new service class for authentication. The authenticate_user() method, previously in UserService, is now moved to AuthService.">
     <meta itemprop="wordCount" content="458">
     <meta itemprop="keywords" content="Refactoring,Fastapi,Sqlalchemy,Auth-Service,User-Service,Jwt,Token-Authentication,User-Authentication,Clean-Architecture,Api-Design,Exception-Handling,Backend">
-    <title>9. Refactoring 1: Separate AuthService and Move Login API :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1754823844" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1754823844" rel="stylesheet">
-    <link href="/css/theme.min.css?1754823844" rel="stylesheet">
-    <link href="/css/format-html.min.css?1754823844" rel="stylesheet" id="R-format-style">
+    <title>9. Refactoring 1: Backend - Separate AuthService and Move Login API :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1756487294" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1756487294" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1756487294" rel="stylesheet">
+    <link href="/css/theme.min.css?1756487294" rel="stylesheet">
+    <link href="/css/format-html.min.css?1756487294" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -132,7 +132,7 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">9. Refactoring 1: Separate AuthService and Move Login API</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">9. Refactoring 1: Backend - Separate AuthService and Move Login API</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html" title="8. Login Log (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -173,7 +173,7 @@ Now, that logic has been moved into a dedicated AuthService, and the login route
 </div>
   </header>
 
-<h1 id="9-refactoring-1-separate-authservice-and-move-login-api">9. Refactoring 1: Separate AuthService and Move Login API</h1>
+<h1 id="9-refactoring-1-backend---separate-authservice-and-move-login-api">9. Refactoring 1: Backend - Separate AuthService and Move Login API</h1>
 
 <p>This refactoring was performed to improve <strong>separation of concerns</strong> and make authentication logic more <strong>modular and testable</strong>.</p>
 <p>Previously, authentication logic (<code>authenticate_user</code>) was part of the <code>UserService</code>, tightly coupling user management and auth logic.<br>
@@ -358,9 +358,10 @@ Now, that logic has been moved into a dedicated <code>AuthService</code>, and th
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
-            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Separate AuthService and Move Login API</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Backend - Separate AuthService and Move Login API</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -381,8 +382,8 @@ Now, that logic has been moved into a dedicated <code>AuthService</code>, and th
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1754823844" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1754823844" defer></script>
-    <script src="/js/theme.min.js?1754823844" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1756487294" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1756487294" defer></script>
+    <script src="/js/theme.min.js?1756487294" defer></script>
   </body>
 </html>
