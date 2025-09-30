@@ -3,7 +3,7 @@
   <channel>
     <title>Deep Learning :: Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/learning_notes/dl/index.html</link>
-    <description></description>
+    <description>1. Single-Layer Perceptron</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/learning_notes/dl/index.xml" rel="self" type="application/rss+xml" />
