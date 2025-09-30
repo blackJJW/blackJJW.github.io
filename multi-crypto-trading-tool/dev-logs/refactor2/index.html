@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.149.1">
+    <meta name="generator" content="Hugo 0.150.1">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="This refactoring adopts asynchronous database management to avoid blocking caused by synchronous I/O.
 Previously, database access was implemented synchronously across services and endpoints, which could block under concurrent workloads. Because this program needs to perform multiple tasks simultaneously, I decided to switch to an async-first approach for database operations.
@@ -40,10 +40,10 @@ uv pip install asyncpg In config.py, I added the following property to build the
     <meta itemprop="wordCount" content="622">
     <meta itemprop="keywords" content="Fastapi,Asyncio,Asyncpg,Database,Dependency-Injection,Lifespan,Connection-Pooling,Refactoring,Sqlalchemy,Backend">
     <title>12. Refactoring 2: Backend - Applying Async Database Management :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758350827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758350827" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1758350827" rel="stylesheet">
-    <link href="/css/theme.min.css?1758350827" rel="stylesheet">
-    <link href="/css/format-html.min.css?1758350827" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759252957" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759252957" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759252957" rel="stylesheet">
+    <link href="/css/theme.min.css?1759252957" rel="stylesheet">
+    <link href="/css/format-html.min.css?1759252957" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -139,7 +139,7 @@ uv pip install asyncpg In config.py, I added the following property to build the
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html" title="11. Managing API Keys - Frontend Implementation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/index.html" title="Learning Notes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -429,6 +429,9 @@ Creates a factory for <code>AsyncSession</code>.
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
             <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -449,8 +452,8 @@ Creates a factory for <code>AsyncSession</code>.
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1758350827" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1758350827" defer></script>
-    <script src="/js/theme.min.js?1758350827" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1759252957" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759252957" defer></script>
+    <script src="/js/theme.min.js?1759252957" defer></script>
   </body>
 </html>

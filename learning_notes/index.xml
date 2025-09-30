@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Notes :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/learning_notes/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/learning_notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Learning</title>
+      <link>https://blackjjw.github.io/learning_notes/dl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/learning_notes/dl/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
