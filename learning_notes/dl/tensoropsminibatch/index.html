@@ -5,18 +5,36 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.150.1">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="">
+    <meta name="description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
+0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
+Using tensors is simpler and faster than using explicit loops.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Enum :: Tag :: Black_JJW&#39;s Blog">
-    <meta property="og:url" content="https://blackjjw.github.io/tags/enum/index.html">
+    <meta name="twitter:title" content="2. Tensor Operation & Minibatch :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
+0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
+Using tensors is simpler and faster than using explicit loops.">
+    <meta property="og:url" content="https://blackjjw.github.io/learning_notes/dl/tensoropsminibatch/index.html">
     <meta property="og:site_name" content="Black_JJW&#39;s Blog">
-    <meta property="og:title" content="Enum :: Tag :: Black_JJW&#39;s Blog">
+    <meta property="og:title" content="2. Tensor Operation & Minibatch :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
+0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
+Using tensors is simpler and faster than using explicit loops.">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="Enum :: Tag :: Black_JJW&#39;s Blog">
-    <title>Enum :: Tag :: Black_JJW&#39;s Blog</title>
-    <link href="/tags/enum/index.xml" rel="alternate" type="application/rss+xml" title="Enum :: Tag :: Black_JJW&#39;s Blog">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Learning Notes">
+    <meta property="article:tag" content="Deep-Learning">
+    <meta property="article:tag" content="Machine-Learning">
+    <meta property="article:tag" content="Neural-Networks">
+    <meta property="article:tag" content="Perceptron">
+    <meta property="article:tag" content="Learning-Notes">
+    <meta itemprop="name" content="2. Tensor Operation & Minibatch :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
+0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
+Using tensors is simpler and faster than using explicit loops.">
+    <meta itemprop="wordCount" content="375">
+    <meta itemprop="keywords" content="Deep-Learning,Machine-Learning,Neural-Networks,Perceptron,Learning-Notes">
+    <title>2. Tensor Operation &amp; Minibatch :: Black_JJW&#39;s Blog</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759339260" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759339260" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759339260" rel="stylesheet">
     <link href="/css/theme.min.css?1759339260" rel="stylesheet">
@@ -25,9 +43,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = `.min`;
-      window.relearn.path='\/tags\/enum\/index.html';
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..';
+      window.relearn.path='\/learning_notes\/dl\/tensoropsminibatch\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
       window.relearn.contentLangs=['en'];
       window.relearn.disableAnchorCopy=false;
@@ -78,7 +96,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
      crossorigin="anonymous"></script>
   </head>
-  <body class="mobile-support html" data-url="/tags/enum/index.html">
+  <body class="mobile-support html" data-url="/learning_notes/dl/tensoropsminibatch/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -89,26 +107,21 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-
-<nav class="TableOfContents">
-  <ul>
-    <li><a href="#8">8</a></li>
-  </ul>
-</nav>
+                <div class="topbar-content-wrapper"> 
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tags/index.html"><span itemprop="name">Tags</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Enum</span><meta itemprop="position" content="3"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/learning_notes/index.html"><span itemprop="name">Learning Notes</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/learning_notes/dl/index.html"><span itemprop="name">Deep Learning</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2. Tensor Operation &amp; Minibatch</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tags/encryption/index.html" title="Tag :: Encryption (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/dl/slp/index.html" title="1. Single-Layer Perceptron (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tags/erd/index.html" title="Tag :: Erd (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -122,17 +135,98 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable tags" tabindex="-1">
+      <main id="R-body-inner" class="highlightable learning-notes" tabindex="-1">
         <div class="flex-block-wrapper">
-<article>
+<article class="default">
   <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/deep-learning/index.html">Deep-Learning</a></li>
+    <li><a class="term-link" href="/tags/learning-notes/index.html">Learning-Notes</a></li>
+    <li><a class="term-link" href="/tags/machine-learning/index.html">Machine-Learning</a></li>
+    <li><a class="term-link" href="/tags/neural-networks/index.html">Neural-Networks</a></li>
+    <li><a class="term-link" href="/tags/perceptron/index.html">Perceptron</a></li>
+  </ul>
+</div>
   </header>
-<h1 id="tag--enum">Tag :: Enum</h1>
 
-<h2 id="8">8</h2>
-<ul class="columnize">
-  <li><a href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a><div class="breadcrumbs highlightable" title="Welcome to My Technical Blog &gt;  Multi Crypto Trading Tool &gt;  Dev Logs">Welcome to My Technical Blog &gt;  Multi Crypto Trading Tool &gt;  Dev Logs</div></li>
+<h1 id="2-tensor-operation--minibatch">2. Tensor Operation &amp; Minibatch</h1>
+
+<p>In the field of deep learning, the tensor is like a multi-dimension numerical array.</p>
+<ul>
+<li>0-dim: scalar</li>
+<li>1-dim: vector</li>
+<li>2-dim: matrix</li>
+<li>n-dim: general tensor</li>
 </ul>
+<p>Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with <strong>NumPy array</strong> or framework-specific tensor objects such as those in <strong>PyTorch</strong> or <strong>TensorFlow</strong>.</p>
+<p>Using tensors is simpler and faster than using explicit loops.</p>
+<ul>
+<li>The Python interpreter and underlying libraries can process tensor operations much more efficiently than iterative approaches.</li>
+<li>On GPUs, tensor operations benefit from <strong>parallelization</strong>, leading to significant performance improvements.</li>
+</ul>
+<p>Generally in deep learning, a minibatch refers to processing multiple data samples at once through a neural network.</p>
+<p><a href="#R-image-9f1f9ed73b2dd2a322cb9326b0dab87b" class="lightbox-link"><img alt="slp" class="lazy lightbox figure-image" loading="lazy" src="/images/learning_notes/ml/2-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9f1f9ed73b2dd2a322cb9326b0dab87b"><img alt="slp" class="lazy lightbox lightbox-image" loading="lazy" src="/images/learning_notes/ml/2-1.png"></a></p>
+<ul>
+<li>
+<p><strong>a</strong> is the operation of a single perceptron. This perceptron computes a scalar output:</p>
+<p>$$
+y=x_{1}w_{1} + \cdots + x_{n}w_{n} + b = \boldsymbol{xw} + b
+$$</p>
+<ul>
+<li>weight vector: $\boldsymbol{w}=(w_{1},\ \dots \ , \ w_{n})$</li>
+<li>input vector: $\boldsymbol{x}=(x_{1},\ \dots \ , \ x_{n})$</li>
+<li>scalar bias: $b$</li>
+<li>It is possible to compute $y$ by summing  all $x_{i}w_{i}$ terms in a loop, but using the dot product of vectors is much more efficient.</li>
+</ul>
+<blockquote>
+<p><strong>Linear Operation</strong>: An operation that can be expressed as a linear function of the inputs.</p></blockquote>
+<blockquote>
+<p><strong>Nonlinear Operation</strong>: An operation that cannot be expressed as a linear function of the inputs.</p></blockquote>
+</li>
+<li>
+<p><strong>b</strong> shows how a layer of perceptrons processes a single input vector:</p>
+<p>$$
+y_{i}=x_{1}w_{i1} + \cdots +x_{n}w_{in} + b = \boldsymbol{xw_{i}} + b_{i}
+$$</p>
+<ul>
+<li>weight matrix: $\boldsymbol{W}$</li>
+<li>bias vector: $\boldsymbol{b}$</li>
+</ul>
+<p>In matrix form, this is written as:</p>
+<p>$$
+\boldsymbol{y} = \boldsymbol{xW} + \boldsymbol{b}
+$$</p>
+<p>Using this matrix expression is much more efficient than computing each perceptron with explicit loops.</p>
+</li>
+<li>
+<p><strong>c</strong> illustrates the operation of a perceptron layer under minibatch processing:</p>
+<ul>
+<li>
+<p>Multiple input samples are collected.</p>
+<ul>
+<li>input matrix: $X$</li>
+<li>output matrix: $Y$</li>
+</ul>
+</li>
+<li>
+<p>The same process as in <em>b</em> is applied to each sample:</p>
+<p>$$
+\boldsymbol{y_{j}} = \boldsymbol{x_{j}}W + \boldsymbol{b}
+$$</p>
+</li>
+<li>
+<p>Collectively, the minibatch process can be expressed as:</p>
+<p>$$
+\boldsymbol{Y} = \boldsymbol{XW} + \boldsymbol{b}
+$$
+Using matrix operations is much easier and more efficient than computing each case with loops, as in <em>a</em> and <em>b</em>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This demonstrates how neural network computations scale from a single perceptron to full layers and minibatches, forming the foundation of deep learning models.</p>
 
   <footer class="footline">
   </footer>
@@ -186,10 +280,10 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
-            <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
+            <li class="parent " data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562" checked><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
+            <li class="parent " data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" checked><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
-            <li class="" data-nav-id="/learning_notes/dl/tensoropsminibatch/index.html"><a class="padding" href="/learning_notes/dl/tensoropsminibatch/index.html">2. Tensor Operation &amp; Minibatch</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/learning_notes/dl/tensoropsminibatch/index.html"><a class="padding" href="/learning_notes/dl/tensoropsminibatch/index.html">2. Tensor Operation &amp; Minibatch</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">

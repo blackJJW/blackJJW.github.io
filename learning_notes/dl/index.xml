@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/learning_notes/dl/slp/index.html</guid>
       <description>Single-Layer Perceptron (SLP) is one of the simplest neural network architectures. It processes an input vector through a linear combination of weights and an activation function to generate an output.&#xA;To produce an output vector, the SLP uses one perceptron for each scalar element in the output.&#xA;In this image, $P_{1},\ P_{2},\ P_{3}$ are perceptrons that produce an output vector of size 3.</description>
     </item>
+    <item>
+      <title>2. Tensor Operation &amp; Minibatch</title>
+      <link>https://blackjjw.github.io/learning_notes/dl/tensoropsminibatch/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/learning_notes/dl/tensoropsminibatch/index.html</guid>
+      <description>In the field of deep learning, the tensor is like a multi-dimension numerical array.&#xA;0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.&#xA;Using tensors is simpler and faster than using explicit loops.</description>
+    </item>
   </channel>
 </rss>
