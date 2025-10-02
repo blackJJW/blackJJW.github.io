@@ -27,18 +27,19 @@ Using tensors is simpler and faster than using explicit loops.">
     <meta property="article:tag" content="Machine-Learning">
     <meta property="article:tag" content="Neural-Networks">
     <meta property="article:tag" content="Perceptron">
-    <meta property="article:tag" content="Learning-Notes">
+    <meta property="article:tag" content="Tensor">
+    <meta property="article:tag" content="Minibatch">
     <meta itemprop="name" content="2. Tensor Operation & Minibatch :: Black_JJW&#39;s Blog">
     <meta itemprop="description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
 0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
 Using tensors is simpler and faster than using explicit loops.">
     <meta itemprop="wordCount" content="375">
-    <meta itemprop="keywords" content="Deep-Learning,Machine-Learning,Neural-Networks,Perceptron,Learning-Notes">
+    <meta itemprop="keywords" content="Deep-Learning,Machine-Learning,Neural-Networks,Perceptron,Tensor,Minibatch,Learning-Notes">
     <title>2. Tensor Operation &amp; Minibatch :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759339260" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759339260" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759339260" rel="stylesheet">
-    <link href="/css/theme.min.css?1759339260" rel="stylesheet">
-    <link href="/css/format-html.min.css?1759339260" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759407785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759407785" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759407785" rel="stylesheet">
+    <link href="/css/theme.min.css?1759407785" rel="stylesheet">
+    <link href="/css/format-html.min.css?1759407785" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -144,8 +145,10 @@ Using tensors is simpler and faster than using explicit loops.">
     <li><a class="term-link" href="/tags/deep-learning/index.html">Deep-Learning</a></li>
     <li><a class="term-link" href="/tags/learning-notes/index.html">Learning-Notes</a></li>
     <li><a class="term-link" href="/tags/machine-learning/index.html">Machine-Learning</a></li>
+    <li><a class="term-link" href="/tags/minibatch/index.html">Minibatch</a></li>
     <li><a class="term-link" href="/tags/neural-networks/index.html">Neural-Networks</a></li>
     <li><a class="term-link" href="/tags/perceptron/index.html">Perceptron</a></li>
+    <li><a class="term-link" href="/tags/tensor/index.html">Tensor</a></li>
   </ul>
 </div>
   </header>
@@ -166,8 +169,8 @@ Using tensors is simpler and faster than using explicit loops.">
 <li>On GPUs, tensor operations benefit from <strong>parallelization</strong>, leading to significant performance improvements.</li>
 </ul>
 <p>Generally in deep learning, a minibatch refers to processing multiple data samples at once through a neural network.</p>
-<p><a href="#R-image-9f1f9ed73b2dd2a322cb9326b0dab87b" class="lightbox-link"><img alt="slp" class="lazy lightbox figure-image" loading="lazy" src="/images/learning_notes/ml/2-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9f1f9ed73b2dd2a322cb9326b0dab87b"><img alt="slp" class="lazy lightbox lightbox-image" loading="lazy" src="/images/learning_notes/ml/2-1.png"></a></p>
+<p><a href="#R-image-53b71f39c30b4f9ec94b6859f8443c51" class="lightbox-link"><img alt="slp" class="lazy lightbox figure-image" loading="lazy" src="/images/learning_notes/ml/2-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-53b71f39c30b4f9ec94b6859f8443c51"><img alt="slp" class="lazy lightbox lightbox-image" loading="lazy" src="/images/learning_notes/ml/2-1.png"></a></p>
 <ul>
 <li>
 <p><strong>a</strong> is the operation of a single perceptron. This perceptron computes a scalar output:</p>
@@ -304,8 +307,8 @@ Using matrix operations is much easier and more efficient than computing each ca
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1759339260" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759339260" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1759407785" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759407785" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -317,7 +320,7 @@ Using matrix operations is much easier and more efficient than computing each ca
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759339260"></script>
-    <script src="/js/theme.min.js?1759339260" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759407785"></script>
+    <script src="/js/theme.min.js?1759407785" defer></script>
   </body>
 </html>
