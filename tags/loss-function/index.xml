@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Loss-Function :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/loss-function/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/loss-function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3. Regression Analysis &amp; MSE Loss function</title>
+      <link>https://blackjjw.github.io/learning_notes/dl/regressionandmse/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/learning_notes/dl/regressionandmse/index.html</guid>
+      <description>In regression analysis, a deep learning neural network can produce more accurate predictions (or estimates) when it is trained on appropriate input data, its architecture is well-suited to the problem, and the training process is properly carried out.&#xA;In deep learning, quantitative metrics are needed to evaluate the accuracy of the model’s predictions.&#xA;When evaluating regression predictions, the Mean Squared Error (MSE) is commonly used as the loss function.&#xA;The Mean Squared Error is defined as:</description>
+    </item>
+  </channel>
+</rss>

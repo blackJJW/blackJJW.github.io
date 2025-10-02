@@ -22,6 +22,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/learning_notes/dl/regressionandmse/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/setconfig/index.html</loc>
   </url>
   <url>
@@ -118,6 +121,9 @@
     <loc>https://blackjjw.github.io/tags/connection-pooling/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/cost-function/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/database/index.html</loc>
   </url>
   <url>
@@ -202,6 +208,9 @@
     <loc>https://blackjjw.github.io/tags/loguru/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/loss-function/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/machine-learning/index.html</loc>
   </url>
   <url>
@@ -212,6 +221,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/monorepo/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/mse/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/navigation/index.html</loc>
@@ -260,6 +272,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/refactoring/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/regression/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/rq/index.html</loc>
