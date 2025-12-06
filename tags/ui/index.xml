@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html</guid>
       <description>In this section, I’ll explain how I implemented the topbar menu. I implemented this menu to test and operate various functions between backend and the worker services.&#xA;1. The design of the Topbar Menu To keep things simple, I used react-bootstrap for the UI components, as I’m not currently focused on visual design. I’ll improve the visual styling in a future version after completing version 1 of this project. The topbar includes a set of menu items and a logout button. 1.1 Topbar Menu Structure To visualize the layout, I created a simple diagram of the topbar menu.</description>
     </item>
+    <item>
+      <title>13. Login Log - Frontend</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html</guid>
+      <description>This article follows [8. Login Log] and [11. Managing API Keys — Frontend Implementation]. Previously, I implemented the backend for the login log. Here, I cover the frontend implementation.&#xA;1. Login Log Menu Structure To visualize the layout, I created a simple diagram of the login log menu. The current project’s login log menu is shown above.&#xA;Left-side menu items: Under Logs, several submenus are available. Login logs table: Displays login attempts. The sidebar stays fixed on the left, and the table area renders on the right.</description>
+    </item>
   </channel>
 </rss>

@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html</guid>
       <description>This post outlines the frontend design and implementation for API key management.&#xA;1. The design of the API Key Management 1.1 API Key Management Structure To visualize the layout, I sketched a simple diagram of the API Key management page.&#xA;Left-side Menu Items: Under Settings, several submenus are available.&#xA;Exchanges: Area for managing exchanges.&#xA;API Keys: Area for managing API keys.</description>
     </item>
+    <item>
+      <title>13. Login Log - Frontend</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html</guid>
+      <description>This article follows [8. Login Log] and [11. Managing API Keys — Frontend Implementation]. Previously, I implemented the backend for the login log. Here, I cover the frontend implementation.&#xA;1. Login Log Menu Structure To visualize the layout, I created a simple diagram of the login log menu. The current project’s login log menu is shown above.&#xA;Left-side menu items: Under Logs, several submenus are available. Login logs table: Displays login attempts. The sidebar stays fixed on the left, and the table area renders on the right.</description>
+    </item>
   </channel>
 </rss>
