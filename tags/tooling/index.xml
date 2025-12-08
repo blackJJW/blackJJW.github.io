@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tooling :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/tooling/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/tooling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>14. Makefile Setup</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html</guid>
+      <description>This project consists of multiple languages, so each one has its own set of commands. I often mix them up. To address this, I decided to add a Makefile for each language. Using Makefiles helps keep command execution consistent across languages.&#xA;1. Makefile in the Backend This Makefile is for Python with uv.&#xA;# basic target .PHONY: run freeze test # Start FastAPI server run: uv run src/main.py # Update requirements.txt freeze: uv pip freeze &gt; requirements.txt test: PYTHONPATH=./src uv run -m pytest 2. Makefile in the Frontend This Makefile is for React with npm.</description>
+    </item>
+  </channel>
+</rss>
