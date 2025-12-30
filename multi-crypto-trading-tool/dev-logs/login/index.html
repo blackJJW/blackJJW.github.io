@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.153.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
 1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="1473">
     <meta itemprop="keywords" content="Fastapi,Jwt,Authentication,Security,Pydantic,Sqlalchemy,React,Typescript,React-Router,Axios,Frontend,Erd,Diagram,System-Design,Login-Flow">
     <title>6. Login :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213357" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213357" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765213357" rel="stylesheet">
-    <link href="/css/theme.min.css?1765213357" rel="stylesheet">
-    <link href="/css/format-html.min.css?1765213357" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767112783" rel="stylesheet">
+    <link href="/css/theme.min.css?1767112783" rel="stylesheet">
+    <link href="/css/format-html.min.css?1767112783" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -203,16 +203,16 @@
 <ul>
 <li>
 <p>This shows the communication between the frontend, backend, and DB.</p>
-<p><a href="#R-image-87830f64c84248c6abe4141dbccbe937" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-87830f64c84248c6abe4141dbccbe937"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
+<p><a href="#R-image-f94e9116a66416977065a8333f8145ac" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f94e9116a66416977065a8333f8145ac"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p><code>TB_USER</code> contains no., id, password, email, created date, and updated date.</p>
-<p><a href="#R-image-619d1441c5927e6f2f79f4da21a7e761" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-619d1441c5927e6f2f79f4da21a7e761"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
+<p><a href="#R-image-12f97276620a731a89922d1ed2e8180a" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-12f97276620a731a89922d1ed2e8180a"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
 <ul>
 <li>user_no: Unique numeric identifier for the user</li>
 <li>user_id: The login ID (username)</li>
@@ -491,8 +491,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Dashboard</span>;</span></span></code></pre></div>
-<p><a href="#R-image-2132b3d84c6b18ec68637e798b9015ea" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2132b3d84c6b18ec68637e798b9015ea"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
+<p><a href="#R-image-76844e703ca7388fbdab42279cb2e08e" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76844e703ca7388fbdab42279cb2e08e"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
 </li>
 </ul>
 <h3 id="34-axiosts">3.4 axios.ts</h3>
@@ -506,7 +506,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">create</span>({
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/api&#39;</span>, <span style="color:#75715e">// Adjust this if your API base URL is different
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></span><span style="display:flex;"><span>});
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">api</span>;</span></span></code></pre></div>
 </li>
@@ -533,37 +533,37 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">navigate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useNavigate</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// input states
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">setId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">setId</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">password</span>, <span style="color:#a6e22e">setPassword</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// error state
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">setError</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">setError</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// mount log for debugging
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Login component mounted&#34;</span>);
 </span></span><span style="display:flex;"><span>    }, []);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">React.FormEvent</span>) <span style="color:#f92672">=&gt;</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// Reset error state
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Make a POST request to the login endpoint
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/users/login&#34;</span>, 
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/users/login&#34;</span>, 
 </span></span><span style="display:flex;"><span>                { 
 </span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">user_id</span>: <span style="color:#66d9ef">id</span>, 
 </span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">user_pw</span>: <span style="color:#66d9ef">password</span> 
 </span></span><span style="display:flex;"><span>                });
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If login is successful, store the token and redirect
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;access_token&#34;</span>, <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">access_token</span>);
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;access_token&#34;</span>, <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">access_token</span>);
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/dashboard&#34;</span>);
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Handle errors (e.g., invalid credentials)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Login error:&#34;</span>, <span style="color:#a6e22e">err</span>);
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Login error:&#34;</span>, <span style="color:#a6e22e">err</span>);
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Set error message based on the error response
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;Login failed. Please check your credentials.&#34;</span>);
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;Login failed. Please check your credentials.&#34;</span>);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    };
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
@@ -609,8 +609,8 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Login</span>;</span></span></code></pre></div>
-<p><a href="#R-image-3c6db8ce36146b46445b136be2599243" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3c6db8ce36146b46445b136be2599243"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
+<p><a href="#R-image-e3b43b3013616c2d4aec0d621e1c2f8b" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3b43b3013616c2d4aec0d621e1c2f8b"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
 </li>
 </ul>
 <h3 id="36-roottsx">3.6 Root.tsx</h3>
@@ -630,23 +630,23 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;access_token&#34;</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">token</span>) {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If no token is found, redirect to the login page
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/login&#34;</span>);
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/login&#34;</span>);
 </span></span><span style="display:flex;"><span>        }  <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If a token is found, redirect to the dashboard
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/dashboard&#34;</span>);
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#34;/dashboard&#34;</span>);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }, [<span style="color:#a6e22e">navigate</span>]);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// This component does not render anything itself
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Root</span>;</span></span></code></pre></div>
 </li>
 </ul>
 <h2 id="4-result">4. Result</h2>
 <hr>
-<p><a href="#R-image-a5b12dafcccbeba02c2326a09067a678" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a5b12dafcccbeba02c2326a09067a678"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
+<p><a href="#R-image-a2a554a7a40960d9bd101d8c41a500dd" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a2a554a7a40960d9bd101d8c41a500dd"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
 <h2 id="5-future-improvements">5. Future Improvements</h2>
 <hr>
 <p>Although the current login system works as intented for a single-admin use case, there are several improvements I plan to implement in the future.</p>
@@ -722,7 +722,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -748,8 +749,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765213357" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765213357" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767112783" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767112783" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -761,7 +762,7 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1765213357"></script>
-    <script src="/js/theme.min.js?1765213357" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1767112783"></script>
+    <script src="/js/theme.min.js?1767112783" defer></script>
   </body>
 </html>

@@ -43,6 +43,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Architecture</title>
+      <link>https://blackjjw.github.io/tags/architecture/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/architecture/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Asgi</title>
       <link>https://blackjjw.github.io/tags/asgi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -246,6 +253,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Dto</title>
+      <link>https://blackjjw.github.io/tags/dto/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/dto/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Encryption</title>
       <link>https://blackjjw.github.io/tags/encryption/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -306,6 +320,13 @@
       <link>https://blackjjw.github.io/tags/jwt/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/jwt/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Layered-Architecture</title>
+      <link>https://blackjjw.github.io/tags/layered-architecture/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/layered-architecture/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -572,6 +593,13 @@
       <link>https://blackjjw.github.io/tags/security/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/security/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Service-Layer</title>
+      <link>https://blackjjw.github.io/tags/service-layer/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/service-layer/index.html</guid>
       <description></description>
     </item>
     <item>

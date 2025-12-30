@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.153.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In the field of deep learning, the tensor is like a multi-dimension numerical array.
 0-dim: scalar 1-dim: vector 2-dim: matrix n-dim: general tensor Tensors are fundamental because they allow data to be represented and processed efficiently in any number of dimensions. In Python, tensors are often represented with NumPy array or framework-specific tensor objects such as those in PyTorch or TensorFlow.
@@ -36,10 +36,10 @@ Using tensors is simpler and faster than using explicit loops.">
     <meta itemprop="wordCount" content="375">
     <meta itemprop="keywords" content="Deep-Learning,Machine-Learning,Neural-Networks,Perceptron,Tensor,Minibatch,Learning-Notes">
     <title>2. Tensor Operation &amp; Minibatch :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213357" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213357" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765213357" rel="stylesheet">
-    <link href="/css/theme.min.css?1765213357" rel="stylesheet">
-    <link href="/css/format-html.min.css?1765213357" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767112783" rel="stylesheet">
+    <link href="/css/theme.min.css?1767112783" rel="stylesheet">
+    <link href="/css/format-html.min.css?1767112783" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -169,8 +169,8 @@ Using tensors is simpler and faster than using explicit loops.">
 <li>On GPUs, tensor operations benefit from <strong>parallelization</strong>, leading to significant performance improvements.</li>
 </ul>
 <p>Generally in deep learning, a minibatch refers to processing multiple data samples at once through a neural network.</p>
-<p><a href="#R-image-cecbd3c1f370f13f3dfb680c8a2d86c9" class="lightbox-link"><img alt="slp" class="lazy lightbox figure-image" loading="lazy" src="/images/learning_notes/ml/2-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cecbd3c1f370f13f3dfb680c8a2d86c9"><img alt="slp" class="lazy lightbox lightbox-image" loading="lazy" src="/images/learning_notes/ml/2-1.png"></a></p>
+<p><a href="#R-image-e3ede840cd3a1a65f942e9412e95e766" class="lightbox-link"><img alt="slp" class="lazy lightbox figure-image" loading="lazy" src="/images/learning_notes/ml/2-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3ede840cd3a1a65f942e9412e95e766"><img alt="slp" class="lazy lightbox lightbox-image" loading="lazy" src="/images/learning_notes/ml/2-1.png"></a></p>
 <ul>
 <li>
 <p><strong>a</strong> is the operation of a single perceptron. This perceptron computes a scalar output:</p>
@@ -286,7 +286,8 @@ Using matrix operations is much easier and more efficient than computing each ca
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li></ul></li></ul></li>
             <li class="parent " data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562" checked><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="parent " data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" checked><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -312,8 +313,8 @@ Using matrix operations is much easier and more efficient than computing each ca
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765213357" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765213357" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767112783" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767112783" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -325,7 +326,7 @@ Using matrix operations is much easier and more efficient than computing each ca
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1765213357"></script>
-    <script src="/js/theme.min.js?1765213357" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1767112783"></script>
+    <script src="/js/theme.min.js?1767112783" defer></script>
   </body>
 </html>
