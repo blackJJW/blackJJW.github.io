@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.153.3">
+    <meta name="generator" content="Hugo 0.154.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I made the login function. This project is designed as a single-user program. In other words, only the administrator is authorized to access and operate the system. Therefore, I created a single account with the ID: “admin”.
 1. The design of the login function 1.1 Diagram This shows the communication between the frontend, backend, and DB.">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="1473">
     <meta itemprop="keywords" content="Fastapi,Jwt,Authentication,Security,Pydantic,Sqlalchemy,React,Typescript,React-Router,Axios,Frontend,Erd,Diagram,System-Design,Login-Flow">
     <title>6. Login :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767112783" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767112783" rel="stylesheet">
-    <link href="/css/theme.min.css?1767112783" rel="stylesheet">
-    <link href="/css/format-html.min.css?1767112783" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1768408914" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1768408914" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1768408914" rel="stylesheet">
+    <link href="/css/theme.min.css?1768408914" rel="stylesheet">
+    <link href="/css/format-html.min.css?1768408914" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -203,16 +203,16 @@
 <ul>
 <li>
 <p>This shows the communication between the frontend, backend, and DB.</p>
-<p><a href="#R-image-f94e9116a66416977065a8333f8145ac" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f94e9116a66416977065a8333f8145ac"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
+<p><a href="#R-image-535f9079ee2182a5ecfa3bbde4b8c5f8" class="lightbox-link"><img alt="login diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-535f9079ee2182a5ecfa3bbde4b8c5f8"><img alt="login diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p><code>TB_USER</code> contains no., id, password, email, created date, and updated date.</p>
-<p><a href="#R-image-12f97276620a731a89922d1ed2e8180a" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-12f97276620a731a89922d1ed2e8180a"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
+<p><a href="#R-image-ed92a3c2df7239b600b481809e882647" class="lightbox-link"><img alt="login erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ed92a3c2df7239b600b481809e882647"><img alt="login erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-2.png"></a></p>
 <ul>
 <li>user_no: Unique numeric identifier for the user</li>
 <li>user_id: The login ID (username)</li>
@@ -491,8 +491,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Dashboard</span>;</span></span></code></pre></div>
-<p><a href="#R-image-76844e703ca7388fbdab42279cb2e08e" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-76844e703ca7388fbdab42279cb2e08e"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
+<p><a href="#R-image-1f26c8888a70657f8aaa359d364e78d5" class="lightbox-link"><img alt="dashboard page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1f26c8888a70657f8aaa359d364e78d5"><img alt="dashboard page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-3.png"></a></p>
 </li>
 </ul>
 <h3 id="34-axiosts">3.4 axios.ts</h3>
@@ -609,8 +609,8 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Login</span>;</span></span></code></pre></div>
-<p><a href="#R-image-e3b43b3013616c2d4aec0d621e1c2f8b" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3b43b3013616c2d4aec0d621e1c2f8b"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
+<p><a href="#R-image-3a2c4baf9508d0993ee3597398b4dd3a" class="lightbox-link"><img alt="login page" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a2c4baf9508d0993ee3597398b4dd3a"><img alt="login page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-4.png"></a></p>
 </li>
 </ul>
 <h3 id="36-roottsx">3.6 Root.tsx</h3>
@@ -645,8 +645,8 @@
 </ul>
 <h2 id="4-result">4. Result</h2>
 <hr>
-<p><a href="#R-image-a2a554a7a40960d9bd101d8c41a500dd" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a2a554a7a40960d9bd101d8c41a500dd"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
+<p><a href="#R-image-0c25a53e5723cbb6adb0413b16d4f8be" class="lightbox-link"><img alt="login demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/6-5.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c25a53e5723cbb6adb0413b16d4f8be"><img alt="login demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/6-5.gif"></a></p>
 <h2 id="5-future-improvements">5. Future Improvements</h2>
 <hr>
 <p>Although the current login system works as intented for a single-admin use case, there are several improvements I plan to implement in the future.</p>
@@ -723,7 +723,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -749,8 +750,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1767112783" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767112783" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1768408914" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1768408914" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -762,7 +763,7 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1767112783"></script>
-    <script src="/js/theme.min.js?1767112783" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1768408914"></script>
+    <script src="/js/theme.min.js?1768408914" defer></script>
   </body>
 </html>

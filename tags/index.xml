@@ -225,6 +225,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Distributed-Systems</title>
+      <link>https://blackjjw.github.io/tags/distributed-systems/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/distributed-systems/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Docker</title>
       <link>https://blackjjw.github.io/tags/docker/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -288,6 +295,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Execution</title>
+      <link>https://blackjjw.github.io/tags/execution/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/execution/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Fastapi</title>
       <link>https://blackjjw.github.io/tags/fastapi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -306,6 +320,13 @@
       <link>https://blackjjw.github.io/tags/fullstack/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/fullstack/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Idempotency</title>
+      <link>https://blackjjw.github.io/tags/idempotency/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/idempotency/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -575,6 +596,20 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Reliability</title>
+      <link>https://blackjjw.github.io/tags/reliability/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/reliability/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Retry</title>
+      <link>https://blackjjw.github.io/tags/retry/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/retry/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Rq</title>
       <link>https://blackjjw.github.io/tags/rq/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -677,6 +712,13 @@
       <link>https://blackjjw.github.io/tags/tooling/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/tooling/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Trading</title>
+      <link>https://blackjjw.github.io/tags/trading/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/trading/index.html</guid>
       <description></description>
     </item>
     <item>

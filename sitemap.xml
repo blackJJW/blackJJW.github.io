@@ -61,6 +61,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/learning_notes/dl/index.html</loc>
   </url>
   <url>
@@ -163,6 +166,9 @@
     <loc>https://blackjjw.github.io/tags/diagram/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/distributed-systems/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/docker/index.html</loc>
   </url>
   <url>
@@ -190,6 +196,9 @@
     <loc>https://blackjjw.github.io/tags/exception-handling/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/execution/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/fastapi/index.html</loc>
   </url>
   <url>
@@ -197,6 +206,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/fullstack/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/idempotency/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/intercept-logger/index.html</loc>
@@ -313,6 +325,12 @@
     <loc>https://blackjjw.github.io/tags/regression/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/reliability/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/retry/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/rq/index.html</loc>
   </url>
   <url>
@@ -359,6 +377,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/tooling/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/trading/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/tsx/index.html</loc>

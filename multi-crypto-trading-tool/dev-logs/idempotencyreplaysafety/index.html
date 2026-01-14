@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="Retries are inevitable in a multi-service system. HTTP timeouts, worker restarts, and upstream retries can cause the same trade ingestion payload to arrive more than once. Without idempotency, I risk double-writing trades and corrupting downstream analytics.
+1. Where idempotency lives in the backend Below is simplified pseudocode that reflects my current flow:
+# router: /internal-api/coinone-worker/public/trades @router.get(&#34;/trades&#34;) async def fetch_trades(quote, target, db, http_client): payload = await fetch_go_worker_trades(http_client, quote, target) summary = await TradesService(db).ingest_payload( exchange_name=&#34;coinone&#34;, quote_currency=quote, target_currency=target, payload=payload, on_conflict=&#34;nothing&#34;, ) return summary # service: TradesService.ingest_payload async def ingest_payload(exchange_name, quote_currency, target_currency, payload, on_conflict): exchange_id = ExchangesService(db).get_exchange_id(exchange_name) pair_no = CurrencyPairService(db).get_or_create_pair_no(quote_currency, target_currency) rows = normalize_transactions(payload, exchange_id, pair_no) # map &amp; validate inserted = bulk_upsert_trades(rows, on_conflict) # idempotent insert return { &#34;exchange_id&#34;: exchange_id, &#34;currency_pair_no&#34;: pair_no, &#34;inserted&#34;: inserted, &#34;attempted&#34;: len(rows), &#34;skipped&#34;: len(rows) - inserted, } At the database level, a unique constraint provides replay safety.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="16. Idempotency and Replay Safety for Trade Execution Endpoints :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="Retries are inevitable in a multi-service system. HTTP timeouts, worker restarts, and upstream retries can cause the same trade ingestion payload to arrive more than once. Without idempotency, I risk double-writing trades and corrupting downstream analytics.
+1. Where idempotency lives in the backend Below is simplified pseudocode that reflects my current flow:
+# router: /internal-api/coinone-worker/public/trades @router.get(&#34;/trades&#34;) async def fetch_trades(quote, target, db, http_client): payload = await fetch_go_worker_trades(http_client, quote, target) summary = await TradesService(db).ingest_payload( exchange_name=&#34;coinone&#34;, quote_currency=quote, target_currency=target, payload=payload, on_conflict=&#34;nothing&#34;, ) return summary # service: TradesService.ingest_payload async def ingest_payload(exchange_name, quote_currency, target_currency, payload, on_conflict): exchange_id = ExchangesService(db).get_exchange_id(exchange_name) pair_no = CurrencyPairService(db).get_or_create_pair_no(quote_currency, target_currency) rows = normalize_transactions(payload, exchange_id, pair_no) # map &amp; validate inserted = bulk_upsert_trades(rows, on_conflict) # idempotent insert return { &#34;exchange_id&#34;: exchange_id, &#34;currency_pair_no&#34;: pair_no, &#34;inserted&#34;: inserted, &#34;attempted&#34;: len(rows), &#34;skipped&#34;: len(rows) - inserted, } At the database level, a unique constraint provides replay safety.">
+    <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="16. Idempotency and Replay Safety for Trade Execution Endpoints :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="Retries are inevitable in a multi-service system. HTTP timeouts, worker restarts, and upstream retries can cause the same trade ingestion payload to arrive more than once. Without idempotency, I risk double-writing trades and corrupting downstream analytics.
+1. Where idempotency lives in the backend Below is simplified pseudocode that reflects my current flow:
+# router: /internal-api/coinone-worker/public/trades @router.get(&#34;/trades&#34;) async def fetch_trades(quote, target, db, http_client): payload = await fetch_go_worker_trades(http_client, quote, target) summary = await TradesService(db).ingest_payload( exchange_name=&#34;coinone&#34;, quote_currency=quote, target_currency=target, payload=payload, on_conflict=&#34;nothing&#34;, ) return summary # service: TradesService.ingest_payload async def ingest_payload(exchange_name, quote_currency, target_currency, payload, on_conflict): exchange_id = ExchangesService(db).get_exchange_id(exchange_name) pair_no = CurrencyPairService(db).get_or_create_pair_no(quote_currency, target_currency) rows = normalize_transactions(payload, exchange_id, pair_no) # map &amp; validate inserted = bulk_upsert_trades(rows, on_conflict) # idempotent insert return { &#34;exchange_id&#34;: exchange_id, &#34;currency_pair_no&#34;: pair_no, &#34;inserted&#34;: inserted, &#34;attempted&#34;: len(rows), &#34;skipped&#34;: len(rows) - inserted, } At the database level, a unique constraint provides replay safety.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta property="article:tag" content="Trading">
+    <meta property="article:tag" content="Execution">
+    <meta property="article:tag" content="Idempotency">
+    <meta property="article:tag" content="Reliability">
+    <meta property="article:tag" content="Fastapi">
+    <meta property="article:tag" content="Sqlalchemy">
+    <meta itemprop="name" content="16. Idempotency and Replay Safety for Trade Execution Endpoints :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="Retries are inevitable in a multi-service system. HTTP timeouts, worker restarts, and upstream retries can cause the same trade ingestion payload to arrive more than once. Without idempotency, I risk double-writing trades and corrupting downstream analytics.
+1. Where idempotency lives in the backend Below is simplified pseudocode that reflects my current flow:
+# router: /internal-api/coinone-worker/public/trades @router.get(&#34;/trades&#34;) async def fetch_trades(quote, target, db, http_client): payload = await fetch_go_worker_trades(http_client, quote, target) summary = await TradesService(db).ingest_payload( exchange_name=&#34;coinone&#34;, quote_currency=quote, target_currency=target, payload=payload, on_conflict=&#34;nothing&#34;, ) return summary # service: TradesService.ingest_payload async def ingest_payload(exchange_name, quote_currency, target_currency, payload, on_conflict): exchange_id = ExchangesService(db).get_exchange_id(exchange_name) pair_no = CurrencyPairService(db).get_or_create_pair_no(quote_currency, target_currency) rows = normalize_transactions(payload, exchange_id, pair_no) # map &amp; validate inserted = bulk_upsert_trades(rows, on_conflict) # idempotent insert return { &#34;exchange_id&#34;: exchange_id, &#34;currency_pair_no&#34;: pair_no, &#34;inserted&#34;: inserted, &#34;attempted&#34;: len(rows), &#34;skipped&#34;: len(rows) - inserted, } At the database level, a unique constraint provides replay safety.">
+    <meta itemprop="wordCount" content="737">
+    <meta itemprop="keywords" content="Trading,Execution,Idempotency,Reliability,Fastapi,Sqlalchemy,Postgresql,Distributed-Systems,Retry">
+    <title>16. Idempotency and Replay Safety for Trade Execution Endpoints :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1768408914" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1768408914" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1768408914" rel="stylesheet">
+    <link href="/css/theme.min.css?1768408914" rel="stylesheet">
+    <link href="/css/format-html.min.css?1768408914" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/idempotencyreplaysafety\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-where-idempotency-lives-in-the-backend">1. Where idempotency lives in the backend</a></li>
+    <li><a href="#2-data-layer-idempotency-with-a-unique-trade-key">2. Data-layer idempotency with a unique trade key</a></li>
+    <li><a href="#3-service-level-replay-handling">3. Service-level replay handling</a></li>
+    <li><a href="#4-orderbook-snapshots-use-the-same-pattern">4. Orderbook snapshots use the same pattern</a></li>
+    <li><a href="#5-why-this-works-well-for-replay-safety">5. Why this works well for replay safety</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">16. Idempotency and Replay Safety for Trade Execution Endpoints</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html" title="15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/index.html" title="Learning Notes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/distributed-systems/index.html">Distributed-Systems</a></li>
+    <li><a class="term-link" href="/tags/execution/index.html">Execution</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
+    <li><a class="term-link" href="/tags/idempotency/index.html">Idempotency</a></li>
+    <li><a class="term-link" href="/tags/postgresql/index.html">Postgresql</a></li>
+    <li><a class="term-link" href="/tags/reliability/index.html">Reliability</a></li>
+    <li><a class="term-link" href="/tags/retry/index.html">Retry</a></li>
+    <li><a class="term-link" href="/tags/sqlalchemy/index.html">Sqlalchemy</a></li>
+    <li><a class="term-link" href="/tags/trading/index.html">Trading</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="16-idempotency-and-replay-safety-for-trade-execution-endpoints">16. Idempotency and Replay Safety for Trade Execution Endpoints</h1>
+
+<p>Retries are inevitable in a multi-service system. HTTP timeouts, worker restarts, and upstream retries can cause the same trade ingestion payload to arrive more than once. Without idempotency, I risk double-writing trades and corrupting downstream analytics.</p>
+<h2 id="1-where-idempotency-lives-in-the-backend">1. Where idempotency lives in the backend</h2>
+<hr>
+<p>Below is simplified pseudocode that reflects my current flow:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># router: /internal-api/coinone-worker/public/trades</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@router.get</span>(<span style="color:#e6db74">&#34;/trades&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_trades</span>(quote, target, db, http_client):
+</span></span><span style="display:flex;"><span>    payload <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> fetch_go_worker_trades(http_client, quote, target)
+</span></span><span style="display:flex;"><span>    summary <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> TradesService(db)<span style="color:#f92672">.</span>ingest_payload(
+</span></span><span style="display:flex;"><span>        exchange_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;coinone&#34;</span>,
+</span></span><span style="display:flex;"><span>        quote_currency<span style="color:#f92672">=</span>quote,
+</span></span><span style="display:flex;"><span>        target_currency<span style="color:#f92672">=</span>target,
+</span></span><span style="display:flex;"><span>        payload<span style="color:#f92672">=</span>payload,
+</span></span><span style="display:flex;"><span>        on_conflict<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nothing&#34;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> summary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># service: TradesService.ingest_payload</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ingest_payload</span>(exchange_name, quote_currency, target_currency, payload, on_conflict):
+</span></span><span style="display:flex;"><span>    exchange_id <span style="color:#f92672">=</span> ExchangesService(db)<span style="color:#f92672">.</span>get_exchange_id(exchange_name)
+</span></span><span style="display:flex;"><span>    pair_no <span style="color:#f92672">=</span> CurrencyPairService(db)<span style="color:#f92672">.</span>get_or_create_pair_no(quote_currency, target_currency)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    rows <span style="color:#f92672">=</span> normalize_transactions(payload, exchange_id, pair_no)  <span style="color:#75715e"># map &amp; validate</span>
+</span></span><span style="display:flex;"><span>    inserted <span style="color:#f92672">=</span> bulk_upsert_trades(rows, on_conflict)              <span style="color:#75715e"># idempotent insert</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;exchange_id&#34;</span>: exchange_id,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;currency_pair_no&#34;</span>: pair_no,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;inserted&#34;</span>: inserted,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;attempted&#34;</span>: len(rows),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;skipped&#34;</span>: len(rows) <span style="color:#f92672">-</span> inserted,
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+<p>At the database level, a unique constraint provides replay safety.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> tb_trades (...) <span style="color:#66d9ef">VALUES</span> (...)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> CONFLICT (exchange_id, currency_pair_no, trade_id) <span style="color:#66d9ef">DO</span> <span style="color:#66d9ef">NOTHING</span>;</span></span></code></pre></div>
+<p>This makes the endpoint effectively idempotent at the data layer: the same <code>trade_id</code> for the same exchange/pair will be inserted at most once.</p>
+<p>In this setup, the router explicitly calls the service with <code>on_conflict=&quot;nothing&quot;</code>, so duplicate trades are safely ignored.</p>
+<h2 id="2-data-layer-idempotency-with-a-unique-trade-key">2. Data-layer idempotency with a unique trade key</h2>
+<hr>
+<p>The <code>tb_trades</code> table enforces a unique constraint on a natural key:</p>
+<ul>
+<li><code>exchange_id</code></li>
+<li><code>currency_pair_no</code></li>
+<li><code>trade_id</code></li>
+</ul>
+<p>This guarantees that the same trade cannot be inserted twice.</p>
+<p>Conceptually:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UNIQUE</span> (exchange_id, currency_pair_no, trade_id)</span></span></code></pre></div>
+<p>When the service ingests trades, it uses a PostgreSQL upsert with <code>ON CONFLICT DO NOTHING</code>. This makes replays safe without adding extra duplicate checks in the application layer.</p>
+<p>This approach works well as long as <code>trade_id</code> is stable and unique per exchange/pair. If an exchange reuses IDs or changes semantics, the idempotency key should be adjusted (e.g., include timestamp or use a canonical hash).</p>
+<h2 id="3-service-level-replay-handling">3. Service-level replay handling</h2>
+<hr>
+<p><code>TradesService</code> normalizes and validates each payload, then inserts trades in batches. If the payload is replayed:</p>
+<ul>
+<li>Duplicates are skipped by the unique constraint.</li>
+<li>The response reports how many rows were inserted vs. skipped.</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ingest_payload</span>(<span style="color:#f92672">...</span>, on_conflict<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nothing&#34;</span>):
+</span></span><span style="display:flex;"><span>    rows <span style="color:#f92672">=</span> normalize(payload)            <span style="color:#75715e"># parse, validate, map to insert rows</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> rows:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;inserted&#34;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;attempted&#34;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;skipped&#34;</span>: <span style="color:#ae81ff">0</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    inserted <span style="color:#f92672">=</span> bulk_upsert(rows, on_conflict<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nothing&#34;</span>)  <span style="color:#75715e"># ON CONFLICT DO NOTHING</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;inserted&#34;</span>: inserted,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;attempted&#34;</span>: len(rows),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;skipped&#34;</span>: len(rows) <span style="color:#f92672">-</span> inserted,  <span style="color:#75715e"># duplicates skipped on replay</span>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+<p>This produces a clean, deterministic response even under retries because the insert is idempotent and repeated requests return consistent counts without creating duplicate rows.</p>
+<h2 id="4-orderbook-snapshots-use-the-same-pattern">4. Orderbook snapshots use the same pattern</h2>
+<hr>
+<p>Orderbook ingestion follows the same design:</p>
+<ul>
+<li>Snapshot uniqueness is based on (<code>exchange_id</code>, <code>currency_pair_no</code>, <code>server_time_ms</code>, <code>sequence_id</code>).</li>
+<li><code>ON CONFLICT DO NOTHING</code> prevents duplicate snapshots.</li>
+<li>Price levels are inserted with a unique key: (<code>snapshot_id</code>, <code>side</code>, <code>level_index</code>).</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Service-level orderbook replay handling (idempotent snapshots + levels)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ingest_orderbook</span>(exchange_id, currency_pair_no, payload):
+</span></span><span style="display:flex;"><span>    snapshot <span style="color:#f92672">=</span> parse_snapshot(payload)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 1) idempotent snapshot insert</span>
+</span></span><span style="display:flex;"><span>    snapshot_id <span style="color:#f92672">=</span> insert_snapshot(
+</span></span><span style="display:flex;"><span>        exchange_id<span style="color:#f92672">=</span>exchange_id,
+</span></span><span style="display:flex;"><span>        currency_pair_no<span style="color:#f92672">=</span>currency_pair_no,
+</span></span><span style="display:flex;"><span>        server_time_ms<span style="color:#f92672">=</span>snapshot<span style="color:#f92672">.</span>server_time_ms,
+</span></span><span style="display:flex;"><span>        sequence_id<span style="color:#f92672">=</span>snapshot<span style="color:#f92672">.</span>sequence_id,
+</span></span><span style="display:flex;"><span>        on_conflict<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nothing&#34;</span>,
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">or</span> fetch_existing_snapshot_id(<span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 2) idempotent level insert</span>
+</span></span><span style="display:flex;"><span>    level_rows <span style="color:#f92672">=</span> build_levels(snapshot_id, payload<span style="color:#f92672">.</span>bids, payload<span style="color:#f92672">.</span>asks)
+</span></span><span style="display:flex;"><span>    insert_levels(level_rows, on_conflict<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nothing&#34;</span>)  <span style="color:#75715e"># (snapshot_id, side, level_index)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    commit()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> summary(snapshot_id, level_rows)</span></span></code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- snapshot uniqueness
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> tb_orderbook_snapshot (...) <span style="color:#66d9ef">VALUES</span> (...)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> CONFLICT (exchange_id, currency_pair_no, server_time_ms, sequence_id) <span style="color:#66d9ef">DO</span> <span style="color:#66d9ef">NOTHING</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- level uniqueness
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> tb_orderbook_level (...) <span style="color:#66d9ef">VALUES</span> (...)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> CONFLICT (snapshot_id, side, level_index) <span style="color:#66d9ef">DO</span> <span style="color:#66d9ef">NOTHING</span>;</span></span></code></pre></div>
+<p>This approach assumes the exchange provides a stable <code>(server_time_ms, sequence_id)</code> pair for snapshots; if not, a different idempotency key (e.g., a payload hash) may be required. Even if the same orderbook payload is replayed, the database remains consistent because duplicates are ignored at both the snapshot and level layers.</p>
+<h2 id="5-why-this-works-well-for-replay-safety">5. Why this works well for replay safety</h2>
+<hr>
+<p>This pattern works well because it enforces idempotency at the most reliable layer: the database.</p>
+<ul>
+<li><strong>The unique key is the source of truth.</strong> Even if the application retries, restarts, or runs concurrently, the database guarantees that the same record is inserted at most once.</li>
+<li><strong><code>ON CONFLICT DO NOTHING</code> removes race conditions.</strong> The insert becomes an atomic operation, so you don’t need a separate “check-then-insert” step in application code.</li>
+<li><strong>Services stay deterministic.</strong> The service can safely return a consistent summary (<code>attempted</code>, <code>inserted</code>, <code>skipped</code>) under retries without special-case logic.</li>
+<li><strong>The same idea scales to other datasets.</strong> Trades and orderbook snapshots follow the same replay-safe ingestion design, which keeps the system consistent as more exchanges and endpoints are added.</li>
+</ul>
+<p>The key requirement is choosing a stable idempotency key. If an exchange does not provide a reliable natural key (e.g., <code>trade_id</code> or <code>(server_time_ms, sequence_id)</code>), you should derive one (for example, a canonical hash of the payload).</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Backend - Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/tensoropsminibatch/index.html"><a class="padding" href="/learning_notes/dl/tensoropsminibatch/index.html">2. Tensor Operation &amp; Minibatch</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/regressionandmse/index.html"><a class="padding" href="/learning_notes/dl/regressionandmse/index.html">3. Regression Analysis &amp; MSE Loss function</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1768408914" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1768408914" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1768408914"></script>
+    <script src="/js/theme.min.js?1768408914" defer></script>
+  </body>
+</html>
