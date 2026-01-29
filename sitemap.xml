@@ -64,6 +64,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/learning_notes/dl/index.html</loc>
   </url>
   <url>
@@ -89,6 +92,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/asgi/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/async/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/asyncio/index.html</loc>
@@ -262,6 +268,9 @@
     <loc>https://blackjjw.github.io/tags/minibatch/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/mocking/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/modal/index.html</loc>
   </url>
   <url>
@@ -299,6 +308,12 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/pydantic/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/pytest/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/pytest-asyncio/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/python/index.html</loc>
@@ -371,6 +386,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/testing/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/token-authentication/index.html</loc>

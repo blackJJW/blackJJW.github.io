@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/testing/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html</guid>
+      <description>As the backend moved to async services, I needed tests that were both fast and reliable. The goal was simple: validate service logic without spinning up an HTTP server or relying on external dependencies. This post documents the patterns that work well in this codebase: pytest-asyncio fixtures for async SQLAlchemy sessions and targeted mocks for service dependencies.&#xA;1. Enable async tests with pytest-asyncio This repo uses pytest-asyncio in auto mode:</description>
+    </item>
+  </channel>
+</rss>
