@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polling :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/polling/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/polling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>21. WebSockets vs polling for live price updates in crypto apps</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html</guid>
+      <description>Live price updates are the heartbeat of a crypto app. The question isn’t “real-time or not,” but how to deliver updates reliably: WebSockets, polling, or a hybrid.&#xA;This post compares both approaches and frames the choice using the current stack in this project.&#xA;1. The two delivery models 1.1 Polling The client requests price data every N seconds. Simple to implement and easy to cache. Scales well with stateless HTTP. 1.2 WebSockets The server pushes updates continuously. Lower latency and smoother UI. Requires persistent connections and additional infrastructure. 2. What polling looks like in this repo In this repo, the backend exposes polling-style endpoints that fetch data from the Go worker and persist it.</description>
+    </item>
+  </channel>
+</rss>

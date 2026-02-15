@@ -176,6 +176,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Crypto</title>
+      <link>https://blackjjw.github.io/tags/crypto/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/crypto/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Database</title>
       <link>https://blackjjw.github.io/tags/database/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -568,6 +575,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Polling</title>
+      <link>https://blackjjw.github.io/tags/polling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/polling/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Postgresql</title>
       <link>https://blackjjw.github.io/tags/postgresql/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -649,6 +663,13 @@
       <link>https://blackjjw.github.io/tags/react-router/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/react-router/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Real-Time</title>
+      <link>https://blackjjw.github.io/tags/real-time/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/real-time/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -880,6 +901,13 @@
       <link>https://blackjjw.github.io/tags/vite/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/vite/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Websocket</title>
+      <link>https://blackjjw.github.io/tags/websocket/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/websocket/index.html</guid>
       <description></description>
     </item>
   </channel>
