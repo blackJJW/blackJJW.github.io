@@ -302,6 +302,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Exchange</title>
+      <link>https://blackjjw.github.io/tags/exchange/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/exchange/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Execution</title>
       <link>https://blackjjw.github.io/tags/execution/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -334,6 +341,13 @@
       <link>https://blackjjw.github.io/tags/grafana/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/grafana/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Httpx</title>
+      <link>https://blackjjw.github.io/tags/httpx/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/httpx/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -610,6 +624,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Rate-Limits</title>
+      <link>https://blackjjw.github.io/tags/rate-limits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/rate-limits/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: React</title>
       <link>https://blackjjw.github.io/tags/react/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -656,6 +677,20 @@
       <link>https://blackjjw.github.io/tags/reliability/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/reliability/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Resilience</title>
+      <link>https://blackjjw.github.io/tags/resilience/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/resilience/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Retries</title>
+      <link>https://blackjjw.github.io/tags/retries/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/retries/index.html</guid>
       <description></description>
     </item>
     <item>

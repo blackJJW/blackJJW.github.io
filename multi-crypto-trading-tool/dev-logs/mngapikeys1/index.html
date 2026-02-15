@@ -40,10 +40,10 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
     <meta itemprop="wordCount" content="1421">
     <meta itemprop="keywords" content="Backend,Fastapi,Sqlalchemy,Postgresql,Api-Key-Management,Secure-Storage,Encryption,Aes-Gcm,Pydantic,System-Design,Erd">
     <title>10. Managing API Keys - Backend Implementation :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771161238" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771161238" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771161238" rel="stylesheet">
-    <link href="/css/theme.min.css?1771161238" rel="stylesheet">
-    <link href="/css/format-html.min.css?1771161238" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771168232" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771168232" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771168232" rel="stylesheet">
+    <link href="/css/theme.min.css?1771168232" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771168232" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -190,8 +190,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>The functionality is based on three relational tables: <code>TB_USER</code>, <code>TB_EXCHANGES</code>, and <code>TB_EXCHANGE_API_KEYS</code>.</p>
-<p><a href="#R-image-21ae7d75f049c4d99047e07fe3edf210" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-21ae7d75f049c4d99047e07fe3edf210"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
+<p><a href="#R-image-307002d58f3caa490b11576c65cefe6b" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-307002d58f3caa490b11576c65cefe6b"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
 </li>
 <li>
 <p><code>TB_EXCHANGES</code> stores registered exchanges.</p>
@@ -753,7 +753,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">18. Securing API keys and secrets with Pydantic settings &#43; .env</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html">19. Observability for trading systems: logging, metrics, and tracing basics</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html">19. Observability for trading systems: logging, metrics, and tracing basics</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html">20. Designing resilient exchange adapters (rate limits, errors, retries)</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -779,8 +780,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1771161238" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771161238" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771168232" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771168232" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -792,7 +793,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771161238"></script>
-    <script src="/js/theme.min.js?1771161238" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771168232"></script>
+    <script src="/js/theme.min.js?1771168232" defer></script>
   </body>
 </html>

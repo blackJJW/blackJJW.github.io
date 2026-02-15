@@ -119,5 +119,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</guid>
       <description>Trading systems are noisy and time-sensitive. When something goes wrong—missed ticks, delayed jobs, failed API calls—you need answers fast. Observability is the safety net: logs for context, metrics for trends, and tracing for end-to-end visibility.&#xA;This post documents the baseline observability setup in this repo and how it maps to real production concerns.&#xA;1. Logging: structured, centralized, and consistent The backend uses Loguru as the primary logger, with a custom configurator to capture both Loguru logs and standard Python logging.</description>
     </item>
+    <item>
+      <title>20. Designing resilient exchange adapters (rate limits, errors, retries)</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html</guid>
+      <description>Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.&#xA;This post outlines the baseline approach in this project and the patterns I’m standardizing for exchange adapters.&#xA;1. The shape of an adapter in this project In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:</description>
+    </item>
   </channel>
 </rss>

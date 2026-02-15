@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.3">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.
+This post outlines the baseline approach in this project and the patterns I’m standardizing for exchange adapters.
+1. The shape of an adapter in this project In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="20. Designing resilient exchange adapters (rate limits, errors, retries) :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.
+This post outlines the baseline approach in this project and the patterns I’m standardizing for exchange adapters.
+1. The shape of an adapter in this project In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:">
+    <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="20. Designing resilient exchange adapters (rate limits, errors, retries) :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.
+This post outlines the baseline approach in this project and the patterns I’m standardizing for exchange adapters.
+1. The shape of an adapter in this project In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta property="article:tag" content="Trading">
+    <meta property="article:tag" content="Exchange">
+    <meta property="article:tag" content="Resilience">
+    <meta property="article:tag" content="Httpx">
+    <meta property="article:tag" content="Retries">
+    <meta property="article:tag" content="Rate-Limits">
+    <meta itemprop="name" content="20. Designing resilient exchange adapters (rate limits, errors, retries) :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.
+This post outlines the baseline approach in this project and the patterns I’m standardizing for exchange adapters.
+1. The shape of an adapter in this project In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:">
+    <meta itemprop="wordCount" content="459">
+    <meta itemprop="keywords" content="Trading,Exchange,Resilience,Httpx,Retries,Rate-Limits,Fastapi">
+    <title>20. Designing resilient exchange adapters (rate limits, errors, retries) :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771168232" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771168232" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771168232" rel="stylesheet">
+    <link href="/css/theme.min.css?1771168232" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771168232" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/designingrestclientexchangeadapters\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-the-shape-of-an-adapter-in-this-project">1. The shape of an adapter in this project</a></li>
+    <li><a href="#2-timeouts-and-connection-limits">2. Timeouts and connection limits</a></li>
+    <li><a href="#3-retry--backoff-for-transient-failures">3. Retry + backoff for transient failures</a></li>
+    <li><a href="#4-strict-payload-validation">4. Strict payload validation</a></li>
+    <li><a href="#5-rate-limits-what-exists-and-whats-next">5. Rate limits: what exists and what&rsquo;s next</a></li>
+    <li><a href="#6-error-handling-that-doesnt-leak-upstream-chaos">6. Error handling that doesn&rsquo;t leak upstream chaos</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">20. Designing resilient exchange adapters (rate limits, errors, retries)</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html" title="19. Observability for trading systems: logging, metrics, and tracing basics (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/index.html" title="Learning Notes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/exchange/index.html">Exchange</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
+    <li><a class="term-link" href="/tags/httpx/index.html">Httpx</a></li>
+    <li><a class="term-link" href="/tags/rate-limits/index.html">Rate-Limits</a></li>
+    <li><a class="term-link" href="/tags/resilience/index.html">Resilience</a></li>
+    <li><a class="term-link" href="/tags/retries/index.html">Retries</a></li>
+    <li><a class="term-link" href="/tags/trading/index.html">Trading</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="20-designing-resilient-exchange-adapters-rate-limits-errors-retries">20. Designing resilient exchange adapters (rate limits, errors, retries)</h1>
+
+<p>Exchange APIs are noisy and unpredictable. A REST client adapter has to survive timeouts, bursty traffic, bad payloads, and temporary upstream failures without corrupting data or overwhelming the system.</p>
+<p>This post outlines the baseline approach in this project and the patterns I&rsquo;m standardizing for exchange adapters.</p>
+<h2 id="1-the-shape-of-an-adapter-in-this-project">1. The shape of an adapter in this project</h2>
+<hr>
+<p>In this backend, exchange data is fetched via a Go worker, and the FastAPI service acts as a gateway and ingestor:</p>
+<p><code>FastAPI router</code> -&gt; <code>fetch_go_worker_json</code> -&gt; <code>service ingestion</code> -&gt; <code>DB</code></p>
+<p>That means resilience is split into two layers:</p>
+<ul>
+<li>HTTP client behavior (timeouts, retries, connection limits)</li>
+<li>Service ingestion (validation, idempotent writes, error mapping)</li>
+</ul>
+<h2 id="2-timeouts-and-connection-limits">2. Timeouts and connection limits</h2>
+<hr>
+<p>The HTTP client is centralized so every adapter call shares the same defaults:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/infra/http_client.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DEFAULT_TIMEOUT <span style="color:#f92672">=</span> httpx<span style="color:#f92672">.</span>Timeout(connect<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, read<span style="color:#f92672">=</span><span style="color:#ae81ff">5.0</span>, write<span style="color:#f92672">=</span><span style="color:#ae81ff">3.0</span>, pool<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>)
+</span></span><span style="display:flex;"><span>DEFAULT_LIMITS <span style="color:#f92672">=</span> httpx<span style="color:#f92672">.</span>Limits(max_connections<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, max_keepalive_connections<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)</span></span></code></pre></div>
+<p>This protects the service from slow upstreams while keeping overall concurrency predictable.</p>
+<h2 id="3-retry--backoff-for-transient-failures">3. Retry + backoff for transient failures</h2>
+<hr>
+<p>The helper used by adapters includes retries with exponential backoff:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/utils/go_worker.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_go_worker_json</span>(<span style="color:#f92672">...</span>, retries<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, backoff<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> attempt <span style="color:#f92672">in</span> range(retries <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            resp <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> client<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> httpx<span style="color:#f92672">.</span>HTTPError:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> attempt <span style="color:#f92672">&lt;</span> retries:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(backoff <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>attempt))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">502</span>, <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">500</span> <span style="color:#f92672">&lt;=</span> resp<span style="color:#f92672">.</span>status_code <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">600</span> <span style="color:#f92672">and</span> attempt <span style="color:#f92672">&lt;</span> retries:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(backoff <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>attempt))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span></span></span></code></pre></div>
+<p>Rules:</p>
+<ul>
+<li>Retry only on network errors or upstream 5xx responses.</li>
+<li>Don&rsquo;t retry on most 4xx (bad request, auth failures).</li>
+<li>Treat rate limits(e.g., 429) as a separate policy (respect <code>Retry-After</code> or apply a capped backoff).</li>
+<li>Always bubble up a meaningful HTTP error to the caller.</li>
+</ul>
+<h2 id="4-strict-payload-validation">4. Strict payload validation</h2>
+<hr>
+<p>Even if a request succeeds, the payload can still be malformed. This helper enforces basic shape checks:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> expected <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> isinstance(payload, expected):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">502</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unexpected payload shape&#34;</span>)</span></span></code></pre></div>
+<p>Then the service layer re-validates and normalizes the payload before inserting it into the database.</p>
+<p>This protects the DB from poisoned data, which matters for trade and orderbook ingestion.</p>
+<h2 id="5-rate-limits-what-exists-and-whats-next">5. Rate limits: what exists and what&rsquo;s next</h2>
+<hr>
+<p>Rate limiting is mostly handled upstream (the Go worker). On the FastAPI side, I already have:</p>
+<ul>
+<li>a shared HTTP client</li>
+<li>conservative timeouts</li>
+<li>retry backoff</li>
+</ul>
+<p>Planned additions for stronger rate limit protection:</p>
+<ul>
+<li>per-exchange throttles (e.g., a token bucket per API key)</li>
+<li>adaptive backoff when receiving 429 (respect <code>Retry-After</code> when available)</li>
+<li>cache + de-duplication for high-frequency endpoints (orderbooks, trades)</li>
+</ul>
+<h2 id="6-error-handling-that-doesnt-leak-upstream-chaos">6. Error handling that doesn&rsquo;t leak upstream chaos</h2>
+<hr>
+<p>The adapter layer converts upstream failures into explicit, consistent HTTP errors:</p>
+<ul>
+<li><code>502 Bad Gateway</code> for upstream connectivity failures, timeouts, invalid JSON, or unexpected payload shapes</li>
+<li>Selected upstream status codes are preserved when they carry meaning (e.g., <code>401/403</code> for auth, <code>429</code> for rate limits); otherwise, errors are normalized to <code>502/503</code></li>
+</ul>
+<p>This keeps downstream services predictable and prevents transient upstream issues from turning into silent data corruption.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Backend - Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">18. Securing API keys and secrets with Pydantic settings &#43; .env</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html">19. Observability for trading systems: logging, metrics, and tracing basics</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html">20. Designing resilient exchange adapters (rate limits, errors, retries)</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/tensoropsminibatch/index.html"><a class="padding" href="/learning_notes/dl/tensoropsminibatch/index.html">2. Tensor Operation &amp; Minibatch</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/regressionandmse/index.html"><a class="padding" href="/learning_notes/dl/regressionandmse/index.html">3. Regression Analysis &amp; MSE Loss function</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1771168232" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771168232" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771168232"></script>
+    <script src="/js/theme.min.js?1771168232" defer></script>
+  </body>
+</html>
