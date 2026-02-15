@@ -79,6 +79,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/learning_notes/dl/index.html</loc>
   </url>
   <url>
@@ -137,6 +140,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/bash/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/caching/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/categories/index.html</loc>
@@ -289,6 +295,9 @@
     <loc>https://blackjjw.github.io/tags/makefile/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/market-data/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/metrics/index.html</loc>
   </url>
   <url>
@@ -331,7 +340,13 @@
     <loc>https://blackjjw.github.io/tags/perceptron/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/persistence/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/polling/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/postgres/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/postgresql/index.html</loc>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.3">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="Market data is high-volume and time-sensitive. In this project, I separate concerns:
+Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.
+1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:
+# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="22. Redis &#43; Postgres patterns for market data caching and persistence :: Black_JJW&#39;s Blog">
+    <meta name="twitter:description" content="Market data is high-volume and time-sensitive. In this project, I separate concerns:
+Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.
+1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:
+# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.">
+    <meta property="og:url" content="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html">
+    <meta property="og:site_name" content="Black_JJW&#39;s Blog">
+    <meta property="og:title" content="22. Redis &#43; Postgres patterns for market data caching and persistence :: Black_JJW&#39;s Blog">
+    <meta property="og:description" content="Market data is high-volume and time-sensitive. In this project, I separate concerns:
+Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.
+1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:
+# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Multi Crypto Trading Tool">
+    <meta property="article:tag" content="Redis">
+    <meta property="article:tag" content="Postgres">
+    <meta property="article:tag" content="Caching">
+    <meta property="article:tag" content="Persistence">
+    <meta property="article:tag" content="Market-Data">
+    <meta property="article:tag" content="Fastapi">
+    <meta itemprop="name" content="22. Redis &#43; Postgres patterns for market data caching and persistence :: Black_JJW&#39;s Blog">
+    <meta itemprop="description" content="Market data is high-volume and time-sensitive. In this project, I separate concerns:
+Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.
+1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:
+# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.">
+    <meta itemprop="wordCount" content="288">
+    <meta itemprop="keywords" content="Redis,Postgres,Caching,Persistence,Market-Data,Fastapi">
+    <title>22. Redis &#43; Postgres patterns for market data caching and persistence :: Black_JJW&#39;s Blog</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771176061" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771176061" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771176061" rel="stylesheet">
+    <link href="/css/theme.min.css?1771176061" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771176061" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/multi-crypto-trading-tool\/dev-logs\/redispostgrespatterns\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/blackjjw.github.io';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4952910624804435"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="mobile-support html" data-url="/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-caching-redis-for-hot-paths">1. Caching: Redis for hot paths</a></li>
+    <li><a href="#2-persistence-postgres-for-trades-and-orderbooks">2. Persistence: Postgres for trades and orderbooks</a></li>
+    <li><a href="#3-orderbook-snapshots-idempotency--compact-storage">3. Orderbook snapshots: idempotency + compact storage</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to My Technical Blog</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/index.html"><span itemprop="name">Multi Crypto Trading Tool</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/multi-crypto-trading-tool/dev-logs/index.html"><span itemprop="name">Dev Logs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">22. Redis &#43; Postgres patterns for market data caching and persistence</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html" title="21. WebSockets vs polling for live price updates in crypto apps (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/index.html" title="Learning Notes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dev-log" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/caching/index.html">Caching</a></li>
+    <li><a class="term-link" href="/tags/fastapi/index.html">Fastapi</a></li>
+    <li><a class="term-link" href="/tags/market-data/index.html">Market-Data</a></li>
+    <li><a class="term-link" href="/tags/persistence/index.html">Persistence</a></li>
+    <li><a class="term-link" href="/tags/postgres/index.html">Postgres</a></li>
+    <li><a class="term-link" href="/tags/redis/index.html">Redis</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="22-redis--postgres-patterns-for-market-data-caching-and-persistence">22. Redis &#43; Postgres patterns for market data caching and persistence</h1>
+
+<p>Market data is high-volume and time-sensitive. In this project, I separate concerns:</p>
+<ul>
+<li><code>Redis</code>: short-lived, fast access (API key cache, hot lookups)</li>
+<li><code>Postgres</code>: durable storage for trades, orderbooks, and metadata</li>
+</ul>
+<p>This post documents the current patterns with concrete code from the repo.</p>
+<h2 id="1-caching-redis-for-hot-paths">1. Caching: Redis for hot paths</h2>
+<hr>
+<p>The internal worker endpoint caches exchange API keys so the worker doesn’t hit <code>Postgres</code> repeatedly:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/internal_api/coinone_worker_router.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@coinone_worker_router.get</span>(<span style="color:#e6db74">&#34;/api-keys/</span><span style="color:#e6db74">{user_id}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_api_keys</span>(user_id: str, db: AsyncSession <span style="color:#f92672">=</span> Depends(get_async_db)):
+</span></span><span style="display:flex;"><span>    redis_manager <span style="color:#f92672">=</span> RedisClientManager()
+</span></span><span style="display:flex;"><span>    cache_key <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;api_keys:</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    cached <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> redis_manager<span style="color:#f92672">.</span>get_api_keys(cache_key)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> cached:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Cache hit for user_id=</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cached
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Cache miss for user_id=</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">, fetching from DB&#34;</span>)
+</span></span><span style="display:flex;"><span>    keys <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> ExchangeAPIKeyService(db)<span style="color:#f92672">.</span>get_api_key_for_worker(<span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> redis_manager<span style="color:#f92672">.</span>set_api_keys(cache_key, keys, ttl<span style="color:#f92672">=</span>settings<span style="color:#f92672">.</span>REDIS_API_KEY_TTL)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> keys</span></span></code></pre></div>
+<p>That gives low-latency reads with a bounded TTL.</p>
+<p>The Redis cache service logs failures but doesn’t block the request.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/services/redis_cache_service.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_api_keys</span>(self, key: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>get(key)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Redis get_api_keys failed for key=</span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span></span></span></code></pre></div>
+<h2 id="2-persistence-postgres-for-trades-and-orderbooks">2. Persistence: Postgres for trades and orderbooks</h2>
+<hr>
+<p>Trades are stored in <code>Postgres</code> with a natural unique key for replay safety:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/models/trades.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>UniqueConstraint(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;exchange_id&#34;</span>, <span style="color:#e6db74">&#34;currency_pair_no&#34;</span>, <span style="color:#e6db74">&#34;trade_id&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uq_trade_unique&#34;</span>
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>The ingestion service uses a bulk upsert with <code>ON CONFLICT DO NOTHING</code>:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/services/trades_service.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>upsert_stmt <span style="color:#f92672">=</span> insert_stmt<span style="color:#f92672">.</span>on_conflict_do_nothing(
+</span></span><span style="display:flex;"><span>    index_elements<span style="color:#f92672">=</span>[
+</span></span><span style="display:flex;"><span>        Trades<span style="color:#f92672">.</span>exchange_id,
+</span></span><span style="display:flex;"><span>        Trades<span style="color:#f92672">.</span>currency_pair_no,
+</span></span><span style="display:flex;"><span>        Trades<span style="color:#f92672">.</span>trade_id,
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>returning(Trades<span style="color:#f92672">.</span>trade_id)</span></span></code></pre></div>
+<p>This means:</p>
+<ul>
+<li>Duplicates are skipped.</li>
+<li>Replays are safe.</li>
+<li>Inserts stay fast even under retries.</li>
+</ul>
+<h2 id="3-orderbook-snapshots-idempotency--compact-storage">3. Orderbook snapshots: idempotency + compact storage</h2>
+<hr>
+<p>Orderbook ingestion uses a two-table layout (snapshot header + price levels), and both inserts are replay-safe via <code>ON CONFLICT DO NOTHING</code>.</p>
+<p>Snapshot insert:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/services/orderbook_service.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pg_insert(OrderBookSnapshot)<span style="color:#f92672">.</span>on_conflict_do_nothing(
+</span></span><span style="display:flex;"><span>    index_elements<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;exchange_id&#34;</span>, <span style="color:#e6db74">&#34;currency_pair_no&#34;</span>, <span style="color:#e6db74">&#34;server_time_ms&#34;</span>, <span style="color:#e6db74">&#34;sequence_id&#34;</span>]
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>Level insert (unique within a snapshot):</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pg_insert(OrderBookLevel)<span style="color:#f92672">.</span>on_conflict_do_nothing(
+</span></span><span style="display:flex;"><span>    index_elements<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;snapshot_id&#34;</span>, <span style="color:#e6db74">&#34;side&#34;</span>, <span style="color:#e6db74">&#34;level_index&#34;</span>]
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>This design is replay-safe and keeps historical snapshots intact for analysis, while storing levels efficiently as rows instead of duplicating full snapshots per update.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Black_JJW&#39;s Blog</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/index.html"><input type="checkbox" id="R-section-1d2923c937a85fa6307547d9e5a64b19" aria-controls="R-subsections-1d2923c937a85fa6307547d9e5a64b19" checked><label for="R-section-1d2923c937a85fa6307547d9e5a64b19"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Multi Crypto Trading Tool</span></label><a class="padding" href="/multi-crypto-trading-tool/index.html">Multi Crypto Trading Tool</a><ul id="R-subsections-1d2923c937a85fa6307547d9e5a64b19" class="collapsible-menu">
+            <li class="parent " data-nav-id="/multi-crypto-trading-tool/dev-logs/index.html"><input type="checkbox" id="R-section-ca230d939671003830a28968d4eaed78" aria-controls="R-subsections-ca230d939671003830a28968d4eaed78" checked><label for="R-section-ca230d939671003830a28968d4eaed78"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Dev Logs</span></label><a class="padding" href="/multi-crypto-trading-tool/dev-logs/index.html">Dev Logs</a><ul id="R-subsections-ca230d939671003830a28968d4eaed78" class="collapsible-menu">
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/initializeproject/index.html">1. Project Initialization</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/startbackend/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/startbackend/index.html">2. Setting Up the Backend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loggerconfig/index.html">3. Logger Configuration</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/setconfig/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/setconfig/index.html">4. Set Configurations</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/databaseconnmng/index.html">5. Database Connection Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/login/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/login/index.html">6. Login</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/topbarmenu/index.html">7. Topbar Menu</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/loginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/loginlog/index.html">8. Login Log</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor1/index.html">9. Refactoring 1: Backend - Separate AuthService and Move Login API</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys1/index.html">10. Managing API Keys - Backend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/mngapikeys2/index.html">11. Managing API Keys - Frontend Implementation</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/refactor2/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/refactor2/index.html">12. Refactoring 2: Backend - Applying Async Database Management</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/frontendloginlog/index.html">13. Login Log - Frontend</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">18. Securing API keys and secrets with Pydantic settings &#43; .env</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html">19. Observability for trading systems: logging, metrics, and tracing basics</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/designingrestclientexchangeadapters/index.html">20. Designing resilient exchange adapters (rate limits, errors, retries)</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html">21. WebSockets vs polling for live price updates in crypto apps</a></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html">22. Redis &#43; Postgres patterns for market data caching and persistence</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
+            <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/tensoropsminibatch/index.html"><a class="padding" href="/learning_notes/dl/tensoropsminibatch/index.html">2. Tensor Operation &amp; Minibatch</a></li>
+            <li class="" data-nav-id="/learning_notes/dl/regressionandmse/index.html"><a class="padding" href="/learning_notes/dl/regressionandmse/index.html">3. Regression Analysis &amp; MSE Loss function</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/blackJJW"><a class="padding" href="https://github.com/blackJJW" rel="external" target="_blank"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+            <li class="" data-nav-id="/tags/"><a class="padding" href="/tags/"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1771176061" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771176061" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771176061"></script>
+    <script src="/js/theme.min.js?1771176061" defer></script>
+  </body>
+</html>

@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</guid>
       <description>In fact, I had been working on a similar project for some time. Although I tried to complete it, I eventually gave up because it was too complex and inefficient to move forward with. So I decided to restart the project from scratch.&#xA;1. Project Tech Stack Area Tech Backend Python(FastAPI), Redis, Redis Queue(RQ), PostgreSQL Frontend React + Vite Infra Docker, Docker Compose, .env, .yml 2. Backend Settings 2.1 backend.DockerFile This DockerFile installs backend system dependencies and Python packaging tool(uv) for the Python 3.12.11 environment.</description>
     </item>
+    <item>
+      <title>22. Redis &#43; Postgres patterns for market data caching and persistence</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html</guid>
+      <description>Market data is high-volume and time-sensitive. In this project, I separate concerns:&#xA;Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.&#xA;1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:&#xA;# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.</description>
+    </item>
   </channel>
 </rss>

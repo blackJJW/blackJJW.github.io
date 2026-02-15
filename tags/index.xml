@@ -134,6 +134,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Caching</title>
+      <link>https://blackjjw.github.io/tags/caching/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/caching/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Clean-Architecture</title>
       <link>https://blackjjw.github.io/tags/clean-architecture/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -477,6 +484,13 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Market-Data</title>
+      <link>https://blackjjw.github.io/tags/market-data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/market-data/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Metrics</title>
       <link>https://blackjjw.github.io/tags/metrics/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -575,10 +589,24 @@
       <description></description>
     </item>
     <item>
+      <title>Tag :: Persistence</title>
+      <link>https://blackjjw.github.io/tags/persistence/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/persistence/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Tag :: Polling</title>
       <link>https://blackjjw.github.io/tags/polling/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/tags/polling/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: Postgres</title>
+      <link>https://blackjjw.github.io/tags/postgres/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/tags/postgres/index.html</guid>
       <description></description>
     </item>
     <item>
