@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="As the backend moved to async services, I needed tests that were both fast and reliable. The goal was simple: validate service logic without spinning up an HTTP server or relying on external dependencies. This post documents the patterns that work well in this codebase: pytest-asyncio fixtures for async SQLAlchemy sessions and targeted mocks for service dependencies.
 1. Enable async tests with pytest-asyncio This repo uses pytest-asyncio in auto mode:">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="381">
     <meta itemprop="keywords" content="Fastapi,Pytest,Pytest-Asyncio,Testing,Async,Mocking,Sqlalchemy">
     <title>17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -126,7 +126,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html" title="16. Idempotency and Replay Safety for Trade Execution Endpoints (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/learning_notes/index.html" title="Learning Notes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html" title="Securing API keys and secrets with Pydantic settings + .env (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -163,14 +163,14 @@
 <h2 id="1-enable-async-tests-with-pytest-asyncio">1. Enable async tests with pytest-asyncio</h2>
 <hr>
 <p>This repo uses <code>pytest-asyncio</code> in auto mode:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># backend/pytest.ini</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># backend/pytest.ini</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">[pytest]</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">asyncio_mode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">auto</span></span></span></code></pre></div>
 <p>This enables async tests without extra boilerplate. You can use <code>@pytest.mark.asyncio</code> when needed, and async fixtures (e.g., <code>async_db_session</code>) run naturally.</p>
 <h2 id="2-async-db-fixture-real-schema-isolated-session">2. Async DB fixture (real schema, isolated session)</h2>
 <hr>
 <p>For integration-level service tests, I use a real async SQLAlchemy session and create the schema before running tests. The fixture lives in <code>backend/src/tests/conftest.py</code>:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">async_db_session</span>() <span style="color:#f92672">-&gt;</span> AsyncGenerator[AsyncSession, <span style="color:#66d9ef">None</span>]:
 </span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> create_async_engine(settings<span style="color:#f92672">.</span>async_db_url, echo<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, future<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>    async_session <span style="color:#f92672">=</span> async_sessionmaker(bind<span style="color:#f92672">=</span>engine, expire_on_commit<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
@@ -189,7 +189,7 @@
 <hr>
 <p>Some services depend on other services or external utilities. Instead of pulling those dependencies into the test, I mock them with <code>AsyncMock</code> so the test stays focused on the service logic.</p>
 <p>Example from <code>AuthService</code>:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/tests/services/test_auth_service.py</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/tests/services/test_auth_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> patch(<span style="color:#e6db74">&#34;services.auth_service.UserService&#34;</span>) <span style="color:#66d9ef">as</span> MockUserService, \
 </span></span><span style="display:flex;"><span>    patch(<span style="color:#e6db74">&#34;services.auth_service.UserLoginLogService&#34;</span>) <span style="color:#66d9ef">as</span> MockLoginLogService, \
@@ -208,7 +208,7 @@ The key idea is to <code>mock boundaries</code> (other services, crypto helpers,
 <h2 id="4-mocking-asyncsession-for-pure-unit-tests">4. Mocking <code>AsyncSession</code> for pure unit tests</h2>
 <hr>
 <p>For service methods that mostly build SQL statements and manage transactions, I use a mocked <code>AsyncSession</code>:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/tests/services/test_range_units_service.py</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># backend/src/tests/services/test_range_units_service.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mock_db</span>():
@@ -280,7 +280,8 @@ The key idea is to <code>mock boundaries</code> (other services, crypto helpers,
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -306,8 +307,8 @@ The key idea is to <code>mock boundaries</code> (other services, crypto helpers,
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -319,7 +320,7 @@ The key idea is to <code>mock boundaries</code> (other services, crypto helpers,
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

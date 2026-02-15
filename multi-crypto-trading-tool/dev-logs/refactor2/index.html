@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="This refactoring adopts asynchronous database management to avoid blocking caused by synchronous I/O.
 Previously, database access was implemented synchronously across services and endpoints, which could block under concurrent workloads. Because this program needs to perform multiple tasks simultaneously, I decided to switch to an async-first approach for database operations.
@@ -40,10 +40,10 @@ uv pip install asyncpg In config.py, I added the following property to build the
     <meta itemprop="wordCount" content="622">
     <meta itemprop="keywords" content="Fastapi,Asyncio,Asyncpg,Database,Dependency-Injection,Lifespan,Connection-Pooling,Refactoring,Sqlalchemy,Backend">
     <title>12. Refactoring 2: Backend - Applying Async Database Management :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -182,11 +182,11 @@ uv pip install asyncpg In config.py, I added the following property to build the
 <ul>
 <li>
 <p>To enable asynchronous PostgreSQL support, install <code>asyncpg</code>:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv pip install asyncpg</span></span></code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv pip install asyncpg</span></span></code></pre></div>
 </li>
 <li>
 <p>In <strong>config.py</strong>, I added the following property to build the async SQLAlchemy URL for PostgreSQL:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
@@ -204,7 +204,7 @@ uv pip install asyncpg In config.py, I added the following property to build the
 </li>
 <li>
 <p>I implemented this class by referencing the sync database class.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> MetaData
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.asyncio <span style="color:#f92672">import</span> create_async_engine, async_sessionmaker, AsyncSession
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> declarative_base
@@ -276,7 +276,7 @@ Creates a factory for <code>AsyncSession</code>.
 <ul>
 <li>
 <p>This method is responsible for initializing the async database.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> AsyncDatabase
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> AsyncDatabase
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> text
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
@@ -299,7 +299,7 @@ Creates a factory for <code>AsyncSession</code>.
 </li>
 <li>
 <p>To run this at startup, I added it to the FastAPI lifespan context manager.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@asynccontextmanager</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lifespan</span>(app: FastAPI):
@@ -319,7 +319,7 @@ Creates a factory for <code>AsyncSession</code>.
 </li>
 <li>
 <p>To make the async database session easy to use.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database, AsyncDatabase
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database, AsyncDatabase
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.asyncio <span style="color:#f92672">import</span> AsyncSession
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Generator, AsyncGenerator
@@ -340,7 +340,7 @@ Creates a factory for <code>AsyncSession</code>.
 <ul>
 <li>
 <p>Before</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthService</span>:
@@ -350,7 +350,7 @@ Creates a factory for <code>AsyncSession</code>.
 </li>
 <li>
 <p>After</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.asyncio <span style="color:#f92672">import</span> AsyncSession
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.asyncio <span style="color:#f92672">import</span> AsyncSession
 </span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthService</span>:
@@ -363,7 +363,7 @@ Creates a factory for <code>AsyncSession</code>.
 <ul>
 <li>
 <p>Before</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@auth_router.post</span>(<span style="color:#e6db74">&#34;/login&#34;</span>, response_model<span style="color:#f92672">=</span>LoginResponse, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;User Login&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(request: Request, body: LoginRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
@@ -372,7 +372,7 @@ Creates a factory for <code>AsyncSession</code>.
 </li>
 <li>
 <p>After</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@auth_router.post</span>(<span style="color:#e6db74">&#34;/login&#34;</span>, response_model<span style="color:#f92672">=</span>LoginResponse, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;User Login&#34;</span>)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@auth_router.post</span>(<span style="color:#e6db74">&#34;/login&#34;</span>, response_model<span style="color:#f92672">=</span>LoginResponse, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;User Login&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(request: Request, body: LoginRequest, db: AsyncSession <span style="color:#f92672">=</span> Depends(get_async_db)):</span></span></code></pre></div>
 </li>
 </ul>
@@ -433,7 +433,8 @@ Creates a factory for <code>AsyncSession</code>.
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -459,8 +460,8 @@ Creates a factory for <code>AsyncSession</code>.
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -472,7 +473,7 @@ Creates a factory for <code>AsyncSession</code>.
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

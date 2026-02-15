@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I implemented the login log functionality. Since this is a single-user application, logging each login might seem unnecessary at first. However, I decided to build this feature to enhance security and maintain visibility over all login activities. Recording login attempts allows me to track unauthorized access or unexpected behavior in the system.
 1. The design of the login log function 1.1 Diagram The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="988">
     <meta itemprop="keywords" content="Fastapi,Sqlalchemy,Backend,User-Authentication,Login-Log,Security,Postgresql,Enum,Erd,Database-Logging,System-Design,Python">
     <title>8. Login Log :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -182,16 +182,16 @@
 <ul>
 <li>
 <p>The diagram below illustrates the communication flow between the frontend, backend, and Database during a login process.</p>
-<p><a href="#R-image-b5fc9794b0bae65e88423369d3bea196" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b5fc9794b0bae65e88423369d3bea196"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
+<p><a href="#R-image-ae2ee8eba654092a5c59b780d8ffa5fb" class="lightbox-link"><img alt="login log diagram" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae2ee8eba654092a5c59b780d8ffa5fb"><img alt="login log diagram" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-1.png"></a></p>
 </li>
 </ul>
 <h3 id="12-erd">1.2 ERD</h3>
 <ul>
 <li>
 <p>The following ERD shows the relationship between the <code>TB_USER</code> and <code>TB_USER_LOGIN_LOG</code> tables.</p>
-<p><a href="#R-image-2374531e4e10a54dd3c5631b504d9504" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2374531e4e10a54dd3c5631b504d9504"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
+<p><a href="#R-image-24fff0ba67773737eb5b0656609ec262" class="lightbox-link"><img alt="login log erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-24fff0ba67773737eb5b0656609ec262"><img alt="login log erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-2.png"></a></p>
 </li>
 <li>
 <p>The <code>TB_USER_LOGIN_LOG</code> table records metadata for every login attempt.</p>
@@ -211,7 +211,7 @@
 <ul>
 <li>
 <p>To persist the user login logs in the database, I defined the following SQLAlchemy model:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, Boolean, DateTime, ForeignKey
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, Boolean, DateTime, ForeignKey
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.sql <span style="color:#f92672">import</span> func
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> relationship
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
@@ -247,14 +247,14 @@
 <ul>
 <li>
 <p>To maintain consistency in log data, I defined several enums Python&rsquo;s enum module:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> enum <span style="color:#f92672">import</span> Enum</span></span></code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> enum <span style="color:#f92672">import</span> Enum</span></span></code></pre></div>
 </li>
 </ul>
 <h4 id="221-device-type">2.2.1 Device Type</h4>
 <ul>
 <li>
 <p>Device type extracted from the User-Agent</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeviceType</span>(str, Enum):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeviceType</span>(str, Enum):
 </span></span><span style="display:flex;"><span>    PC <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PC&#34;</span>
 </span></span><span style="display:flex;"><span>    MOBILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MOBILE&#34;</span>
 </span></span><span style="display:flex;"><span>    TABLET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TABLET&#34;</span></span></span></code></pre></div>
@@ -264,7 +264,7 @@
 <ul>
 <li>
 <p>Operating system classification</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OS</span>(str, Enum):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OS</span>(str, Enum):
 </span></span><span style="display:flex;"><span>    WINDOWS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Windows&#34;</span>
 </span></span><span style="display:flex;"><span>    MACOS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;macOS&#34;</span>
 </span></span><span style="display:flex;"><span>    LINUX <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
@@ -276,7 +276,7 @@
 <ul>
 <li>
 <p>Reasons for login failure, used for auditing or user feedback</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginFailReason</span>(str, Enum):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginFailReason</span>(str, Enum):
 </span></span><span style="display:flex;"><span>    INVALID_CREDENTIALS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Invalid credentials&#34;</span>
 </span></span><span style="display:flex;"><span>    ACCOUNT_LOCKED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Account locked&#34;</span>
 </span></span><span style="display:flex;"><span>    ACCOUNT_DISABLED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Account disabled&#34;</span>
@@ -290,7 +290,7 @@
 <ul>
 <li>
 <p>Standardized error codes mapped to HTTP-like semantics</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ErrorCode</span>(str, Enum):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ErrorCode</span>(str, Enum):
 </span></span><span style="display:flex;"><span>    INVALID_REQUEST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E400&#34;</span>
 </span></span><span style="display:flex;"><span>    UNAUTHORIZED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E401&#34;</span>
 </span></span><span style="display:flex;"><span>    FORBIDDEN <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E403&#34;</span>
@@ -306,7 +306,7 @@
 </li>
 <li>
 <p>It is initialized with a SQLAlchemy database session(<code>Session</code>).</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, db: Session):
@@ -317,7 +317,7 @@
 <ul>
 <li>
 <p>A private method that extracts user login metadata from the request, including device type, OS, IP address, and login result.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> user_agents <span style="color:#f92672">import</span> parse <span style="color:#66d9ef">as</span> parse_user_agent
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> user_agents <span style="color:#f92672">import</span> parse <span style="color:#66d9ef">as</span> parse_user_agent
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> Request
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> DeviceType, OS, LoginFailReason, ErrorCode
 </span></span><span style="display:flex;"><span>
@@ -377,7 +377,7 @@
 </li>
 <li>
 <p>This is an example of the return from this method:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Returns:</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Returns:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># {</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;user_no&#34;: 10001,</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;user_agent&#34;: &#34;Mozilla/5.0 ...&#34;,</span>
@@ -397,7 +397,7 @@
 </li>
 <li>
 <p>It uses <code>_extract_log_data()</code> to parse metadata from the request and wraps the DB transaction with proper error handling.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> UserLoginLog
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
@@ -441,7 +441,7 @@
 </li>
 <li>
 <p>It ensures that a valid <code>user_no</code> is present before logging to avoid null foreign key issues.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLoginLogService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
@@ -473,7 +473,7 @@
 <ul>
 <li>
 <p>This section shows how <code>UserLoginLogService</code> is integrated into the <code>UserService</code>.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span>:
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate_user</span>(self, user_id: str, user_pw: str) <span style="color:#f92672">-&gt;</span> User:
@@ -511,8 +511,8 @@
 </li>
 <li>
 <p>It demonstrates how metadata is captured for each login attempt, including success/failure, user agent, OS, and IP address.</p>
-<p><a href="#R-image-f81dd00733b07d7ecdb012076b7897e5" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f81dd00733b07d7ecdb012076b7897e5"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
+<p><a href="#R-image-46900985caa4e1af50185db1d3cca2db" class="lightbox-link"><img alt="login log result" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/8-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46900985caa4e1af50185db1d3cca2db"><img alt="login log result" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/8-3.png"></a></p>
 </li>
 <li>
 <p>This log format helps monitor both successful and failed login attempts, enabling anamoly detection and auditing.</p>
@@ -575,7 +575,8 @@
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -601,8 +602,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -614,7 +615,7 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

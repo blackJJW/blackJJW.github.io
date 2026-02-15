@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I configured SQLAlchemy for managing database connections and sessions in a reusable and scalable way.
 1. Purposes of this Management Use SQLAlchemy for ORM-based database interaction Create a reusable engine and session maker Why SQLAlchemy? I chose SQLAlchemy because it is one of the most powerful and flexible ORM libraries in Python. It allows me to:
@@ -36,10 +36,10 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
     <meta itemprop="wordCount" content="279">
     <meta itemprop="keywords" content="Fastapi,Sqlalchemy,Database,Session,Orm,Configuration,System-Design">
     <title>5. Database Connection Management :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -187,7 +187,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 <ul>
 <li>
 <p>The <code>Database</code> class is responsible for initializing the SQLAlchemy engine, createing a session factory, and exposing a centralized declarative base for defining ORM models.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.declarative <span style="color:#f92672">import</span> declarative_base
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> sessionmaker
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .config <span style="color:#f92672">import</span> settings
@@ -225,12 +225,12 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 <ul>
 <li>
 <p>To create a new session inside a service or route handler, simply do:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>db <span style="color:#f92672">=</span> Database()
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>db <span style="color:#f92672">=</span> Database()
 </span></span><span style="display:flex;"><span>session <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>get_session()</span></span></code></pre></div>
 </li>
 <li>
 <p>The <code>Base</code> attribute is exposed via <code>get_base()</code> so that model classes can inherit from a centralized declarative base:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Base <span style="color:#f92672">=</span> Database<span style="color:#f92672">.</span>get_base()
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Base <span style="color:#f92672">=</span> Database<span style="color:#f92672">.</span>get_base()
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(Base):</span></span></code></pre></div>
 </li>
@@ -292,7 +292,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -318,8 +319,8 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -331,7 +332,7 @@ Interact with the database using Python classes instead of raw SQL Write reusabl
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

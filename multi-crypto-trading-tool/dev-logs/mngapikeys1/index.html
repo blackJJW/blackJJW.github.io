@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="Managing API Keys from multiple exchanges requires both exchange metadata management and secure key storage. In this post, I describe the database schema and service logic used to support this.
 1. The Design of the API Key Management System 1.1 ERD The functionality is based on three relational tables: TB_USER, TB_EXCHANGES, and TB_EXCHANGE_API_KEYS.
@@ -40,10 +40,10 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
     <meta itemprop="wordCount" content="1421">
     <meta itemprop="keywords" content="Backend,Fastapi,Sqlalchemy,Postgresql,Api-Key-Management,Secure-Storage,Encryption,Aes-Gcm,Pydantic,System-Design,Erd">
     <title>10. Managing API Keys - Backend Implementation :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -190,8 +190,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>The functionality is based on three relational tables: <code>TB_USER</code>, <code>TB_EXCHANGES</code>, and <code>TB_EXCHANGE_API_KEYS</code>.</p>
-<p><a href="#R-image-8e4531d3e26993032068b15f7695508a" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8e4531d3e26993032068b15f7695508a"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
+<p><a href="#R-image-06315a6ab71baf57d5e3f7e1145036e5" class="lightbox-link"><img alt="apiKey erd" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/10-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-06315a6ab71baf57d5e3f7e1145036e5"><img alt="apiKey erd" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/10-1.png"></a></p>
 </li>
 <li>
 <p><code>TB_EXCHANGES</code> stores registered exchanges.</p>
@@ -226,7 +226,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <hr>
 <h3 id="21-db-models">2.1 DB Models</h3>
 <h4 id="211-exchanges-model">2.1.1 Exchanges Model</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.schema <span style="color:#f92672">import</span> Sequence
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
 </span></span><span style="display:flex;"><span>
@@ -246,7 +246,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <li><strong>exchange_no_seq</strong> ensures a custom sequence starting from 101 for exchange_id.</li>
 </ul>
 <h4 id="212-exchangeapikeys">2.1.2 ExchangeAPIKeys</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, Boolean, ForeignKey, UniqueConstraint, DateTime
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, Boolean, ForeignKey, UniqueConstraint, DateTime
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.dialects.postgresql <span style="color:#f92672">import</span> JSONB
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.sql <span style="color:#f92672">import</span> func
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> Database
@@ -277,7 +277,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>The following function inserts the default exchange (Coinone) into the database if it doesn&rsquo;t exist:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize_default_exchange</span>(session):
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize_default_exchange</span>(session):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
 </span></span><span style="display:flex;"><span>        existing_exchange <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>query(Exchanges)<span style="color:#f92672">.</span>filter_by(exchange_id<span style="color:#f92672">=</span><span style="color:#ae81ff">101</span>)<span style="color:#f92672">.</span>first()
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> existing_exchange:
@@ -308,7 +308,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>The <code>__init__</code> method initializes the DB session for service use.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Service class for exchanges-related operations.&#34;&#34;&#34;</span>
@@ -324,7 +324,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </li>
 <li>
 <p>Handles duplicate insert attempts via IntegrityError</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.exc <span style="color:#f92672">import</span> IntegrityError
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> Exchanges
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
@@ -360,7 +360,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>Fetches all registered exchanges from the table, orderd by exchange_id.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> Exchanges
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
 </span></span><span style="display:flex;"><span>
@@ -394,7 +394,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </li>
 <li>
 <p>The encrytion key is loaded from an <code>.env</code> variable and decoded using <code>base64</code>.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> settings
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangeAPIKeyService</span>:
@@ -404,11 +404,11 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </li>
 <li>
 <p>Example <code>.env</code> configuration:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>SYMMETRIC_KEY<span style="color:#f92672">={</span>your_base64_encoded_key<span style="color:#f92672">}</span></span></span></code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>SYMMETRIC_KEY<span style="color:#f92672">={</span>your_base64_encoded_key<span style="color:#f92672">}</span></span></span></code></pre></div>
 </li>
 <li>
 <p><code>Settings</code> accessor for decoded byte key:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Settings</span>(BaseSettings):
@@ -422,7 +422,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </li>
 </ul>
 <h4 id="242-aes-gcm-encryptiondecryption">2.4.2 AES-GCM Encryption/Decryption</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> AES
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> AES
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_data</span>(plain_text: str, key: bytes) <span style="color:#f92672">-&gt;</span> dict:
@@ -451,7 +451,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>Validates inputs, checks for duplicates, encrypts the keys, and stores them securely.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> ExchangeAPIKeys
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> encrypt_data, decrypt_data, settings
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
@@ -499,7 +499,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>Returns decrypted and masked API keys for frontend display (e.g., abcd****efgh).</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> models <span style="color:#f92672">import</span> ExchangeAPIKeys, Exchanges
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> core <span style="color:#f92672">import</span> encrypt_data, decrypt_data, settings
@@ -546,7 +546,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </ul>
 <h3 id="25-dtos">2.5 DTOs</h3>
 <h4 id="251-exchanges-dto">2.5.1 Exchanges DTO</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExchangesRequest</span>(BaseModel):
 </span></span><span style="display:flex;"><span>    exchange_name: str
@@ -559,7 +559,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;from_attributes&#34;</span>: <span style="color:#66d9ef">True</span>
 </span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
 <h4 id="252-exchange-api-key-dto">2.5.2 Exchange API Key DTO</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Optional
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
 </span></span><span style="display:flex;"><span>
@@ -586,7 +586,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>This router is for the Settings menu of the frontend. For this, I set this router&rsquo;s prefix like this.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> APIRouter, Depends, HTTPException, status
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> APIRouter, Depends, HTTPException, status
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> service <span style="color:#f92672">import</span> ExchangesService, ExchangeAPIKeyService, get_db
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> loguru <span style="color:#f92672">import</span> logger
@@ -600,7 +600,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>This endpoint sends response with an exchange list.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>settings_router <span style="color:#f92672">=</span> APIRouter(prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/api/settings&#34;</span>, tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;settings&#34;</span>])
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>settings_router <span style="color:#f92672">=</span> APIRouter(prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/api/settings&#34;</span>, tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;settings&#34;</span>])
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.get</span>(<span style="color:#e6db74">&#34;/exchanges&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangesResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;All Registered Exchanges&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_all_exchanges</span>(db: Session <span style="color:#f92672">=</span> Depends(get_db)):
@@ -623,7 +623,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>This endpoint is for registering a new exchange.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchanges&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangesResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register New Exchange&#34;</span>)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchanges&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangesResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register New Exchange&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_exchange</span>(body: ExchangesRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
 </span></span><span style="display:flex;"><span>    exchange_name <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>exchange_name
 </span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Creating new exchange: </span><span style="color:#e6db74">{</span>exchange_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
@@ -653,7 +653,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>This endpoint is for registering a exchange API key.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register Exchange API Key&#34;</span>)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.post</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Register Exchange API Key&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">register_exchange_api_key</span>(body: ExchangeAPIKeyRequest, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
 </span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Registering exchange API key for user_no=</span><span style="color:#e6db74">{</span>body<span style="color:#f92672">.</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">, exchange_id=</span><span style="color:#e6db74">{</span>body<span style="color:#f92672">.</span>exchange_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
@@ -678,7 +678,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <ul>
 <li>
 <p>This endpoint returns masked api key list.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.get</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangeAPIKeyMaskedResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Get Masked API Key List&#34;</span>)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@settings_router.get</span>(<span style="color:#e6db74">&#34;/exchange-api-key&#34;</span>, response_model<span style="color:#f92672">=</span>List[ExchangeAPIKeyMaskedResponse], summary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Get Masked API Key List&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_masked_api_keys</span>(user_no: int, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
 </span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Retrieving masked API keys for user_no=</span><span style="color:#e6db74">{</span>user_no<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
@@ -751,7 +751,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -777,8 +778,8 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -790,7 +791,7 @@ exchange_id: Unique exchange identifier exchange_name: Name of the exchange TB_E
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.155.3">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="In this section, I’ll explain how I implemented the topbar menu. I implemented this menu to test and operate various functions between backend and the worker services.
 1. The design of the Topbar Menu To keep things simple, I used react-bootstrap for the UI components, as I’m not currently focused on visual design. I’ll improve the visual styling in a future version after completing version 1 of this project. The topbar includes a set of menu items and a logout button. 1.1 Topbar Menu Structure To visualize the layout, I created a simple diagram of the topbar menu.">
@@ -32,10 +32,10 @@
     <meta itemprop="wordCount" content="570">
     <meta itemprop="keywords" content="React,React-Bootstrap,Tsx,Component,Navigation,Layout,Access-Control,Auth,Conditional-Rendering,Frontend,Ui">
     <title>7. Topbar Menu :: Black_JJW&#39;s Blog</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769702373" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769702373" rel="stylesheet">
-    <link href="/css/theme.min.css?1769702373" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769702373" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771156765" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771156765" rel="stylesheet">
+    <link href="/css/theme.min.css?1771156765" rel="stylesheet">
+    <link href="/css/format-html.min.css?1771156765" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -183,8 +183,8 @@
 <ul>
 <li>
 <p>To visualize the layout, I created a simple diagram of the topbar menu.</p>
-<p><a href="#R-image-9c11b4f2ca1b07bd995b87326999a9a4" class="lightbox-link"><img alt="topbar menu" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c11b4f2ca1b07bd995b87326999a9a4"><img alt="topbar menu" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-1.png"></a></p>
+<p><a href="#R-image-1e3b33f25157ce23e52eea04243f4cc4" class="lightbox-link"><img alt="topbar menu" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1e3b33f25157ce23e52eea04243f4cc4"><img alt="topbar menu" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-1.png"></a></p>
 </li>
 </ul>
 <p>As shown above, the topbar menu consists of three sections:</p>
@@ -207,7 +207,7 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 <ul>
 <li>
 <p>This is the topbar component. I created this file in the &lsquo;/src/components&rsquo; directory.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Navbar</span>, <span style="color:#a6e22e">Nav</span>, <span style="color:#a6e22e">Container</span>, <span style="color:#a6e22e">Button</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react-bootstrap&#39;</span>;
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Navbar</span>, <span style="color:#a6e22e">Nav</span>, <span style="color:#a6e22e">Container</span>, <span style="color:#a6e22e">Button</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react-bootstrap&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useNavigate</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react-router&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./Topbar.module.css&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
@@ -274,7 +274,7 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 <ul>
 <li>
 <p>This is the CSS module for styling the Topbar.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">navbar-top</span> {
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">navbar-top</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
@@ -293,7 +293,7 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 <ul>
 <li>
 <p>To apply this topbar menu across all pages, I modified <code>App.tsx</code> to conditionally render it depending on the current route.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span>...
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Topbar</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@/components/Topbar&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useLocation</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react-router&#39;</span>
 </span></span><span style="display:flex;"><span>...
@@ -322,8 +322,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 </ul>
 <h2 id="3-result">3. Result</h2>
 <hr>
-<p><a href="#R-image-2635dfb50b9366d825eccee0c288dd52" class="lightbox-link"><img alt="topbar demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-2.gif" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2635dfb50b9366d825eccee0c288dd52"><img alt="topbar demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-2.gif"></a></p>
+<p><a href="#R-image-84fce2afcf14cba51aa32a831fe28da6" class="lightbox-link"><img alt="topbar demo" class="lazy lightbox figure-image" loading="lazy" src="/images/projects/mcttool/7-2.gif" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-84fce2afcf14cba51aa32a831fe28da6"><img alt="topbar demo" class="lazy lightbox lightbox-image" loading="lazy" src="/images/projects/mcttool/7-2.gif"></a></p>
 
   <footer class="footline">
   </footer>
@@ -381,7 +381,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/makefilesetup/index.html">14. Makefile Setup</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/fastapservicearch/index.html">15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns</a></li>
             <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/idempotencyreplaysafety/index.html">16. Idempotency and Replay Safety for Trade Execution Endpoints</a></li>
-            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/testingasyncfastapi/index.html">17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks</a></li>
+            <li class="" data-nav-id="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html"><a class="padding" href="/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html">Securing API keys and secrets with Pydantic settings &#43; .env</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/learning_notes/index.html"><input type="checkbox" id="R-section-466355fc977d43e1f616c92c62d39562" aria-controls="R-subsections-466355fc977d43e1f616c92c62d39562"><label for="R-section-466355fc977d43e1f616c92c62d39562"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Learning Notes</span></label><a class="padding" href="/learning_notes/index.html">Learning Notes</a><ul id="R-subsections-466355fc977d43e1f616c92c62d39562" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/index.html"><input type="checkbox" id="R-section-cd8fb731aaeb4bb24258872129b02ab4" aria-controls="R-subsections-cd8fb731aaeb4bb24258872129b02ab4"><label for="R-section-cd8fb731aaeb4bb24258872129b02ab4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Deep Learning</span></label><a class="padding" href="/learning_notes/dl/index.html">Deep Learning</a><ul id="R-subsections-cd8fb731aaeb4bb24258872129b02ab4" class="collapsible-menu">
             <li class="" data-nav-id="/learning_notes/dl/slp/index.html"><a class="padding" href="/learning_notes/dl/slp/index.html">1. Single-Layer Perceptron</a></li>
@@ -407,8 +408,8 @@ Clicking this section redirects the user to the dashboard page, which acts as th
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1769702373" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769702373" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1771156765" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771156765" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -420,7 +421,7 @@ Clicking this section redirects the user to the dashboard page, which acts as th
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769702373"></script>
-    <script src="/js/theme.min.js?1769702373" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771156765"></script>
+    <script src="/js/theme.min.js?1771156765" defer></script>
   </body>
 </html>

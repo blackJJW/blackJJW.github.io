@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/setconfig/index.html</guid>
       <description>I used a .env file to store configuration values. To load them into the application, I’m using BaseSettings from the pydantic_settings package.&#xA;Here’s an sample .env file used to configure the PostgreSQL database connection:&#xA;POSTGRES_HOST=localhost POSTGRES_PORT=5432 POSTGRES_USER=myuser POSTGRES_PASSWORD=secret POSTGRES_DB=cryptobot 1. Settings pydantic_settings.BaseSettings is an extended version of Pydantic’s model designed for managing environment variables.&#xA;It’s commonly used in Python backend frameworks like FastAPI to load and validate environment variables.</description>
     </item>
+    <item>
+      <title>Securing API keys and secrets with Pydantic settings &#43; .env</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</guid>
+      <description>Secrets are easy to leak when the project grows. In this backend, I keep configuration and credentials centralized in a Pydantic Settings class and load them from .env. API keys are encrypted at rest, and JWT secrets never live in code.&#xA;This post documents the exact pattern used in this repo.&#xA;1. Centralized config with Pydantic settings All secrets are defined once in Settings and imported through a single settings instance:</description>
+    </item>
   </channel>
 </rss>

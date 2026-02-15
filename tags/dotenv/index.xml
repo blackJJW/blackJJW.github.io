@@ -14,5 +14,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/initializeproject/index.html</guid>
       <description>In fact, I had been working on a similar project for some time. Although I tried to complete it, I eventually gave up because it was too complex and inefficient to move forward with. So I decided to restart the project from scratch.&#xA;1. Project Tech Stack Area Tech Backend Python(FastAPI), Redis, Redis Queue(RQ), PostgreSQL Frontend React + Vite Infra Docker, Docker Compose, .env, .yml 2. Backend Settings 2.1 backend.DockerFile This DockerFile installs backend system dependencies and Python packaging tool(uv) for the Python 3.12.11 environment.</description>
     </item>
+    <item>
+      <title>Securing API keys and secrets with Pydantic settings &#43; .env</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</guid>
+      <description>Secrets are easy to leak when the project grows. In this backend, I keep configuration and credentials centralized in a Pydantic Settings class and load them from .env. API keys are encrypted at rest, and JWT secrets never live in code.&#xA;This post documents the exact pattern used in this repo.&#xA;1. Centralized config with Pydantic settings All secrets are defined once in Settings and imported through a single settings instance:</description>
+    </item>
   </channel>
 </rss>
