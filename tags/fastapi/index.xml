@@ -106,7 +106,7 @@
       <description>As the backend moved to async services, I needed tests that were both fast and reliable. The goal was simple: validate service logic without spinning up an HTTP server or relying on external dependencies. This post documents the patterns that work well in this codebase: pytest-asyncio fixtures for async SQLAlchemy sessions and targeted mocks for service dependencies.&#xA;1. Enable async tests with pytest-asyncio This repo uses pytest-asyncio in auto mode:</description>
     </item>
     <item>
-      <title>Securing API keys and secrets with Pydantic settings &#43; .env</title>
+      <title>18. Securing API keys and secrets with Pydantic settings &#43; .env</title>
       <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</guid>
