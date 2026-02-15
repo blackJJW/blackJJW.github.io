@@ -70,6 +70,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/learning_notes/dl/index.html</loc>
   </url>
   <url>
@@ -217,6 +220,9 @@
     <loc>https://blackjjw.github.io/tags/fullstack/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/grafana/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/idempotency/index.html</loc>
   </url>
   <url>
@@ -268,6 +274,9 @@
     <loc>https://blackjjw.github.io/tags/makefile/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/metrics/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/minibatch/index.html</loc>
   </url>
   <url>
@@ -295,6 +304,9 @@
     <loc>https://blackjjw.github.io/tags/npm/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/tags/observability/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/tags/orm/index.html</loc>
   </url>
   <url>
@@ -308,6 +320,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/project-initialization/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/prometheus/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/pydantic/index.html</loc>
@@ -398,6 +413,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/tooling/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/tracing/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/trading/index.html</loc>

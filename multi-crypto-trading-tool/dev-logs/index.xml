@@ -3,7 +3,7 @@
   <channel>
     <title>Dev Logs :: Black_JJW&#39;s Blog</title>
     <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.html</link>
-    <description>This section contains various development logs:&#xA;1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Backend - Separate AuthService and Move Login API 10. Managing API Keys - Backend Implementation 11. Managing API Keys - Frontend Implementation 12. Refactoring 2: Backend - Applying Async Database Management 13. Login Log - Frontend 14. Makefile Setup 15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns 16. Idempotency and Replay Safety for Trade Execution Endpoints 17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks 18. Securing API keys and secrets with Pydantic settings + .env</description>
+    <description>This section contains various development logs:&#xA;1. Project Initialization 2. Start Backend 3. Logger Configuration 4. Set Configuration 5. Database Connection Manager 6. Login Page Setup 7. Topbar Menu 8. Login Log 9. Refactoring 1: Backend - Separate AuthService and Move Login API 10. Managing API Keys - Backend Implementation 11. Managing API Keys - Frontend Implementation 12. Refactoring 2: Backend - Applying Async Database Management 13. Login Log - Frontend 14. Makefile Setup 15. FastAPI Service Architecture: Thin Routers, Service Layer, and DTO Patterns 16. Idempotency and Replay Safety for Trade Execution Endpoints 17. Testing Async Services in FastAPI: pytest‑asyncio Fixtures and Mocks 18. Securing API keys and secrets with Pydantic settings + .env 19. Observability for trading systems: logging, metrics, and tracing basics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/index.xml" rel="self" type="application/rss+xml" />
@@ -132,6 +132,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/securingapikeyandsecrets/index.html</guid>
       <description>Secrets are easy to leak when the project grows. In this backend, I keep configuration and credentials centralized in a Pydantic Settings class and load them from .env. API keys are encrypted at rest, and JWT secrets never live in code.&#xA;This post documents the exact pattern used in this repo.&#xA;1. Centralized config with Pydantic settings All secrets are defined once in Settings and imported through a single settings instance:</description>
+    </item>
+    <item>
+      <title>19. Observability for trading systems: logging, metrics, and tracing basics</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</guid>
+      <description>Trading systems are noisy and time-sensitive. When something goes wrong—missed ticks, delayed jobs, failed API calls—you need answers fast. Observability is the safety net: logs for context, metrics for trends, and tracing for end-to-end visibility.&#xA;This post documents the baseline observability setup in this repo and how it maps to real production concerns.&#xA;1. Logging: structured, centralized, and consistent The backend uses Loguru as the primary logger, with a custom configurator to capture both Loguru logs and standard Python logging.</description>
     </item>
   </channel>
 </rss>

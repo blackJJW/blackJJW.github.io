@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Observability :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/observability/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/observability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>19. Observability for trading systems: logging, metrics, and tracing basics</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/observabilityfortradingsystems/index.html</guid>
+      <description>Trading systems are noisy and time-sensitive. When something goes wrong—missed ticks, delayed jobs, failed API calls—you need answers fast. Observability is the safety net: logs for context, metrics for trends, and tracing for end-to-end visibility.&#xA;This post documents the baseline observability setup in this repo and how it maps to real production concerns.&#xA;1. Logging: structured, centralized, and consistent The backend uses Loguru as the primary logger, with a custom configurator to capture both Loguru logs and standard Python logging.</description>
+    </item>
+  </channel>
+</rss>
