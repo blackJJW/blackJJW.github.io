@@ -82,6 +82,9 @@
     <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html</loc>
   </url>
   <url>
+    <loc>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</loc>
+  </url>
+  <url>
     <loc>https://blackjjw.github.io/learning_notes/dl/index.html</loc>
   </url>
   <url>
@@ -284,6 +287,9 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/loguru/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/long-running/index.html</loc>
   </url>
   <url>
     <loc>https://blackjjw.github.io/tags/loss-function/index.html</loc>
@@ -494,5 +500,8 @@
   </url>
   <url>
     <loc>https://blackjjw.github.io/index.html</loc>
+  </url>
+  <url>
+    <loc>https://blackjjw.github.io/tags/workflow/index.html</loc>
   </url>
 </urlset>

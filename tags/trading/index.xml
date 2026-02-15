@@ -28,5 +28,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/websocketsvspolling/index.html</guid>
       <description>Live price updates are the heartbeat of a crypto app. The question isn’t “real-time or not,” but how to deliver updates reliably: WebSockets, polling, or a hybrid.&#xA;This post compares both approaches and frames the choice using the current stack in this project.&#xA;1. The two delivery models 1.1 Polling The client requests price data every N seconds. Simple to implement and easy to cache. Scales well with stateless HTTP. 1.2 WebSockets The server pushes updates continuously. Lower latency and smoother UI. Requires persistent connections and additional infrastructure. 2. What polling looks like in this repo In this repo, the backend exposes polling-style endpoints that fetch data from the Go worker and persist it.</description>
     </item>
+    <item>
+      <title>23. Async trading workflows: handling long‑running tasks and retries</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</guid>
+      <description>Trading backends rarely run only “fast” requests. Market data ingestion, reconciliation jobs, and downstream calls can all be long-running or flaky. In this project, I lean on async workflows, explicit retries, and idempotent writes to keep things safe and responsive.&#xA;This post documents the current patterns and the direction for larger async jobs.&#xA;1. Async everywhere, with clean lifecycle management The FastAPI app uses an async lifespan to initialize and shut down shared dependencies:</description>
+    </item>
   </channel>
 </rss>

@@ -161,5 +161,12 @@
       <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/redispostgrespatterns/index.html</guid>
       <description>Market data is high-volume and time-sensitive. In this project, I separate concerns:&#xA;Redis: short-lived, fast access (API key cache, hot lookups) Postgres: durable storage for trades, orderbooks, and metadata This post documents the current patterns with concrete code from the repo.&#xA;1. Caching: Redis for hot paths The internal worker endpoint caches exchange API keys so the worker doesn’t hit Postgres repeatedly:&#xA;# backend/src/internal_api/coinone_worker_router.py @coinone_worker_router.get(&#34;/api-keys/{user_id}&#34;) async def get_api_keys(user_id: str, db: AsyncSession = Depends(get_async_db)): redis_manager = RedisClientManager() cache_key = f&#34;api_keys:{user_id}&#34; cached = await redis_manager.get_api_keys(cache_key) if cached: logger.info(f&#34;Cache hit for user_id={user_id}&#34;) return cached logger.info(f&#34;Cache miss for user_id={user_id}, fetching from DB&#34;) keys = await ExchangeAPIKeyService(db).get_api_key_for_worker(...) await redis_manager.set_api_keys(cache_key, keys, ttl=settings.REDIS_API_KEY_TTL) return keys That gives low-latency reads with a bounded TTL.</description>
     </item>
+    <item>
+      <title>23. Async trading workflows: handling long‑running tasks and retries</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</guid>
+      <description>Trading backends rarely run only “fast” requests. Market data ingestion, reconciliation jobs, and downstream calls can all be long-running or flaky. In this project, I lean on async workflows, explicit retries, and idempotent writes to keep things safe and responsive.&#xA;This post documents the current patterns and the direction for larger async jobs.&#xA;1. Async everywhere, with clean lifecycle management The FastAPI app uses an async lifespan to initialize and shut down shared dependencies:</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow :: Tag :: Black_JJW&#39;s Blog</title>
+    <link>https://blackjjw.github.io/tags/workflow/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blackjjw.github.io/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>23. Async trading workflows: handling long‑running tasks and retries</title>
+      <link>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blackjjw.github.io/multi-crypto-trading-tool/dev-logs/asynctradingworkflows/index.html</guid>
+      <description>Trading backends rarely run only “fast” requests. Market data ingestion, reconciliation jobs, and downstream calls can all be long-running or flaky. In this project, I lean on async workflows, explicit retries, and idempotent writes to keep things safe and responsive.&#xA;This post documents the current patterns and the direction for larger async jobs.&#xA;1. Async everywhere, with clean lifecycle management The FastAPI app uses an async lifespan to initialize and shut down shared dependencies:</description>
+    </item>
+  </channel>
+</rss>
